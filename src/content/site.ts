@@ -146,8 +146,60 @@ export const anatomy = {
   intro:
     "Every element of the platform exists to put a known quantity of light on the retina, the same way, in every clinic. Each part is described here only as far as the published development record allows.",
   /**
-   * Callouts over the device render. Coordinates are in the overlay's own
-   * 1198 x 1306 space, in which the render occupies x 260 to 938. `anchor` is
+   * The development prototype from five angles. The callouts are anchored to
+   * the straight-on front view, so they only appear on that one; the other
+   * views carry a caption instead.
+   */
+  views: [
+    {
+      id: "front",
+      label: "Front",
+      src: "/images/revolux-front.png",
+      width: 305,
+      height: 660,
+      alt: "The Revolux prototype seen head on from the clinician's side, showing both eyepieces with their rings of emitters around a central aperture",
+      caption: "The clinician's side. Each eyepiece carries a ring of emitters around a central aperture.",
+    },
+    {
+      id: "patient",
+      label: "Patient's side",
+      src: "/images/revolux-patient.png",
+      width: 296,
+      height: 663,
+      alt: "The Revolux prototype seen from the patient's side, showing the two soft eyecups the patient looks into",
+      caption: "What the patient sees. Two eyecups, held at a fixed separation, for a five-minute session.",
+    },
+    {
+      id: "profile",
+      label: "Profile",
+      src: "/images/revolux-profile.png",
+      width: 240,
+      height: 657,
+      alt: "The Revolux prototype in profile, showing the depth of the eyepiece housing above the control unit and handle",
+      caption: "In profile the depth of the housing is visible: the distance the light travels is fixed by the body itself.",
+    },
+    {
+      id: "three-quarter",
+      label: "Three-quarter",
+      src: "/images/revolux-three-quarter.png",
+      width: 354,
+      height: 669,
+      alt: "The Revolux prototype at three-quarters, showing the eyepieces, the hinged bridge, the control unit and the handle",
+      caption: "The whole instrument: hinged bridge, control unit and handle, held in one hand.",
+    },
+    {
+      id: "rear",
+      label: "Rear",
+      src: "/images/revolux-rear-quarter.png",
+      width: 357,
+      height: 658,
+      alt: "The Revolux prototype from behind, showing the controls on the back of the control unit",
+      caption: "The controls sit on the back of the unit, under the clinician's thumb.",
+    },
+  ],
+  /**
+   * Callouts over the front view. Coordinates are in the overlay's own
+   * 960 x 700 space, in which that render occupies x 318 to 642. `anchor` is
    * the point on the device; `labelY` is where the label sits in its column.
    * Nothing here claims more about the internals than the company has
    * already published.
@@ -157,44 +209,44 @@ export const anatomy = {
       id: "head",
       label: "Binocular head",
       side: "left" as const,
-      anchor: [556, 118] as const,
-      labelY: 196,
-      body: "Two eyepieces on a fixed bridge. This architecture is what holds the same source-to-eye distance and alignment for every patient, which is what makes the dose repeatable between clinics.",
+      anchor: [482, 22] as const,
+      labelY: 74,
+      body: "Two eyepieces on a hinged bridge. This architecture is what holds the same source-to-eye distance and alignment for every patient, which is what makes the dose repeatable between clinics.",
     },
     {
       id: "emitters",
       label: "Emitter ring",
       side: "left" as const,
-      anchor: [474, 326] as const,
-      labelY: 436,
-      body: "Red and near-infrared sources arranged around each eyepiece. Revolux combines the wavelengths with the strongest clinical effect on mitochondrial function in the retina.",
+      anchor: [412, 156] as const,
+      labelY: 224,
+      body: "Red and near-infrared sources arranged in a ring around each aperture. Revolux combines the wavelengths with the strongest clinical effect on mitochondrial function in the retina.",
     },
     {
       id: "optics",
       label: "Optical train",
       side: "right" as const,
-      anchor: [664, 382] as const,
-      labelY: 330,
+      anchor: [550, 156] as const,
+      labelY: 150,
       body: "The path from each source to the retina, refined with optical engineering partners so that the light arriving at the macula is precise and repeatable rather than approximate.",
     },
     {
       id: "control",
       label: "Control unit",
       side: "right" as const,
-      anchor: [718, 742] as const,
-      labelY: 700,
+      anchor: [477, 392] as const,
+      labelY: 396,
       body: "Power and control. Dosage and irradiance are regulated and monitored for the whole of every session, and the soft-start profile is run from here.",
     },
     {
       id: "interlocks",
       label: "Safety interlocks",
-      side: "right" as const,
-      anchor: [712, 908] as const,
-      labelY: 934,
+      side: "left" as const,
+      anchor: [477, 458] as const,
+      labelY: 486,
       body: "Positional and physiological gating. Light is delivered only while every criterion is met, and each session is recorded against the clinician who initiated it.",
     },
   ],
-  note: "Render of the current development prototype. The hardware configuration is approaching design freeze.",
+  note: "Renders of the current development prototype. The hardware configuration is approaching design freeze.",
 };
 
 export const course = {

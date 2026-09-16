@@ -81,13 +81,15 @@ All in `src/components`:
 - **RevenueCalculator** is the slider on the clinics page. Its numbers are
   fitted to the figures the FAQ publishes (see below).
 - **StandardsTicker** scrolls the standards Revolux is built against.
-- **RevoluxAnatomy** puts technical callouts over the device render on
-  `/technology`. They arrive one at a time and then stay; hovering a part in
-  the list emphasises it. The overlay is one 1198x1306 coordinate space with
-  the render occupying x 260 to 938 inside it, so leader lines never drift.
-  Coordinates live in `anatomy.parts` in `site.ts`. **Every label is limited to
+- **RevoluxAnatomy** shows the prototype from five angles with numbered
+  markers over the front view, keyed to the list beside it; hovering either
+  emphasises both. The markers arrive one at a time and then stay. The overlay
+  is one 960x700 coordinate space with the front render occupying x 318 to 642
+  inside it, so the markers never drift. Views and marker coordinates live in
+  `anatomy.views` and `anatomy.parts` in `site.ts`. **Every label is limited to
   what the company has already published**; do not add internal detail there
-  without a source.
+  without a source. Markers are anchored to the front view only, so the other
+  angles carry a caption instead.
 - **TreatmentCourse** fills the nine sessions week by week with the treatment
   time counting up. Used on `/technology` and `/clinics`.
 - **CardMark** draws the small marks on the cards that would otherwise carry
@@ -171,10 +173,15 @@ numbers align in columns. Both faces load through `next/font` in
 ## Imagery
 
 `public/images/` holds web-sized copies made by `npm run build:images` from
-originals in `source-images/`, which is not committed (the originals run to
-10MB each). The originals are the founder portrait and clinic photograph, the
-three advisor portraits, the two Revolux renders and the brand mark, all
-carried over from the Wix media library. To add a photograph, drop the
+originals in `source-images/`, which is not committed. The originals are the
+founder portrait and clinic photograph, the three advisor portraits, the brand
+mark, and the five Revolux V2 renders.
+
+The V2 renders arrive on a transparent background inside a fixed landscape
+frame, so sharp's `trim` cannot find the device: it compares RGB and the
+invisible pixels are not a uniform colour. `build-images.mjs` crops to the
+**alpha** bounding box instead. If you add a render, drop it in
+`source-images/` and add a line to the `views` list in that script. To add a photograph, drop the
 original in `source-images/`, add a line to `scripts/build-images.mjs` and
 run it.
 

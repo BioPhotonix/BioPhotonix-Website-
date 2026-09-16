@@ -82,10 +82,10 @@ export default function Hero() {
               className="relative mx-auto w-[62%] max-w-[22rem] lg:w-[68%]"
             >
               <Image
-                src="/images/revolux-front.png"
+                src="/images/revolux-three-quarter.png"
                 alt={hero.deviceAlt}
-                width={678}
-                height={1306}
+                width={354}
+                height={669}
                 priority
                 sizes="(max-width: 1024px) 60vw, 30vw"
                 className="h-auto w-full drop-shadow-[0_30px_60px_rgba(27,195,205,0.25)]"

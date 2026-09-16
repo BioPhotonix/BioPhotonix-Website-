@@ -82,10 +82,10 @@ export default function HomePage() {
               style={{ background: "radial-gradient(circle, rgba(27,195,205,0.18) 0%, transparent 65%)" }}
             />
             <Image
-              src="/images/revolux-side.png"
+              src="/images/revolux-profile.png"
               alt="Side view of the Revolux device, showing the eyepiece and the handle"
-              width={448}
-              height={1282}
+              width={240}
+              height={657}
               sizes="(max-width: 1024px) 50vw, 25vw"
               className="relative mx-auto h-auto w-1/2 max-w-[14rem] drop-shadow-[0_30px_60px_rgba(27,195,205,0.2)] lg:w-3/5"
             />
