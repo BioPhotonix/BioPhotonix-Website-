@@ -40,7 +40,7 @@ export default function PathwayDiagram() {
               >
                 <span
                   aria-hidden="true"
-                  className={`mono text-xs ${tone === "live" ? "text-teal-300" : fading ? "text-ember/80" : "text-fog/40"}`}
+                  className={`figure text-xs ${tone === "live" ? "text-teal-300" : fading ? "text-ember/80" : "text-fog/40"}`}
                 >
                   {String(i + 1).padStart(2, "0")}
                 </span>

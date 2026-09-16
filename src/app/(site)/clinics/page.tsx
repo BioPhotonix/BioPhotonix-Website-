@@ -38,7 +38,7 @@ export default function ClinicsPage() {
           {clinics.props.map((p, i) => (
             <Reveal key={p.title} delay={(i % 3) * 0.08}>
               <TechCard className="h-full p-7">
-                <span className="mono text-xs text-teal-400">{String(i + 1).padStart(2, "0")}</span>
+                <span className="figure text-xs text-teal-400">{String(i + 1).padStart(2, "0")}</span>
                 <h2 className="mt-3 font-display text-lg font-semibold text-fog">{p.title}</h2>
                 <p className="mt-2 text-sm leading-relaxed text-fog/65">{p.body}</p>
               </TechCard>
@@ -54,7 +54,7 @@ export default function ClinicsPage() {
           <ol className="mt-14 grid gap-px overflow-hidden rounded-2xl border border-line bg-line md:grid-cols-5">
             {clinics.workflow.steps.map((s, i) => (
               <Reveal key={s.title} as="li" delay={i * 0.08} className="bg-ink-950 p-6">
-                <span className="mono text-xs text-teal-400">{String(i + 1).padStart(2, "0")}</span>
+                <span className="figure text-xs text-teal-400">{String(i + 1).padStart(2, "0")}</span>
                 <h3 className="mt-3 font-display text-xl font-semibold text-fog">{s.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-fog/65">{s.body}</p>
               </Reveal>

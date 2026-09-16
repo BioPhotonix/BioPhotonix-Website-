@@ -1,11 +1,16 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, JetBrains_Mono, Manrope } from "next/font/google";
+import { Source_Sans_3, Source_Serif_4 } from "next/font/google";
 import { site } from "@/content/site";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
-const manrope = Manrope({ subsets: ["latin"], variable: "--font-manrope", display: "swap" });
-const jetbrains = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jetbrains", display: "swap" });
+/**
+ * Source Serif 4 and Source Sans 3: a superfamily designed to work together,
+ * with a long history in scientific and medical publishing. The serif carries
+ * the headlines, the sans everything else including the small letterspaced
+ * labels that used to be set in a monospace code face.
+ */
+const serif = Source_Serif_4({ subsets: ["latin"], variable: "--font-serif", display: "swap" });
+const sans = Source_Sans_3({ subsets: ["latin"], variable: "--font-sans-3", display: "swap" });
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -34,7 +39,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en-GB" className={`${inter.variable} ${manrope.variable} ${jetbrains.variable}`}>
+    <html lang="en-GB" className={`${serif.variable} ${sans.variable}`}>
       <body className="min-h-screen antialiased">{children}</body>
     </html>
   );

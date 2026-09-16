@@ -32,7 +32,7 @@ export default function HomePage() {
             <Reveal key={s.label} delay={i * 0.06} className="bg-ink-900 p-7">
               <dt className="sr-only">{s.label}</dt>
               <dd>
-                <span className="mono block text-4xl font-medium text-fog md:text-5xl">
+                <span className="block text-4xl font-medium text-fog md:text-5xl">
                   <StatCounter value={s.value} prefix={s.prefix} suffix={s.suffix} />
                 </span>
                 <span className="mt-3 block text-sm leading-relaxed text-fog/65">{s.label}</span>
@@ -44,7 +44,7 @@ export default function HomePage() {
           <BurdenChart />
         </div>
         <Reveal className="mt-6 flex flex-col gap-3 rounded-2xl border border-line bg-ink-900 p-7 md:flex-row md:items-center md:gap-8">
-          <span className="mono text-4xl font-medium text-ember md:text-5xl">{burden.cost.value}</span>
+          <span className="text-4xl font-medium text-ember md:text-5xl">{burden.cost.value}</span>
           <p className="text-base leading-relaxed text-fog/70">{burden.cost.label}</p>
         </Reveal>
       </section>
@@ -124,7 +124,7 @@ export default function HomePage() {
           {clinics.props.map((p, i) => (
             <Reveal key={p.title} delay={(i % 3) * 0.08}>
               <TechCard className="h-full p-7">
-                <span className="mono text-xs text-teal-400">{String(i + 1).padStart(2, "0")}</span>
+                <span className="figure text-xs text-teal-400">{String(i + 1).padStart(2, "0")}</span>
                 <h3 className="mt-3 font-display text-lg font-semibold text-fog">{p.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-fog/65">{p.body}</p>
               </TechCard>
@@ -208,7 +208,7 @@ export default function HomePage() {
                       <PostArt kind={p.art} className="transition-transform duration-700 group-hover:scale-[1.03]" />
                     </div>
                     <div className="p-6">
-                      <p className="mono text-xs uppercase tracking-[0.16em] text-fog/50">
+                      <p className="figure text-xs uppercase tracking-[0.13em] text-fog/50">
                         {formatDate(p.date)} &middot; {p.readingMinutes} min
                       </p>
                       <h3 className="mt-3 font-display text-lg font-semibold leading-snug text-fog">{p.title}</h3>

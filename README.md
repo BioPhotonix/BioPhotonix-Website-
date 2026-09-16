@@ -63,8 +63,12 @@ All in `src/components`:
 - **PhotonField** draws photons drifting towards a focal point behind the hero,
   on a canvas. It pauses off screen and shows a single still frame under
   `prefers-reduced-motion`.
-- **BurdenChart** draws prevalence in 2020 against 2040 and a hundred-square
-  grid of dry against wet AMD. Used on the home and investors pages.
+- **PrevalenceFrame** is a frame of 144 figures, each two million people,
+  that fills from the 2020 figure to the 2040 one as the years advance. The
+  head of each affected figure has a dark centre for the central vision dry
+  AMD takes. It plays once on scroll, then the year can be dragged.
+- **BurdenChart** places that frame beside a hundred-square grid of dry
+  against wet AMD. Used on the home and investors pages.
 - **PathwayDiagram** lights up the care pathway as it is, then the pathway
   with Revolux.
 - **RevoluxExplainer** is a tablist with five drawings of the binocular head:
@@ -139,6 +143,15 @@ The Wix blog lived at `/post/<slug>`. `next.config.ts` redirects those, and
 points at Vercel, add it in Google Search Console and submit
 `https://www.biophotonix.co.uk/sitemap.xml`.
 
+## Typography
+
+Headlines are Source Serif 4 and everything else is Source Sans 3, a pair
+designed to work together and long used in scientific and medical publishing.
+There is deliberately no monospace face anywhere: section labels are the sans
+in letterspaced capitals, and figures use its tabular numerals only where
+numbers align in columns. Both faces load through `next/font` in
+`src/app/layout.tsx`; the roles are mapped in `globals.css`.
+
 ## Imagery
 
 `public/images/` holds web-sized copies made by `npm run build:images` from
@@ -159,8 +172,9 @@ supplied logo is kept at `public/images/logo-light-bg.png`.
   articles: 200 million people with AMD, 288 million by 2040, 85 to 90% dry,
   more than 500,000 progressing to severe vision loss a year, twice the risk
   of cognitive decline, vision loss in the top three most feared outcomes, and
-  the $49 billion US economic burden. The prevalence chart cites Wong et al.,
-  The Lancet Global Health, 2014. Investors will ask for the rest; a source
+  the $49 billion US economic burden. The prevalence frame cites Wong et al.,
+  The Lancet Global Health, 2014, and the 47% growth figure is derived from
+  its two numbers (196 to 288 million). Investors will ask for the rest; a source
   for each belongs in `burden.stats` before a raise.
 - **The revenue calculator.** It is fitted to the FAQ's published examples
   (one, two and three patients a month generating £700, £1,600 and £2,500 of

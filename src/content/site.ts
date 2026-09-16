@@ -68,19 +68,18 @@ export const burden = {
     { value: 200, suffix: "M", label: "people worldwide living with age-related macular degeneration" },
     { value: 90, suffix: "%", label: "of AMD is the dry form, with limited approved treatment options" },
     { value: 500, prefix: ">", suffix: "k", label: "people progress to severe vision loss from AMD each year" },
-    { value: 44, prefix: "+", suffix: "%", label: "increase in AMD prevalence expected by 2040" },
+    { value: 47, prefix: "+", suffix: "%", label: "increase in AMD prevalence expected between 2020 and 2040" },
     { value: 2, prefix: "×", label: "higher risk of cognitive decline and dementia with vision impairment" },
     { value: 3, prefix: "Top ", label: "vision loss ranks among the three most feared health outcomes" },
   ],
-  chart: {
+  prevalence: {
     title: "People living with AMD worldwide",
-    unit: "million",
-    bars: [
-      { label: "2020", value: 196 },
-      { label: "2040", value: 288 },
-    ],
-    note: "Projected growth of 44% as populations age.",
-    source: "Wong et al., The Lancet Global Health, 2014",
+    /** Million people per figure in the frame. */
+    perFigure: 2,
+    start: { year: 2020, millions: 196 },
+    end: { year: 2040, millions: 288 },
+    note: "Each figure is two million people. The dark centre of every head is the central vision that dry AMD takes.",
+    source: "Wong et al., The Lancet Global Health, 2014. Years between the two published figures are a straight line between them.",
   },
   split: {
     title: "Where the innovation has gone",

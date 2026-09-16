@@ -51,7 +51,7 @@ export default function Hero() {
             <motion.dl {...rise(0.34)} className="mt-14 grid max-w-xl grid-cols-1 gap-px overflow-hidden rounded-xl border border-line bg-line sm:grid-cols-3">
               {hero.specs.map((s) => (
                 <div key={s.label} className="bg-ink-950/80 px-4 py-3.5 backdrop-blur">
-                  <dt className="mono text-xs uppercase tracking-[0.16em] text-fog/50">{s.label}</dt>
+                  <dt className="figure text-xs uppercase tracking-[0.13em] text-fog/50">{s.label}</dt>
                   <dd className="mt-1 text-sm font-medium text-fog">{s.value}</dd>
                 </div>
               ))}

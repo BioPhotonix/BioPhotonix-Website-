@@ -37,7 +37,7 @@ export default function NewsPage() {
                     <PostArt kind={p.art} className="transition-transform duration-700 group-hover:scale-[1.03]" />
                   </div>
                   <div className="p-7">
-                    <p className="mono text-xs uppercase tracking-[0.16em] text-fog/50">
+                    <p className="figure text-xs uppercase tracking-[0.13em] text-fog/50">
                       {formatDate(p.date)} &middot; {p.readingMinutes} min read
                     </p>
                     <h2 className="mt-3 font-display text-2xl font-semibold leading-snug text-fog">{p.title}</h2>

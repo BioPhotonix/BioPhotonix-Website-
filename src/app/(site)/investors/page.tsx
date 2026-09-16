@@ -28,9 +28,9 @@ export default function InvestorsPage() {
           <dl className="mt-14 grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
             {investors.highlights.map((h) => (
               <div key={h.label} className="bg-ink-950/80 p-6">
-                <dt className="mono text-xs uppercase tracking-[0.16em] text-fog/50">{h.label}</dt>
+                <dt className="figure text-xs uppercase tracking-[0.13em] text-fog/50">{h.label}</dt>
                 <dd>
-                  <span className="mono mt-2 block text-3xl font-medium text-fog">{h.value}</span>
+                  <span className="mt-2 block text-3xl font-medium text-fog">{h.value}</span>
                   <span className="mt-2 block text-sm text-fog/60">{h.body}</span>
                 </dd>
               </div>
@@ -53,7 +53,7 @@ export default function InvestorsPage() {
             </Reveal>
           </div>
           <div className="lg:col-span-7">
-            <BurdenChart />
+            <BurdenChart layout="stack" />
           </div>
         </div>
       </section>
@@ -121,7 +121,7 @@ export default function InvestorsPage() {
             ))}
           </div>
           <Reveal className="mt-10 flex flex-wrap gap-x-8 gap-y-3 border-t border-line pt-8">
-            <span className="mono text-xs uppercase tracking-[0.16em] text-fog/50">{partners.title}</span>
+            <span className="figure text-xs uppercase tracking-[0.13em] text-fog/50">{partners.title}</span>
             {partners.names.map((p) => (
               <span key={p.name} className="text-sm text-fog/80">
                 {p.name}

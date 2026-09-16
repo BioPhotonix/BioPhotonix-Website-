@@ -110,21 +110,21 @@ export default function RetinaExplainer() {
               <ellipse cx={m.x} cy={m.y} rx="11" ry="5.5" fill="#ff5a3c" />
             </motion.g>
           ))}
-          <text x="66" y="88" textAnchor="middle" fontSize="13" fill="#e8f1f3" opacity="0.85" fontFamily="var(--font-mono)" letterSpacing="0.1em">
+          <text x="66" y="88" textAnchor="middle" fontSize="13" fill="#e8f1f3" opacity="0.85" fontFamily="var(--font-sans)" fontWeight="600" letterSpacing="0.1em">
             MITOCHONDRIA
           </text>
         </g>
 
-        <text x="4" y="352" fontSize="14" fill="#e8f1f3" opacity="0.8" fontFamily="var(--font-mono)" letterSpacing="0.1em">
+        <text x="4" y="352" fontSize="14" fill="#e8f1f3" opacity="0.8" fontFamily="var(--font-sans)" fontWeight="600" letterSpacing="0.1em">
           RED + NEAR-INFRARED
         </text>
-        <text x="4" y="372" fontSize="13" fill="#e8f1f3" opacity="0.55" fontFamily="var(--font-mono)" letterSpacing="0.1em">
+        <text x="4" y="372" fontSize="13" fill="#e8f1f3" opacity="0.55" fontFamily="var(--font-sans)" fontWeight="600" letterSpacing="0.1em">
           CONTROLLED DOSE
         </text>
-        <text x="452" y="62" textAnchor="middle" fontSize="14" fill="#6fe3ea" fontFamily="var(--font-mono)" letterSpacing="0.1em">
+        <text x="452" y="62" textAnchor="middle" fontSize="14" fill="#6fe3ea" fontFamily="var(--font-sans)" fontWeight="600" letterSpacing="0.1em">
           RETINA
         </text>
-        <text x="156" y="316" textAnchor="middle" fontSize="13" fill="#e8f1f3" opacity="0.6" fontFamily="var(--font-mono)" letterSpacing="0.1em">
+        <text x="156" y="316" textAnchor="middle" fontSize="13" fill="#e8f1f3" opacity="0.6" fontFamily="var(--font-sans)" fontWeight="600" letterSpacing="0.1em">
           PUPIL
         </text>
       </svg>
@@ -132,7 +132,7 @@ export default function RetinaExplainer() {
       <ol className="mt-10 grid gap-x-8 gap-y-7 sm:grid-cols-3">
         {retina.steps.map((s, i) => (
           <li key={s.title} className="flex gap-4">
-            <span className="mono mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-teal-400/50 text-xs text-teal-300">
+            <span className="figure mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-teal-400/50 text-xs text-teal-300">
               {i + 1}
             </span>
             <div>

@@ -68,7 +68,7 @@ export default function RevoluxExplainer() {
                   selected ? "bg-ink-800 text-fog" : "text-fog/60 hover:text-fog"
                 }`}
               >
-                <span className={`mono text-xs ${selected ? "text-teal-400" : "text-fog/40"}`}>{String(i + 1).padStart(2, "0")}</span>
+                <span className={`figure text-xs ${selected ? "text-teal-400" : "text-fog/40"}`}>{String(i + 1).padStart(2, "0")}</span>
                 <span className="font-display text-lg font-semibold">{s.title}</span>
                 {selected && !reduce && !touched && (
                   <motion.span
@@ -166,10 +166,10 @@ export default function RevoluxExplainer() {
                     <line x1="420" y1="168" x2="420" y2="192" strokeOpacity="0.9" />
                     <line x1="408" y1="180" x2="432" y2="180" strokeOpacity="0.9" />
                   </g>
-                  <text x="320" y="345" textAnchor="middle" fontSize="13" fill="#1bc3cd" fontFamily="var(--font-mono)" letterSpacing="0.12em">
+                  <text x="320" y="345" textAnchor="middle" fontSize="13" fill="#1bc3cd" fontFamily="var(--font-sans)" fontWeight="600" letterSpacing="0.12em">
                     FIXED SOURCE-TO-EYE GEOMETRY
                   </text>
-                  <text x="320" y="60" textAnchor="middle" fontSize="13" fill="#e8f1f3" fillOpacity="0.6" fontFamily="var(--font-mono)" letterSpacing="0.12em">
+                  <text x="320" y="60" textAnchor="middle" fontSize="13" fill="#e8f1f3" fillOpacity="0.6" fontFamily="var(--font-sans)" fontWeight="600" letterSpacing="0.12em">
                     ALIGNED, REPEATABLE, BOTH EYES
                   </text>
                 </motion.g>
@@ -203,13 +203,13 @@ export default function RevoluxExplainer() {
                       animate={{ pathLength: 1 }}
                       transition={reduce ? { duration: 0 } : { duration: 2.4, ease: "easeOut" }}
                     />
-                    <text x="8" y="-8" fontSize="13" fill="#e8f1f3" fillOpacity="0.6" fontFamily="var(--font-mono)" letterSpacing="0.12em">
+                    <text x="8" y="-8" fontSize="13" fill="#e8f1f3" fillOpacity="0.6" fontFamily="var(--font-sans)" fontWeight="600" letterSpacing="0.12em">
                       OUTPUT
                     </text>
-                    <text x="520" y="98" textAnchor="end" fontSize="13" fill="#e8f1f3" fillOpacity="0.6" fontFamily="var(--font-mono)" letterSpacing="0.12em">
+                    <text x="520" y="98" textAnchor="end" fontSize="13" fill="#e8f1f3" fillOpacity="0.6" fontFamily="var(--font-sans)" fontWeight="600" letterSpacing="0.12em">
                       TIME
                     </text>
-                    <text x="270" y="-8" fontSize="13" fill="#1bc3cd" fontFamily="var(--font-mono)" letterSpacing="0.12em">
+                    <text x="270" y="-8" fontSize="13" fill="#1bc3cd" fontFamily="var(--font-sans)" fontWeight="600" letterSpacing="0.12em">
                       SOFT-START, THEN STABLE
                     </text>
                   </g>
@@ -237,18 +237,18 @@ export default function RevoluxExplainer() {
                   )}
                   <g transform="translate(120, 300)">
                     <circle cx="0" cy="0" r="6" fill="#ff5a3c" />
-                    <text x="16" y="5" fontSize="13" fill="#e8f1f3" fillOpacity="0.8" fontFamily="var(--font-mono)" letterSpacing="0.12em">
+                    <text x="16" y="5" fontSize="13" fill="#e8f1f3" fillOpacity="0.8" fontFamily="var(--font-sans)" fontWeight="600" letterSpacing="0.12em">
                       RED
                     </text>
                     <circle cx="90" cy="0" r="6" fill="#b8402c" />
-                    <text x="106" y="5" fontSize="13" fill="#e8f1f3" fillOpacity="0.8" fontFamily="var(--font-mono)" letterSpacing="0.12em">
+                    <text x="106" y="5" fontSize="13" fill="#e8f1f3" fillOpacity="0.8" fontFamily="var(--font-sans)" fontWeight="600" letterSpacing="0.12em">
                       NEAR-INFRARED
                     </text>
                   </g>
-                  <text x="320" y="345" textAnchor="middle" fontSize="13" fill="#1bc3cd" fontFamily="var(--font-mono)" letterSpacing="0.12em">
+                  <text x="320" y="345" textAnchor="middle" fontSize="13" fill="#1bc3cd" fontFamily="var(--font-sans)" fontWeight="600" letterSpacing="0.12em">
                     TARGET: MITOCHONDRIAL FUNCTION
                   </text>
-                  <text x="320" y="60" textAnchor="middle" fontSize="13" fill="#e8f1f3" fillOpacity="0.6" fontFamily="var(--font-mono)" letterSpacing="0.12em">
+                  <text x="320" y="60" textAnchor="middle" fontSize="13" fill="#e8f1f3" fillOpacity="0.6" fontFamily="var(--font-sans)" fontWeight="600" letterSpacing="0.12em">
                     WAVELENGTHS WITH THE STRONGEST CLINICAL EFFECT
                   </text>
                 </motion.g>
@@ -270,7 +270,7 @@ export default function RevoluxExplainer() {
                         transition={reduce ? undefined : { duration: 3, delay: i * 0.5, repeat: Infinity, ease: "easeInOut" }}
                       />
                       <circle r="16" fill="none" stroke="#1bc3cd" strokeOpacity="0.4" />
-                      <text y="40" textAnchor="middle" fontSize="13" fill="#e8f1f3" fillOpacity="0.7" fontFamily="var(--font-mono)" letterSpacing="0.12em">
+                      <text y="40" textAnchor="middle" fontSize="13" fill="#e8f1f3" fillOpacity="0.7" fontFamily="var(--font-sans)" fontWeight="600" letterSpacing="0.12em">
                         {g.label}
                       </text>
                     </g>
@@ -282,7 +282,7 @@ export default function RevoluxExplainer() {
                     <circle cx="220" cy="180" r="62" fill="url(#rx-glow)" />
                     <circle cx="420" cy="180" r="62" fill="url(#rx-glow)" />
                   </motion.g>
-                  <text x="320" y="60" textAnchor="middle" fontSize="13" fill="#1bc3cd" fontFamily="var(--font-mono)" letterSpacing="0.12em">
+                  <text x="320" y="60" textAnchor="middle" fontSize="13" fill="#1bc3cd" fontFamily="var(--font-sans)" fontWeight="600" letterSpacing="0.12em">
                     LIGHT ONLY WHEN EVERY CRITERION IS MET
                   </text>
                 </motion.g>
@@ -292,7 +292,7 @@ export default function RevoluxExplainer() {
                 <motion.g key="reporting" {...fade}>
                   <g transform="translate(470, 240)">
                     <rect x="0" y="0" width="150" height="130" rx="10" fill="#0d1519" stroke="#1bc3cd" strokeOpacity="0.6" />
-                    <text x="14" y="26" fontSize="12" fill="#1bc3cd" fontFamily="var(--font-mono)" letterSpacing="0.12em">
+                    <text x="14" y="26" fontSize="12" fill="#1bc3cd" fontFamily="var(--font-sans)" fontWeight="600" letterSpacing="0.12em">
                       SESSION LOG
                     </text>
                     {Array.from({ length: 9 }, (_, i) => (
@@ -318,13 +318,13 @@ export default function RevoluxExplainer() {
                     animate={{ pathLength: 1 }}
                     transition={reduce ? { duration: 0 } : { duration: 1.2 }}
                   />
-                  <text x="120" y="330" fontSize="13" fill="#e8f1f3" fillOpacity="0.7" fontFamily="var(--font-mono)" letterSpacing="0.12em">
+                  <text x="120" y="330" fontSize="13" fill="#e8f1f3" fillOpacity="0.7" fontFamily="var(--font-sans)" fontWeight="600" letterSpacing="0.12em">
                     CLINICIAN-INITIATED
                   </text>
-                  <text x="120" y="352" fontSize="13" fill="#e8f1f3" fillOpacity="0.7" fontFamily="var(--font-mono)" letterSpacing="0.12em">
+                  <text x="120" y="352" fontSize="13" fill="#e8f1f3" fillOpacity="0.7" fontFamily="var(--font-sans)" fontWeight="600" letterSpacing="0.12em">
                     DIGITALLY LOGGED
                   </text>
-                  <text x="320" y="60" textAnchor="middle" fontSize="13" fill="#1bc3cd" fontFamily="var(--font-mono)" letterSpacing="0.12em">
+                  <text x="320" y="60" textAnchor="middle" fontSize="13" fill="#1bc3cd" fontFamily="var(--font-sans)" fontWeight="600" letterSpacing="0.12em">
                     9 SESSIONS, 3 WEEKS, EVERY ONE RECORDED
                   </text>
                 </motion.g>

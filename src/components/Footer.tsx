@@ -69,7 +69,7 @@ export default function Footer() {
 
         <div className="mt-14 flex flex-col gap-4 border-t border-line pt-8 text-sm text-fog/55 sm:flex-row sm:items-center sm:justify-between">
           <p>&copy; {new Date().getFullYear()} {site.legalName}. Registered in Scotland.</p>
-          <p className="mono text-xs uppercase tracking-[0.16em]">Revolux is a medical device in development and is not yet available for sale.</p>
+          <p className="figure text-xs uppercase tracking-[0.13em]">Revolux is a medical device in development and is not yet available for sale.</p>
         </div>
       </div>
       <div style={{ height: "env(safe-area-inset-bottom, 0px)" }} aria-hidden="true" />
