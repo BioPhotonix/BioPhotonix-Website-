@@ -1,0 +1,274 @@
+@import "tailwindcss";
+
+@theme {
+  /* Dark, high-tech palette built around the teal of the BioPhotonix mark.
+     "ink" is the page, "fog" is the text, "ember" is the therapy light. */
+  --color-ink-950: #04080a;
+  --color-ink-900: #080f12;
+  --color-ink-800: #0d1519;
+  --color-ink-700: #121d23;
+  --color-ink-600: #1a2930;
+  --color-ink-500: #26393f;
+
+  --color-fog: #e8f1f3;
+  --color-fog-dim: #a3b6bb;
+
+  --color-teal-200: #a7eef2;
+  --color-teal-300: #6fe3ea;
+  --color-teal-400: #1bc3cd;
+  --color-teal-500: #12a3ad;
+  --color-teal-600: #0c7f88;
+  --color-teal-700: #0a5f66;
+  --color-teal-900: #062f34;
+
+  --color-ember: #ff5a3c;
+  --color-ember-dim: #b8402c;
+
+  --color-line: rgba(232, 241, 243, 0.09);
+  --color-line-strong: rgba(232, 241, 243, 0.18);
+
+  --font-display: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, "SF Mono", Menlo, monospace;
+
+  /* Type scale. Nothing on the site is smaller than 14px. Body copy is 17px. */
+  --text-xs: 0.875rem;
+  --text-xs--line-height: 1.5;
+  --text-sm: 0.9375rem;
+  --text-sm--line-height: 1.55;
+  --text-base: 1.0625rem;
+  --text-base--line-height: 1.65;
+  --text-lg: 1.1875rem;
+  --text-lg--line-height: 1.55;
+  --text-xl: 1.375rem;
+  --text-xl--line-height: 1.45;
+  --text-2xl: 1.625rem;
+  --text-2xl--line-height: 1.3;
+  --text-3xl: 2rem;
+  --text-3xl--line-height: 1.2;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@layer base {
+  :root {
+    color-scheme: dark;
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    :root {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  body {
+    background-color: var(--color-ink-950);
+    color: var(--color-fog);
+    font-family: var(--font-sans);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3, h4, h5 {
+    font-family: var(--font-display);
+    letter-spacing: -0.025em;
+    text-wrap: balance;
+    overflow-wrap: break-word;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-teal-400);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  ::selection {
+    background: var(--color-teal-400);
+    color: var(--color-ink-950);
+  }
+
+  input[type="range"] {
+    accent-color: var(--color-teal-400);
+  }
+}
+
+@layer components {
+  .shell {
+    width: 100%;
+    max-width: 80rem;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+  @media (min-width: 768px) {
+    .shell { padding-inline: 2.5rem; }
+  }
+
+  .h-display {
+    font-size: clamp(2.5rem, 6.4vw, 5.25rem);
+    line-height: 1;
+    font-weight: 600;
+  }
+  .h-section {
+    font-size: clamp(1.9rem, 4.2vw, 3.25rem);
+    line-height: 1.05;
+    font-weight: 600;
+  }
+  .h-card {
+    font-size: clamp(1.25rem, 1.8vw, 1.5rem);
+    line-height: 1.25;
+    font-weight: 600;
+  }
+  .lede {
+    font-size: clamp(1.125rem, 1.5vw, 1.3125rem);
+    line-height: 1.6;
+  }
+
+  /* Small mono label above headings. Reads as instrumentation. */
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--color-teal-400);
+  }
+
+  .mono {
+    font-family: var(--font-mono);
+    font-feature-settings: "tnum" 1;
+  }
+
+  /* Engineering-drawing grid behind sections. */
+  .grid-bg {
+    background-image:
+      linear-gradient(to right, rgba(232, 241, 243, 0.045) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(232, 241, 243, 0.045) 1px, transparent 1px);
+    background-size: 4rem 4rem;
+    mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 30%, transparent 100%);
+  }
+
+  /* Card with a hairline border, a hover glow that follows the pointer, and
+     bracketed corners. The pointer position comes from TechCard. */
+  .tech-card {
+    position: relative;
+    border: 1px solid var(--color-line);
+    background:
+      radial-gradient(28rem circle at var(--mx, 50%) var(--my, 50%), rgba(27, 195, 205, 0.09), transparent 45%),
+      var(--color-ink-900);
+    transition: border-color 0.4s var(--ease-out-expo), transform 0.5s var(--ease-out-expo);
+  }
+  .tech-card:hover {
+    border-color: var(--color-line-strong);
+  }
+  .tech-card::before,
+  .tech-card::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-color: var(--color-teal-400);
+    border-style: solid;
+    opacity: 0.55;
+    pointer-events: none;
+  }
+  .tech-card::before {
+    top: -1px;
+    left: -1px;
+    border-width: 1px 0 0 1px;
+  }
+  .tech-card::after {
+    bottom: -1px;
+    right: -1px;
+    border-width: 0 1px 1px 0;
+  }
+
+  .hairline {
+    border-color: var(--color-line);
+  }
+}
+
+/* Underline that draws in on hover. */
+.link-underline {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1px;
+  background-repeat: no-repeat;
+  background-position: left 100%;
+  transition: background-size 0.4s var(--ease-out-expo);
+}
+.link-underline:hover,
+.link-underline[data-active="true"] {
+  background-size: 100% 1px;
+}
+
+/* Scroll reveal. The hidden state is only ever applied by Reveal after
+   hydration, so server-rendered content is visible by default. */
+[data-reveal] {
+  transition:
+    opacity 0.75s var(--ease-out-expo),
+    transform 0.75s var(--ease-out-expo);
+}
+[data-reveal="hidden"] {
+  opacity: 0;
+  transform: translateY(24px);
+}
+[data-reveal="shown"] {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* Standards ticker. Two copies of the list scroll by half their width. */
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.ticker {
+  animation: ticker 48s linear infinite;
+}
+.ticker-wrap:hover .ticker {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .ticker {
+    animation: none;
+  }
+}
+
+/* Slow pulse for the "in development" status dot and the current roadmap node. */
+@keyframes pulse-ring {
+  0% { transform: scale(1); opacity: 0.7; }
+  100% { transform: scale(2.6); opacity: 0; }
+}
+.pulse-ring::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background: currentColor;
+  animation: pulse-ring 2.2s var(--ease-out-expo) infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .pulse-ring::after {
+    animation: none;
+    opacity: 0;
+  }
+}

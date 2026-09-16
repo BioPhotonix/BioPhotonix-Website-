@@ -1,0 +1,101 @@
+import type { Metadata } from "next";
+import Accordion from "@/components/Accordion";
+import Button from "@/components/Button";
+import ContactForm from "@/components/ContactForm";
+import RevenueCalculator from "@/components/RevenueCalculator";
+import Reveal from "@/components/Reveal";
+import SectionHeading from "@/components/SectionHeading";
+import TechCard from "@/components/TechCard";
+import { clinics, faq } from "@/content/site";
+
+export const metadata: Metadata = {
+  title: "Revolux for Clinics",
+  description:
+    "Bring active dry AMD intervention into your optometry or ophthalmology practice: a five-step pathway, no upfront cost, and recurring revenue that scales with patient volume.",
+  alternates: { canonical: "/clinics" },
+};
+
+export default function ClinicsPage() {
+  return (
+    <>
+      <section className="relative overflow-hidden pt-32 md:pt-40">
+        <div aria-hidden="true" className="grid-bg absolute inset-0" />
+        <div className="shell relative">
+          <p className="eyebrow">{clinics.eyebrow}</p>
+          <h1 className="h-display mt-5 max-w-4xl text-fog">{clinics.title}</h1>
+          <p className="lede mt-7 max-w-2xl text-fog/75">{clinics.intro}</p>
+          <div className="mt-10 flex flex-wrap gap-3">
+            <Button href="#register">{clinics.cta.label}</Button>
+            <Button href="#economics" variant="outline">
+              Practice economics
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      <section className="shell py-20 md:py-28">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {clinics.props.map((p, i) => (
+            <Reveal key={p.title} delay={(i % 3) * 0.08}>
+              <TechCard className="h-full p-7">
+                <span className="mono text-xs text-teal-400">{String(i + 1).padStart(2, "0")}</span>
+                <h2 className="mt-3 font-display text-lg font-semibold text-fog">{p.title}</h2>
+                <p className="mt-2 text-sm leading-relaxed text-fog/65">{p.body}</p>
+              </TechCard>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      {/* Pathway */}
+      <section className="border-y border-line bg-ink-900 py-20 md:py-28">
+        <div className="shell">
+          <SectionHeading eyebrow="In practice" title={clinics.workflow.title} intro={clinics.workflow.intro} />
+          <ol className="mt-14 grid gap-px overflow-hidden rounded-2xl border border-line bg-line md:grid-cols-5">
+            {clinics.workflow.steps.map((s, i) => (
+              <Reveal key={s.title} as="li" delay={i * 0.08} className="bg-ink-950 p-6">
+                <span className="mono text-xs text-teal-400">{String(i + 1).padStart(2, "0")}</span>
+                <h3 className="mt-3 font-display text-xl font-semibold text-fog">{s.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-fog/65">{s.body}</p>
+              </Reveal>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      {/* Economics */}
+      <section id="economics" className="shell scroll-mt-24 py-20 md:py-28">
+        <SectionHeading eyebrow={clinics.calculator.eyebrow} title={clinics.calculator.title} intro={clinics.calculator.intro} />
+        <Reveal className="mt-12">
+          <RevenueCalculator />
+        </Reveal>
+      </section>
+
+      {/* FAQ */}
+      <section className="border-y border-line bg-ink-900 py-20 md:py-28">
+        <div className="shell grid gap-12 lg:grid-cols-12 lg:gap-16">
+          <div className="lg:col-span-4">
+            <SectionHeading eyebrow={faq.eyebrow} title={faq.title} intro={faq.intro} />
+          </div>
+          <Reveal className="lg:col-span-8">
+            <Accordion items={faq.items} />
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Register */}
+      <section id="register" className="shell scroll-mt-24 py-20 md:py-28">
+        <div className="grid gap-12 md:grid-cols-2 md:gap-16">
+          <Reveal>
+            <p className="eyebrow">Register your interest</p>
+            <h2 className="h-section mt-4 text-fog">{clinics.cta.title}</h2>
+            <p className="lede mt-6 max-w-md text-fog/75">{clinics.cta.body}</p>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <ContactForm kind="clinic" />
+          </Reveal>
+        </div>
+      </section>
+    </>
+  );
+}
