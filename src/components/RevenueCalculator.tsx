@@ -1,9 +1,38 @@
 "use client";
 
-import { useId, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import { clinics } from "@/content/site";
 
 const gbp = (n: number) => `£${n.toLocaleString("en-GB")}`;
+
+/**
+ * Follows a value rather than jumping to it, so dragging the slider reads as
+ * the money moving. Snaps straight to the target under reduced motion.
+ */
+function useTween(target: number, ms = 320) {
+  const [value, setValue] = useState(target);
+  const from = useRef(target);
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      from.current = target;
+      setValue(target);
+      return;
+    }
+    const start = from.current;
+    const t0 = performance.now();
+    let raf = 0;
+    const tick = (now: number) => {
+      const t = Math.min(1, (now - t0) / ms);
+      const next = start + (target - start) * (1 - Math.pow(1 - t, 3));
+      from.current = next;
+      setValue(next);
+      if (t < 1) raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, [target, ms]);
+  return value;
+}
 
 /**
  * Monthly and annual profit for a given number of patients a month, using the
@@ -15,6 +44,8 @@ export default function RevenueCalculator() {
   const id = useId();
   const monthly = perPatient * patients - fixed;
   const annual = monthly * 12;
+  const shownMonthly = Math.round(useTween(monthly));
+  const shownAnnual = Math.round(useTween(annual));
   const pct = ((patients - 1) / (max - 1)) * 100;
 
   return (
@@ -45,12 +76,12 @@ export default function RevenueCalculator() {
             <div className="bg-ink-950 p-5">
               <p className="figure text-xs uppercase tracking-[0.13em] text-fog/50">Monthly profit</p>
               <p className="mt-2 text-2xl font-medium text-fog md:text-3xl" aria-live="polite">
-                {gbp(monthly)}
+                {gbp(shownMonthly)}
               </p>
             </div>
             <div className="bg-ink-950 p-5">
               <p className="figure text-xs uppercase tracking-[0.13em] text-fog/50">Annual profit</p>
-              <p className="mt-2 text-2xl font-medium text-fog md:text-3xl">{gbp(annual)}</p>
+              <p className="mt-2 text-2xl font-medium text-fog md:text-3xl">{gbp(shownAnnual)}</p>
             </div>
           </div>
         </div>
@@ -71,7 +102,13 @@ export default function RevenueCalculator() {
                   className="group relative flex h-full flex-1 items-end"
                 >
                   <span
-                    className={`w-full rounded-t-sm transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${on ? "bg-teal-400" : "bg-ink-600 group-hover:bg-ink-500"}`}
+                    className={`w-full rounded-t-sm transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                      n === patients
+                        ? "bg-teal-300 shadow-[0_0_20px_rgba(27,195,205,0.45)]"
+                        : on
+                          ? "bg-teal-500"
+                          : "bg-ink-600 group-hover:bg-ink-500"
+                    }`}
                     style={{ height: `${h}%` }}
                   />
                 </button>

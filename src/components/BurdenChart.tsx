@@ -52,7 +52,8 @@ export default function BurdenChart({ layout = "side" }: Props) {
               key={i}
               variants={{ hidden: { opacity: 0, scale: 0.4, transition: still }, shown: { opacity: 1, scale: 1 } }}
               transition={{ delay: 0.15 + i * 0.008, duration: 0.4, ease }}
-              className={`aspect-square rounded-[3px] ${i < dryCells ? "bg-teal-500" : "bg-ember-deep"}`}
+              style={i >= dryCells ? { animationDelay: `${(i - dryCells) * 0.22}s` } : undefined}
+              className={`aspect-square rounded-[3px] ${i < dryCells ? "bg-teal-500" : "bg-ember-deep wet-pulse"}`}
             />
           ))}
         </div>

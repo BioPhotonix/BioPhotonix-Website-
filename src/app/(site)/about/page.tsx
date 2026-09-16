@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Button from "@/components/Button";
+import CardMark from "@/components/CardMark";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
 import TechCard from "@/components/TechCard";
@@ -62,7 +63,8 @@ export default function AboutPage() {
           {about.values.items.map((v, i) => (
             <Reveal key={v.title} delay={i * 0.08}>
               <TechCard className="h-full p-7">
-                <h3 className="font-display text-lg font-semibold text-fog">{v.title}</h3>
+                <CardMark kind={v.mark} className="h-10 w-10" />
+                <h3 className="mt-5 font-display text-lg font-semibold text-fog">{v.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-fog/65">{v.body}</p>
               </TechCard>
             </Reveal>

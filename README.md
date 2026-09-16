@@ -81,6 +81,22 @@ All in `src/components`:
 - **RevenueCalculator** is the slider on the clinics page. Its numbers are
   fitted to the figures the FAQ publishes (see below).
 - **StandardsTicker** scrolls the standards Revolux is built against.
+- **RevoluxAnatomy** puts technical callouts over the device render on
+  `/technology`. They arrive one at a time and then stay; hovering a part in
+  the list emphasises it. The overlay is one 1198x1306 coordinate space with
+  the render occupying x 260 to 938 inside it, so leader lines never drift.
+  Coordinates live in `anatomy.parts` in `site.ts`. **Every label is limited to
+  what the company has already published**; do not add internal detail there
+  without a source.
+- **TreatmentCourse** fills the nine sessions week by week with the treatment
+  time counting up. Used on `/technology` and `/clinics`.
+- **CardMark** draws the small marks on the cards that would otherwise carry
+  only a number and a paragraph. Eighteen motifs, each named in `site.ts` by
+  the `mark` key on its item, all built from the same 2px stroked line as the
+  larger diagrams.
+- **CountUp** counts a figure written as text, used for the investor
+  headlines. It animates only a value containing exactly one number, so
+  "200M" counts while "85-90%" and "Class IIa" are left alone.
 
 Nothing on the site is a photograph of a patient or a treatment outcome. The
 article covers are drawn in code (`PostArt`) rather than being the
@@ -198,7 +214,8 @@ supplied logo is kept at `public/images/logo-light-bg.png`.
   hydration and only to content below the fold, so a failed script or a
   missed observer can never leave the page blank.
 - `prefers-reduced-motion` disables every animation, including the canvas,
-  the count-up figures, the ticker and the diagrams' pulses.
+  the count-up figures, the ticker, the card marks, the article covers and
+  the diagrams' pulses. Each of those renders in its finished state instead.
 - The explainer tabs and the calculator bars are keyboard operable, every
   diagram has a text description, and the page outline never skips a heading
   level.

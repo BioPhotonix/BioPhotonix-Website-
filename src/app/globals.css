@@ -239,6 +239,65 @@
   }
 }
 
+/* The ten wet-AMD squares keep a slow pulse, so the grid stays alive once it
+   has drawn and the minority the innovation went to stays legible. */
+@keyframes wet-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.45; }
+}
+.wet-pulse {
+  animation: wet-pulse 3.4s ease-in-out infinite;
+}
+
+/* Cover art for an article. Drawn once when the card arrives, then the
+   moving parts keep going while it is on screen. */
+.art [data-art-draw] {
+  stroke-dasharray: 620;
+  stroke-dashoffset: 620;
+}
+.art.is-live [data-art-draw] {
+  animation: mark-draw 1.4s var(--ease-out-expo) forwards;
+}
+.art [data-art-pop] {
+  opacity: 0;
+  transform: scale(0.55);
+  transform-origin: center;
+}
+.art.is-live [data-art-pop] {
+  animation: art-pop 0.5s var(--ease-out-expo) forwards;
+}
+@keyframes art-pop {
+  to { opacity: 1; transform: scale(1); }
+}
+.art.is-live [data-art-pulse] {
+  animation: wet-pulse 2.8s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .art [data-art-draw] { stroke-dashoffset: 0; }
+  .art [data-art-pop] { opacity: 1; transform: none; }
+  .wet-pulse, .art [data-art-pulse] { animation: none; }
+}
+
+/* Card marks. Every stroked element draws itself once when the card arrives.
+   A dash pattern longer than any path in the set lets one rule cover them all. */
+.mark [stroke] {
+  stroke-dasharray: 260;
+  stroke-dashoffset: 260;
+}
+.mark.is-drawn [stroke] {
+  animation: mark-draw 1.1s var(--ease-out-expo) forwards;
+}
+@keyframes mark-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mark [stroke] {
+    stroke-dashoffset: 0;
+  }
+}
+
 /* Standards ticker. Two copies of the list scroll by half their width. */
 @keyframes ticker {
   from { transform: translateX(0); }

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import BurdenChart from "@/components/BurdenChart";
 import ContactForm from "@/components/ContactForm";
+import CountUp from "@/components/CountUp";
 import Reveal from "@/components/Reveal";
 import Roadmap from "@/components/Roadmap";
 import SectionHeading from "@/components/SectionHeading";
@@ -30,7 +31,9 @@ export default function InvestorsPage() {
               <div key={h.label} className="bg-ink-950/80 p-6">
                 <dt className="figure text-xs uppercase tracking-[0.13em] text-fog/50">{h.label}</dt>
                 <dd>
-                  <span className="mt-2 block text-3xl font-medium text-fog">{h.value}</span>
+                  <span className="mt-2 block text-3xl font-medium text-fog">
+                    <CountUp value={h.value} />
+                  </span>
                   <span className="mt-2 block text-sm text-fog/60">{h.body}</span>
                 </dd>
               </div>

@@ -6,6 +6,7 @@ import ContactForm from "@/components/ContactForm";
 import Hero from "@/components/Hero";
 import PathwayDiagram from "@/components/PathwayDiagram";
 import PostArt from "@/components/PostArt";
+import CardMark from "@/components/CardMark";
 import Reveal from "@/components/Reveal";
 import Roadmap from "@/components/Roadmap";
 import SectionHeading from "@/components/SectionHeading";
@@ -124,8 +125,11 @@ export default function HomePage() {
           {clinics.props.map((p, i) => (
             <Reveal key={p.title} delay={(i % 3) * 0.08}>
               <TechCard className="h-full p-7">
-                <span className="figure text-xs text-teal-400">{String(i + 1).padStart(2, "0")}</span>
-                <h3 className="mt-3 font-display text-lg font-semibold text-fog">{p.title}</h3>
+                <div className="flex items-start justify-between gap-4">
+                  <span className="text-xs font-semibold tracking-[0.13em] text-teal-400">{String(i + 1).padStart(2, "0")}</span>
+                  <CardMark kind={p.mark} className="h-10 w-10 shrink-0" />
+                </div>
+                <h3 className="mt-4 font-display text-lg font-semibold text-fog">{p.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-fog/65">{p.body}</p>
               </TechCard>
             </Reveal>

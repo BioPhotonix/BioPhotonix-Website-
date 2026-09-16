@@ -2,13 +2,16 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Accordion from "@/components/Accordion";
 import Button from "@/components/Button";
+import CardMark from "@/components/CardMark";
 import RetinaExplainer from "@/components/RetinaExplainer";
+import RevoluxAnatomy from "@/components/RevoluxAnatomy";
 import Reveal from "@/components/Reveal";
 import RevoluxExplainer from "@/components/RevoluxExplainer";
 import SectionHeading from "@/components/SectionHeading";
 import StandardsTicker from "@/components/StandardsTicker";
 import TechCard from "@/components/TechCard";
-import { explainer, faq, retina, revolux, safety, shift } from "@/content/site";
+import TreatmentCourse from "@/components/TreatmentCourse";
+import { anatomy, course, explainer, faq, retina, revolux, safety, shift } from "@/content/site";
 
 export const metadata: Metadata = {
   title: "Revolux Technology",
@@ -67,6 +70,16 @@ export default function TechnologyPage() {
         </div>
       </section>
 
+      {/* Anatomy */}
+      <section className="border-y border-line bg-ink-900 py-20 md:py-28">
+        <div className="shell">
+          <SectionHeading eyebrow={anatomy.eyebrow} title={anatomy.title} intro={anatomy.intro} />
+          <div className="mt-14">
+            <RevoluxAnatomy />
+          </div>
+        </div>
+      </section>
+
       {/* Intelligent delivery */}
       <section className="shell py-20 md:py-28">
         <SectionHeading eyebrow={explainer.eyebrow} title={explainer.title} intro={explainer.intro} />
@@ -94,6 +107,18 @@ export default function TechnologyPage() {
         </div>
       </section>
 
+      {/* Course */}
+      <section className="shell py-20 md:py-28">
+        <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
+          <div className="lg:col-span-5">
+            <SectionHeading eyebrow={course.eyebrow} title={course.title} intro={course.intro} />
+          </div>
+          <Reveal delay={0.1} className="lg:col-span-7 lg:self-center">
+            <TreatmentCourse />
+          </Reveal>
+        </div>
+      </section>
+
       {/* Safety */}
       <section className="shell py-20 md:py-28">
         <SectionHeading eyebrow={safety.eyebrow} title={safety.title} intro={safety.intro} />
@@ -101,7 +126,8 @@ export default function TechnologyPage() {
           {safety.items.map((s, i) => (
             <Reveal key={s.title} delay={i * 0.08}>
               <TechCard className="h-full p-7">
-                <h3 className="font-display text-lg font-semibold text-fog">{s.title}</h3>
+                <CardMark kind={s.mark} className="h-10 w-10" />
+                <h3 className="mt-5 font-display text-lg font-semibold text-fog">{s.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-fog/65">{s.body}</p>
               </TechCard>
             </Reveal>
