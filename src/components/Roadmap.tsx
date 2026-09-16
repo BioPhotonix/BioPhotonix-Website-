@@ -40,13 +40,13 @@ export default function Roadmap() {
             </span>
             <Reveal delay={Math.min(i * 0.05, 0.2)}>
               <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
-                <span className="mono text-xs uppercase tracking-[0.16em] text-fog/50">{s.tag}</span>
-                <span className={`mono text-xs uppercase tracking-[0.16em] ${done ? "text-teal-400" : now ? "text-teal-300" : "text-fog/40"}`}>
+                <span className="figure text-xs uppercase tracking-[0.13em] text-fog/70">{s.tag}</span>
+                <span className={`figure text-xs uppercase tracking-[0.13em] ${done ? "text-teal-400" : now ? "text-teal-300" : "text-fog/70"}`}>
                   {statusLabel[s.status]}
                 </span>
               </div>
-              <h3 className={`mt-2 font-display text-2xl font-semibold ${s.status === "upcoming" ? "text-fog/70" : "text-fog"}`}>{s.title}</h3>
-              <p className="mt-3 max-w-xl text-base leading-relaxed text-fog/70">{s.body}</p>
+              <h3 className={`mt-2 font-display text-2xl font-semibold ${s.status === "upcoming" ? "text-fog/75" : "text-fog"}`}>{s.title}</h3>
+              <p className="mt-3 max-w-xl text-base leading-relaxed text-fog/75">{s.body}</p>
             </Reveal>
           </li>
         );

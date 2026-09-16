@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import BurdenChart from "@/components/BurdenChart";
 import ContactForm from "@/components/ContactForm";
+import CountUp from "@/components/CountUp";
 import Reveal from "@/components/Reveal";
 import Roadmap from "@/components/Roadmap";
 import SectionHeading from "@/components/SectionHeading";
@@ -28,10 +29,12 @@ export default function InvestorsPage() {
           <dl className="mt-14 grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
             {investors.highlights.map((h) => (
               <div key={h.label} className="bg-ink-950/80 p-6">
-                <dt className="mono text-xs uppercase tracking-[0.16em] text-fog/50">{h.label}</dt>
+                <dt className="figure text-xs uppercase tracking-[0.13em] text-fog/70">{h.label}</dt>
                 <dd>
-                  <span className="mono mt-2 block text-3xl font-medium text-fog">{h.value}</span>
-                  <span className="mt-2 block text-sm text-fog/60">{h.body}</span>
+                  <span className="mt-2 block text-3xl font-medium text-fog">
+                    <CountUp value={h.value} />
+                  </span>
+                  <span className="mt-2 block text-sm text-fog/75">{h.body}</span>
                 </dd>
               </div>
             ))}
@@ -53,7 +56,7 @@ export default function InvestorsPage() {
             </Reveal>
           </div>
           <div className="lg:col-span-7">
-            <BurdenChart />
+            <BurdenChart layout="stack" />
           </div>
         </div>
       </section>
@@ -114,14 +117,14 @@ export default function InvestorsPage() {
                   </div>
                   <div className="p-5">
                     <h3 className="font-display text-lg font-semibold text-fog">{p.name}</h3>
-                    <p className="mt-1 text-sm leading-relaxed text-fog/60">{p.role}</p>
+                    <p className="mt-1 text-sm leading-relaxed text-fog/75">{p.role}</p>
                   </div>
                 </TechCard>
               </Reveal>
             ))}
           </div>
           <Reveal className="mt-10 flex flex-wrap gap-x-8 gap-y-3 border-t border-line pt-8">
-            <span className="mono text-xs uppercase tracking-[0.16em] text-fog/50">{partners.title}</span>
+            <span className="figure text-xs uppercase tracking-[0.13em] text-fog/70">{partners.title}</span>
             {partners.names.map((p) => (
               <span key={p.name} className="text-sm text-fog/80">
                 {p.name}
@@ -144,7 +147,7 @@ export default function InvestorsPage() {
           </Reveal>
         </div>
         <Reveal className="mt-16 border-t border-line pt-8">
-          <p className="max-w-3xl text-xs leading-relaxed text-fog/45">{investors.disclaimer}</p>
+          <p className="max-w-3xl text-xs leading-relaxed text-fog/70">{investors.disclaimer}</p>
         </Reveal>
       </section>
     </>

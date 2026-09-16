@@ -30,7 +30,7 @@ export default async function ContactPage({ searchParams }: Search) {
               {site.email}
             </a>
           </div>
-          <address className="mt-8 text-base not-italic leading-relaxed text-fog/65">
+          <address className="mt-8 text-base not-italic leading-relaxed text-fog/75">
             {site.legalName}
             <br />
             {site.address.line1}
@@ -39,7 +39,7 @@ export default async function ContactPage({ searchParams }: Search) {
             <br />
             {site.address.city} {site.address.postcode}, {site.address.country}
           </address>
-          <p className="mt-8 text-sm text-fog/50">{contact.responseNote}</p>
+          <p className="mt-8 text-sm text-fog/70">{contact.responseNote}</p>
         </div>
         <Reveal delay={0.1}>
           <h2 className="font-display text-2xl font-semibold text-fog">{contact.formTitle}</h2>

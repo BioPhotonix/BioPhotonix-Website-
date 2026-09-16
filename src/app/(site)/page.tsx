@@ -6,6 +6,7 @@ import ContactForm from "@/components/ContactForm";
 import Hero from "@/components/Hero";
 import PathwayDiagram from "@/components/PathwayDiagram";
 import PostArt from "@/components/PostArt";
+import CardMark from "@/components/CardMark";
 import Reveal from "@/components/Reveal";
 import Roadmap from "@/components/Roadmap";
 import SectionHeading from "@/components/SectionHeading";
@@ -32,10 +33,10 @@ export default function HomePage() {
             <Reveal key={s.label} delay={i * 0.06} className="bg-ink-900 p-7">
               <dt className="sr-only">{s.label}</dt>
               <dd>
-                <span className="mono block text-4xl font-medium text-fog md:text-5xl">
+                <span className="block text-4xl font-medium text-fog md:text-5xl">
                   <StatCounter value={s.value} prefix={s.prefix} suffix={s.suffix} />
                 </span>
-                <span className="mt-3 block text-sm leading-relaxed text-fog/65">{s.label}</span>
+                <span className="mt-3 block text-sm leading-relaxed text-fog/75">{s.label}</span>
               </dd>
             </Reveal>
           ))}
@@ -44,8 +45,8 @@ export default function HomePage() {
           <BurdenChart />
         </div>
         <Reveal className="mt-6 flex flex-col gap-3 rounded-2xl border border-line bg-ink-900 p-7 md:flex-row md:items-center md:gap-8">
-          <span className="mono text-4xl font-medium text-ember md:text-5xl">{burden.cost.value}</span>
-          <p className="text-base leading-relaxed text-fog/70">{burden.cost.label}</p>
+          <span className="text-4xl font-medium text-ember-text md:text-5xl">{burden.cost.value}</span>
+          <p className="text-base leading-relaxed text-fog/75">{burden.cost.label}</p>
         </Reveal>
       </section>
 
@@ -81,10 +82,10 @@ export default function HomePage() {
               style={{ background: "radial-gradient(circle, rgba(27,195,205,0.18) 0%, transparent 65%)" }}
             />
             <Image
-              src="/images/revolux-side.png"
+              src="/images/revolux-profile.png"
               alt="Side view of the Revolux device, showing the eyepiece and the handle"
-              width={448}
-              height={1282}
+              width={240}
+              height={657}
               sizes="(max-width: 1024px) 50vw, 25vw"
               className="relative mx-auto h-auto w-1/2 max-w-[14rem] drop-shadow-[0_30px_60px_rgba(27,195,205,0.2)] lg:w-3/5"
             />
@@ -103,7 +104,7 @@ export default function HomePage() {
                 <Reveal key={p.title} delay={i * 0.08}>
                   <TechCard className="h-full p-6">
                     <h3 className="font-display text-lg font-semibold text-fog">{p.title}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-fog/65">{p.body}</p>
+                    <p className="mt-2 text-sm leading-relaxed text-fog/75">{p.body}</p>
                   </TechCard>
                 </Reveal>
               ))}
@@ -124,9 +125,12 @@ export default function HomePage() {
           {clinics.props.map((p, i) => (
             <Reveal key={p.title} delay={(i % 3) * 0.08}>
               <TechCard className="h-full p-7">
-                <span className="mono text-xs text-teal-400">{String(i + 1).padStart(2, "0")}</span>
-                <h3 className="mt-3 font-display text-lg font-semibold text-fog">{p.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-fog/65">{p.body}</p>
+                <div className="flex items-start justify-between gap-4">
+                  <span className="text-xs font-semibold tracking-[0.13em] text-teal-400">{String(i + 1).padStart(2, "0")}</span>
+                  <CardMark kind={p.mark} className="h-10 w-10 shrink-0" />
+                </div>
+                <h3 className="mt-4 font-display text-lg font-semibold text-fog">{p.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-fog/75">{p.body}</p>
               </TechCard>
             </Reveal>
           ))}
@@ -175,7 +179,7 @@ export default function HomePage() {
             </Reveal>
             <Reveal className="mt-8">
               <p className="font-display text-xl font-semibold text-fog">{founder.name}</p>
-              <p className="text-sm text-fog/60">
+              <p className="text-sm text-fog/75">
                 {founder.role} &middot; {founder.qualifications.join(", ")}
               </p>
               <div className="mt-6">
@@ -208,11 +212,11 @@ export default function HomePage() {
                       <PostArt kind={p.art} className="transition-transform duration-700 group-hover:scale-[1.03]" />
                     </div>
                     <div className="p-6">
-                      <p className="mono text-xs uppercase tracking-[0.16em] text-fog/50">
+                      <p className="figure text-xs uppercase tracking-[0.13em] text-fog/70">
                         {formatDate(p.date)} &middot; {p.readingMinutes} min
                       </p>
                       <h3 className="mt-3 font-display text-lg font-semibold leading-snug text-fog">{p.title}</h3>
-                      <p className="mt-3 text-sm leading-relaxed text-fog/65">{p.excerpt}</p>
+                      <p className="mt-3 text-sm leading-relaxed text-fog/75">{p.excerpt}</p>
                     </div>
                   </TechCard>
                 </Link>
@@ -236,7 +240,7 @@ export default function HomePage() {
               <a href={`mailto:${site.email}`} className="link-underline w-fit break-all text-fog">
                 {site.email}
               </a>
-              <address className="text-base not-italic leading-relaxed text-fog/65">
+              <address className="text-base not-italic leading-relaxed text-fog/75">
                 {site.address.line1}, {site.address.line2}
                 <br />
                 {site.address.city} {site.address.postcode}, {site.address.country}

@@ -68,19 +68,18 @@ export const burden = {
     { value: 200, suffix: "M", label: "people worldwide living with age-related macular degeneration" },
     { value: 90, suffix: "%", label: "of AMD is the dry form, with limited approved treatment options" },
     { value: 500, prefix: ">", suffix: "k", label: "people progress to severe vision loss from AMD each year" },
-    { value: 44, prefix: "+", suffix: "%", label: "increase in AMD prevalence expected by 2040" },
+    { value: 47, prefix: "+", suffix: "%", label: "increase in AMD prevalence expected between 2020 and 2040" },
     { value: 2, prefix: "×", label: "higher risk of cognitive decline and dementia with vision impairment" },
     { value: 3, prefix: "Top ", label: "vision loss ranks among the three most feared health outcomes" },
   ],
-  chart: {
+  prevalence: {
     title: "People living with AMD worldwide",
-    unit: "million",
-    bars: [
-      { label: "2020", value: 196 },
-      { label: "2040", value: 288 },
-    ],
-    note: "Projected growth of 44% as populations age.",
-    source: "Wong et al., The Lancet Global Health, 2014",
+    /** Million people per figure in the frame. */
+    perFigure: 2,
+    start: { year: 2020, millions: 196 },
+    end: { year: 2040, millions: 288 },
+    note: "Each figure is two million people. The dark centre of every head is the central vision that dry AMD takes.",
+    source: "Wong et al., The Lancet Global Health, 2014. Years between the two published figures are a straight line between them.",
   },
   split: {
     title: "Where the innovation has gone",
@@ -139,6 +138,126 @@ export const revolux = {
     { label: "Supervision", value: "Clinician-initiated" },
   ],
   cta: { label: "Explore the technology", href: "/technology" },
+};
+
+export const anatomy = {
+  eyebrow: "Inside Revolux",
+  title: "Built part by part around a repeatable dose.",
+  intro:
+    "Every element of the platform exists to put a known quantity of light on the retina, the same way, in every clinic. Each part is described here only as far as the published development record allows.",
+  /**
+   * The development prototype from five angles. The callouts are anchored to
+   * the straight-on front view, so they only appear on that one; the other
+   * views carry a caption instead.
+   */
+  views: [
+    {
+      id: "front",
+      label: "Front",
+      src: "/images/revolux-front.png",
+      width: 305,
+      height: 660,
+      alt: "The Revolux prototype seen head on from the clinician's side, showing both eyepieces with their rings of emitters around a central aperture",
+      caption: "The clinician's side. Each eyepiece carries a ring of emitters around a central aperture.",
+    },
+    {
+      id: "patient",
+      label: "Patient's side",
+      src: "/images/revolux-patient.png",
+      width: 296,
+      height: 663,
+      alt: "The Revolux prototype seen from the patient's side, showing the two soft eyecups the patient looks into",
+      caption: "What the patient sees. Two eyecups, held at a fixed separation, for a five-minute session.",
+    },
+    {
+      id: "profile",
+      label: "Profile",
+      src: "/images/revolux-profile.png",
+      width: 240,
+      height: 657,
+      alt: "The Revolux prototype in profile, showing the depth of the eyepiece housing above the control unit and handle",
+      caption: "In profile the depth of the housing is visible: the distance the light travels is fixed by the body itself.",
+    },
+    {
+      id: "three-quarter",
+      label: "Three-quarter",
+      src: "/images/revolux-three-quarter.png",
+      width: 354,
+      height: 669,
+      alt: "The Revolux prototype at three-quarters, showing the eyepieces, the hinged bridge, the control unit and the handle",
+      caption: "The whole instrument: hinged bridge, control unit and handle, held in one hand.",
+    },
+    {
+      id: "rear",
+      label: "Rear",
+      src: "/images/revolux-rear-quarter.png",
+      width: 357,
+      height: 658,
+      alt: "The Revolux prototype from behind, showing the controls on the back of the control unit",
+      caption: "The controls sit on the back of the unit, under the clinician's thumb.",
+    },
+  ],
+  /**
+   * Callouts over the front view. Coordinates are in the overlay's own
+   * 960 x 700 space, in which that render occupies x 318 to 642. `anchor` is
+   * the point on the device; `labelY` is where the label sits in its column.
+   * Nothing here claims more about the internals than the company has
+   * already published.
+   */
+  parts: [
+    {
+      id: "head",
+      label: "Binocular head",
+      side: "left" as const,
+      anchor: [482, 22] as const,
+      labelY: 74,
+      body: "Two eyepieces on a hinged bridge. This architecture is what holds the same source-to-eye distance and alignment for every patient, which is what makes the dose repeatable between clinics.",
+    },
+    {
+      id: "emitters",
+      label: "Emitter ring",
+      side: "left" as const,
+      anchor: [412, 156] as const,
+      labelY: 224,
+      body: "Red and near-infrared sources arranged in a ring around each aperture. Revolux combines the wavelengths with the strongest clinical effect on mitochondrial function in the retina.",
+    },
+    {
+      id: "optics",
+      label: "Optical train",
+      side: "right" as const,
+      anchor: [550, 156] as const,
+      labelY: 150,
+      body: "The path from each source to the retina, refined with optical engineering partners so that the light arriving at the macula is precise and repeatable rather than approximate.",
+    },
+    {
+      id: "control",
+      label: "Control unit",
+      side: "right" as const,
+      anchor: [477, 392] as const,
+      labelY: 396,
+      body: "Power and control. Dosage and irradiance are regulated and monitored for the whole of every session, and the soft-start profile is run from here.",
+    },
+    {
+      id: "interlocks",
+      label: "Safety interlocks",
+      side: "left" as const,
+      anchor: [477, 458] as const,
+      labelY: 486,
+      body: "Positional and physiological gating. Light is delivered only while every criterion is met, and each session is recorded against the clinician who initiated it.",
+    },
+  ],
+  note: "Renders of the current development prototype. The hardware configuration is approaching design freeze.",
+};
+
+export const course = {
+  eyebrow: "The course",
+  title: "Nine sessions over three weeks.",
+  intro:
+    "Three sessions a week, five minutes each. The schedule is designed to maximise cellular response while fitting into manageable clinic blocks.",
+  weeks: 3,
+  perWeek: 3,
+  minutesPerSession: 5,
+  footnote: "Forty-five minutes of treatment in total, across three weeks of ordinary appointments.",
 };
 
 export const explainer = {
@@ -202,14 +321,17 @@ export const safety = {
   items: [
     {
       title: "Medical device validation",
+      mark: "validated" as const,
       body: "Developed under an ISO 13485 quality management system, Revolux is engineered to meet Class IIa medical device standards under the EU MDR and UKCA, with validated optical, electrical and biological safety.",
     },
     {
       title: "Active safety interlocks",
+      mark: "interlocks" as const,
       body: "Multiple layers of interlocks and adaptive gating ensure light is only delivered when positional and physiological criteria are met. Dosage and irradiance are controlled and monitored for every treatment.",
     },
     {
       title: "Auditable care",
+      mark: "auditable" as const,
       body: "Unlike unsupervised consumer devices, Revolux is designed for accountability. Every session is clinician-initiated and digitally logged, keeping patients inside a managed, traceable care pathway.",
     },
   ],
@@ -232,26 +354,32 @@ export const clinics = {
   props: [
     {
       title: "Beyond generic light therapy",
+      mark: "tuned" as const,
       body: "Bespoke treatment protocols optimise retinal stimulation beyond generic or fixed photobiomodulation.",
     },
     {
       title: "Continuous revenue",
+      mark: "recurring" as const,
       body: "Repeatable treatment cycles generate sustainable recurring revenue that scales linearly with patient volume.",
     },
     {
       title: "Integrated workflows",
+      mark: "slots-in" as const,
       body: "Therapy slots into existing clinical workflows without dedicated space or fixed infrastructure.",
     },
     {
       title: "Intelligent insights",
+      mark: "report" as const,
       body: "Integrated software simplifies clinical reporting and supports decisions, reducing administrative burden.",
     },
     {
       title: "Consistent delivery",
+      mark: "consistent" as const,
       body: "Continuous care models replace passive management, keeping patients engaged with therapy over time.",
     },
     {
       title: "No upfront cost",
+      mark: "no-upfront" as const,
       body: "A low-friction subscription model eliminates high upfront costs, so the service is profitable from the start.",
     },
   ],
@@ -259,11 +387,11 @@ export const clinics = {
     title: "The clinical pathway",
     intro: "Five steps, all inside the practice. The device, the software and the protocol are designed around a standard appointment.",
     steps: [
-      { title: "Identify", body: "Adults aged 50 and over with early or intermediate dry AMD, found during routine examination or imaging." },
-      { title: "Screen", body: "Eligibility is confirmed and contraindications are managed by the supervising clinician before any treatment." },
-      { title: "Treat", body: "Nine five-minute binocular sessions over three weeks, three sessions a week, in a standard consulting room." },
-      { title: "Report", body: "Every session is logged. Clinician-ready reports and patient-friendly summaries are generated automatically." },
-      { title: "Continue", body: "Ongoing care replaces passive monitoring, with repeatable cycles delivered within a managed pathway." },
+      { title: "Identify", mark: "identify" as const, body: "Adults aged 50 and over with early or intermediate dry AMD, found during routine examination or imaging." },
+      { title: "Screen", mark: "screen" as const, body: "Eligibility is confirmed and contraindications are managed by the supervising clinician before any treatment." },
+      { title: "Treat", mark: "treat" as const, body: "Nine five-minute binocular sessions over three weeks, three sessions a week, in a standard consulting room." },
+      { title: "Report", mark: "record" as const, body: "Every session is logged. Clinician-ready reports and patient-friendly summaries are generated automatically." },
+      { title: "Continue", mark: "continue" as const, body: "Ongoing care replaces passive monitoring, with repeatable cycles delivered within a managed pathway." },
     ],
   },
   calculator: {
@@ -406,18 +534,22 @@ export const about = {
     items: [
       {
         title: "Clinician-led",
+        mark: "clinician-led" as const,
         body: "Powerful therapy requires expert supervision. Our technology is designed to be initiated and monitored by eye-care professionals.",
       },
       {
         title: "Evidence-first",
+        mark: "evidence" as const,
         body: "We prioritise clinical validation and regulatory compliance over speed to market.",
       },
       {
         title: "Patient-centric",
+        mark: "patient" as const,
         body: "We measure success not just by clinical biomarkers, but by the preservation of patient independence.",
       },
       {
         title: "Regulatory-first",
+        mark: "regulatory" as const,
         body: "A Class IIa device, an ISO 13485 quality system and a CE-first strategy. Safety is engineered in from the start, not added at the end.",
       },
     ],

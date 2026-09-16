@@ -51,7 +51,7 @@ export default function Hero() {
             <motion.dl {...rise(0.34)} className="mt-14 grid max-w-xl grid-cols-1 gap-px overflow-hidden rounded-xl border border-line bg-line sm:grid-cols-3">
               {hero.specs.map((s) => (
                 <div key={s.label} className="bg-ink-950/80 px-4 py-3.5 backdrop-blur">
-                  <dt className="mono text-xs uppercase tracking-[0.16em] text-fog/50">{s.label}</dt>
+                  <dt className="figure text-xs uppercase tracking-[0.13em] text-fog/70">{s.label}</dt>
                   <dd className="mt-1 text-sm font-medium text-fog">{s.value}</dd>
                 </div>
               ))}
@@ -82,10 +82,10 @@ export default function Hero() {
               className="relative mx-auto w-[62%] max-w-[22rem] lg:w-[68%]"
             >
               <Image
-                src="/images/revolux-front.png"
+                src="/images/revolux-three-quarter.png"
                 alt={hero.deviceAlt}
-                width={678}
-                height={1306}
+                width={354}
+                height={669}
                 priority
                 sizes="(max-width: 1024px) 60vw, 30vw"
                 className="h-auto w-full drop-shadow-[0_30px_60px_rgba(27,195,205,0.25)]"

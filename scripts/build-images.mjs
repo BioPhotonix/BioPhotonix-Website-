@@ -24,9 +24,46 @@ for (const [src, dest, resize] of jobs) {
   console.log("wrote", dest);
 }
 
-// Device renders have transparent backgrounds. Trim the empty space and keep alpha.
-for (const [src, dest] of [["revolux-side.png", "revolux-side.png"], ["revolux-front.png", "revolux-front.png"]]) {
-  await sharp(`source-images/${src}`).trim().resize({ width: 1400, withoutEnlargement: true }).png({ compressionLevel: 9, palette: false }).toFile(`${out}/${dest}`);
+/**
+ * The Revolux V2 renders. They arrive on a transparent background inside a
+ * fixed landscape frame, so sharp's `trim` cannot find them: it compares RGB
+ * and the invisible pixels are not a uniform colour. Crop to the alpha
+ * bounding box instead, which is what actually marks the device.
+ */
+const views = [
+  ["revolux-v2-1.png", "revolux-three-quarter.png"],
+  ["revolux-v2-2.png", "revolux-rear-quarter.png"],
+  ["revolux-v2-3.png", "revolux-profile.png"],
+  ["revolux-v2-4.png", "revolux-front.png"],
+  ["revolux-v2-5.png", "revolux-patient.png"],
+];
+
+for (const [src, dest] of views) {
+  const { data, info } = await sharp(`source-images/${src}`).ensureAlpha().raw().toBuffer({ resolveWithObject: true });
+  let x0 = Infinity, y0 = Infinity, x1 = -1, y1 = -1;
+  for (let y = 0; y < info.height; y += 1) {
+    for (let x = 0; x < info.width; x += 1) {
+      if (data[(y * info.width + x) * 4 + 3] > 8) {
+        if (x < x0) x0 = x;
+        if (x > x1) x1 = x;
+        if (y < y0) y0 = y;
+        if (y > y1) y1 = y;
+      }
+    }
+  }
+  const pad = 8;
+  const left = Math.max(0, x0 - pad);
+  const top = Math.max(0, y0 - pad);
+  await sharp(`source-images/${src}`)
+    .extract({
+      left,
+      top,
+      width: Math.min(info.width - left, x1 - x0 + 1 + pad * 2),
+      height: Math.min(info.height - top, y1 - y0 + 1 + pad * 2),
+    })
+    .resize({ height: 1100, withoutEnlargement: true })
+    .png({ compressionLevel: 9 })
+    .toFile(`${out}/${dest}`);
   console.log("wrote", dest);
 }
 

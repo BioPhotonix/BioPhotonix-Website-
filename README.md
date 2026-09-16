@@ -63,8 +63,12 @@ All in `src/components`:
 - **PhotonField** draws photons drifting towards a focal point behind the hero,
   on a canvas. It pauses off screen and shows a single still frame under
   `prefers-reduced-motion`.
-- **BurdenChart** draws prevalence in 2020 against 2040 and a hundred-square
-  grid of dry against wet AMD. Used on the home and investors pages.
+- **PrevalenceFrame** is a frame of 144 figures, each two million people,
+  that fills from the 2020 figure to the 2040 one as the years advance. The
+  head of each affected figure has a dark centre for the central vision dry
+  AMD takes. It plays once on scroll, then the year can be dragged.
+- **BurdenChart** places that frame beside a hundred-square grid of dry
+  against wet AMD. Used on the home and investors pages.
 - **PathwayDiagram** lights up the care pathway as it is, then the pathway
   with Revolux.
 - **RevoluxExplainer** is a tablist with five drawings of the binocular head:
@@ -77,6 +81,24 @@ All in `src/components`:
 - **RevenueCalculator** is the slider on the clinics page. Its numbers are
   fitted to the figures the FAQ publishes (see below).
 - **StandardsTicker** scrolls the standards Revolux is built against.
+- **RevoluxAnatomy** shows the prototype from five angles with numbered
+  markers over the front view, keyed to the list beside it; hovering either
+  emphasises both. The markers arrive one at a time and then stay. The overlay
+  is one 960x700 coordinate space with the front render occupying x 318 to 642
+  inside it, so the markers never drift. Views and marker coordinates live in
+  `anatomy.views` and `anatomy.parts` in `site.ts`. **Every label is limited to
+  what the company has already published**; do not add internal detail there
+  without a source. Markers are anchored to the front view only, so the other
+  angles carry a caption instead.
+- **TreatmentCourse** fills the nine sessions week by week with the treatment
+  time counting up. Used on `/technology` and `/clinics`.
+- **CardMark** draws the small marks on the cards that would otherwise carry
+  only a number and a paragraph. Eighteen motifs, each named in `site.ts` by
+  the `mark` key on its item, all built from the same 2px stroked line as the
+  larger diagrams.
+- **CountUp** counts a figure written as text, used for the investor
+  headlines. It animates only a value containing exactly one number, so
+  "200M" counts while "85-90%" and "Class IIa" are left alone.
 
 Nothing on the site is a photograph of a patient or a treatment outcome. The
 article covers are drawn in code (`PostArt`) rather than being the
@@ -139,13 +161,27 @@ The Wix blog lived at `/post/<slug>`. `next.config.ts` redirects those, and
 points at Vercel, add it in Google Search Console and submit
 `https://www.biophotonix.co.uk/sitemap.xml`.
 
+## Typography
+
+Headlines are Source Serif 4 and everything else is Source Sans 3, a pair
+designed to work together and long used in scientific and medical publishing.
+There is deliberately no monospace face anywhere: section labels are the sans
+in letterspaced capitals, and figures use its tabular numerals only where
+numbers align in columns. Both faces load through `next/font` in
+`src/app/layout.tsx`; the roles are mapped in `globals.css`.
+
 ## Imagery
 
 `public/images/` holds web-sized copies made by `npm run build:images` from
-originals in `source-images/`, which is not committed (the originals run to
-10MB each). The originals are the founder portrait and clinic photograph, the
-three advisor portraits, the two Revolux renders and the brand mark, all
-carried over from the Wix media library. To add a photograph, drop the
+originals in `source-images/`, which is not committed. The originals are the
+founder portrait and clinic photograph, the three advisor portraits, the brand
+mark, and the five Revolux V2 renders.
+
+The V2 renders arrive on a transparent background inside a fixed landscape
+frame, so sharp's `trim` cannot find the device: it compares RGB and the
+invisible pixels are not a uniform colour. `build-images.mjs` crops to the
+**alpha** bounding box instead. If you add a render, drop it in
+`source-images/` and add a line to the `views` list in that script. To add a photograph, drop the
 original in `source-images/`, add a line to `scripts/build-images.mjs` and
 run it.
 
@@ -159,8 +195,9 @@ supplied logo is kept at `public/images/logo-light-bg.png`.
   articles: 200 million people with AMD, 288 million by 2040, 85 to 90% dry,
   more than 500,000 progressing to severe vision loss a year, twice the risk
   of cognitive decline, vision loss in the top three most feared outcomes, and
-  the $49 billion US economic burden. The prevalence chart cites Wong et al.,
-  The Lancet Global Health, 2014. Investors will ask for the rest; a source
+  the $49 billion US economic burden. The prevalence frame cites Wong et al.,
+  The Lancet Global Health, 2014, and the 47% growth figure is derived from
+  its two numbers (196 to 288 million). Investors will ask for the rest; a source
   for each belongs in `burden.stats` before a raise.
 - **The revenue calculator.** It is fitted to the FAQ's published examples
   (one, two and three patients a month generating £700, £1,600 and £2,500 of
@@ -178,13 +215,34 @@ supplied logo is kept at `public/images/logo-light-bg.png`.
 - **The founder's LinkedIn** link is Adail's personal profile; there is no
   company page yet.
 
+## Contrast and text size
+
+Every piece of text on the site was measured in the browser against the
+surface actually behind it, compositing each colour through a canvas so that
+Tailwind's `color-mix` opacities resolve the way they really paint. The audit
+found six outright WCAG AA failures and a wide band of supporting copy sitting
+between 4 and 6.5 to 1, which passes the AA floor but is tiring to read on a
+near-black page.
+
+The opacity ladder was raised so that **nothing on the site falls below
+7:1, the WCAG AAA threshold**: supporting text sits at 8.5:1, ordinary body
+copy near 10:1, and headings above 16:1. Ember set as text uses
+`--color-ember-text`, a lighter step of the same hue, because the graphic
+ember is only 6.2:1. The type scale moved up a step as well, so the smallest
+text on the site is 16px.
+
+This matters more here than on most sites: the readership is older clinicians
+and the subject is loss of central vision. If you add copy, keep it at
+`text-fog/70` or brighter, and re-run the audit rather than judging by eye.
+
 ## Accessibility
 
 - Content is server-rendered visible. Scroll animations are applied after
   hydration and only to content below the fold, so a failed script or a
   missed observer can never leave the page blank.
 - `prefers-reduced-motion` disables every animation, including the canvas,
-  the count-up figures, the ticker and the diagrams' pulses.
+  the count-up figures, the ticker, the card marks, the article covers and
+  the diagrams' pulses. Each of those renders in its finished state instead.
 - The explainer tabs and the calculator bars are keyboard operable, every
   diagram has a text description, and the page outline never skips a heading
   level.

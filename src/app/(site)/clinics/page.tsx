@@ -3,10 +3,12 @@ import Accordion from "@/components/Accordion";
 import Button from "@/components/Button";
 import ContactForm from "@/components/ContactForm";
 import RevenueCalculator from "@/components/RevenueCalculator";
+import TreatmentCourse from "@/components/TreatmentCourse";
+import CardMark from "@/components/CardMark";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
 import TechCard from "@/components/TechCard";
-import { clinics, faq } from "@/content/site";
+import { clinics, course, faq } from "@/content/site";
 
 export const metadata: Metadata = {
   title: "Revolux for Clinics",
@@ -38,9 +40,12 @@ export default function ClinicsPage() {
           {clinics.props.map((p, i) => (
             <Reveal key={p.title} delay={(i % 3) * 0.08}>
               <TechCard className="h-full p-7">
-                <span className="mono text-xs text-teal-400">{String(i + 1).padStart(2, "0")}</span>
-                <h2 className="mt-3 font-display text-lg font-semibold text-fog">{p.title}</h2>
-                <p className="mt-2 text-sm leading-relaxed text-fog/65">{p.body}</p>
+                <div className="flex items-start justify-between gap-4">
+                  <span className="text-xs font-semibold tracking-[0.13em] text-teal-400">{String(i + 1).padStart(2, "0")}</span>
+                  <CardMark kind={p.mark} className="h-10 w-10 shrink-0" />
+                </div>
+                <h2 className="mt-4 font-display text-lg font-semibold text-fog">{p.title}</h2>
+                <p className="mt-2 text-sm leading-relaxed text-fog/75">{p.body}</p>
               </TechCard>
             </Reveal>
           ))}
@@ -54,12 +59,25 @@ export default function ClinicsPage() {
           <ol className="mt-14 grid gap-px overflow-hidden rounded-2xl border border-line bg-line md:grid-cols-5">
             {clinics.workflow.steps.map((s, i) => (
               <Reveal key={s.title} as="li" delay={i * 0.08} className="bg-ink-950 p-6">
-                <span className="mono text-xs text-teal-400">{String(i + 1).padStart(2, "0")}</span>
-                <h3 className="mt-3 font-display text-xl font-semibold text-fog">{s.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-fog/65">{s.body}</p>
+                <CardMark kind={s.mark} className="h-9 w-9" />
+                <span className="mt-4 block text-xs font-semibold tracking-[0.13em] text-teal-400">{String(i + 1).padStart(2, "0")}</span>
+                <h3 className="mt-2 font-display text-xl font-semibold text-fog">{s.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-fog/75">{s.body}</p>
               </Reveal>
             ))}
           </ol>
+        </div>
+      </section>
+
+      {/* Course */}
+      <section className="shell py-20 md:py-28">
+        <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
+          <div className="lg:col-span-5">
+            <SectionHeading eyebrow={course.eyebrow} title={course.title} intro={course.intro} />
+          </div>
+          <Reveal delay={0.1} className="lg:col-span-7 lg:self-center">
+            <TreatmentCourse />
+          </Reveal>
         </div>
       </section>
 

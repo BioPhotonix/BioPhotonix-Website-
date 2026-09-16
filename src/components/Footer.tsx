@@ -27,7 +27,7 @@ export default function Footer() {
         <div className="grid gap-12 md:grid-cols-12">
           <div className="md:col-span-6">
             <Logo className="h-8" />
-            <p className="mt-6 max-w-md text-base leading-relaxed text-fog/70">{footer.blurb}</p>
+            <p className="mt-6 max-w-md text-base leading-relaxed text-fog/75">{footer.blurb}</p>
             <div className="mt-6 flex flex-col gap-1.5 text-base">
               <a href={site.phoneHref} className="link-underline w-fit text-fog/85 hover:text-fog">
                 {site.phone}
@@ -67,9 +67,9 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col gap-4 border-t border-line pt-8 text-sm text-fog/55 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-14 flex flex-col gap-4 border-t border-line pt-8 text-sm text-fog/70 sm:flex-row sm:items-center sm:justify-between">
           <p>&copy; {new Date().getFullYear()} {site.legalName}. Registered in Scotland.</p>
-          <p className="mono text-xs uppercase tracking-[0.16em]">Revolux is a medical device in development and is not yet available for sale.</p>
+          <p className="figure text-xs uppercase tracking-[0.13em]">Revolux is a medical device in development and is not yet available for sale.</p>
         </div>
       </div>
       <div style={{ height: "env(safe-area-inset-bottom, 0px)" }} aria-hidden="true" />

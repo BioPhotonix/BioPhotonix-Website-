@@ -22,23 +22,29 @@
   --color-teal-900: #062f34;
 
   --color-ember: #ff5a3c;
+  /* A lighter step of the same hue for ember set as text. The graphic ember is
+     6.2:1 on the near-black surfaces, which passes AA but not AAA; this is
+     7.9:1, so no text on the site falls below AAA. */
+  --color-ember-text: #ff7a5e;
+  /* Ember stepped down for chart marks on the dark surface; validated against
+     teal-500 for colour-vision separation and lightness. */
+  --color-ember-deep: #e0503a;
   --color-ember-dim: #b8402c;
 
-  --color-line: rgba(232, 241, 243, 0.09);
-  --color-line-strong: rgba(232, 241, 243, 0.18);
+  --color-line: rgba(232, 241, 243, 0.14);
+  --color-line-strong: rgba(232, 241, 243, 0.26);
 
-  --font-display: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-mono: var(--font-jetbrains), ui-monospace, "SF Mono", Menlo, monospace;
+  --font-display: var(--font-serif), ui-serif, Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-sans-3), ui-sans-serif, system-ui, sans-serif;
 
   /* Type scale. Nothing on the site is smaller than 14px. Body copy is 17px. */
-  --text-xs: 0.875rem;
+  --text-xs: 1rem;
   --text-xs--line-height: 1.5;
-  --text-sm: 0.9375rem;
+  --text-sm: 1.0625rem;
   --text-sm--line-height: 1.55;
-  --text-base: 1.0625rem;
+  --text-base: 1.125rem;
   --text-base--line-height: 1.65;
-  --text-lg: 1.1875rem;
+  --text-lg: 1.25rem;
   --text-lg--line-height: 1.55;
   --text-xl: 1.375rem;
   --text-xl--line-height: 1.45;
@@ -73,7 +79,7 @@
     background-color: var(--color-ink-950);
     color: var(--color-fog);
     font-family: var(--font-sans);
-    font-size: 1.0625rem;
+    font-size: 1.125rem;
     line-height: 1.65;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
@@ -81,7 +87,7 @@
 
   h1, h2, h3, h4, h5 {
     font-family: var(--font-display);
-    letter-spacing: -0.025em;
+    letter-spacing: -0.008em;
     text-wrap: balance;
     overflow-wrap: break-word;
   }
@@ -118,12 +124,12 @@
   }
 
   .h-display {
-    font-size: clamp(2.5rem, 6.4vw, 5.25rem);
+    font-size: clamp(2.625rem, 6.6vw, 5.5rem);
     line-height: 1;
     font-weight: 600;
   }
   .h-section {
-    font-size: clamp(1.9rem, 4.2vw, 3.25rem);
+    font-size: clamp(2rem, 4.4vw, 3.4rem);
     line-height: 1.05;
     font-weight: 600;
   }
@@ -137,19 +143,20 @@
     line-height: 1.6;
   }
 
-  /* Small mono label above headings. Reads as instrumentation. */
+  /* Small letterspaced label above a heading. The standing convention for
+     section labels in medical and scientific publishing. */
   .eyebrow {
-    font-family: var(--font-mono);
-    font-size: 0.875rem;
-    font-weight: 500;
-    letter-spacing: 0.16em;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--color-teal-400);
   }
 
-  .mono {
-    font-family: var(--font-mono);
-    font-feature-settings: "tnum" 1;
+  /* Figures: statistics, spec values, chart labels. Tabular so columns of
+     numbers line up, lining so they sit with capitals. */
+  .figure {
+    font-feature-settings: "tnum" 1, "lnum" 1;
   }
 
   /* Engineering-drawing grid behind sections. */
@@ -236,6 +243,65 @@
   }
 }
 
+/* The ten wet-AMD squares keep a slow pulse, so the grid stays alive once it
+   has drawn and the minority the innovation went to stays legible. */
+@keyframes wet-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.45; }
+}
+.wet-pulse {
+  animation: wet-pulse 3.4s ease-in-out infinite;
+}
+
+/* Cover art for an article. Drawn once when the card arrives, then the
+   moving parts keep going while it is on screen. */
+.art [data-art-draw] {
+  stroke-dasharray: 620;
+  stroke-dashoffset: 620;
+}
+.art.is-live [data-art-draw] {
+  animation: mark-draw 1.4s var(--ease-out-expo) forwards;
+}
+.art [data-art-pop] {
+  opacity: 0;
+  transform: scale(0.55);
+  transform-origin: center;
+}
+.art.is-live [data-art-pop] {
+  animation: art-pop 0.5s var(--ease-out-expo) forwards;
+}
+@keyframes art-pop {
+  to { opacity: 1; transform: scale(1); }
+}
+.art.is-live [data-art-pulse] {
+  animation: wet-pulse 2.8s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .art [data-art-draw] { stroke-dashoffset: 0; }
+  .art [data-art-pop] { opacity: 1; transform: none; }
+  .wet-pulse, .art [data-art-pulse] { animation: none; }
+}
+
+/* Card marks. Every stroked element draws itself once when the card arrives.
+   A dash pattern longer than any path in the set lets one rule cover them all. */
+.mark [stroke] {
+  stroke-dasharray: 260;
+  stroke-dashoffset: 260;
+}
+.mark.is-drawn [stroke] {
+  animation: mark-draw 1.1s var(--ease-out-expo) forwards;
+}
+@keyframes mark-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mark [stroke] {
+    stroke-dashoffset: 0;
+  }
+}
+
 /* Standards ticker. Two copies of the list scroll by half their width. */
 @keyframes ticker {
   from { transform: translateX(0); }
@@ -251,6 +317,30 @@
   .ticker {
     animation: none;
   }
+}
+
+/* The frame of people in PrevalenceFrame. A figure lights up when its two
+   million people are counted, and its head gains the dark centre. */
+.pf-head,
+.pf-body {
+  fill: rgba(232, 241, 243, 0.13);
+  transition: fill 0.45s var(--ease-out-expo);
+}
+.pf-on .pf-head,
+.pf-on .pf-body {
+  fill: var(--color-teal-500);
+}
+.pf-new .pf-head,
+.pf-new .pf-body {
+  fill: var(--color-teal-300);
+}
+.pf-scotoma {
+  fill: var(--color-ink-900);
+  opacity: 0;
+  transition: opacity 0.45s var(--ease-out-expo);
+}
+.pf-on .pf-scotoma {
+  opacity: 1;
 }
 
 /* Slow pulse for the "in development" status dot and the current roadmap node. */
