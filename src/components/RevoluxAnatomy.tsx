@@ -14,12 +14,21 @@ import { useRevealed } from "./useRevealed";
  * callout is present from the start.
  *
  * The overlay is a single 960 x 700 coordinate space with the front render
- * occupying x 318 to 642 inside it, so the leader lines and labels scale with
- * the image and never drift. They are anchored to that view alone, so
- * switching to another angle shows its caption instead. Below the medium
- * breakpoint there is no room for labels beside the device, so the numbered
- * list underneath carries them and the overlay shows only the anchor points.
+ * occupying x 318 to 642 inside it, so the anchors and leader lines scale with
+ * the image and never drift. The written labels are HTML positioned against
+ * the same coordinates rather than SVG text: SVG text scales with its
+ * container, which put these at about 13px on screen, below the 16px floor the
+ * rest of the site holds.
+ *
+ * Callouts belong to the front view alone, so switching to another angle shows
+ * that view's caption instead. Below the medium breakpoint there is no room
+ * for labels beside the device, so only the numbered anchors show and the list
+ * underneath carries the names.
  */
+
+/** Where the written labels line up, in the overlay's own coordinates. */
+const RAIL_LEFT = 300;
+const RAIL_RIGHT = 660;
 
 const IMAGE_LEFT = 318 / 960;
 const IMAGE_WIDTH = 324 / 960;
@@ -94,48 +103,85 @@ export default function RevoluxAnatomy() {
           ))}
 
           {isFront && (
-            <svg viewBox="0 0 960 700" className="absolute inset-0 h-full w-full">
-              <title>Numbered parts of the Revolux prototype, listed beside the diagram</title>
+            <>
+              <svg viewBox="0 0 960 700" className="absolute inset-0 h-full w-full" aria-hidden="true">
+                {parts.map((part, i) => {
+                  const [ax, ay] = part.anchor;
+                  const left = part.side === "left";
+                  const railX = left ? RAIL_LEFT : RAIL_RIGHT;
+                  const elbowX = left ? railX + 40 : railX - 40;
+                  const on = i < shown;
+                  const emphasised = active === part.id;
+                  const dim = active !== null && !emphasised;
+                  return (
+                    <g
+                      key={part.id}
+                      className="transition-opacity duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]"
+                      style={{ opacity: on ? (dim ? 0.32 : 1) : 0 }}
+                    >
+                      <path
+                        d={`M ${railX} ${part.labelY} H ${elbowX} L ${ax} ${ay}`}
+                        fill="none"
+                        stroke="var(--color-teal-300)"
+                        strokeWidth={emphasised ? 2.4 : 1.5}
+                        strokeOpacity="0.8"
+                        className="hidden md:block"
+                      />
+                      {emphasised && <circle cx={ax} cy={ay} r="28" fill="var(--color-teal-400)" fillOpacity="0.18" />}
+                      <circle
+                        cx={ax}
+                        cy={ay}
+                        r="15"
+                        fill="var(--color-ink-950)"
+                        fillOpacity="0.9"
+                        stroke="var(--color-teal-300)"
+                        strokeWidth={emphasised ? 2.6 : 1.8}
+                      />
+                      <text
+                        x={ax}
+                        y={ay + 7}
+                        textAnchor="middle"
+                        fontSize="20"
+                        fontWeight="600"
+                        fill="var(--color-teal-200)"
+                        fontFamily="var(--font-sans)"
+                      >
+                        {i + 1}
+                      </text>
+                    </g>
+                  );
+                })}
+              </svg>
+
+              {/* Written labels, in HTML so they keep their real size. */}
               {parts.map((part, i) => {
-                const [ax, ay] = part.anchor;
+                const left = part.side === "left";
                 const on = i < shown;
                 const emphasised = active === part.id;
                 const dim = active !== null && !emphasised;
                 return (
-                  <g
+                  <span
                     key={part.id}
-                    role="img"
-                    aria-label={`${i + 1}. ${part.label}`}
                     onMouseEnter={() => setActive(part.id)}
                     onMouseLeave={() => setActive(null)}
-                    className="cursor-default transition-opacity duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]"
-                    style={{ opacity: on ? (dim ? 0.35 : 1) : 0 }}
+                    className={`absolute hidden -translate-y-1/2 whitespace-nowrap transition-opacity duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] md:block ${
+                      left ? "pr-3 text-right" : "pl-3 text-left"
+                    }`}
+                    style={{
+                      top: `${(part.labelY / 700) * 100}%`,
+                      ...(left
+                        ? { right: `${(1 - RAIL_LEFT / 960) * 100}%` }
+                        : { left: `${(RAIL_RIGHT / 960) * 100}%` }),
+                      opacity: on ? (dim ? 0.4 : 1) : 0,
+                    }}
                   >
-                    {emphasised && <circle cx={ax} cy={ay} r="30" fill="var(--color-teal-400)" fillOpacity="0.18" />}
-                    <circle
-                      cx={ax}
-                      cy={ay}
-                      r="19"
-                      fill="var(--color-ink-950)"
-                      fillOpacity="0.92"
-                      stroke="var(--color-teal-300)"
-                      strokeWidth={emphasised ? 3 : 2}
-                    />
-                    <text
-                      x={ax}
-                      y={ay + 9}
-                      textAnchor="middle"
-                      fontSize="25"
-                      fontWeight="600"
-                      fill="var(--color-teal-200)"
-                      fontFamily="var(--font-sans)"
-                    >
-                      {i + 1}
-                    </text>
-                  </g>
+                    <span className={`block text-base font-semibold ${emphasised ? "text-teal-200" : "text-fog"}`}>
+                      {part.label}
+                    </span>
+                  </span>
                 );
               })}
-            </svg>
+            </>
           )}
         </div>
 
