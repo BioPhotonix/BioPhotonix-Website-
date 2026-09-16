@@ -45,7 +45,7 @@ export default function ClinicsPage() {
                   <CardMark kind={p.mark} className="h-10 w-10 shrink-0" />
                 </div>
                 <h2 className="mt-4 font-display text-lg font-semibold text-fog">{p.title}</h2>
-                <p className="mt-2 text-sm leading-relaxed text-fog/65">{p.body}</p>
+                <p className="mt-2 text-sm leading-relaxed text-fog/75">{p.body}</p>
               </TechCard>
             </Reveal>
           ))}
@@ -62,7 +62,7 @@ export default function ClinicsPage() {
                 <CardMark kind={s.mark} className="h-9 w-9" />
                 <span className="mt-4 block text-xs font-semibold tracking-[0.13em] text-teal-400">{String(i + 1).padStart(2, "0")}</span>
                 <h3 className="mt-2 font-display text-xl font-semibold text-fog">{s.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-fog/65">{s.body}</p>
+                <p className="mt-2 text-sm leading-relaxed text-fog/75">{s.body}</p>
               </Reveal>
             ))}
           </ol>

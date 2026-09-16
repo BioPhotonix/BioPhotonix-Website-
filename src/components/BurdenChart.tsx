@@ -28,19 +28,19 @@ export default function BurdenChart({ layout = "side" }: Props) {
       <figure className="rounded-2xl border border-line bg-ink-900 p-6 md:p-8">
         <figcaption>
           <p className="eyebrow">{burden.prevalence.title}</p>
-          <p className="mt-2 text-sm text-fog/60">{burden.prevalence.note}</p>
+          <p className="mt-2 text-sm text-fog/75">{burden.prevalence.note}</p>
         </figcaption>
         <div className="mt-8">
           <PrevalenceFrame />
         </div>
-        <p className="mt-4 text-xs text-fog/45">Source: {burden.prevalence.source}</p>
+        <p className="mt-4 text-xs text-fog/70">Source: {burden.prevalence.source}</p>
       </figure>
 
       {/* Dry vs wet */}
       <motion.figure {...view} className="rounded-2xl border border-line bg-ink-900 p-6 md:p-8">
         <figcaption>
           <p className="eyebrow">{burden.split.title}</p>
-          <p className="mt-2 text-sm text-fog/60">Each square is one patient in a hundred.</p>
+          <p className="mt-2 text-sm text-fog/75">Each square is one patient in a hundred.</p>
         </figcaption>
         <div
           className="mt-8 grid grid-cols-10 gap-1.5"
@@ -59,20 +59,20 @@ export default function BurdenChart({ layout = "side" }: Props) {
         </div>
         <dl className="mt-6 grid grid-cols-2 gap-4 text-sm">
           <div>
-            <dt className="flex items-center gap-2 text-fog/70">
+            <dt className="flex items-center gap-2 text-fog/75">
               <span aria-hidden="true" className="h-2.5 w-2.5 rounded-[2px] bg-teal-500" />
               {burden.split.dry.label}
               <span className="figure ml-auto text-fog">{burden.split.dry.share}%</span>
             </dt>
-            <dd className="mt-1 text-fog/55">{burden.split.dry.note}</dd>
+            <dd className="mt-1 text-fog/70">{burden.split.dry.note}</dd>
           </div>
           <div>
-            <dt className="flex items-center gap-2 text-fog/70">
+            <dt className="flex items-center gap-2 text-fog/75">
               <span aria-hidden="true" className="h-2.5 w-2.5 rounded-[2px] bg-ember-deep" />
               {burden.split.wet.label}
               <span className="figure ml-auto text-fog">{burden.split.wet.share}%</span>
             </dt>
-            <dd className="mt-1 text-fog/55">{burden.split.wet.note}</dd>
+            <dd className="mt-1 text-fog/70">{burden.split.wet.note}</dd>
           </div>
         </dl>
       </motion.figure>

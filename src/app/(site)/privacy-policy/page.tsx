@@ -13,7 +13,7 @@ export default function PrivacyPage() {
       <div className="mx-auto max-w-3xl">
         <p className="eyebrow">Legal</p>
         <h1 className="h-section mt-4 text-fog">Privacy policy</h1>
-        <p className="mt-4 text-sm text-fog/55">Last updated: {privacy.lastUpdated}</p>
+        <p className="mt-4 text-sm text-fog/70">Last updated: {privacy.lastUpdated}</p>
 
         {privacy.sections.map((s) => (
           <section key={s.title} className="mt-12">

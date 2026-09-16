@@ -36,7 +36,7 @@ export default function HomePage() {
                 <span className="block text-4xl font-medium text-fog md:text-5xl">
                   <StatCounter value={s.value} prefix={s.prefix} suffix={s.suffix} />
                 </span>
-                <span className="mt-3 block text-sm leading-relaxed text-fog/65">{s.label}</span>
+                <span className="mt-3 block text-sm leading-relaxed text-fog/75">{s.label}</span>
               </dd>
             </Reveal>
           ))}
@@ -45,8 +45,8 @@ export default function HomePage() {
           <BurdenChart />
         </div>
         <Reveal className="mt-6 flex flex-col gap-3 rounded-2xl border border-line bg-ink-900 p-7 md:flex-row md:items-center md:gap-8">
-          <span className="text-4xl font-medium text-ember md:text-5xl">{burden.cost.value}</span>
-          <p className="text-base leading-relaxed text-fog/70">{burden.cost.label}</p>
+          <span className="text-4xl font-medium text-ember-text md:text-5xl">{burden.cost.value}</span>
+          <p className="text-base leading-relaxed text-fog/75">{burden.cost.label}</p>
         </Reveal>
       </section>
 
@@ -104,7 +104,7 @@ export default function HomePage() {
                 <Reveal key={p.title} delay={i * 0.08}>
                   <TechCard className="h-full p-6">
                     <h3 className="font-display text-lg font-semibold text-fog">{p.title}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-fog/65">{p.body}</p>
+                    <p className="mt-2 text-sm leading-relaxed text-fog/75">{p.body}</p>
                   </TechCard>
                 </Reveal>
               ))}
@@ -130,7 +130,7 @@ export default function HomePage() {
                   <CardMark kind={p.mark} className="h-10 w-10 shrink-0" />
                 </div>
                 <h3 className="mt-4 font-display text-lg font-semibold text-fog">{p.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-fog/65">{p.body}</p>
+                <p className="mt-2 text-sm leading-relaxed text-fog/75">{p.body}</p>
               </TechCard>
             </Reveal>
           ))}
@@ -179,7 +179,7 @@ export default function HomePage() {
             </Reveal>
             <Reveal className="mt-8">
               <p className="font-display text-xl font-semibold text-fog">{founder.name}</p>
-              <p className="text-sm text-fog/60">
+              <p className="text-sm text-fog/75">
                 {founder.role} &middot; {founder.qualifications.join(", ")}
               </p>
               <div className="mt-6">
@@ -212,11 +212,11 @@ export default function HomePage() {
                       <PostArt kind={p.art} className="transition-transform duration-700 group-hover:scale-[1.03]" />
                     </div>
                     <div className="p-6">
-                      <p className="figure text-xs uppercase tracking-[0.13em] text-fog/50">
+                      <p className="figure text-xs uppercase tracking-[0.13em] text-fog/70">
                         {formatDate(p.date)} &middot; {p.readingMinutes} min
                       </p>
                       <h3 className="mt-3 font-display text-lg font-semibold leading-snug text-fog">{p.title}</h3>
-                      <p className="mt-3 text-sm leading-relaxed text-fog/65">{p.excerpt}</p>
+                      <p className="mt-3 text-sm leading-relaxed text-fog/75">{p.excerpt}</p>
                     </div>
                   </TechCard>
                 </Link>
@@ -240,7 +240,7 @@ export default function HomePage() {
               <a href={`mailto:${site.email}`} className="link-underline w-fit break-all text-fog">
                 {site.email}
               </a>
-              <address className="text-base not-italic leading-relaxed text-fog/65">
+              <address className="text-base not-italic leading-relaxed text-fog/75">
                 {site.address.line1}, {site.address.line2}
                 <br />
                 {site.address.city} {site.address.postcode}, {site.address.country}

@@ -17,7 +17,7 @@ export default function PathwayDiagram() {
 
   const row = (title: string, steps: readonly string[], tone: "dim" | "live", offset: number) => (
     <motion.div {...view} className="rounded-2xl border border-line bg-ink-900 p-6 md:p-8">
-      <h3 className={`eyebrow ${tone === "dim" ? "text-fog/50" : ""}`}>{title}</h3>
+      <h3 className={`eyebrow ${tone === "dim" ? "text-fog/70" : ""}`}>{title}</h3>
       <ol className="mt-6 flex flex-col gap-3 md:flex-row md:items-stretch md:gap-0">
         {steps.map((s, i) => {
           const last = i === steps.length - 1;
@@ -34,13 +34,13 @@ export default function PathwayDiagram() {
                   tone === "live"
                     ? "border-teal-400/40 bg-teal-900/40 text-fog"
                     : fading
-                      ? "border-ember/30 bg-ember/5 text-fog/60"
+                      ? "border-ember/30 bg-ember/5 text-fog/75"
                       : "border-line bg-ink-800 text-fog/75"
                 }`}
               >
                 <span
                   aria-hidden="true"
-                  className={`figure text-xs ${tone === "live" ? "text-teal-300" : fading ? "text-ember/80" : "text-fog/40"}`}
+                  className={`figure text-xs ${tone === "live" ? "text-teal-300" : fading ? "text-ember-text" : "text-fog/70"}`}
                 >
                   {String(i + 1).padStart(2, "0")}
                 </span>

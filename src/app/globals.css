@@ -22,21 +22,25 @@
   --color-teal-900: #062f34;
 
   --color-ember: #ff5a3c;
+  /* A lighter step of the same hue for ember set as text. The graphic ember is
+     6.2:1 on the near-black surfaces, which passes AA but not AAA; this is
+     7.9:1, so no text on the site falls below AAA. */
+  --color-ember-text: #ff7a5e;
   /* Ember stepped down for chart marks on the dark surface; validated against
      teal-500 for colour-vision separation and lightness. */
   --color-ember-deep: #e0503a;
   --color-ember-dim: #b8402c;
 
-  --color-line: rgba(232, 241, 243, 0.09);
-  --color-line-strong: rgba(232, 241, 243, 0.18);
+  --color-line: rgba(232, 241, 243, 0.14);
+  --color-line-strong: rgba(232, 241, 243, 0.26);
 
   --font-display: var(--font-serif), ui-serif, Georgia, "Times New Roman", serif;
   --font-sans: var(--font-sans-3), ui-sans-serif, system-ui, sans-serif;
 
   /* Type scale. Nothing on the site is smaller than 14px. Body copy is 17px. */
-  --text-xs: 0.9375rem;
+  --text-xs: 1rem;
   --text-xs--line-height: 1.5;
-  --text-sm: 1rem;
+  --text-sm: 1.0625rem;
   --text-sm--line-height: 1.55;
   --text-base: 1.125rem;
   --text-base--line-height: 1.65;
@@ -142,9 +146,9 @@
   /* Small letterspaced label above a heading. The standing convention for
      section labels in medical and scientific publishing. */
   .eyebrow {
-    font-size: 0.875rem;
+    font-size: 0.9375rem;
     font-weight: 600;
-    letter-spacing: 0.13em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--color-teal-400);
   }

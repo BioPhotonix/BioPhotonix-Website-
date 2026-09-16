@@ -208,6 +208,26 @@ supplied logo is kept at `public/images/logo-light-bg.png`.
 - **The founder's LinkedIn** link is Adail's personal profile; there is no
   company page yet.
 
+## Contrast and text size
+
+Every piece of text on the site was measured in the browser against the
+surface actually behind it, compositing each colour through a canvas so that
+Tailwind's `color-mix` opacities resolve the way they really paint. The audit
+found six outright WCAG AA failures and a wide band of supporting copy sitting
+between 4 and 6.5 to 1, which passes the AA floor but is tiring to read on a
+near-black page.
+
+The opacity ladder was raised so that **nothing on the site falls below
+7:1, the WCAG AAA threshold**: supporting text sits at 8.5:1, ordinary body
+copy near 10:1, and headings above 16:1. Ember set as text uses
+`--color-ember-text`, a lighter step of the same hue, because the graphic
+ember is only 6.2:1. The type scale moved up a step as well, so the smallest
+text on the site is 16px.
+
+This matters more here than on most sites: the readership is older clinicians
+and the subject is loss of central vision. If you add copy, keep it at
+`text-fog/70` or brighter, and re-run the audit rather than judging by eye.
+
 ## Accessibility
 
 - Content is server-rendered visible. Scroll animations are applied after

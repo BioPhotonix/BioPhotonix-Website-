@@ -35,7 +35,7 @@ export default function TechnologyPage() {
             <dl className="mt-12 grid max-w-2xl grid-cols-2 gap-px overflow-hidden rounded-xl border border-line bg-line sm:grid-cols-4">
               {revolux.facts.map((f) => (
                 <div key={f.label} className="bg-ink-950/80 px-4 py-3.5">
-                  <dt className="figure text-xs uppercase tracking-[0.13em] text-fog/50">{f.label}</dt>
+                  <dt className="figure text-xs uppercase tracking-[0.13em] text-fog/70">{f.label}</dt>
                   <dd className="mt-1 text-sm font-medium text-fog">{f.value}</dd>
                 </div>
               ))}
@@ -63,7 +63,7 @@ export default function TechnologyPage() {
             {revolux.pillars.map((p) => (
               <div key={p.title}>
                 <h2 className="font-display text-lg font-semibold text-fog">{p.title}</h2>
-                <p className="mt-2 text-sm leading-relaxed text-fog/65">{p.body}</p>
+                <p className="mt-2 text-sm leading-relaxed text-fog/75">{p.body}</p>
               </div>
             ))}
           </Reveal>
@@ -128,7 +128,7 @@ export default function TechnologyPage() {
               <TechCard className="h-full p-7">
                 <CardMark kind={s.mark} className="h-10 w-10" />
                 <h3 className="mt-5 font-display text-lg font-semibold text-fog">{s.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-fog/65">{s.body}</p>
+                <p className="mt-3 text-sm leading-relaxed text-fog/75">{s.body}</p>
               </TechCard>
             </Reveal>
           ))}

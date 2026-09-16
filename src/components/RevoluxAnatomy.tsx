@@ -111,7 +111,7 @@ export default function RevoluxAnatomy() {
             })}
           </svg>
         </div>
-        <p className="mx-auto mt-6 max-w-md text-center text-xs leading-relaxed text-fog/45">{anatomy.note}</p>
+        <p className="mx-auto mt-6 max-w-md text-center text-xs leading-relaxed text-fog/70">{anatomy.note}</p>
       </div>
 
       <ol className="lg:col-span-5 lg:self-center">
@@ -131,7 +131,7 @@ export default function RevoluxAnatomy() {
               <span className="text-xs font-semibold tracking-[0.13em] text-teal-400">{String(i + 1).padStart(2, "0")}</span>
               <span className="font-display text-xl font-semibold text-fog">{part.label}</span>
             </p>
-            <p className="mt-2 pl-8 text-sm leading-relaxed text-fog/70">{part.body}</p>
+            <p className="mt-2 pl-8 text-sm leading-relaxed text-fog/75">{part.body}</p>
           </li>
         ))}
       </ol>

@@ -67,27 +67,27 @@ export default function RevenueCalculator() {
             className="mt-5 w-full"
             aria-valuetext={`${patients} patients a month`}
           />
-          <div className="figure mt-2 flex justify-between text-xs text-fog/45">
+          <div className="figure mt-2 flex justify-between text-xs text-fog/70">
             <span>1</span>
             <span>{max}</span>
           </div>
 
           <div className="mt-8 grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-line bg-line">
             <div className="bg-ink-950 p-5">
-              <p className="figure text-xs uppercase tracking-[0.13em] text-fog/50">Monthly profit</p>
+              <p className="figure text-xs uppercase tracking-[0.13em] text-fog/70">Monthly profit</p>
               <p className="mt-2 text-2xl font-medium text-fog md:text-3xl" aria-live="polite">
                 {gbp(shownMonthly)}
               </p>
             </div>
             <div className="bg-ink-950 p-5">
-              <p className="figure text-xs uppercase tracking-[0.13em] text-fog/50">Annual profit</p>
+              <p className="figure text-xs uppercase tracking-[0.13em] text-fog/70">Annual profit</p>
               <p className="mt-2 text-2xl font-medium text-fog md:text-3xl">{gbp(shownAnnual)}</p>
             </div>
           </div>
         </div>
 
         <div className="md:col-span-6">
-          <p className="figure text-xs uppercase tracking-[0.13em] text-fog/50">Monthly profit by caseload</p>
+          <p className="figure text-xs uppercase tracking-[0.13em] text-fog/70">Monthly profit by caseload</p>
           <div className="mt-4 flex h-44 items-end gap-1.5 border-b border-line" role="img" aria-label={`Monthly profit rises from ${gbp(perPatient - fixed)} at one patient a month to ${gbp(perPatient * max - fixed)} at ${max}.`}>
             {Array.from({ length: max }, (_, i) => i + 1).map((n) => {
               const value = perPatient * n - fixed;
@@ -115,21 +115,21 @@ export default function RevenueCalculator() {
               );
             })}
           </div>
-          <div className="figure mt-2 flex justify-between text-xs text-fog/45" aria-hidden="true">
+          <div className="figure mt-2 flex justify-between text-xs text-fog/70" aria-hidden="true">
             <span>1 patient</span>
             <span>{max} patients</span>
           </div>
           <dl className="mt-6 grid grid-cols-3 gap-3">
             {published.map((p) => (
               <div key={p.patients} className="rounded-lg border border-line px-3 py-2.5">
-                <dt className="text-xs text-fog/55">{p.patients} a month</dt>
+                <dt className="text-xs text-fog/70">{p.patients} a month</dt>
                 <dd className="figure mt-0.5 text-sm text-fog">{gbp(p.profit)}</dd>
               </div>
             ))}
           </dl>
         </div>
       </div>
-      <p className="mt-8 text-xs leading-relaxed text-fog/45">{note}</p>
+      <p className="mt-8 text-xs leading-relaxed text-fog/70">{note}</p>
       <span className="sr-only">{`Slider at ${pct.toFixed(0)} percent.`}</span>
     </div>
   );

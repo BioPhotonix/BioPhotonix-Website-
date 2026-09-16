@@ -52,14 +52,14 @@ export default async function NewsPost({ params }: Params) {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structured) }} />
       <article className="shell pb-20 pt-32 md:pt-40">
         <Reveal className="mx-auto max-w-3xl">
-          <Link href="/news" className="link-underline text-base text-fog/70 hover:text-fog">
+          <Link href="/news" className="link-underline text-base text-fog/75 hover:text-fog">
             &larr; All articles
           </Link>
           <p className="eyebrow mt-8">
             {formatDate(post.date)} &middot; {post.readingMinutes} min read
           </p>
           <h1 className="h-section mt-4 text-fog">{post.title}</h1>
-          <p className="mt-5 text-sm text-fog/60">
+          <p className="mt-5 text-sm text-fog/75">
             By {founder.name}, {founder.role}
             {post.updated && ` · Updated ${formatDate(post.updated)}`}
           </p>
@@ -132,7 +132,7 @@ export default async function NewsPost({ params }: Params) {
                       </div>
                       <div>
                         <h3 className="font-display text-lg font-semibold leading-snug text-fog">{p.title}</h3>
-                        <span className="link-underline mt-2 inline-block text-sm text-fog/70">Read the article</span>
+                        <span className="link-underline mt-2 inline-block text-sm text-fog/75">Read the article</span>
                       </div>
                     </TechCard>
                   </Link>
