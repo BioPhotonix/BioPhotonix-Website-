@@ -445,57 +445,71 @@
 }
 
 /* --- Market funnel ----------------------------------------------------
-   Three nested squares whose areas carry the ratio between the markets. They
-   grow into place once, from the middle out; a selected tier lifts out of the
-   stack and the others drop back. */
-.mf-square {
-  transform-box: fill-box;
-  transform-origin: center;
-  transform: scale(0.72);
-  opacity: 0;
-  cursor: pointer;
-  transition:
-    transform 0.7s var(--ease-out-expo),
-    opacity 0.5s var(--ease-out-expo),
-    filter 0.25s var(--ease-out-expo);
+   A camera flying between three concentric markets. The transform is the
+   whole animation: everything is concentric, so it is a pure zoom about the
+   centre, and a long eased duration is what makes ~39x read as travel rather
+   than as a jump cut. */
+.mf-stage {
+  /* The camera moves a long way; nothing may escape the frame. */
+  contain: paint;
 }
-.mf-square.is-in {
-  transform: scale(1);
-  opacity: 1;
+.mf-camera {
+  transform-origin: 0 0;
+  transition: transform 1.25s cubic-bezier(0.62, 0.02, 0.2, 1);
+  will-change: transform;
 }
-.mf-square.is-on {
-  filter: brightness(1.32);
+.mf-tier {
+  transition: opacity 0.7s var(--ease-out-expo);
 }
-.mf-figure:hover .mf-square:not(.is-on) {
-  filter: brightness(0.82);
+.mf-practices {
+  animation: mf-resolve 0.9s var(--ease-out-expo) both;
 }
-.mf-leader line {
-  stroke: var(--color-line-strong);
-  stroke-width: 0.6;
-}
-.mf-leader-text {
-  fill: var(--color-fog);
-  font-family: var(--font-sans);
-  font-size: 6px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
+@keyframes mf-resolve {
+  from { opacity: 0; }
+  to { opacity: 0.9; }
 }
 
-.mf-row {
-  transition: background-color 0.25s var(--ease-out-expo);
+.mf-abbr {
+  fill: var(--color-teal-300);
+  font-family: var(--font-sans);
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
 }
-.mf-row:hover,
-.mf-row.is-on {
-  background-color: color-mix(in srgb, var(--color-teal-400) 10%, var(--color-ink-900));
+.mf-pin {
+  fill: var(--color-teal-200);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+.mf-zoom {
+  fill: var(--color-fog);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 600;
+  font-feature-settings: "tnum" 1, "lnum" 1;
+  opacity: 0.75;
+}
+
+.mf-step {
+  background-color: var(--color-ink-900);
+  transition:
+    background-color 0.3s var(--ease-out-expo),
+    border-color 0.3s var(--ease-out-expo);
+}
+.mf-step.is-on {
+  background-color: color-mix(in srgb, var(--color-teal-400) 12%, var(--color-ink-900));
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .mf-square {
-    transform: scale(1);
-    opacity: 1;
+  .mf-camera,
+  .mf-tier,
+  .mf-step {
     transition: none;
   }
-  .mf-row {
-    transition: none;
+  .mf-practices {
+    animation: none;
+    opacity: 0.9;
   }
 }
