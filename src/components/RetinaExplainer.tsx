@@ -102,23 +102,27 @@ export default function RetinaExplainer() {
         <ellipse cx="178" cy="205" rx="16" ry="40" fill="#6fe3ea" opacity="0.12" stroke="#6fe3ea" strokeOpacity="0.6" strokeWidth="1.5" />
         <motion.circle cx="156" cy="205" r="34" fill="url(#rt-pupil)" animate={reduce ? { opacity: 0.85 } : { opacity: [0.5, 1, 0.5] }} transition={pulse(2.8)} />
 
-        <path d="M 460 252 L 508 352" stroke="#6fe3ea" strokeWidth="1.5" strokeDasharray="4 4" opacity="0.5" />
-        <g transform="translate(496, 348)">
-          <rect x="0" y="0" width="132" height="100" rx="24" fill="#0d1519" stroke="#6fe3ea" strokeOpacity="0.7" strokeWidth="1.5" />
+        <path d="M 466 262 L 498 340" stroke="#6fe3ea" strokeWidth="1.5" strokeDasharray="4 4" opacity="0.5" />
+        {/* The cell, with its label beneath rather than inside it. Centred on
+            the box at 520, the word spans roughly 430 to 610 at phone text
+            size, so it stays inside the 640-unit frame; inside the box, and
+            anchored further right, it ran off the edge. */}
+        <g transform="translate(446, 340)">
+          <rect x="0" y="0" width="148" height="84" rx="22" fill="#0d1519" stroke="#6fe3ea" strokeOpacity="0.7" strokeWidth="1.5" />
           {[
-            { x: 30, y: 30, d: 0 },
-            { x: 70, y: 56, d: 0.4 },
-            { x: 94, y: 26, d: 0.8 },
+            { x: 36, y: 28, d: 0 },
+            { x: 80, y: 52, d: 0.4 },
+            { x: 112, y: 26, d: 0.8 },
           ].map((m, i) => (
             <motion.g key={i} animate={reduce ? { opacity: 0.95 } : { opacity: [0.4, 1, 0.4] }} transition={pulse(2.4, m.d)}>
               <ellipse cx={m.x} cy={m.y} rx="16" ry="9" fill="#ff5a3c" opacity="0.3" />
               <ellipse cx={m.x} cy={m.y} rx="11" ry="5.5" fill="#ff5a3c" />
             </motion.g>
           ))}
-          <text x="66" y="88" textAnchor="middle" className={CAP_SM} fill="#e8f1f3" opacity="0.85" fontFamily="var(--font-sans)">
-            MITOCHONDRIA
-          </text>
         </g>
+        <text x="520" y="452" textAnchor="middle" className={CAP_SM} fill="#e8f1f3" opacity="0.85" fontFamily="var(--font-sans)">
+          MITOCHONDRIA
+        </text>
 
         <text x="4" y="392" className={CAP} fill="#e8f1f3" opacity="0.8" fontFamily="var(--font-sans)">
           RED + NEAR-INFRARED
