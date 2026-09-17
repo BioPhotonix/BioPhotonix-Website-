@@ -394,3 +394,153 @@
     opacity: 0;
   }
 }
+
+/* --- Vision simulator -------------------------------------------------
+   Each stage of loss is its own layer, stacked over the scene and revealed
+   by opacity. Stacking rather than re-masking one layer is deliberate: a
+   mask-image cannot be transitioned between two different gradient lists, so
+   changing stage would snap, whereas opacity cross-fades cleanly. A layer at
+   opacity 0 is not painted, so its backdrop-filter costs nothing.
+
+   Every contrast() reduction is paired with the brightness() that maps white
+   back to white, and the two atrophy stages use no contrast() at all. Without
+   that, a contrast reduction lifts blank paper towards grey and the mask
+   blobs appear as ghost shapes over empty parts of the scene, which would say
+   the disease takes areas that hold nothing to take.
+
+   The loss is built from backdrop-filter, not from paint: it degrades the
+   scene actually behind it rather than drawing a grey shape on top, which is
+   what makes text genuinely illegible instead of merely covered. The paper
+   wash on the two atrophy stages is set per scene to the scene's own
+   background, so detail dissolves into the page the way patients describe
+   rather than going dark. */
+.vs-scene {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  /* The reading scene sizes its type in cqw so the page keeps the same
+     apparent text size whatever width the frame is given. */
+  container-type: inline-size;
+}
+.vs-loss {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  opacity: 0;
+  pointer-events: none;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  transition: opacity 0.55s var(--ease-out-expo);
+}
+.vs-loss.is-on {
+  opacity: 1;
+}
+
+/* Early: acuity is intact. A touch of contrast off the central field and
+   nothing else, because at this stage most patients report nothing. */
+.vs-early {
+  backdrop-filter: contrast(0.93) brightness(1.036) blur(0.3px);
+  -webkit-backdrop-filter: contrast(0.93) brightness(1.036) blur(0.3px);
+  mask-image: radial-gradient(62% 58% at 50% 50%, #000 0%, transparent 88%);
+  -webkit-mask-image: radial-gradient(62% 58% at 50% 50%, #000 0%, transparent 88%);
+}
+
+/* Intermediate: contrast goes before acuity. Haze and desaturation over the
+   central field, still no discrete scotoma. */
+.vs-intermediate {
+  backdrop-filter: contrast(0.6) brightness(1.25) saturate(0.7) blur(1.8px);
+  -webkit-backdrop-filter: contrast(0.6) brightness(1.25) saturate(0.7) blur(1.8px);
+  mask-image: radial-gradient(54% 50% at 50% 50%, #000 18%, transparent 90%);
+  -webkit-mask-image: radial-gradient(54% 50% at 50% 50%, #000 18%, transparent 90%);
+}
+
+/* Geographic atrophy: several irregular patches arranged beside the point of
+   fixation, none of them on it. This is the shape that lets acuity measure
+   well while reading falls apart. */
+.vs-atrophy {
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+  background: rgb(var(--vs-paper) / 0.55);
+  mask-image:
+    radial-gradient(20% 17% at 33% 41%, #000 34%, transparent 78%),
+    radial-gradient(17% 21% at 65% 38%, #000 32%, transparent 80%),
+    radial-gradient(23% 15% at 61% 64%, #000 30%, transparent 80%),
+    radial-gradient(15% 17% at 37% 63%, #000 30%, transparent 82%),
+    radial-gradient(12% 10% at 50% 28%, #000 26%, transparent 85%);
+  -webkit-mask-image:
+    radial-gradient(20% 17% at 33% 41%, #000 34%, transparent 78%),
+    radial-gradient(17% 21% at 65% 38%, #000 32%, transparent 80%),
+    radial-gradient(23% 15% at 61% 64%, #000 30%, transparent 80%),
+    radial-gradient(15% 17% at 37% 63%, #000 30%, transparent 82%),
+    radial-gradient(12% 10% at 50% 28%, #000 26%, transparent 85%);
+}
+
+/* Advanced: the patches have coalesced and taken the fovea with them. */
+.vs-advanced {
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  background: rgb(var(--vs-paper) / 0.76);
+  mask-image:
+    radial-gradient(35% 31% at 50% 50%, #000 54%, transparent 88%),
+    radial-gradient(23% 20% at 30% 40%, #000 46%, transparent 85%),
+    radial-gradient(21% 23% at 69% 61%, #000 46%, transparent 85%),
+    radial-gradient(18% 16% at 63% 32%, #000 42%, transparent 86%);
+  -webkit-mask-image:
+    radial-gradient(35% 31% at 50% 50%, #000 54%, transparent 88%),
+    radial-gradient(23% 20% at 30% 40%, #000 46%, transparent 85%),
+    radial-gradient(21% 23% at 69% 61%, #000 46%, transparent 85%),
+    radial-gradient(18% 16% at 63% 32%, #000 42%, transparent 86%);
+}
+
+/* Where a browser has no backdrop-filter, the layers would show as flat
+   washes with no degradation behind them, which would misrepresent the
+   disease. Fall back to paint that at least reads as loss of detail. */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .vs-atrophy { background: rgb(var(--vs-paper) / 0.92); }
+  .vs-advanced { background: rgb(var(--vs-paper) / 0.97); }
+}
+
+/* Fixation target. The simulation is anchored here, and the caption says so. */
+.vs-fixation {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+}
+
+/* --- Page transitions -------------------------------------------------
+   The root cross-fade, and the device carried between the home and
+   technology heroes. Only two pages render RevoluxDevice, and only once
+   each, so the name is unique in every document that uses it — which is the
+   condition for the browser to morph it rather than give up on the whole
+   transition. */
+.vt-device {
+  view-transition-name: revolux-device;
+}
+
+::view-transition-old(root) {
+  animation: vt-fade-out 0.24s var(--ease-out-expo) both;
+}
+::view-transition-new(root) {
+  animation: vt-fade-in 0.4s var(--ease-out-expo) both;
+}
+::view-transition-group(revolux-device) {
+  animation-duration: 0.52s;
+  animation-timing-function: var(--ease-out-expo);
+}
+@keyframes vt-fade-out {
+  to { opacity: 0; }
+}
+@keyframes vt-fade-in {
+  from { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+}

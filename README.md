@@ -48,7 +48,9 @@ a component. Adding an article means appending an entry to
 | URL | Purpose |
 |---|---|
 | `/` | The story in one page: the unmet need, the shift from watching to treating, Revolux, clinics, roadmap, founder, news, contact |
-| `/technology` | Revolux in depth: the five-step delivery explainer, the retina diagram, safety and standards, FAQ |
+| `/technology` | Revolux in depth: the five-step delivery explainer, the retina diagram, safety and standards, FAQ. Carries the MedicalDevice and FAQPage structured data |
+| `/vision` | The vision simulator: what a patient sees at each stage of dry AMD |
+| `/evidence` | The published literature on photobiomodulation in dry AMD, filterable, including the findings that do not support it |
 | `/clinics` | For practices: value propositions, the five-step clinical pathway, the revenue calculator, FAQ, registration form |
 | `/about` | The belief, the origin, values, founder, advisors and partners |
 | `/investors` | The thesis, market charts, business model, regulatory strategy, roadmap, team, data-room request |
@@ -111,6 +113,55 @@ All in `src/components`:
 - **CountUp** counts a figure written as text, used for the investor
   headlines. It animates only a value containing exactly one number, so
   "200M" counts while "85-90%" and "Class IIa" are left alone.
+- **PhotonField** drifts photons towards the device behind the hero. The
+  convergence point follows the pointer part of the way — partial on purpose,
+  so the light keeps looking like it belongs to the device rather than
+  chasing a cursor — and particles already in flight steer towards it so the
+  field bends instead of snapping. Mouse and trackpad only; a pointer that
+  exists only during a tap would make it lurch.
+
+- **VisionSimulator** degrades a scene the way dry AMD does, across five
+  stages. Three things worth knowing before changing it:
+
+  1. The loss is a `backdrop-filter` over the scene, not paint on top of it,
+     so text is genuinely destroyed rather than covered. Every `contrast()`
+     reduction is paired with the `brightness()` that maps white back to
+     white — without that, blank paper lifts towards grey and the mask blobs
+     show as ghost shapes over empty parts of the scene.
+  2. Geographic atrophy is drawn as several irregular patches *beside* the
+     point of fixation, not one circle on it. That is how it usually begins,
+     and it is why acuity on a chart can still measure well while reading has
+     fallen apart. Do not simplify it to a central disc.
+  3. Every stage is its own stacked layer, revealed by opacity. A
+     `mask-image` cannot be transitioned between two different gradient
+     lists, so a single re-masked layer would snap between stages.
+
+  The scenes are a page of a book, a clock and an Amsler grid. A drawn
+  portrait was tried and cut: three attempts all read as an avatar, which on
+  a medical device site costs more credibility than the scene adds. A clock
+  was chosen over an eye chart because a chart puts its smallest letters at
+  the bottom, so a centred scotoma takes the middle rows and spares the
+  smallest, which reads backwards. A clock keeps everything that matters at
+  the centre.
+
+- **EvidenceLibrary** lists the published literature, filterable by topic and
+  by whether the study supports the approach. See the header of
+  `src/content/evidence.ts` for the rules that file is kept to. The short
+  version: every entry is checked against the NCBI E-utilities API rather
+  than written from memory, every summary restates that paper's own abstract,
+  unsupportive findings are listed with the same prominence as supportive
+  ones, and `evidenceSignedOff` gates the page — while it is `false` the page
+  carries a draft banner, is served `noindex` and stays out of the sitemap.
+
+- **PageTransition** cross-fades between routes and carries the device
+  between the home and technology heroes (`.vt-device`). It drives the View
+  Transitions API directly: React ships a `<ViewTransition>` component and
+  Next has an `experimental.viewTransition` flag, but on React 19.3 stable the
+  export is absent at runtime, so that route builds cleanly and then does
+  nothing. It only ever intercepts a plain left-click on a same-origin anchor
+  to a different path, takes the click in the capture phase so Next never
+  pushes the route twice, and bounds every transition with a timeout so a
+  navigation that does not complete cannot leave the page frozen.
 
 Nothing on the site is a photograph of a patient or a treatment outcome. The
 article covers are drawn in code (`PostArt`) rather than being the

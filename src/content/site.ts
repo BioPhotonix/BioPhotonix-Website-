@@ -34,6 +34,7 @@ export const site = {
 
 export const nav = [
   { label: "Technology", href: "/technology" },
+  { label: "Evidence", href: "/evidence" },
   { label: "Clinics", href: "/clinics" },
   { label: "About", href: "/about" },
   { label: "Investors", href: "/investors" },
@@ -90,6 +91,81 @@ export const burden = {
     value: "$49B",
     label: "annual economic burden of AMD in the US alone, driven mostly by lost productivity and quality of life rather than treatment",
   },
+};
+
+/**
+ * The vision simulator. Staging follows the standard clinical classification
+ * of dry AMD, and the descriptions are written to match what patients report
+ * rather than what a fundus photograph shows.
+ *
+ * Two points of honesty are deliberate and should survive any edit. The loss
+ * is not drawn as a black spot, because that is not what people describe:
+ * the visual cortex fills the missing area in, so patients report absence,
+ * greying and blur rather than darkness. And geographic atrophy is drawn as
+ * several irregular patches beside the point of fixation rather than one
+ * circle on it, because that is how it usually begins, which is why acuity on
+ * a chart can still measure well while reading has become exhausting.
+ */
+export const vision = {
+  eyebrow: "What is actually lost",
+  title: "The years before anyone notices.",
+  intro:
+    "Dry AMD does not announce itself. It takes contrast before it takes acuity, and it takes the middle of a word before it takes a face. Move through the stages to see what a patient sees at each one.",
+  sceneLabel: "What you are looking at",
+  stageLabel: "Stage of disease",
+  scenes: [
+    { id: "reading", label: "A page", caption: "Reading is the function patients say they miss first and grieve most." },
+    {
+      id: "clock",
+      label: "A clock",
+      caption:
+        "Both hands and the point they turn about sit at the centre. The numerals a patient can still see are the part that never told them the time.",
+    },
+    { id: "grid", label: "Amsler grid", caption: "The clinical reference. Patients are asked to report lines that are missing, wavy or grey." },
+  ],
+  stages: [
+    {
+      id: "healthy",
+      short: "Healthy",
+      title: "Healthy retina",
+      body: "Fine detail, colour and contrast are all intact at the point of fixation. This is the baseline everything below is measured against.",
+    },
+    {
+      id: "early",
+      short: "Early",
+      title: "Early dry AMD",
+      body: "Medium drusen have formed beneath the retina. Acuity is usually normal and most people notice nothing at all. Some say they need more light to read than they used to, or that it takes them longer to adjust coming in from outside.",
+    },
+    {
+      id: "intermediate",
+      short: "Intermediate",
+      title: "Intermediate dry AMD",
+      body: "Large drusen, often with pigment change. Contrast goes before acuity does: reading in dim light gets harder, faces look washed out, and adapting to a change in lighting takes noticeably longer.",
+    },
+    {
+      id: "atrophy",
+      short: "Atrophy",
+      title: "Geographic atrophy",
+      body: "Patches of retina have been lost, and they usually appear beside the fovea before they reach it. Acuity on a chart can still measure well while reading has become exhausting, because letters drop out of the middle of words.",
+    },
+    {
+      id: "advanced",
+      short: "Advanced",
+      title: "Advanced geographic atrophy",
+      body: "The atrophy has reached the point of fixation. What a person looks at directly is now the part they cannot see. Faces lose their features, and reading at ordinary size is no longer possible.",
+    },
+  ],
+  /** Shown on the two stages Revolux is indicated for. */
+  indicated: {
+    stages: ["early", "intermediate"],
+    label: "Where Revolux is designed to act",
+    body: "These are the two stages where the patient notices least, and the two stages where they have historically been told to watch and wait.",
+  },
+  caveat: {
+    title: "What this simulation cannot show",
+    body: "A real scotoma moves with the eye, so it cannot be looked around: wherever a patient turns, the missing area goes with them. Here it is fixed to the centre of the frame. The severity shown is representative of each stage, not a measurement of any individual, and both eyes are affected at different rates, which masks the loss further.",
+  },
+  cta: { label: "How Revolux intervenes", href: "/technology" },
 };
 
 export const shift = {

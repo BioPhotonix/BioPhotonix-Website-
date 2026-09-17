@@ -6,6 +6,10 @@ import { useEffect, useRef } from "react";
  * A field of photons drifting towards a focal point, drawn on a canvas behind
  * the hero. It is decoration: aria-hidden, paused when off screen, and a
  * single static frame under prefers-reduced-motion.
+ *
+ * The convergence point follows the pointer part of the way, and particles
+ * already in flight steer towards it, so the field bends rather than
+ * snapping. Mouse and trackpad only.
  */
 export default function PhotonField({ className = "" }: { className?: string }) {
   const ref = useRef<HTMLCanvasElement>(null);
@@ -27,7 +31,15 @@ export default function PhotonField({ className = "" }: { className?: string }) 
     const particles: P[] = [];
     const COUNT = 110;
 
-    const focal = () => ({ x: width * 0.72, y: height * 0.48 });
+    // Where the beams converge. `rest` is the device; `aim` is what the field
+    // is actually converging on this frame, and it eases towards the pointer
+    // when there is one. The pull is partial on purpose: the light should keep
+    // looking like it belongs to the device, not like it is chasing a cursor.
+    const PULL = 0.45;
+    const rest = () => ({ x: width * 0.72, y: height * 0.48 });
+    let aim = rest();
+    let target = rest();
+    const focal = () => aim;
 
     const spawn = (p?: P): P => {
       const f = focal();
@@ -56,6 +68,8 @@ export default function PhotonField({ className = "" }: { className?: string }) 
       canvas.width = Math.floor(width * dpr);
       canvas.height = Math.floor(height * dpr);
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      aim = rest();
+      target = rest();
       particles.length = 0;
       for (let i = 0; i < COUNT; i += 1) {
         const p = spawn();
@@ -95,10 +109,20 @@ export default function PhotonField({ className = "" }: { className?: string }) 
 
     const step = () => {
       if (!running) return;
+      aim = { x: aim.x + (target.x - aim.x) * 0.055, y: aim.y + (target.y - aim.y) * 0.055 };
       const f = focal();
       for (const p of particles) {
         p.x += p.vx;
         p.y += p.vy;
+        // Steer towards wherever the field is converging now, so a particle
+        // already in flight curves as the pointer moves instead of holding the
+        // heading it was given when it spawned.
+        const sx = f.x - p.x;
+        const sy = f.y - p.y;
+        const sd = Math.hypot(sx, sy) || 1;
+        const speed = Math.hypot(p.vx, p.vy) || 0.4;
+        p.vx += ((sx / sd) * speed - p.vx) * 0.035;
+        p.vy += ((sy / sd) * speed - p.vy) * 0.035;
         // Slight drift, so the beams do not look ruled.
         p.vx += (Math.random() - 0.5) * 0.02;
         p.vy += (Math.random() - 0.5) * 0.02;
@@ -118,6 +142,29 @@ export default function PhotonField({ className = "" }: { className?: string }) 
     });
     ro.observe(canvas);
 
+    // Pointer steering. Mouse and trackpad only: on a touch screen there is no
+    // hover, and a pointer that only exists during a tap would make the field
+    // lurch. Reduced motion never gets here, since the field is a still frame.
+    const fine = window.matchMedia("(pointer: fine)").matches;
+    const onPointerMove = (e: PointerEvent) => {
+      const rect = canvas.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const r = rest();
+      if (x < 0 || y < 0 || x > width || y > height) {
+        target = r;
+        return;
+      }
+      target = { x: r.x + (x - r.x) * PULL, y: r.y + (y - r.y) * PULL };
+    };
+    const onPointerLeave = () => {
+      target = rest();
+    };
+    if (!reduce && fine) {
+      window.addEventListener("pointermove", onPointerMove, { passive: true });
+      document.addEventListener("pointerleave", onPointerLeave);
+    }
+
     const io = new IntersectionObserver(([entry]) => {
       const visible = entry.isIntersecting;
       if (reduce) return;
@@ -136,6 +183,8 @@ export default function PhotonField({ className = "" }: { className?: string }) 
       cancelAnimationFrame(raf);
       ro.disconnect();
       io.disconnect();
+      window.removeEventListener("pointermove", onPointerMove);
+      document.removeEventListener("pointerleave", onPointerLeave);
     };
   }, []);
 

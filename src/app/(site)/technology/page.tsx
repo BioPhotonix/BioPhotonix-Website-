@@ -3,6 +3,7 @@ import Image from "next/image";
 import Accordion from "@/components/Accordion";
 import Button from "@/components/Button";
 import CardMark from "@/components/CardMark";
+import JsonLd from "@/components/JsonLd";
 import RetinaExplainer from "@/components/RetinaExplainer";
 import RevoluxAnatomy from "@/components/RevoluxAnatomy";
 import RevoluxDevice from "@/components/RevoluxDevice";
@@ -12,6 +13,7 @@ import SectionHeading from "@/components/SectionHeading";
 import StandardsTicker from "@/components/StandardsTicker";
 import TechCard from "@/components/TechCard";
 import TreatmentCourse from "@/components/TreatmentCourse";
+import { faqSchema, medicalDeviceSchema } from "@/content/schema";
 import { anatomy, course, explainer, faq, retina, revolux, safety, shift } from "@/content/site";
 
 export const metadata: Metadata = {
@@ -24,6 +26,11 @@ export const metadata: Metadata = {
 export default function TechnologyPage() {
   return (
     <>
+      {/* The device and the FAQ are both described here rather than site-wide:
+          one page carries each entity, so nothing is declared twice. */}
+      <JsonLd data={medicalDeviceSchema()} />
+      <JsonLd data={faqSchema()} />
+
       <section className="relative overflow-hidden pt-32 md:pt-40">
         <div aria-hidden="true" className="grid-bg absolute inset-0" />
         <div className="shell relative grid items-center gap-12 lg:grid-cols-12">

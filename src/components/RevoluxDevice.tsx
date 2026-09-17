@@ -35,7 +35,7 @@ type Props = {
 
 export default function RevoluxDevice({ alt, sizes, priority = false, className = "" }: Props) {
   return (
-    <div className={`relative aspect-[305/660] ${className}`}>
+    <div className={`vt-device relative aspect-[305/660] ${className}`}>
       <Image
         src="/images/revolux-front.png"
         alt={alt}

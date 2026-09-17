@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import PageTransition from "@/components/PageTransition";
 import { founder, site } from "@/content/site";
 
 /** The public website. The route group keeps the header and footer in one place. */
@@ -45,6 +46,7 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
         Skip to content
       </a>
       <Header />
+      <PageTransition />
       <main id="main">{children}</main>
       <Footer />
     </>
