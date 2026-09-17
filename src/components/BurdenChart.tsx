@@ -35,10 +35,9 @@ export default function BurdenChart({ layout = "side" }: Props) {
       {/* Where */}
       <figure className="rounded-2xl border border-line bg-ink-900 p-6 md:p-8">
         <figcaption>
-          <p className="eyebrow">{prevalence.legend.label}</p>
-          <p className="mt-2 text-sm text-fog/75">
-            Seven major markets, the ones GlobalData forecasts. Hover or tab through a country for its figures.
-          </p>
+          <p className="eyebrow">{prevalence.eyebrow}</p>
+          <p className="mt-2 font-display text-lg font-semibold leading-snug text-fog">{prevalence.title}</p>
+          <p className="mt-2 text-sm text-fog/75">{prevalence.intro}</p>
         </figcaption>
         <div className="mt-8">
           <PrevalenceMap />

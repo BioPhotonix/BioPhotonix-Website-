@@ -112,31 +112,36 @@ All in `src/components`:
 - **CountUp** counts a figure written as text, used for the investor
   headlines. It animates only a value containing exactly one number, so
   "200M" counts while "85-90%" and "Class IIa" are left alone.
-- **PrevalenceMap** colours AMD prevalent cases across the seven markets
-  GlobalData forecasts, on an Equal Earth projection. Things worth knowing:
+- **PrevalenceMap** shows AMD across the seven markets GlobalData forecasts,
+  as a **cartogram**: each country's silhouette is scaled so its AREA is
+  proportional to its prevalent cases. The United States is the biggest shape
+  because it has the most patients, and Spain comes out nearly the size of
+  Germany, which on a real map it is not. Things worth knowing:
 
-  1. It is a **server component**, and should stay one. The coastlines are
-     ~110KB of geometry; rendered on the server they ship as markup and cost
-     the visitor no JavaScript. Only the readout (`MapHover`) is a client
-     component, and it takes the SVG as `children` rather than importing the
-     geometry. This is why `BurdenChart` is no longer `"use client"`.
-  2. `scripts/build-world-map.mjs` generates `src/content/world-map.ts` from
-     Natural Earth 110m. It splits rings at the antimeridian: Russia's far
-     east and Fiji straddle 180 degrees, and without the split their polygons
-     draw a streak straight across the map.
-  3. Colour is **sequential** — one hue, interpolated in OKLab between two
+  1. It was a world choropleth first, and that was wrong for this data. Seven
+     countries carry figures and 169 carry none, so the world map spent most
+     of its frame saying "no data", and five of the seven were a few pixels
+     across. If you are tempted back towards a basemap, that is why.
+  2. `scripts/build-market-shapes.mjs` (`npm run build:map`) generates
+     `src/content/market-shapes.ts` from Natural Earth 110m. It projects with
+     **Equal Earth**, an equal-area projection, which is the whole reason the
+     stored `area` per country is comparable and the scaling is honest.
+  3. It drops outlying territory by **bounding-box growth**, not by distance.
+     Distance cannot do the job: Alaska sits 1.4 main-widths from the
+     contiguous US while Hokkaido sits 1.6 from Honshu, so any distance
+     threshold that drops Alaska also drops Hokkaido. Box growth separates
+     them — Alaska more than doubles the US frame, Hokkaido adds a third to
+     Japan's.
+  4. Every cell shares a **viewBox width** of 100 units and renders at the same
+     pixel width, so one user unit is the same size in all seven and the
+     shapes stay comparable. Heights are per country, which is what stops a
+     short, wide country reserving a tall empty box.
+  5. Colour is **sequential** — one hue, interpolated in OKLab between two
      steps of the site's teal, so lightness rises with the case count. On a
-     dark surface the anchor flips: more is brighter. Countries outside the
-     forecast are the surface grey, never the palest teal, which would read
-     as "hardly any cases" rather than "no data".
-  4. Small countries get a second path with a fat transparent stroke, because
-     the UK renders about 11px across and is otherwise unhoverable. That hit
-     path carries the same data attributes as the painted one, since the
-     readout reads whichever element the pointer actually hit.
+     dark surface the anchor flips: more is brighter.
 
-  The map is coloured by **case counts, not prevalence rates** — it answers
-  "where are the patients", which is the question the section asks. The legend
-  says "cases" so it cannot be misread as a rate.
+  It is sized by **case counts, not prevalence rates** — it answers "where are
+  the patients", which is the question the section asks.
 
 - **PhotonField** drifts photons towards the device behind the hero. The
   convergence point follows the pointer part of the way — partial on purpose,
@@ -200,7 +205,7 @@ AI-generated illustrations the Wix site used.
 The world map's geometry is generated, not hand-written:
 
 ```bash
-npm run build:map      # regenerates src/content/world-map.ts from Natural Earth
+npm run build:map      # regenerates src/content/market-shapes.ts from Natural Earth
 ```
 
 ## Checking a change did not break anything

@@ -45,7 +45,7 @@ export const markets: Market[] = [
 
 export const prevalence = {
   eyebrow: "Where the need is",
-  title: "Ninety-three million people, and half of them undiagnosed.",
+  title: "Ninety-three million people, and more than half of them undiagnosed.",
   intro:
     "GlobalData's 2025 forecast counts AMD across the seven major markets. Hover a country for its numbers. The gap between the people who have AMD and the people who have been diagnosed with it is the gap community optometry is positioned to close.",
   legend: {
@@ -62,20 +62,6 @@ export const prevalence = {
     diagnosed2034: 54_132_433,
     agr: 1.05,
   },
-  stats: [
-    {
-      value: "93.3M",
-      label: "people aged 50 and over living with AMD across the seven major markets in 2024, rising to 103.0 million by 2034",
-    },
-    {
-      value: "45%",
-      label: "of them have been diagnosed. The other 51.3 million have AMD that nobody has yet recorded",
-    },
-    {
-      value: "9.7M",
-      label: "of the total are in the United Kingdom alone, growing faster than Germany, Japan, Italy or France",
-    },
-  ],
   global:
     "Worldwide the figure is larger still: an estimated 196 million people were living with AMD in 2020, projected to reach 288 million by 2040.",
   sources: [
