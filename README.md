@@ -120,29 +120,36 @@ All in `src/components`:
   field bends instead of snapping. Mouse and trackpad only; a pointer that
   exists only during a tap would make it lurch.
 
-- **VisionSimulator** degrades a scene the way dry AMD does, across five
-  stages. Three things worth knowing before changing it:
+- **VisionSimulator** shows what a patient sees at each stage of dry AMD,
+  over three photographs and an Amsler grid. It is drawn to a canvas by
+  `vision-engine.ts`, and the first version is worth knowing about because it
+  was wrong in an instructive way: it used CSS backdrop-filters over live DOM
+  and argued itself into subtlety. Backdrop-filter can blur and desaturate,
+  but it cannot bend a straight line, cannot give the lost area a ragged
+  edge, and cannot move without re-running the filters every frame. The
+  result read as "some loss of contrast", which understates the disease far
+  more than a dark patch overstates it.
 
-  1. The loss is a `backdrop-filter` over the scene, not paint on top of it,
-     so text is genuinely destroyed rather than covered. Every `contrast()`
-     reduction is paired with the `brightness()` that maps white back to
-     white — without that, blank paper lifts towards grey and the mask blobs
-     show as ghost shapes over empty parts of the scene.
-  2. Geographic atrophy is drawn as several irregular patches *beside* the
-     point of fixation, not one circle on it. That is how it usually begins,
-     and it is why acuity on a chart can still measure well while reading has
-     fallen apart. Do not simplify it to a central disc.
-  3. Every stage is its own stacked layer, revealed by opacity. A
-     `mask-image` cannot be transitioned between two different gradient
-     lists, so a single re-masked layer would snap between stages.
+  The engine renders the three things dry AMD actually is: metamorphopsia (a
+  smooth noise field displaces the scene, so straight lines bend), a scotoma
+  with a lobed, ragged edge, and a surround that loses colour and light before
+  it loses detail. The lost area follows the pointer, because a scotoma is on
+  the retina and goes wherever the eye goes; that is the one thing a static
+  picture cannot convey. On touch it takes a tap, so the page still scrolls.
 
-  The scenes are a page of a book, a clock and an Amsler grid. A drawn
-  portrait was tried and cut: three attempts all read as an avatar, which on
-  a medical device site costs more credibility than the scene adds. A clock
-  was chosen over an eye chart because a chart puts its smallest letters at
-  the bottom, so a centred scotoma takes the middle rows and spares the
-  smallest, which reads backwards. A clock keeps everything that matters at
-  the centre.
+  Performance: the expensive work (warp, desaturate, blur, and the ragged
+  blob) is done once per stage at half resolution, which the blur hides, and
+  cached; the other stages are built one per idle slot. Each frame is then
+  four `drawImage` calls, so following a mouse costs almost nothing. The
+  stage numbers in `STAGES` were tuned by eye against the simulations the
+  Macular Society and the US National Eye Institute publish; the Amsler grid
+  bends more and blurs less than the photographs, because distortion is what
+  the grid exists to show. The lost area is drawn dark so it can be seen, and
+  the caveat says that patients more often describe grey or absence.
+
+  The photographs are from Pexels (free for commercial use; the photographers
+  are credited under each). `scripts/build-images.mjs` fetches them by ID, so
+  the source is on record.
 
 - **EvidenceLibrary** lists the published literature, filterable by topic and
   by whether the study supports the approach. See the header of

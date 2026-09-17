@@ -98,30 +98,49 @@ export const burden = {
  * of dry AMD, and the descriptions are written to match what patients report
  * rather than what a fundus photograph shows.
  *
- * Two points of honesty are deliberate and should survive any edit. The loss
- * is not drawn as a black spot, because that is not what people describe:
- * the visual cortex fills the missing area in, so patients report absence,
- * greying and blur rather than darkness. And geographic atrophy is drawn as
- * several irregular patches beside the point of fixation rather than one
- * circle on it, because that is how it usually begins, which is why acuity on
- * a chart can still measure well while reading has become exhausting.
+ * The simulation itself is deliberately unsubtle. Central vision loss is
+ * drawn as it is in the simulations clinicians and patient charities use: a
+ * dark, ragged patch over the point of fixation, straight lines bending
+ * around it, colour and contrast draining from the surround. Patients more
+ * often describe grey or absence than darkness, and the caveat says so, but a
+ * simulation that errs towards subtlety reads as nothing happening, which
+ * understates the disease far more than a dark patch overstates it.
  */
 export const vision = {
   eyebrow: "What is actually lost",
   title: "The years before anyone notices.",
   intro:
-    "Dry AMD does not announce itself. It takes contrast before it takes acuity, and it takes the middle of a word before it takes a face. Move through the stages to see what a patient sees at each one.",
+    "Dry AMD does not announce itself. It takes contrast before it takes acuity, bends straight lines before it removes them, and takes the middle of a face before it takes the edges. Move through the stages, and move your pointer over the picture: the loss goes wherever you look.",
   sceneLabel: "What you are looking at",
   stageLabel: "Stage of disease",
+  hint: "Move your pointer over the picture and the lost area follows it, the way a real scotoma follows the eye. On a phone, tap where you want to look.",
   scenes: [
-    { id: "reading", label: "A page", caption: "Reading is the function patients say they miss first and grieve most." },
     {
-      id: "clock",
-      label: "A clock",
-      caption:
-        "Both hands and the point they turn about sit at the centre. The numerals a patient can still see are the part that never told them the time.",
+      id: "family",
+      label: "A grandchild",
+      src: "/images/vision/family.jpg",
+      credit: "Mikhail Nilov, Pexels",
+      caption: "Recognising a face depends on exactly the part of the retina AMD takes. The edges of the room stay clear. The person in front of you does not.",
     },
-    { id: "grid", label: "Amsler grid", caption: "The clinical reference. Patients are asked to report lines that are missing, wavy or grey." },
+    {
+      id: "reading",
+      label: "A newspaper",
+      src: "/images/vision/reading.jpg",
+      credit: "MART PRODUCTION, Pexels",
+      caption: "Reading is the loss patients report first. Letters bend, then go missing from the middle of words, while the edge of the page stays sharp.",
+    },
+    {
+      id: "street",
+      label: "Crossing the road",
+      src: "/images/vision/street.jpg",
+      credit: "Kaique Rocha, Pexels",
+      caption: "Signals, signs and the faces of people walking towards you all sit in the central field. Peripheral vision is spared, which is why someone with advanced AMD can still get about and still cannot read the sign.",
+    },
+    {
+      id: "amsler",
+      label: "Amsler grid",
+      caption: "The clinical reference. Patients fix on the dot and report lines that look wavy, blurred or missing.",
+    },
   ],
   stages: [
     {
@@ -134,25 +153,25 @@ export const vision = {
       id: "early",
       short: "Early",
       title: "Early dry AMD",
-      body: "Medium drusen have formed beneath the retina. Acuity is usually normal and most people notice nothing at all. Some say they need more light to read than they used to, or that it takes them longer to adjust coming in from outside.",
+      body: "Medium drusen have formed beneath the retina. Acuity usually tests as normal and most people notice nothing at all, though some say they need more light to read, and a few see the first slight bending of straight lines on an Amsler grid.",
     },
     {
       id: "intermediate",
       short: "Intermediate",
       title: "Intermediate dry AMD",
-      body: "Large drusen, often with pigment change. Contrast goes before acuity does: reading in dim light gets harder, faces look washed out, and adapting to a change in lighting takes noticeably longer.",
+      body: "Large drusen, often with pigment change. Contrast drains from the centre of vision, straight lines bend, and a faint smudge sits over whatever is looked at directly. Reading in dim light becomes hard and faces look washed out.",
     },
     {
       id: "atrophy",
       short: "Atrophy",
       title: "Geographic atrophy",
-      body: "Patches of retina have been lost, and they usually appear beside the fovea before they reach it. Acuity on a chart can still measure well while reading has become exhausting, because letters drop out of the middle of words.",
+      body: "Areas of retina have died. A dense patch now sits in the centre of vision, ragged at its edges, and it moves with the eye, so it cannot be looked around. Letters vanish from the middle of words while the edge of the page stays sharp.",
     },
     {
       id: "advanced",
       short: "Advanced",
       title: "Advanced geographic atrophy",
-      body: "The atrophy has reached the point of fixation. What a person looks at directly is now the part they cannot see. Faces lose their features, and reading at ordinary size is no longer possible.",
+      body: "The atrophy has spread across the fovea. Whatever a person looks at directly is now inside the lost area. Faces cannot be recognised, print cannot be read at ordinary size, and peripheral vision is all that is left for getting about.",
     },
   ],
   /** Shown on the two stages Revolux is indicated for. */
@@ -163,7 +182,7 @@ export const vision = {
   },
   caveat: {
     title: "What this simulation cannot show",
-    body: "A real scotoma moves with the eye, so it cannot be looked around: wherever a patient turns, the missing area goes with them. Here it is fixed to the centre of the frame. The severity shown is representative of each stage, not a measurement of any individual, and both eyes are affected at different rates, which masks the loss further.",
+    body: "The lost area is drawn dark so that it can be seen. Patients more often describe grey, blur or simple absence, because the brain fills the gap in, which is part of why early disease goes unreported. Here the area follows your pointer; in life it follows the eye, and no amount of looking around moves it aside. The severity shown is representative of each stage, not a measurement of any patient, and both eyes are usually affected at different rates, which masks the loss further.",
   },
   cta: { label: "How Revolux intervenes", href: "/technology" },
 };

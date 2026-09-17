@@ -5,7 +5,7 @@
  * run to 10MB each).
  */
 import sharp from "sharp";
-import { mkdir } from "node:fs/promises";
+import { mkdir, stat, writeFile } from "node:fs/promises";
 
 const out = "public/images";
 await mkdir(out, { recursive: true });
@@ -74,3 +74,29 @@ console.log("wrote mark.png");
 // The full logo as supplied, trimmed, for anyone who needs it on a light background.
 await sharp("source-images/logo.png").trim().resize({ width: 1200 }).png({ compressionLevel: 9 }).toFile(`${out}/logo-light-bg.png`);
 console.log("wrote logo-light-bg.png");
+
+/**
+ * The vision simulator's photographs. Pexels, under the Pexels licence (free
+ * for commercial use, no attribution required; the site credits the
+ * photographers anyway). Fetched by photo ID so the source is on record, and
+ * cut to the simulator's 3:2 frame at the largest size its canvas ever draws.
+ */
+const photos = [
+  ["8317710", "family.jpg"],
+  ["9566081", "reading.jpg"],
+  ["109919", "street.jpg"],
+];
+await mkdir(`${out}/vision`, { recursive: true });
+for (const [id, dest] of photos) {
+  const src = `source-images/pexels-${id}.jpg`;
+  if (!(await stat(src).catch(() => null))) {
+    const res = await fetch(`https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=2000`);
+    if (!res.ok) throw new Error(`Pexels ${id}: ${res.status}`);
+    await writeFile(src, Buffer.from(await res.arrayBuffer()));
+  }
+  await sharp(src)
+    .resize({ width: 1600, height: 1067, fit: "cover", position: "centre" })
+    .jpeg({ quality: 80, mozjpeg: true })
+    .toFile(`${out}/vision/${dest}`);
+  console.log("wrote", `vision/${dest}`);
+}

@@ -1,25 +1,22 @@
 "use client";
 
-import { useId, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import Link from "next/link";
 import { vision } from "@/content/site";
-import { SCENES, SCENE_PAPER, SCENE_RATIO, type SceneId } from "./vision-scenes";
+import { VisionRenderer, type SceneSource } from "./vision-engine";
 
 /**
  * What a patient sees at each stage of dry AMD.
  *
  * The apparatus only: the host page supplies its own heading, the way
- * BurdenChart is used. Stage copy and the clinical reasoning behind the
- * staging live in `vision` in the content file.
+ * BurdenChart is used. Stage copy lives in `vision` in the content file, the
+ * stage parameters and every pixel in vision-engine.ts.
  *
- * Every stage layer is rendered and only the active one is opaque, so moving
- * through the stages cross-fades instead of snapping. See the .vs-* block in
- * globals.css for why the loss is built from backdrop-filter rather than
- * paint, and why atrophy is drawn beside the point of fixation and not on it.
+ * The lost area follows the pointer. That is the one thing a static picture
+ * of AMD cannot convey: a scotoma is on the retina, so it goes wherever the
+ * eye goes and cannot be looked around. On touch the frame takes a tap
+ * instead of a drag, so the page still scrolls.
  */
-
-/** One class per stage, indexed to `vision.stages`. Healthy has no layer. */
-const LOSS = [null, "vs-early", "vs-intermediate", "vs-atrophy", "vs-advanced"] as const;
 
 type Props = {
   /**
@@ -30,15 +27,46 @@ type Props = {
   titleAs?: "h2" | "h3";
 };
 
+type Scene = (typeof vision.scenes)[number];
+
+const sourceOf = (s: Scene): SceneSource => ("src" in s && s.src ? { kind: "image", src: s.src } : { kind: "amsler" });
+
 export default function VisionSimulator({ titleAs: Title = "h3" }: Props) {
-  const [scene, setScene] = useState<SceneId>("reading");
+  const [scene, setScene] = useState<Scene["id"]>(vision.scenes[0].id);
   const [stage, setStage] = useState(0);
   const sliderId = useId();
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const renderer = useRef<VisionRenderer | null>(null);
 
-  const Scene = SCENES[scene];
   const current = vision.stages[stage];
   const sceneMeta = vision.scenes.find((s) => s.id === scene)!;
   const indicated = vision.indicated.stages.includes(current.id);
+
+  useEffect(() => {
+    const el = canvasRef.current;
+    if (!el) return;
+    const r = new VisionRenderer(el);
+    renderer.current = r;
+    r.resize();
+    const ro = new ResizeObserver(() => r.resize());
+    ro.observe(el);
+    const io = new IntersectionObserver(([entry]) => r.setVisible(entry.isIntersecting), { threshold: 0 });
+    io.observe(el);
+    return () => {
+      ro.disconnect();
+      io.disconnect();
+      r.destroy();
+      renderer.current = null;
+    };
+  }, []);
+
+  useEffect(() => {
+    renderer.current?.setScene(sourceOf(sceneMeta));
+  }, [sceneMeta]);
+
+  useEffect(() => {
+    renderer.current?.setStage(stage);
+  }, [stage]);
 
   return (
     <div>
@@ -49,7 +77,7 @@ export default function VisionSimulator({ titleAs: Title = "h3" }: Props) {
           <button
             key={s.id}
             type="button"
-            onClick={() => setScene(s.id as SceneId)}
+            onClick={() => setScene(s.id)}
             aria-pressed={scene === s.id}
             className={`rounded-full border px-4 py-1.5 text-sm transition ${
               scene === s.id
@@ -64,24 +92,28 @@ export default function VisionSimulator({ titleAs: Title = "h3" }: Props) {
 
       <figure className="mt-5">
         <div
-          className="vs-scene rounded-2xl border border-line"
-          style={{ aspectRatio: SCENE_RATIO, ["--vs-paper" as string]: SCENE_PAPER[scene] }}
-          role="img"
-          aria-label={`${sceneMeta.label}, seen with ${current.title.toLowerCase()}.`}
+          className="vs-frame aspect-[3/2] rounded-2xl border border-line"
+          onPointerMove={(e) => {
+            if (e.pointerType === "touch") return;
+            renderer.current?.setPointer({ x: e.clientX, y: e.clientY });
+          }}
+          onPointerDown={(e) => {
+            if (e.pointerType !== "touch") return;
+            renderer.current?.setPointer({ x: e.clientX, y: e.clientY });
+          }}
+          onPointerLeave={() => renderer.current?.setPointer(null)}
         >
-          <Scene />
-
-          {LOSS.map((cls, i) =>
-            cls ? <div key={cls} aria-hidden="true" className={`vs-loss ${cls} ${i === stage ? "is-on" : ""}`} /> : null,
-          )}
-
-          {/* The simulation is anchored to this point, and the caveat says so. */}
-          <div className="vs-fixation" aria-hidden="true">
-            <span className="block h-3.5 w-3.5 rounded-full border border-teal-300/70 shadow-[0_0_0_1px_rgba(4,8,10,0.35)]" />
-          </div>
+          <canvas ref={canvasRef} role="img" aria-label={`${sceneMeta.label}, seen with ${current.title.toLowerCase()}.`} />
         </div>
-        <figcaption className="mt-3 text-sm text-fog/70">{sceneMeta.caption}</figcaption>
+        <figcaption className="mt-3 text-sm text-fog/70">
+          {sceneMeta.caption}
+          {"credit" in sceneMeta && sceneMeta.credit && (
+            <span className="figure mt-1 block text-xs text-fog/70">Photograph: {sceneMeta.credit}</span>
+          )}
+        </figcaption>
       </figure>
+
+      <p className="mt-3 text-sm text-fog/70">{vision.hint}</p>
 
       {/* Stage */}
       <div className="mt-8">
