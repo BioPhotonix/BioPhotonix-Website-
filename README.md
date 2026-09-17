@@ -73,7 +73,10 @@ All in `src/components`:
   with Revolux.
 - **RevoluxExplainer** is a tablist with five drawings of the binocular head:
   geometry, soft-start, wavelengths, interlocks, reporting. It advances on its
-  own until someone touches it.
+  own until someone touches it. On a phone the tabs are a horizontal row of
+  short labels above the diagram, so the drawing is on screen as soon as a tab
+  is chosen; a vertical list of full titles pushed it more than a screen down.
+  The tabs keep their full title as their accessible name at every width.
 - **RetinaExplainer** is the eye cross-section, with light reaching the
   mitochondria.
 - **Roadmap** is the development stages with a rail that fills on scroll.
@@ -214,6 +217,27 @@ supplied logo is kept at `public/images/logo-light-bg.png`.
   cookies. Remove those lines or add the banner if analytics are introduced.
 - **The founder's LinkedIn** link is Adail's personal profile; there is no
   company page yet.
+
+## Drawing the diagrams
+
+Two rules, both learned the hard way, apply to every annotated SVG here.
+
+**Keep the annotations out of the artwork.** In the explainer the handle runs
+down the middle of the lower half, and anything written across it collides.
+Each drawing therefore puts the device in the top two thirds and every label
+in a clear band beneath it. If you add a label, put it below y=400 in that
+component's 640x530 space, or above y=80.
+
+**Size annotation text in CSS, not with `fontSize`.** A 640-unit viewBox on a
+350px phone halves everything, so a label sized for the desktop lands near
+8px. The `CAP` and `CAP_SM` constants in the explainer and the retina diagram
+set a larger size in user units on a phone and a smaller one from `md` up, so
+both come out near 15px on screen.
+
+`scripts/` has no checker for this, but the browser does: measure a text
+node's `getBoundingClientRect()` against the drawn elements around it, in
+screen coordinates rather than `getBBox()`, which ignores transforms and
+over-reports for ellipses and diagonals.
 
 ## Contrast and text size
 

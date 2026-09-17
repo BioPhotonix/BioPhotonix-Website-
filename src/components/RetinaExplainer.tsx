@@ -4,6 +4,11 @@ import { motion, useReducedMotion } from "motion/react";
 import { retina } from "@/content/site";
 
 /** Rays enter across the pupil and cross there, so the fan inverts on the way to the retina. */
+/** Annotation type: larger in user units on a phone, where a 640-unit viewBox
+    is scaled to roughly half size and an attribute-sized label lands near 8px. */
+const CAP = "text-[26px] font-semibold tracking-[0.09em] md:text-[17px]";
+const CAP_SM = "text-[23px] font-semibold tracking-[0.09em] md:text-[16px]";
+
 const RAYS = [
   { from: 104, to: 268 },
   { from: 136, to: 248 },
@@ -27,7 +32,7 @@ export default function RetinaExplainer() {
   return (
     <div>
       <svg
-        viewBox="0 0 640 470"
+        viewBox="0 0 640 500"
         className="h-auto w-full"
         role="img"
         aria-label="Cross-section of an eye. A broad beam of red and near-infrared light enters through the pupil, crosses, and spreads across the retina at the back, where it is absorbed by mitochondria inside a retinal cell."
@@ -110,21 +115,21 @@ export default function RetinaExplainer() {
               <ellipse cx={m.x} cy={m.y} rx="11" ry="5.5" fill="#ff5a3c" />
             </motion.g>
           ))}
-          <text x="66" y="88" textAnchor="middle" fontSize="15" fill="#e8f1f3" opacity="0.85" fontFamily="var(--font-sans)" fontWeight="600" letterSpacing="0.1em">
+          <text x="66" y="88" textAnchor="middle" className={CAP_SM} fill="#e8f1f3" opacity="0.85" fontFamily="var(--font-sans)">
             MITOCHONDRIA
           </text>
         </g>
 
-        <text x="4" y="352" fontSize="16" fill="#e8f1f3" opacity="0.8" fontFamily="var(--font-sans)" fontWeight="600" letterSpacing="0.1em">
+        <text x="4" y="392" className={CAP} fill="#e8f1f3" opacity="0.8" fontFamily="var(--font-sans)">
           RED + NEAR-INFRARED
         </text>
-        <text x="4" y="372" fontSize="15" fill="#e8f1f3" opacity="0.55" fontFamily="var(--font-sans)" fontWeight="600" letterSpacing="0.1em">
+        <text x="4" y="424" className={CAP_SM} fill="#e8f1f3" opacity="0.7" fontFamily="var(--font-sans)">
           CONTROLLED DOSE
         </text>
-        <text x="452" y="62" textAnchor="middle" fontSize="16" fill="#6fe3ea" fontFamily="var(--font-sans)" fontWeight="600" letterSpacing="0.1em">
+        <text x="452" y="40" textAnchor="middle" className={CAP} fill="#6fe3ea" fontFamily="var(--font-sans)">
           RETINA
         </text>
-        <text x="156" y="316" textAnchor="middle" fontSize="15" fill="#e8f1f3" opacity="0.6" fontFamily="var(--font-sans)" fontWeight="600" letterSpacing="0.1em">
+        <text x="156" y="330" textAnchor="middle" className={CAP_SM} fill="#e8f1f3" opacity="0.7" fontFamily="var(--font-sans)">
           PUPIL
         </text>
       </svg>
