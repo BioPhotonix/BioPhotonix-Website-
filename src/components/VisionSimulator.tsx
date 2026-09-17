@@ -72,7 +72,7 @@ export default function VisionSimulator({ titleAs: Title = "h3" }: Props) {
     <div>
       {/* Scene */}
       <div role="group" aria-label={vision.sceneLabel} className="flex flex-wrap items-center gap-2">
-        <span className="eyebrow mr-1 text-fog/70">{vision.sceneLabel}</span>
+        <span className="eyebrow mr-1 text-fog">{vision.sceneLabel}</span>
         {vision.scenes.map((s) => (
           <button
             key={s.id}
@@ -82,7 +82,7 @@ export default function VisionSimulator({ titleAs: Title = "h3" }: Props) {
             className={`rounded-full border px-4 py-1.5 text-sm transition ${
               scene === s.id
                 ? "border-teal-400 bg-teal-400/10 text-fog"
-                : "border-line text-fog/70 hover:border-line-strong hover:text-fog"
+                : "border-line text-fog hover:border-line-strong hover:text-fog"
             }`}
           >
             {s.label}
@@ -105,14 +105,14 @@ export default function VisionSimulator({ titleAs: Title = "h3" }: Props) {
         >
           <canvas ref={canvasRef} role="img" aria-label={`${sceneMeta.label}, seen with ${current.title.toLowerCase()}.`} />
         </div>
-        <figcaption className="mt-3 text-sm text-fog/70">{sceneMeta.caption}</figcaption>
+        <figcaption className="mt-3 text-sm text-fog">{sceneMeta.caption}</figcaption>
       </figure>
 
-      <p className="mt-3 text-sm text-fog/70">{vision.hint}</p>
+      <p className="mt-3 text-sm text-fog">{vision.hint}</p>
 
       {/* Stage */}
       <div className="mt-8">
-        <label htmlFor={sliderId} className="eyebrow block text-fog/70">
+        <label htmlFor={sliderId} className="eyebrow block text-fog">
           {vision.stageLabel}
         </label>
         <input
@@ -134,7 +134,7 @@ export default function VisionSimulator({ titleAs: Title = "h3" }: Props) {
               onClick={() => setStage(i)}
               aria-label={`Show ${s.title}`}
               className={`figure rounded px-1 py-0.5 text-xs transition ${
-                i === stage ? "text-fog" : "text-fog/70 hover:text-fog/85"
+                i === stage ? "text-fog" : "text-fog hover:text-fog"
               }`}
             >
               {s.short}
@@ -145,16 +145,16 @@ export default function VisionSimulator({ titleAs: Title = "h3" }: Props) {
 
       <div aria-live="polite" className="mt-6 min-h-[9.5rem]">
         <Title className="h-card text-fog">{current.title}</Title>
-        <p className="mt-3 text-fog/75">{current.body}</p>
+        <p className="mt-3 text-fog">{current.body}</p>
         {indicated && (
           <p className="mt-4 flex flex-wrap items-baseline gap-x-2 gap-y-1 border-l-2 border-teal-400 pl-4 text-sm">
             <span className="eyebrow">{vision.indicated.label}</span>
-            <span className="text-fog/75">{vision.indicated.body}</span>
+            <span className="text-fog">{vision.indicated.body}</span>
           </p>
         )}
       </div>
 
-      <details className="mt-6 text-sm text-fog/70">
+      <details className="mt-6 text-sm text-fog">
         <summary className="cursor-pointer select-none">{vision.caveat.title}</summary>
         <p className="mt-3 max-w-2xl">{vision.caveat.body}</p>
       </details>

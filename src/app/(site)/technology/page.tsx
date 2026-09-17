@@ -37,13 +37,13 @@ export default function TechnologyPage() {
           <div className="lg:col-span-7">
             <p className="eyebrow">{revolux.eyebrow}</p>
             <h1 className="h-display mt-5 text-fog">{shift.title}</h1>
-            <p className="lede mt-7 max-w-xl text-fog/75">
+            <p className="lede mt-7 max-w-xl text-fog">
               Preserving vision and independence through advanced photobiomodulation, engineered as a Class IIa medical device for the community clinic.
             </p>
             <dl className="mt-12 grid max-w-2xl grid-cols-2 gap-px overflow-hidden rounded-xl border border-line bg-line sm:grid-cols-4">
               {revolux.facts.map((f) => (
                 <div key={f.label} className="bg-ink-950/80 px-4 py-3.5">
-                  <dt className="figure text-xs uppercase tracking-[0.13em] text-fog/70">{f.label}</dt>
+                  <dt className="figure text-xs uppercase tracking-[0.13em] text-fog">{f.label}</dt>
                   <dd className="mt-1 text-sm font-medium text-fog">{f.value}</dd>
                 </div>
               ))}
@@ -68,7 +68,7 @@ export default function TechnologyPage() {
             {revolux.pillars.map((p) => (
               <div key={p.title}>
                 <h2 className="font-display text-lg font-semibold text-fog">{p.title}</h2>
-                <p className="mt-2 text-sm leading-relaxed text-fog/75">{p.body}</p>
+                <p className="mt-2 text-sm leading-relaxed text-fog">{p.body}</p>
               </div>
             ))}
           </Reveal>
@@ -98,7 +98,7 @@ export default function TechnologyPage() {
         <div className="shell grid gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-5">
             <SectionHeading eyebrow={retina.eyebrow} title={retina.title} />
-            <Reveal className="mt-6 flex flex-col gap-4 text-fog/75">
+            <Reveal className="mt-6 flex flex-col gap-4 text-fog">
               {retina.body.map((p) => (
                 <p key={p} className="leading-relaxed">
                   {p}
@@ -133,7 +133,7 @@ export default function TechnologyPage() {
               <TechCard className="h-full p-7">
                 <CardMark kind={s.mark} className="h-10 w-10" />
                 <h3 className="mt-5 font-display text-lg font-semibold text-fog">{s.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-fog/75">{s.body}</p>
+                <p className="mt-3 text-sm leading-relaxed text-fog">{s.body}</p>
               </TechCard>
             </Reveal>
           ))}

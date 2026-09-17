@@ -45,7 +45,7 @@ export default function Header() {
               key={item.href}
               href={item.href}
               data-active={pathname.startsWith(item.href)}
-              className="link-underline text-sm text-fog/80 hover:text-fog"
+              className="link-underline text-sm text-fog hover:text-fog"
             >
               {item.label}
             </Link>

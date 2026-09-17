@@ -91,10 +91,10 @@ export default function RevoluxExplainer() {
                 tabIndex={selected ? 0 : -1}
                 onClick={() => choose(i)}
                 className={`group relative flex shrink-0 items-center gap-2.5 rounded-xl px-3.5 py-3 text-left whitespace-nowrap transition-colors duration-300 lg:w-full lg:gap-4 lg:px-4 lg:py-3.5 ${
-                  selected ? "bg-ink-800 text-fog" : "text-fog/75 hover:text-fog"
+                  selected ? "bg-ink-800 text-fog" : "text-fog hover:text-fog"
                 }`}
               >
-                <span className={`text-xs font-semibold ${selected ? "text-teal-400" : "text-fog/70"}`}>
+                <span className={`text-xs font-semibold ${selected ? "text-teal-400" : "text-fog"}`}>
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <span className="font-display text-base font-semibold lg:hidden">{s.short}</span>
@@ -181,7 +181,7 @@ export default function RevoluxExplainer() {
                   <text x="320" y="500" textAnchor="middle" className={CAP} fill="#1bc3cd" fontFamily="var(--font-sans)">
                     FIXED SOURCE-TO-EYE GEOMETRY
                   </text>
-                  <text x="320" y="58" textAnchor="middle" className={CAP_SM} fill="#e8f1f3" fillOpacity="0.75" fontFamily="var(--font-sans)">
+                  <text x="320" y="58" textAnchor="middle" className={CAP_SM} fill="#e8f1f3" fontFamily="var(--font-sans)">
                     ALIGNED, REPEATABLE, BOTH EYES
                   </text>
                 </motion.g>
@@ -215,10 +215,10 @@ export default function RevoluxExplainer() {
                       animate={{ pathLength: 1 }}
                       transition={reduce ? { duration: 0 } : { duration: 2.4, ease: "easeOut" }}
                     />
-                    <text x="0" y="-14" className={CAP_SM} fill="#e8f1f3" fillOpacity="0.75" fontFamily="var(--font-sans)">
+                    <text x="0" y="-14" className={CAP_SM} fill="#e8f1f3" fontFamily="var(--font-sans)">
                       OUTPUT
                     </text>
-                    <text x="500" y="102" textAnchor="end" className={CAP_SM} fill="#e8f1f3" fillOpacity="0.75" fontFamily="var(--font-sans)">
+                    <text x="500" y="102" textAnchor="end" className={CAP_SM} fill="#e8f1f3" fontFamily="var(--font-sans)">
                       TIME
                     </text>
                   </g>
@@ -249,18 +249,18 @@ export default function RevoluxExplainer() {
                   )}
                   <g transform="translate(150, 436)">
                     <circle cx="0" cy="-6" r="8" fill="#ff7a5e" />
-                    <text x="20" y="0" className={CAP_SM} fill="#e8f1f3" fillOpacity="0.85" fontFamily="var(--font-sans)">
+                    <text x="20" y="0" className={CAP_SM} fill="#e8f1f3" fontFamily="var(--font-sans)">
                       RED
                     </text>
                     <circle cx="0" cy="38" r="8" fill="#b8402c" />
-                    <text x="20" y="44" className={CAP_SM} fill="#e8f1f3" fillOpacity="0.85" fontFamily="var(--font-sans)">
+                    <text x="20" y="44" className={CAP_SM} fill="#e8f1f3" fontFamily="var(--font-sans)">
                       NEAR-INFRARED
                     </text>
                   </g>
                   <text x="320" y="512" textAnchor="middle" className={CAP} fill="#1bc3cd" fontFamily="var(--font-sans)">
                     TARGET: MITOCHONDRIAL FUNCTION
                   </text>
-                  <text x="320" y="58" textAnchor="middle" className={CAP_SM} fill="#e8f1f3" fillOpacity="0.75" fontFamily="var(--font-sans)">
+                  <text x="320" y="58" textAnchor="middle" className={CAP_SM} fill="#e8f1f3" fontFamily="var(--font-sans)">
                     THE STRONGEST CLINICAL EFFECT
                   </text>
                 </motion.g>
@@ -282,7 +282,7 @@ export default function RevoluxExplainer() {
                         transition={reduce ? undefined : { duration: 3, delay: i * 0.5, repeat: Infinity, ease: "easeInOut" }}
                       />
                       <circle r="19" fill="none" stroke="#1bc3cd" strokeOpacity="0.4" />
-                      <text y="54" textAnchor="middle" className={CAP_SM} fill="#e8f1f3" fillOpacity="0.85" fontFamily="var(--font-sans)">
+                      <text y="54" textAnchor="middle" className={CAP_SM} fill="#e8f1f3" fontFamily="var(--font-sans)">
                         {g.label}
                       </text>
                     </g>
@@ -337,10 +337,10 @@ export default function RevoluxExplainer() {
                     animate={{ pathLength: 1 }}
                     transition={reduce ? { duration: 0 } : { duration: 1.2 }}
                   />
-                  <text x="36" y="452" className={CAP_SM} fill="#e8f1f3" fillOpacity="0.85" fontFamily="var(--font-sans)">
+                  <text x="36" y="452" className={CAP_SM} fill="#e8f1f3" fontFamily="var(--font-sans)">
                     CLINICIAN-INITIATED
                   </text>
-                  <text x="36" y="492" className={CAP_SM} fill="#e8f1f3" fillOpacity="0.85" fontFamily="var(--font-sans)">
+                  <text x="36" y="492" className={CAP_SM} fill="#e8f1f3" fontFamily="var(--font-sans)">
                     DIGITALLY LOGGED
                   </text>
                   <text x="320" y="58" textAnchor="middle" className={CAP} fill="#1bc3cd" fontFamily="var(--font-sans)">
@@ -362,7 +362,7 @@ export default function RevoluxExplainer() {
             animate={{ opacity: 1, y: 0 }}
             exit={reduce ? undefined : { opacity: 0, y: -8 }}
             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="text-base leading-relaxed text-fog/75"
+            className="text-base leading-relaxed text-fog"
           >
             {step.body}
           </motion.p>

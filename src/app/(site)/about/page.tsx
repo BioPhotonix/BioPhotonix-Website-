@@ -22,16 +22,16 @@ export default function AboutPage() {
         <div className="shell relative">
           <p className="eyebrow">{about.hero.eyebrow}</p>
           <h1 className="h-display mt-5 max-w-4xl text-fog">{about.hero.title}</h1>
-          <p className="lede mt-7 max-w-2xl text-fog/75">{about.hero.lede}</p>
+          <p className="lede mt-7 max-w-2xl text-fog">{about.hero.lede}</p>
         </div>
       </section>
 
       {/* Belief */}
       <section className="shell py-20 md:py-28">
         <Reveal className="mx-auto max-w-3xl text-center">
-          <p className="text-base text-fog/75">{about.belief.lead}</p>
+          <p className="text-base text-fog">{about.belief.lead}</p>
           <p className="mt-6 font-display text-3xl font-semibold leading-tight text-fog md:text-5xl">{about.belief.statement}</p>
-          <p className="lede mt-8 text-fog/75">{about.belief.body}</p>
+          <p className="lede mt-8 text-fog">{about.belief.body}</p>
         </Reveal>
       </section>
 
@@ -40,7 +40,7 @@ export default function AboutPage() {
         <div className="shell grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-6">
             <SectionHeading eyebrow={about.origin.eyebrow} title={about.origin.title} />
-            <Reveal className="mt-6 flex flex-col gap-4 text-fog/75">
+            <Reveal className="mt-6 flex flex-col gap-4 text-fog">
               {about.origin.body.map((p) => (
                 <p key={p} className="leading-relaxed">
                   {p}
@@ -65,7 +65,7 @@ export default function AboutPage() {
               <TechCard className="h-full p-7">
                 <CardMark kind={v.mark} className="h-10 w-10" />
                 <h3 className="mt-5 font-display text-lg font-semibold text-fog">{v.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-fog/75">{v.body}</p>
+                <p className="mt-3 text-sm leading-relaxed text-fog">{v.body}</p>
               </TechCard>
             </Reveal>
           ))}
@@ -83,10 +83,10 @@ export default function AboutPage() {
           <div className="lg:col-span-7">
             <SectionHeading eyebrow={founder.eyebrow} title={founder.name} />
             <Reveal>
-              <p className="mt-2 text-base text-fog/75">
+              <p className="mt-2 text-base text-fog">
                 {founder.role} &middot; {founder.qualifications.join(", ")}
               </p>
-              <div className="mt-6 flex flex-col gap-4 text-fog/75">
+              <div className="mt-6 flex flex-col gap-4 text-fog">
                 {founder.bio.map((p) => (
                   <p key={p} className="leading-relaxed">
                     {p}
@@ -97,7 +97,7 @@ export default function AboutPage() {
                 href={founder.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="link-underline mt-6 inline-block text-base text-fog/85 hover:text-fog"
+                className="link-underline mt-6 inline-block text-base text-fog hover:text-fog"
               >
                 Adail on LinkedIn
               </a>
@@ -119,10 +119,10 @@ export default function AboutPage() {
                 <div className="p-6">
                   <p className="eyebrow">{p.area}</p>
                   <h3 className="mt-3 font-display text-xl font-semibold text-fog">{p.name}</h3>
-                  <p className="mt-1 text-sm text-fog/75">
+                  <p className="mt-1 text-sm text-fog">
                     {p.role}, {p.org}
                   </p>
-                  <p className="mt-4 text-sm leading-relaxed text-fog/75">{p.body}</p>
+                  <p className="mt-4 text-sm leading-relaxed text-fog">{p.body}</p>
                 </div>
               </TechCard>
             </Reveal>
@@ -135,7 +135,7 @@ export default function AboutPage() {
             {partners.names.map((p) => (
               <li key={p.name}>
                 <p className="font-display text-lg font-semibold text-fog">{p.name}</p>
-                <p className="text-sm text-fog/70">{p.role}</p>
+                <p className="text-sm text-fog">{p.role}</p>
               </li>
             ))}
           </ul>

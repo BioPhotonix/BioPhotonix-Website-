@@ -21,7 +21,7 @@ export default async function ContactPage({ searchParams }: Search) {
         <div>
           <p className="eyebrow">{contact.eyebrow}</p>
           <h1 className="h-display mt-5 text-fog">{contact.title}</h1>
-          <p className="lede mt-7 max-w-md text-fog/75">{contact.body}</p>
+          <p className="lede mt-7 max-w-md text-fog">{contact.body}</p>
           <div className="mt-10 flex flex-col gap-3 text-lg">
             <a href={site.phoneHref} className="link-underline w-fit text-fog">
               {site.phone}
@@ -30,7 +30,7 @@ export default async function ContactPage({ searchParams }: Search) {
               {site.email}
             </a>
           </div>
-          <address className="mt-8 text-base not-italic leading-relaxed text-fog/75">
+          <address className="mt-8 text-base not-italic leading-relaxed text-fog">
             {site.legalName}
             <br />
             {site.address.line1}
@@ -39,7 +39,7 @@ export default async function ContactPage({ searchParams }: Search) {
             <br />
             {site.address.city} {site.address.postcode}, {site.address.country}
           </address>
-          <p className="mt-8 text-sm text-fog/70">{contact.responseNote}</p>
+          <p className="mt-8 text-sm text-fog">{contact.responseNote}</p>
         </div>
         <Reveal delay={0.1}>
           <h2 className="font-display text-2xl font-semibold text-fog">{contact.formTitle}</h2>

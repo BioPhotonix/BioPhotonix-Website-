@@ -201,7 +201,7 @@ export default function RevoluxAnatomy() {
               tabIndex={i === view ? 0 : -1}
               onClick={() => setView(i)}
               className={`rounded-full px-4 py-2 text-sm font-medium transition-colors duration-300 ${
-                i === view ? "bg-teal-400 text-ink-950" : "text-fog/75 hover:text-fog"
+                i === view ? "bg-teal-400 text-ink-950" : "text-fog hover:text-fog"
               }`}
             >
               {v.label}
@@ -209,10 +209,10 @@ export default function RevoluxAnatomy() {
           ))}
         </div>
 
-        <p aria-live="polite" className="mx-auto mt-5 max-w-md text-center text-sm leading-relaxed text-fog/75">
+        <p aria-live="polite" className="mx-auto mt-5 max-w-md text-center text-sm leading-relaxed text-fog">
           {current.caption}
         </p>
-        <p className="mx-auto mt-3 max-w-md text-center text-xs leading-relaxed text-fog/70">{anatomy.note}</p>
+        <p className="mx-auto mt-3 max-w-md text-center text-xs leading-relaxed text-fog">{anatomy.note}</p>
       </div>
 
       <ol className="lg:col-span-5 lg:self-center">
@@ -239,7 +239,7 @@ export default function RevoluxAnatomy() {
               </span>
               <span className="font-display text-xl font-semibold text-fog">{part.label}</span>
             </p>
-            <p className="mt-2 pl-10 text-sm leading-relaxed text-fog/75">{part.body}</p>
+            <p className="mt-2 pl-10 text-sm leading-relaxed text-fog">{part.body}</p>
           </li>
         ))}
       </ol>

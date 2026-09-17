@@ -38,7 +38,7 @@ export default function Hero() {
             <motion.h1 {...rise(0.08)} className="h-display mt-6 max-w-3xl text-fog">
               {hero.title}
             </motion.h1>
-            <motion.p {...rise(0.16)} className="lede mt-7 max-w-xl text-fog/75">
+            <motion.p {...rise(0.16)} className="lede mt-7 max-w-xl text-fog">
               {hero.subtitle}
             </motion.p>
             <motion.div {...rise(0.24)} className="mt-10 flex flex-wrap items-center gap-3">
@@ -51,7 +51,7 @@ export default function Hero() {
             <motion.dl {...rise(0.34)} className="mt-14 grid max-w-xl grid-cols-1 gap-px overflow-hidden rounded-xl border border-line bg-line sm:grid-cols-3">
               {hero.specs.map((s) => (
                 <div key={s.label} className="bg-ink-950/80 px-4 py-3.5 backdrop-blur">
-                  <dt className="figure text-xs uppercase tracking-[0.13em] text-fog/70">{s.label}</dt>
+                  <dt className="figure text-xs uppercase tracking-[0.13em] text-fog">{s.label}</dt>
                   <dd className="mt-1 text-sm font-medium text-fog">{s.value}</dd>
                 </div>
               ))}

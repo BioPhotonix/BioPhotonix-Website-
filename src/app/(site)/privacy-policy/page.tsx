@@ -13,7 +13,7 @@ export default function PrivacyPage() {
       <div className="mx-auto max-w-3xl">
         <p className="eyebrow">Legal</p>
         <h1 className="h-section mt-4 text-fog">Privacy policy</h1>
-        <p className="mt-4 text-sm text-fog/70">Last updated: {privacy.lastUpdated}</p>
+        <p className="mt-4 text-sm text-fog">Last updated: {privacy.lastUpdated}</p>
 
         {privacy.sections.map((s) => (
           <section key={s.title} className="mt-12">
@@ -30,7 +30,7 @@ export default function PrivacyPage() {
                 return (
                   <ul key={i} className="mt-4 flex flex-col gap-2.5">
                     {b.items.map((item) => (
-                      <li key={item} className="flex items-start gap-3 text-fog/75">
+                      <li key={item} className="flex items-start gap-3 text-fog">
                         <span aria-hidden="true" className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-teal-400" />
                         <span className="leading-relaxed">{item}</span>
                       </li>
@@ -39,7 +39,7 @@ export default function PrivacyPage() {
                 );
               }
               return (
-                <p key={i} className="mt-4 leading-relaxed text-fog/75">
+                <p key={i} className="mt-4 leading-relaxed text-fog">
                   {b.text}
                 </p>
               );

@@ -25,7 +25,7 @@ export default function ClinicsPage() {
         <div className="shell relative">
           <p className="eyebrow">{clinics.eyebrow}</p>
           <h1 className="h-display mt-5 max-w-4xl text-fog">{clinics.title}</h1>
-          <p className="lede mt-7 max-w-2xl text-fog/75">{clinics.intro}</p>
+          <p className="lede mt-7 max-w-2xl text-fog">{clinics.intro}</p>
           <div className="mt-10 flex flex-wrap gap-3">
             <Button href="#register">{clinics.cta.label}</Button>
             <Button href="#economics" variant="outline">
@@ -45,7 +45,7 @@ export default function ClinicsPage() {
                   <CardMark kind={p.mark} className="h-10 w-10 shrink-0" />
                 </div>
                 <h2 className="mt-4 font-display text-lg font-semibold text-fog">{p.title}</h2>
-                <p className="mt-2 text-sm leading-relaxed text-fog/75">{p.body}</p>
+                <p className="mt-2 text-sm leading-relaxed text-fog">{p.body}</p>
               </TechCard>
             </Reveal>
           ))}
@@ -62,7 +62,7 @@ export default function ClinicsPage() {
                 <CardMark kind={s.mark} className="h-9 w-9" />
                 <span className="mt-4 block text-xs font-semibold tracking-[0.13em] text-teal-400">{String(i + 1).padStart(2, "0")}</span>
                 <h3 className="mt-2 font-display text-xl font-semibold text-fog">{s.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-fog/75">{s.body}</p>
+                <p className="mt-2 text-sm leading-relaxed text-fog">{s.body}</p>
               </Reveal>
             ))}
           </ol>
@@ -107,7 +107,7 @@ export default function ClinicsPage() {
           <Reveal>
             <p className="eyebrow">Register your interest</p>
             <h2 className="h-section mt-4 text-fog">{clinics.cta.title}</h2>
-            <p className="lede mt-6 max-w-md text-fog/75">{clinics.cta.body}</p>
+            <p className="lede mt-6 max-w-md text-fog">{clinics.cta.body}</p>
           </Reveal>
           <Reveal delay={0.1}>
             <ContactForm kind="clinic" />

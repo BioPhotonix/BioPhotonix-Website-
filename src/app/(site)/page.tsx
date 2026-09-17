@@ -36,7 +36,7 @@ export default function HomePage() {
                 <span className="block text-4xl font-medium text-fog md:text-5xl">
                   <StatCounter value={s.value} prefix={s.prefix} suffix={s.suffix} />
                 </span>
-                <span className="mt-3 block text-sm leading-relaxed text-fog/75">{s.label}</span>
+                <span className="mt-3 block text-sm leading-relaxed text-fog">{s.label}</span>
               </dd>
             </Reveal>
           ))}
@@ -47,9 +47,9 @@ export default function HomePage() {
         <Reveal className="mt-6 rounded-2xl border border-line bg-ink-900 p-7">
           <div className="flex flex-col gap-3 md:flex-row md:items-center md:gap-8">
             <span className="text-4xl font-medium text-ember-text md:text-5xl">{burden.cost.value}</span>
-            <p className="text-base leading-relaxed text-fog/75">{burden.cost.label}</p>
+            <p className="text-base leading-relaxed text-fog">{burden.cost.label}</p>
           </div>
-          <p className="mt-4 text-xs text-fog/70">Source: {burden.cost.source}</p>
+          <p className="mt-4 text-xs text-fog">Source: {burden.cost.source}</p>
         </Reveal>
       </section>
 
@@ -60,7 +60,7 @@ export default function HomePage() {
           <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-5">
               <SectionHeading eyebrow={shift.eyebrow} title={shift.title} />
-              <Reveal className="mt-6 flex flex-col gap-4 text-fog/75">
+              <Reveal className="mt-6 flex flex-col gap-4 text-fog">
                 {shift.body.map((p) => (
                   <p key={p} className="leading-relaxed">
                     {p}
@@ -95,7 +95,7 @@ export default function HomePage() {
           </Reveal>
           <div className="lg:col-span-7">
             <SectionHeading eyebrow={revolux.eyebrow} title={`${revolux.name}. ${revolux.tagline}`} />
-            <Reveal className="mt-6 flex flex-col gap-4 text-fog/75">
+            <Reveal className="mt-6 flex flex-col gap-4 text-fog">
               {revolux.body.map((p) => (
                 <p key={p} className="leading-relaxed">
                   {p}
@@ -107,7 +107,7 @@ export default function HomePage() {
                 <Reveal key={p.title} delay={i * 0.08}>
                   <TechCard className="h-full p-6">
                     <h3 className="font-display text-lg font-semibold text-fog">{p.title}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-fog/75">{p.body}</p>
+                    <p className="mt-2 text-sm leading-relaxed text-fog">{p.body}</p>
                   </TechCard>
                 </Reveal>
               ))}
@@ -133,7 +133,7 @@ export default function HomePage() {
                   <CardMark kind={p.mark} className="h-10 w-10 shrink-0" />
                 </div>
                 <h3 className="mt-4 font-display text-lg font-semibold text-fog">{p.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-fog/75">{p.body}</p>
+                <p className="mt-2 text-sm leading-relaxed text-fog">{p.body}</p>
               </TechCard>
             </Reveal>
           ))}
@@ -173,7 +173,7 @@ export default function HomePage() {
           </Reveal>
           <div className="lg:col-span-7">
             <SectionHeading eyebrow={founder.eyebrow} title="Founded by a clinician who ran out of things to offer." />
-            <Reveal className="mt-6 flex flex-col gap-4 text-fog/75">
+            <Reveal className="mt-6 flex flex-col gap-4 text-fog">
               {founder.bio.map((p) => (
                 <p key={p} className="leading-relaxed">
                   {p}
@@ -182,7 +182,7 @@ export default function HomePage() {
             </Reveal>
             <Reveal className="mt-8">
               <p className="font-display text-xl font-semibold text-fog">{founder.name}</p>
-              <p className="text-sm text-fog/75">
+              <p className="text-sm text-fog">
                 {founder.role} &middot; {founder.qualifications.join(", ")}
               </p>
               <div className="mt-6">
@@ -201,7 +201,7 @@ export default function HomePage() {
           <div className="flex flex-wrap items-end justify-between gap-6">
             <SectionHeading eyebrow="Latest insights" title="From the team." />
             <Reveal>
-              <Link href="/news" className="link-underline text-base text-fog/80 hover:text-fog">
+              <Link href="/news" className="link-underline text-base text-fog hover:text-fog">
                 All articles
               </Link>
             </Reveal>
@@ -215,11 +215,11 @@ export default function HomePage() {
                       <PostArt kind={p.art} className="transition-transform duration-700 group-hover:scale-[1.03]" />
                     </div>
                     <div className="p-6">
-                      <p className="figure text-xs uppercase tracking-[0.13em] text-fog/70">
+                      <p className="figure text-xs uppercase tracking-[0.13em] text-fog">
                         {formatDate(p.date)} &middot; {p.readingMinutes} min
                       </p>
                       <h3 className="mt-3 font-display text-lg font-semibold leading-snug text-fog">{p.title}</h3>
-                      <p className="mt-3 text-sm leading-relaxed text-fog/75">{p.excerpt}</p>
+                      <p className="mt-3 text-sm leading-relaxed text-fog">{p.excerpt}</p>
                     </div>
                   </TechCard>
                 </Link>
@@ -235,7 +235,7 @@ export default function HomePage() {
           <Reveal>
             <p className="eyebrow">{contact.eyebrow}</p>
             <h2 className="h-section mt-4 text-fog">{contact.title}</h2>
-            <p className="lede mt-6 max-w-md text-fog/75">{contact.body}</p>
+            <p className="lede mt-6 max-w-md text-fog">{contact.body}</p>
             <div className="mt-10 flex flex-col gap-3 text-lg">
               <a href={site.phoneHref} className="link-underline w-fit text-fog">
                 {site.phone}
@@ -243,7 +243,7 @@ export default function HomePage() {
               <a href={`mailto:${site.email}`} className="link-underline w-fit break-all text-fog">
                 {site.email}
               </a>
-              <address className="text-base not-italic leading-relaxed text-fog/75">
+              <address className="text-base not-italic leading-relaxed text-fog">
                 {site.address.line1}, {site.address.line2}
                 <br />
                 {site.address.city} {site.address.postcode}, {site.address.country}

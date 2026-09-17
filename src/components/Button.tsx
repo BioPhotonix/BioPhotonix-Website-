@@ -9,7 +9,7 @@ const base =
 const variants: Record<Variant, string> = {
   solid: "bg-teal-400 text-ink-950 hover:bg-teal-300 hover:shadow-[0_0_32px_rgba(27,195,205,0.35)]",
   outline: "border border-line-strong text-fog hover:border-teal-400 hover:text-teal-300",
-  ghost: "text-fog/85 hover:text-teal-300",
+  ghost: "text-fog hover:text-teal-300",
 };
 
 type Props = ComponentProps<typeof Link> & { variant?: Variant; children: ReactNode };

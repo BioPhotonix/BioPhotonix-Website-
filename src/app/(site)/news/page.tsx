@@ -24,7 +24,7 @@ export default function NewsPage() {
         <div className="shell relative">
           <p className="eyebrow">{news.eyebrow}</p>
           <h1 className="h-display mt-5 max-w-4xl text-fog">{news.title}</h1>
-          <p className="lede mt-7 max-w-2xl text-fog/75">{news.intro}</p>
+          <p className="lede mt-7 max-w-2xl text-fog">{news.intro}</p>
         </div>
       </section>
       <section className="shell py-20 md:py-28">
@@ -37,12 +37,12 @@ export default function NewsPage() {
                     <PostArt kind={p.art} className="transition-transform duration-700 group-hover:scale-[1.03]" />
                   </div>
                   <div className="p-7">
-                    <p className="figure text-xs uppercase tracking-[0.13em] text-fog/70">
+                    <p className="figure text-xs uppercase tracking-[0.13em] text-fog">
                       {formatDate(p.date)} &middot; {p.readingMinutes} min read
                     </p>
                     <h2 className="mt-3 font-display text-2xl font-semibold leading-snug text-fog">{p.title}</h2>
-                    <p className="mt-3 leading-relaxed text-fog/75">{p.excerpt}</p>
-                    <span className="link-underline mt-5 inline-block text-base text-fog/85">Read the article</span>
+                    <p className="mt-3 leading-relaxed text-fog">{p.excerpt}</p>
+                    <span className="link-underline mt-5 inline-block text-base text-fog">Read the article</span>
                   </div>
                 </TechCard>
               </Link>

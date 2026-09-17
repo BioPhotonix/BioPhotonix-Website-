@@ -25,16 +25,16 @@ export default function InvestorsPage() {
         <div className="shell relative">
           <p className="eyebrow">{investors.hero.eyebrow}</p>
           <h1 className="h-display mt-5 max-w-4xl text-fog">{investors.hero.title}</h1>
-          <p className="lede mt-7 max-w-2xl text-fog/75">{investors.hero.lede}</p>
+          <p className="lede mt-7 max-w-2xl text-fog">{investors.hero.lede}</p>
           <dl className="mt-14 grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
             {investors.highlights.map((h) => (
               <div key={h.label} className="bg-ink-950/80 p-6">
-                <dt className="figure text-xs uppercase tracking-[0.13em] text-fog/70">{h.label}</dt>
+                <dt className="figure text-xs uppercase tracking-[0.13em] text-fog">{h.label}</dt>
                 <dd>
                   <span className="mt-2 block text-3xl font-medium text-fog">
                     <CountUp value={h.value} />
                   </span>
-                  <span className="mt-2 block text-sm text-fog/75">{h.body}</span>
+                  <span className="mt-2 block text-sm text-fog">{h.body}</span>
                 </dd>
               </div>
             ))}
@@ -47,7 +47,7 @@ export default function InvestorsPage() {
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-5">
             <SectionHeading eyebrow={investors.thesis.eyebrow} title={investors.thesis.title} />
-            <Reveal className="mt-6 flex flex-col gap-4 text-fog/75">
+            <Reveal className="mt-6 flex flex-col gap-4 text-fog">
               {investors.thesis.body.map((p) => (
                 <p key={p} className="leading-relaxed">
                   {p}
@@ -70,13 +70,13 @@ export default function InvestorsPage() {
                 <p className="eyebrow">{block.eyebrow}</p>
                 <h2 className="mt-4 font-display text-2xl font-semibold text-fog md:text-3xl">{block.title}</h2>
                 {block.body.map((p) => (
-                  <p key={p} className="mt-5 leading-relaxed text-fog/75">
+                  <p key={p} className="mt-5 leading-relaxed text-fog">
                     {p}
                   </p>
                 ))}
                 <ul className="mt-7 flex flex-col gap-3">
                   {block.points.map((pt) => (
-                    <li key={pt} className="flex items-start gap-3 text-sm text-fog/80">
+                    <li key={pt} className="flex items-start gap-3 text-sm text-fog">
                       <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-teal-400" />
                       {pt}
                     </li>
@@ -117,16 +117,16 @@ export default function InvestorsPage() {
                   </div>
                   <div className="p-5">
                     <h3 className="font-display text-lg font-semibold text-fog">{p.name}</h3>
-                    <p className="mt-1 text-sm leading-relaxed text-fog/75">{p.role}</p>
+                    <p className="mt-1 text-sm leading-relaxed text-fog">{p.role}</p>
                   </div>
                 </TechCard>
               </Reveal>
             ))}
           </div>
           <Reveal className="mt-10 flex flex-wrap gap-x-8 gap-y-3 border-t border-line pt-8">
-            <span className="figure text-xs uppercase tracking-[0.13em] text-fog/70">{partners.title}</span>
+            <span className="figure text-xs uppercase tracking-[0.13em] text-fog">{partners.title}</span>
             {partners.names.map((p) => (
-              <span key={p.name} className="text-sm text-fog/80">
+              <span key={p.name} className="text-sm text-fog">
                 {p.name}
               </span>
             ))}
@@ -140,14 +140,14 @@ export default function InvestorsPage() {
           <Reveal>
             <p className="eyebrow">{investors.dataRoom.eyebrow}</p>
             <h2 className="h-section mt-4 text-fog">{investors.dataRoom.title}</h2>
-            <p className="lede mt-6 max-w-md text-fog/75">{investors.dataRoom.body}</p>
+            <p className="lede mt-6 max-w-md text-fog">{investors.dataRoom.body}</p>
           </Reveal>
           <Reveal delay={0.1}>
             <ContactForm kind="investor" />
           </Reveal>
         </div>
         <Reveal className="mt-16 border-t border-line pt-8">
-          <p className="max-w-3xl text-xs leading-relaxed text-fog/70">{investors.disclaimer}</p>
+          <p className="max-w-3xl text-xs leading-relaxed text-fog">{investors.disclaimer}</p>
         </Reveal>
       </section>
     </>

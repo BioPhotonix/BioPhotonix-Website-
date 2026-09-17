@@ -20,7 +20,7 @@ export default function VisionPage() {
         <div className="shell relative">
           <p className="eyebrow">{vision.eyebrow}</p>
           <h1 className="h-display mt-5 max-w-4xl text-fog">{vision.title}</h1>
-          <p className="lede mt-7 max-w-2xl text-fog/75">{vision.intro}</p>
+          <p className="lede mt-7 max-w-2xl text-fog">{vision.intro}</p>
         </div>
       </section>
 
@@ -36,7 +36,7 @@ export default function VisionPage() {
             <SectionHeading eyebrow={burden.eyebrow} title="Why this is the window that matters." />
           </div>
           <div className="lg:col-span-7">
-            <Reveal className="flex flex-col gap-4 text-fog/75">
+            <Reveal className="flex flex-col gap-4 text-fog">
               <p>
                 The two stages where a patient reports least are the two stages where the retina is
                 still there to protect. By the time atrophy reaches the fovea, the photoreceptors it

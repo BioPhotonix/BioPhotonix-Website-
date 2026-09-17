@@ -50,7 +50,7 @@ export default function Accordion({ items, headingLevel = 3 }: Props) {
                   transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
                   className="overflow-hidden"
                 >
-                  <p className="max-w-2xl pb-7 text-base leading-relaxed text-fog/75">{item.a}</p>
+                  <p className="max-w-2xl pb-7 text-base leading-relaxed text-fog">{item.a}</p>
                 </motion.div>
               )}
             </AnimatePresence>

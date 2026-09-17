@@ -18,12 +18,12 @@ export default function BurdenChart({ layout = "side" }: Props) {
       <figure className="rounded-2xl border border-line bg-ink-900 p-6 md:p-8">
         <figcaption>
           <p className="eyebrow">{burden.prevalence.title}</p>
-          <p className="mt-2 text-sm text-fog/75">{burden.prevalence.note}</p>
+          <p className="mt-2 text-sm text-fog">{burden.prevalence.note}</p>
         </figcaption>
         <div className="mt-8">
           <PrevalenceFrame />
         </div>
-        <p className="mt-4 text-xs text-fog/70">Source: {burden.prevalence.source}</p>
+        <p className="mt-4 text-xs text-fog">Source: {burden.prevalence.source}</p>
       </figure>
 
       {/* What of it is reachable */}

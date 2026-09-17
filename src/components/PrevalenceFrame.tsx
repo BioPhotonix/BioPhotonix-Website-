@@ -68,11 +68,11 @@ export default function PrevalenceFrame() {
       <div className="flex items-end justify-between gap-6">
         <p className="leading-none">
           <span className="block text-4xl font-semibold text-fog md:text-5xl">{shownMillions}</span>
-          <span className="mt-2 block text-sm text-fog/75">million people living with AMD</span>
+          <span className="mt-2 block text-sm text-fog">million people living with AMD</span>
         </p>
         <p className="text-right leading-none">
-          <span className="block text-3xl font-medium text-fog/85 md:text-4xl">{shownYear}</span>
-          <span className="mt-2 block text-sm text-fog/75">{shownYear === start.year || shownYear === end.year ? "published" : "interpolated"}</span>
+          <span className="block text-3xl font-medium text-fog md:text-4xl">{shownYear}</span>
+          <span className="mt-2 block text-sm text-fog">{shownYear === start.year || shownYear === end.year ? "published" : "interpolated"}</span>
         </p>
       </div>
 
@@ -95,7 +95,7 @@ export default function PrevalenceFrame() {
         })}
       </svg>
 
-      <ul className="mt-4 flex flex-wrap gap-x-5 gap-y-1 text-xs text-fog/75" aria-label="Key">
+      <ul className="mt-4 flex flex-wrap gap-x-5 gap-y-1 text-xs text-fog" aria-label="Key">
         <li className="flex items-center gap-2">
           <span aria-hidden="true" className="h-2.5 w-2.5 rounded-[2px] bg-teal-500" />
           Living with AMD in {start.year}
@@ -124,25 +124,25 @@ export default function PrevalenceFrame() {
           aria-valuetext={`${shownYear}: ${shownMillions} million people`}
           className="w-full"
         />
-        <div className="figure mt-1.5 flex items-center justify-between text-xs text-fog/70">
+        <div className="figure mt-1.5 flex items-center justify-between text-xs text-fog">
           <span>{start.year}</span>
-          <button type="button" onClick={replay} className="rounded-full px-3 py-1 text-fog/75 transition hover:text-fog">
+          <button type="button" onClick={replay} className="rounded-full px-3 py-1 text-fog transition hover:text-fog">
             Replay
           </button>
           <span>{end.year}</span>
         </div>
       </div>
 
-      <details className="mt-4 text-xs text-fog/70">
+      <details className="mt-4 text-xs text-fog">
         <summary className="cursor-pointer select-none">The figures behind this chart</summary>
         <table className="figure mt-3 w-full text-left">
           <thead>
-            <tr className="text-fog/70">
+            <tr className="text-fog">
               <th className="py-1 pr-4 font-medium">Year</th>
               <th className="py-1 font-medium">People with AMD</th>
             </tr>
           </thead>
-          <tbody className="text-fog/75">
+          <tbody className="text-fog">
             <tr>
               <td className="py-1 pr-4">{start.year}</td>
               <td className="py-1">{start.millions} million</td>

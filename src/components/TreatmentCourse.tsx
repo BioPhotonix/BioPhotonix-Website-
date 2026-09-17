@@ -38,21 +38,21 @@ export default function TreatmentCourse() {
       <div className="flex flex-wrap items-end justify-between gap-6">
         <p className="leading-none">
           <span className="block text-4xl font-semibold text-fog md:text-5xl">{minutes}</span>
-          <span className="mt-2 block text-sm text-fog/75">minutes of treatment</span>
+          <span className="mt-2 block text-sm text-fog">minutes of treatment</span>
         </p>
         <p className="text-right leading-none">
-          <span className="block text-3xl font-medium text-fog/85 md:text-4xl">
+          <span className="block text-3xl font-medium text-fog md:text-4xl">
             {done}
-            <span className="text-fog/70">/{total}</span>
+            <span className="text-fog">/{total}</span>
           </span>
-          <span className="mt-2 block text-sm text-fog/75">sessions delivered</span>
+          <span className="mt-2 block text-sm text-fog">sessions delivered</span>
         </p>
       </div>
 
       <ol className="mt-8 flex flex-col gap-3">
         {Array.from({ length: course.weeks }, (_, w) => (
           <li key={w} className="flex items-center gap-4">
-            <span className="w-16 shrink-0 text-xs font-semibold uppercase tracking-[0.13em] text-fog/70">
+            <span className="w-16 shrink-0 text-xs font-semibold uppercase tracking-[0.13em] text-fog">
               Week {w + 1}
             </span>
             <span className="flex flex-1 gap-2.5" aria-hidden="true">
@@ -65,7 +65,7 @@ export default function TreatmentCourse() {
                     className={`relative flex h-11 flex-1 items-center justify-center rounded-lg border text-xs font-semibold transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
                       filled
                         ? "border-teal-400/60 bg-teal-900/50 text-teal-200"
-                        : "border-line bg-ink-950 text-fog/70"
+                        : "border-line bg-ink-950 text-fog"
                     }`}
                   >
                     {course.minutesPerSession} min
@@ -80,7 +80,7 @@ export default function TreatmentCourse() {
         {course.weeks} weeks of {course.perWeek} sessions, {course.minutesPerSession} minutes each:{" "}
         {total} sessions and {total * course.minutesPerSession} minutes in total.
       </p>
-      <p className="mt-6 text-sm leading-relaxed text-fog/75">{course.footnote}</p>
+      <p className="mt-6 text-sm leading-relaxed text-fog">{course.footnote}</p>
     </div>
   );
 }

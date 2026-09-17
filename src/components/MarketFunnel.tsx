@@ -153,7 +153,7 @@ export default function MarketFunnel() {
       <figcaption>
         <p className="eyebrow">{market.eyebrow}</p>
         <p className="mt-2 font-display text-lg font-semibold leading-snug text-fog">{market.title}</p>
-        <p className="mt-2 text-sm text-fog/75">{market.intro}</p>
+        <p className="mt-2 text-sm text-fog">{market.intro}</p>
       </figcaption>
 
       <div className="mf-stage mt-7 overflow-hidden rounded-xl border border-line bg-ink-950">
@@ -277,17 +277,17 @@ export default function MarketFunnel() {
 
       <div aria-live="polite" className="mt-5 min-h-[7.5rem]">
         <p className="font-display text-base font-semibold text-fog">{tier.label}</p>
-        <p className="mt-2 text-sm leading-relaxed text-fog/80">
+        <p className="mt-2 text-sm leading-relaxed text-fog">
           <span className="figure text-fog">{tier.people}</span> {tier.peopleNote}.
         </p>
-        <p className="mt-1.5 text-sm leading-relaxed text-fog/80">
+        <p className="mt-1.5 text-sm leading-relaxed text-fog">
           <span className="figure text-fog">{tier.value}</span> {tier.valueNote}
           {active > 0 && <> — {shareOfParent(active)} of the tier above</>}.
         </p>
       </div>
 
-      <p className="mt-5 text-sm leading-relaxed text-fog/75">{market.excluded}</p>
-      <p className="mt-4 text-xs leading-relaxed text-fog/70">{market.footnote}</p>
+      <p className="mt-5 text-sm leading-relaxed text-fog">{market.excluded}</p>
+      <p className="mt-4 text-xs leading-relaxed text-fog">{market.footnote}</p>
     </div>
   );
 }

@@ -7,7 +7,7 @@ type Status = "idle" | "sending" | "sent" | "error";
 export type Kind = "general" | "clinic" | "investor";
 
 const field =
-  "w-full rounded-xl border border-line-strong bg-ink-950/60 px-4 py-3.5 text-base text-fog placeholder:text-fog/70 transition-colors duration-200 focus:border-teal-400 focus:outline-none";
+  "w-full rounded-xl border border-line-strong bg-ink-950/60 px-4 py-3.5 text-base text-fog placeholder:text-fog transition-colors duration-200 focus:border-teal-400 focus:outline-none";
 
 const copy: Record<Kind, { submit: string; sent: string; messageLabel: string; defaultRole?: string }> = {
   general: { submit: "Send message", sent: "Your message has been sent.", messageLabel: "Message" },
@@ -47,10 +47,10 @@ export default function ContactForm({ kind = "general" }: { kind?: Kind }) {
     return (
       <div role="status" className="rounded-2xl border border-teal-400/40 bg-teal-900/20 p-8 text-center">
         <h3 className="font-display text-2xl font-semibold text-fog">Thank you</h3>
-        <p className="mx-auto mt-3 max-w-sm text-base leading-relaxed text-fog/75">
+        <p className="mx-auto mt-3 max-w-sm text-base leading-relaxed text-fog">
           {c.sent} {contact.responseNote}
         </p>
-        <button type="button" onClick={() => setStatus("idle")} className="mt-6 text-base text-fog/75 underline underline-offset-4 hover:text-fog">
+        <button type="button" onClick={() => setStatus("idle")} className="mt-6 text-base text-fog underline underline-offset-4 hover:text-fog">
           Send another message
         </button>
       </div>
@@ -61,13 +61,13 @@ export default function ContactForm({ kind = "general" }: { kind?: Kind }) {
     <form onSubmit={onSubmit} className="flex flex-col gap-4">
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
-          <label htmlFor={`${kind}-firstName`} className="mb-1.5 block text-sm text-fog/75">
+          <label htmlFor={`${kind}-firstName`} className="mb-1.5 block text-sm text-fog">
             First name <span aria-hidden="true">*</span>
           </label>
           <input id={`${kind}-firstName`} name="firstName" required autoComplete="given-name" className={field} />
         </div>
         <div>
-          <label htmlFor={`${kind}-lastName`} className="mb-1.5 block text-sm text-fog/75">
+          <label htmlFor={`${kind}-lastName`} className="mb-1.5 block text-sm text-fog">
             Last name <span aria-hidden="true">*</span>
           </label>
           <input id={`${kind}-lastName`} name="lastName" required autoComplete="family-name" className={field} />
@@ -76,21 +76,21 @@ export default function ContactForm({ kind = "general" }: { kind?: Kind }) {
 
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
-          <label htmlFor={`${kind}-email`} className="mb-1.5 block text-sm text-fog/75">
+          <label htmlFor={`${kind}-email`} className="mb-1.5 block text-sm text-fog">
             Email <span aria-hidden="true">*</span>
           </label>
           <input id={`${kind}-email`} name="email" type="email" required autoComplete="email" className={field} />
         </div>
         <div>
-          <label htmlFor={`${kind}-organisation`} className="mb-1.5 block text-sm text-fog/75">
-            {kind === "investor" ? "Fund or organisation" : "Organisation"} <span className="text-fog/70">(optional)</span>
+          <label htmlFor={`${kind}-organisation`} className="mb-1.5 block text-sm text-fog">
+            {kind === "investor" ? "Fund or organisation" : "Organisation"} <span className="text-fog">(optional)</span>
           </label>
           <input id={`${kind}-organisation`} name="organisation" autoComplete="organization" className={field} />
         </div>
       </div>
 
       <div>
-        <label htmlFor={`${kind}-role`} className="mb-1.5 block text-sm text-fog/75">
+        <label htmlFor={`${kind}-role`} className="mb-1.5 block text-sm text-fog">
           I am
         </label>
         <select id={`${kind}-role`} name="role" defaultValue={c.defaultRole ?? ""} className={`${field} appearance-none`}>
@@ -106,7 +106,7 @@ export default function ContactForm({ kind = "general" }: { kind?: Kind }) {
       </div>
 
       <div>
-        <label htmlFor={`${kind}-message`} className="mb-1.5 block text-sm text-fog/75">
+        <label htmlFor={`${kind}-message`} className="mb-1.5 block text-sm text-fog">
           {c.messageLabel}
         </label>
         <textarea id={`${kind}-message`} name="message" rows={5} className={`${field} resize-y`} />
@@ -118,7 +118,7 @@ export default function ContactForm({ kind = "general" }: { kind?: Kind }) {
         <input id={`${kind}-company`} name="company" tabIndex={-1} autoComplete="off" />
       </div>
 
-      <p className="text-xs leading-relaxed text-fog/70">
+      <p className="text-xs leading-relaxed text-fog">
         Please do not include patient-identifiable information. By sending this form you agree to our{" "}
         <a href="/privacy-policy" className="underline underline-offset-2 hover:text-fog">
           privacy policy

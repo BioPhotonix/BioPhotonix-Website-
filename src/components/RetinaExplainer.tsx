@@ -146,7 +146,7 @@ export default function RetinaExplainer() {
             </span>
             <div>
               <h3 className="font-display text-lg font-semibold leading-snug text-fog">{s.title}</h3>
-              <p className="mt-1.5 text-sm leading-relaxed text-fog/75">{s.body}</p>
+              <p className="mt-1.5 text-sm leading-relaxed text-fog">{s.body}</p>
             </div>
           </li>
         ))}
