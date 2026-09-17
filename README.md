@@ -99,6 +99,15 @@ All in `src/components`:
   only a number and a paragraph. Eighteen motifs, each named in `site.ts` by
   the `mark` key on its item, all built from the same 2px stroked line as the
   larger diagrams.
+- **RevoluxDevice** is the front render with therapy light rising from both
+  eyepieces, used in the two heroes. The glow is anchored to the apertures
+  rather than eyeballed: their centres were found by detecting the teal-rimmed
+  openings in the render itself, at 29.4%/22.3% and 70.5%/22.4% of its
+  305x660 pixels. The wrapper carries the render's aspect ratio so those
+  percentages land on the apertures at any size. **If the render is replaced,
+  re-measure them** — nothing infers the position at runtime. The light builds
+  over five seconds and holds, rather than pulsing, because that is what a
+  session does.
 - **CountUp** counts a figure written as text, used for the investor
   headlines. It animates only a value containing exactly one number, so
   "200M" counts while "85-90%" and "Class IIa" are left alone.

@@ -344,7 +344,7 @@ export default function RevoluxExplainer() {
                     DIGITALLY LOGGED
                   </text>
                   <text x="320" y="58" textAnchor="middle" className={CAP} fill="#1bc3cd" fontFamily="var(--font-sans)">
-                    9 SESSIONS, 3 WEEKS, EVERY ONE RECORDED
+                    9 SESSIONS, 3 WEEKS, ALL LOGGED
                   </text>
                 </motion.g>
               )}

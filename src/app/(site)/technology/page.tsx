@@ -5,6 +5,7 @@ import Button from "@/components/Button";
 import CardMark from "@/components/CardMark";
 import RetinaExplainer from "@/components/RetinaExplainer";
 import RevoluxAnatomy from "@/components/RevoluxAnatomy";
+import RevoluxDevice from "@/components/RevoluxDevice";
 import Reveal from "@/components/Reveal";
 import RevoluxExplainer from "@/components/RevoluxExplainer";
 import SectionHeading from "@/components/SectionHeading";
@@ -47,14 +48,11 @@ export default function TechnologyPage() {
               className="absolute inset-0 rounded-full"
               style={{ background: "radial-gradient(circle, rgba(27,195,205,0.18) 0%, transparent 65%)" }}
             />
-            <Image
-              src="/images/revolux-three-quarter.png"
-              alt="Render of the Revolux binocular device with its two light-emitting eyepieces"
-              width={354}
-              height={669}
-              priority
+            <RevoluxDevice
+              alt="Render of the Revolux device seen head on, with therapy light rising from both eyepieces"
               sizes="(max-width: 1024px) 55vw, 28vw"
-              className="relative mx-auto h-auto w-[58%] max-w-[20rem] drop-shadow-[0_30px_60px_rgba(27,195,205,0.25)] lg:w-[64%]"
+              priority
+              className="relative mx-auto w-[58%] max-w-[20rem] lg:w-[64%]"
             />
           </Reveal>
         </div>
