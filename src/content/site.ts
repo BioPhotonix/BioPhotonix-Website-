@@ -180,7 +180,6 @@ export const vision = {
     title: "What this simulation cannot show",
     body: "The lost area is drawn dark so that it can be seen. Patients more often describe grey, blur or simple absence, because the brain fills the gap in, which is part of why early disease goes unreported. Here the area follows your pointer; in life it follows the eye, and no amount of looking around moves it aside. The severity shown is representative of each stage, not a measurement of any patient, and both eyes are usually affected at different rates, which masks the loss further.",
   },
-  cta: { label: "How Revolux intervenes", href: "/technology" },
 };
 
 export const shift = {

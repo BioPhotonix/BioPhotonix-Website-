@@ -1,16 +1,10 @@
 import { burden } from "@/content/site";
-import { prevalence } from "@/content/prevalence";
 import PrevalenceFrame from "./PrevalenceFrame";
-import PrevalenceMap from "./PrevalenceMap";
+import MarketFunnel from "./MarketFunnel";
 
 /**
- * The two figures under "the unmet need": how many people have AMD and where
- * they are.
- *
- * A server component, which matters — it lets the map's ~110KB of coastline
- * geometry render as markup instead of shipping to the browser as JavaScript.
- * The animated waffle that used to fill the right panel is what forced this
- * to be a client component; it is gone, and with it the "use client".
+ * The two figures under "the unmet need": how many people have AMD, and how
+ * much of that is a market this company can actually reach.
  */
 type Props = {
   /** Side by side where there is room for two full-width cards; stacked in a narrower column. */
@@ -32,16 +26,9 @@ export default function BurdenChart({ layout = "side" }: Props) {
         <p className="mt-4 text-xs text-fog/70">Source: {burden.prevalence.source}</p>
       </figure>
 
-      {/* Where */}
+      {/* What of it is reachable */}
       <figure className="rounded-2xl border border-line bg-ink-900 p-6 md:p-8">
-        <figcaption>
-          <p className="eyebrow">{prevalence.eyebrow}</p>
-          <p className="mt-2 font-display text-lg font-semibold leading-snug text-fog">{prevalence.title}</p>
-          <p className="mt-2 text-sm text-fog/75">{prevalence.intro}</p>
-        </figcaption>
-        <div className="mt-8">
-          <PrevalenceMap />
-        </div>
+        <MarketFunnel />
       </figure>
     </div>
   );

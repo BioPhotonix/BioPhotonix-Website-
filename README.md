@@ -112,36 +112,26 @@ All in `src/components`:
 - **CountUp** counts a figure written as text, used for the investor
   headlines. It animates only a value containing exactly one number, so
   "200M" counts while "85-90%" and "Class IIa" are left alone.
-- **PrevalenceMap** shows AMD across the seven markets GlobalData forecasts,
-  as a **cartogram**: each country's silhouette is scaled so its AREA is
-  proportional to its prevalent cases. The United States is the biggest shape
-  because it has the most patients, and Spain comes out nearly the size of
-  Germany, which on a real map it is not. Things worth knowing:
+- **MarketFunnel** draws TAM, SAM and SOM as three nested squares. The side
+  of each is the square root of its share of the total, so the ratio is
+  carried by **area**. That is what keeps it honest: the obtainable market is
+  0.066% of the total by value, which as a bar would be a hairline beside a
+  full-width bar, and on a log scale would be flattered. Nesting is also true
+  to the meaning — each tier is a subset of the one outside it.
 
-  1. It was a world choropleth first, and that was wrong for this data. Seven
-     countries carry figures and 169 carry none, so the world map spent most
-     of its frame saying "no data", and five of the seven were a few pixels
-     across. If you are tempted back towards a basemap, that is why.
-  2. `scripts/build-market-shapes.mjs` (`npm run build:map`) generates
-     `src/content/market-shapes.ts` from Natural Earth 110m. It projects with
-     **Equal Earth**, an equal-area projection, which is the whole reason the
-     stored `area` per country is comparable and the scaling is honest.
-  3. It drops outlying territory by **bounding-box growth**, not by distance.
-     Distance cannot do the job: Alaska sits 1.4 main-widths from the
-     contiguous US while Hokkaido sits 1.6 from Honshu, so any distance
-     threshold that drops Alaska also drops Hokkaido. Box growth separates
-     them — Alaska more than doubles the US frame, Hokkaido adds a third to
-     Japan's.
-  4. Every cell shares a **viewBox width** of 100 units and renders at the same
-     pixel width, so one user unit is the same size in all seven and the
-     shapes stay comparable. Heights are per country, which is what stops a
-     short, wide country reserving a tall empty box.
-  5. Colour is **sequential** — one hue, interpolated in OKLab between two
-     steps of the site's teal, so lightness rises with the case count. On a
-     dark surface the anchor flips: more is brighter.
+  The squares, the tier rows and the readout are one control surface: hover,
+  click, tap and keyboard all select the same tier, and the population figures
+  sit on the rows at rest rather than only in the readout, because a touch
+  screen has no hover.
 
-  It is sized by **case counts, not prevalence rates** — it answers "where are
-  the patients", which is the question the section asks.
+  The United States is deliberately absent from the model — it is the largest
+  AMD market in the GlobalData forecast, and the patent position there is not
+  open to the company. The figure says so in its resting state rather than
+  leaving a reader to assume an oversight.
+
+  This slot previously held a world choropleth and then a cartogram of the
+  seven markets. Both were replaced because the question the section actually
+  asks is not "where are the patients" but "how much of this is reachable".
 
 - **PhotonField** drifts photons towards the device behind the hero. The
   convergence point follows the pointer part of the way — partial on purpose,
@@ -201,12 +191,6 @@ All in `src/components`:
 Nothing on the site is a photograph of a patient or a treatment outcome. The
 article covers are drawn in code (`PostArt`) rather than being the
 AI-generated illustrations the Wix site used.
-
-The world map's geometry is generated, not hand-written:
-
-```bash
-npm run build:map      # regenerates src/content/market-shapes.ts from Natural Earth
-```
 
 ## Checking a change did not break anything
 
@@ -295,14 +279,25 @@ supplied logo is kept at `public/images/logo-light-bg.png`.
 
 ## Things to check before you launch
 
-- **The figures.** Every statistic came from the Wix site or the company's
-  articles: 200 million people with AMD, 288 million by 2040, 85 to 90% dry,
-  more than 500,000 progressing to severe vision loss a year, twice the risk
-  of cognitive decline, vision loss in the top three most feared outcomes, and
-  the $49 billion US economic burden. The prevalence frame cites Wong et al.,
-  The Lancet Global Health, 2014, and the 47% growth figure is derived from
-  its two numbers (196 to 288 million). Investors will ask for the rest; a source
-  for each belongs in `burden.stats` before a raise.
+- **The figures.** Most statistics in `burden.stats` still come from the Wix
+  site or the company's own articles, with no source attached: 200 million
+  people with AMD, 288 million by 2040, 85 to 90% dry, more than 500,000
+  progressing to severe vision loss a year, twice the risk of cognitive
+  decline, and vision loss in the top three most feared outcomes. The
+  prevalence frame cites Wong et al., The Lancet Global Health, 2014, and the
+  47% growth figure is derived from its two numbers (196 to 288 million). The
+  UK cost figure is sourced. Investors will ask for the rest; a source for
+  each belongs in `burden.stats` before a raise.
+- **The GlobalData licence.** The source report carries "This material was
+  provided by the Scottish Enterprise Research Service under agreement with
+  the copyright holder. Further distribution is not permitted without express
+  consent", over a "© GlobalData 2025. This product is licensed" footer. An
+  earlier draft of the market figure republished its per-country table, which
+  would have been distribution; that table is gone. What remains in
+  `src/content/market.ts` is the company's own market model, whose population
+  inputs are *derived* from the forecast and attributed to it in the footnote.
+  That is a much lighter exposure, but it is still worth confirming the
+  attribution wording with GlobalData or Scottish Enterprise before a raise.
 - **The revenue calculator.** It is fitted to the FAQ's published examples
   (one, two and three patients a month generating £700, £1,600 and £2,500 of
   monthly profit), which imply £900 per patient over £200 a month fixed. If

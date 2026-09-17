@@ -444,41 +444,58 @@
   }
 }
 
-/* --- World prevalence map ---------------------------------------------
-   Countries the forecast covers respond to pointer and keyboard; the rest
-   are inert scenery. The focus ring is drawn on the path itself rather than
-   by the global :focus-visible outline, which would box the country's
-   bounding rectangle instead of following its shape. */
-.wm-market {
+/* --- Market funnel ----------------------------------------------------
+   Three nested squares whose areas carry the ratio between the markets. They
+   grow into place once, from the middle out; a selected tier lifts out of the
+   stack and the others drop back. */
+.mf-square {
+  transform-box: fill-box;
+  transform-origin: center;
+  transform: scale(0.72);
+  opacity: 0;
   cursor: pointer;
-  transition: filter 0.2s var(--ease-out-expo), stroke 0.2s var(--ease-out-expo);
+  transition:
+    transform 0.7s var(--ease-out-expo),
+    opacity 0.5s var(--ease-out-expo),
+    filter 0.25s var(--ease-out-expo);
 }
-.wm-market:focus-visible {
-  filter: brightness(1.28);
-  stroke: var(--color-teal-200);
-  stroke-width: 1.6;
-  outline: none;
+.mf-square.is-in {
+  transform: scale(1);
+  opacity: 1;
 }
-.wm-rest {
-  pointer-events: none;
+.mf-square.is-on {
+  filter: brightness(1.32);
 }
-/* The fat outline that makes a 10px country hoverable. It sits over the
-   painted path and takes the pointer, so the painted path never receives
-   :hover and cannot show the highlight itself — this stroke becomes the
-   highlight instead, thinning from its invisible hit width to a ring. */
-.wm-hit {
-  stroke: transparent;
-  pointer-events: stroke;
-  cursor: pointer;
-  transition: stroke 0.2s var(--ease-out-expo), stroke-width 0.2s var(--ease-out-expo);
+.mf-figure:hover .mf-square:not(.is-on) {
+  filter: brightness(0.82);
 }
-.wm-hit:hover {
-  stroke: var(--color-teal-200);
-  stroke-width: 2.5;
+.mf-leader line {
+  stroke: var(--color-line-strong);
+  stroke-width: 0.6;
 }
+.mf-leader-text {
+  fill: var(--color-fog);
+  font-family: var(--font-sans);
+  font-size: 6px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.mf-row {
+  transition: background-color 0.25s var(--ease-out-expo);
+}
+.mf-row:hover,
+.mf-row.is-on {
+  background-color: color-mix(in srgb, var(--color-teal-400) 10%, var(--color-ink-900));
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .wm-hit { transition: none; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .wm-market { transition: none; }
+  .mf-square {
+    transform: scale(1);
+    opacity: 1;
+    transition: none;
+  }
+  .mf-row {
+    transition: none;
+  }
 }

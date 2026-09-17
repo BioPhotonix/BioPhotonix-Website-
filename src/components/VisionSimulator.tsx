@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useId, useRef, useState } from "react";
-import Link from "next/link";
 import { vision } from "@/content/site";
 import { VisionRenderer, type SceneSource } from "./vision-engine";
 
@@ -21,8 +20,9 @@ import { VisionRenderer, type SceneSource } from "./vision-engine";
 type Props = {
   /**
    * Heading level for the stage title. It follows whatever heading precedes
-   * the simulator on the host page: h3 under a section heading on the home
-   * page, h2 where the page heading is the h1 above it.
+   * the simulator on its host page — currently only /vision, where the page
+   * h1 sits above it, so h2. Kept configurable for a host that nests it under
+   * a section heading.
    */
   titleAs?: "h2" | "h3";
 };
@@ -158,12 +158,6 @@ export default function VisionSimulator({ titleAs: Title = "h3" }: Props) {
         <summary className="cursor-pointer select-none">{vision.caveat.title}</summary>
         <p className="mt-3 max-w-2xl">{vision.caveat.body}</p>
       </details>
-
-      <p className="mt-6">
-        <Link href={vision.cta.href} className="link-underline text-base text-fog/85 hover:text-fog">
-          {vision.cta.label}
-        </Link>
-      </p>
     </div>
   );
 }

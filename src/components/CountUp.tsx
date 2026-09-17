@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from "react";
  * Counts a figure up the first time it scrolls into view, for values written
  * as text rather than numbers.
  *
- * Only a value with exactly one number in it is animated: "200M" and "$49B"
+ * Only a value with exactly one number in it is animated: "200M" and "£2.6bn"
  * count, while "85-90%" and "Class IIa" are rendered as they are. Counting
  * the first of two numbers in a range would be worse than not counting at all.
  * The real value is rendered on the server, so it is never stuck at zero.

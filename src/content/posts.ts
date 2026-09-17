@@ -40,7 +40,7 @@ export const posts: Post[] = [
       { type: "p", text: "At BioPhotonix, we are driven by the urgency of this silent epidemic. We are looking beyond the diagnosis to understand the structural gaps that have left so many patients behind." },
       { type: "h2", text: "The cost of “watch and wait”" },
       { type: "p", text: "For patients diagnosed with early or intermediate dry AMD, the standard of care has historically been conservative: monitoring, lifestyle advice, and nutritional supplements. While valuable, these measures do not constitute active treatment." },
-      { type: "p", text: "This “watch and wait” approach carries a heavy human and economic toll. Research indicates that the annual economic burden of AMD in the US alone approaches $49 billion, with the majority of costs driven not by medical treatment, but by lost productivity and quality of life." },
+      { type: "p", text: "This “watch and wait” approach carries a heavy human and economic toll. In the UK alone, AMD-related sight loss is estimated to cost £2.6 billion a year, and only £1.2 billion of that falls on healthcare: the majority is informal care, lost productivity and lost quality of life." },
       { type: "p", text: "When patients lose their central vision, they don't just lose the ability to read or drive; they lose their independence. The anxiety of uncertain progression, waiting for vision to decline, is a burden that patients and their families carry daily." },
       { type: "h2", text: "A structural misalignment" },
       { type: "p", text: "Why has this gap persisted? Our analysis suggests a fundamental misalignment in care delivery." },

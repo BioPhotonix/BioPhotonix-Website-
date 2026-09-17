@@ -10,7 +10,6 @@
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
     "build:images": "node scripts/build-images.mjs",
-    "build:map": "node scripts/build-world-map.mjs",
     "test:site": "node scripts/test/browser/site.mjs"
   },
   "dependencies": {
