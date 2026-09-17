@@ -75,19 +75,19 @@ export default function RevoluxAnatomy() {
   return (
     <div ref={ref} className="grid gap-10 lg:grid-cols-12 lg:gap-14">
       <div className="lg:col-span-7">
-        <div className="relative mx-auto w-full max-w-2xl" style={{ aspectRatio: "960 / 700" }}>
+        <div className="relative mx-auto aspect-[5/7] w-full max-w-xs md:aspect-[960/700] md:max-w-2xl">
           {views.map((v, i) => (
             <div
               key={v.id}
-              className="absolute transition-opacity duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]"
-              style={{
-                left: `${IMAGE_LEFT * 100}%`,
-                width: `${IMAGE_WIDTH * 100}%`,
-                top: 0,
-                height: "100%",
-                opacity: i === view ? 1 : 0,
-                pointerEvents: i === view ? undefined : "none",
-              }}
+              className="absolute inset-y-0 left-0 w-full transition-opacity duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] md:left-[var(--img-left)] md:w-[var(--img-width)]"
+              style={
+                {
+                  "--img-left": `${IMAGE_LEFT * 100}%`,
+                  "--img-width": `${IMAGE_WIDTH * 100}%`,
+                  opacity: i === view ? 1 : 0,
+                  pointerEvents: i === view ? undefined : "none",
+                } as React.CSSProperties
+              }
               aria-hidden={i === view ? undefined : true}
             >
               <Image
@@ -104,7 +104,7 @@ export default function RevoluxAnatomy() {
 
           {isFront && (
             <>
-              <svg viewBox="0 0 960 700" className="absolute inset-0 h-full w-full" aria-hidden="true">
+              <svg viewBox="0 0 960 700" className="absolute inset-0 hidden h-full w-full md:block" aria-hidden="true">
                 {parts.map((part, i) => {
                   const [ax, ay] = part.anchor;
                   const left = part.side === "left";
