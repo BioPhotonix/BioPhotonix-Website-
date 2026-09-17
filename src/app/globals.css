@@ -282,6 +282,38 @@
   .wet-pulse, .art [data-art-pulse] { animation: none; }
 }
 
+/* Therapy light rising from the eyepieces of the front render. It builds once
+   and then holds, the way a session does, rather than pulsing. Screen blending
+   makes it read as emitted light rather than a disc painted over the device. */
+@keyframes device-glow-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+.device-glow {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.5);
+  mix-blend-mode: screen;
+  pointer-events: none;
+  animation: device-glow-in 5s cubic-bezier(0.4, 0, 0.25, 1) 0.4s forwards;
+}
+.device-glow-core {
+  animation-duration: 4.2s;
+  animation-delay: 0.2s;
+}
+@media (prefers-reduced-motion: reduce) {
+  .device-glow {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    animation: none;
+  }
+}
+
 /* Card marks. Every stroked element draws itself once when the card arrives.
    A dash pattern longer than any path in the set lets one rule cover them all. */
 .mark [stroke] {

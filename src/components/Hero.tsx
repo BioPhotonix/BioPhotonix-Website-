@@ -1,9 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import { motion, useReducedMotion } from "motion/react";
 import Button from "./Button";
 import PhotonField from "./PhotonField";
+import RevoluxDevice from "./RevoluxDevice";
 import { hero } from "@/content/site";
 
 export default function Hero() {
@@ -81,14 +81,10 @@ export default function Hero() {
               transition={reduce ? undefined : { duration: 7, repeat: Infinity, ease: "easeInOut" }}
               className="relative mx-auto w-[62%] max-w-[22rem] lg:w-[68%]"
             >
-              <Image
-                src="/images/revolux-three-quarter.png"
+              <RevoluxDevice
                 alt={hero.deviceAlt}
-                width={354}
-                height={669}
-                priority
                 sizes="(max-width: 1024px) 60vw, 30vw"
-                className="h-auto w-full drop-shadow-[0_30px_60px_rgba(27,195,205,0.25)]"
+                priority
               />
             </motion.div>
           </motion.div>
