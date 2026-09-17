@@ -33,8 +33,8 @@ export const site = {
 } as const;
 
 export const nav = [
+  { label: "What patients see", href: "/vision" },
   { label: "Technology", href: "/technology" },
-  { label: "Evidence", href: "/evidence" },
   { label: "Clinics", href: "/clinics" },
   { label: "About", href: "/about" },
   { label: "Investors", href: "/investors" },
@@ -82,14 +82,12 @@ export const burden = {
     note: "Each figure is two million people. The dark centre of every head is the central vision that dry AMD takes.",
     source: "Wong et al., The Lancet Global Health, 2014. Years between the two published figures are a straight line between them.",
   },
-  split: {
-    title: "Where the innovation has gone",
-    dry: { label: "Dry AMD", share: 90, note: "Most patients. Few options." },
-    wet: { label: "Wet AMD", share: 10, note: "Most of the therapeutic investment." },
-  },
   cost: {
-    value: "$49B",
-    label: "annual economic burden of AMD in the US alone, driven mostly by lost productivity and quality of life rather than treatment",
+    value: "£2.6bn",
+    label:
+      "a year is what AMD-related sight loss costs the UK, of which £1.2 billion falls directly on healthcare and the rest on informal care, lost productivity and lost quality of life",
+    source:
+      "Fight for Sight, Time to Focus (2020), as cited in the Royal College of Ophthalmologists' AMD Commissioning Guidance, June 2021.",
   },
 };
 
@@ -110,7 +108,7 @@ export const vision = {
   eyebrow: "What is actually lost",
   title: "The years before anyone notices.",
   intro:
-    "Dry AMD does not announce itself. It takes contrast before it takes acuity, bends straight lines before it removes them, and takes the middle of a face before it takes the edges. Move through the stages, and move your pointer over the picture: the loss goes wherever you look.",
+    "Dry AMD does not announce itself. Long before small print becomes unreadable, it takes away the ability to tell one shade from the next: faces flatten, edges stop separating, and a lamp that was bright enough last winter is not bright enough now. Move through the stages, and move your pointer over the picture — the loss goes wherever you look.",
   sceneLabel: "What you are looking at",
   stageLabel: "Stage of disease",
   hint: "Move your pointer over the picture and the lost area follows it, the way a real scotoma follows the eye. On a phone, tap where you want to look.",
@@ -119,21 +117,19 @@ export const vision = {
       id: "family",
       label: "A grandchild",
       src: "/images/vision/family.jpg",
-      credit: "Mikhail Nilov, Pexels",
       caption: "Recognising a face depends on exactly the part of the retina AMD takes. The edges of the room stay clear. The person in front of you does not.",
     },
     {
-      id: "reading",
-      label: "A newspaper",
-      src: "/images/vision/reading.jpg",
-      credit: "MART PRODUCTION, Pexels",
-      caption: "Reading is the loss patients report first. Letters bend, then go missing from the middle of words, while the edge of the page stays sharp.",
+      id: "book",
+      label: "A book",
+      src: "/images/vision/book.jpg",
+      caption:
+        "What a reader sees looking down at their own hands. Reading is the loss patients report first: letters bend, then go missing from the middle of words, while the edge of the page stays sharp.",
     },
     {
       id: "street",
       label: "Crossing the road",
       src: "/images/vision/street.jpg",
-      credit: "Kaique Rocha, Pexels",
       caption: "Signals, signs and the faces of people walking towards you all sit in the central field. Peripheral vision is spared, which is why someone with advanced AMD can still get about and still cannot read the sign.",
     },
     {
@@ -159,7 +155,7 @@ export const vision = {
       id: "intermediate",
       short: "Intermediate",
       title: "Intermediate dry AMD",
-      body: "Large drusen, often with pigment change. Contrast drains from the centre of vision, straight lines bend, and a faint smudge sits over whatever is looked at directly. Reading in dim light becomes hard and faces look washed out.",
+      body: "Large drusen, often with pigment change. The difference between one shade and the next drains out of the centre of vision, straight lines bend, and a faint smudge sits over whatever is looked at directly. Reading in dim light becomes hard and faces look washed out long before the eye chart changes.",
     },
     {
       id: "atrophy",
@@ -619,7 +615,7 @@ export const about = {
     body: [
       "As diagnostic technology in community optometry has advanced, we are identifying retinal disease earlier than ever before. Yet for millions of patients this early diagnosis is followed by a “watch and wait” approach. Patients are monitored as their vision inevitably declines, simply because effective hospital-grade interventions are not scalable to the community setting.",
       "We were established to close this gap. By translating the science of photobiomodulation into a regulated, portable medical platform, we are empowering optometrists to intervene early, preserving vision and independence for the ageing population.",
-      "With the global economic burden of AMD exceeding $49 billion annually and millions losing their independence, BioPhotonix is not just building a device. We are building the infrastructure for the future of global eye health.",
+      "With AMD-related sight loss costing the UK alone £2.6 billion a year, and tens of millions losing their independence worldwide, BioPhotonix is not just building a device. We are building the infrastructure for the future of global eye health.",
     ],
   },
   values: {
@@ -730,7 +726,7 @@ export const investors = {
   highlights: [
     { value: "200M", label: "People with AMD worldwide", body: "Projected to reach 288 million by 2040." },
     { value: "85–90%", label: "Dry AMD share", body: "The form with the fewest approved treatments." },
-    { value: "$49B", label: "Annual US economic burden", body: "Driven mostly by lost productivity and quality of life." },
+    { value: "£2.6bn", label: "Annual UK cost of AMD sight loss", body: "£1.2 billion of it falls directly on healthcare." },
     { value: "Class IIa", label: "Regulatory classification", body: "CE-first under the EU MDR, then UKCA." },
   ],
   model: {

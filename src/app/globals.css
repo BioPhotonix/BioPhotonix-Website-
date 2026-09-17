@@ -243,14 +243,12 @@
   }
 }
 
-/* The ten wet-AMD squares keep a slow pulse, so the grid stays alive once it
-   has drawn and the minority the innovation went to stays legible. */
-@keyframes wet-pulse {
+/* A slow breath, so a drawn element stays alive once it has arrived. Named
+   for the wet-AMD squares it was written for; that chart is gone and the
+   article cover art is what uses it now. */
+@keyframes soft-pulse {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.45; }
-}
-.wet-pulse {
-  animation: wet-pulse 3.4s ease-in-out infinite;
 }
 
 /* Cover art for an article. Drawn once when the card arrives, then the
@@ -274,12 +272,12 @@
   to { opacity: 1; transform: scale(1); }
 }
 .art.is-live [data-art-pulse] {
-  animation: wet-pulse 2.8s ease-in-out infinite;
+  animation: soft-pulse 2.8s ease-in-out infinite;
 }
 @media (prefers-reduced-motion: reduce) {
   .art [data-art-draw] { stroke-dashoffset: 0; }
   .art [data-art-pop] { opacity: 1; transform: none; }
-  .wet-pulse, .art [data-art-pulse] { animation: none; }
+  .art [data-art-pulse] { animation: none; }
 }
 
 /* Therapy light rising from the eyepieces of the front render. It builds once
@@ -444,4 +442,43 @@
   ::view-transition-new(*) {
     animation: none !important;
   }
+}
+
+/* --- World prevalence map ---------------------------------------------
+   Countries the forecast covers respond to pointer and keyboard; the rest
+   are inert scenery. The focus ring is drawn on the path itself rather than
+   by the global :focus-visible outline, which would box the country's
+   bounding rectangle instead of following its shape. */
+.wm-market {
+  cursor: pointer;
+  transition: filter 0.2s var(--ease-out-expo), stroke 0.2s var(--ease-out-expo);
+}
+.wm-market:focus-visible {
+  filter: brightness(1.28);
+  stroke: var(--color-teal-200);
+  stroke-width: 1.6;
+  outline: none;
+}
+.wm-rest {
+  pointer-events: none;
+}
+/* The fat outline that makes a 10px country hoverable. It sits over the
+   painted path and takes the pointer, so the painted path never receives
+   :hover and cannot show the highlight itself — this stroke becomes the
+   highlight instead, thinning from its invisible hit width to a ring. */
+.wm-hit {
+  stroke: transparent;
+  pointer-events: stroke;
+  cursor: pointer;
+  transition: stroke 0.2s var(--ease-out-expo), stroke-width 0.2s var(--ease-out-expo);
+}
+.wm-hit:hover {
+  stroke: var(--color-teal-200);
+  stroke-width: 2.5;
+}
+@media (prefers-reduced-motion: reduce) {
+  .wm-hit { transition: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .wm-market { transition: none; }
 }

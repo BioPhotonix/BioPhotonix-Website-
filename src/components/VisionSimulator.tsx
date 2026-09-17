@@ -105,12 +105,7 @@ export default function VisionSimulator({ titleAs: Title = "h3" }: Props) {
         >
           <canvas ref={canvasRef} role="img" aria-label={`${sceneMeta.label}, seen with ${current.title.toLowerCase()}.`} />
         </div>
-        <figcaption className="mt-3 text-sm text-fog/70">
-          {sceneMeta.caption}
-          {"credit" in sceneMeta && sceneMeta.credit && (
-            <span className="figure mt-1 block text-xs text-fog/70">Photograph: {sceneMeta.credit}</span>
-          )}
-        </figcaption>
+        <figcaption className="mt-3 text-sm text-fog/70">{sceneMeta.caption}</figcaption>
       </figure>
 
       <p className="mt-3 text-sm text-fog/70">{vision.hint}</p>

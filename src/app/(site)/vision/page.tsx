@@ -50,8 +50,8 @@ export default function VisionPage() {
             </Reveal>
             <Reveal className="mt-8 flex flex-wrap gap-3">
               <Button href="/technology">How Revolux intervenes</Button>
-              <Button href="/evidence" variant="outline">
-                The published evidence
+              <Button href="/contact" variant="outline">
+                Ask us about the evidence
               </Button>
             </Reveal>
           </div>

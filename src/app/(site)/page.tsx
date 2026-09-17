@@ -13,9 +13,8 @@ import SectionHeading from "@/components/SectionHeading";
 import StandardsTicker from "@/components/StandardsTicker";
 import StatCounter from "@/components/StatCounter";
 import TechCard from "@/components/TechCard";
-import VisionSimulator from "@/components/VisionSimulator";
 import { posts } from "@/content/posts";
-import { burden, clinics, contact, founder, revolux, roadmap, shift, site, vision } from "@/content/site";
+import { burden, clinics, contact, founder, revolux, roadmap, shift, site } from "@/content/site";
 
 const formatDate = (iso: string) =>
   new Date(iso).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
@@ -45,40 +44,13 @@ export default function HomePage() {
         <div className="mt-6">
           <BurdenChart />
         </div>
-        <Reveal className="mt-6 flex flex-col gap-3 rounded-2xl border border-line bg-ink-900 p-7 md:flex-row md:items-center md:gap-8">
-          <span className="text-4xl font-medium text-ember-text md:text-5xl">{burden.cost.value}</span>
-          <p className="text-base leading-relaxed text-fog/75">{burden.cost.label}</p>
-        </Reveal>
-      </section>
-
-      {/* What the numbers above actually mean for one person. Deliberately on
-          the page background: the section below it is a banded one, and two
-          bands in a row would read as a single block. */}
-      <section className="shell pb-20 md:pb-28">
-        <SectionHeading eyebrow={vision.eyebrow} title={vision.title} intro={vision.intro} />
-        <div className="mt-12 grid gap-10 lg:grid-cols-12 lg:gap-16">
-          <Reveal className="lg:col-span-7">
-            <VisionSimulator />
-          </Reveal>
-          <div className="lg:col-span-5">
-            <Reveal className="flex flex-col gap-4 text-fog/75">
-              <p className="leading-relaxed">
-                Ask a patient with early dry AMD what they have noticed and most will say nothing at
-                all. Contrast goes first, and it goes quietly: more light needed to read, longer to
-                adjust coming indoors, faces looking washed out at the far end of a room.
-              </p>
-              <p className="leading-relaxed">
-                By the time someone reports that words are dropping out of the middle of a sentence,
-                retina has already been lost, and no therapy brings it back.
-              </p>
-            </Reveal>
-            <Reveal className="mt-8">
-              <Button href="/vision" variant="outline">
-                Explore the simulation
-              </Button>
-            </Reveal>
+        <Reveal className="mt-6 rounded-2xl border border-line bg-ink-900 p-7">
+          <div className="flex flex-col gap-3 md:flex-row md:items-center md:gap-8">
+            <span className="text-4xl font-medium text-ember-text md:text-5xl">{burden.cost.value}</span>
+            <p className="text-base leading-relaxed text-fog/75">{burden.cost.label}</p>
           </div>
-        </div>
+          <p className="mt-4 text-xs text-fog/70">Source: {burden.cost.source}</p>
+        </Reveal>
       </section>
 
       {/* From observation to intervention */}

@@ -2,7 +2,7 @@
   "name": "biophotonix-website",
   "version": "1.0.0",
   "private": true,
-  "description": "Corporate website for BioPhotonix — photobiomodulation medical technology for dry AMD.",
+  "description": "Corporate website for BioPhotonix \u2014 photobiomodulation medical technology for dry AMD.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -10,6 +10,7 @@
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
     "build:images": "node scripts/build-images.mjs",
+    "build:map": "node scripts/build-world-map.mjs",
     "test:site": "node scripts/test/browser/site.mjs"
   },
   "dependencies": {

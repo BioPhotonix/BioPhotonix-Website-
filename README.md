@@ -49,8 +49,7 @@ a component. Adding an article means appending an entry to
 |---|---|
 | `/` | The story in one page: the unmet need, the shift from watching to treating, Revolux, clinics, roadmap, founder, news, contact |
 | `/technology` | Revolux in depth: the five-step delivery explainer, the retina diagram, safety and standards, FAQ. Carries the MedicalDevice and FAQPage structured data |
-| `/vision` | The vision simulator: what a patient sees at each stage of dry AMD |
-| `/evidence` | The published literature on photobiomodulation in dry AMD, filterable, including the findings that do not support it |
+| `/vision` | The vision simulator: what a patient sees at each stage of dry AMD. First item in the main nav |
 | `/clinics` | For practices: value propositions, the five-step clinical pathway, the revenue calculator, FAQ, registration form |
 | `/about` | The belief, the origin, values, founder, advisors and partners |
 | `/investors` | The thesis, market charts, business model, regulatory strategy, roadmap, team, data-room request |
@@ -113,6 +112,32 @@ All in `src/components`:
 - **CountUp** counts a figure written as text, used for the investor
   headlines. It animates only a value containing exactly one number, so
   "200M" counts while "85-90%" and "Class IIa" are left alone.
+- **PrevalenceMap** colours AMD prevalent cases across the seven markets
+  GlobalData forecasts, on an Equal Earth projection. Things worth knowing:
+
+  1. It is a **server component**, and should stay one. The coastlines are
+     ~110KB of geometry; rendered on the server they ship as markup and cost
+     the visitor no JavaScript. Only the readout (`MapHover`) is a client
+     component, and it takes the SVG as `children` rather than importing the
+     geometry. This is why `BurdenChart` is no longer `"use client"`.
+  2. `scripts/build-world-map.mjs` generates `src/content/world-map.ts` from
+     Natural Earth 110m. It splits rings at the antimeridian: Russia's far
+     east and Fiji straddle 180 degrees, and without the split their polygons
+     draw a streak straight across the map.
+  3. Colour is **sequential** — one hue, interpolated in OKLab between two
+     steps of the site's teal, so lightness rises with the case count. On a
+     dark surface the anchor flips: more is brighter. Countries outside the
+     forecast are the surface grey, never the palest teal, which would read
+     as "hardly any cases" rather than "no data".
+  4. Small countries get a second path with a fat transparent stroke, because
+     the UK renders about 11px across and is otherwise unhoverable. That hit
+     path carries the same data attributes as the painted one, since the
+     readout reads whichever element the pointer actually hit.
+
+  The map is coloured by **case counts, not prevalence rates** — it answers
+  "where are the patients", which is the question the section asks. The legend
+  says "cases" so it cannot be misread as a rate.
+
 - **PhotonField** drifts photons towards the device behind the hero. The
   convergence point follows the pointer part of the way — partial on purpose,
   so the light keeps looking like it belongs to the device rather than
@@ -147,18 +172,16 @@ All in `src/components`:
   the grid exists to show. The lost area is drawn dark so it can be seen, and
   the caveat says that patients more often describe grey or absence.
 
-  The photographs are from Pexels (free for commercial use; the photographers
-  are credited under each). `scripts/build-images.mjs` fetches them by ID, so
-  the source is on record.
+  The scenes are a book seen from the reader's own eyeline, a street crossing,
+  a grandchild between her grandparents, and an Amsler grid. The book is
+  deliberately first-person — an earlier version used a photograph of somebody
+  else reading a newspaper, which puts the viewer outside the experience the
+  simulator is trying to hand them.
 
-- **EvidenceLibrary** lists the published literature, filterable by topic and
-  by whether the study supports the approach. See the header of
-  `src/content/evidence.ts` for the rules that file is kept to. The short
-  version: every entry is checked against the NCBI E-utilities API rather
-  than written from memory, every summary restates that paper's own abstract,
-  unsupportive findings are listed with the same prominence as supportive
-  ones, and `evidenceSignedOff` gates the page — while it is `false` the page
-  carries a draft banner, is served `noindex` and stays out of the sitemap.
+  The photographs are from Pexels, whose licence is free for commercial use
+  and requires no attribution. `scripts/build-images.mjs` fetches them by
+  photo ID, so the source stays on record in the repo even though nothing is
+  credited on the page.
 
 - **PageTransition** cross-fades between routes and carries the device
   between the home and technology heroes (`.vt-device`). It drives the View
@@ -173,6 +196,12 @@ All in `src/components`:
 Nothing on the site is a photograph of a patient or a treatment outcome. The
 article covers are drawn in code (`PostArt`) rather than being the
 AI-generated illustrations the Wix site used.
+
+The world map's geometry is generated, not hand-written:
+
+```bash
+npm run build:map      # regenerates src/content/world-map.ts from Natural Earth
+```
 
 ## Checking a change did not break anything
 

@@ -22,7 +22,6 @@ const PAGES = [
   "/",
   "/technology",
   "/vision",
-  "/evidence",
   "/clinics",
   "/about",
   "/investors",

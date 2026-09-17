@@ -8,7 +8,6 @@ const columns = [
     links: [
       { label: "Technology", href: "/technology" },
       { label: "What patients see", href: "/vision" },
-      { label: "Evidence", href: "/evidence" },
       { label: "For clinics", href: "/clinics" },
       { label: "About", href: "/about" },
       { label: "Investors", href: "/investors" },

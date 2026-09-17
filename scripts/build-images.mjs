@@ -83,7 +83,7 @@ console.log("wrote logo-light-bg.png");
  */
 const photos = [
   ["8317710", "family.jpg"],
-  ["9566081", "reading.jpg"],
+  ["5364788", "book.jpg"],
   ["109919", "street.jpg"],
 ];
 await mkdir(`${out}/vision`, { recursive: true });
