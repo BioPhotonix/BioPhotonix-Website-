@@ -53,8 +53,9 @@ export default function StatCounter({ value, prefix = "", suffix = "", durationM
     };
   }, [value, durationMs]);
 
+  /* See CountUp for what data-count-to is for. */
   return (
-    <span ref={ref} className="tabular-nums">
+    <span ref={ref} className="tabular-nums" data-count-to={`${prefix}${value}${suffix}`}>
       {prefix}
       {display}
       {suffix}

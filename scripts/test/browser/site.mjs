@@ -81,10 +81,14 @@ for (const [vpName, width, height] of VIEWPORTS) {
         // The reveal transition is 750ms; anything shorter reads a section mid-fade.
         await page.waitForTimeout(900);
         await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+        // 1300ms clears the reveal transitions.
         await page.waitForTimeout(1300);
+        // The counters run for 1500ms from whenever they were reached, so on
+        // the pages that have them, let them finish before reading the figure.
+        if (await page.locator("[data-count-to]").count()) await page.waitForTimeout(1600);
 
         const report = await page.evaluate(() => {
-          const out = { invisible: [], overflow: 0, headings: [], noAlt: [], tiny: [], mains: 0, h1s: 0 };
+          const out = { invisible: [], overflow: 0, headings: [], noAlt: [], tiny: [], mains: 0, h1s: 0, counters: [] };
           out.overflow = document.documentElement.scrollWidth - document.documentElement.clientWidth;
           out.mains = document.querySelectorAll("main").length;
           out.h1s = document.querySelectorAll("h1").length;
@@ -108,6 +112,15 @@ for (const [vpName, width, height] of VIEWPORTS) {
           for (const img of document.querySelectorAll("img")) {
             if (img.getAttribute("alt") === null) out.noAlt.push(img.getAttribute("src") ?? "?");
           }
+          /* A count-up that stalls part way leaves a plausible but wrong
+             figure on the page — "6M people with AMD worldwide" reads as a
+             real statistic, and nothing else here can tell it is wrong. Each
+             counter declares its target, so compare the two. */
+          for (const el of document.querySelectorAll("[data-count-to]")) {
+            const want = el.getAttribute("data-count-to");
+            const got = (el.textContent ?? "").trim();
+            if (got !== want) out.counters.push(`${got} should be ${want}`);
+          }
           return out;
         });
 
@@ -118,6 +131,7 @@ for (const [vpName, width, height] of VIEWPORTS) {
         if (report.tiny.length) fail(where, `text under 14px — ${report.tiny[0]}`);
         if (report.mains !== 1) fail(where, `${report.mains} <main> elements`);
         if (report.h1s !== 1) fail(where, `${report.h1s} <h1> elements`);
+        if (report.counters.length) fail(where, `counter stalled — ${report.counters[0]}`);
         if (errors.length) fail(where, `console: ${errors[0].slice(0, 90)}`);
         await page.close();
       }
