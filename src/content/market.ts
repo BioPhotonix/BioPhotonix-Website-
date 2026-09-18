@@ -7,10 +7,13 @@
  * different standing: one is a licensed third-party forecast, the other is
  * the company's own commercial modelling.
  *
- * The United States is deliberately absent. It is the largest AMD market in
- * the GlobalData forecast and it is excluded from this model because the
- * patent position there is not open to us — an omission a reader would
- * otherwise assume was an oversight, so `excluded` says it on the page.
+ * The scope is five European markets, and both absences from the forecast are
+ * named on the page rather than left to be noticed. The United States is the
+ * largest AMD market in it and the patent position there is not open to us;
+ * Japan is outside the territory this plan addresses. `excluded` used to
+ * account for the United States alone, which read as though it were the only
+ * omission — the precise impression the paragraph exists to prevent, and the
+ * one a reader who knows the forecast covers seven markets would catch.
  *
  * `share` is each tier's annual value as a fraction of the tier above, and it
  * is what the figure draws: the squares are scaled so their AREA carries the
@@ -78,7 +81,7 @@ export const market = {
   intro:
     "Three nested markets, drawn to scale by annual value. The obtainable market is the small square: the year-five forecast asks for two per cent of what is serviceable, not for the whole of it.",
   excluded:
-    "The United States is excluded throughout. It is the largest AMD market in the forecast, and the patent position there is not open to us, so it is left out of the model rather than counted and discounted.",
+    "These figures cover five European markets: the UK, Germany, France, Italy and Spain. GlobalData's forecast also covers the United States and Japan. The United States is the largest AMD market in it, and the patent position there is not open to us, so it is left out of the model rather than counted and discounted. Japan is outside the territory this plan addresses.",
   footnote:
     "Population figures derived from GlobalData's AMD Epidemiology Forecast to 2034; values based on BioPhotonix's per-course licensing model.",
 };
