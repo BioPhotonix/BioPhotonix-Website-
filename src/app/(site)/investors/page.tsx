@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import BurdenChart from "@/components/BurdenChart";
+import MarketFunnel from "@/components/MarketFunnel";
 import ContactForm from "@/components/ContactForm";
 import CountUp from "@/components/CountUp";
 import Reveal from "@/components/Reveal";
@@ -55,8 +56,11 @@ export default function InvestorsPage() {
               ))}
             </Reveal>
           </div>
-          <div className="lg:col-span-7">
-            <BurdenChart layout="stack" />
+          <div className="flex flex-col gap-6 lg:col-span-7">
+            <BurdenChart />
+            <figure className="rounded-2xl border border-line bg-ink-900 p-6 md:p-8">
+              <MarketFunnel />
+            </figure>
           </div>
         </div>
       </section>
