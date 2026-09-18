@@ -1,4 +1,5 @@
 import raw from "./insights.json";
+import { parseFigure, parseImage } from "./figure";
 import type { ArtKind, Block, Post, Source } from "./posts";
 
 /**
@@ -94,6 +95,8 @@ export function parseInsight(v: unknown, where: string): Post {
     if (!Array.isArray(v.sources) || v.sources.length > 10) fail(`${where}.sources`, "must be an array of at most 10 sources");
     post.sources = v.sources.map((s, i) => source(s, `${where}.sources[${i}]`));
   }
+  if (v.figure !== undefined) post.figure = parseFigure(v.figure, `${where}.figure`);
+  if (v.image !== undefined) post.image = parseImage(v.image, `${where}.image`);
   return post;
 }
 

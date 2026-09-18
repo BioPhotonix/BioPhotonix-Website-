@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Button from "@/components/Button";
+import InsightFigure from "@/components/InsightFigure";
 import PostArt from "@/components/PostArt";
 import Reveal from "@/components/Reveal";
 import TechCard from "@/components/TechCard";
@@ -48,6 +49,7 @@ export default async function NewsPost({ params }: Params) {
     publisher: { "@type": "Organization", name: site.name },
     mainEntityOfPage: `${site.url}/news/${post.slug}`,
     ...(post.topics?.length ? { keywords: post.topics.join(", ") } : {}),
+    ...(post.image ? { image: `${site.url}${post.image.src}` } : {}),
     ...(post.sources?.length
       ? { citation: post.sources.map((s) => ({ "@type": "CreativeWork", name: s.title, url: s.url, publisher: s.publisher })) }
       : {}),
@@ -78,11 +80,17 @@ export default async function NewsPost({ params }: Params) {
           </p>
         </Reveal>
 
-        <Reveal delay={0.08} className="mx-auto mt-12 max-w-4xl">
-          <div className="aspect-[5/2] overflow-hidden rounded-2xl border border-line">
-            <PostArt kind={post.art} />
-          </div>
-        </Reveal>
+        <div className="mx-auto mt-12 max-w-4xl">
+          {post.figure ? (
+            <InsightFigure figure={post.figure} />
+          ) : (
+            <Reveal delay={0.08}>
+              <div className="aspect-[5/2] overflow-hidden rounded-2xl border border-line">
+                <PostArt kind={post.art} />
+              </div>
+            </Reveal>
+          )}
+        </div>
 
         <div className="mx-auto mt-14 max-w-2xl">
           {post.body.map((block, i) => {

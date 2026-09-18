@@ -107,3 +107,41 @@ export function ogCard(eyebrow: string, title: string) {
     },
   );
 }
+
+/**
+ * The card for an insight that has a photograph: the picture, cover-fitted,
+ * with the site's mark and the series name on a slim band along the bottom.
+ * The page title travels with the link on every platform, so it is not
+ * repeated on the image. No source is stated on it: only photographs that
+ * need no credit are used.
+ */
+export function ogPhoto(imageDataUri: string) {
+  return new ImageResponse(
+    (
+      <div style={{ width: "100%", height: "100%", display: "flex", position: "relative", background: INK }}>
+        <img src={imageDataUri} width={1200} height={630} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+        <div
+          style={{
+            position: "absolute",
+            left: 0,
+            right: 0,
+            bottom: 0,
+            display: "flex",
+            alignItems: "center",
+            padding: "16px 40px",
+            background: "rgba(4,8,10,0.72)",
+          }}
+        >
+          <img src={mark} width={36} height={36} alt="" />
+          <div style={{ marginLeft: 16, fontFamily: "Sans", fontSize: 22, letterSpacing: "0.14em", textTransform: "uppercase", color: FOG }}>
+            BioPhotonix · Weekly insight
+          </div>
+        </div>
+      </div>
+    ),
+    {
+      ...OG_SIZE,
+      fonts: [{ name: "Sans", data: sans, style: "normal", weight: 600 }],
+    },
+  );
+}

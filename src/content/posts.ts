@@ -14,6 +14,7 @@
  * than being a photograph.
  */
 
+import type { Figure, PostImage } from "./figure";
 import { insights } from "./insights";
 
 export type Block =
@@ -46,6 +47,10 @@ export type Post = {
   series?: "insight";
   topics?: string[];
   sources?: Source[];
+  /** The animated figure that opens an insight in place of the drawn cover. */
+  figure?: Figure;
+  /** The photograph for the LinkedIn post and the social card; not shown in the article. */
+  image?: PostImage;
 };
 
 const articles: Post[] = [
