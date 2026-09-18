@@ -210,17 +210,25 @@ install chromium`.
 
 ## Deploying
 
-The site is a standard Next.js app and deploys to Vercel with no configuration.
+**This is live.** `www.biophotonix.co.uk` serves this site from Vercel, the
+apex redirects to `www`, the contact form sends, and the Wix subscription has
+been cancelled. What follows describes how it is wired, not work still to do —
+an earlier version of this section read as a to-do list long after it was
+done, and that is how you talk yourself into re-solving a solved problem.
 
-1. Push this repository to GitHub.
-2. Import it at vercel.com. Accept the defaults.
-3. Add the environment variables below.
-4. Point `biophotonix.co.uk` at Vercel: add the domain under Settings,
-   Domains, and set the DNS records Vercel shows at your registrar. Vercel
-   serves `www` and redirects the apex to it. `site.url` in `site.ts` is set to
-   `https://www.biophotonix.co.uk`; canonical URLs, Open Graph tags and the
-   sitemap are all built from it.
-5. Cancel the Wix plan only once the new site is live on the domain.
+The site is a standard Next.js app on Vercel with no configuration: `main`
+builds and deploys on push.
+
+- **DNS** is at IONOS (`ui-dns` nameservers), which is also where the domain
+  is registered. The apex and `www` both A-record to Vercel. Mail is Google
+  Workspace, and those MX records have nothing to do with Vercel — leave them
+  alone when touching anything else in that zone.
+- **`site.url`** in `site.ts` is `https://www.biophotonix.co.uk`. Canonical
+  URLs, Open Graph tags, the social cards and the sitemap are all built from
+  it, so it is the one value to change if the domain ever does.
+- **Verifying it from outside:** `curl -sI https://www.biophotonix.co.uk`
+  should show `server: Vercel`, and `/api/health` should report
+  `{"ok":true,"email":"ok"}`. Both are quicker than reading this file.
 
 ### Environment variables
 
@@ -230,12 +238,11 @@ The site is a standard Next.js app and deploys to Vercel with no configuration.
 | `CONTACT_FROM` | Yes | Sender on a domain verified with Resend, e.g. `BioPhotonix <info@biophotonix.co.uk>`. Without it the form refuses to send: Resend's shared test sender only reaches the account owner, so enquiries would look sent and never arrive. |
 | `CONTACT_TO` | No | Where enquiries are delivered. Defaults to the address in `site.ts`. |
 
-Setting up Resend is the same job as for RevolutionEyes: sign up, add the
-domain (pick the Ireland region), add the three DNS records on the `send`
-subdomain, verify, create a key, add the two variables in Vercel, redeploy.
-Do not turn on Resend's "Enable Receiving": it replaces the root MX record and
-stops `info@biophotonix.co.uk` receiving mail. `/api/health` reports
-`"email": "ok"` once the variables are in the build.
+Resend is set up and sending: the `send` subdomain and its DKIM record are on
+the domain, the variables are in the Vercel project, and `/api/health` reports
+`"email": "ok"`. If it is ever rebuilt, do not turn on Resend's "Enable
+Receiving": it replaces the root MX record and stops
+`info@biophotonix.co.uk` receiving mail.
 
 Each submission sends two emails: the enquiry to you, with reply-to set to the
 sender and a subject that says whether it is a general enquiry, a clinic
@@ -245,8 +252,13 @@ repeats none of their message.
 ## Search rankings
 
 The Wix blog lived at `/post/<slug>`. `next.config.ts` redirects those, and
-`/blog`, permanently to `/news`, so the ranking follows. Once the domain
-points at Vercel, add it in Google Search Console and submit
+`/blog`, permanently to `/news`, so the ranking follows; both still answer 308
+on the live domain.
+
+Still outstanding: confirm the Google Search Console property is
+`https://www.biophotonix.co.uk` — the one the canonicals name, not an older
+Wix-era variant; two `google-site-verification` records sit on the domain, so
+something is already registered — then submit
 `https://www.biophotonix.co.uk/sitemap.xml`.
 
 Each page carries a unique title, a description under the ~155 characters
@@ -310,7 +322,10 @@ The logo is the brand mark plus a wordmark set in type (`Logo.tsx`), because
 the supplied logo has a black wordmark that vanishes on the dark palette. The
 supplied logo is kept at `public/images/logo-light-bg.png`.
 
-## Things to check before you launch
+## Still open
+
+The site is live; these are the things that were never finished, not a launch
+gate.
 
 - **The figures.** Most statistics in `burden.stats` still come from the Wix
   site or the company's own articles, with no source attached: 200 million
@@ -345,7 +360,10 @@ supplied logo is kept at `public/images/logo-light-bg.png`.
   banner and a cookie notice that do not exist here, because the site sets no
   cookies. Remove those lines or add the banner if analytics are introduced.
 - **The founder's LinkedIn** link is Adail's personal profile; there is no
-  company page yet.
+  company page yet. A company page would also be worth adding to the
+  Organization schema's `sameAs`, which currently has only the personal one.
+- **DMARC is `p=none`**, which reports but does not act. Moving to
+  `p=quarantine` is the usual next step once nothing legitimate is failing.
 
 ## Drawing the diagrams
 
