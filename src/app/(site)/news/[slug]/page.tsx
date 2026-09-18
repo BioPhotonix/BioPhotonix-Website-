@@ -7,6 +7,8 @@ import Reveal from "@/components/Reveal";
 import TechCard from "@/components/TechCard";
 import { getPost, posts } from "@/content/posts";
 import { founder, site } from "@/content/site";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbSchema } from "@/content/schema";
 
 type Params = { params: Promise<{ slug: string }> };
 
@@ -50,6 +52,12 @@ export default async function NewsPost({ params }: Params) {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structured) }} />
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "News", path: "/news" },
+          { name: post.title, path: `/news/${post.slug}` },
+        ])}
+      />
       <article className="shell pb-20 pt-32 md:pt-40">
         <Reveal className="mx-auto max-w-3xl">
           <Link href="/news" className="link-underline text-base text-fog hover:text-fog">

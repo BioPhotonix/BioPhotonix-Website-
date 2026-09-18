@@ -1,3 +1,5 @@
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbSchema } from "@/content/schema";
 import type { Metadata } from "next";
 import Button from "@/components/Button";
 import Reveal from "@/components/Reveal";
@@ -8,13 +10,14 @@ import { burden, vision } from "@/content/site";
 export const metadata: Metadata = {
   title: "What dry AMD takes",
   description:
-    "An interactive simulation of vision through each stage of dry age-related macular degeneration, from early drusen to geographic atrophy, and why the stages patients notice least are the ones that matter most.",
+    "An interactive simulation of dry AMD at every stage, from early drusen to geographic atrophy, and why the stages patients notice least matter most.",
   alternates: { canonical: "/vision" },
 };
 
 export default function VisionPage() {
   return (
     <>
+      <JsonLd data={breadcrumbSchema([{ name: "What patients see", path: "/vision" }])} />
       <section className="relative overflow-hidden pt-32 md:pt-40">
         <div aria-hidden="true" className="grid-bg absolute inset-0" />
         <div className="shell relative">

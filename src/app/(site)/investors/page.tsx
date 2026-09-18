@@ -1,3 +1,5 @@
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbSchema } from "@/content/schema";
 import type { Metadata } from "next";
 import Image from "next/image";
 import BurdenChart from "@/components/BurdenChart";
@@ -14,13 +16,14 @@ import { advisors, founder, investors, partners, roadmap } from "@/content/site"
 export const metadata: Metadata = {
   title: "Investors",
   description:
-    "The investment case for BioPhotonix: a Class IIa photobiomodulation platform for dry AMD, a structural gap in a market of 200 million people, and a recurring-revenue model for community optometry.",
+    "The investment case for BioPhotonix: a Class IIa photobiomodulation device for dry AMD, a structural market gap and recurring revenue in optometry.",
   alternates: { canonical: "/investors" },
 };
 
 export default function InvestorsPage() {
   return (
     <>
+      <JsonLd data={breadcrumbSchema([{ name: "Investors", path: "/investors" }])} />
       <section className="relative overflow-hidden pt-32 md:pt-40">
         <div aria-hidden="true" className="grid-bg absolute inset-0" />
         <div className="shell relative">

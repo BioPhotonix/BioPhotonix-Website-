@@ -62,3 +62,46 @@ export function faqSchema() {
     })),
   };
 }
+
+/**
+ * The site as an entity, and the trail to the page you are on.
+ *
+ * The Organization already carried the company's details but had no identity
+ * a second block could point at, so each block stood alone. Both now use a
+ * stable @id, which is what lets a search engine read the WebSite, the
+ * Organization and a page's breadcrumb as statements about one thing rather
+ * than three unrelated ones.
+ */
+export const ORG_ID = `${site.url}/#organization`;
+export const SITE_ID = `${site.url}/#website`;
+
+export function websiteSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": SITE_ID,
+    name: site.name,
+    alternateName: site.legalName,
+    url: site.url,
+    inLanguage: "en-GB",
+    publisher: { "@id": ORG_ID },
+  };
+}
+
+/**
+ * `trail` is the path from the home page to this one, in order, excluding the
+ * page's own entry when it is the last crumb — pass it and it is included.
+ * Breadcrumbs are what replace a raw URL in a result with a readable path.
+ */
+export function breadcrumbSchema(trail: { name: string; path: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [{ name: "Home", path: "" }, ...trail].map((c, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: c.name,
+      item: `${site.url}${c.path}`,
+    })),
+  };
+}

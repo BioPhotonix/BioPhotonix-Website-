@@ -1,3 +1,5 @@
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbSchema } from "@/content/schema";
 import type { Metadata } from "next";
 import ContactForm, { type Kind } from "@/components/ContactForm";
 import Reveal from "@/components/Reveal";
@@ -15,7 +17,9 @@ export default async function ContactPage({ searchParams }: Search) {
   const { as } = await searchParams;
   const kind: Kind = as === "clinic" ? "clinic" : as === "investor" ? "investor" : "general";
   return (
-    <section className="relative overflow-hidden pb-20 pt-32 md:pb-28 md:pt-40">
+    <>
+      <JsonLd data={breadcrumbSchema([{ name: "Contact", path: "/contact" }])} />
+      <section className="relative overflow-hidden pb-20 pt-32 md:pb-28 md:pt-40">
       <div aria-hidden="true" className="grid-bg absolute inset-0" />
       <div className="shell relative grid gap-12 md:grid-cols-2 md:gap-16">
         <div>
@@ -49,5 +53,6 @@ export default async function ContactPage({ searchParams }: Search) {
         </Reveal>
       </div>
     </section>
+    </>
   );
 }

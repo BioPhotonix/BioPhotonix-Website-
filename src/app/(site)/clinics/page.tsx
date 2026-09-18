@@ -1,3 +1,5 @@
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbSchema } from "@/content/schema";
 import type { Metadata } from "next";
 import Accordion from "@/components/Accordion";
 import Button from "@/components/Button";
@@ -13,13 +15,14 @@ import { clinics, course, faq } from "@/content/site";
 export const metadata: Metadata = {
   title: "Revolux for Clinics",
   description:
-    "Bring active dry AMD intervention into your optometry or ophthalmology practice: a five-step pathway, no upfront cost, and recurring revenue that scales with patient volume.",
+    "Bring active dry AMD treatment into your optometry practice: a five-step clinical pathway, no upfront cost, and revenue that scales with volume.",
   alternates: { canonical: "/clinics" },
 };
 
 export default function ClinicsPage() {
   return (
     <>
+      <JsonLd data={breadcrumbSchema([{ name: "For clinics", path: "/clinics" }])} />
       <section className="relative overflow-hidden pt-32 md:pt-40">
         <div aria-hidden="true" className="grid-bg absolute inset-0" />
         <div className="shell relative">

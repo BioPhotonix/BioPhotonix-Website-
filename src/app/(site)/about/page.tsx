@@ -1,3 +1,5 @@
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbSchema } from "@/content/schema";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Button from "@/components/Button";
@@ -8,15 +10,17 @@ import TechCard from "@/components/TechCard";
 import { about, advisors, founder, partners } from "@/content/site";
 
 export const metadata: Metadata = {
-  title: "About BioPhotonix",
+  /* Absolute: the site template would otherwise make this "About BioPhotonix | BioPhotonix". */
+  title: { absolute: "About BioPhotonix | Glasgow Medical Technology for Dry AMD" },
   description:
-    "BioPhotonix is a Glasgow medical technology company founded by an optometrist and orthoptist to bring active, clinician-led intervention for dry AMD into community eye care.",
+    "A Glasgow medical technology company founded by an optometrist and orthoptist, bringing clinician-led dry AMD treatment into community eye care.",
   alternates: { canonical: "/about" },
 };
 
 export default function AboutPage() {
   return (
     <>
+      <JsonLd data={breadcrumbSchema([{ name: "About", path: "/about" }])} />
       <section className="relative overflow-hidden pt-32 md:pt-40">
         <div aria-hidden="true" className="grid-bg absolute inset-0" />
         <div className="shell relative">

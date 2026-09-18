@@ -12,7 +12,7 @@ export const site = {
   legalName: "BioPhotonix Limited",
   tagline: "Photobiomodulation medical technology for dry age-related macular degeneration.",
   description:
-    "BioPhotonix develops Revolux, a clinician-supervised photobiomodulation platform for early and intermediate dry AMD, built as a Class IIa medical device for community optometry.",
+    "BioPhotonix builds Revolux: a clinician-supervised photobiomodulation device for early and intermediate dry AMD, made for community optometry.",
   /**
    * The live domain. Canonical tags, Open Graph URLs and the sitemap are all
    * built from this, so it has to be the domain that actually serves the site.
@@ -794,4 +794,24 @@ export const news = {
 export const footer = {
   blurb:
     "We develop photonic systems that safely stimulate retinal cells and support repair processes, helping to preserve central vision and independence for people living with macular degeneration.",
+};
+
+/**
+ * The line of copy on each page's social card.
+ *
+ * Held here with the rest of the copy rather than in the image component,
+ * which draws the card but writes none of it. Each entry is the eyebrow and
+ * the headline, chosen to be the sentence you would want quoted if someone
+ * pasted the link into a message and nothing else came with it.
+ */
+export const ogCards: Record<string, { eyebrow: string; title: string }> = {
+  home: { eyebrow: "Photobiomodulation for dry AMD", title: "Vision loss should not be accepted as inevitable." },
+  technology: { eyebrow: "Revolux", title: "Light that restores cellular energy." },
+  vision: { eyebrow: "What patients see", title: "The years before anyone notices." },
+  clinics: { eyebrow: "For optometrists and ophthalmologists", title: "Hospital-grade care, inside your consulting room." },
+  investors: { eyebrow: "For investors", title: "Building the infrastructure for the future of global eye health." },
+  about: { eyebrow: "About BioPhotonix", title: "Founded by a clinician who ran out of things to offer." },
+  news: { eyebrow: "News and insights", title: "From the front line of retinal care." },
+  contact: { eyebrow: "Contact", title: "Talk to BioPhotonix." },
+  article: { eyebrow: "Insight", title: "" },
 };

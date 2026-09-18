@@ -1,3 +1,5 @@
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbSchema } from "@/content/schema";
 import type { Metadata } from "next";
 import Link from "next/link";
 import PostArt from "@/components/PostArt";
@@ -19,6 +21,7 @@ export default function NewsPage() {
   const sorted = [...posts].sort((a, b) => (a.date < b.date ? 1 : -1));
   return (
     <>
+      <JsonLd data={breadcrumbSchema([{ name: "News", path: "/news" }])} />
       <section className="relative overflow-hidden pt-32 md:pt-40">
         <div aria-hidden="true" className="grid-bg absolute inset-0" />
         <div className="shell relative">

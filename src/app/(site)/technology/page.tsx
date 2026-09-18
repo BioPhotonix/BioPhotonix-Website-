@@ -12,19 +12,20 @@ import RevoluxExplainer from "@/components/RevoluxExplainer";
 import SectionHeading from "@/components/SectionHeading";
 import StandardsTicker from "@/components/StandardsTicker";
 import TechCard from "@/components/TechCard";
-import { faqSchema, medicalDeviceSchema } from "@/content/schema";
+import { breadcrumbSchema, faqSchema, medicalDeviceSchema } from "@/content/schema";
 import { anatomy, explainer, faq, retina, revolux, safety, shift } from "@/content/site";
 
 export const metadata: Metadata = {
   title: "Revolux Technology",
   description:
-    "How Revolux delivers photobiomodulation for dry AMD: binocular precision geometry, soft-start dosing, targeted wavelengths, safety interlocks and logged, clinician-initiated sessions.",
+    "How Revolux delivers photobiomodulation for dry AMD: precision binocular geometry, soft-start dosing, targeted wavelengths and logged sessions.",
   alternates: { canonical: "/technology" },
 };
 
 export default function TechnologyPage() {
   return (
     <>
+      <JsonLd data={breadcrumbSchema([{ name: "Technology", path: "/technology" }])} />
       {/* The device and the FAQ are both described here rather than site-wide:
           one page carries each entity, so nothing is declared twice. */}
       <JsonLd data={medicalDeviceSchema()} />

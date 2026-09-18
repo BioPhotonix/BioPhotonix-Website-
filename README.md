@@ -249,6 +249,25 @@ The Wix blog lived at `/post/<slug>`. `next.config.ts` redirects those, and
 points at Vercel, add it in Google Search Console and submit
 `https://www.biophotonix.co.uk/sitemap.xml`.
 
+Each page carries a unique title, a description under the ~155 characters
+Google shows, and a canonical URL. The structured data is an Organization and
+a WebSite joined by `@id`, a BreadcrumbList on every page below the home page,
+MedicalDevice and FAQPage on `/technology`, and BlogPosting on each article.
+
+**Social cards.** `src/app/_og/card.tsx` draws the 1200x630 image every page
+shares, and the line of copy on each one is in `ogCards` in
+`src/content/site.ts`. They are generated at build time, so they cost nothing
+at runtime. The two TrueType faces beside the component are committed
+deliberately: the generator cannot use the woff2 that `next/font` emits, and a
+build that phones Google Fonts to draw an image is a build that breaks when
+that call fails. Both are SIL OFL 1.1, which permits redistribution.
+
+**Sitemap dates need a hand.** `src/app/sitemap.ts` holds a real `updated`
+date per page. Change a page's content, change its date. It used to send
+today's date for every page on every crawl, which is worse than sending none:
+a lastmod that is always "now" teaches Google to ignore the field. Articles
+look after themselves, because a post carries its own date.
+
 ## Typography
 
 Headlines are Source Serif 4 and everything else is Source Sans 3, a pair
