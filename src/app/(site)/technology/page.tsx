@@ -12,9 +12,8 @@ import RevoluxExplainer from "@/components/RevoluxExplainer";
 import SectionHeading from "@/components/SectionHeading";
 import StandardsTicker from "@/components/StandardsTicker";
 import TechCard from "@/components/TechCard";
-import TreatmentCourse from "@/components/TreatmentCourse";
 import { faqSchema, medicalDeviceSchema } from "@/content/schema";
-import { anatomy, course, explainer, faq, retina, revolux, safety, shift } from "@/content/site";
+import { anatomy, explainer, faq, retina, revolux, safety, shift } from "@/content/site";
 
 export const metadata: Metadata = {
   title: "Revolux Technology",
@@ -112,17 +111,6 @@ export default function TechnologyPage() {
         </div>
       </section>
 
-      {/* Course */}
-      <section className="shell py-20 md:py-28">
-        <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
-          <div className="lg:col-span-5">
-            <SectionHeading eyebrow={course.eyebrow} title={course.title} intro={course.intro} />
-          </div>
-          <Reveal delay={0.1} className="lg:col-span-7 lg:self-center">
-            <TreatmentCourse />
-          </Reveal>
-        </div>
-      </section>
 
       {/* Safety */}
       <section className="shell py-20 md:py-28">

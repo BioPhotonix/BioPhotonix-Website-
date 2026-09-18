@@ -27,10 +27,47 @@ import { explainer } from "@/content/site";
 const CAP = "text-[27px] font-semibold tracking-[0.1em] md:text-[18px]";
 const CAP_SM = "text-[24px] font-semibold tracking-[0.1em] md:text-[17px]";
 
+/**
+ * The interpupillary adjustment, shown on the geometry step.
+ *
+ * `IPD_SWEEP` is half the separation between the eyepieces in the drawing's
+ * own units, where 100 is the set position that puts them at x=220 and x=420.
+ * The sweep runs narrow, wide and back so the separation reads as something
+ * set for the patient in front of you rather than a fixed dimension of the
+ * device, and the dimension line turns green once it settles.
+ *
+ * Everything that has to stay registered with an eyepiece — its emitter ring,
+ * its end of the dimension — rides inside that side's group, so there is one
+ * transform to keep true instead of several to keep in step. Only the span
+ * between them is animated separately, because it belongs to neither side.
+ */
+const IPD_HOME = 100;
+const IPD_SWEEP = [100, 76, 118, 100];
+const IPD_LEFT = IPD_SWEEP.map((d) => IPD_HOME - d);
+const IPD_RIGHT = IPD_SWEEP.map((d) => d - IPD_HOME);
+/** The bridge spans the eyepieces, so its ends sit 38 units inside each one. */
+const IPD_BRIDGE = IPD_SWEEP.map((d) => `M ${320 - (d - 38)} 150 Q 320 120 ${320 + (d - 38)} 150`);
+const IPD_X1 = IPD_SWEEP.map((d) => 320 - d);
+const IPD_X2 = IPD_SWEEP.map((d) => 320 + d);
+/* The tabs advance every 5.2s on their own, and the sweep has to finish well
+   inside that or the green it settles into is gone before it registers: at
+   4.4s it held for three tenths of a second. 2.9s leaves it showing for the
+   best part of two seconds, and for good once a tab is actually chosen. */
+const IPD_TIMING = { duration: 2.9, times: [0, 0.3, 0.64, 1], ease: "easeInOut" as const };
+const IPD_SETTLE = { duration: 0.35 };
+/**
+ * Confirmation green. It has to be clearly not the teal it sits beside, and
+ * the state is carried by the movement stopping as much as by the colour, so
+ * the diagram does not rest on a green/teal distinction alone.
+ */
+const ALIGNED_GREEN = "#3ee08a";
+
 export default function RevoluxExplainer() {
   const [active, setActive] = useState(0);
   const [touched, setTouched] = useState(false);
   const reduce = useReducedMotion();
+  const [adjusting, setAdjusting] = useState(false);
+  const [aligned, setAligned] = useState(false);
   const tabsRef = useRef<HTMLDivElement>(null);
   const steps = explainer.steps;
 
@@ -59,6 +96,40 @@ export default function RevoluxExplainer() {
   };
 
   const step = steps[active];
+
+  /**
+   * The sweep starts after the cross-fade between steps has finished. The
+   * dimension marks mount with the geometry step while the eyepieces beneath
+   * them are always mounted, so starting on the step change would set the two
+   * off 450ms apart and the dimension would visibly trail the thing it
+   * measures.
+   */
+  useEffect(() => {
+    if (step.id !== "geometry") {
+      setAdjusting(false);
+      setAligned(false);
+      return;
+    }
+    if (reduce) {
+      setAdjusting(false);
+      setAligned(true);
+      return;
+    }
+    setAligned(false);
+    const id = window.setTimeout(() => setAdjusting(true), 450);
+    return () => {
+      window.clearTimeout(id);
+      setAdjusting(false);
+    };
+  }, [step.id, reduce]);
+
+  /* Guarded on `adjusting`: the groups also settle to rest on every other
+     step, and that completing is not an alignment. */
+  const onAdjusted = () => {
+    if (adjusting) setAligned(true);
+  };
+  const dimStroke = aligned ? ALIGNED_GREEN : "#1bc3cd";
+
   const fade = {
     initial: reduce ? false : { opacity: 0 },
     animate: { opacity: 1 },
@@ -129,6 +200,15 @@ export default function RevoluxExplainer() {
                 <stop offset="0%" stopColor="#1bc3cd" stopOpacity="0.2" />
                 <stop offset="100%" stopColor="#1bc3cd" stopOpacity="1" />
               </linearGradient>
+              {/* The glow on the dimension once the separation is set. */}
+              <filter id="rx-aligned" x="-25%" y="-25%" width="150%" height="150%">
+                <feGaussianBlur stdDeviation="3.5" result="halo" />
+                <feMerge>
+                  <feMergeNode in="halo" />
+                  <feMergeNode in="halo" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
             </defs>
 
             {/* Faint drawing grid */}
@@ -143,41 +223,95 @@ export default function RevoluxExplainer() {
 
             {/* The binocular head, seen from the patient's side: two eyepieces
                 on a bridge, a handle beneath. Everything written about it goes
-                below y=400, clear of the handle. */}
+                below y=400, clear of the handle.
+
+                Each eyepiece carries its own emitter ring inside one group per
+                side, so the geometry step can set the separation between them
+                and everything drawn on an eyepiece moves with it. */}
+            {/* `animate` is attached only while the sweep is running. Handed a
+                lone `d` string with nothing to animate, motion writes the
+                attribute as the literal "undefined" for a frame before
+                settling, which the browser rejects as a path — and under
+                reduced motion, where the sweep never runs, that was every
+                render of this page. */}
+            <motion.path
+              d={IPD_BRIDGE[0]}
+              fill="none"
+              stroke="#e8f1f3"
+              strokeOpacity="0.9"
+              strokeWidth="2"
+              {...(adjusting ? { animate: { d: IPD_BRIDGE }, transition: IPD_TIMING } : {})}
+            />
+            {(
+              [
+                ["left", 220, IPD_LEFT],
+                ["right", 420, IPD_RIGHT],
+              ] as const
+            ).map(([side, cx, keys]) => (
+              <motion.g
+                key={side}
+                animate={adjusting ? { x: keys } : { x: 0 }}
+                transition={adjusting ? IPD_TIMING : IPD_SETTLE}
+                onAnimationComplete={side === "left" ? onAdjusted : undefined}
+              >
+                <g fill="none" stroke="#e8f1f3" strokeOpacity="0.9" strokeWidth="2">
+                  <circle cx={cx} cy="180" r="70" />
+                  <circle cx={cx} cy="180" r="44" strokeOpacity="0.45" />
+                </g>
+                {/* Light-emitting ring: twelve emitters around the eyepiece */}
+                {Array.from({ length: 12 }, (_, i) => {
+                  const a = (i / 12) * Math.PI * 2;
+                  return <circle key={i} cx={cx + Math.cos(a) * 57} cy={180 + Math.sin(a) * 57} r="3" fill="#e8f1f3" fillOpacity="0.5" />;
+                })}
+              </motion.g>
+            ))}
             <g fill="none" stroke="#e8f1f3" strokeOpacity="0.9" strokeWidth="2">
-              <path d="M 258 150 Q 320 120 382 150" />
-              <circle cx="220" cy="180" r="70" />
-              <circle cx="420" cy="180" r="70" />
-              <circle cx="220" cy="180" r="44" strokeOpacity="0.45" />
-              <circle cx="420" cy="180" r="44" strokeOpacity="0.45" />
               <path d="M 300 235 L 340 235 L 336 300 L 304 300 Z" />
               <rect x="306" y="300" width="28" height="80" rx="6" />
             </g>
 
-            {/* Light-emitting rings: twelve emitters around each eyepiece */}
-            {[220, 420].map((cx) =>
-              Array.from({ length: 12 }, (_, i) => {
-                const a = (i / 12) * Math.PI * 2;
-                return <circle key={`${cx}-${i}`} cx={cx + Math.cos(a) * 57} cy={180 + Math.sin(a) * 57} r="3" fill="#e8f1f3" fillOpacity="0.5" />;
-              }),
-            )}
-
             <AnimatePresence mode="wait" initial={false}>
               {step.id === "geometry" && (
                 <motion.g key="geometry" {...fade}>
-                  {/* Source-to-eye separation, dimensioned below the device */}
-                  <g stroke="#1bc3cd" strokeWidth="1.5" fill="none">
-                    <line x1="220" y1="255" x2="220" y2="432" strokeDasharray="4 5" strokeOpacity="0.55" />
-                    <line x1="420" y1="255" x2="420" y2="432" strokeDasharray="4 5" strokeOpacity="0.55" />
-                    <line x1="220" y1="440" x2="420" y2="440" />
-                    <path d="M 228 433 L 220 440 L 228 447 M 412 433 L 420 440 L 412 447" />
-                    <circle cx="220" cy="180" r="12" strokeOpacity="0.9" />
-                    <circle cx="420" cy="180" r="12" strokeOpacity="0.9" />
-                    <line x1="220" y1="166" x2="220" y2="194" strokeOpacity="0.9" />
-                    <line x1="206" y1="180" x2="234" y2="180" strokeOpacity="0.9" />
-                    <line x1="420" y1="166" x2="420" y2="194" strokeOpacity="0.9" />
-                    <line x1="406" y1="180" x2="434" y2="180" strokeOpacity="0.9" />
+                  {/* The separation between the eyepieces, dimensioned below
+                      the device. Each end rides with its own eyepiece, so the
+                      dimension stays true while it is being set; the glow marks
+                      the point at which it is. */}
+                  <g filter={aligned ? "url(#rx-aligned)" : undefined}>
+                    {(
+                      [
+                        ["left", 220, IPD_LEFT, 1],
+                        ["right", 420, IPD_RIGHT, -1],
+                      ] as const
+                    ).map(([side, cx, keys, dir]) => (
+                      <motion.g
+                        key={side}
+                        animate={adjusting ? { x: keys } : { x: 0 }}
+                        transition={adjusting ? IPD_TIMING : IPD_SETTLE}
+                        stroke={dimStroke}
+                        strokeWidth="1.5"
+                        fill="none"
+                      >
+                        <line x1={cx} y1="255" x2={cx} y2="432" strokeDasharray="4 5" strokeOpacity="0.55" />
+                        <path d={`M ${cx + 8 * dir} 433 L ${cx} 440 L ${cx + 8 * dir} 447`} />
+                        <circle cx={cx} cy="180" r="12" strokeOpacity="0.9" />
+                        <line x1={cx} y1="166" x2={cx} y2="194" strokeOpacity="0.9" />
+                        <line x1={cx - 14} y1="180" x2={cx + 14} y2="180" strokeOpacity="0.9" />
+                      </motion.g>
+                    ))}
+                    <motion.line
+                      x1={IPD_X1[0]}
+                      x2={IPD_X2[0]}
+                      y1="440"
+                      y2="440"
+                      stroke={dimStroke}
+                      strokeWidth="1.5"
+                      {...(adjusting ? { animate: { x1: IPD_X1, x2: IPD_X2 }, transition: IPD_TIMING } : {})}
+                    />
                   </g>
+                  <text x="320" y="415" textAnchor="middle" className={CAP_SM} fill={dimStroke} fontFamily="var(--font-sans)">
+                    {aligned ? "ALIGNED" : "SET TO THE PATIENT"}
+                  </text>
                   <text x="320" y="500" textAnchor="middle" className={CAP} fill="#1bc3cd" fontFamily="var(--font-sans)">
                     FIXED SOURCE-TO-EYE GEOMETRY
                   </text>
@@ -247,13 +381,20 @@ export default function RevoluxExplainer() {
                       );
                     }),
                   )}
-                  <g transform="translate(150, 436)">
+                  {/* Lifted clear of the caption below, which it used to
+                      overlap: NEAR-INFRARED ended six units past where TARGET
+                      began. The legend goes as high as the band allows — its
+                      first mark now sits on y=400 — and the caption takes the
+                      two rows close by six, which is where the clearance comes
+                      from: pushing the caption down instead left it under two
+                      pixels off the bottom of the frame. */}
+                  <g transform="translate(150, 414)">
                     <circle cx="0" cy="-6" r="8" fill="#ff7a5e" />
                     <text x="20" y="0" className={CAP_SM} fill="#e8f1f3" fontFamily="var(--font-sans)">
                       RED
                     </text>
-                    <circle cx="0" cy="38" r="8" fill="#b8402c" />
-                    <text x="20" y="44" className={CAP_SM} fill="#e8f1f3" fontFamily="var(--font-sans)">
+                    <circle cx="0" cy="32" r="8" fill="#b8402c" />
+                    <text x="20" y="38" className={CAP_SM} fill="#e8f1f3" fontFamily="var(--font-sans)">
                       NEAR-INFRARED
                     </text>
                   </g>
@@ -302,8 +443,11 @@ export default function RevoluxExplainer() {
 
               {step.id === "reporting" && (
                 <motion.g key="reporting" {...fade}>
-                  <g transform="translate(372, 386)">
-                    <rect x="0" y="0" width="230" height="136" rx="12" fill="#0d1519" stroke="#1bc3cd" strokeOpacity="0.6" />
+                  {/* The panel is taller and sits higher: the bottom row of
+                      checks reached y=135 inside a box 136 tall, so it sat on
+                      the border. The extra height is all below the last row. */}
+                  <g transform="translate(372, 368)">
+                    <rect x="0" y="0" width="230" height="156" rx="12" fill="#0d1519" stroke="#1bc3cd" strokeOpacity="0.6" />
                     <text x="18" y="32" className={CAP_SM} fill="#1bc3cd" fontFamily="var(--font-sans)">
                       SESSION LOG
                     </text>
@@ -327,7 +471,7 @@ export default function RevoluxExplainer() {
                     ))}
                   </g>
                   <motion.path
-                    d="M 320 392 C 320 424, 340 442, 372 448"
+                    d="M 320 392 C 320 414, 340 424, 372 430"
                     fill="none"
                     stroke="#1bc3cd"
                     strokeOpacity="0.6"

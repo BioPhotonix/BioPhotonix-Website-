@@ -6,22 +6,22 @@ import { anatomy } from "@/content/site";
 import { useRevealed } from "./useRevealed";
 
 /**
- * The device, from five angles, with technical callouts over the front view.
+ * The device, from five angles, with technical callouts over the emitter face.
  *
  * The callouts arrive one at a time once the section is on screen and then
  * stay, the way a labelled figure in a paper builds up. Hovering or focusing
  * a part emphasises it and dims the others. Under reduced motion every
  * callout is present from the start.
  *
- * The overlay is a single 960 x 700 coordinate space with the front render
+ * The overlay is a single 960 x 700 coordinate space with the callout render
  * occupying x 318 to 642 inside it, so the anchors and leader lines scale with
  * the image and never drift. The written labels are HTML positioned against
  * the same coordinates rather than SVG text: SVG text scales with its
  * container, which put these at about 13px on screen, below the 16px floor the
  * rest of the site holds.
  *
- * Callouts belong to the front view alone, so switching to another angle shows
- * that view's caption instead. Below the medium breakpoint there is no room
+ * Callouts belong to the one render they were measured against, flagged in the
+ * content, so switching to another angle shows that view's caption instead. Below the medium breakpoint there is no room
  * for labels beside the device, so only the numbered anchors show and the list
  * underneath carries the names.
  */
@@ -42,7 +42,8 @@ export default function RevoluxAnatomy() {
   const parts = anatomy.parts;
   const views = anatomy.views;
   const current = views[view];
-  const isFront = current.id === "front";
+  /* Which render the callouts were measured against, from the content. */
+  const hasCallouts = "callouts" in current && current.callouts === true;
 
   useEffect(() => {
     if (state === "hidden") return;
@@ -102,7 +103,7 @@ export default function RevoluxAnatomy() {
             </div>
           ))}
 
-          {isFront && (
+          {hasCallouts && (
             <>
               <svg viewBox="0 0 960 700" className="absolute inset-0 hidden h-full w-full md:block" aria-hidden="true">
                 {parts.map((part, i) => {

@@ -56,7 +56,7 @@ export const hero = {
   specs: [
     { label: "Indication", value: "Early and intermediate dry AMD" },
     { label: "Session", value: "12 minutes, binocular" },
-    { label: "Setting", value: "Community optometry" },
+    { label: "Setting", value: "Community optometry, domiciliary optometry and hospital clinics" },
   ],
 };
 
@@ -236,28 +236,32 @@ export const anatomy = {
   intro:
     "Every element of the platform exists to put a known quantity of light on the retina, the same way, in every clinic. Each part is described here only as far as the published development record allows.",
   /**
-   * The development prototype from five angles. The callouts are anchored to
-   * the straight-on front view, so they only appear on that one; the other
-   * views carry a caption instead.
+   * The development prototype from five angles. The callouts are measured
+   * against one render — the straight-on emitter face, which is what the
+   * patient looks into — so that view carries `callouts` and the others show
+   * their caption instead. The flag travels with the image rather than with a
+   * view id, because which angle sits in which tab has changed once already.
    */
   views: [
     {
       id: "front",
       label: "Front",
-      src: "/images/revolux-front.png",
-      width: 305,
-      height: 660,
-      alt: "The Revolux prototype seen head on from the clinician's side, showing both eyepieces with their rings of emitters around a central aperture",
-      caption: "The clinician's side. Each eyepiece carries a ring of emitters around a central aperture.",
+      src: "/images/revolux-patient.png",
+      width: 296,
+      height: 663,
+      alt: "The Revolux prototype seen head on from the clinician's side, showing the two eyecup faces above the session controls",
+      caption: "The clinician's side. The two eyecup faces, with the session controls on the unit beneath them.",
     },
     {
       id: "patient",
       label: "Patient's side",
-      src: "/images/revolux-patient.png",
-      width: 296,
-      height: 663,
-      alt: "The Revolux prototype seen from the patient's side, showing the two soft eyecups the patient looks into",
-      caption: "What the patient sees. Two eyecups, held at a fixed separation, for a twelve-minute session.",
+      src: "/images/revolux-front.png",
+      width: 305,
+      height: 660,
+      alt: "The Revolux prototype seen from the patient's side, showing both apertures with their rings of emitters around them",
+      caption: "What the patient looks into. A ring of emitters around each aperture, held at a fixed separation, for a twelve-minute session.",
+      /** The callouts are measured against this render, so they belong to it. */
+      callouts: true,
     },
     {
       id: "profile",
