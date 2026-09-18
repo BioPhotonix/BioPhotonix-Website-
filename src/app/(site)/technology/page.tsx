@@ -16,7 +16,8 @@ import { breadcrumbSchema, faqSchema, medicalDeviceSchema } from "@/content/sche
 import { anatomy, explainer, faq, retina, revolux, safety, shift } from "@/content/site";
 
 export const metadata: Metadata = {
-  title: "Revolux Technology",
+  /* Query-led, unlike the h1 below it. See "Search rankings" in the README. */
+  title: "Photobiomodulation for Dry AMD: How Revolux Works",
   description:
     "How Revolux delivers photobiomodulation for dry AMD: precision binocular geometry, soft-start dosing, targeted wavelengths and logged sessions.",
   alternates: { canonical: "/technology" },

@@ -262,6 +262,20 @@ deliberately: the generator cannot use the woff2 that `next/font` emits, and a
 build that phones Google Fonts to draw an image is a build that breaks when
 that call fails. Both are SIL OFL 1.1, which permits redistribution.
 
+**Titles are query-led; headings are not.** The `<title>` is what appears in
+a search result, the `<h1>` is what someone reads on arrival, and they are
+allowed to differ. `/technology`, `/vision` and `/clinics` lead with what a
+person actually types — photobiomodulation for dry AMD, what dry AMD looks
+like, photobiomodulation for optometry practices — while the pages keep their
+own headlines. Each lands inside the ~65 characters Google displays.
+
+They describe the mechanism rather than promising an outcome, and that is
+deliberate: Revolux is a Class IIa device in development, not CE or UKCA
+marked. "Dry AMD treatment" is the higher-traffic phrasing and it is also a
+claim the company is not yet in a position to make, so the wording stays
+where the rest of the site's copy already sits. Ask the regulatory adviser
+before strengthening it.
+
 **Sitemap dates need a hand.** `src/app/sitemap.ts` holds a real `updated`
 date per page. Change a page's content, change its date. It used to send
 today's date for every page on every crawl, which is worse than sending none:

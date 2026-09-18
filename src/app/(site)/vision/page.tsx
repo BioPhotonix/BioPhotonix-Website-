@@ -8,7 +8,8 @@ import VisionSimulator from "@/components/VisionSimulator";
 import { burden, vision } from "@/content/site";
 
 export const metadata: Metadata = {
-  title: "What dry AMD takes",
+  /* Query-led, unlike the h1 below it. See "Search rankings" in the README. */
+  title: "What Dry AMD Looks Like: An Interactive Simulator",
   description:
     "An interactive simulation of dry AMD at every stage, from early drusen to geographic atrophy, and why the stages patients notice least matter most.",
   alternates: { canonical: "/vision" },

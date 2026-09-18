@@ -13,7 +13,8 @@ import TechCard from "@/components/TechCard";
 import { clinics, course, faq } from "@/content/site";
 
 export const metadata: Metadata = {
-  title: "Revolux for Clinics",
+  /* Query-led, unlike the h1 below it. See "Search rankings" in the README. */
+  title: "Dry AMD Photobiomodulation for Optometry Practices",
   description:
     "Bring active dry AMD treatment into your optometry practice: a five-step clinical pathway, no upfront cost, and revenue that scales with volume.",
   alternates: { canonical: "/clinics" },
