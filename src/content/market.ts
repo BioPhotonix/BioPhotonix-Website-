@@ -7,13 +7,13 @@
  * different standing: one is a licensed third-party forecast, the other is
  * the company's own commercial modelling.
  *
- * The scope is five European markets, and both absences from the forecast are
- * named on the page rather than left to be noticed. The United States is the
- * largest AMD market in it and the patent position there is not open to us;
- * Japan is outside the territory this plan addresses. `excluded` used to
- * account for the United States alone, which read as though it were the only
- * omission — the precise impression the paragraph exists to prevent, and the
- * one a reader who knows the forecast covers seven markets would catch.
+ * The scope is five European markets, and the TAM row names them, so the
+ * figures cannot be read as global. There is deliberately no paragraph
+ * accounting for the markets outside that scope. One used to be here, and it
+ * volunteered a weakness — the largest market being closed to the company —
+ * on a public page, ahead of any conversation in which it could be put in
+ * context. Which markets are in the plan is stated; why the others are not is
+ * a question for the room, and it should be asked before it is answered.
  *
  * `share` is each tier's annual value as a fraction of the tier above, and it
  * is what the figure draws: the squares are scaled so their AREA carries the
@@ -80,8 +80,6 @@ export const market = {
   title: "A small share of a serviceable market is a substantial business.",
   intro:
     "Three nested markets, drawn to scale by annual value. The obtainable market is the small square: the year-five forecast asks for two per cent of what is serviceable, not for the whole of it.",
-  excluded:
-    "These figures cover five European markets: the UK, Germany, France, Italy and Spain. GlobalData's forecast also covers the United States and Japan. The United States is the largest AMD market in it, and the patent position there is not open to us, so it is left out of the model rather than counted and discounted. Japan is outside the territory this plan addresses.",
   footnote:
     "Population figures derived from GlobalData's AMD Epidemiology Forecast to 2034; values based on BioPhotonix's per-course licensing model.",
 };

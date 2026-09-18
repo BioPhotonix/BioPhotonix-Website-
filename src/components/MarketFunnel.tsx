@@ -286,8 +286,7 @@ export default function MarketFunnel() {
         </p>
       </div>
 
-      <p className="mt-5 text-sm leading-relaxed text-fog">{market.excluded}</p>
-      <p className="mt-4 text-xs leading-relaxed text-fog">{market.footnote}</p>
+      <p className="mt-5 text-xs leading-relaxed text-fog">{market.footnote}</p>
     </div>
   );
 }
