@@ -1,10 +1,20 @@
 /**
- * Articles, carried over from the Wix blog.
+ * Articles.
+ *
+ * Two kinds live here. The company's own pieces, carried over from the Wix
+ * blog, are written below as typed blocks. The weekly insights arrive as JSON
+ * in `insights.json`: a scheduled run in BioPhotonix/Social-Media-and-Blog-Creator-
+ * drafts one, Adail approves it on the review page, and the publish run
+ * appends it with `scripts/add-insight.mjs`. `parseInsights` checks that file
+ * at build time, so a malformed entry fails the build with a clear message
+ * instead of a broken page.
  *
  * Content is stored as typed blocks rather than raw HTML so nothing can inject
- * markup into the page. Add a post by appending to the array below. The
- * cover art is drawn in code (see PostArt) rather than being a photograph.
+ * markup into the page. The cover art is drawn in code (see PostArt) rather
+ * than being a photograph.
  */
+
+import { insights } from "./insights";
 
 export type Block =
   | { type: "p"; text: string }
@@ -12,7 +22,16 @@ export type Block =
   | { type: "ul"; items: string[] }
   | { type: "quote"; text: string };
 
-export type ArtKind = "epidemic" | "safety" | "founding" | "prototype";
+/** A reference under an article: the paper, report or announcement it draws on. */
+export type Source = { title: string; publisher: string; url: string; date?: string };
+
+/**
+ * The first four motifs belong to the company's own articles. The last four
+ * are for the weekly insights: imaging (diagnostics, OCT, AI), evidence
+ * (trials, cohorts, reviews), world (policy, public health, epidemiology) and
+ * signal (devices, optics, therapeutics).
+ */
+export type ArtKind = "epidemic" | "safety" | "founding" | "prototype" | "imaging" | "evidence" | "world" | "signal";
 
 export type Post = {
   slug: string;
@@ -23,9 +42,13 @@ export type Post = {
   excerpt: string;
   art: ArtKind;
   body: Block[];
+  /** "insight" marks a weekly research digest; absent on the company's own articles. */
+  series?: "insight";
+  topics?: string[];
+  sources?: Source[];
 };
 
-export const posts: Post[] = [
+const articles: Post[] = [
   {
     slug: "the-silent-epidemic-addressing-the-unmet-need-in-dry-amd",
     title: "The Silent Epidemic: Addressing the Unmet Need in Dry AMD",
@@ -140,5 +163,19 @@ export const posts: Post[] = [
     ],
   },
 ];
+
+/**
+ * Newest first, insights and company articles together. A slug shared between
+ * the two would make one of them unreachable, so that is a build error too.
+ */
+export const posts: Post[] = [...insights, ...articles].sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0));
+
+{
+  const seen = new Set<string>();
+  for (const p of posts) {
+    if (seen.has(p.slug)) throw new Error(`Two articles share the slug "${p.slug}"`);
+    seen.add(p.slug);
+  }
+}
 
 export const getPost = (slug: string) => posts.find((p) => p.slug === slug);

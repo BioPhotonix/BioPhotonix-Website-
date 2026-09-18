@@ -7,7 +7,7 @@ import type { NextConfig } from "next";
 const legacyRedirects = [
   { source: "/post/:slug", destination: "/news/:slug", permanent: true },
   { source: "/blog", destination: "/news", permanent: true },
-  { source: "/blog-feed.xml", destination: "/news", permanent: true },
+  { source: "/blog-feed.xml", destination: "/feed.xml", permanent: true },
 ];
 
 const nextConfig: NextConfig = {

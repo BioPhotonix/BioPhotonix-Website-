@@ -41,6 +41,7 @@ export default function NewsPage() {
                   </div>
                   <div className="p-7">
                     <p className="figure text-xs uppercase tracking-[0.13em] text-fog">
+                      {p.series === "insight" && <>{news.insightLabel} &middot; </>}
                       {formatDate(p.date)} &middot; {p.readingMinutes} min read
                     </p>
                     <h2 className="mt-3 font-display text-2xl font-semibold leading-snug text-fog">{p.title}</h2>

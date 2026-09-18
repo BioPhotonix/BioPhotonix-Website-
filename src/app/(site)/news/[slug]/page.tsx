@@ -6,7 +6,7 @@ import PostArt from "@/components/PostArt";
 import Reveal from "@/components/Reveal";
 import TechCard from "@/components/TechCard";
 import { getPost, posts } from "@/content/posts";
-import { founder, site } from "@/content/site";
+import { founder, news, site } from "@/content/site";
 import JsonLd from "@/components/JsonLd";
 import { breadcrumbSchema } from "@/content/schema";
 
@@ -47,6 +47,10 @@ export default async function NewsPost({ params }: Params) {
     author: { "@type": "Person", name: founder.name },
     publisher: { "@type": "Organization", name: site.name },
     mainEntityOfPage: `${site.url}/news/${post.slug}`,
+    ...(post.topics?.length ? { keywords: post.topics.join(", ") } : {}),
+    ...(post.sources?.length
+      ? { citation: post.sources.map((s) => ({ "@type": "CreativeWork", name: s.title, url: s.url, publisher: s.publisher })) }
+      : {}),
   };
 
   return (
@@ -64,6 +68,7 @@ export default async function NewsPost({ params }: Params) {
             &larr; All articles
           </Link>
           <p className="eyebrow mt-8">
+            {post.series === "insight" && <>{news.insightLabel} &middot; </>}
             {formatDate(post.date)} &middot; {post.readingMinutes} min read
           </p>
           <h1 className="h-section mt-4 text-fog">{post.title}</h1>
@@ -114,6 +119,33 @@ export default async function NewsPost({ params }: Params) {
             );
           })}
         </div>
+
+        {post.sources && post.sources.length > 0 && (
+          <div className="mx-auto mt-14 max-w-2xl">
+            <h2 className="font-display text-2xl font-semibold text-fog md:text-3xl">Sources</h2>
+            <ol className="mt-6 flex flex-col gap-4">
+              {post.sources.map((s, i) => (
+                <li key={s.url} className="flex items-start gap-4 text-fog">
+                  <span className="figure mt-1 w-6 shrink-0 text-sm text-fog-dim">{i + 1}.</span>
+                  <span className="leading-relaxed">
+                    <a href={s.url} target="_blank" rel="noopener noreferrer" className="link-underline">
+                      {s.title}
+                    </a>
+                    <span className="text-fog-dim">
+                      {" "}
+                      &middot; {s.publisher}
+                      {s.date && `, ${formatDate(s.date)}`}
+                    </span>
+                  </span>
+                </li>
+              ))}
+            </ol>
+          </div>
+        )}
+
+        {post.series === "insight" && (
+          <p className="mx-auto mt-10 max-w-2xl text-sm leading-relaxed text-fog-dim">{news.insightNote}</p>
+        )}
 
         <Reveal className="mx-auto mt-16 max-w-2xl border-t border-line pt-10">
           <h2 className="font-display text-2xl font-semibold text-fog">Interested in Revolux?</h2>

@@ -29,7 +29,8 @@ Node 20 or newer.
 | Path | What it holds |
 |---|---|
 | `src/content/site.ts` | Every piece of copy, plus contact details, statistics, FAQ, roadmap and team |
-| `src/content/posts.ts` | News articles, as typed blocks rather than raw HTML |
+| `src/content/posts.ts` | News articles, as typed blocks rather than raw HTML, merged with the weekly insights |
+| `src/content/insights.json` | The weekly insights, appended by `scripts/add-insight.mjs`; checked by `src/content/insights.ts` |
 | `src/content/privacy.ts` | The privacy notice |
 | `src/app/(site)/` | The pages. The group wraps them in the header and footer |
 | `src/app/api/contact/` | The form handler (contact, clinic registration, data-room request) |
@@ -40,8 +41,30 @@ Node 20 or newer.
 | `scripts/test/browser/` | The browser regression suite |
 
 **To change wording, edit `src/content/site.ts`.** You should not need to touch
-a component. Adding an article means appending an entry to
+a component. Adding a company article means appending an entry to
 `src/content/posts.ts` and picking one of the four drawn cover motifs.
+
+### Weekly insights
+
+The news section also carries a weekly research digest that arrives by
+automation rather than by hand. The pipeline lives in
+`BioPhotonix/Social-Media-and-Blog-Creator-`: a scheduled run drafts one,
+Adail approves it on the review page, and the publish run adds it here with
+
+```bash
+npm run insight:add path/to/insight.json     # validates, then appends to src/content/insights.json
+npm run typecheck && npm run build
+```
+
+and pushes to `main`. `src/content/insights.json` is the only file that
+changes. `src/content/insights.ts` re-checks every entry at build time, so a
+malformed one fails the build with the field named rather than shipping a
+broken page. Insights carry `series: "insight"`, which puts a "Weekly
+insight" label on the card and the article, a Sources list under the body,
+and the standing note that it is a digest, not clinical advice. Their covers
+are the four motifs added for them in `PostArt`: `imaging`, `evidence`,
+`world` and `signal`. `/feed.xml` is an RSS feed of every article; the old
+Wix `/blog-feed.xml` redirects to it.
 
 ### Pages
 
@@ -53,7 +76,8 @@ a component. Adding an article means appending an entry to
 | `/clinics` | For practices: value propositions, the five-step clinical pathway, the revenue calculator, FAQ, registration form |
 | `/about` | The belief, the origin, values, founder, advisors and partners |
 | `/investors` | The thesis, market charts, business model, regulatory strategy, roadmap, team, data-room request |
-| `/news`, `/news/[slug]` | The four articles from the Wix blog |
+| `/news`, `/news/[slug]` | The four articles from the Wix blog and the weekly insights |
+| `/feed.xml` | RSS of every article |
 | `/contact` | Contact details and the form. `?as=clinic` or `?as=investor` preselects the role |
 | `/privacy-policy` | The privacy notice |
 
