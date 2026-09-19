@@ -68,7 +68,7 @@ opens with a figure instead: `InsightFigure` draws an animated panel from a
 small spec in the JSON (`figure`: one to three blocks of six kinds, checked
 at build time by `src/content/figure.ts`), so the automation never puts
 markup on the page. An insight can also carry a photograph
-(`image`, added by `npm run insight:add ... -- --image photo.jpg` into
+(`image`, added by `npm run insight:add ... -- --image photo.jpg --linkedin-image post.jpg` into
 `public/images/insights/`); it is not shown in the article but becomes the
 article's social card, with the site's band and no credit, so only work
 that needs none is accepted. `/feed.xml` is an RSS feed of every article;

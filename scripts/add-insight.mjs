@@ -2,9 +2,11 @@
 /**
  * Append a weekly insight to src/content/insights.json.
  *
- *   node scripts/add-insight.mjs <insight.json> [--image photo.jpg]
+ *   node scripts/add-insight.mjs <insight.json> [--image photo.jpg] [--linkedin-image photo-1200x627.jpg]
  *   node scripts/add-insight.mjs <insight.json> --check   # validate only, write nothing
  *
+ * `--linkedin-image` writes the 1200x627 copy for the LinkedIn post to
+ * public/images/insights/<slug>-linkedin.jpg, where the scheduler fetches it.
  * `--image` copies the photograph into public/images/insights/<slug>.jpg,
  * resized to at most 1600px, and sets `image.src`; the JSON's `image` then
  * needs `alt` and `license`. No source is stated on a published image, so
@@ -36,8 +38,9 @@ const argv = process.argv.slice(2);
 const file = argv[0];
 const checkOnly = argv.includes("--check");
 const imageArg = argv.indexOf("--image") === -1 ? null : argv[argv.indexOf("--image") + 1];
+const linkedinArg = argv.indexOf("--linkedin-image") === -1 ? null : argv[argv.indexOf("--linkedin-image") + 1];
 if (!file) {
-  console.error("usage: node scripts/add-insight.mjs <insight.json> [--image photo.jpg] [--check]");
+  console.error("usage: node scripts/add-insight.mjs <insight.json> [--image photo.jpg] [--linkedin-image photo.jpg] [--check]");
   process.exit(2);
 }
 
@@ -189,6 +192,7 @@ if (input.faq !== undefined) {
 // The photograph for LinkedIn and the social card.
 let imageOut = null;
 if (imageArg && !fs.existsSync(imageArg)) bad("--image", `${imageArg} does not exist`);
+if (linkedinArg && !fs.existsSync(linkedinArg)) bad("--linkedin-image", `${linkedinArg} does not exist`);
 if (input.image !== undefined || imageArg) {
   const im = input.image;
   if (!isObj(im)) bad("image", "must be an object with alt and license");
@@ -242,6 +246,13 @@ if (imageArg) {
   fs.mkdirSync(path.dirname(dest), { recursive: true });
   await sharp(imageArg).rotate().resize({ width: 1600, height: 1600, fit: "inside", withoutEnlargement: true }).jpeg({ quality: 82, mozjpeg: true }).toFile(dest);
   console.log(`photo written to public/images/insights/${insight.slug}.jpg`);
+}
+if (linkedinArg) {
+  const sharp = (await import("sharp")).default;
+  const dest = path.join(root, "public/images/insights", `${insight.slug}-linkedin.jpg`);
+  fs.mkdirSync(path.dirname(dest), { recursive: true });
+  await sharp(linkedinArg).rotate().resize({ width: 1200, height: 627, fit: "cover", position: "attention" }).jpeg({ quality: 85, mozjpeg: true }).toFile(dest);
+  console.log(`LinkedIn picture written to public/images/insights/${insight.slug}-linkedin.jpg`);
 }
 
 store.push(insight);
