@@ -16,6 +16,8 @@
 
 import type { Figure, PostImage } from "./figure";
 import { insights } from "./insights";
+import { linksIn } from "./links";
+import routes from "./routes.json";
 
 export type Block =
   | { type: "p"; text: string }
@@ -51,6 +53,15 @@ export type Post = {
   figure?: Figure;
   /** The photograph for the LinkedIn post and the social card; not shown in the article. */
   image?: PostImage;
+  /**
+   * Search. The title tag and the meta description are written for the query
+   * the piece should rank for; the headline (`title`) stays the headline.
+   */
+  seo?: { keyword?: string; metaTitle?: string; metaDescription?: string };
+  /** Two to four one-line points, shown as "In brief" under the figure. */
+  keyPoints?: string[];
+  /** Questions people type into a search box about the subject, each answered in a few sentences. */
+  faq?: { q: string; a: string }[];
 };
 
 const articles: Post[] = [
@@ -180,6 +191,29 @@ export const posts: Post[] = [...insights, ...articles].sort((a, b) => (a.date <
   for (const p of posts) {
     if (seen.has(p.slug)) throw new Error(`Two articles share the slug "${p.slug}"`);
     seen.add(p.slug);
+  }
+}
+
+/*
+ * Every internal link in an article must point at a page the site has. A
+ * link to a page that does not exist is a broken link on a page whose job is
+ * to be found, so it fails the build here rather than the reader later.
+ */
+{
+  const known = new Set<string>([...(routes as string[]), ...posts.map((p) => `/news/${p.slug}`)]);
+  for (const p of posts) {
+    const texts = [
+      ...p.body.map((b) => (b.type === "ul" ? b.items.join("\n") : b.text)),
+      ...(p.keyPoints ?? []),
+      ...(p.faq ?? []).map((f) => f.a),
+    ];
+    for (const t of texts) {
+      for (const l of linksIn(t)) {
+        if (l.internal && !known.has(l.href.replace(/[#?].*$/, ""))) {
+          throw new Error(`"${p.slug}" links to ${l.href}, which is not a page of this site`);
+        }
+      }
+    }
   }
 }
 

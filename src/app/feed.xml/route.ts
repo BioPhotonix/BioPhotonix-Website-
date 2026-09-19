@@ -1,3 +1,4 @@
+import { plainText } from "@/content/links";
 import { posts } from "@/content/posts";
 import { founder, site } from "@/content/site";
 
@@ -21,7 +22,7 @@ export function GET() {
       <guid isPermaLink="true">${url}</guid>
       <pubDate>${new Date(p.date).toUTCString()}</pubDate>
       <dc:creator>${escape(founder.name)}</dc:creator>
-      <description>${escape(p.excerpt)}</description>${p.topics?.map((t) => `\n      <category>${escape(t)}</category>`).join("") ?? ""}
+      <description>${escape(plainText(p.excerpt))}</description>${p.topics?.map((t) => `\n      <category>${escape(t)}</category>`).join("") ?? ""}
     </item>`;
     })
     .join("\n");

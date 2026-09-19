@@ -74,6 +74,21 @@ article's social card, with the site's band and no credit, so only work
 that needs none is accepted. `/feed.xml` is an RSS feed of every article;
 the old Wix `/blog-feed.xml` redirects to it.
 
+An insight is written to be found. Its JSON carries `seo` (`keyword`,
+`metaTitle`, `metaDescription`): the title tag is used as is, without the
+site name the template appends, and the description is the meta
+description; the headline stays the headline. `keyPoints` (two to four)
+render as "In brief" under the figure; `faq` (`[{ q, a }]`) renders as
+"Questions this raises" before the sources and as FAQPage markup beside the
+BlogPosting markup. Any paragraph, point or answer may carry an inline link
+written `[words](/path)` or `[words](https://...)`: `RichText` renders it,
+and `posts.ts` fails the build if an internal path is not a page of the site
+(`src/content/routes.json` plus the article slugs). "More reading" under an
+article prefers the two articles that share most topics with it. After a
+deployment is live, `npm run insight:ping -- <url>` tells the IndexNow
+engines (Bing and those that read it) about the new page; the key is the
+32-character file in `public/`, and Google reads the sitemap instead.
+
 ### Pages
 
 | URL | Purpose |

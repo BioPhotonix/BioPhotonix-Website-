@@ -11,7 +11,8 @@
     "typecheck": "tsc --noEmit",
     "build:images": "node scripts/build-images.mjs",
     "test:site": "node scripts/test/browser/site.mjs",
-    "insight:add": "node scripts/add-insight.mjs"
+    "insight:add": "node scripts/add-insight.mjs",
+    "insight:ping": "node scripts/indexnow.mjs"
   },
   "dependencies": {
     "motion": "^12.34.2",

@@ -97,6 +97,27 @@ export function parseInsight(v: unknown, where: string): Post {
   }
   if (v.figure !== undefined) post.figure = parseFigure(v.figure, `${where}.figure`);
   if (v.image !== undefined) post.image = parseImage(v.image, `${where}.image`);
+  if (v.seo !== undefined) {
+    if (!isRecord(v.seo)) fail(`${where}.seo`, "must be an object");
+    const seo: NonNullable<Post["seo"]> = {};
+    if (v.seo.keyword !== undefined) seo.keyword = text(v.seo.keyword, `${where}.seo.keyword`, 60);
+    if (v.seo.metaTitle !== undefined) seo.metaTitle = text(v.seo.metaTitle, `${where}.seo.metaTitle`, 70);
+    if (v.seo.metaDescription !== undefined) seo.metaDescription = text(v.seo.metaDescription, `${where}.seo.metaDescription`, 170);
+    post.seo = seo;
+  }
+  if (v.keyPoints !== undefined) {
+    if (!Array.isArray(v.keyPoints) || v.keyPoints.length < 2 || v.keyPoints.length > 4) fail(`${where}.keyPoints`, "must be a list of two to four points");
+    post.keyPoints = v.keyPoints.map((k, i) => text(k, `${where}.keyPoints[${i}]`, 200));
+  }
+  if (v.faq !== undefined) {
+    if (!Array.isArray(v.faq) || v.faq.length < 1 || v.faq.length > 6) fail(`${where}.faq`, "must be a list of one to six questions");
+    post.faq = v.faq.map((f, i) => {
+      if (!isRecord(f)) fail(`${where}.faq[${i}]`, "must be an object with q and a");
+      const q = text(f.q, `${where}.faq[${i}].q`, 160);
+      if (!q.trim().endsWith("?")) fail(`${where}.faq[${i}].q`, "must be a question, ending in ?");
+      return { q, a: text(f.a, `${where}.faq[${i}].a`, 700) };
+    });
+  }
   return post;
 }
 

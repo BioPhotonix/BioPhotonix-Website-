@@ -3,13 +3,15 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Button from "@/components/Button";
 import InsightFigure from "@/components/InsightFigure";
+import JsonLd from "@/components/JsonLd";
 import PostArt from "@/components/PostArt";
 import Reveal from "@/components/Reveal";
+import RichText from "@/components/RichText";
 import TechCard from "@/components/TechCard";
-import { getPost, posts } from "@/content/posts";
+import { plainText } from "@/content/links";
+import { getPost, posts, type Post } from "@/content/posts";
+import { ORG_ID, breadcrumbSchema } from "@/content/schema";
 import { founder, news, site } from "@/content/site";
-import JsonLd from "@/components/JsonLd";
-import { breadcrumbSchema } from "@/content/schema";
 
 type Params = { params: Promise<{ slug: string }> };
 
@@ -17,47 +19,109 @@ export function generateStaticParams() {
   return posts.map((p) => ({ slug: p.slug }));
 }
 
+/**
+ * The title tag and the description are the search result. An insight writes
+ * them for the query it should rank for (`seo`), and its title tag stands
+ * alone, without the site name the template appends, because the sixty
+ * characters a result shows are better spent on the query; the site is named
+ * in the result anyway. The company's own articles keep the template.
+ */
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const { slug } = await params;
   const post = getPost(slug);
   if (!post) return {};
+  const title = post.seo?.metaTitle ?? post.title;
+  const description = post.seo?.metaDescription ?? plainText(post.excerpt);
   return {
-    title: post.title,
-    description: post.excerpt,
+    title: post.seo?.metaTitle ? { absolute: post.seo.metaTitle } : post.title,
+    description,
     alternates: { canonical: `/news/${post.slug}` },
-    openGraph: { type: "article", title: post.title, description: post.excerpt, publishedTime: post.date },
+    ...(post.topics?.length ? { keywords: post.topics } : {}),
+    openGraph: {
+      type: "article",
+      title,
+      description,
+      publishedTime: post.date,
+      ...(post.updated ? { modifiedTime: post.updated } : {}),
+      authors: [`${site.url}/about`],
+      ...(post.series === "insight" ? { section: news.insightLabel } : {}),
+    },
+    twitter: { card: "summary_large_image", title, description },
   };
 }
 
 const formatDate = (iso: string) =>
   new Date(iso).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
 
+const wordCount = (post: Post) =>
+  post.body.reduce((n, b) => n + (b.type === "ul" ? b.items.join(" ") : b.text).split(/\s+/).filter(Boolean).length, 0);
+
+/** How many topics two articles share, for the "More reading" pair. */
+const shared = (a: Post, b: Post) => (a.topics ?? []).filter((t) => b.topics?.includes(t)).length;
+
 export default async function NewsPost({ params }: Params) {
   const { slug } = await params;
   const post = getPost(slug);
   if (!post) notFound();
 
-  const more = posts.filter((p) => p.slug !== slug).slice(0, 2);
+  const more = posts
+    .filter((p) => p.slug !== slug)
+    .map((p) => ({ p, n: shared(post, p) }))
+    .sort((x, y) => y.n - x.n)
+    .slice(0, 2)
+    .map((x) => x.p);
+  const url = `${site.url}/news/${post.slug}`;
+  const description = post.seo?.metaDescription ?? plainText(post.excerpt);
   const structured = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
+    "@id": `${url}#article`,
     headline: post.title,
-    description: post.excerpt,
+    ...(post.seo?.metaTitle && post.seo.metaTitle !== post.title ? { alternativeHeadline: post.seo.metaTitle } : {}),
+    description,
     datePublished: post.date,
     dateModified: post.updated ?? post.date,
-    author: { "@type": "Person", name: founder.name },
-    publisher: { "@type": "Organization", name: site.name },
-    mainEntityOfPage: `${site.url}/news/${post.slug}`,
-    ...(post.topics?.length ? { keywords: post.topics.join(", ") } : {}),
-    ...(post.image ? { image: `${site.url}${post.image.src}` } : {}),
+    inLanguage: "en-GB",
+    isAccessibleForFree: true,
+    wordCount: wordCount(post),
+    author: {
+      "@type": "Person",
+      name: founder.name,
+      jobTitle: founder.role,
+      url: `${site.url}/about`,
+      worksFor: { "@id": ORG_ID },
+    },
+    publisher: {
+      "@type": "Organization",
+      "@id": ORG_ID,
+      name: site.name,
+      url: site.url,
+      logo: { "@type": "ImageObject", url: `${site.url}/images/mark.png` },
+    },
+    mainEntityOfPage: { "@type": "WebPage", "@id": url },
+    image: [...(post.image ? [`${site.url}${post.image.src}`] : []), `${url}/opengraph-image`],
+    ...(post.series === "insight" ? { articleSection: news.insightLabel } : {}),
+    ...(post.topics?.length ? { keywords: post.topics.join(", "), about: post.topics.map((t) => ({ "@type": "Thing", name: t })) } : {}),
     ...(post.sources?.length
       ? { citation: post.sources.map((s) => ({ "@type": "CreativeWork", name: s.title, url: s.url, publisher: s.publisher })) }
       : {}),
   };
+  const faqStructured = post.faq?.length
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: post.faq.map((f) => ({
+          "@type": "Question",
+          name: f.q,
+          acceptedAnswer: { "@type": "Answer", text: plainText(f.a) },
+        })),
+      }
+    : null;
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structured) }} />
+      <JsonLd data={structured} />
+      {faqStructured && <JsonLd data={faqStructured} />}
       <JsonLd
         data={breadcrumbSchema([
           { name: "News", path: "/news" },
@@ -75,7 +139,12 @@ export default async function NewsPost({ params }: Params) {
           </p>
           <h1 className="h-section mt-4 text-fog">{post.title}</h1>
           <p className="mt-5 text-sm text-fog">
-            By {founder.name}, {founder.role}
+            By{" "}
+            <Link href="/about" className="link-underline">
+              {founder.name}
+            </Link>
+            , {post.series === "insight" ? "optometrist and orthoptist, " : ""}
+            {founder.role}
             {post.updated && ` · Updated ${formatDate(post.updated)}`}
           </p>
         </Reveal>
@@ -92,6 +161,24 @@ export default async function NewsPost({ params }: Params) {
           )}
         </div>
 
+        {post.keyPoints && post.keyPoints.length > 0 && (
+          <Reveal className="mx-auto mt-10 max-w-2xl">
+            <div className="rounded-2xl border border-line bg-ink-900 p-6 md:p-7">
+              <p className="eyebrow">{news.keyPointsLabel}</p>
+              <ul className="mt-4 flex flex-col gap-3">
+                {post.keyPoints.map((k) => (
+                  <li key={k} className="flex items-start gap-3 text-fog">
+                    <span aria-hidden="true" className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-teal-400" />
+                    <span className="leading-relaxed">
+                      <RichText text={k} />
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Reveal>
+        )}
+
         <div className="mx-auto mt-14 max-w-2xl">
           {post.body.map((block, i) => {
             if (block.type === "h2") {
@@ -107,7 +194,9 @@ export default async function NewsPost({ params }: Params) {
                   {block.items.map((item) => (
                     <li key={item} className="flex items-start gap-3 text-fog">
                       <span aria-hidden="true" className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-teal-400" />
-                      <span className="leading-relaxed">{item}</span>
+                      <span className="leading-relaxed">
+                        <RichText text={item} />
+                      </span>
                     </li>
                   ))}
                 </ul>
@@ -116,17 +205,35 @@ export default async function NewsPost({ params }: Params) {
             if (block.type === "quote") {
               return (
                 <blockquote key={i} className="mt-8 border-l-2 border-teal-400 pl-6 font-display text-xl font-semibold leading-snug text-fog md:text-2xl">
-                  {block.text}
+                  <RichText text={block.text} />
                 </blockquote>
               );
             }
             return (
               <p key={i} className="mt-6 text-[1.125rem] leading-[1.75] text-fog">
-                {block.text}
+                <RichText text={block.text} />
               </p>
             );
           })}
         </div>
+
+        {post.faq && post.faq.length > 0 && (
+          <section className="mx-auto mt-14 max-w-2xl" aria-labelledby="post-faq">
+            <h2 id="post-faq" className="font-display text-2xl font-semibold text-fog md:text-3xl">
+              {news.faqHeading}
+            </h2>
+            <div className="mt-6 flex flex-col gap-7">
+              {post.faq.map((f) => (
+                <div key={f.q}>
+                  <h3 className="font-display text-xl font-semibold leading-snug text-fog">{f.q}</h3>
+                  <p className="mt-3 leading-[1.75] text-fog">
+                    <RichText text={f.a} />
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
 
         {post.sources && post.sources.length > 0 && (
           <div className="mx-auto mt-14 max-w-2xl">

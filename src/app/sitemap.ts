@@ -26,11 +26,13 @@ const PAGES = [
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  // The listing changes whenever an article is added, so its date is the newest article's.
+  const newest = posts.reduce((m, p) => (p.updated ?? p.date) > m ? (p.updated ?? p.date) : m, "");
   return [
     ...PAGES.map((p) => ({
       url: `${site.url}${p.path}`,
-      lastModified: new Date(p.updated),
-      changeFrequency: "monthly" as const,
+      lastModified: new Date(p.path === "/news" && newest > p.updated ? newest : p.updated),
+      changeFrequency: (p.path === "/news" ? "weekly" : "monthly") as "weekly" | "monthly",
       priority: p.priority,
     })),
     ...posts.map((p) => ({

@@ -140,6 +140,52 @@ if (input.figure !== undefined) {
   }
 }
 
+// Search: the title tag and description written for the query, the key points
+// and the questions (mirrors src/content/insights.ts).
+if (input.seo !== undefined) {
+  if (!isObj(input.seo)) bad("seo", "must be an object");
+  else {
+    if (input.seo.keyword !== undefined) str(input.seo.keyword, "seo.keyword", 60);
+    if (input.seo.metaTitle !== undefined) str(input.seo.metaTitle, "seo.metaTitle", 70);
+    if (input.seo.metaDescription !== undefined) str(input.seo.metaDescription, "seo.metaDescription", 170);
+  }
+}
+if (input.keyPoints !== undefined) {
+  if (!Array.isArray(input.keyPoints) || input.keyPoints.length < 2 || input.keyPoints.length > 4) bad("keyPoints", "must be a list of two to four points");
+  else input.keyPoints.forEach((k, i) => str(k, `keyPoints[${i}]`, 200));
+}
+if (input.faq !== undefined) {
+  if (!Array.isArray(input.faq) || input.faq.length < 1 || input.faq.length > 6) bad("faq", "must be a list of one to six questions");
+  else
+    input.faq.forEach((f, i) => {
+      if (!isObj(f)) return bad(`faq[${i}]`, "must be an object with q and a");
+      const q = str(f.q, `faq[${i}].q`, 160);
+      if (q && !q.trim().endsWith("?")) bad(`faq[${i}].q`, "must end in a question mark");
+      str(f.a, `faq[${i}].a`, 700);
+    });
+}
+
+// Inline links, [words](/path) or [words](https://...): every internal path
+// must be a page the site has (mirrors the check in src/content/posts.ts).
+{
+  const LINK = /\[([^\]\n]{1,120})\]\(((?:\/[^\s)]*)|(?:https:\/\/[^\s)]+))\)/g;
+  const routes = JSON.parse(fs.readFileSync(path.join(root, "src/content/routes.json"), "utf8"));
+  const legacy = [...fs.readFileSync(path.join(root, "src/content/posts.ts"), "utf8").matchAll(/^\s+slug: "([a-z0-9-]+)",/gm)].map((m) => `/news/${m[1]}`);
+  const published = JSON.parse(fs.readFileSync(STORE, "utf8"));
+  const known = new Set([...routes, ...legacy, ...(Array.isArray(published) ? published.map((p) => `/news/${p.slug}`) : [])]);
+  const texts = [
+    ...(Array.isArray(input.body) ? input.body.map((b) => (b?.type === "ul" ? (b.items || []).join("\n") : b?.text || "")) : []),
+    ...(Array.isArray(input.keyPoints) ? input.keyPoints : []),
+    ...(Array.isArray(input.faq) ? input.faq.map((f) => f?.a || "") : []),
+  ];
+  for (const t of texts) {
+    for (const m of String(t).matchAll(LINK)) {
+      const href = m[2];
+      if (href.startsWith("/") && !known.has(href.replace(/[#?].*$/, ""))) bad("link", `${href} is not a page of this site`);
+    }
+  }
+}
+
 // The photograph for LinkedIn and the social card.
 let imageOut = null;
 if (imageArg && !fs.existsSync(imageArg)) bad("--image", `${imageArg} does not exist`);
@@ -179,6 +225,9 @@ const insight = {
   ...(input.sources?.length ? { sources: input.sources } : {}),
   ...(input.figure ? { figure: input.figure } : {}),
   ...(imageOut ? { image: imageOut } : {}),
+  ...(input.seo ? { seo: input.seo } : {}),
+  ...(input.keyPoints?.length ? { keyPoints: input.keyPoints } : {}),
+  ...(input.faq?.length ? { faq: input.faq } : {}),
   body: input.body,
 };
 

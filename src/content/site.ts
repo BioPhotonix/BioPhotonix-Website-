@@ -798,6 +798,10 @@ export const news = {
    */
   insightNote:
     "The weekly insight summarises published research and news for eye-care professionals. It is not clinical advice, and BioPhotonix had no part in the work described unless the article says so.",
+  /** Over the two to four one-line points under an insight's figure. */
+  keyPointsLabel: "In brief",
+  /** Over the questions at the end of an insight: the ones people type into a search box, answered. */
+  faqHeading: "Questions this raises",
 };
 
 export const footer = {
