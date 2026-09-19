@@ -788,7 +788,20 @@ export const contact = {
 export const news = {
   eyebrow: "News and insights",
   title: "From the front line of retinal care.",
-  intro: "Articles from the BioPhotonix team on the science, the regulation and the business of treating dry AMD in the community.",
+  intro:
+    "Articles from the BioPhotonix team on the science, the regulation and the business of treating dry AMD in the community, and a weekly insight: one piece of new research or news in eye care, from anywhere in the world, read for what it means in practice.",
+  /** The label on a weekly insight, on the cards and above the headline. */
+  insightLabel: "Weekly insight",
+  /**
+   * Under every weekly insight. It is a digest of other people's research,
+   * written for professionals, and the company had no part in the studies.
+   */
+  insightNote:
+    "The weekly insight summarises published research and news for eye-care professionals. It is not clinical advice, and BioPhotonix had no part in the work described unless the article says so.",
+  /** Over the two to four one-line points under an insight's figure. */
+  keyPointsLabel: "In brief",
+  /** Over the questions at the end of an insight: the ones people type into a search box, answered. */
+  faqHeading: "Questions this raises",
 };
 
 export const footer = {

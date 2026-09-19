@@ -1,4 +1,6 @@
-import { ogCard, OG_SIZE, OG_TYPE } from "@/app/_og/card";
+import fs from "node:fs";
+import path from "node:path";
+import { ogCard, ogPhoto, OG_SIZE, OG_TYPE } from "@/app/_og/card";
 import { posts } from "@/content/posts";
 import { ogCards } from "@/content/site";
 
@@ -19,5 +21,10 @@ export async function generateImageMetadata({ params }: { params: Promise<{ slug
 export default async function Image({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const post = posts.find((p) => p.slug === slug);
+  if (post?.image) {
+    const file = path.join(process.cwd(), "public", post.image.src);
+    const mime = post.image.src.endsWith(".png") ? "image/png" : post.image.src.endsWith(".webp") ? "image/webp" : "image/jpeg";
+    return ogPhoto(`data:${mime};base64,${fs.readFileSync(file).toString("base64")}`);
+  }
   return ogCard(ogCards.article.eyebrow, post?.title ?? ogCards.news.title);
 }

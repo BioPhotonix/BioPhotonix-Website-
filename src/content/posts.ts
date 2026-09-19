@@ -1,10 +1,23 @@
 /**
- * Articles, carried over from the Wix blog.
+ * Articles.
+ *
+ * Two kinds live here. The company's own pieces, carried over from the Wix
+ * blog, are written below as typed blocks. The weekly insights arrive as JSON
+ * in `insights.json`: a scheduled run in BioPhotonix/Social-Media-and-Blog-Creator-
+ * drafts one, Adail approves it on the review page, and the publish run
+ * appends it with `scripts/add-insight.mjs`. `parseInsights` checks that file
+ * at build time, so a malformed entry fails the build with a clear message
+ * instead of a broken page.
  *
  * Content is stored as typed blocks rather than raw HTML so nothing can inject
- * markup into the page. Add a post by appending to the array below. The
- * cover art is drawn in code (see PostArt) rather than being a photograph.
+ * markup into the page. The cover art is drawn in code (see PostArt) rather
+ * than being a photograph.
  */
+
+import type { Figure, PostImage } from "./figure";
+import { insights } from "./insights";
+import { linksIn } from "./links";
+import routes from "./routes.json";
 
 export type Block =
   | { type: "p"; text: string }
@@ -12,7 +25,16 @@ export type Block =
   | { type: "ul"; items: string[] }
   | { type: "quote"; text: string };
 
-export type ArtKind = "epidemic" | "safety" | "founding" | "prototype";
+/** A reference under an article: the paper, report or announcement it draws on. */
+export type Source = { title: string; publisher: string; url: string; date?: string };
+
+/**
+ * The first four motifs belong to the company's own articles. The last four
+ * are for the weekly insights: imaging (diagnostics, OCT, AI), evidence
+ * (trials, cohorts, reviews), world (policy, public health, epidemiology) and
+ * signal (devices, optics, therapeutics).
+ */
+export type ArtKind = "epidemic" | "safety" | "founding" | "prototype" | "imaging" | "evidence" | "world" | "signal";
 
 export type Post = {
   slug: string;
@@ -23,9 +45,26 @@ export type Post = {
   excerpt: string;
   art: ArtKind;
   body: Block[];
+  /** "insight" marks a weekly research digest; absent on the company's own articles. */
+  series?: "insight";
+  topics?: string[];
+  sources?: Source[];
+  /** The animated figure that opens an insight in place of the drawn cover. */
+  figure?: Figure;
+  /** The photograph for the LinkedIn post and the social card; not shown in the article. */
+  image?: PostImage;
+  /**
+   * Search. The title tag and the meta description are written for the query
+   * the piece should rank for; the headline (`title`) stays the headline.
+   */
+  seo?: { keyword?: string; metaTitle?: string; metaDescription?: string };
+  /** Two to four one-line points, shown as "In brief" under the figure. */
+  keyPoints?: string[];
+  /** Questions people type into a search box about the subject, each answered in a few sentences. */
+  faq?: { q: string; a: string }[];
 };
 
-export const posts: Post[] = [
+const articles: Post[] = [
   {
     slug: "the-silent-epidemic-addressing-the-unmet-need-in-dry-amd",
     title: "The Silent Epidemic: Addressing the Unmet Need in Dry AMD",
@@ -140,5 +179,42 @@ export const posts: Post[] = [
     ],
   },
 ];
+
+/**
+ * Newest first, insights and company articles together. A slug shared between
+ * the two would make one of them unreachable, so that is a build error too.
+ */
+export const posts: Post[] = [...insights, ...articles].sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0));
+
+{
+  const seen = new Set<string>();
+  for (const p of posts) {
+    if (seen.has(p.slug)) throw new Error(`Two articles share the slug "${p.slug}"`);
+    seen.add(p.slug);
+  }
+}
+
+/*
+ * Every internal link in an article must point at a page the site has. A
+ * link to a page that does not exist is a broken link on a page whose job is
+ * to be found, so it fails the build here rather than the reader later.
+ */
+{
+  const known = new Set<string>([...(routes as string[]), ...posts.map((p) => `/news/${p.slug}`)]);
+  for (const p of posts) {
+    const texts = [
+      ...p.body.map((b) => (b.type === "ul" ? b.items.join("\n") : b.text)),
+      ...(p.keyPoints ?? []),
+      ...(p.faq ?? []).map((f) => f.a),
+    ];
+    for (const t of texts) {
+      for (const l of linksIn(t)) {
+        if (l.internal && !known.has(l.href.replace(/[#?].*$/, ""))) {
+          throw new Error(`"${p.slug}" links to ${l.href}, which is not a page of this site`);
+        }
+      }
+    }
+  }
+}
 
 export const getPost = (slug: string) => posts.find((p) => p.slug === slug);

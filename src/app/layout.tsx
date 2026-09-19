@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     template: "%s | BioPhotonix",
   },
   description: site.description,
-  alternates: { canonical: "/" },
+  alternates: { canonical: "/", types: { "application/rss+xml": "/feed.xml" } },
   openGraph: {
     type: "website",
     locale: "en_GB",

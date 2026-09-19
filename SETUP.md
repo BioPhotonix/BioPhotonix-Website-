@@ -148,7 +148,10 @@ that must survive.
 
 - **Wording** lives in `src/content/site.ts`. Edit it on GitHub, commit to
   `main`, and Vercel deploys it in about two minutes.
-- **A new article** is an entry appended to `src/content/posts.ts`.
+- **A new article** is an entry appended to `src/content/posts.ts`. The
+  weekly insights are not: they arrive through `npm run insight:add` from
+  the automation in `BioPhotonix/Social-Media-and-Blog-Creator-`, and land
+  in `src/content/insights.json`.
 - **A new photograph** goes in `source-images/` (not committed) and a line in
   `scripts/build-images.mjs`; run `npm run build:images` and commit the
   result in `public/images/`.
