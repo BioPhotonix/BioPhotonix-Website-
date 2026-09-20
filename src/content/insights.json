@@ -4,7 +4,7 @@
     "title": "Denmark put OCT scans in 79 optician stores. Referrals tripled.",
     "date": "2026-09-21",
     "readingMinutes": 4,
-    "excerpt": "1.2 million people were scanned on the high street. Referrals to public eye care rose from 0.55% to 1.74%, and the extra was routine, not urgent.",
+    "excerpt": "1.2 million people examined, before and after OCT. Referrals to public eye care rose from 0.55% to 1.74%, the extra subacute and routine, not acute.",
     "art": "world",
     "series": "insight",
     "topics": [
@@ -77,10 +77,6 @@
         {
           "items": [
             {
-              "change": 0,
-              "label": "Acute"
-            },
-            {
               "change": 178,
               "label": "Subacute"
             },
@@ -103,7 +99,7 @@
               "value": "2,359"
             },
             {
-              "label": "of Denmark's population imaged in one year",
+              "label": "of Denmark's population imaged, Aug 2022 to Jul 2023",
               "value": "5.99%"
             }
           ],
@@ -111,7 +107,7 @@
           "label": "The pathway"
         }
       ],
-      "caption": "79 optometrist stores, 1,220,082 people examined, March 2022 to May 2025. Referrals are the share of examinations sent into the public eye-care system.",
+      "caption": "79 optometrist stores, 1,220,082 people examined, March 2022 to May 2025. Referrals are the share of those examined who were sent into the public eye-care system. Acute referrals were stable; the paper gives no figure for them.",
       "source": "Muttuvelu et al., European Journal of Ophthalmology, 2026",
       "title": "What OCT on the high street did to referrals in Denmark"
     },
@@ -122,40 +118,40 @@
     },
     "seo": {
       "keyword": "OCT scan",
-      "metaDescription": "Denmark put OCT scans in 79 optician stores and scanned 1.2 million people. Referrals rose from 0.55% to 1.74%, almost all of them routine, not urgent.",
+      "metaDescription": "79 Danish optician stores added OCT scans and examined 1.2 million people. Referrals rose from 0.55% to 1.74%, the extra subacute and routine, not acute.",
       "metaTitle": "OCT scans at the opticians: Denmark's referral data"
     },
     "keyPoints": [
-      "79 Danish optician stores gave 1,220,082 people an OCT scan between March 2022 and May 2025, with a consultant reviewing uncertain scans remotely.",
-      "Referrals into public eye care rose from 0.55% of examinations to 1.74%. Acute referrals did not move; subacute rose 178% and routine 292%.",
+      "79 Danish optician stores examined 1,220,082 people between March 2022 and May 2025, before, during and after OCT was installed, with a consultant reviewing uncertain findings remotely.",
+      "Referrals into public eye care rose from 0.55% to 1.74% of those examined. Acute referrals were stable; subacute rose 178% and routine 292%.",
       "The authors credit the whole pathway, not the scanner: standardised OCT, consultant review and structured triage together.",
-      "The UK has the scanners. What most practices lack is someone at the other end of an uncertain scan."
+      "The UK has the scanners. What many practices still lack is someone at the other end of an uncertain scan."
     ],
     "faq": [
       {
-        "a": "An OCT scan images the retina and the optic nerve head in cross-section, so it shows fluid, membranes, holes and thinning that the standard examination cannot. In the Danish stores it picked up central serous chorioretinopathy, epiretinal membrane, macular hole and wet AMD that would otherwise have walked out undetected, and it documents the drusen and atrophy of [dry AMD](/news/the-silent-epidemic-addressing-the-unmet-need-in-dry-amd), for which community practice has had little to offer.",
+        "a": "An OCT scan images the retina and the optic nerve head in cross-section, so it shows fluid, membranes, holes and thinning that the standard examination cannot. In the Danish stores it picked up central serous chorioretinopathy, epiretinal membrane, macular hole and wet AMD that the standard examination had not been finding at that rate, and it documents the drusen and atrophy of [dry AMD](/news/the-silent-epidemic-addressing-the-unmet-need-in-dry-amd), for which community practice has had little to offer.",
         "q": "What does an OCT scan at the opticians detect?"
       },
       {
-        "a": "In Denmark, yes, and mostly of the right kind. Referrals rose from 0.55% to 1.74% of examinations, but acute referrals were unchanged: the increase was subacute and routine cases that could be planned. The authors put that down to consultant review of uncertain scans, not to the scanner on its own.",
-        "q": "Do OCT scans at the opticians lead to more hospital referrals?"
+        "a": "In Denmark they came with more, and mostly of the kind that can be planned. Referrals rose from 0.55% to 1.74% of those examined; acute referrals were stable, and the increase was subacute and routine cases. The authors say the rise belongs to OCT inside a pathway of standardised scanning, consultant review and triage, and should not be read as the scanner's effect alone.",
+        "q": "Do OCT scans at the opticians mean more referrals?"
       },
       {
-        "a": "The remote review of eye images and findings by an ophthalmologist. In the Danish model an optometrist uploads the OCT scans they are unsure about to a service where a consultant reviews them and decides between no follow-up, a review in the store, follow-up by the service, or referral into the hospital system.",
+        "a": "The remote review of eye images and findings by an ophthalmologist. In the Danish model an optometrist uploads the OCT scans they are unsure about to a service where a consultant reviews them and decides between no follow-up, a review in the store, follow-up by the service, or referral into the public eye-care system, usually a practice-based ophthalmologist.",
         "q": "What is teleophthalmology?"
       },
       {
-        "a": "Most do. Optometry Scotland's 2025 survey found 80% of Scottish practices have an OCT, and the large multiples offer it across the UK, often for a fee. What varies is what happens next: a consultant-reviewed pathway like Bristol's exists in some areas and not in others, and that, rather than the scanner, is what the Danish data says makes the difference.",
+        "a": "Most appear to. Optometry Scotland's 2025 survey found 80% of Scottish practices have one, all but one of the 74 General Ophthalmic Services practices in Bristol's catchment did, and the largest multiple has one in every store. What varies is what happens next: a hospital-reviewed pathway like Bristol's exists in some areas and not in others. The Danish result came from OCT inside a consultant-reviewed pathway, and the authors decline to separate the two.",
         "q": "Do opticians in the UK offer OCT scans?"
       }
     ],
     "body": [
       {
-        "text": "Between March 2022 and May 2025, 1,220,082 people had an eye examination in one of 79 Danish optometrist stores that had installed OCT scanners and connected them to a consultant-reviewed teleophthalmology service. [A study published on 15 September in the European Journal of Ophthalmology](https://doi.org/10.1177/11206721261488973), from an 18-author group led from the University of Copenhagen, reports what that did to referrals. They went up, by a lot, and the interesting part is where.",
+        "text": "Between March 2022 and May 2025, 1,220,082 people had an eye examination in one of the 79 stores of a Danish optician chain, before, during and after each store installed an OCT scanner connected to a consultant-reviewed teleophthalmology service. [A study published on 15 September in the European Journal of Ophthalmology](https://doi.org/10.1177/11206721261488973), from an 18-author group led from the University of Copenhagen, reports what that did to referrals. They went up, by a lot, and the interesting part is where.",
         "type": "p"
       },
       {
-        "text": "For a UK optometrist the question is no longer whether to own an OCT; [Optometry Scotland's survey last year](https://www.aop.org.uk/ot/news/2025/09/16/optometry-scotland-calls-for-oct-to-be-integrated-into-primary-eye-care-in-scotland) found 80% of practices already do. It is what happens to a hospital eye service when a whole high street starts scanning, and whether a triage layer between the store and the hospital changes the answer. Denmark has now run that experiment at national scale.",
+        "text": "For a UK optometrist the question is no longer whether to own an OCT; [Optometry Scotland's survey last year](https://www.aop.org.uk/ot/news/2025/09/16/optometry-scotland-calls-for-oct-to-be-integrated-into-primary-eye-care-in-scotland) found 80% of Scottish practices already do. It is what happens to the public eye service when a whole high street starts scanning through a pathway that already has a consultant reading the doubtful cases. Denmark has now watched that happen at national scale, in one chain, with no comparison against OCT on its own.",
         "type": "p"
       },
       {
@@ -163,7 +159,7 @@
         "type": "h2"
       },
       {
-        "text": "It is a nationwide, multi-period observational study of one optometry chain. Every examination in the 79 stores was counted across three periods: before OCT arrived, while it was being rolled out, and after it was in every store. Findings the optometrist was unsure about went to a teleophthalmology service, where a consultant ophthalmologist reviewed the images and the case was triaged: no follow-up, follow-up in the store, follow-up by the service, or referral into the public healthcare system, graded acute, subacute or routine.",
+        "text": "It is a nationwide, multi-period observational study of one optometry chain. Every examination in the 79 stores was counted across three periods: before OCT arrived, while it was being rolled out, and after it was in every store. Findings the optometrist was unsure about went to a teleophthalmology service, where a consultant ophthalmologist reviewed the images and the case was triaged: no follow-up, follow-up in the store, follow-up by the service, or referral into the public healthcare system, graded acute, subacute or routine. In Denmark that referral usually goes to a practice-based ophthalmologist, a tier the UK does not have, who gatekeeps the hospital.",
         "type": "p"
       },
       {
@@ -175,11 +171,11 @@
         "type": "h2"
       },
       {
-        "text": "Monthly submissions to the teleophthalmology service rose from 703 before OCT to 2,359 after full implementation, more than three times as many. Referrals into public healthcare rose from 0.55% of examinations to 1.74%.",
+        "text": "Monthly submissions to the teleophthalmology service rose from 703 before OCT to 2,359 after full implementation, more than three times as many. Referrals into public healthcare rose from 0.55% to 1.74% of those examined.",
         "type": "p"
       },
       {
-        "text": "The shape of that increase is the finding. Acute referrals were stable. Subacute referrals rose by 178% and routine referrals by 292%. Detection of central serous chorioretinopathy, epiretinal membrane, macular hole and neovascular AMD all increased markedly. The scanner did not flood the emergency clinic; it found disease that had been walking out of the store undetected, and sent it in with time to plan.",
+        "text": "The shape of that increase is the finding. Acute referrals were stable. Subacute referrals rose by 178% and routine referrals by 292%. Detection of central serous chorioretinopathy, epiretinal membrane, macular hole and neovascular AMD all increased markedly. The scanner did not flood the emergency clinic; it sent in more suspected disease of the kind that can wait a few weeks, with time to plan.",
         "type": "p"
       },
       {
@@ -191,15 +187,15 @@
         "type": "h2"
       },
       {
-        "text": "The scale is what makes this useful. An earlier paper from the same group counted 355,818 different people imaged in the stores in a single year: 5.99% of Denmark's population, and between 8.17% and 8.68% of everyone aged 41 to 80. No hospital programme reaches that many eyes. A high street with OCT and somewhere to send the scan does.",
+        "text": "The scale is what makes this useful. An earlier paper from the same group counted 355,818 different people imaged in the stores in a single year: 5.99% of Denmark's population, and between 8% and 9% of each decade from 41 to 80. Few programmes image six per cent of a population in a year. A high street with OCT and somewhere to send the scan did.",
         "type": "p"
       },
       {
-        "text": "The UK has the scanners. What it mostly lacks is the layer. Where one exists it looks like Denmark's: in [a Bristol pathway published in August](https://doi.org/10.1007/s40123-026-01477-z), community optometrists sent OCT volume scans and fundus photographs for review within one working day; 87.0% of 376 macular referrals were appropriate, 73.7% of those avoided the first hospital visit the old pathway required, and wet AMD was treated in a mean of 8.6 days. In Scotland, Optometry Scotland asked last September for OCT to be funded within General Ophthalmic Services rather than left to each practice. In England, June's £20 million to give every NHS-contracted practice access to the e-Referral service by April 2028 is the plumbing such a layer needs.",
+        "text": "The UK has the scanners. What it mostly lacks is the layer. Where something like it exists, as in [a Bristol pathway published in August](https://doi.org/10.1007/s40123-026-01477-z), community optometrists sent OCT volume scans and fundus photographs for review by a consultant or a hospital optometrist within one working day; 87.0% of 376 macular referrals were appropriate, 73.7% of those avoided the first hospital visit the old pathway required, and wet AMD was treated in a mean of 8.6 days. In Scotland, Optometry Scotland asked last September for a General Ophthalmic Services fee for OCT in acute presentations and capital funding for the scanners. In England, June's £20 million to give every NHS-contracted practice access to the e-Referral service by April 2028 is part of the plumbing such a layer needs: it carries the referral, not the scan.",
         "type": "p"
       },
       {
-        "text": "For a practice, the practical reading is this. When your OCT finds something you are not sure about, is there a consultant at the other end of a secure upload, or only a referral letter? Ask your local eye service which it is. A Danish modelling study put the cost per suspected posterior-segment case at £116 through a general ophthalmologist and £75 to £94 through the teleophthalmology route, with a wait of 25 weeks against under six. Those are Danish figures for a Danish system, but the direction is not subtle.",
+        "text": "For a practice, the practical reading is this. When your OCT finds something you are not sure about, is there a consultant at the other end of a secure upload, or only a referral letter? Ask your local eye service which it is. A Danish modelling study put the cost per suspected posterior-segment case at £116 through a general ophthalmologist and £75 to £94 through the teleophthalmology route, with a wait of 25 weeks against under six. Those are Danish figures for a Danish system, and the model predates OCT and assumed the pathway would cut referrals, where the new study shows them rising. What it prices is the review layer, and that direction is not subtle.",
         "type": "p"
       },
       {
@@ -215,6 +211,7 @@
         ],
         "type": "ul"
       }
-    ]
+    ],
+    "updated": "2026-09-20"
   }
 ]
