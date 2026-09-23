@@ -53,6 +53,8 @@ for (const [vpName, width, height] of VIEWPORTS) {
           ? "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1"
           : undefined,
     });
+    // Vercel serves the analytics script only on a deployed site; stand in for it here.
+    await ctx.route("**/_vercel/insights/**", (r) => r.fulfill({ status: 200, contentType: "text/javascript", body: "" }));
     for (const url of PAGES) {
       for (const scroll of ["none", "slow", "jump"]) {
         const page = await ctx.newPage();
@@ -141,5 +143,24 @@ for (const [vpName, width, height] of VIEWPORTS) {
   }
 }
 
+/* Analytics: the script loads for an ordinary visit, and not at all for a
+   browser that sends Global Privacy Control (privacy policy, section 9.1). */
+for (const gpc of [false, true]) {
+  const ctx = await browser.newContext({ baseURL: BASE });
+  let loaded = false;
+  await ctx.route("**/_vercel/insights/**", (r) => {
+    loaded = true;
+    return r.fulfill({ status: 200, contentType: "text/javascript", body: "" });
+  });
+  if (gpc) await ctx.addInitScript(() => Object.defineProperty(Navigator.prototype, "globalPrivacyControl", { get: () => true }));
+  const page = await ctx.newPage();
+  await page.goto("/news", { waitUntil: "load" });
+  await page.waitForTimeout(800);
+  if (gpc && loaded) fail("analytics/gpc", "the analytics script loaded although the browser sent Global Privacy Control");
+  if (!gpc && !loaded) fail("analytics/plain", "the analytics script never loaded");
+  await ctx.close();
+}
+console.log("  done  analytics, with and without Global Privacy Control");
+
 await browser.close();
-finish(`All ${PAGES.length * VIEWPORTS.length * MOTION.length * 3} page checks passed.`);
+finish(`All ${PAGES.length * VIEWPORTS.length * MOTION.length * 3 + 2} page checks passed.`);

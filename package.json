@@ -15,6 +15,7 @@
     "insight:ping": "node scripts/indexnow.mjs"
   },
   "dependencies": {
+    "@vercel/analytics": "^2.0.1",
     "motion": "^12.34.2",
     "next": "^15.5.25",
     "react": "^19.2.0",
