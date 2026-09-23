@@ -1,4 +1,3 @@
-import { burden } from "@/content/site";
 import PrevalenceFrame from "./PrevalenceFrame";
 
 /**
@@ -9,18 +8,16 @@ import PrevalenceFrame from "./PrevalenceFrame";
  * case, which every reader needs, while the size of the opportunity is an
  * argument addressed to one reader in particular, and the home page is not
  * where that conversation belongs.
+ *
+ * The wrapper is a size container: the chart lays itself out by the room it
+ * is given, not by the screen. Full width on the home page it puts the frame
+ * of people beside its caption and controls; in the investors page's column,
+ * and on a phone, it stacks.
  */
 export default function BurdenChart() {
   return (
-    <figure className="rounded-2xl border border-line bg-ink-900 p-6 md:p-8">
-      <figcaption>
-        <p className="eyebrow">{burden.prevalence.title}</p>
-        <p className="mt-2 text-sm text-fog">{burden.prevalence.note}</p>
-      </figcaption>
-      <div className="mt-8">
-        <PrevalenceFrame />
-      </div>
-      <p className="mt-4 text-xs text-fog">Source: {burden.prevalence.source}</p>
-    </figure>
+    <div className="@container">
+      <PrevalenceFrame />
+    </div>
   );
 }
