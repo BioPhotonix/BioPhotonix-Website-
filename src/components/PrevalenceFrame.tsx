@@ -17,9 +17,18 @@ const COLS = 16;
  *
  * The two labelled years are the published figures. Years between them are a
  * straight line between the two, and the caption says so.
+ *
+ * Given 56rem or more (the home page, full width), the caption, the count, the
+ * key and the slider stand in a column beside the frame. Run the full width of
+ * a desktop page, the frame alone was 1,134 by 638 pixels and the whole chart
+ * taller than the screen. Given less (a phone, the investors page's column),
+ * everything stacks in reading order. The figure is one grid either way, so
+ * the caption stays the figure's own.
  */
+const SIDE = "@4xl:col-span-5 @4xl:col-start-1";
+
 export default function PrevalenceFrame() {
-  const { perFigure, start, end } = burden.prevalence;
+  const { title, note, source, perFigure, start, end } = burden.prevalence;
   const total = Math.round(end.millions / perFigure);
   const rows = Math.ceil(total / COLS);
   const span = end.year - start.year;
@@ -64,8 +73,13 @@ export default function PrevalenceFrame() {
   };
 
   return (
-    <div ref={ref}>
-      <div className="flex items-end justify-between gap-6">
+    <figure className="grid grid-cols-1 rounded-2xl border border-line bg-ink-900 p-6 md:p-8 @4xl:grid-cols-12 @4xl:grid-rows-[auto_auto_auto_auto_auto_1fr] @4xl:gap-x-10">
+      <figcaption className={`${SIDE} @4xl:row-start-1`}>
+        <p className="eyebrow">{title}</p>
+        <p className="mt-2 text-sm text-fog">{note}</p>
+      </figcaption>
+
+      <div className={`mt-8 flex items-end justify-between gap-6 ${SIDE} @4xl:row-start-2`}>
         <p className="leading-none">
           <span className="block text-4xl font-semibold text-fog md:text-5xl">{shownMillions}</span>
           <span className="mt-2 block text-sm text-fog">million people living with AMD</span>
@@ -76,26 +90,28 @@ export default function PrevalenceFrame() {
         </p>
       </div>
 
-      <svg
-        viewBox={`0 0 ${COLS * 40} ${rows * 40}`}
-        className="mt-6 h-auto w-full"
-        role="img"
-        aria-label={`${shownMillions} million people living with age-related macular degeneration in ${shownYear}, shown as ${lit} of ${total} figures.`}
-      >
-        {Array.from({ length: total }, (_, i) => {
-          const cx = (i % COLS) * 40 + 20;
-          const cy = Math.floor(i / COLS) * 40 + 21;
-          return (
-            <g key={i} className={i < lit ? (i < base ? "pf-on" : "pf-on pf-new") : "pf-off"} transform={`translate(${cx} ${cy})`}>
-              <circle cy="-9" r="5.5" className="pf-head" />
-              <path d="M -9 8 a 9 9 0 0 1 18 0 v 8 a 2 2 0 0 1 -2 2 h -14 a 2 2 0 0 1 -2 -2 z" className="pf-body" />
-              <circle cy="-9" r="2.4" className="pf-scotoma" />
-            </g>
-          );
-        })}
-      </svg>
+      <div ref={ref} className="mt-6 @4xl:col-span-7 @4xl:col-start-6 @4xl:row-span-6 @4xl:row-start-1 @4xl:mt-0 @4xl:self-center">
+        <svg
+          viewBox={`0 0 ${COLS * 40} ${rows * 40}`}
+          className="h-auto w-full"
+          role="img"
+          aria-label={`${shownMillions} million people living with age-related macular degeneration in ${shownYear}, shown as ${lit} of ${total} figures.`}
+        >
+          {Array.from({ length: total }, (_, i) => {
+            const cx = (i % COLS) * 40 + 20;
+            const cy = Math.floor(i / COLS) * 40 + 21;
+            return (
+              <g key={i} className={i < lit ? (i < base ? "pf-on" : "pf-on pf-new") : "pf-off"} transform={`translate(${cx} ${cy})`}>
+                <circle cy="-9" r="5.5" className="pf-head" />
+                <path d="M -9 8 a 9 9 0 0 1 18 0 v 8 a 2 2 0 0 1 -2 2 h -14 a 2 2 0 0 1 -2 -2 z" className="pf-body" />
+                <circle cy="-9" r="2.4" className="pf-scotoma" />
+              </g>
+            );
+          })}
+        </svg>
+      </div>
 
-      <ul className="mt-4 flex flex-wrap gap-x-5 gap-y-1 text-xs text-fog" aria-label="Key">
+      <ul className={`mt-4 flex flex-wrap gap-x-5 gap-y-1 text-xs text-fog ${SIDE} @4xl:row-start-3 @4xl:mt-6`} aria-label="Key">
         <li className="flex items-center gap-2">
           <span aria-hidden="true" className="h-2.5 w-2.5 rounded-[2px] bg-teal-500" />
           Living with AMD in {start.year}
@@ -106,7 +122,7 @@ export default function PrevalenceFrame() {
         </li>
       </ul>
 
-      <div className="mt-5">
+      <div className={`mt-5 ${SIDE} @4xl:row-start-4`}>
         <label htmlFor={id} className="sr-only">
           Year
         </label>
@@ -133,7 +149,7 @@ export default function PrevalenceFrame() {
         </div>
       </div>
 
-      <details className="mt-4 text-xs text-fog">
+      <details className={`mt-4 text-xs text-fog ${SIDE} @4xl:row-start-5`}>
         <summary className="cursor-pointer select-none">The figures behind this chart</summary>
         <table className="figure mt-3 w-full text-left">
           <thead>
@@ -154,6 +170,8 @@ export default function PrevalenceFrame() {
           </tbody>
         </table>
       </details>
-    </div>
+
+      <p className={`mt-4 text-xs text-fog ${SIDE} @4xl:row-start-6 @4xl:self-end @4xl:mt-6`}>Source: {source}</p>
+    </figure>
   );
 }
