@@ -11,7 +11,7 @@ export type PrivacyBlock =
 export type PrivacySection = { title: string; blocks: PrivacyBlock[] };
 
 export const privacy = {
-  lastUpdated: "18 February 2026",
+  lastUpdated: "23 September 2026",
   sections: [
     {
       title: "1. Who we are",
@@ -42,7 +42,7 @@ export const privacy = {
         { type: "ul", items: [
           "Contact details that you choose to provide (for example via contact forms), such as name, email address, phone number, organisation and message content.",
           "Technical information from your device, including IP address, browser type and version, device type, operating system and basic diagnostic information, to keep the site secure and functioning.",
-          "Limited usage data, such as pages visited, time on page and referring URLs, via strictly necessary and (if enabled in future) optional analytics cookies (see section 9).",
+          "Limited usage data about visits to our website, such as the page visited, the site that sent you to it, your approximate location and your device type, operating system and browser, collected by Vercel Web Analytics without cookies (see section 9).",
         ] },
         { type: "h3", text: "3.2 Clinic and professional data" },
         { type: "ul", items: [
@@ -128,8 +128,12 @@ export const privacy = {
     {
       title: "9. Cookies and similar technologies",
       blocks: [
-        { type: "p", text: "We use cookies and similar technologies on our website and portals to make the site work (for example session management, security and load balancing), to remember certain preferences, and, in future, possibly to run privacy-respecting analytics to understand how the site is used." },
-        { type: "p", text: "At present we do not use advertising cookies or third-party marketing trackers. Any analytics tools we introduce will be configured to minimise personal data and, where required, will only run with your consent." },
+        { type: "p", text: "We use cookies and similar technologies on our website and portals to make the site work (for example session management, security and load balancing) and to remember certain preferences." },
+        { type: "h3", text: "9.1 Website analytics" },
+        { type: "p", text: "Our website uses Vercel Web Analytics, a service of Vercel Inc., to count visits, to see which pages are read and to see which sites people arrive from, such as LinkedIn. It sets no cookies and stores nothing on your device. For each page view it records the time, the page address, the referring site, your approximate location (country, region and city), and your device type, operating system and browser. Visits are counted using a hash created from the incoming request, which Vercel discards after 24 hours; it is not used to follow anyone across other websites. We see only totals, such as how many people read an article and how many of them came from LinkedIn." },
+        { type: "p", text: "We use these totals in our legitimate interest in knowing which articles are useful and improving the site. If your browser sends a Global Privacy Control or Do Not Track signal, the analytics does not run and your visit is not counted." },
+        { type: "h3", text: "9.2 Advertising and other trackers" },
+        { type: "p", text: "We do not use advertising cookies or third-party marketing trackers. Any further analytics tools we introduce will be configured to minimise personal data and, where required, will only run with your consent." },
         { type: "p", text: "Under UK GDPR and the Privacy and Electronic Communications Regulations (PECR), strictly necessary cookies can be set without consent, and non-essential cookies (such as most analytics cookies) require your prior consent. You can also manage cookies through your browser settings." },
       ],
     },
