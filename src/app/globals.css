@@ -274,10 +274,19 @@
 .art.is-live [data-art-pulse] {
   animation: soft-pulse 2.8s ease-in-out infinite;
 }
+/* A part that arrives and then keeps breathing runs both animations. Either
+   rule alone replaces the other's animation, and the pulse on its own left the
+   part at the pop's starting scale: smaller than drawn and pulled towards the
+   middle of the picture. */
+@media (prefers-reduced-motion: no-preference) {
+  .art.is-live [data-art-pop][data-art-pulse] {
+    animation: art-pop 0.5s var(--ease-out-expo) forwards, soft-pulse 2.8s ease-in-out infinite;
+  }
+}
 @media (prefers-reduced-motion: reduce) {
   .art [data-art-draw] { stroke-dashoffset: 0; }
   .art [data-art-pop] { opacity: 1; transform: none; }
-  .art [data-art-pulse] { animation: none; }
+  .art.is-live [data-art-pulse] { animation: none; }
 }
 
 /* Therapy light rising from the eyepieces of the front render. It builds once
