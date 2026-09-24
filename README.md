@@ -62,8 +62,8 @@ malformed one fails the build with the field named rather than shipping a
 broken page. Insights carry `series: "insight"`, which puts a "Weekly
 insight" label on the card and the article, a Sources list under the body,
 and the standing note that it is a digest, not clinical advice. Their covers
-are the four motifs added for them in `PostArt`: `imaging`, `evidence`,
-`world` and `signal`, on the listing cards. On the article itself an insight
+are the six motifs added for them in `PostArt`: `imaging`, `evidence`,
+`world`, `signal`, `survey` and `binocular`, on the listing cards. On the article itself an insight
 opens with a figure instead: `InsightFigure` draws an animated panel from a
 small spec in the JSON (`figure`: one to three blocks of six kinds, checked
 at build time by `src/content/figure.ts`), so the automation never puts

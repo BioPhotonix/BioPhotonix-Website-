@@ -29,12 +29,14 @@ export type Block =
 export type Source = { title: string; publisher: string; url: string; date?: string };
 
 /**
- * The first four motifs belong to the company's own articles. The last four
+ * The first four motifs belong to the company's own articles. The last six
  * are for the weekly insights: imaging (diagnostics, OCT, AI), evidence
- * (trials, cohorts, reviews), world (policy, public health, epidemiology) and
- * signal (devices, optics, therapeutics).
+ * (trials, cohorts, reviews), world (policy, public health, epidemiology),
+ * signal (devices, optics, therapeutics), survey (patient experience,
+ * surveys, how care is delivered) and binocular (squint, binocular vision,
+ * children's eyes).
  */
-export type ArtKind = "epidemic" | "safety" | "founding" | "prototype" | "imaging" | "evidence" | "world" | "signal";
+export type ArtKind = "epidemic" | "safety" | "founding" | "prototype" | "imaging" | "evidence" | "world" | "signal" | "survey" | "binocular";
 
 export type Post = {
   slug: string;

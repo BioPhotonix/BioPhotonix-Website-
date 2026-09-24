@@ -90,7 +90,7 @@ for (const [vpName, width, height] of VIEWPORTS) {
         if (await page.locator("[data-count-to]").count()) await page.waitForTimeout(1600);
 
         const report = await page.evaluate(() => {
-          const out = { invisible: [], overflow: 0, headings: [], noAlt: [], tiny: [], mains: 0, h1s: 0, counters: [] };
+          const out = { invisible: [], overflow: 0, headings: [], noAlt: [], tiny: [], mains: 0, h1s: 0, counters: [], stuck: [] };
           out.overflow = document.documentElement.scrollWidth - document.documentElement.clientWidth;
           out.mains = document.querySelectorAll("main").length;
           out.h1s = document.querySelectorAll("h1").length;
@@ -123,6 +123,15 @@ for (const [vpName, width, height] of VIEWPORTS) {
             const got = (el.textContent ?? "").trim();
             if (got !== want) out.counters.push(`${got} should be ${want}`);
           }
+          /* A part of a cover that pops in has to end at full size. When a
+             part both popped and pulsed, the pulse replaced the pop, and the
+             moving part of four covers sat at 55% of its size, pulled towards
+             the middle of the picture. Parts still arriving are skipped. */
+          for (const el of document.querySelectorAll(".art.is-live [data-art-pop]")) {
+            if (el.getAnimations().some((a) => a.animationName === "art-pop" && a.playState === "running")) continue;
+            const t = getComputedStyle(el).transform;
+            if (t !== "none" && t !== "matrix(1, 0, 0, 1, 0, 0)") out.stuck.push(`${el.closest("a")?.getAttribute("href") ?? "cover"} at ${t}`);
+          }
           return out;
         });
 
@@ -134,6 +143,7 @@ for (const [vpName, width, height] of VIEWPORTS) {
         if (report.mains !== 1) fail(where, `${report.mains} <main> elements`);
         if (report.h1s !== 1) fail(where, `${report.h1s} <h1> elements`);
         if (report.counters.length) fail(where, `counter stalled — ${report.counters[0]}`);
+        if (report.stuck.length) fail(where, `cover part stuck mid-animation — ${report.stuck[0]}`);
         if (errors.length) fail(where, `console: ${errors[0].slice(0, 90)}`);
         await page.close();
       }

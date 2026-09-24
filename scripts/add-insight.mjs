@@ -30,7 +30,7 @@ import { fileURLToPath } from "node:url";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const STORE = path.join(root, "src/content/insights.json");
-const ART = ["imaging", "evidence", "world", "signal"];
+const ART = ["imaging", "evidence", "world", "signal", "survey", "binocular"];
 const SLUG = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const ISO = /^\d{4}-\d{2}-\d{2}$/;
 

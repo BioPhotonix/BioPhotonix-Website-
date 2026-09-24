@@ -6,8 +6,9 @@ import { useRevealed } from "./useRevealed";
 /**
  * Cover art for an article, drawn rather than photographed, so nothing on the
  * news pages can be mistaken for a patient image or a device that does not
- * yet exist. One motif per article kind; the four insight motifs (imaging,
- * evidence, world, signal) are drawn from the same 2px line and palette.
+ * yet exist. One motif per article kind; the six insight motifs (imaging,
+ * evidence, world, signal, survey, binocular) are drawn from the same 2px line
+ * and palette.
  *
  * Each draws itself once as the card arrives, and the part of the motif that
  * carries the point keeps moving afterwards: the ten wet-AMD figures, the
@@ -185,6 +186,105 @@ function Motif({ kind }: { kind: ArtKind }) {
             {...(d.hot ? { "data-art-pulse": true } : {})}
             style={{ animationDelay: `${0.2 + (i % 13) * 0.05 + Math.floor(i / 13) * 0.04}s` }}
           />
+        ))}
+      </>
+    );
+  }
+  if (kind === "survey") {
+    // A rating scale answered by many people: most answers gather at the
+    // satisfied end, a few sit at the other, and the few are the point, so
+    // they keep pulsing. Five columns of dots on the grid's own lines, a
+    // baseline, and the scale's five boxes beneath it. A picture of a survey,
+    // not the article's numbers.
+    const rows = [2, 1, 2, 7, 13];
+    const tone = ["#e0503a", "#e0503a", "rgba(232,241,243,0.5)", "#12a3ad", "#12a3ad"];
+    const fade = [1, 1, 1, 0.6, 1];
+    return (
+      <>
+        <rect width="400" height="240" fill="#080f12" />
+        {grid}
+        <line x1="96" y1="176" x2="304" y2="176" stroke="rgba(232,241,243,0.35)" strokeWidth="1.5" data-art-draw />
+        {rows.map((n, c) => {
+          const dots = Array.from({ length: n }, (_, r) =>
+            [-5, 5].map((dx) => (
+              <circle
+                key={`${r}${dx}`}
+                cx={120 + c * 40 + dx}
+                cy={166 - r * 10}
+                r="3"
+                fill={tone[c]}
+                opacity={fade[c]}
+                data-art-pop
+                style={{ animationDelay: `${0.25 + c * 0.12 + r * 0.04}s` }}
+              />
+            )),
+          );
+          return c < 2 ? <g key={c} data-art-pulse>{dots}</g> : <g key={c}>{dots}</g>;
+        })}
+        {rows.map((_, c) => (
+          <rect
+            key={`box${c}`}
+            x={115 + c * 40}
+            y="188"
+            width="10"
+            height="10"
+            rx="2"
+            fill={c === 4 ? "#12a3ad" : "none"}
+            stroke="rgba(232,241,243,0.5)"
+            strokeWidth="1.2"
+            data-art-pop
+            style={{ animationDelay: `${0.1 + c * 0.06}s` }}
+          />
+        ))}
+      </>
+    );
+  }
+  if (kind === "binocular") {
+    // The light reflex test for a squint: a torch held in front of both eyes
+    // puts a point of light on each cornea. In the straight eye it sits in the
+    // middle of the pupil; in the eye that has turned in it lands off-centre,
+    // and that is the point, so it keeps pulsing. A picture of the test, not
+    // of anyone's eyes.
+    const eyes = [
+      { x: 140, iris: 140, tone: "#e8f1f3" },
+      { x: 260, iris: 248, tone: "#e0503a" },
+    ];
+    const ray = (x: number) => {
+      // From the torch to the edge of the eye it lights, not into it.
+      const dx = x - 200, dy = 110, len = Math.hypot(dx, dy);
+      return { x2: (x - (dx / len) * 40).toFixed(1), y2: (160 - (dy / len) * 40).toFixed(1) };
+    };
+    return (
+      <>
+        <rect width="400" height="240" fill="#080f12" />
+        {grid}
+        <circle cx="200" cy="50" r="11" fill="none" stroke="rgba(232,241,243,0.35)" strokeWidth="1.2" data-art-draw />
+        <circle cx="200" cy="50" r="4" fill="#e8f1f3" data-art-pop />
+        {eyes.map((e, i) => (
+          <line key={`ray${i}`} x1="200" y1="50" {...ray(e.x)} stroke="rgba(232,241,243,0.35)" strokeWidth="1.5" strokeDasharray="4 5" />
+        ))}
+        {eyes.map((e, i) => (
+          <g key={e.x}>
+            <circle cx={e.x} cy="160" r="40" fill="none" stroke="rgba(232,241,243,0.3)" strokeWidth="1.5" data-art-draw style={{ animationDelay: `${i * 0.15}s` }} />
+            <circle cx={e.iris} cy="160" r="18" fill="rgba(18,163,173,0.14)" stroke="#12a3ad" strokeWidth="1.8" data-art-draw style={{ animationDelay: `${0.35 + i * 0.15}s` }} />
+            <g stroke="#12a3ad" strokeOpacity="0.45" strokeWidth="1" data-art-pop style={{ animationDelay: `${0.5 + i * 0.15}s` }}>
+              {Array.from({ length: 16 }, (_, k) => {
+                const a = (k * Math.PI) / 8;
+                return <line key={k} x1={(e.iris + Math.cos(a) * 10).toFixed(1)} y1={(160 + Math.sin(a) * 10).toFixed(1)} x2={(e.iris + Math.cos(a) * 15.5).toFixed(1)} y2={(160 + Math.sin(a) * 15.5).toFixed(1)} />;
+              })}
+            </g>
+            <circle cx={e.iris} cy="160" r="8" fill="#080f12" stroke="#12a3ad" strokeOpacity="0.6" strokeWidth="1" data-art-pop style={{ animationDelay: `${0.6 + i * 0.15}s` }} />
+            <circle
+              cx={e.x}
+              cy="160"
+              r="3.2"
+              fill={e.tone}
+              data-art-pop
+              {...(i === 1 ? { "data-art-pulse": true } : {})}
+              style={{ animationDelay: `${0.9 + i * 0.25}s` }}
+            />
+            {i === 1 && <circle cx={e.x} cy="160" r="7" fill="none" stroke="#e0503a" strokeOpacity="0.4" strokeWidth="1.2" data-art-pop data-art-pulse style={{ animationDelay: "1.3s" }} />}
+          </g>
         ))}
       </>
     );
