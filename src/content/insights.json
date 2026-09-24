@@ -1,5 +1,222 @@
 [
   {
+    "slug": "patient-satisfaction-with-opticians-uk",
+    "title": "Patient satisfaction with opticians: what could be better",
+    "date": "2026-09-24",
+    "readingMinutes": 4,
+    "excerpt": "Patient satisfaction with opticians rose to 89% in 2026. Value for money scored lowest, and younger and ethnic minority patients were less satisfied.",
+    "art": "world",
+    "series": "insight",
+    "topics": [
+      "patient experience",
+      "optical practice",
+      "national eye health week",
+      "referral"
+    ],
+    "sources": [
+      {
+        "title": "Public perceptions research 2026 (DJS Research for the General Optical Council)",
+        "publisher": "General Optical Council",
+        "url": "https://optical.org/resource/public-perceptions-research-2026.html",
+        "date": "2026-06-30"
+      },
+      {
+        "title": "A strain on sight: waiting for NHS specialist eye care",
+        "publisher": "Healthwatch England",
+        "url": "https://www.healthwatch.co.uk/report/2025-03-20/strain-sight-waiting-nhs-specialist-eye-care",
+        "date": "2025-03-20"
+      },
+      {
+        "title": "National Eye Health Week",
+        "publisher": "Vision Matters",
+        "url": "https://www.visionmatters.org.uk/",
+        "date": "2026-09-21"
+      }
+    ],
+    "figure": {
+      "blocks": [
+        {
+          "decimals": 0,
+          "items": [
+            {
+              "label": "The optometrist",
+              "value": 92
+            },
+            {
+              "label": "Care and compassion",
+              "value": 91
+            },
+            {
+              "label": "Wait for the appointment",
+              "value": 89
+            },
+            {
+              "label": "Involvement in decisions",
+              "value": 84
+            },
+            {
+              "emphasis": true,
+              "label": "Value for money",
+              "value": 76
+            }
+          ],
+          "kind": "bars",
+          "label": "Satisfied with each part of the last visit, 2026",
+          "unit": "%"
+        },
+        {
+          "decimals": 0,
+          "items": [
+            {
+              "emphasis": true,
+              "label": "16 to 34",
+              "value": 82
+            },
+            {
+              "label": "35 to 64",
+              "value": 91
+            },
+            {
+              "label": "65 and over",
+              "value": 96
+            }
+          ],
+          "kind": "bars",
+          "label": "Satisfied the optometrist gave enough time, by age",
+          "unit": "%"
+        },
+        {
+          "items": [
+            {
+              "label": "noticed their vision get worse while waiting",
+              "value": "70%"
+            },
+            {
+              "label": "knew who to contact for further information",
+              "value": "14%"
+            }
+          ],
+          "kind": "stats",
+          "label": "471 people waiting for NHS specialist eye care in England"
+        }
+      ],
+      "caption": "GOC survey: 1,676 UK adults who had a sight test in the last two years, online, February to March 2026. Healthwatch England: people waiting for specialist eye care, self-selecting, July to September 2024.",
+      "source": "General Optical Council, Public perceptions research 2026; Healthwatch England, A strain on sight (2025)",
+      "title": "What patients rated highest and lowest"
+    },
+    "seo": {
+      "keyword": "patient satisfaction with opticians",
+      "metaDescription": "Patient satisfaction with opticians is 89% in the GOC's 2026 survey of 2,014 UK adults. What scored lowest, and which patients were least satisfied.",
+      "metaTitle": "Patient satisfaction with opticians: the 2026 survey"
+    },
+    "keyPoints": [
+      "89% of UK adults who had a sight test in the last two years were satisfied with their overall experience, in the General Optical Council's 2026 survey of 2,014 people, up from 87% in 2025.",
+      "Value for money was the lowest score (76%), and 70% among 16 to 24 year olds.",
+      "Younger adults, patients from ethnic minority backgrounds and people with a vulnerability marker were less satisfied than average on almost every measure.",
+      "In a self-selecting Healthwatch England survey, 14% of 471 people waiting for specialist eye care knew who to contact for further information."
+    ],
+    "faq": [
+      {
+        "a": "In the General Optical Council's 2026 survey of 2,014 UK adults, 89% of the 1,676 who had a sight test in the last two years were satisfied with their overall experience, up from 87% in 2025. 92% were satisfied with the optometrist who carried out the test, and 91% felt they were treated with care and compassion.",
+        "q": "How satisfied are patients with opticians in the UK?"
+      },
+      {
+        "a": "Value for money scored lowest, at 76% satisfied, and 70% among 16 to 24 year olds. One in five people who bought eyewear said they had felt pressure to buy particular brands or types. Younger adults, people from ethnic minority backgrounds and people with a vulnerability marker such as a disability were less satisfied than average on almost every measure.",
+        "q": "What do patients say could be better at the opticians?"
+      },
+      {
+        "a": "Mostly not, in a small sample. Of the 52 people in the 2026 survey who were dissatisfied with their overall experience, 15% said they complained and 35% considered it but decided not to. The base is very small, so the figures are rough.",
+        "q": "Do people complain when they are unhappy with an optician?"
+      }
+    ],
+    "body": [
+      {
+        "text": "Patient satisfaction with opticians is high in the UK, and it rose this year. In the [General Optical Council's 2026 public perceptions survey](https://optical.org/resource/public-perceptions-research-2026.html) of 2,014 adults, 89% of the 1,676 people who had a sight test in the last two years were satisfied with their overall experience, up from 87% in 2025. The report also shows what people rated lowest and who was least satisfied.",
+        "type": "p"
+      },
+      {
+        "text": "It is [National Eye Health Week](https://www.visionmatters.org.uk/) (21 to 27 September), a good week to hear from the people who already come in.",
+        "type": "p"
+      },
+      {
+        "text": "What the survey did",
+        "type": "h2"
+      },
+      {
+        "text": "This wave was carried out online by DJS Research between 9 February and 2 March 2026, with 2,014 people aged 16 and over. The results are weighted to the UK population by age, gender and nation. The satisfaction questions went to the 1,676 people who had a sight test in the last two years, 83% of them at a high street practice and 15% in a hospital.",
+        "type": "p"
+      },
+      {
+        "text": "Patient satisfaction with opticians: what scored lowest",
+        "type": "h2"
+      },
+      {
+        "text": "The examination scores well. 92% were satisfied with the optometrist who carried out their sight test, 91% that they were treated with care and compassion, 89% with how long they waited for the appointment, and 84% with how involved they were in decisions about their care.",
+        "type": "p"
+      },
+      {
+        "text": "Value for money scored lowest, at 76%, and at 70% among 16 to 24 year olds. Of the people who bought glasses or contact lenses, 20% agreed they had felt pressure to buy particular brands or types, down from 24% in 2025, and 73% said the price they expected matched the price they paid. Buying eyewear is harder to read: 72% were satisfied, but that is out of everyone with a recent test, and only 74% of them bought anything. Just 4% said they were dissatisfied.",
+        "type": "p"
+      },
+      {
+        "text": "Who is least satisfied",
+        "type": "h2"
+      },
+      {
+        "text": "The report says the youngest adults, people from ethnic minority backgrounds and people with at least one vulnerability marker (a disability, a household income under £25,000, or struggling financially, among others) were less likely than average to be satisfied on almost every measure.",
+        "type": "p"
+      },
+      {
+        "text": "Age makes the biggest difference. The report uses different age bands for different questions: 16 to 24 for value for money, 16 to 34 for the rest. 82% of 16 to 34 year olds were satisfied that the optometrist gave them enough time to deal with their needs properly, against 91% of 35 to 64 year olds and 96% of people aged 65 and over, and overall satisfaction was 83% in the youngest group and 95% in the oldest. Part of that may be where they were seen: 30% of 16 to 34 year olds had their last test in a hospital, not a practice. For patients from ethnic minority backgrounds the widest gap was on the wait for an appointment, 80% satisfied against 92% of white patients, with 84% against 91% on the time they were given.",
+        "type": "p"
+      },
+      {
+        "text": "The complaints that are not made",
+        "type": "h2"
+      },
+      {
+        "text": "Only 52 people in the survey were dissatisfied with their overall experience. Of those, 15% said they complained, 35% considered it and decided not to, and 46% did not consider it. The researchers flag this as a very small base, so the proportions are rough. It suggests a complaints file may miss much of what the least satisfied patients think.",
+        "type": "p"
+      },
+      {
+        "text": "After the referral",
+        "type": "h2"
+      },
+      {
+        "text": "The GOC survey does not ask about referral. A separate, self-selecting survey by [Healthwatch England](https://www.healthwatch.co.uk/report/2025-03-20/strain-sight-waiting-nhs-specialist-eye-care) does, of people waiting for, or recently treated in, NHS specialist eye care in England between July and September 2024. Of the 471 people still waiting, 70% had noticed their vision get worse during the wait, and 14% said they knew who to contact for further information. 85% said they would trust an optician to refer them directly without seeing a GP first. Denmark has tried [a pathway where consultants review practice scans remotely](/news/denmark-oct-teleophthalmology-referrals).",
+        "type": "p"
+      },
+      {
+        "text": "Why it matters in practice",
+        "type": "h2"
+      },
+      {
+        "items": [
+          "Say what the sight test costs before the appointment. Those who knew beforehand rated value for money a little higher (78%, against 76% overall), which is an association, not proof, but it costs nothing.",
+          "Look at who waits longest for an appointment. The widest gap for patients from ethnic minority backgrounds was on the wait itself.",
+          "Watch the time given to younger patients, and check the explanation landed. They were among the less satisfied on both.",
+          "Ask. In a small sample, most patients who were dissatisfied did not complain, so a question at collection may pick up what the complaints file misses.",
+          "When you refer, tell the patient what happens next and who to contact. In the Healthwatch survey, 14% of those waiting knew who to contact."
+        ],
+        "type": "ul"
+      },
+      {
+        "text": "The caveats",
+        "type": "h2"
+      },
+      {
+        "items": [
+          "Both are surveys of what people report, not measures of clinical care.",
+          "The GOC survey was run online through a consumer panel, and its questionnaire was redesigned this year.",
+          "The complaints figures rest on 52 people.",
+          "The Healthwatch survey was self-selecting and covered England only, so it describes the people who chose to answer.",
+          "The subgroup differences are the ones the report calls statistically significant; it does not rank every group on every measure."
+        ],
+        "type": "ul"
+      }
+    ]
+  },
+  {
     "slug": "denmark-oct-teleophthalmology-referrals",
     "title": "Denmark put OCT scans in 79 optician stores. Referrals tripled.",
     "date": "2026-09-21",
