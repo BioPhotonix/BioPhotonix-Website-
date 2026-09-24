@@ -121,7 +121,7 @@ function Bars({ b, state }: { b: Extract<FigureBlock, { kind: "bars" }>; state: 
       <ul className="mt-3 flex flex-col gap-2.5">
         {b.items.map((it, i) => (
           <li key={it.label} className="grid grid-cols-[minmax(0,38%)_1fr] items-center gap-3" title={`${it.label}: ${fmt(it.value, dec)}${unit}`}>
-            <span className="truncate text-sm text-fog-dim">{it.label}</span>
+            <span className="text-sm leading-snug text-fog-dim">{it.label}</span>
             <span className="flex items-center gap-2">
               <span className="block h-[18px] overflow-hidden rounded-r-[4px]" style={{ width: `${Math.max(2, (it.value / max) * 100)}%` }}>
                 <span className={`block h-full ${anyEmphasis && !it.emphasis ? "bg-ink-500" : "bg-teal-400"}`} style={grow(state, 100 + i * 120)} />
@@ -147,7 +147,7 @@ function Change({ b, state }: { b: Extract<FigureBlock, { kind: "change" }>; sta
           const sign = it.change > 0 ? "+" : "";
           return (
             <li key={it.label} className="grid grid-cols-[minmax(0,38%)_1fr] items-center gap-3" title={`${it.label}: ${sign}${fmt(it.change)}%`}>
-              <span className="truncate text-sm text-fog-dim">{it.label}</span>
+              <span className="text-sm leading-snug text-fog-dim">{it.label}</span>
               <span className={`relative flex h-[18px] items-center ${hasNeg ? "pl-[50%]" : ""}`}>
                 {hasNeg && <span aria-hidden="true" className="absolute left-1/2 top-0 h-full w-px bg-line-strong" />}
                 {it.change === 0 ? (
