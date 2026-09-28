@@ -86,14 +86,17 @@ function BeforeAfter({ b, state }: { b: Extract<FigureBlock, { kind: "before-aft
   const max = Math.max(b.before.value, b.after.value, 1e-9);
   const rel = b.before.value !== 0 ? (b.after.value - b.before.value) / Math.abs(b.before.value) : null;
   const delta = rel === null ? null : rel >= 1 ? `×${fmt(b.after.value / b.before.value, 1)}` : `${rel >= 0 ? "+" : ""}${fmt(rel * 100, 0)}%`;
+  // Sized by the block's own width, not the screen's: in a three-block figure a
+  // desktop column is narrower than a phone, and screen-sized numbers were clipped.
+  // Under 15rem the change moves below the two numbers so each gets half the width.
   return (
-    <div>
+    <div className="@container">
       <BlockLabel text={b.label} />
-      <div className="mt-3 grid grid-cols-[1fr_auto_1fr] items-end gap-3">
+      <div className="mt-3 grid grid-cols-2 items-end gap-3 @min-[15rem]:grid-cols-[1fr_auto_1fr]">
         {[b.before, b.after].map((p, i) => (
           <div key={i} className={i === 1 ? "text-right" : ""}>
             <p className="text-sm text-fog-dim">{p.label}</p>
-            <p className="mt-1 font-display text-3xl font-semibold leading-none text-fog md:text-4xl">
+            <p className="mt-1 font-display text-2xl font-semibold leading-none text-fog @2xs:text-3xl @sm:text-4xl">
               <Num value={p.value} unit={unit} decimals={dec} state={state} delayMs={i * 250} />
             </p>
             <div className={`mt-3 h-[6px] overflow-hidden rounded-full bg-ink-600 ${i === 1 ? "ml-auto" : ""}`} style={{ width: `${Math.max(8, (p.value / max) * 100)}%` }}>
@@ -101,8 +104,8 @@ function BeforeAfter({ b, state }: { b: Extract<FigureBlock, { kind: "before-aft
             </div>
           </div>
         ))}
-        <div className="row-start-1 col-start-2 self-center pb-6 text-center" style={fade(state, 700)}>
-          <span aria-hidden="true" className="block text-2xl text-teal-400">&rarr;</span>
+        <div className="col-span-2 row-start-2 text-center @min-[15rem]:col-span-1 @min-[15rem]:col-start-2 @min-[15rem]:row-start-1 @min-[15rem]:self-center @min-[15rem]:pb-6" style={fade(state, 700)}>
+          <span aria-hidden="true" className="mr-2 inline-block text-2xl text-teal-400 @min-[15rem]:mr-0 @min-[15rem]:block">&rarr;</span>
           {delta && <span className="figure mt-1 inline-block rounded-full border border-line px-2 py-0.5 text-xs text-fog">{delta}</span>}
         </div>
       </div>

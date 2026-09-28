@@ -1,5 +1,476 @@
 [
   {
+    "slug": "myopia-atropine-orthok-lenses",
+    "title": "The UK's licensed atropine dose ranks 16th of 24, and stops cleanest",
+    "date": "2026-09-28",
+    "readingMinutes": 4,
+    "excerpt": "A 95-trial analysis of atropine for myopia control ranks 0.01% 16th of 24 on refraction, and finds no rebound above its threshold once the drop stops.",
+    "art": "evidence",
+    "series": "insight",
+    "topics": [
+      "myopia",
+      "atropine",
+      "myopia control",
+      "orthokeratology",
+      "children"
+    ],
+    "sources": [
+      {
+        "title": "Low-Dose Atropine and Other Interventions for Pediatric Myopia: A Systematic Review and Bayesian Network Meta-analysis of Efficacy and Post-treatment Outcomes",
+        "publisher": "Ophthalmology and Therapy",
+        "url": "https://doi.org/10.1007/s40123-026-01478-y",
+        "date": "2026-09-07"
+      },
+      {
+        "title": "Two-Year Efficacy of Cylindrical Annular Refractive Elements Spectacle Lenses for Myopia Control in European Children",
+        "publisher": "Ophthalmology Science",
+        "url": "https://doi.org/10.1016/j.xops.2026.101309",
+        "date": "2026-07-01"
+      },
+      {
+        "title": "Effects of orthokeratology versus cylindrical annular refractive elements spectacle lenses on myopia control and choroidal thickness in myopic children: A 1-year prospective clinical trial",
+        "publisher": "Contact Lens and Anterior Eye",
+        "url": "https://doi.org/10.1016/j.clae.2026.102833",
+        "date": "2026-09-10"
+      },
+      {
+        "title": "MHRA approves first licensed low-dose atropine treatment for childhood myopia in the UK",
+        "publisher": "College of Optometrists",
+        "url": "https://www.college-optometrists.org/news/2025/november/mhra-licensed-low-dose-atropine-myopia",
+        "date": "2025-11-10"
+      },
+      {
+        "title": "Low-dose atropine eye drops for treating myopia in people 3 to 14 years [ID6517]",
+        "publisher": "NICE",
+        "url": "https://www.nice.org.uk/guidance/indevelopment/gid-ta11669",
+        "date": "2026-08-11"
+      }
+    ],
+    "figure": {
+      "blocks": [
+        {
+          "decimals": 2,
+          "items": [
+            {
+              "label": "Multifocal contact lenses",
+              "value": 0.01
+            },
+            {
+              "emphasis": true,
+              "label": "Low-dose atropine",
+              "value": 0.06
+            },
+            {
+              "label": "Red light therapy",
+              "value": 0.14
+            },
+            {
+              "label": "Moderate-dose atropine",
+              "value": 0.19
+            },
+            {
+              "label": "High-dose atropine",
+              "value": 0.2
+            }
+          ],
+          "kind": "bars",
+          "label": "Extra axial growth in the 12 months after stopping",
+          "unit": "mm"
+        },
+        {
+          "decimals": 2,
+          "items": [
+            {
+              "label": "Single-vision lenses",
+              "value": 0.43
+            },
+            {
+              "emphasis": true,
+              "label": "CARE myopia control lenses",
+              "value": 0.21
+            }
+          ],
+          "kind": "bars",
+          "label": "Axial elongation over 24 months",
+          "unit": "mm"
+        },
+        {
+          "items": [
+            {
+              "label": "0.025% atropine",
+              "value": "10th of 24"
+            },
+            {
+              "label": "0.01% atropine, the dose licensed in the UK",
+              "value": "16th of 24"
+            },
+            {
+              "label": "trials with data after treatment stopped",
+              "value": "8 of 117"
+            }
+          ],
+          "kind": "stats",
+          "label": "Refraction ranking at year 1, and the rebound evidence"
+        }
+      ],
+      "caption": "Post-cessation values are modelled differences in axial elongation against untreated control in the 12 months after stopping, from 8 trials in children under 18. Lens values are 24-month elongation in 208 children in Spain and Portugal.",
+      "source": "Jovanović et al., Ophthalmology and Therapy, 7 September 2026; Alvarez-Peregrina et al., Ophthalmology Science, 1 July 2026",
+      "title": "After treatment stops, and what two years of lens wear did"
+    },
+    "seo": {
+      "keyword": "atropine for myopia control",
+      "metaDescription": "A 95-trial network meta-analysis of atropine for myopia control ranks 0.01% 16th of 24, and measures the rebound 12 months after each treatment stops.",
+      "metaTitle": "Atropine for myopia control: what stopping costs"
+    },
+    "keyPoints": [
+      "A Bayesian network meta-analysis of 95 randomised trials, funded by Santen, ranks childhood myopia treatments on what happens 12 months after stopping, which the authors say earlier analyses did not.",
+      "Stopping high-dose atropine cost −0.71 D against untreated controls. Stopping low-dose atropine cost −0.10 D, with the interval crossing zero. Red light, top at one year, rebounded 0.14 mm.",
+      "In the same paper's dose-response model, 0.01% atropine, the dose the MHRA licensed as Ryjunea, ranked 16th of 24 on refraction at one year, behind 0.025% at 10th.",
+      "NICE's appraisal of low-dose atropine stalled on 11 August 2026 when Santen asked for more time. The expected publication date is TBC, so the drop stays private for now."
+    ],
+    "faq": [
+      {
+        "a": "In the UK the licensed product, Ryjunea, is atropine 0.1 mg/ml, which is 0.01%, licensed for children of 3 to 14 with myopia between −0.50 DS and −6.00 DS progressing at 0.50 DS a year or more. The September network meta-analysis supports concentrations from 0.01% to 0.05% as the band with sustained two-year benefit and minimal rebound, and in its dose-response model 0.025% ranked 10th of 24 against 16th for 0.01% on refraction at one year. No other strength carries that licence, so a stronger concentration is prescribed outside it.",
+        "q": "What concentration of atropine is used for myopia control?"
+      },
+      {
+        "a": "It depends on the dose. Twelve months after stopping high-dose atropine, refraction had worsened by −0.71 D against untreated controls, and axial length by 0.20 mm. After low-dose atropine the difference was −0.10 D and 0.06 mm, with both credible intervals crossing zero, which the authors read as no rebound. In the paper's dose-response model the gradient ran through the concentrations: −0.20 D a year for 0.05%, −0.09 D for 0.025% and none for 0.01%.",
+        "q": "What happens when you stop atropine for myopia control?"
+      },
+      {
+        "a": "Not yet. Ryjunea is a prescription-only medicine available privately, and the College of Optometrists says it may be prescribed by independent prescribers with the relevant scope of practice, including IP optometrists and ophthalmologists competent in paediatric myopia management. NICE is appraising it for England, Wales and Northern Ireland, but that appraisal stalled on 11 August 2026 when Santen asked for more time to answer the draft guidance, and the expected publication date is now TBC. Scotland goes through the Scottish Medicines Consortium separately.",
+        "q": "Is low-dose atropine available on the NHS?"
+      },
+      {
+        "a": "The evidence does not settle it. A one-year trial of 504 children in Chengdu found ortho-k and the 7 mm CARE design both slowed axial growth more than the wider 9 mm design in moderate myopes, 0.16 mm and 0.19 mm against 0.25 mm, while nothing separated the three in low myopes. That trial was not randomised, was run at one centre, and only its abstract could be read. The network meta-analysis puts orthokeratology and multifocal lenses in a similar band to low-dose atropine, and warns that corneal reshaping confounds refraction, so axial length is the more informative measure for anything that reshapes the cornea.",
+        "q": "Is orthokeratology better than myopia control spectacle lenses?"
+      }
+    ],
+    "body": [
+      {
+        "text": "Rank 23 childhood myopia treatments and an untreated control on a year's refraction change, and the dose licensed in the UK comes 16th. [The analysis](https://doi.org/10.1007/s40123-026-01478-y), published in Ophthalmology and Therapy on 7 September, pooled 95 randomised trials of atropine for myopia control and its optical and light-based rivals. Earlier syntheses ranked on treatment alone, the authors say. This one ranks on what happens 12 months after it stops too, and the order turns over.",
+        "type": "p"
+      },
+      {
+        "text": "That matters here. Ryjunea, atropine 0.1 mg/ml, is the first low-dose atropine the MHRA has licensed: children of 3 to 14, myopia between −0.50 DS and −6.00 DS, progressing at 0.50 DS a year or more. That is 0.01%, the bottom of the band this paper supports, and it is private-only: the NICE appraisal stalled on 11 August 2026 when Santen asked for more time on the draft guidance.",
+        "type": "p"
+      },
+      {
+        "text": "What the study did",
+        "type": "h2"
+      },
+      {
+        "text": "Jovanović and colleagues found 117 randomised trials of 24 interventions in children under 18 with refraction worse than −0.50 D. Ninety-five went into the synthesis: 69 in the one-year refraction network, 80 in the axial-length network, eight in the post-cessation ones. Seventy-eight of the 117, 68 per cent, were run in East and Southeast Asia; eight were at low risk of bias throughout.",
+        "type": "p"
+      },
+      {
+        "text": "It was funded by Santen, whose drop is the licensed one: two of the seven authors are Santen employees, five IQVIA staff under contract.",
+        "type": "p"
+      },
+      {
+        "text": "What was found on atropine for myopia control",
+        "type": "h2"
+      },
+      {
+        "text": "Rebound was extra progression in the 12 months after stopping, against untreated controls; over 0.25 D or 0.10 mm counted as meaningful. Stopping high-dose atropine (0.5% and above) cost −0.71 D (−1.13 to −0.31) and 0.20 mm of axial length, moderate-dose 0.19 mm. Low-dose atropine cost −0.10 D (−0.35 to 0.14) and 0.06 mm, multifocal soft lenses 0.01 mm, the intervals crossing zero.",
+        "type": "p"
+      },
+      {
+        "text": "After LDA discontinuation, progression was statistically and clinically indistinguishable from control for both SER and AL, indicating no rebound on either SER or AL.",
+        "type": "quote"
+      },
+      {
+        "text": "In the dose-response model, which assumes higher doses do at least as much as lower ones, the gradient holds: −0.20 D a year for 0.05%, −0.09 D for 0.025%, none for 0.01%. And not only atropine: repeated low-intensity red light, the most effective on axial length at one year, rebounded 0.14 mm (0.02 to 0.26) once stopped, on one trial at high risk of bias and with no evidence of effect beyond year 1.",
+        "type": "p"
+      },
+      {
+        "text": "Effect during treatment runs the other way. In that same model, atropine split by concentration, 0.025% ranked 10th of the 24 and 0.01% 16th on refraction at one year, 0.025% beating it by 0.1 D (0.02 to 0.22). The licensed dose is the gentlest of the band, not the strongest, and the licence covers that strength alone: anything above sits outside it.",
+        "type": "p"
+      },
+      {
+        "text": "What the spectacle lens trials add",
+        "type": "h2"
+      },
+      {
+        "text": "[A two-year randomised trial in Ophthalmology Science](https://doi.org/10.1016/j.xops.2026.101309), Zeiss-funded, followed 234 children aged 6 to 13 in Spain and Portugal, 208 to 24 months. Axial elongation was 0.21 mm in the CARE lens against 0.43 mm in single vision, and the split matters: 0.14 mm of benefit in year one, 0.08 mm in year two.",
+        "type": "p"
+      },
+      {
+        "text": "A second, non-randomised trial of 504 children in Chengdu compared orthokeratology with two designs of one lens. In moderate myopes, ortho-k and the 7 mm design gave 0.16 mm and 0.19 mm of axial growth against 0.25 mm for the 9 mm design; in low myopes nothing separated them. Only the abstract could be read, so nothing beyond it is claimed.",
+        "type": "p"
+      },
+      {
+        "text": "Why it matters in practice",
+        "type": "h2"
+      },
+      {
+        "text": "Choose the exit at the same appointment as the entry. If a family starts something that rebounds, the stopping plan belongs in the consent conversation and the notes, not at 16. On 0.01% the honest framing is the smallest effect of the low doses and the cleanest stop.",
+        "type": "p"
+      },
+      {
+        "text": "Then measure axial length. The authors warn that corneal reshaping confounds refraction, and that axial length is the more informative measure for a cornea-modifying treatment. Which says to me that a practice fitting ortho-k without a biometer cannot audit its outcomes: the same case for equipment that [Denmark's high-street OCT data](/news/denmark-oct-teleophthalmology-referrals) made for imaging.",
+        "type": "p"
+      },
+      {
+        "text": "And say what is not known. Combining 0.01% atropine with orthokeratology was among the three most effective at one year and beat low-dose atropine alone over two years, with no post-cessation data. The College of Optometrists says combined therapy \"is based on a limited number of trials with a low level of certainty\".",
+        "type": "p"
+      },
+      {
+        "text": "The caveats",
+        "type": "h2"
+      },
+      {
+        "items": [
+          "Funded by Santen, whose 0.01% drop is the licensed UK product. It calls its results indirect comparisons resting on modelling assumptions, not prescribing guidance.",
+          "The rebound networks rest on eight trials, more than one only for low-dose and high-dose atropine; the red light and contact lens figures on one each.",
+          "Confidence in the one-year refraction estimates was mostly low or very low. Chinese regional databases were not searched, safety not pooled, cost out of scope.",
+          "The lens trial lost 14 children from the single-vision arm against 4 from the lens arm in year two. The ortho-k comparison was non-randomised, single-centre and abstract-only."
+        ],
+        "type": "ul"
+      }
+    ]
+  },
+  {
+    "slug": "orthoptist-vs-optometrist-squint",
+    "title": "Orthoptist vs optometrist: a child's squint, and how fast to refer",
+    "date": "2026-09-28",
+    "readingMinutes": 4,
+    "excerpt": "In eight Scottish health boards, squint found at screening in children aged 3.5 to 5.5 rose from 1.42% to 2.19%. Who should see it, and how fast.",
+    "art": "binocular",
+    "series": "insight",
+    "topics": [
+      "strabismus",
+      "orthoptics",
+      "vision screening",
+      "referral",
+      "children"
+    ],
+    "sources": [
+      {
+        "title": "Binocular Vision Anomalies in Scotland at Age 3.5–5.5 Years: An Epidemiological Study",
+        "publisher": "Ophthalmic and Physiological Optics",
+        "url": "https://doi.org/10.1007/s44402-026-00042-2",
+        "date": "2026-03-30"
+      },
+      {
+        "title": "Suspected neurological conditions: recognition and referral (NG127). Recommendations for children aged under 16",
+        "publisher": "NICE",
+        "url": "https://www.nice.org.uk/guidance/ng127/chapter/recommendations-for-children-aged-under-16",
+        "date": "2019-05-01"
+      },
+      {
+        "title": "Annex 4 Urgency of referrals table (Guidance for Professional Practice)",
+        "publisher": "College of Optometrists",
+        "url": "https://www.college-optometrists.org/clinical-guidance/guidance/guidance-annexes/annex-4-urgency-of-referrals-table"
+      },
+      {
+        "title": "The Role of Orthoptists in Refraction",
+        "publisher": "British and Irish Orthoptic Journal",
+        "url": "https://doi.org/10.22599/bioj.384",
+        "date": "2025-02-14"
+      },
+      {
+        "title": "Assessment of optometrists' referral accuracy and contributing factors: A review",
+        "publisher": "Ophthalmic and Physiological Optics",
+        "url": "https://doi.org/10.1111/opo.13183",
+        "date": "2023-07-03"
+      },
+      {
+        "title": "Squint",
+        "publisher": "NHS",
+        "url": "https://www.nhs.uk/conditions/squint/",
+        "date": "2023-05-02"
+      }
+    ],
+    "figure": {
+      "blocks": [
+        {
+          "decimals": 2,
+          "items": [
+            {
+              "label": "2013–14",
+              "value": 3.02
+            },
+            {
+              "label": "2014–15",
+              "value": 3.78
+            },
+            {
+              "label": "2015–16",
+              "value": 3.83
+            },
+            {
+              "label": "2020–21",
+              "value": 4.87
+            },
+            {
+              "label": "2021–22",
+              "value": 4.89
+            }
+          ],
+          "kind": "bars",
+          "label": "Binocular vision anomalies (study definition), by year",
+          "unit": "%"
+        },
+        {
+          "decimals": 2,
+          "items": [
+            {
+              "label": "Squint, 2013–14",
+              "value": 1.42
+            },
+            {
+              "emphasis": true,
+              "label": "Squint, 2021–22",
+              "value": 2.19
+            },
+            {
+              "label": "Esophoria, 2013–14",
+              "value": 1.06
+            },
+            {
+              "label": "Esophoria, 2021–22",
+              "value": 2.22
+            }
+          ],
+          "kind": "bars",
+          "label": "What rose: squint and esophoria",
+          "unit": "%"
+        },
+        {
+          "after": {
+            "label": "2021–22",
+            "value": 1.44
+          },
+          "before": {
+            "label": "2013–14",
+            "value": 0.81
+          },
+          "decimals": 2,
+          "kind": "before-after",
+          "label": "Anomaly but would pass a vision-only screen, % screened",
+          "unit": "%"
+        }
+      ],
+      "caption": "Orthoptist-led See4School screening of children aged 3.5 to 5.5 in the eight health boards that returned data every year, 35,643 to 42,431 children a year. No data for 2016 to 2020.",
+      "source": "Evans et al., Ophthalmic and Physiological Optics, 2026",
+      "title": "Squint and binocular vision anomalies at screening in Scotland"
+    },
+    "seo": {
+      "keyword": "orthoptist vs optometrist",
+      "metaDescription": "Orthoptist vs optometrist for a child's squint: Scottish screening found squint rising to 2.19% at age 3.5 to 5.5. What each does, and how fast to refer.",
+      "metaTitle": "Orthoptist vs optometrist and a child's squint"
+    },
+    "keyPoints": [
+      "In Scotland's orthoptist-led screening of children aged 3.5 to 5.5, squint rose from 1.42% in 2013–14 to 2.19% in 2021–22, mostly intermittent exotropia.",
+      "Binocular vision anomalies as the study defined them rose from 3.02% to 4.89%, with esophoria doubling. 512 children in 2021–22 would have passed a vision-only screen.",
+      "NICE: a new squint with a lost red reflex, or with ataxia, vomiting or headache, is referred immediately. The College treats a new or sudden squint as a 24-hour emergency.",
+      "Some orthoptists refract children in hospital clinics, but only optometrists and registered medical practitioners can issue a UK spectacle prescription."
+    ],
+    "faq": [
+      {
+        "a": "Orthoptists specialise in eye movements and binocular vision, work mainly in hospital eye departments and deliver children's vision screening where eye care professionals do it, as in Scotland. Optometrists work mainly in community practice and carry out sight tests. Some orthoptists refract, mostly young children in hospital clinics, but under the Opticians Act only optometrists and registered medical practitioners can issue a spectacle prescription, so an ophthalmologist or optometrist signs it.",
+        "q": "What is the difference between an orthoptist and an optometrist?"
+      },
+      {
+        "a": "NICE's guideline sets the route. A new squint with loss of the red reflex goes to ophthalmology immediately, and a new squint with ataxia, vomiting or headache to acute paediatric services immediately. A paralytic squint is referred urgently for neurological assessment, and a non-paralytic squint to ophthalmology services. The College of Optometrists treats acute onset squint, new, sudden or worse, as an emergency within 24 hours.",
+        "q": "When should a child with a squint be referred?"
+      },
+      {
+        "a": "In Scotland's orthoptist-led screening of children aged 3.5 to 5.5, strabismus, intermittent included, was found in 2.00% in 2020–21 and 2.19% in 2021–22. The authors note this is close to the Royal College of Ophthalmologists' figure of 2.1% for children, and that their sample was mainly Caucasian. These are screening results from eight health boards, not diagnoses.",
+        "q": "How common is squint in children in the UK?"
+      },
+      {
+        "a": "Not in the UK. Orthoptists are trained to refract and some do, mostly young children by cycloplegic retinoscopy in hospital clinics, but the Opticians Act allows only optometrists and registered medical practitioners to issue a spectacle prescription, so an ophthalmologist or optometrist signs it. In a 2025 study for the General Optical Council, focus groups of 16 eye care professionals and students were open to changing that in hospitals, with training and consultant supervision.",
+        "q": "Can an orthoptist prescribe glasses?"
+      }
+    ],
+    "body": [
+      {
+        "text": "In Scotland, orthoptists screen the vision of children aged 3.5 to 5.5, and the screening looks for more than blur. [A study in Ophthalmic and Physiological Optics](https://doi.org/10.1007/s44402-026-00042-2), published online in March, analysed five years of that screening from eight health boards. Squint, intermittent included, was found in 1.42% of children screened in 2013–14 and 2.19% in 2021–22, and binocular vision anomalies as the study defined them rose from 3.02% to 4.89%.",
+        "type": "p"
+      },
+      {
+        "text": "For a UK optometrist that turns orthoptist vs optometrist into a practical question. A child with a turn in the eye can reach either profession first, and the referral rules decide where the child goes next and how fast.",
+        "type": "p"
+      },
+      {
+        "text": "What the study did",
+        "type": "h2"
+      },
+      {
+        "text": "Since 2013, See4School has invited every child in Scotland registered with a GP, and not already under the hospital eye service, to screening by an orthoptist. Evans and colleagues used the eight health boards that returned data every year, which cover over 85% of Scotland's population, for 2013–14 to 2015–16 and 2020–21 to 2021–22: between 35,643 and 42,431 children a year. Each child had a cover test at distance and near and an eye movement check. Its binocular vision anomalies include strabismus, esophoria, some exophoria and eye movement problems. These are screening results, not diagnoses.",
+        "type": "p"
+      },
+      {
+        "text": "What was found",
+        "type": "h2"
+      },
+      {
+        "text": "It rose every year studied, 3.02%, 3.78%, 3.83%, 4.87% and 4.89%, but most of the rise fell across the four years with no data. Two things drove it. Squint rose from 1.42% to 2.19%, mostly intermittent exotropia, which more than doubled from 0.43% to 0.98%, while esotropia stayed near 1% (0.88% in 2013–14, 1.05% in 2021–22). And esophoria doubled, from 1.06% to 2.22%.",
+        "type": "p"
+      },
+      {
+        "text": "The authors suggest rising myopia, already reported from the same programme, as the reason exotropia is increasing.",
+        "type": "p"
+      },
+      {
+        "text": "In 2013–14, 342 children had a binocular vision anomaly and presenting vision good enough to pass a letter-chart screen, and 512 did in 2021–22: between 23.2% and 32.7% of the anomalies found each year.",
+        "type": "p"
+      },
+      {
+        "text": "Orthoptist vs optometrist: who does what",
+        "type": "h2"
+      },
+      {
+        "text": "Orthoptists specialise in eye movements and binocular vision, work mainly in hospital eye departments alongside ophthalmologists, and deliver children's vision screening where eye care professionals do it, as across Scotland. Some refract as well. [A 2025 study for the General Optical Council](https://doi.org/10.22599/bioj.384), two focus groups of 16 eye care professionals and students, found some orthoptists already refracting young children in hospital clinics, mostly by cycloplegic retinoscopy. The Opticians Act lets only optometrists and registered medical practitioners issue a spectacle prescription, so an ophthalmologist or optometrist signs it.",
+        "type": "p"
+      },
+      {
+        "text": "Optometrists see children in community practice, where the cover test belongs in every child's sight test. The evidence on their referrals is thin but encouraging. In [a 2023 review of optometrists' referral accuracy](https://doi.org/10.1111/opo.13183), the one UK study of children's binocular vision referrals found that 88.9% of 45 optometrist referrals matched the hospital's diagnosis in full or in part, against 65% of GP referrals. [Earlier pieces on referral from community practice](/news) cover the adult side.",
+        "type": "p"
+      },
+      {
+        "text": "When a squint needs referring, and how fast",
+        "type": "h2"
+      },
+      {
+        "text": "[NICE's guideline on suspected neurological conditions](https://www.nice.org.uk/guidance/ng127/chapter/recommendations-for-children-aged-under-16) sets four rules for children. A new squint with loss of the red reflex in either eye goes to ophthalmology immediately. A new squint with ataxia, vomiting or headache goes to acute paediatric services immediately. A paralytic squint is referred urgently for neurological assessment, even without other signs of raised intracranial pressure. A non-paralytic squint is referred to ophthalmology services.",
+        "type": "p"
+      },
+      {
+        "text": "[The College of Optometrists' urgency table](https://www.college-optometrists.org/clinical-guidance/guidance/guidance-annexes/annex-4-urgency-of-referrals-table) puts acute onset squint or nerve palsy, new, sudden or worse, in its emergency column, within 24 hours, so a new paralytic squint falls under both. NICE gives no timescale for a non-paralytic squint without those signs, and in my view a long-standing one found at a routine test can go as a routine referral, with the findings the orthoptist will need.",
+        "type": "p"
+      },
+      {
+        "text": "Why it matters in practice",
+        "type": "h2"
+      },
+      {
+        "items": [
+          "Cover test every child at distance and near. In the Scottish data, up to a third of the binocular anomalies came with vision good enough to pass a letter chart.",
+          "Intermittent exotropia more than doubled in the Scottish data, and because it comes and goes, ask the parents when the eye drifts and whether they have a photograph of it.",
+          "Onset decides the speed: whether the squint is new, sudden or worse, whether it is paralytic, the red reflex, and headache, vomiting or unsteadiness.",
+          "Write the letter the orthoptist needs: direction, constant or intermittent, distance and near, onset, visual acuity, the refraction and whether it was cycloplegic, and the red reflex."
+        ],
+        "type": "ul"
+      },
+      {
+        "text": "The caveats",
+        "type": "h2"
+      },
+      {
+        "items": [
+          "These are screening records, not diagnoses, and the study had no data on false negatives.",
+          "Scotland only, eight of 15 health boards and a mainly Caucasian sample, with no data for 2016 to 2020. Fewer eligible children attended after the pandemic, and screening in 2020–21 ran late.",
+          "The study had funding support from Hoya, and two authors have received research and consultancy funding from Hoya Vision Care.",
+          "The referral accuracy figure is one UK study of 45 referrals, and the refraction findings come from two focus groups of 16 eye care professionals and students."
+        ],
+        "type": "ul"
+      }
+    ]
+  },
+  {
     "slug": "patient-satisfaction-with-opticians-uk",
     "title": "Patient satisfaction with opticians: what could be better",
     "date": "2026-09-24",
