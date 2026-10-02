@@ -155,7 +155,7 @@ export default async function NewsPost({ params }: Params) {
           ) : (
             <Reveal delay={0.08}>
               <div className="aspect-[5/2] overflow-hidden rounded-2xl border border-line">
-                <PostArt kind={post.art} />
+                <PostArt kind={post.art} cover={post.cover} />
               </div>
             </Reveal>
           )}
@@ -283,7 +283,7 @@ export default async function NewsPost({ params }: Params) {
                   <Link href={`/news/${p.slug}`} className="group block h-full">
                     <TechCard className="flex h-full gap-5 p-5">
                       <div className="aspect-[5/3] w-32 shrink-0 overflow-hidden rounded-lg border border-line">
-                        <PostArt kind={p.art} />
+                        <PostArt kind={p.art} cover={p.cover} />
                       </div>
                       <div>
                         <h3 className="font-display text-lg font-semibold leading-snug text-fog">{p.title}</h3>

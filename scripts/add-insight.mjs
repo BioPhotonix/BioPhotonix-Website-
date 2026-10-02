@@ -15,8 +15,12 @@
  *
  * The file is one article in the shape `src/content/insights.ts` accepts:
  *
- *   { "slug", "title", "date", "excerpt", "art", "body": [blocks],
+ *   { "slug", "title", "date", "excerpt", "cover" (or "art"), "body": [blocks],
  *     "sources": [{ "title", "publisher", "url", "date"? }], "topics": [] }
+ *
+ * `cover` is the article's own drawing, checked by src/content/cover-rules.mjs;
+ * `art`, one of the six fixed designs, is for the insights that had one before
+ * every design was used. Either way it must be no other insight's cover.
  *
  * `series` is set to "insight" and `readingMinutes` is worked out from the
  * body if either is missing. The rules here mirror `parseInsight` in
@@ -27,6 +31,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { coverProblems } from "../src/content/cover-rules.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const STORE = path.join(root, "src/content/insights.json");
@@ -69,7 +74,11 @@ str(input.title, "title", 120);
 date(input.date, "date");
 if (input.updated !== undefined) date(input.updated, "updated");
 str(input.excerpt, "excerpt", 200);
-if (!ART.includes(input.art)) bad("art", `must be one of ${ART.join(", ")}`);
+// A cover of its own (the rules in src/content/cover-rules.mjs), or one of the six fixed designs; never both.
+if (input.cover !== undefined) {
+  if (input.art !== undefined) bad("art", "is set as well as cover; an insight has one or the other");
+  for (const p of coverProblems(input.cover)) problems.push(p);
+} else if (!ART.includes(input.art)) bad("art", `must be one of ${ART.join(", ")}, or the insight needs a cover of its own`);
 if (input.series !== undefined && input.series !== "insight") bad("series", 'must be "insight" if given');
 
 let words = 0;
@@ -208,7 +217,12 @@ if (input.image !== undefined || imageArg) {
 
 const store = JSON.parse(fs.readFileSync(STORE, "utf8"));
 if (!Array.isArray(store)) bad("insights.json", "is not an array");
-else if (slug && store.some((p) => p.slug === slug)) bad("slug", `"${slug}" is already published`);
+else {
+  if (slug && store.some((p) => p.slug === slug)) bad("slug", `"${slug}" is already published`);
+  // No two articles share a picture on the news page (Adail, 1 October 2026).
+  const taken = store.find((p) => (input.cover ? p.cover && p.cover.name === input.cover?.name : !p.cover && p.art === input.art));
+  if (taken) bad(input.cover ? "cover.name" : "art", `${input.cover ? `"${input.cover.name}"` : `"${input.art}"`} is already the cover of ${taken.slug}; every article needs one of its own`);
+}
 
 if (problems.length) {
   console.error(`${file}: ${problems.length} problem${problems.length === 1 ? "" : "s"}`);
@@ -223,7 +237,7 @@ const insight = {
   ...(input.updated ? { updated: input.updated } : {}),
   readingMinutes: input.readingMinutes ?? Math.max(1, Math.round(words / 220)),
   excerpt: input.excerpt,
-  art: input.art,
+  ...(input.cover ? { cover: input.cover } : { art: input.art }),
   series: "insight",
   ...(input.topics?.length ? { topics: input.topics } : {}),
   ...(input.sources?.length ? { sources: input.sources } : {}),

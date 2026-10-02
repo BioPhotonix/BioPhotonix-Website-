@@ -1,4 +1,5 @@
 import raw from "./insights.json";
+import { parseCover } from "./cover";
 import { parseFigure, parseImage } from "./figure";
 import type { ArtKind, Block, Post, Source } from "./posts";
 
@@ -71,8 +72,11 @@ export function parseInsight(v: unknown, where: string): Post {
   const slug = text(v.slug, `${where}.slug`, 90);
   if (!SLUG.test(slug)) fail(`${where}.slug`, `"${slug}" must be lower-case words joined by single hyphens`);
   if (v.series !== "insight") fail(`${where}.series`, 'must be "insight"');
-  if (typeof v.art !== "string" || !INSIGHT_ART.includes(v.art as ArtKind)) {
-    fail(`${where}.art`, `must be one of ${INSIGHT_ART.join(", ")}`);
+  // A cover of its own, or one of the six fixed designs; never both.
+  if (v.cover !== undefined) {
+    if (v.art !== undefined) fail(`${where}.art`, "is set as well as cover; an insight has one or the other");
+  } else if (typeof v.art !== "string" || !INSIGHT_ART.includes(v.art as ArtKind)) {
+    fail(`${where}.art`, `must be one of ${INSIGHT_ART.join(", ")}, or the insight needs a cover of its own`);
   }
   if (!Number.isInteger(v.readingMinutes) || (v.readingMinutes as number) < 1) fail(`${where}.readingMinutes`, "must be a positive whole number");
   if (!Array.isArray(v.body) || v.body.length === 0) fail(`${where}.body`, "must be a non-empty array of blocks");
@@ -82,7 +86,7 @@ export function parseInsight(v: unknown, where: string): Post {
     date: date(v.date, `${where}.date`),
     readingMinutes: v.readingMinutes as number,
     excerpt: text(v.excerpt, `${where}.excerpt`, 200),
-    art: v.art as ArtKind,
+    ...(v.cover !== undefined ? { cover: parseCover(v.cover, `${where}.cover`) } : { art: v.art as ArtKind }),
     body: v.body.map((b, i) => block(b, `${where}.body[${i}]`)),
     series: "insight",
   };
@@ -125,9 +129,14 @@ export function parseInsights(input: unknown): Post[] {
   if (!Array.isArray(input)) fail("top level", "must be an array");
   const out = input.map((entry, i) => parseInsight(entry, `entry ${i}`));
   const slugs = new Set<string>();
+  const covers = new Map<string, string>();
   for (const p of out) {
     if (slugs.has(p.slug)) fail(p.slug, "appears twice");
     slugs.add(p.slug);
+    // No two articles share a picture on the news page (Adail, 1 October 2026).
+    const cover = p.cover ? `the drawn cover "${p.cover.name}"` : `the "${p.art}" design`;
+    if (covers.has(cover)) fail(p.slug, `has ${cover}, which ${covers.get(cover)} already has; every article needs a cover of its own`);
+    covers.set(cover, p.slug);
   }
   return out;
 }
