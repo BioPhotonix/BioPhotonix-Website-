@@ -37,7 +37,7 @@ export default function NewsPage() {
               <Link href={`/news/${p.slug}`} className="group block h-full">
                 <TechCard className="h-full overflow-hidden">
                   <div className="aspect-[5/3] overflow-hidden border-b border-line">
-                    <PostArt kind={p.art} className="transition-transform duration-700 group-hover:scale-[1.03]" />
+                    <PostArt kind={p.art} cover={p.cover} className="transition-transform duration-700 group-hover:scale-[1.03]" />
                   </div>
                   <div className="p-7">
                     <p className="figure text-xs uppercase tracking-[0.13em] text-fog">

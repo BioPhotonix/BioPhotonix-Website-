@@ -15,6 +15,7 @@
  */
 
 import type { Figure, PostImage } from "./figure";
+import type { Cover } from "./cover";
 import { insights } from "./insights";
 import { linksIn } from "./links";
 import routes from "./routes.json";
@@ -37,6 +38,8 @@ export type Source = { title: string; publisher: string; url: string; date?: str
  * children's eyes).
  */
 export type ArtKind = "epidemic" | "safety" | "founding" | "prototype" | "imaging" | "evidence" | "world" | "signal" | "survey" | "binocular";
+// Every one of the six insight designs has been used, and no two articles may
+// share a cover, so new insights carry `cover` instead: a drawing of their own.
 
 export type Post = {
   slug: string;
@@ -45,7 +48,10 @@ export type Post = {
   updated?: string;
   readingMinutes: number;
   excerpt: string;
-  art: ArtKind;
+  /** One of the fixed designs. An article has this or `cover`, never both. */
+  art?: ArtKind;
+  /** A cover drawn for this article alone (content/cover.ts). */
+  cover?: Cover;
   body: Block[];
   /** "insight" marks a weekly research digest; absent on the company's own articles. */
   series?: "insight";

@@ -1,14 +1,18 @@
 "use client";
 
+import type { CSSProperties } from "react";
 import type { ArtKind } from "@/content/posts";
+import { TONES, shapeD, type Cover, type CoverShape } from "@/content/cover";
 import { useRevealed } from "./useRevealed";
 
 /**
  * Cover art for an article, drawn rather than photographed, so nothing on the
  * news pages can be mistaken for a patient image or a device that does not
- * yet exist. One motif per article kind; the six insight motifs (imaging,
- * evidence, world, signal, survey, binocular) are drawn from the same 2px line
- * and palette.
+ * yet exist. The company's own articles and the first insights have one of
+ * the fixed motifs below (epidemic, safety, founding, prototype, and imaging,
+ * evidence, world, signal, survey, binocular for insights). Every insight
+ * since carries a cover drawn for it alone (`cover`, see content/cover.ts),
+ * because no two articles may share a picture.
  *
  * Each draws itself once as the card arrives, and the part of the motif that
  * carries the point keeps moving afterwards: the ten wet-AMD figures, the
@@ -346,12 +350,65 @@ function Motif({ kind }: { kind: ArtKind }) {
   );
 }
 
-export default function PostArt({ kind, className = "" }: { kind: ArtKind; className?: string }) {
+/**
+ * One shape of a drawn cover. A shape that traces itself in is drawn as a
+ * path of length 610 whatever its real length, so the one dash rule in
+ * globals.css (620) runs any shape from start to end, and a closed outline
+ * ends inside the dash and joins at its corner. "pulse" on a traced shape
+ * goes on a group around it, because both are animations and one would
+ * replace the other.
+ */
+function Shape({ s }: { s: CoverShape }) {
+  const fx = s.fx ?? [];
+  const paint = {
+    stroke: s.stroke ? TONES[s.stroke] : undefined,
+    strokeWidth: s.stroke ? (s.sw ?? 1.5) : undefined,
+    strokeOpacity: s.stroke ? s.so : undefined,
+    fill: s.fill ? TONES[s.fill] : "none",
+    fillOpacity: s.fill ? s.fo : undefined,
+    opacity: s.o,
+    strokeDasharray: s.dash,
+    strokeLinecap: s.cap,
+    strokeLinejoin: s.cap ? ("round" as const) : undefined,
+  };
+  const style: CSSProperties | undefined = s.delay ? { animationDelay: `${s.delay}s` } : undefined;
+  if (fx.includes("draw")) {
+    const traced = <path d={shapeD(s)} pathLength={610} {...paint} data-art-draw style={style} />;
+    return fx.includes("pulse") ? <g data-art-pulse style={style}>{traced}</g> : traced;
+  }
+  const flags = { ...(fx.includes("pop") ? { "data-art-pop": true } : {}), ...(fx.includes("pulse") ? { "data-art-pulse": true } : {}) };
+  switch (s.t) {
+    case "line":
+      return <line x1={s.x1} y1={s.y1} x2={s.x2} y2={s.y2} {...paint} {...flags} style={style} />;
+    case "circle":
+      return <circle cx={s.cx} cy={s.cy} r={s.r} {...paint} {...flags} style={style} />;
+    case "ellipse":
+      return <ellipse cx={s.cx} cy={s.cy} rx={s.rx} ry={s.ry} {...paint} {...flags} style={style} />;
+    case "rect":
+      return <rect x={s.x} y={s.y} width={s.w} height={s.h} rx={s.rx} {...paint} {...flags} style={style} />;
+    default:
+      return <path d={s.d} {...paint} {...flags} style={style} />;
+  }
+}
+
+function Drawn({ cover }: { cover: Cover }) {
+  return (
+    <>
+      <rect width="400" height="240" fill="#080f12" />
+      {grid}
+      {cover.shapes.map((s, i) => (
+        <Shape key={i} s={s} />
+      ))}
+    </>
+  );
+}
+
+export default function PostArt({ kind, cover, className = "" }: { kind?: ArtKind; cover?: Cover; className?: string }) {
   const { ref, state } = useRevealed<HTMLSpanElement>();
   return (
     <span ref={ref} aria-hidden="true" className={`art ${state === "hidden" ? "" : "is-live"} block h-full w-full ${className}`}>
       <svg viewBox="0 0 400 240" className="h-full w-full" focusable="false">
-        <Motif kind={kind} />
+        {cover ? <Drawn cover={cover} /> : kind ? <Motif kind={kind} /> : <rect width="400" height="240" fill="#080f12" />}
       </svg>
     </span>
   );
