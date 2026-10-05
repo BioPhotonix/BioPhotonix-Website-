@@ -1,5 +1,478 @@
 [
   {
+    "slug": "macular-degeneration-uk-2050",
+    "title": "Macular degeneration: 21 million worldwide with sight loss by 2050",
+    "date": "2026-10-05",
+    "readingMinutes": 4,
+    "excerpt": "A global model forecasts 21.34 million with sight loss from AMD by 2050. What the stage split underneath it means for macular degeneration in the UK.",
+    "art": "imaging",
+    "series": "insight",
+    "topics": [
+      "amd",
+      "macular degeneration",
+      "epidemiology",
+      "public health",
+      "oct"
+    ],
+    "sources": [
+      {
+        "date": "2025-07-01",
+        "publisher": "The Lancet Global Health (GBD 2021 Global AMD Collaborators)",
+        "read": "full",
+        "readVia": "page",
+        "title": "Global, regional, and national burden of vision impairment due to age-related macular degeneration, 1990-2021, with forecasts to 2050",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12208786/"
+      },
+      {
+        "date": "2026-09-18",
+        "publisher": "Ophthalmology Retina",
+        "read": "abstract",
+        "readVia": "europepmc",
+        "title": "Global burden of age-related macular degeneration, with forecast up to 2050: a modelling study",
+        "url": "https://doi.org/10.1016/j.oret.2026.09.019"
+      },
+      {
+        "date": "2012-05-01",
+        "pmcid": "PMC3329633",
+        "publisher": "British Journal of Ophthalmology",
+        "read": "full",
+        "readVia": "europepmc",
+        "title": "The estimated prevalence and incidence of late stage age related macular degeneration in the UK",
+        "url": "https://doi.org/10.1136/bjophthalmol-2011-301109"
+      },
+      {
+        "date": "2022-06-28",
+        "publisher": "Eye (Royal College of Ophthalmologists)",
+        "read": "full",
+        "readVia": "page",
+        "title": "Commissioning guidance on age-related macular degeneration services: executive summary",
+        "url": "https://www.nature.com/articles/s41433-022-02095-2"
+      },
+      {
+        "date": "2019-02-12",
+        "publisher": "NICE quality standard QS180",
+        "read": "full",
+        "readVia": "page",
+        "title": "Serious eye disorders, quality statement 3: treatment of late AMD (wet active)",
+        "url": "https://www.nice.org.uk/guidance/qs180/chapter/quality-statement-3-treatment-late-age-related-macular-degeneration-wet-active"
+      },
+      {
+        "date": "2024-09-19",
+        "publisher": "European Medicines Agency",
+        "read": "full",
+        "readVia": "page",
+        "title": "Syfovre (pegcetacoplan): refusal of marketing authorisation",
+        "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/syfovre"
+      },
+      {
+        "date": "2025-02-01",
+        "publisher": "Macular Society",
+        "read": "full",
+        "readVia": "page",
+        "title": "Syfovre FAQs and next steps for dry AMD and geographic atrophy treatment",
+        "url": "https://www.macularsociety.org/about/media/news/2025/february/syfovre-faqs-and-next-steps-for-dry-amd-and-geographic-atrophy-treatment/"
+      }
+    ],
+    "figure": {
+      "blocks": [
+        {
+          "after": {
+            "label": "2050, projected",
+            "value": 21.34
+          },
+          "before": {
+            "label": "2021",
+            "value": 8.06
+          },
+          "decimals": 2,
+          "kind": "before-after",
+          "label": "People with vision impairment due to AMD (modelled)",
+          "unit": " million"
+        },
+        {
+          "decimals": 2,
+          "items": [
+            {
+              "label": "Early",
+              "value": 5.4
+            },
+            {
+              "emphasis": true,
+              "label": "Intermediate",
+              "value": 4.01
+            },
+            {
+              "label": "Geographic atrophy",
+              "value": 0.32
+            },
+            {
+              "label": "Neovascular",
+              "value": 0.31
+            }
+          ],
+          "kind": "bars",
+          "label": "Global prevalence of AMD by stage, 2021 (no age range)",
+          "unit": "%"
+        },
+        {
+          "items": [
+            {
+              "label": "with late AMD in the UK, 2007 to 2009",
+              "value": "513,000"
+            },
+            {
+              "label": "projected for 2020, the last year modelled",
+              "value": "679,000"
+            },
+            {
+              "label": "prevalence of late AMD at 80 and over",
+              "value": "12.2%"
+            }
+          ],
+          "kind": "stats",
+          "label": "The UK's own estimate, and where it stops"
+        }
+      ],
+      "caption": "Global vision impairment due to AMD, 1990 to 2050, an ensemble forecast (GBD 2021). Global prevalence of AMD by Beckman stage, 2021, with no age range stated in the abstract. UK late AMD modelled from ONS figures for 2007 to 2009.",
+      "source": "Lancet Glob Health 2025. Ophthalmology Retina 2026. Br J Ophthalmol 2012.",
+      "title": "AMD in 2050, and the shape of the disease now"
+    },
+    "seo": {
+      "keyword": "macular degeneration in the UK",
+      "metaDescription": "A global model puts sight loss from AMD at 21.34 million by 2050. What the stage split means for macular degeneration in the UK, where 1 in 8 at 80 has it.",
+      "metaTitle": "Macular degeneration in the UK: the 2050 forecast"
+    },
+    "keyPoints": [
+      "The Global Burden of Disease 2021 analysis projects vision impairment from AMD to rise from 8.06 million people in 2021 to 21.34 million by 2050. Both ends are modelled estimates, not counts.",
+      "A model published on 18 September puts global prevalence of intermediate AMD at 4.01%, against 0.32% for geographic atrophy and 0.31% for neovascular AMD, with no age range stated.",
+      "Rates per head are falling. Global age-standardised prevalence of that sight loss fell 5.53% between 1990 and 2021, western Europe's by about 20%. Totals rise with ageing and population growth.",
+      "The UK sits inside those global models as one of 204 countries. The UK-specific study underneath our own figures is from 2012 and stops at 2020, at 679,000 late AMD cases."
+    ],
+    "faq": [
+      {
+        "a": "There is no recent count. The UK-specific estimate this article uses is a 2012 modelling study in the British Journal of Ophthalmology, which applied prevalence from 31 population studies to Office for National Statistics figures and found late AMD in 2.4% of people aged 50 and over, about 513,000 cases, rising to 679,000 by 2020. The authors stopped there on purpose, saying population data beyond 2020 may be less reliable. Prevalence climbs steeply with age: 4.8% at 65 and over, and 12.2% at 80 and over, roughly 1 in 8. Global models published since do cover the UK, but they fit it as one of 204 countries rather than from UK data.",
+        "q": "How many people have macular degeneration in the UK?"
+      },
+      {
+        "a": "Intermediate AMD is the stage between early changes and late disease, marked by large drusen or pigmentary change, usually with acuity still reasonable. A model published in Ophthalmology Retina on 18 September 2026 puts its global prevalence at 4.01%, against 0.32% for geographic atrophy and 0.31% for neovascular AMD. That is about six times as many people at the intermediate stage as at both late stages combined, and it is the stage with nothing licensed to offer. The abstract states no age range for those percentages, so they are whole-population figures rather than the rate in a clinic of older patients.",
+        "q": "What is intermediate AMD and how common is it?"
+      },
+      {
+        "a": "Nothing is licensed for early or intermediate AMD. For geographic atrophy, the first candidate did not get through: the European Medicines Agency confirmed its refusal of pegcetacoplan (Syfovre) on 19 September 2024, and the MHRA rejected it for the UK, which the Macular Society called a disappointing decision for people living with the condition. Writing in January 2025, the society said a second complement drug, avacincaptad pegol, was under consideration by the MHRA, so check the current position before you tell a patient anything. Anti-VEGF injections treat neovascular AMD only. For everyone else the offer is monitoring, advice on smoking and diet, and support.",
+        "q": "Is there any treatment for dry macular degeneration in the UK?"
+      }
+    ],
+    "body": [
+      {
+        "text": "The world has a new forecast for age-related macular degeneration: 21.34 million people with sight loss by 2050, against 8.06 million in 2021. Both come from the [Global Burden of Disease 2021 analysis of AMD](https://pmc.ncbi.nlm.nih.gov/articles/PMC12208786/) in The Lancet Global Health, and both are modelled estimates rather than counts. What it means for macular degeneration in the UK turns on a second paper, published this month.",
+        "type": "p"
+      },
+      {
+        "text": "That study, [published in Ophthalmology Retina on 18 September](https://doi.org/10.1016/j.oret.2026.09.019), re-sorted the world's prevalence studies into one classification, Beckman, and reported the stages separately. Jeong and colleagues, mostly in Seoul, with L Smith at Anglia Ruskin in Cambridge. It is paywalled, so everything here comes from its abstract.",
+        "type": "p"
+      },
+      {
+        "text": "What the two studies did",
+        "type": "h2"
+      },
+      {
+        "text": "Both are burden models, not trials, and neither examined a new patient. The GBD analysis used 163 rapid assessment surveys and 107 other population studies to model 204 countries from 1990 to 2021. It counted only moderate to severe vision loss and blindness, acuity worse than 6/18, and forecast to 2050 with an ensemble of 12 submodels. The Gates Foundation funded it, among others, with no role in the work.",
+        "type": "p"
+      },
+      {
+        "text": "The Ophthalmology Retina paper is a systematic review modelled with DisMod-MR. The original studies did not use Beckman, so an expectation-maximisation algorithm split the pooled prevalence into early, intermediate, geographic atrophy and neovascular disease. The two measure different things: sight loss caused by AMD, and the disease at any stage.",
+        "type": "p"
+      },
+      {
+        "text": "What was found",
+        "type": "h2"
+      },
+      {
+        "text": "Vision impairment from AMD more than doubled between 1990 and 2021, from 3.64 million people to 8.06 million, and is projected to reach 21.34 million by 2050: 9.02 million males (95% uncertainty interval 5.72 to 14.20) and 12.32 million females (8.88 to 17.08). Rates per head went the other way. Global age-standardised prevalence of that impairment fell 5.53% over the period, western Europe's from 107.40 to 85.55 per 100,000, about 20%. The totals rise with ageing and population growth, not with severity.",
+        "type": "p"
+      },
+      {
+        "text": "The stage split matters more in clinic. In 2021 the Beckman model put global prevalence of AMD at any stage at 10.03%: early 5.40%, intermediate 4.01%, geographic atrophy 0.32% and neovascular AMD 0.31%. For every person at a late stage there are about six at the intermediate stage, with large drusen, acuity still reasonable and nothing licensed to offer them. The abstract states no age range, so those are whole-population figures, not the rate in a chair.",
+        "type": "p"
+      },
+      {
+        "text": "Why it matters for macular degeneration in the UK",
+        "type": "h2"
+      },
+      {
+        "text": "The UK sits inside both models as one of 204 countries, fitted from a worldwide evidence base rather than from UK data. Our own study is older. Owen and colleagues, in the [British Journal of Ophthalmology in 2012](https://doi.org/10.1136/bjophthalmol-2011-301109), applied prevalence from 31 population studies to ONS figures and estimated 513,000 people with late AMD, 2.4% of those aged 50 and over, rising to 4.8% at 65 and 12.2% at 80, roughly 1 in 8. They put 71,200 new cases a year on it and projected 679,000 by 2020, stopping there because data beyond that point may be less reliable.",
+        "type": "p"
+      },
+      {
+        "text": "The Royal College of Ophthalmologists' commissioning guidance has already decided who monitors them:",
+        "type": "p"
+      },
+      {
+        "text": "Do not routinely monitor people with early AMD or late AMD (dry) at HES unless in clinical research.",
+        "type": "quote"
+      },
+      {
+        "text": "That guidance uses the NICE classification, which has no intermediate category, so the Beckman stages do not map onto it cleanly. It says those patients continue to attend routine sight tests with their primary care optometrist, and that OCT is the most sensitive monitoring tool, naming it for community provision in patients at high risk of new neovascular AMD or monitored for stable neovascular AMD. [Denmark's community OCT programme](/news/denmark-oct-teleophthalmology-referrals) is the other half of that arithmetic.",
+        "type": "p"
+      },
+      {
+        "text": "Three things follow. When wet AMD is suspected, speed is the whole job: NICE's quality standard expects treatment within 14 days of referral to the macular service, and the Royal College asks for acuity, fundoscopy findings and the OCT images in the letter. Second, the smoking conversation is for everyone: tobacco accounted for 18.72% of male disability-adjusted life years from AMD against 3.89% of female, a gap the paper puts down to how many men smoked, not to a different macula. Third, the European Medicines Agency confirmed its refusal of pegcetacoplan on 19 September 2024 and the MHRA rejected it here too, so the first candidate treatment for geographic atrophy never reached UK patients.",
+        "type": "p"
+      },
+      {
+        "text": "The caveats",
+        "type": "h2"
+      },
+      {
+        "items": [
+          "Both papers are models. The 21.34 million adds two point estimates whose 95% uncertainty intervals run 5.72 to 14.20 million males and 8.88 to 17.08 million females.",
+          "They count different things: GBD counts sight loss from AMD, at acuity worse than 6/18, Beckman the disease at any stage.",
+          "The Ophthalmology Retina paper is paywalled, so only its abstract could be read here, it gives no 2050 figure, and its stages are imputed, not observed.",
+          "GBD modelled smoking alone as a risk factor, could not separate wet from dry disease without fundus photography, and says the burden may be underestimated.",
+          "The UK estimate is from 2012, from studies in white populations, and assumes AMD is lifelong and mortality unchanged by it."
+        ],
+        "type": "ul"
+      }
+    ]
+  },
+  {
+    "slug": "sight-loss-statistics-glaucoma",
+    "title": "Sight loss statistics: glaucoma certificates rose over 16 years",
+    "date": "2026-10-05",
+    "readingMinutes": 4,
+    "excerpt": "Glaucoma sight loss certificates in England rose from 1,648 to 2,645 a year between 2009/10 and 2024/25, while diabetic eye disease fell.",
+    "art": "signal",
+    "series": "insight",
+    "topics": [
+      "sight loss",
+      "glaucoma",
+      "diabetic eye screening",
+      "world sight day",
+      "public health"
+    ],
+    "sources": [
+      {
+        "date": "2026-09-16",
+        "publisher": "Eye",
+        "read": "full",
+        "readFrom": "the publisher PDF, https://www.nature.com/articles/s41433-026-04882-7.pdf",
+        "readVia": "publisher",
+        "title": "Visual impairment certifications in England over 16 years: annual numbers attributable to age-related macular degeneration, glaucoma, diabetes and hereditary eye disease",
+        "url": "https://doi.org/10.1038/s41433-026-04882-7"
+      },
+      {
+        "date": "2021-02-16",
+        "publisher": "The Lancet Global Health",
+        "read": "full",
+        "readVia": "page",
+        "title": "The Lancet Global Health Commission on Global Eye Health: vision beyond 2020",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7966694/"
+      },
+      {
+        "date": "2025-05-22",
+        "publisher": "The Lancet Global Health",
+        "read": "full",
+        "readFrom": "the publisher PDF as deposited at LSHTM Research Online, https://researchonline.lshtm.ac.uk/id/eprint/4676486/",
+        "readVia": "publisher",
+        "title": "Effective refractive error coverage in adults: a systematic review and meta-analysis of updated estimates from population-based surveys in 76 countries modelling the path towards the 2030 global target",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40414243/"
+      },
+      {
+        "date": "2020-04-14",
+        "pmcid": "PMC7314787",
+        "publisher": "Eye",
+        "read": "full",
+        "readVia": "europepmc",
+        "title": "Recent trends in vision impairment certifications in England and Wales",
+        "url": "https://doi.org/10.1038/s41433-020-0864-6"
+      },
+      {
+        "date": "2023-11-22",
+        "publisher": "British Journal of Ophthalmology",
+        "read": "abstract",
+        "readVia": "europepmc",
+        "title": "Formal registration of visual impairment in people with diabetic retinopathy significantly underestimates the scale of the problem: a retrospective cohort study at a tertiary care eye hospital service in the UK",
+        "url": "https://doi.org/10.1136/bjo-2022-321910"
+      },
+      {
+        "publisher": "UK National Screening Committee",
+        "read": "full",
+        "readVia": "page",
+        "title": "Screening for glaucoma: UK NSC recommendation",
+        "url": "https://view-health-screening-recommendations.service.gov.uk/glaucoma/"
+      },
+      {
+        "date": "2026-07-01",
+        "publisher": "International Agency for the Prevention of Blindness",
+        "read": "full",
+        "readVia": "page",
+        "title": "World Sight Day 2026: an important milestone toward eye care for all",
+        "url": "https://www.iapb.org/news/world-sight-day-2026-an-important-milestone-toward-eye-care-for-all/"
+      }
+    ],
+    "figure": {
+      "blocks": [
+        {
+          "after": {
+            "label": "2024/25",
+            "value": 2645
+          },
+          "before": {
+            "label": "2009/10",
+            "value": 1648
+          },
+          "kind": "before-after",
+          "label": "Glaucoma certificates a year"
+        },
+        {
+          "after": {
+            "label": "2024/25",
+            "value": 872
+          },
+          "before": {
+            "label": "2009/10",
+            "value": 1261
+          },
+          "kind": "before-after",
+          "label": "Diabetic eye disease certificates a year"
+        },
+        {
+          "decimals": 1,
+          "items": [
+            {
+              "label": "AMD",
+              "value": 39.6
+            },
+            {
+              "emphasis": true,
+              "label": "Glaucoma",
+              "value": 10.7
+            },
+            {
+              "label": "Hereditary eye disease",
+              "value": 6.7
+            },
+            {
+              "label": "Diabetic eye disease",
+              "value": 3.5
+            }
+          ],
+          "kind": "bars",
+          "label": "Share of all certificates, 2024/25",
+          "unit": "%"
+        }
+      ],
+      "caption": "Certificates of Vision Impairment received, with consent, by the Royal College of Ophthalmologists' Certification Office, England, April 2009 to March 2025. The four causes shown make up about six in ten. Counts, not age-adjusted.",
+      "source": "Lim et al., Eye, 2026",
+      "title": "Certified sight loss in England: four causes"
+    },
+    "seo": {
+      "keyword": "sight loss statistics",
+      "metaDescription": "Sight loss statistics for England: glaucoma certifications rose from 1,648 to 2,645 a year since 2009/10 while diabetic eye disease fell. What that means.",
+      "metaTitle": "Sight loss statistics: glaucoma certificates in England"
+    },
+    "keyPoints": [
+      "In England, certificates of vision impairment for glaucoma rose from 1,648 (7.3% of all) in 2009/10 to 2,645 (10.7%) in 2024/25, a study in Eye reported on 16 September.",
+      "Diabetic eye disease fell from 1,261 (5.6%) to 872 (3.5%), which the authors say screening and better treatment might explain. Glaucoma has no screening programme.",
+      "Worldwide in 2020, 77.3% of blindness and moderate or severe vision impairment was due to cataract or uncorrected refractive error, and 90.9% once uncorrected near vision is counted.",
+      "These are counts, not rates: an earlier analysis found no significant change in the glaucoma certification rate between 2010/11 and 2017/18."
+    ],
+    "faq": [
+      {
+        "a": "Worldwide, more than 90% of people with vision impairment have a preventable or treatable cause, according to the Lancet Global Health Commission on Global Eye Health. In 2020, 77.3% of blindness and moderate or severe vision impairment was due to cataract or uncorrected refractive error, rising to 90.9% when near vision impairment is included. England measures preventable sight loss through certificates of vision impairment for AMD, glaucoma and diabetic eye disease.",
+        "q": "What percentage of sight loss is avoidable?"
+      },
+      {
+        "a": "A CVI can be issued in England to someone who meets the criteria for sight impairment or severe sight impairment. It records the main cause of their sight loss and can help them reach support. With the patient's consent, a copy goes to the Royal College of Ophthalmologists' Certification Office at Moorfields Eye Hospital, which is how the national figures are counted.",
+        "q": "What is a Certificate of Vision Impairment (CVI)?"
+      },
+      {
+        "a": "Of the four causes a 2026 study tracked, AMD was the main cause on 9,833 certificates of vision impairment in England in 2024/25 (39.6%), glaucoma on 2,645 (10.7%), hereditary eye disease on 1,652 (6.7%) and diabetic eye disease on 872 (3.5%). About four in ten certificates name another main cause. Since 2009/10, AMD and diabetic eye disease have fallen as a share, and glaucoma and hereditary eye disease have risen.",
+        "q": "What are the main causes of certified sight loss in England?"
+      },
+      {
+        "a": "World Sight Day 2026 is on Thursday 8 October. The International Agency for the Prevention of Blindness runs it under the theme #LoveYourEyes, in the run-up to the Global Summit for Eye Health in Antigua and Barbuda on 2 November 2026.",
+        "q": "When is World Sight Day 2026?"
+      }
+    ],
+    "body": [
+      {
+        "text": "More than 90% of people in the world with vision impairment have a cause that could have been prevented or treated, the [Lancet Global Health Commission on Global Eye Health](https://pmc.ncbi.nlm.nih.gov/articles/PMC7966694/) found, and treatments for cataract and refractive error would meet more than 90% of the unmet need. England keeps its own sight loss statistics, and [a study published in Eye on 16 September](https://doi.org/10.1038/s41433-026-04882-7) has counted 16 years of them. Certificates of vision impairment for glaucoma rose from 1,648 in 2009/10 to 2,645 in 2024/25. Those for diabetic eye disease fell from 1,261 to 872.",
+        "type": "p"
+      },
+      {
+        "text": "Diabetic eye disease has a national screening programme in England. Glaucoma has none: [the UK National Screening Committee does not currently recommend screening for it](https://view-health-screening-recommendations.service.gov.uk/glaucoma/). And glaucoma is mostly asymptomatic until late, which is why, in most prevalence surveys from high-income countries, less than half of the glaucoma found had been diagnosed before. In the week of World Sight Day, on 8 October, that is a gap a UK sight test is placed to close.",
+        "type": "p"
+      },
+      {
+        "text": "What the study counted",
+        "type": "h2"
+      },
+      {
+        "text": "A Certificate of Vision Impairment (CVI) can be given to someone in England who meets the criteria for sight impairment or severe sight impairment. It records the main cause and can help them reach support. With consent, a copy of every one goes to the Royal College of Ophthalmologists' Certification Office at Moorfields Eye Hospital.",
+        "type": "p"
+      },
+      {
+        "text": "A Moorfields and UCL team counted the certificates received each year from April 2009 to March 2025, in total and for four main causes: age-related macular degeneration (AMD), glaucoma, diabetic eye disease and hereditary eye disease. It is a one-page descriptive report. The same certificates are England's measure of preventable sight loss: [the Public Health Outcomes Framework reports them for AMD, glaucoma and diabetic eye disease](https://doi.org/10.1038/s41433-020-0864-6).",
+        "type": "p"
+      },
+      {
+        "text": "What the sight loss statistics show",
+        "type": "h2"
+      },
+      {
+        "text": "Certificates rose from 22,687 in 2009/10 to 24,819 in 2023/24, with a dip to 16,499 in 2020/21, the year of the COVID-19 lockdowns. The paper gives no total for 2024/25.",
+        "type": "p"
+      },
+      {
+        "text": "AMD is still the largest cause, but its share fell, from 10,393 certificates (45.8%) in 2009/10 to 9,833 (39.6%) in 2024/25. This week's other article, on how AMD is forecast to grow to 2050, is on [our news page](/news).",
+        "type": "p"
+      },
+      {
+        "text": "Glaucoma went the other way, from 1,648 certificates (7.3%) to 2,645 (10.7%), and the paper's figure shows most of that rise after the 2020/21 dip. Diabetic eye disease fell from 1,261 (5.6%) to 872 (3.5%), the biggest proportionate fall of the four. Hereditary eye disease rose from 1,077 (4.7%) to 1,652 (6.7%), and has outnumbered diabetic eye disease every year since 2010/11.",
+        "type": "p"
+      },
+      {
+        "text": "The authors do not give a reason for the rise in glaucoma. Of diabetic eye disease they write that the fall \"might reflect effective screening pathways and more efficacious treatments for diabetes and diabetic retinopathy\".",
+        "type": "p"
+      },
+      {
+        "text": "Avoidable sight loss, worldwide and here",
+        "type": "h2"
+      },
+      {
+        "text": "The Commission's figures for 2020 are 596 million people with distance vision impairment worldwide, of whom 43 million were blind, with cataract the leading cause of blindness at 17.01 million. Refractive error is not solved in high-income countries either: [effective refractive error coverage](https://pubmed.ncbi.nlm.nih.gov/40414243/), the share of adults aged 50 and over who need distance correction and see well with it, was 84.0% in high-income countries in 2023, against 63.0% worldwide, both age-standardised modelled estimates.",
+        "type": "p"
+      },
+      {
+        "text": "Why it matters in practice",
+        "type": "h2"
+      },
+      {
+        "items": [
+          "Look at the disc and record what you saw, including for the patient who came in for new glasses. Glaucoma has no national screening programme, and it is mostly asymptomatic until late.",
+          "By the time glaucoma reaches a certificate, the sight it has taken does not come back. The certificates cannot show how many of the 2,645 were found late, and the count rose over 16 years, most of it after 2020/21.",
+          "When a patient's sight has fallen to certification level and nobody has mentioned a CVI, ask the hospital. In one tertiary hospital cohort with diabetic retinopathy, 84% of those with vision impairment, by acuity, had no certificate after a mean follow-up of under two years.",
+          "Keep refraction in view. Effective coverage of 84.0% in high-income countries means about one in six adults over 50 who need distance correction still lack correction that gives them good vision."
+        ],
+        "type": "ul"
+      },
+      {
+        "text": "The caveats",
+        "type": "h2"
+      },
+      {
+        "items": [
+          "The counts depend on a certificate being offered and on consent, and the authors say they do not represent the full burden of visual impairment. Under-certification, as in the [UK hospital study of diabetic retinopathy](https://doi.org/10.1136/bjo-2022-321910), could mean national figures understate sight loss.",
+          "They are counts, not rates. The 2020 analysis of the same certificates found no statistically significant change in the glaucoma certification rate per 100,000 people aged 40 and over between 2010/11 and 2017/18, years in which the counts rose. The new report cannot say whether the risk has changed.",
+          "The explanation for diabetic eye disease is offered by the authors as a possibility, not shown, and AMD, which is not screened for, fell too.",
+          "The figures cover England only. The global figures are modelled estimates, for 2020 and 2023, not counts."
+        ],
+        "type": "ul"
+      }
+    ]
+  },
+  {
     "slug": "myopia-atropine-orthok-lenses",
     "title": "The UK's licensed atropine dose ranks 16th of 24, and stops cleanest",
     "date": "2026-09-28",
