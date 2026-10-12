@@ -1,5 +1,2563 @@
 [
   {
+    "slug": "ai-eye-care-liability",
+    "title": "AI in eye care: 27 of 29 results in a review top 90%. Who is liable?",
+    "date": "2026-10-12",
+    "readingMinutes": 4,
+    "excerpt": "In a review of AI in eye care, 27 of 29 results in its table top 90%. It does not say who carries the risk when one is wrong.",
+    "cover": {
+      "about": "A retinal photograph read patch by patch, the way an AI model reads it. The patch it flags is boxed in red and carried by a dashed line to a written record with a clinician's mark: where the article says the liability question lands.",
+      "name": "fundus-read-by-ai",
+      "shapes": [
+        {
+          "cx": 150,
+          "cy": 120,
+          "fx": [
+            "draw"
+          ],
+          "r": 86,
+          "so": 0.4,
+          "stroke": "pale",
+          "sw": 1.5,
+          "t": "circle"
+        },
+        {
+          "cx": 192,
+          "cy": 112,
+          "delay": 0.3,
+          "fill": "pale",
+          "fo": 0.1,
+          "fx": [
+            "pop"
+          ],
+          "r": 12,
+          "so": 0.85,
+          "stroke": "pale",
+          "sw": 1.5,
+          "t": "circle"
+        },
+        {
+          "cx": 194,
+          "cy": 111,
+          "delay": 0.35,
+          "fill": "pale",
+          "fo": 0.4,
+          "fx": [
+            "pop"
+          ],
+          "r": 5,
+          "t": "circle"
+        },
+        {
+          "cx": 118,
+          "cy": 124,
+          "delay": 0.5,
+          "fill": "teal",
+          "fo": 0.22,
+          "fx": [
+            "pop"
+          ],
+          "r": 9,
+          "t": "circle"
+        },
+        {
+          "cx": 118,
+          "cy": 124,
+          "delay": 0.55,
+          "fill": "teal",
+          "fx": [
+            "pop"
+          ],
+          "r": 2.2,
+          "t": "circle"
+        },
+        {
+          "cap": "round",
+          "d": "M 184 104 C 181.7 100.7, 176.3 89.3, 170 84 C 163.7 78.7, 154.7 73.7, 146 72 C 137.3 70.3, 126.7 71.7, 118 74 C 109.3 76.3, 101 80.7, 94 86 C 87 91.3, 79 102.7, 76 106",
+          "delay": 0.2,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.8,
+          "stroke": "teal",
+          "sw": 1.9,
+          "t": "path"
+        },
+        {
+          "cap": "round",
+          "d": "M 184 120 C 181.7 123.7, 176.3 135.7, 170 142 C 163.7 148.3, 154.7 155, 146 158 C 137.3 161, 126.7 161.3, 118 160 C 109.3 158.7, 101 154.7, 94 150 C 87 145.3, 79 135, 76 132",
+          "delay": 0.26,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.8,
+          "stroke": "teal",
+          "sw": 1.9,
+          "t": "path"
+        },
+        {
+          "cap": "round",
+          "d": "M 150 73 C 148.3 69.8, 143.8 59.2, 140 54 C 136.2 48.8, 129.2 44, 127 42",
+          "delay": 0.32,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.8,
+          "stroke": "teal",
+          "sw": 1.2,
+          "t": "path"
+        },
+        {
+          "cap": "round",
+          "d": "M 146 158 C 144.7 161.7, 141.3 173.5, 138 180 C 134.7 186.5, 128 194.2, 126 197",
+          "delay": 0.38,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.8,
+          "stroke": "teal",
+          "sw": 1.2,
+          "t": "path"
+        },
+        {
+          "cap": "round",
+          "d": "M 197 102 C 198.5 99.7, 203.5 92.7, 206 88 C 208.5 83.3, 211 76.3, 212 74",
+          "delay": 0.44,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.8,
+          "stroke": "teal",
+          "sw": 1.5,
+          "t": "path"
+        },
+        {
+          "cap": "round",
+          "d": "M 197 122 C 198.8 124.7, 205.2 132, 208 138 C 210.8 144, 213 154.7, 214 158",
+          "delay": 0.5,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.8,
+          "stroke": "teal",
+          "sw": 1.5,
+          "t": "path"
+        },
+        {
+          "cap": "round",
+          "d": "M 203 112 C 205.8 111.7, 215.2 111.3, 220 110 C 224.8 108.7, 230 105, 232 104",
+          "delay": 0.56,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.8,
+          "stroke": "teal",
+          "sw": 1.1,
+          "t": "path"
+        },
+        {
+          "cap": "round",
+          "d": "M 118 74 C 117 76.7, 113.3 85, 112 90 C 110.7 95, 110.3 101.7, 110 104",
+          "delay": 0.62,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.8,
+          "stroke": "teal",
+          "sw": 1,
+          "t": "path"
+        },
+        {
+          "cap": "round",
+          "d": "M 118 160 C 117 158, 113.3 151.7, 112 148 C 110.7 144.3, 110.3 139.7, 110 138",
+          "delay": 0.68,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.8,
+          "stroke": "teal",
+          "sw": 1,
+          "t": "path"
+        },
+        {
+          "delay": 0.7,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.15,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 120,
+          "y": 42
+        },
+        {
+          "delay": 0.712,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.15,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 136,
+          "y": 42
+        },
+        {
+          "delay": 0.724,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.15,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 152,
+          "y": 42
+        },
+        {
+          "delay": 0.736,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.15,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 168,
+          "y": 42
+        },
+        {
+          "delay": 0.748,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.15,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 104,
+          "y": 58
+        },
+        {
+          "delay": 0.76,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.15,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 120,
+          "y": 58
+        },
+        {
+          "delay": 0.772,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.15,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 136,
+          "y": 58
+        },
+        {
+          "delay": 0.784,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.15,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 152,
+          "y": 58
+        },
+        {
+          "delay": 0.796,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.15,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 168,
+          "y": 58
+        },
+        {
+          "delay": 0.808,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.15,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 184,
+          "y": 58
+        },
+        {
+          "delay": 0.82,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.15,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 88,
+          "y": 74
+        },
+        {
+          "delay": 0.832,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.15,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 104,
+          "y": 74
+        },
+        {
+          "delay": 0.844,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.15,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 120,
+          "y": 74
+        },
+        {
+          "delay": 0.856,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.15,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 136,
+          "y": 74
+        },
+        {
+          "delay": 0.868,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.15,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 152,
+          "y": 74
+        },
+        {
+          "delay": 0.88,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.15,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 168,
+          "y": 74
+        },
+        {
+          "delay": 0.892,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.15,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 184,
+          "y": 74
+        },
+        {
+          "delay": 0.904,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.15,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 200,
+          "y": 74
+        },
+        {
+          "delay": 0.916,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.15,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 72,
+          "y": 90
+        },
+        {
+          "delay": 0.928,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.15,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 88,
+          "y": 90
+        },
+        {
+          "delay": 0.94,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.15,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 104,
+          "y": 90
+        },
+        {
+          "delay": 0.952,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.15,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 120,
+          "y": 90
+        },
+        {
+          "delay": 0.964,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.15,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 136,
+          "y": 90
+        },
+        {
+          "delay": 0.976,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.15,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 152,
+          "y": 90
+        },
+        {
+          "delay": 0.988,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.15,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 168,
+          "y": 90
+        },
+        {
+          "delay": 1,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.15,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 184,
+          "y": 90
+        },
+        {
+          "delay": 1.012,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.15,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 200,
+          "y": 90
+        },
+        {
+          "delay": 1.024,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.15,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 216,
+          "y": 90
+        },
+        {
+          "delay": 1.036,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.15,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 72,
+          "y": 106
+        },
+        {
+          "delay": 1.048,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.15,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 88,
+          "y": 106
+        },
+        {
+          "delay": 1.06,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.15,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 104,
+          "y": 106
+        },
+        {
+          "delay": 1.072,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.15,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 120,
+          "y": 106
+        },
+        {
+          "delay": 1.084,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.15,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 136,
+          "y": 106
+        },
+        {
+          "delay": 1.096,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.15,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 152,
+          "y": 106
+        },
+        {
+          "delay": 1.108,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.15,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 168,
+          "y": 106
+        },
+        {
+          "delay": 1.12,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.15,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 184,
+          "y": 106
+        },
+        {
+          "delay": 1.132,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.15,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 200,
+          "y": 106
+        },
+        {
+          "delay": 1.144,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.15,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 216,
+          "y": 106
+        },
+        {
+          "delay": 1.156,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.15,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 72,
+          "y": 122
+        },
+        {
+          "delay": 1.168,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.15,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 88,
+          "y": 122
+        },
+        {
+          "delay": 1.18,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.15,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 104,
+          "y": 122
+        },
+        {
+          "delay": 1.192,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.15,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 120,
+          "y": 122
+        },
+        {
+          "delay": 1.204,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.15,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 136,
+          "y": 122
+        },
+        {
+          "delay": 1.216,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.15,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 152,
+          "y": 122
+        },
+        {
+          "delay": 1.228,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.15,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 168,
+          "y": 122
+        },
+        {
+          "delay": 1.24,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.15,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 184,
+          "y": 122
+        },
+        {
+          "delay": 1.252,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.15,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 200,
+          "y": 122
+        },
+        {
+          "delay": 1.264,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.15,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 216,
+          "y": 122
+        },
+        {
+          "delay": 1.276,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.15,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 72,
+          "y": 138
+        },
+        {
+          "delay": 1.288,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.15,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 88,
+          "y": 138
+        },
+        {
+          "delay": 1.3,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.15,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 104,
+          "y": 138
+        },
+        {
+          "delay": 1.312,
+          "fill": "glow",
+          "fo": 0.12,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.6,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 120,
+          "y": 138
+        },
+        {
+          "delay": 1.324,
+          "fill": "glow",
+          "fo": 0.12,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.6,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 136,
+          "y": 138
+        },
+        {
+          "delay": 1.336,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.15,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 152,
+          "y": 138
+        },
+        {
+          "delay": 1.348,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.15,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 168,
+          "y": 138
+        },
+        {
+          "delay": 1.36,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.15,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 184,
+          "y": 138
+        },
+        {
+          "delay": 1.372,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.15,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 200,
+          "y": 138
+        },
+        {
+          "delay": 1.384,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.15,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 216,
+          "y": 138
+        },
+        {
+          "delay": 1.396,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.15,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 88,
+          "y": 154
+        },
+        {
+          "delay": 1.408,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.15,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 104,
+          "y": 154
+        },
+        {
+          "delay": 1.42,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.15,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 120,
+          "y": 154
+        },
+        {
+          "delay": 1.432,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.15,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 136,
+          "y": 154
+        },
+        {
+          "delay": 1.444,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.15,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 152,
+          "y": 154
+        },
+        {
+          "delay": 1.456,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.15,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 168,
+          "y": 154
+        },
+        {
+          "delay": 1.468,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.15,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 184,
+          "y": 154
+        },
+        {
+          "delay": 1.48,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.15,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 200,
+          "y": 154
+        },
+        {
+          "delay": 1.492,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.15,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 104,
+          "y": 170
+        },
+        {
+          "delay": 1.504,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.15,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 120,
+          "y": 170
+        },
+        {
+          "delay": 1.516,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.15,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 136,
+          "y": 170
+        },
+        {
+          "delay": 1.528,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.15,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 152,
+          "y": 170
+        },
+        {
+          "delay": 1.54,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.15,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 168,
+          "y": 170
+        },
+        {
+          "delay": 1.552,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.15,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 184,
+          "y": 170
+        },
+        {
+          "delay": 1.564,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.15,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 120,
+          "y": 186
+        },
+        {
+          "delay": 1.576,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.15,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 136,
+          "y": 186
+        },
+        {
+          "delay": 1.588,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.15,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 152,
+          "y": 186
+        },
+        {
+          "delay": 1.6,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "so": 0.15,
+          "stroke": "glow",
+          "sw": 0.8,
+          "t": "rect",
+          "w": 12,
+          "x": 168,
+          "y": 186
+        },
+        {
+          "cx": 130,
+          "cy": 142,
+          "delay": 1.25,
+          "fill": "red",
+          "fx": [
+            "pop"
+          ],
+          "r": 2.2,
+          "t": "circle"
+        },
+        {
+          "cx": 137,
+          "cy": 147,
+          "delay": 1.29,
+          "fill": "red",
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 128,
+          "cy": 150,
+          "delay": 1.33,
+          "fill": "red",
+          "fx": [
+            "pop"
+          ],
+          "r": 1.6,
+          "t": "circle"
+        },
+        {
+          "cx": 140,
+          "cy": 140,
+          "delay": 1.37,
+          "fill": "red",
+          "fx": [
+            "pop"
+          ],
+          "r": 1.5,
+          "t": "circle"
+        },
+        {
+          "delay": 1.35,
+          "fx": [
+            "pop",
+            "pulse"
+          ],
+          "h": 28,
+          "rx": 2,
+          "stroke": "red",
+          "sw": 1.8,
+          "t": "rect",
+          "w": 30,
+          "x": 119,
+          "y": 131
+        },
+        {
+          "d": "M 149 152 C 155.8 155, 175.5 168.7, 190 170 C 204.5 171.3, 222 166.7, 236 160 C 250 153.3, 267.7 135, 274 130",
+          "dash": "3 4",
+          "delay": 1.55,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.6,
+          "stroke": "red",
+          "sw": 1.4,
+          "t": "path"
+        },
+        {
+          "delay": 0.4,
+          "fx": [
+            "draw"
+          ],
+          "h": 148,
+          "rx": 4,
+          "so": 0.55,
+          "stroke": "pale",
+          "sw": 1.5,
+          "t": "rect",
+          "w": 104,
+          "x": 264,
+          "y": 46
+        },
+        {
+          "cap": "round",
+          "delay": 0.7,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.75,
+          "stroke": "pale",
+          "sw": 2.6,
+          "t": "line",
+          "x1": 280,
+          "x2": 330,
+          "y1": 66,
+          "y2": 66
+        },
+        {
+          "cap": "round",
+          "delay": 0.8,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.32,
+          "stroke": "pale",
+          "sw": 2,
+          "t": "line",
+          "x1": 280,
+          "x2": 352,
+          "y1": 88,
+          "y2": 88
+        },
+        {
+          "cap": "round",
+          "delay": 0.88,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.32,
+          "stroke": "pale",
+          "sw": 2,
+          "t": "line",
+          "x1": 280,
+          "x2": 340,
+          "y1": 104,
+          "y2": 104
+        },
+        {
+          "cap": "round",
+          "delay": 0.96,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.32,
+          "stroke": "pale",
+          "sw": 2,
+          "t": "line",
+          "x1": 288,
+          "x2": 348,
+          "y1": 130,
+          "y2": 130
+        },
+        {
+          "cap": "round",
+          "delay": 1.04,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.32,
+          "stroke": "pale",
+          "sw": 2,
+          "t": "line",
+          "x1": 280,
+          "x2": 326,
+          "y1": 146,
+          "y2": 146
+        },
+        {
+          "cap": "round",
+          "delay": 1.12,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.32,
+          "stroke": "pale",
+          "sw": 2,
+          "t": "line",
+          "x1": 280,
+          "x2": 344,
+          "y1": 162,
+          "y2": 162
+        },
+        {
+          "cx": 279,
+          "cy": 130,
+          "delay": 1.7,
+          "fill": "red",
+          "fx": [
+            "pop",
+            "pulse"
+          ],
+          "r": 3.4,
+          "t": "circle"
+        },
+        {
+          "cap": "round",
+          "d": "M 282 182 C 283.2 180.5, 286.8 173, 289 173 C 291.2 173, 292.8 182.3, 295 182 C 297.2 181.7, 299.7 171, 302 171 C 304.3 171, 306.5 181.5, 309 182 C 311.5 182.5, 313.5 174.7, 317 174 C 320.5 173.3, 327.8 177.3, 330 178",
+          "delay": 1.8,
+          "fx": [
+            "draw"
+          ],
+          "stroke": "teal",
+          "sw": 1.6,
+          "t": "path"
+        }
+      ]
+    },
+    "series": "insight",
+    "topics": [
+      "artificial intelligence",
+      "fundus photography",
+      "regulation",
+      "diabetic eye screening",
+      "optometry"
+    ],
+    "sources": [
+      {
+        "date": "2026-09-18",
+        "publisher": "International Journal of Ophthalmology",
+        "read": "full",
+        "readVia": "publisher",
+        "title": "Why aren't we using AI in eye clinics? A systematic review of barriers and solutions in AI-based fundus image diagnostics for ocular diseases",
+        "url": "https://doi.org/10.18240/ijo.2026.09.17"
+      },
+      {
+        "date": "2026-09-10",
+        "publisher": "GOV.UK",
+        "read": "full",
+        "readVia": "page",
+        "title": "National Commission into the Regulation of AI in Healthcare: Recommendations for a future regulatory framework",
+        "url": "https://www.gov.uk/government/publications/national-commission-into-the-regulation-of-ai-in-healthcare-recommendations-for-a-future-regulatory-framework/national-commission-into-the-regulation-of-ai-in-healthcare-recommendations-for-a-future-regulatory-framework"
+      },
+      {
+        "date": "2026-09-02",
+        "publisher": "General Optical Council",
+        "read": "full",
+        "readVia": "page",
+        "title": "Optical professionals cautiously optimistic about AI but raise concerns about errors and accountability, GOC survey finds",
+        "url": "https://optical.org/resource/optical-professionals-cautiously-optimistic-about-ai-but-raise-concerns-about-errors-and-accountability-goc-survey-finds.html"
+      },
+      {
+        "date": "2025-06-09",
+        "publisher": "College of Optometrists",
+        "read": "full",
+        "readVia": "page",
+        "title": "Interim position on the use of artificial intelligence (AI) in eye care",
+        "url": "https://www.college-optometrists.org/policy-and-influencing/position-statements/interim-position-on-the-use-of-ai"
+      },
+      {
+        "date": "2020-06-30",
+        "publisher": "British Journal of Ophthalmology",
+        "read": "full",
+        "readVia": "europepmc",
+        "title": "Prospective evaluation of an artificial intelligence-enabled algorithm for automated diabetic retinopathy screening of 30 000 patients",
+        "url": "https://doi.org/10.1136/bjophthalmol-2020-316594"
+      },
+      {
+        "date": "2026-05-11",
+        "publisher": "UK National Screening Committee",
+        "read": "full",
+        "readVia": "page",
+        "title": "UK NSC consults on use of artificial intelligence in the diabetic eye screening programme",
+        "url": "https://nationalscreening.blog.gov.uk/2026/05/11/uk-nsc-consults-on-use-of-artificial-intelligence-in-the-diabetic-eye-screening-programme/"
+      },
+      {
+        "date": "2026-09-15",
+        "publisher": "PLOS Digital Health",
+        "read": "full",
+        "readVia": "publisher",
+        "title": "Evaluating an AI-assisted triage workflow for retinal diseases",
+        "url": "https://doi.org/10.1371/journal.pdig.0001700"
+      },
+      {
+        "date": "2026-09-02",
+        "publisher": "General Optical Council",
+        "read": "full",
+        "readVia": "publisher",
+        "title": "Registrant workforce and perceptions survey 2026: research report",
+        "url": "https://optical.org/asset/CBD32D15%2D651E%2D4446%2DB973611110032D55/"
+      },
+      {
+        "date": "2026-09-02",
+        "publisher": "General Optical Council",
+        "read": "full",
+        "readVia": "publisher",
+        "title": "Registrant survey 2026: profile of an optometrist",
+        "url": "https://optical.org/asset/7A4BF5B9%2D81F5%2D4657%2DBEC485376F5C1ED3/"
+      }
+    ],
+    "figure": {
+      "blocks": [
+        {
+          "items": [
+            {
+              "label": "results above 90% in the review's table",
+              "value": "27 of 29"
+            },
+            {
+              "label": "lowest figure in the table",
+              "value": "73.0%"
+            },
+            {
+              "label": "highest figure in the table",
+              "value": "99.8%"
+            }
+          ],
+          "kind": "stats",
+          "label": "In the research"
+        },
+        {
+          "kind": "share",
+          "text": "of optometrists who answered are concerned about their legal responsibility",
+          "value": 76
+        },
+        {
+          "items": [
+            {
+              "label": "of optometrists who answered rate their AI knowledge poor",
+              "value": "65%"
+            },
+            {
+              "label": "of working registrants use any AI to support diagnosis",
+              "value": "8%"
+            }
+          ],
+          "kind": "stats",
+          "label": "In UK practice"
+        }
+      ],
+      "caption": "Table figures are each entry's own, not pooled, and some are sensitivities or an area under the curve. GOC: 2,064 optometrists responded in March and April 2026; the 8% is of 3,022 working registrants.",
+      "source": "Int J Ophthalmol 2026; General Optical Council registrant survey 2026",
+      "title": "AI reading fundus photographs: the research, and UK practice"
+    },
+    "seo": {
+      "keyword": "AI in eye care",
+      "metaDescription": "In a review of AI in eye care, 27 of 29 results top 90%. What is really stopping it in UK practice, and who carries the risk.",
+      "metaTitle": "AI in eye care: who is liable when it is wrong"
+    },
+    "keyPoints": [
+      "A systematic review of AI reading fundus photographs lists 27 of 29 results above 90% in its table, and finds three barriers: workflow and cost, black-box outputs, models that do not generalise.",
+      "It does not answer the liability question. A UK commission said eight days earlier that negligence claims are disproportionately likely to be brought against clinicians and providers.",
+      "In the GOC's 2026 survey, 76% of optometrists were concerned about their legal responsibility if AI gets it wrong, as many as about AI errors, and 65% rated their AI knowledge poor.",
+      "The change a practice can make this week is a record: what the AI provided, how it informed the decision, and when and why you preferred your own reasoning."
+    ],
+    "faq": [
+      {
+        "a": "A fundus camera photographs the back of the eye: the retina, optic disc and macula. Those images are what diabetic eye screening grades, and they are what the AI systems in this review were reading. The review excluded studies using OCT or the slit lamp, though at least two systems in its own performance table use OCT as well as fundus images.",
+        "q": "What is a fundus camera?"
+      },
+      {
+        "a": "Software that reads retinal photographs and flags the ones that look abnormal, either as a first grader or as a triage step before a person looks. In research it performs well: 27 of the 29 results in this review's performance table are above 90%. In UK practice it is still rare: in the General Optical Council's 2026 survey, 8% of working registrants said they used AI of any kind to support a diagnosis, and 60% used it for none of the tasks listed.",
+        "q": "What is AI fundus screening?"
+      },
+      {
+        "a": "Not in the English programme. A 2020 independent evaluation of the EyeArt algorithm read 30,405 consecutive episodes across three English programmes and found referable retinopathy with 95.7% sensitivity, classifying all 462 cases of moderate-to-severe or proliferative disease as test-positive, including images it could not read. It agreed with the human grade of non-referable in only 54.0%, and its authors were testing it alongside human grading, not in place of it. Scotland's programme then used a computer to triage macular images. The UK National Screening Committee still did not recommend automated grading on 1 October 2026; its consultation closed on 3 August.",
+        "q": "Does the NHS use AI for diabetic eye screening?"
+      },
+      {
+        "a": "That depends on the facts, and it is not settled. What the National Commission into the Regulation of AI in Healthcare found in September 2026 is that negligence claims are disproportionately likely to be brought against healthcare professionals and providers, because they hold the clearest duty of care, which it calls a perceived liability sink. Its Recommendation 28 asks that the contract between manufacturer and provider set out who delivers which risk controls. The College of Optometrists is plain about the clinical side: responsibility for the decision stays with the clinician, who must keep oversight and be able to overrule the software.",
+        "q": "Who is liable if an AI tool gets a diagnosis wrong?"
+      }
+    ],
+    "body": [
+      {
+        "text": "AI in eye care does well in research. [A systematic review published on 18 September in the International Journal of Ophthalmology](https://doi.org/10.18240/ijo.2026.09.17) read 34 studies of AI reading fundus photographs. In its own performance table, 27 of the 29 results are above 90%, though the column it labels accuracy also holds sensitivities and an area under the curve.",
+        "type": "p"
+      },
+      {
+        "text": "What it does not answer is who carries the risk. It names medicolegal liability as a concern, but its results give three barriers and no analysis of who is liable. Eight days earlier, an independent commission set up by the MHRA reported on exactly that, and the GOC says it will respond.",
+        "type": "p"
+      },
+      {
+        "text": "What the review did",
+        "type": "h2"
+      },
+      {
+        "text": "A PRISMA review, not a meta-analysis. Scopus, PubMed and Web of Science were searched to June 2025, and 34 studies were included, three of them from the UK. Diabetic retinopathy was the commonest subject, in 25 of them. Studies using OCT or the slit lamp were excluded. On the Mixed Methods Appraisal Tool, 22 studies were moderate to high quality and 12 showed notable limitations.",
+        "type": "p"
+      },
+      {
+        "text": "What it found, and what it left out",
+        "type": "h2"
+      },
+      {
+        "text": "Three barriers. The software does not fit the working day: separate programs, manual uploads, hardware that costs money. Clinicians cannot see how a black box reached its answer, which the authors tie to low trust. And models trained on one population do not travel, so performance falls in the groups already least well served. Their summary is blunt.",
+        "type": "p"
+      },
+      {
+        "text": "AI performs well in research (>90% accuracy) but falters in real-world use.",
+        "type": "quote"
+      },
+      {
+        "text": "One hospital's simulation put numbers on the trade. [A study published in PLOS Digital Health on 15 September](https://doi.org/10.1371/journal.pdig.0001700) let AI clear its own negatives on 6,904 fundus photographs read by three retina specialists. The images needing a specialist fell to 7.3%–8.0% for diabetic retinopathy, and mean sensitivity for it fell from 0.9168 to 0.8838. In an exploratory analysis across all three diseases, 27.7%–30.1% still needed one. A stricter threshold won back most of the diabetic retinopathy loss, so where to set it is a clinical judgement as much as a technical one.",
+        "type": "p"
+      },
+      {
+        "text": "Who is liable when AI in eye care is wrong",
+        "type": "h2"
+      },
+      {
+        "text": "[The National Commission into the Regulation of AI in Healthcare](https://www.gov.uk/government/publications/national-commission-into-the-regulation-of-ai-in-healthcare-recommendations-for-a-future-regulatory-framework/national-commission-into-the-regulation-of-ai-in-healthcare-recommendations-for-a-future-regulatory-framework) reported on 10 September with 44 recommendations. Under negligence as it stands, it found, claims are disproportionately likely to be brought against healthcare professionals and providers, because they have the clearest duty of care. It calls the result a perceived “liability sink”. Recommendation 28 is that the contract between manufacturer and provider should set out who delivers which risk controls. That is a recommendation, not a requirement.",
+        "type": "p"
+      },
+      {
+        "text": "Optometrists have worked this out. In [the General Optical Council's 2026 registrant survey](https://optical.org/asset/7A4BF5B9%2D81F5%2D4657%2DBEC485376F5C1ED3/), 76% of the 2,064 optometrists who answered were concerned about their legal responsibility if something goes wrong, as many as were concerned about the AI making errors, and 65% rated their own knowledge of AI as poor.",
+        "type": "p"
+      },
+      {
+        "text": "Why it matters in practice",
+        "type": "h2"
+      },
+      {
+        "text": "What changes is not the consulting room but what you ask a supplier and what you write down. [The College of Optometrists' interim position](https://www.college-optometrists.org/policy-and-influencing/position-statements/interim-position-on-the-use-of-ai) says, among other things, three you can act on. Check the tool is registered with the MHRA as Artificial Intelligence as a Medical Device before you buy it. Tell patients when AI is being used, and where possible let them opt out. And keep records of what the AI provided, how it informed the decision, and when and why you preferred your own reasoning. That last one you can do this week.",
+        "type": "p"
+      },
+      {
+        "text": "The contract is the next renewal's job. The third is what to tell the patient who asks whether a computer will read their photographs. In NHS diabetic eye screening in England it will not yet, though the UK National Screening Committee is closer than it was: the evidence summary it consulted on concludes that some systems are as good as a first human grader and could be tested in real NHS services. That consultation closed on 3 August 2026, and no updated recommendation had been published by 1 October. For anything else, the answer is whatever your own practice's software does. What reaches the high street, to my mind, arrives inside a pathway, as [Denmark's OCT roll-out](/news/denmark-oct-teleophthalmology-referrals) did, not as a box on its own.",
+        "type": "p"
+      },
+      {
+        "text": "The caveats",
+        "type": "h2"
+      },
+      {
+        "items": [
+          "The review's arithmetic does not hold together: the abstract says 34 studies from 2018 to 2025, the results say 2016 to 2025, and the table lists 29 entries, nine of them dated 2026. One of those reads fundus and OCT together, which its own exclusion criteria rule out. It states no limitations of its own.",
+          "The table's figures are each entry's own, mostly on curated data, never pooled, and not all are accuracies: some are sensitivities, one an area under the curve. Two rows cite reviews; the lowest, 73.0%, cites a news report. One model fell from 98.84% to 87.13% on outside data. None measures sight saved.",
+          "The Commission is an independent expert advisory body set up by the MHRA. Its 44 recommendations are not law, the government response is still to come, and the liability passage is analysis, not law.",
+          "The GOC figures are self-reported by the 3,451 who answered, an 11% response rate. The triage simulation is single-centre, retrospective and Korean, part-funded by the software's maker, two of whose employees are authors."
+        ],
+        "type": "ul"
+      }
+    ]
+  },
+  {
+    "slug": "optometrist-referrals-ophthalmology",
+    "title": "Optometrist referrals in Greater Manchester: glaucoma first, at 12.2%",
+    "date": "2026-10-12",
+    "readingMinutes": 4,
+    "excerpt": "Glaucoma was 12.2% of 104,190 optometrist e-referrals in Greater Manchester, the top reason, and 10.2% were sent to hospital with no subspecialty named.",
+    "cover": {
+      "about": "Eight practices send letters along their routes to a hospital's column of clinics. One route in eight runs red to the glaucoma clinic, the commonest reason; one stops at the hospital wall, with no clinic named.",
+      "name": "referral-routes",
+      "shapes": [
+        {
+          "delay": 0.15,
+          "fx": [
+            "draw"
+          ],
+          "h": 170,
+          "rx": 4,
+          "so": 0.6,
+          "stroke": "pale",
+          "sw": 1.6,
+          "t": "rect",
+          "w": 74,
+          "x": 292,
+          "y": 36
+        },
+        {
+          "cap": "round",
+          "delay": 0.3,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.6,
+          "stroke": "pale",
+          "sw": 2.4,
+          "t": "line",
+          "x1": 329,
+          "x2": 329,
+          "y1": 14,
+          "y2": 28
+        },
+        {
+          "cap": "round",
+          "delay": 0.3,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.6,
+          "stroke": "pale",
+          "sw": 2.4,
+          "t": "line",
+          "x1": 322,
+          "x2": 336,
+          "y1": 21,
+          "y2": 21
+        },
+        {
+          "delay": 1.3,
+          "fill": "red",
+          "fo": 0.16,
+          "fx": [
+            "pop",
+            "pulse"
+          ],
+          "h": 18,
+          "rx": 2,
+          "stroke": "red",
+          "sw": 1.6,
+          "t": "rect",
+          "w": 50,
+          "x": 304,
+          "y": 52
+        },
+        {
+          "delay": 0.51,
+          "fx": [
+            "pop"
+          ],
+          "h": 18,
+          "rx": 2,
+          "so": 0.55,
+          "stroke": "teal",
+          "sw": 1.2,
+          "t": "rect",
+          "w": 50,
+          "x": 304,
+          "y": 80
+        },
+        {
+          "delay": 0.57,
+          "fx": [
+            "pop"
+          ],
+          "h": 18,
+          "rx": 2,
+          "so": 0.55,
+          "stroke": "teal",
+          "sw": 1.2,
+          "t": "rect",
+          "w": 50,
+          "x": 304,
+          "y": 108
+        },
+        {
+          "delay": 0.63,
+          "fx": [
+            "pop"
+          ],
+          "h": 18,
+          "rx": 2,
+          "so": 0.55,
+          "stroke": "teal",
+          "sw": 1.2,
+          "t": "rect",
+          "w": 50,
+          "x": 304,
+          "y": 136
+        },
+        {
+          "delay": 0.69,
+          "fx": [
+            "pop"
+          ],
+          "h": 18,
+          "rx": 2,
+          "so": 0.55,
+          "stroke": "teal",
+          "sw": 1.2,
+          "t": "rect",
+          "w": 50,
+          "x": 304,
+          "y": 164
+        },
+        {
+          "delay": 0.05,
+          "fill": "pale",
+          "fo": 0.06,
+          "fx": [
+            "pop"
+          ],
+          "h": 14,
+          "rx": 2,
+          "so": 0.7,
+          "stroke": "pale",
+          "sw": 1.4,
+          "t": "rect",
+          "w": 16,
+          "x": 44,
+          "y": 33
+        },
+        {
+          "cap": "round",
+          "delay": 0.08,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.5,
+          "stroke": "pale",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 42,
+          "x2": 62,
+          "y1": 31,
+          "y2": 31
+        },
+        {
+          "delay": 0.1,
+          "fill": "pale",
+          "fo": 0.06,
+          "fx": [
+            "pop"
+          ],
+          "h": 14,
+          "rx": 2,
+          "so": 0.7,
+          "stroke": "pale",
+          "sw": 1.4,
+          "t": "rect",
+          "w": 16,
+          "x": 44,
+          "y": 57
+        },
+        {
+          "cap": "round",
+          "delay": 0.13,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.5,
+          "stroke": "pale",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 42,
+          "x2": 62,
+          "y1": 55,
+          "y2": 55
+        },
+        {
+          "delay": 0.15,
+          "fill": "pale",
+          "fo": 0.06,
+          "fx": [
+            "pop"
+          ],
+          "h": 14,
+          "rx": 2,
+          "so": 0.7,
+          "stroke": "pale",
+          "sw": 1.4,
+          "t": "rect",
+          "w": 16,
+          "x": 44,
+          "y": 81
+        },
+        {
+          "cap": "round",
+          "delay": 0.18,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.5,
+          "stroke": "pale",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 42,
+          "x2": 62,
+          "y1": 79,
+          "y2": 79
+        },
+        {
+          "delay": 0.2,
+          "fill": "pale",
+          "fo": 0.06,
+          "fx": [
+            "pop"
+          ],
+          "h": 14,
+          "rx": 2,
+          "so": 0.7,
+          "stroke": "pale",
+          "sw": 1.4,
+          "t": "rect",
+          "w": 16,
+          "x": 44,
+          "y": 105
+        },
+        {
+          "cap": "round",
+          "delay": 0.23,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.5,
+          "stroke": "pale",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 42,
+          "x2": 62,
+          "y1": 103,
+          "y2": 103
+        },
+        {
+          "delay": 0.25,
+          "fill": "pale",
+          "fo": 0.06,
+          "fx": [
+            "pop"
+          ],
+          "h": 14,
+          "rx": 2,
+          "so": 0.7,
+          "stroke": "pale",
+          "sw": 1.4,
+          "t": "rect",
+          "w": 16,
+          "x": 44,
+          "y": 129
+        },
+        {
+          "cap": "round",
+          "delay": 0.28,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.5,
+          "stroke": "pale",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 42,
+          "x2": 62,
+          "y1": 127,
+          "y2": 127
+        },
+        {
+          "delay": 0.3,
+          "fill": "pale",
+          "fo": 0.06,
+          "fx": [
+            "pop"
+          ],
+          "h": 14,
+          "rx": 2,
+          "so": 0.7,
+          "stroke": "pale",
+          "sw": 1.4,
+          "t": "rect",
+          "w": 16,
+          "x": 44,
+          "y": 153
+        },
+        {
+          "cap": "round",
+          "delay": 0.33,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.5,
+          "stroke": "pale",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 42,
+          "x2": 62,
+          "y1": 151,
+          "y2": 151
+        },
+        {
+          "delay": 0.35,
+          "fill": "pale",
+          "fo": 0.06,
+          "fx": [
+            "pop"
+          ],
+          "h": 14,
+          "rx": 2,
+          "so": 0.7,
+          "stroke": "pale",
+          "sw": 1.4,
+          "t": "rect",
+          "w": 16,
+          "x": 44,
+          "y": 177
+        },
+        {
+          "cap": "round",
+          "delay": 0.38,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.5,
+          "stroke": "pale",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 42,
+          "x2": 62,
+          "y1": 175,
+          "y2": 175
+        },
+        {
+          "delay": 0.4,
+          "fill": "pale",
+          "fo": 0.06,
+          "fx": [
+            "pop"
+          ],
+          "h": 14,
+          "rx": 2,
+          "so": 0.7,
+          "stroke": "pale",
+          "sw": 1.4,
+          "t": "rect",
+          "w": 16,
+          "x": 44,
+          "y": 201
+        },
+        {
+          "cap": "round",
+          "delay": 0.43,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.5,
+          "stroke": "pale",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 42,
+          "x2": 62,
+          "y1": 199,
+          "y2": 199
+        },
+        {
+          "d": "M 62 40 C 160 40, 196 89, 304 89",
+          "delay": 0.3,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.45,
+          "stroke": "teal",
+          "sw": 1.5,
+          "t": "path"
+        },
+        {
+          "d": "M 62 64 C 160 64, 196 61, 304 61",
+          "delay": 0.37,
+          "fx": [
+            "draw",
+            "pulse"
+          ],
+          "so": 0.95,
+          "stroke": "red",
+          "sw": 2.2,
+          "t": "path"
+        },
+        {
+          "d": "M 62 88 C 160 88, 196 117, 304 117",
+          "delay": 0.44,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.45,
+          "stroke": "teal",
+          "sw": 1.5,
+          "t": "path"
+        },
+        {
+          "d": "M 62 112 C 160 112, 196 145, 304 145",
+          "delay": 0.51,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.45,
+          "stroke": "teal",
+          "sw": 1.5,
+          "t": "path"
+        },
+        {
+          "d": "M 62 136 C 160 136, 196 117, 304 117",
+          "delay": 0.58,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.45,
+          "stroke": "teal",
+          "sw": 1.5,
+          "t": "path"
+        },
+        {
+          "d": "M 62 160 C 160 160, 196 173, 304 173",
+          "delay": 0.65,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.45,
+          "stroke": "teal",
+          "sw": 1.5,
+          "t": "path"
+        },
+        {
+          "d": "M 62 184 C 160 184, 196 190, 292 190",
+          "dash": "3 5",
+          "delay": 0.9,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.4,
+          "stroke": "pale",
+          "sw": 1.4,
+          "t": "path"
+        },
+        {
+          "cx": 292,
+          "cy": 190,
+          "delay": 1,
+          "fx": [
+            "pop"
+          ],
+          "r": 3,
+          "so": 0.6,
+          "stroke": "pale",
+          "sw": 1.2,
+          "t": "circle"
+        },
+        {
+          "d": "M 62 208 C 160 208, 196 145, 304 145",
+          "delay": 0.79,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.45,
+          "stroke": "teal",
+          "sw": 1.5,
+          "t": "path"
+        },
+        {
+          "delay": 1.1,
+          "fill": "pale",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "h": 9,
+          "rx": 1,
+          "t": "rect",
+          "w": 12,
+          "x": 156.6,
+          "y": 54.2
+        },
+        {
+          "d": "M 156.6 54.2 L 162.6 59.2 L 168.6 54.2",
+          "delay": 1.1,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.8,
+          "stroke": "ink",
+          "sw": 1,
+          "t": "path"
+        },
+        {
+          "delay": 1.22,
+          "fill": "red",
+          "fo": 1,
+          "fx": [
+            "pop",
+            "pulse"
+          ],
+          "h": 9,
+          "rx": 1,
+          "t": "rect",
+          "w": 12,
+          "x": 190.1,
+          "y": 57.6
+        },
+        {
+          "d": "M 190.1 57.6 L 196.1 62.6 L 202.1 57.6",
+          "delay": 1.22,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.8,
+          "stroke": "ink",
+          "sw": 1,
+          "t": "path"
+        },
+        {
+          "delay": 1.34,
+          "fill": "pale",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "h": 9,
+          "rx": 1,
+          "t": "rect",
+          "w": 12,
+          "x": 173.3,
+          "y": 122
+        },
+        {
+          "d": "M 173.3 122 L 179.3 127 L 185.3 122",
+          "delay": 1.34,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.8,
+          "stroke": "ink",
+          "sw": 1,
+          "t": "path"
+        },
+        {
+          "delay": 1.46,
+          "fill": "pale",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "h": 9,
+          "rx": 1,
+          "t": "rect",
+          "w": 12,
+          "x": 144,
+          "y": 184.9
+        },
+        {
+          "d": "M 144 184.9 L 150 189.9 L 156 184.9",
+          "delay": 1.46,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.8,
+          "stroke": "ink",
+          "sw": 1,
+          "t": "path"
+        }
+      ]
+    },
+    "series": "insight",
+    "topics": [
+      "referrals",
+      "glaucoma",
+      "hospital eye service",
+      "wet amd",
+      "e-referral"
+    ],
+    "sources": [
+      {
+        "date": "2026-09-26",
+        "publisher": "Ophthalmic and Physiological Optics",
+        "read": "full",
+        "readFrom": "the publisher PDF, https://link.springer.com/content/pdf/10.1007/s44402-026-00198-x.pdf",
+        "readVia": "publisher",
+        "title": "Who Gets Referred for What? Large Scale Analysis of Clinical, Socioeconomic and Demographic Drivers Within Electronic Optometry Referrals",
+        "url": "https://doi.org/10.1007/s44402-026-00198-x"
+      },
+      {
+        "date": "2026-07-17",
+        "publisher": "Canadian Journal of Ophthalmology",
+        "read": "abstract",
+        "readVia": "europepmc",
+        "title": "Assessing referral quality in glaucoma care: a retrospective analysis of clinical data in optometrist and ophthalmologist referrals",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42419692/"
+      },
+      {
+        "date": "2025-02-07",
+        "publisher": "Ophthalmic and Physiological Optics",
+        "read": "full",
+        "readVia": "page",
+        "title": "The quality, accuracy and appropriateness of UK optometric age-related macular degeneration referrals",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11976509/"
+      },
+      {
+        "publisher": "College of Optometrists",
+        "read": "full",
+        "readVia": "page",
+        "title": "Referrals (Guidance for Professional Practice, C206)",
+        "url": "https://www.college-optometrists.org/clinical-guidance/guidance/communication,-partnership-and-teamwork/working-with-colleagues/referrals"
+      },
+      {
+        "date": "2026-06-08",
+        "publisher": "GOV.UK",
+        "read": "full",
+        "readVia": "page",
+        "title": "Millions to get faster eye care on the high street",
+        "url": "https://www.gov.uk/government/news/millions-to-get-faster-eye-care-on-the-high-street"
+      }
+    ],
+    "figure": {
+      "blocks": [
+        {
+          "decimals": 1,
+          "items": [
+            {
+              "emphasis": true,
+              "label": "Glaucoma",
+              "value": 12.2
+            },
+            {
+              "label": "Other medical retina",
+              "value": 11.6
+            },
+            {
+              "label": "YAG capsulotomy",
+              "value": 11.1
+            },
+            {
+              "label": "Cataract",
+              "value": 10.8
+            }
+          ],
+          "kind": "bars",
+          "label": "Commonest reasons for referral",
+          "unit": "%"
+        },
+        {
+          "items": [
+            {
+              "label": "to a named hospital clinic type",
+              "value": "71.6%"
+            },
+            {
+              "label": "to hospital, Not Otherwise Specified",
+              "value": "10.2%"
+            },
+            {
+              "label": "to GPs",
+              "value": "15.0%"
+            },
+            {
+              "label": "to glaucoma enhanced services",
+              "value": "3.0%"
+            }
+          ],
+          "kind": "stats",
+          "label": "Where they went"
+        }
+      ],
+      "caption": "104,190 electronic referrals from Greater Manchester optometrists through the NHS England North West Electronic Eyecare Referral System, 10 June 2022 to 30 May 2024. Percentages of all referrals; standard form only.",
+      "source": "Alotaibi et al., Ophthalmic and Physiological Optics, 2026",
+      "title": "Where 104,190 optometrist referrals went, and why"
+    },
+    "seo": {
+      "keyword": "optometrist referral",
+      "metaDescription": "What goes into an optometrist referral, from 104,190 e-referrals in Greater Manchester: glaucoma first, 10.2% with no subspecialty, and what goes missing.",
+      "metaTitle": "Optometrist referral: what the hospital needs to see"
+    },
+    "keyPoints": [
+      "In 104,190 electronic referrals from Greater Manchester optometrists, June 2022 to May 2024, glaucoma was the commonest reason, at 12.2%, ahead of other medical retina, YAG capsulotomy and cataract.",
+      "10.2% went to hospital as \"Not Otherwise Specified\", with no subspecialty, and 3.0% went to glaucoma enhanced services, a figure the authors say understates scheme use.",
+      "In a Canadian audit of 522 glaucoma referrals, optometrists' were the more complete, but visual fields and OCT were among the elements most often missing.",
+      "In Bradford, 39.8% of suspected wet AMD referrals were confirmed, yet 76.8% of those made before the pandemic were judged necessary."
+    ],
+    "faq": [
+      {
+        "a": "The College of Optometrists' guidance (C206) says a referral should include the relevant details from the eye examination, the reason for referral with images where appropriate, details of discussions with the patient and any with the practitioner being referred to, and the level of urgency. In a Canadian review of 522 glaucoma referrals, visual fields and OCT were among the elements most often left out.",
+        "q": "What should an optometrist referral letter include?"
+      },
+      {
+        "a": "In 104,190 electronic referrals from optometrists in Greater Manchester between June 2022 and May 2024, glaucoma was the commonest reason, at 12.2%, followed by other medical retina at 11.6%, YAG laser capsulotomy at 11.1% and cataract at 10.8%. The authors note cataract is likely to be undercounted, because referrals through the enhanced cataract scheme use a separate form.",
+        "q": "What are the most common reasons optometrists refer to an ophthalmologist?"
+      },
+      {
+        "a": "In a study of 394 referrals to one specialist macular treatment centre, in Bradford between 2019 and 2021, 39.8% of referrals for suspected wet AMD were confirmed, and the commonest misdiagnosis was dry AMD. Other UK studies the authors cite found 37% in the Highlands and 26% in Wales. Most referrals were still warranted: 76.8% of the suspected wet AMD referrals made before the pandemic led to treatment or observation over several visits.",
+        "q": "How accurate are optometrist referrals for wet AMD?"
+      },
+      {
+        "a": "Often not. The Bradford authors cite a study in which the reply rate to optometrists' referrals was 2.6%, and the Manchester team suggest that delayed or absent replies from hospital may prompt glaucoma re-referrals. Without a reply, the optometrist cannot learn whether the proposed diagnosis was right.",
+        "q": "Do optometrists get a reply to their referrals?"
+      }
+    ],
+    "body": [
+      {
+        "text": "What its authors call the first large-scale analysis of electronic optometry referrals in the UK was [published in Ophthalmic and Physiological Optics on 26 September](https://doi.org/10.1007/s44402-026-00198-x). Researchers in Manchester looked at 104,190 referrals from Greater Manchester optometrists between June 2022 and May 2024. Glaucoma was the commonest reason for an optometrist referral, and 10.2% of all the referrals were sent to hospital as \"Not Otherwise Specified\", with no subspecialty named.",
+        "type": "p"
+      },
+      {
+        "text": "Most earlier studies, the authors note, looked at one condition at a time. Two such studies show what the hospital finds in glaucoma and wet AMD referrals, and the numbers cut both ways.",
+        "type": "p"
+      },
+      {
+        "text": "What the study did",
+        "type": "h2"
+      },
+      {
+        "text": "It is a retrospective service evaluation of routinely collected data from the NHS England North West Electronic Eyecare Referral System, limited to referrals from Greater Manchester. The authors described where referrals went and why, and tested how deprivation, age, sex and ethnicity related to each type, with deprivation and ethnicity measured by area rather than per patient.",
+        "type": "p"
+      },
+      {
+        "text": "What 104,190 optometrist referrals showed",
+        "type": "h2"
+      },
+      {
+        "text": "81.8% went to hospital ophthalmology: 71.6% to a named clinic type and 10.2% as \"Not Otherwise Specified\", an option on the form for when the referrer cannot settle on a diagnosis or no clinic type fits. 15.0% went to GPs, and 3.0% to glaucoma enhanced services in the community.",
+        "type": "p"
+      },
+      {
+        "text": "Glaucoma led, at 12.2% (12,777 referrals), then other medical retina at 11.6%, YAG laser capsulotomy at 11.1% and cataract at 10.8%. Cataract and paediatric binocular vision referrals came more often from more deprived areas, and vitreoretinal, adult binocular vision and other medical retina from less deprived ones.",
+        "type": "p"
+      },
+      {
+        "text": "The authors say the figures suggest, rather than confirm, that community schemes were underused. They also set out why glaucoma is hard to refer well: a GOS sight test is time-limited and does not routinely include visual fields, OCT or gonioscopy, so a referral made outside an enhanced scheme often rests on a single clinical impression, and referring when uncertain may be the safest choice for the patient.",
+        "type": "p"
+      },
+      {
+        "text": "What the hospital finds missing",
+        "type": "h2"
+      },
+      {
+        "text": "[A Dalhousie University team](https://pubmed.ncbi.nlm.nih.gov/42419692/) scored 522 referrals to two glaucoma specialists in 2024. Optometrists' referrals were the more complete, with a median score of 9 against 5 for ophthalmologists', but visual fields and OCT were among the elements most often missing from both, and optometrists more often left out ocular history and medications. 33.9% of patients referred by optometrists had an intervention at the first visit, against 59.7% of those referred by ophthalmologists. The abstract does not define an intervention, and the comparison is unadjusted, so the gap may reflect who is referred as much as how.",
+        "type": "p"
+      },
+      {
+        "text": "[In Bradford](https://pmc.ncbi.nlm.nih.gov/articles/PMC11976509/), a review of 394 referrals to a specialist macular treatment centre found the letters themselves were good: legibility was high, and distance acuity was recorded in 99.0% before the pandemic. But 39.8% of referrals for suspected wet AMD were confirmed, the commonest misdiagnosis being dry AMD. Even so, 76.8% of the suspected wet AMD referrals made before the pandemic were judged necessary, because the patient was treated or observed over several visits.",
+        "type": "p"
+      },
+      {
+        "text": "For a system that puts OCT and a consultant's reading behind the referral, see [Denmark's optician stores](/news/denmark-oct-teleophthalmology-referrals).",
+        "type": "p"
+      },
+      {
+        "text": "Why it matters in practice",
+        "type": "h2"
+      },
+      {
+        "items": [
+          "Name the clinic when you can, and keep \"Not Otherwise Specified\" for when no diagnosis or clinic type fits.",
+          "Send what the College asks for: the relevant findings, the reason for referral with images where appropriate, what you discussed with the patient, and the urgency ([Guidance for Professional Practice, C206](https://www.college-optometrists.org/clinical-guidance/guidance/communication,-partnership-and-teamwork/working-with-colleagues/referrals)). For signs of possible glaucoma at a routine sight test, the College notes that NICE recommends additional tests before referral (C195).",
+          "For suspected wet AMD, the acuity carries weight: in Bradford, reduced visual acuity was the sign most strongly linked to a confirmed diagnosis, followed by haemorrhage.",
+          "Use the glaucoma scheme where one is commissioned. Only 3.0% of the Manchester referrals went to one, a figure the authors say understates use.",
+          "Ask for the reply. The Bradford authors cite a study in which the reply rate to optometrists' referrals was 2.6%, and the Manchester team suggest delayed or absent replies may prompt glaucoma re-referrals. Without a reply, the optometrist never learns whether the diagnosis was right.",
+          "The government's £20 million plan aims to give every optical practice with an NHS contract in England [access to the NHS e-Referral Service](https://www.gov.uk/government/news/millions-to-get-faster-eye-care-on-the-high-street) by April 2028."
+        ],
+        "type": "ul"
+      },
+      {
+        "text": "The caveats",
+        "type": "h2"
+      },
+      {
+        "items": [
+          "The Manchester data count referral events, not patients or outcomes, and nothing in them says whether a referral was right.",
+          "Repeat referrals could not be linked, and the authors say re-referral may inflate glaucoma's count. Referrals made inside enhanced schemes use a separate form and were not captured, so glaucoma, cataract and scheme use are likely to be undercounted. Glaucoma's lead over other medical retina is narrow, and the authors read the ranking as a pattern of recorded referral activity.",
+          "The Canadian figures come from the abstract, as the full paper could not be opened, and its clinics and funding differ from the UK's.",
+          "The Bradford study is one centre, from March 2019 to February 2021, half of it during the pandemic."
+        ],
+        "type": "ul"
+      }
+    ]
+  },
+  {
     "slug": "macular-degeneration-uk-2050",
     "title": "Macular degeneration: 21 million worldwide with sight loss by 2050",
     "date": "2026-10-05",
