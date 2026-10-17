@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { market, tiers, type Tier } from "@/content/market";
+import { market, PRACTICES, tiers, type Tier } from "@/content/market";
 
 /**
  * TAM, SAM and SOM as a continuous zoom.
@@ -25,7 +25,7 @@ import { market, tiers, type Tier } from "@/content/market";
  *  - Each tier has its own grid, ruled as a fraction of its own size, so
  *    detail resolves as you descend instead of the picture just getting
  *    bigger. The magnification readout says how deep you are.
- *  - At full zoom the obtainable market resolves into 1,895 marks, one per
+ *  - At full zoom the obtainable market resolves into one mark per
  *    participating practice. The payoff for travelling is a real number.
  *
  * Colour is emphasis, not magnitude: size already carries the value, so
@@ -74,7 +74,6 @@ function gridOf(t: Tier, cols: number, rows: number) {
 }
 
 /** One mark per participating practice, laid out inside the SOM rectangle. */
-const PRACTICES = 1895;
 const practiceDots = (() => {
   const r = rectOf(tiers[2]);
   const cols = Math.ceil(Math.sqrt(PRACTICES * (r.w / r.h)));
@@ -217,7 +216,7 @@ export default function MarketFunnel() {
             })}
 
             {/* The payoff at the bottom of the descent: one mark per practice.
-                Only mounted at that depth — 1,895 nodes is not worth carrying
+                Only mounted at that depth — that many nodes is not worth carrying
                 while they are far too small to see. */}
             {active === 2 && (
               <g className="mf-practices" fill="var(--color-ink-950)" opacity={0.72}>

@@ -15,12 +15,24 @@
  * context. Which markets are in the plan is stated; why the others are not is
  * a question for the room, and it should be asked before it is answered.
  *
- * `share` is each tier's annual value as a fraction of the tier above, and it
- * is what the figure draws: the squares are scaled so their AREA carries the
- * ratio. That is the whole argument of the graphic — the obtainable market is
- * a very small square inside a very large one, which is the case for the
- * forecast being credible rather than the reverse.
+ * `millions` is each tier's annual value, and it is what the figure draws:
+ * the three rectangles are scaled so their AREA carries the value, and the
+ * camera zooms between them. That is the whole argument of the graphic — the
+ * obtainable market is a very small rectangle inside a very large one, which
+ * is the case for the forecast being credible rather than the reverse.
  */
+
+/**
+ * Participating optometry practices in the UK launch market by year five.
+ *
+ * One constant, because the number is used three ways that have to agree: the
+ * figure draws one dot per practice, the obtainable tier's readout names the
+ * count, and the intro points the reader at the dots. Typed by hand in each
+ * place it would drift the first time the forecast moved, and the one that
+ * drifted would be an investor-facing number contradicting the dots beside it.
+ */
+export const PRACTICES = 1895;
+const practices = PRACTICES.toLocaleString("en-GB");
 
 export type Tier = {
   id: "tam" | "sam" | "som";
@@ -67,8 +79,7 @@ export const tiers: Tier[] = [
     label: "Serviceable obtainable market",
     people: "23,000 patients",
     peopleShort: "23,000 patients a year",
-    peopleNote:
-      "a year in the UK launch market by year five, across 1,895 participating optometry practices",
+    peopleNote: `a year in the UK launch market by year five, across ${practices} participating optometry practices`,
     value: "£14.8m",
     valueNote: "annual recurring revenue, which is 2% of the serviceable market",
     millions: 14.8,
@@ -78,8 +89,15 @@ export const tiers: Tier[] = [
 export const market = {
   eyebrow: "The opportunity",
   title: "A small share of a serviceable market is a substantial business.",
-  intro:
-    "Three nested markets, drawn to scale by annual value. The obtainable market is the small square: the year-five forecast asks for two per cent of what is serviceable, not for the whole of it.",
+  /*
+   * Says what the figure is and how to use it, and nothing that depends on
+   * motion: the fly-through does not play under reduced motion and on a phone
+   * the reader just uses the buttons. It states no share or ratio, because the
+   * readout under the figure already prints the share of the tier above, and
+   * it labels the practices as part of the year-five forecast, because
+   * "participating practices" alone reads as practices that exist today.
+   */
+  intro: `Three markets drawn to scale by annual value. Use the three buttons below to zoom between them; close up, the smallest shows one dot for each of the ${practices} participating practices in the year-five forecast.`,
   footnote:
     "Population figures derived from GlobalData's AMD Epidemiology Forecast to 2034; values based on BioPhotonix's per-course licensing model.",
 };
