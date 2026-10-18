@@ -24,6 +24,10 @@ import { VisionRenderer, type SceneSource } from "./vision-engine";
  * screen. The stage text also follows the slider rather than preceding it, so
  * when a longer description changes the height of the page, the slider under
  * the reader's finger does not move.
+ *
+ * The whole tool is also sized to the screen, not just the column, so that on
+ * a laptop the scene buttons, picture, slider and stage names fit together
+ * under the fixed header. The sum is in `.vs-fit` in globals.css.
  */
 
 type Props = {
@@ -78,25 +82,30 @@ export default function VisionSimulator({ titleAs: Title = "h3" }: Props) {
   }, [stage]);
 
   return (
-    <div>
-      {/* Scene */}
-      <div role="group" aria-label={vision.sceneLabel} className="flex flex-wrap items-center gap-2">
-        <span className="eyebrow mr-1 text-fog">{vision.sceneLabel}</span>
-        {vision.scenes.map((s) => (
-          <button
-            key={s.id}
-            type="button"
-            onClick={() => setScene(s.id)}
-            aria-pressed={scene === s.id}
-            className={`rounded-full border px-4 py-1.5 text-sm transition ${
-              scene === s.id
-                ? "border-teal-400 bg-teal-400/10 text-fog"
-                : "border-line text-fog hover:border-line-strong hover:text-fog"
-            }`}
-          >
-            {s.label}
-          </button>
-        ))}
+    <div className="vs-fit">
+      {/* Scene. The label sits on its own line, as the stage label does over
+          the slider: inline, the row needed 734px and wrapped once the tool
+          was sized to a laptop screen, and the extra row broke the fit. The
+          buttons alone need 503px, under the .vs-fit floor. */}
+      <div role="group" aria-label={vision.sceneLabel}>
+        <span className="eyebrow block text-fog">{vision.sceneLabel}</span>
+        <div className="mt-2 flex flex-wrap items-center gap-2">
+          {vision.scenes.map((s) => (
+            <button
+              key={s.id}
+              type="button"
+              onClick={() => setScene(s.id)}
+              aria-pressed={scene === s.id}
+              className={`rounded-full border px-4 py-1.5 text-sm transition ${
+                scene === s.id
+                  ? "border-teal-400 bg-teal-400/10 text-fog"
+                  : "border-line text-fog hover:border-line-strong hover:text-fog"
+              }`}
+            >
+              {s.label}
+            </button>
+          ))}
+        </div>
       </div>
 
       <figure className="mt-5">

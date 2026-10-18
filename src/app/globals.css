@@ -406,6 +406,34 @@
    The whole simulation is drawn to one canvas by vision-engine.ts, so the
    only styling here is the frame. pan-y keeps vertical scrolling alive on a
    phone: the simulator takes taps, not drags, on touch. */
+/*
+ * The simulator is sized to the screen as well as the column. Its scene
+ * buttons, picture, slider and stage names have to fit on one screen under the
+ * fixed header, because moving the slider and watching the picture change is
+ * the whole point; at a fixed 896px the tool was 762px tall and fitted only a
+ * 1920x1080 screen.
+ *
+ * The picture is 3:2, so the height left after everything else becomes its
+ * width at x1.5. 19rem is that everything else, measured: the 72px header,
+ * the 198px of controls above and below the picture, and about 34px of air so
+ * the reader does not have to scroll to the pixel. The floor is the width at
+ * which the four scene buttons still sit on one line; below it they would
+ * wrap and the extra row would break the sum. The column the page gives it is
+ * the ceiling.
+ *
+ * That floor is why a 1280x720 screen still overshoots by about 11px: fitting
+ * it would need a picture narrower than the buttons. Every common laptop size
+ * from 1366x768 up fits with room to spare.
+ *
+ * svh alone, deliberately: the minifier drops a vh line written before it, and
+ * a browser too old for svh (before 2022) ignores the rule and keeps the full
+ * column width, which is how the page looked before this existed.
+ */
+.vs-fit {
+  max-width: max(32rem, calc((100svh - 19rem) * 1.5));
+  margin-inline: auto;
+}
+
 .vs-frame {
   position: relative;
   overflow: hidden;
