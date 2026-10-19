@@ -1,5 +1,2090 @@
 [
   {
+    "slug": "number-plate-test-night-driving",
+    "title": "The number plate eye test is not a night-driving test",
+    "date": "2026-10-19",
+    "readingMinutes": 4,
+    "excerpt": "In young volunteers in glasses that cut acuity and contrast, a 6/12 cut-off caught 61% of plate failures near the cut-off, against 97% for blur alone.",
+    "cover": {
+      "about": "A road at night: the car ahead with its plate lit, the target the test reads at 20 metres in daylight, posts along the verge for distance, and oncoming headlights flaring into glare, the part the test never meets, which keeps pulsing.",
+      "name": "plate-at-night",
+      "shapes": [
+        {
+          "fx": [
+            "draw"
+          ],
+          "so": 0.4,
+          "stroke": "pale",
+          "sw": 1.6,
+          "t": "line",
+          "x1": -20,
+          "x2": 184.5,
+          "y1": 240,
+          "y2": 82
+        },
+        {
+          "delay": 0.1,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.4,
+          "stroke": "pale",
+          "sw": 1.6,
+          "t": "line",
+          "x1": 420,
+          "x2": 215.5,
+          "y1": 240,
+          "y2": 82
+        },
+        {
+          "delay": 0.2,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.55,
+          "stroke": "pale",
+          "sw": 3.2,
+          "t": "line",
+          "x1": 200,
+          "x2": 200,
+          "y1": 238,
+          "y2": 220
+        },
+        {
+          "delay": 0.27,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.55,
+          "stroke": "pale",
+          "sw": 2.6,
+          "t": "line",
+          "x1": 200,
+          "x2": 200,
+          "y1": 206,
+          "y2": 192
+        },
+        {
+          "delay": 0.34,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.55,
+          "stroke": "pale",
+          "sw": 2.1,
+          "t": "line",
+          "x1": 200,
+          "x2": 200,
+          "y1": 180,
+          "y2": 170
+        },
+        {
+          "delay": 0.41,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.55,
+          "stroke": "pale",
+          "sw": 1.7,
+          "t": "line",
+          "x1": 200,
+          "x2": 200,
+          "y1": 161,
+          "y2": 154
+        },
+        {
+          "delay": 0.48,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.55,
+          "stroke": "pale",
+          "sw": 1.3,
+          "t": "line",
+          "x1": 200,
+          "x2": 200,
+          "y1": 147,
+          "y2": 142
+        },
+        {
+          "delay": 0.55,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.55,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "line",
+          "x1": 200,
+          "x2": 200,
+          "y1": 136,
+          "y2": 132
+        },
+        {
+          "cap": "round",
+          "delay": 0.35,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.5,
+          "stroke": "pale",
+          "sw": 2.2,
+          "t": "line",
+          "x1": 3.6,
+          "x2": 3.6,
+          "y1": 214,
+          "y2": 192
+        },
+        {
+          "cap": "round",
+          "delay": 0.43,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.5,
+          "stroke": "pale",
+          "sw": 1.85,
+          "t": "line",
+          "x1": 49.6,
+          "x2": 49.6,
+          "y1": 180,
+          "y2": 165
+        },
+        {
+          "cap": "round",
+          "delay": 0.51,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.5,
+          "stroke": "pale",
+          "sw": 1.5000000000000002,
+          "t": "line",
+          "x1": 82.7,
+          "x2": 82.7,
+          "y1": 156,
+          "y2": 146
+        },
+        {
+          "cap": "round",
+          "delay": 0.59,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.5,
+          "stroke": "pale",
+          "sw": 1.1500000000000004,
+          "t": "line",
+          "x1": 108,
+          "x2": 108,
+          "y1": 138,
+          "y2": 131
+        },
+        {
+          "d": "M 118 104 L 128 84 L 172 84 L 182 104",
+          "delay": 0.45,
+          "fill": "ink",
+          "fx": [
+            "draw"
+          ],
+          "so": 0.55,
+          "stroke": "pale",
+          "sw": 1.5,
+          "t": "path"
+        },
+        {
+          "delay": 0.3,
+          "fill": "ink",
+          "fx": [
+            "draw"
+          ],
+          "h": 38,
+          "rx": 7,
+          "so": 0.75,
+          "stroke": "pale",
+          "sw": 1.6,
+          "t": "rect",
+          "w": 88,
+          "x": 106,
+          "y": 104
+        },
+        {
+          "delay": 0.5,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.22,
+          "stroke": "pale",
+          "sw": 2,
+          "t": "line",
+          "x1": 104,
+          "x2": 196,
+          "y1": 147,
+          "y2": 147
+        },
+        {
+          "delay": 0.75,
+          "fill": "red",
+          "fo": 0.9,
+          "fx": [
+            "pop"
+          ],
+          "h": 7,
+          "rx": 2,
+          "t": "rect",
+          "w": 17,
+          "x": 112,
+          "y": 111
+        },
+        {
+          "delay": 0.8,
+          "fill": "red",
+          "fo": 0.9,
+          "fx": [
+            "pop"
+          ],
+          "h": 7,
+          "rx": 2,
+          "t": "rect",
+          "w": 17,
+          "x": 171,
+          "y": 111
+        },
+        {
+          "delay": 0.9,
+          "fill": "pale",
+          "fo": 0.92,
+          "fx": [
+            "pop"
+          ],
+          "h": 12,
+          "rx": 1.5,
+          "t": "rect",
+          "w": 44,
+          "x": 128,
+          "y": 123
+        },
+        {
+          "delay": 1,
+          "fx": [
+            "pop"
+          ],
+          "stroke": "ink",
+          "sw": 2,
+          "t": "line",
+          "x1": 133,
+          "x2": 133,
+          "y1": 126,
+          "y2": 132
+        },
+        {
+          "delay": 1.03,
+          "fx": [
+            "pop"
+          ],
+          "stroke": "ink",
+          "sw": 2,
+          "t": "line",
+          "x1": 138,
+          "x2": 138,
+          "y1": 126,
+          "y2": 132
+        },
+        {
+          "delay": 1.06,
+          "fx": [
+            "pop"
+          ],
+          "stroke": "ink",
+          "sw": 2,
+          "t": "line",
+          "x1": 143,
+          "x2": 143,
+          "y1": 126,
+          "y2": 132
+        },
+        {
+          "delay": 1.09,
+          "fx": [
+            "pop"
+          ],
+          "stroke": "ink",
+          "sw": 2,
+          "t": "line",
+          "x1": 148,
+          "x2": 148,
+          "y1": 126,
+          "y2": 132
+        },
+        {
+          "delay": 1.12,
+          "fx": [
+            "pop"
+          ],
+          "stroke": "ink",
+          "sw": 2,
+          "t": "line",
+          "x1": 156,
+          "x2": 156,
+          "y1": 126,
+          "y2": 132
+        },
+        {
+          "delay": 1.15,
+          "fx": [
+            "pop"
+          ],
+          "stroke": "ink",
+          "sw": 2,
+          "t": "line",
+          "x1": 161,
+          "x2": 161,
+          "y1": 126,
+          "y2": 132
+        },
+        {
+          "delay": 1.18,
+          "fx": [
+            "pop"
+          ],
+          "stroke": "ink",
+          "sw": 2,
+          "t": "line",
+          "x1": 166,
+          "x2": 166,
+          "y1": 126,
+          "y2": 132
+        },
+        {
+          "d": "M 224 116 L 231 101 L 255 101 L 262 116",
+          "delay": 0.6,
+          "fill": "ink",
+          "fx": [
+            "draw"
+          ],
+          "so": 0.35,
+          "stroke": "pale",
+          "sw": 1.3,
+          "t": "path"
+        },
+        {
+          "delay": 0.55,
+          "fill": "ink",
+          "fx": [
+            "draw"
+          ],
+          "h": 22,
+          "rx": 5,
+          "so": 0.4,
+          "stroke": "pale",
+          "sw": 1.4,
+          "t": "rect",
+          "w": 50,
+          "x": 218,
+          "y": 116
+        },
+        {
+          "cx": 227,
+          "cy": 128,
+          "delay": 1.1,
+          "fill": "glow",
+          "fx": [
+            "pop"
+          ],
+          "r": 3.6,
+          "t": "circle"
+        },
+        {
+          "cx": 259,
+          "cy": 128,
+          "delay": 1.1500000000000001,
+          "fill": "glow",
+          "fx": [
+            "pop"
+          ],
+          "r": 3.6,
+          "t": "circle"
+        },
+        {
+          "cap": "round",
+          "delay": 1.25,
+          "fx": [
+            "pop",
+            "pulse"
+          ],
+          "so": 0.55,
+          "stroke": "glow",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 251.8,
+          "x2": 282.2,
+          "y1": 129.8,
+          "y2": 135.8
+        },
+        {
+          "cap": "round",
+          "delay": 1.28,
+          "fx": [
+            "pop",
+            "pulse"
+          ],
+          "so": 0.35,
+          "stroke": "glow",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 250.5,
+          "x2": 264.6,
+          "y1": 133,
+          "y2": 142.4
+        },
+        {
+          "cap": "round",
+          "delay": 1.31,
+          "fx": [
+            "pop",
+            "pulse"
+          ],
+          "so": 0.55,
+          "stroke": "glow",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 248,
+          "x2": 265.2,
+          "y1": 135.5,
+          "y2": 161.3
+        },
+        {
+          "cap": "round",
+          "delay": 1.34,
+          "fx": [
+            "pop",
+            "pulse"
+          ],
+          "so": 0.35,
+          "stroke": "glow",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 244.8,
+          "x2": 248.1,
+          "y1": 136.8,
+          "y2": 153.5
+        },
+        {
+          "cap": "round",
+          "delay": 1.25,
+          "fx": [
+            "pop",
+            "pulse"
+          ],
+          "so": 0.55,
+          "stroke": "glow",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 241.2,
+          "x2": 235.2,
+          "y1": 136.8,
+          "y2": 167.2
+        },
+        {
+          "cap": "round",
+          "delay": 1.28,
+          "fx": [
+            "pop",
+            "pulse"
+          ],
+          "so": 0.35,
+          "stroke": "glow",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 238,
+          "x2": 228.6,
+          "y1": 135.5,
+          "y2": 149.6
+        },
+        {
+          "cap": "round",
+          "delay": 1.31,
+          "fx": [
+            "pop",
+            "pulse"
+          ],
+          "so": 0.55,
+          "stroke": "glow",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 235.5,
+          "x2": 209.7,
+          "y1": 133,
+          "y2": 150.2
+        },
+        {
+          "cap": "round",
+          "delay": 1.34,
+          "fx": [
+            "pop",
+            "pulse"
+          ],
+          "so": 0.35,
+          "stroke": "glow",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 234.2,
+          "x2": 217.5,
+          "y1": 129.8,
+          "y2": 133.1
+        },
+        {
+          "cap": "round",
+          "delay": 1.25,
+          "fx": [
+            "pop",
+            "pulse"
+          ],
+          "so": 0.55,
+          "stroke": "glow",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 234.2,
+          "x2": 203.8,
+          "y1": 126.2,
+          "y2": 120.2
+        },
+        {
+          "cap": "round",
+          "delay": 1.28,
+          "fx": [
+            "pop",
+            "pulse"
+          ],
+          "so": 0.35,
+          "stroke": "glow",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 235.5,
+          "x2": 221.4,
+          "y1": 123,
+          "y2": 113.6
+        },
+        {
+          "cap": "round",
+          "delay": 1.31,
+          "fx": [
+            "pop",
+            "pulse"
+          ],
+          "so": 0.55,
+          "stroke": "glow",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 238,
+          "x2": 220.8,
+          "y1": 120.5,
+          "y2": 94.7
+        },
+        {
+          "cap": "round",
+          "delay": 1.34,
+          "fx": [
+            "pop",
+            "pulse"
+          ],
+          "so": 0.35,
+          "stroke": "glow",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 241.2,
+          "x2": 237.9,
+          "y1": 119.2,
+          "y2": 102.5
+        },
+        {
+          "cap": "round",
+          "delay": 1.25,
+          "fx": [
+            "pop",
+            "pulse"
+          ],
+          "so": 0.55,
+          "stroke": "glow",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 244.8,
+          "x2": 250.8,
+          "y1": 119.2,
+          "y2": 88.8
+        },
+        {
+          "cap": "round",
+          "delay": 1.28,
+          "fx": [
+            "pop",
+            "pulse"
+          ],
+          "so": 0.35,
+          "stroke": "glow",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 248,
+          "x2": 257.4,
+          "y1": 120.5,
+          "y2": 106.4
+        },
+        {
+          "cap": "round",
+          "delay": 1.31,
+          "fx": [
+            "pop",
+            "pulse"
+          ],
+          "so": 0.55,
+          "stroke": "glow",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 250.5,
+          "x2": 276.3,
+          "y1": 123,
+          "y2": 105.8
+        },
+        {
+          "cap": "round",
+          "delay": 1.34,
+          "fx": [
+            "pop",
+            "pulse"
+          ],
+          "so": 0.35,
+          "stroke": "glow",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 251.8,
+          "x2": 268.5,
+          "y1": 126.2,
+          "y2": 122.9
+        },
+        {
+          "cx": 243,
+          "cy": 128,
+          "delay": 1.3,
+          "fill": "glow",
+          "fo": 0.08,
+          "fx": [
+            "pop",
+            "pulse"
+          ],
+          "r": 24,
+          "t": "circle"
+        },
+        {
+          "cx": 352,
+          "cy": 36,
+          "delay": 0.15,
+          "fill": "pale",
+          "fo": 0.5,
+          "fx": [
+            "pop"
+          ],
+          "r": 11,
+          "t": "circle"
+        },
+        {
+          "cx": 357,
+          "cy": 32,
+          "delay": 0.15,
+          "fill": "ink",
+          "fx": [
+            "pop"
+          ],
+          "r": 9.5,
+          "t": "circle"
+        }
+      ]
+    },
+    "series": "insight",
+    "topics": [
+      "driving",
+      "contrast sensitivity",
+      "dvla",
+      "night driving",
+      "cataract"
+    ],
+    "sources": [
+      {
+        "date": "2015-10-16",
+        "pmcid": "PMC4709534",
+        "publisher": "Eye",
+        "read": "full",
+        "readVia": "europepmc",
+        "title": "Meeting the UK driving vision standards with reduced contrast sensitivity",
+        "url": "https://doi.org/10.1038/eye.2015.188"
+      },
+      {
+        "date": "2022-07-29",
+        "publisher": "Frontiers in Human Neuroscience",
+        "read": "full",
+        "readVia": "publisher",
+        "title": "Contrast sensitivity and night driving in older people: quantifying the relationship between visual acuity, contrast sensitivity, and hazard detection distance in a night-time driving simulator",
+        "url": "https://doi.org/10.3389/fnhum.2022.914459"
+      },
+      {
+        "publisher": "British Journal of Ophthalmology",
+        "read": "full",
+        "readVia": "publisher",
+        "title": "Advising patients on visual fitness to drive: implications of revised DVLA regulations",
+        "url": "https://doi.org/10.1136/bjophthalmol-2014-306173"
+      },
+      {
+        "date": "2022-03-31",
+        "pmcid": "PMC9587680",
+        "publisher": "Ophthalmic and Physiological Optics",
+        "read": "full",
+        "readVia": "europepmc",
+        "title": "Visual functions associated with on-road performance by older drivers evaluated by a certified driving rehabilitation specialist",
+        "url": "https://doi.org/10.1111/opo.12985"
+      },
+      {
+        "publisher": "DVLA",
+        "read": "full",
+        "readVia": "page",
+        "title": "Visual disorders: assessing fitness to drive",
+        "url": "https://www.gov.uk/guidance/visual-disorders-assessing-fitness-to-drive"
+      },
+      {
+        "publisher": "College of Optometrists",
+        "read": "full",
+        "readVia": "page",
+        "title": "Position on vision standards for driving",
+        "url": "https://www.college-optometrists.org/policy-and-influencing/position-statements/position-on-vision-standards-for-driving"
+      },
+      {
+        "publisher": "College of Optometrists",
+        "read": "full",
+        "readVia": "page",
+        "title": "Examining patients who drive: Guidance for Professional Practice",
+        "url": "https://www.college-optometrists.org/clinical-guidance/guidance/knowledge,-skills-and-performance/examining-patients-who-drive"
+      },
+      {
+        "date": "2026-09-02",
+        "publisher": "General Optical Council",
+        "read": "full",
+        "readVia": "publisher",
+        "title": "Registrant workforce and perceptions survey 2026: research report",
+        "url": "https://optical.org/asset/CBD32D15%2D651E%2D4446%2DB973611110032D55/"
+      }
+    ],
+    "figure": {
+      "blocks": [
+        {
+          "after": {
+            "label": "Acuity and contrast reduced",
+            "value": 61
+          },
+          "before": {
+            "label": "Acuity reduced alone",
+            "value": 97
+          },
+          "kind": "before-after",
+          "label": "Snellen 6/12 predicting a number plate failure",
+          "unit": "%"
+        },
+        {
+          "after": {
+            "label": "Acuity and contrast reduced",
+            "value": 15
+          },
+          "before": {
+            "label": "Acuity reduced alone",
+            "value": 2
+          },
+          "kind": "before-after",
+          "label": "Met 6/12 in the chair, failed the plate outdoors",
+          "unit": "%"
+        },
+        {
+          "items": [
+            {
+              "label": "US eye-clinic drivers aged 70+ worse than 6/12",
+              "value": "0 of 144"
+            },
+            {
+              "label": "of those drivers with impaired contrast sensitivity",
+              "value": "18.8%"
+            },
+            {
+              "label": "contrast sensitivity lost to simulated glare (15 adults)",
+              "value": "41%"
+            }
+          ],
+          "kind": "stats",
+          "label": "Elsewhere in the evidence"
+        }
+      ],
+      "caption": "Top pair: share of plate failures a 6/12 cut-off caught. Bottom pair: share of everyone tested who met 6/12 but failed the plate. Both within each study's overlap zone: 59 of 120 participants; 62 of 86 measurements from 62 adults.",
+      "source": "Latham 2015 (Br J Ophthalmol); Rae 2016 (Eye); Jones 2022 (Front Hum Neurosci); Swain 2022 (Ophthalmic Physiol Opt)",
+      "title": "What the chart predicts about the kerb, and what it misses"
+    },
+    "image": {
+      "src": "/images/insights/number-plate-test-night-driving.jpg",
+      "alt": "A yellow UK number plate on the back of a rain-covered car, the full registration legible",
+      "license": "CC0"
+    },
+    "seo": {
+      "keyword": "number plate eye test",
+      "metaDescription": "The number plate eye test is a daylight test. With contrast cut too, a 6/12 cut-off caught 61% of plate failures near it, against 97% for blur alone.",
+      "metaTitle": "Number plate eye test: what it misses at night"
+    },
+    "keyPoints": [
+      "The UK standard: a number plate read in good daylight at 20 metres, 6/12 and the minimum field of vision. DVLA cataract guidance says glare may stop a driver passing even when acuity looks adequate.",
+      "Near the cut-off, a 6/12 chart caught 61% of plate failures when glasses cut contrast too, against 97% in the same team's earlier study of blur alone, in other people.",
+      "In a night-driving simulator, contrast sensitivity and low-contrast acuity tracked hazard detection in drivers aged 55 to 81; high-contrast acuity did not (P = 0.10, 21 measurements from 15 drivers).",
+      "In 144 drivers aged 70 and over from US eye clinics, none had acuity worse than 6/12 and 18.8% had impaired contrast sensitivity, not significantly linked to daylight on-road scores."
+    ],
+    "faq": [
+      {
+        "a": "It is the practical half of the UK Group 1 driving vision standard: reading a registration mark in good daylight at 20 metres on a car registered since 1 September 2001, or 20.5 metres for an older plate. It is not the whole standard. A driver also needs visual acuity of at least Snellen 6/12 with both eyes open and a minimum field of vision. DVLA, not the optometrist, decides whether someone is medically fit to drive.",
+        "q": "What is the number plate eye test and how far away is it?"
+      },
+      {
+        "a": "Not necessarily. The plate test is done in good daylight on high-contrast characters. In a night-driving simulator, high-contrast acuity was not significantly associated with how early drivers aged 55 to 81 detected a hazard (r = 0.37, P = 0.10, 21 measurements from 15 drivers), while contrast sensitivity and low-contrast acuity were. Meeting the standard is a legal minimum, not a statement about driving at night.",
+        "q": "Does passing the number plate test mean your eyesight is good enough for night driving?"
+      },
+      {
+        "a": "Acuity is the smallest high-contrast letter you can read. Contrast sensitivity is the faintest difference between light and dark you can still see, which is closer to what night driving asks of an eye: a pedestrian in dark clothing, a kerb in the rain, a road lit by somebody else's headlights. It falls in cataract, which the College of Optometrists names alongside blur and glare as affecting driving, particularly at night. The site also has [a simulation of dry AMD at each stage](/vision), a different condition from the ones this piece is about.",
+        "q": "What is contrast sensitivity?"
+      },
+      {
+        "a": "In practice, with a Pelli-Robson chart at one metre, scored letter by letter. There is no contrast-sensitivity threshold in UK driving law, and the College of Optometrists says the evidence is not there to say which tests and cut-offs would be better, so the result is information for the conversation about night driving, glare and lenses rather than a pass or a fail.",
+        "q": "How do you test contrast sensitivity?"
+      }
+    ],
+    "body": [
+      {
+        "text": "The clocks go back on Sunday 25 October and the night-driving conversation starts in every practice. The standard drivers are held to is the number plate eye test: a plate read in good daylight at 20 metres, plus acuity of at least 6/12. When Anglia Ruskin cut acuity and contrast together with simulation glasses in young volunteers, a Snellen 6/12 cut-off caught 61% of plate failures near the cut-off, against 97% in their earlier study of uncorrected blur.",
+        "type": "p"
+      },
+      {
+        "text": "The daylight in that standard is not decoration: in a night-driving simulator, contrast sensitivity tracked how early older drivers saw a hazard, and high-contrast acuity fell short of significance.",
+        "type": "p"
+      },
+      {
+        "text": "What the number plate eye test actually measures",
+        "type": "h2"
+      },
+      {
+        "text": "[DVLA's guidance](https://www.gov.uk/guidance/visual-disorders-assessing-fitness-to-drive) sets the plate in good daylight at 20 metres, with Snellen 6/12 and a minimum field of vision on top. It writes the gap down itself, under cataract:",
+        "type": "p"
+      },
+      {
+        "text": "Glare may counter an ability to pass the number plate test of the minimum requirements, even when cataracts allow apparently appropriate acuities.",
+        "type": "quote"
+      },
+      {
+        "text": "Where the chair stops predicting the kerb",
+        "type": "h2"
+      },
+      {
+        "text": "Anglia Ruskin ran it twice, in two groups. First, in [a study in the British Journal of Ophthalmology](https://doi.org/10.1136/bjophthalmol-2014-306173), 120 staff and students read charts indoors uncorrected, then a real plate outdoors: in the uncertain band, 6/9 to 6/36, a 6/12 cut-off caught 97% of the failures. Then, in [the study published in Eye](https://doi.org/10.1038/eye.2015.188), 62 adults of mean age 25 wore simulation glasses that cut acuity and contrast sensitivity together, closer to cataract than to an old prescription. In its own band, 6/12 to 6/24, sensitivity fell to 61% and the false negatives, 6/12 in the chair and a fail at the kerb, rose from 2%, one person in 59, to 15%. Each is a proportion of its own band, not of all drivers.",
+        "type": "p"
+      },
+      {
+        "text": "What predicts hazard detection in the dark",
+        "type": "h2"
+      },
+      {
+        "text": "[The night-driving evidence](https://doi.org/10.3389/fnhum.2022.914459) comes from a simulator. Fifteen ophthalmologically healthy drivers aged 55 to 81 drove at obstacles of three contrasts while LED arrays on cable robots reproduced an oncoming car's dipped beams. Contrast sensitivity tracked the median distance at which a hazard was picked up, and low-contrast acuity at least as strongly. High-contrast acuity was not significantly associated (r = 0.37, P = 0.10), a null too small to trust. The headlights cut contrast sensitivity in 20 of 22 instances, a relative fall of 41%.",
+        "type": "p"
+      },
+      {
+        "text": "The study that cuts the other way",
+        "type": "h2"
+      },
+      {
+        "text": "The largest of the driving studies, and the only one on real roads, found no significant association with daytime driving. In Alabama, 144 drivers aged 70 and over had a vision battery, then a 15-mile on-road drive scored by a masked driving rehabilitation specialist. None had acuity worse than 20/40, or 6/12, and 18.8% were impaired on Pelli-Robson, below 1.5 log sensitivity. That was not significantly associated with how they drove: the age-adjusted odds ratio for a worse score was 1.56 (95% CI 0.59 to 4.09), wide enough to hold a real effect. Only processing speed under divided attention and motion perception were associated. Every drive was in daylight, the authors say.",
+        "type": "p"
+      },
+      {
+        "text": "Why it matters in practice",
+        "type": "h2"
+      },
+      {
+        "text": "There is no contrast-sensitivity threshold for car drivers in UK law, and [the College of Optometrists' position](https://www.college-optometrists.org/policy-and-influencing/position-statements/position-on-vision-standards-for-driving) is that the evidence is not there to say which tests and cut-offs would be better. The same statement says blur, glare and reduced contrast sensitivity, at night and in cataract, are known to affect driving and to raise the risk of at-fault and fatal collisions.",
+        "type": "p"
+      },
+      {
+        "items": [
+          "Use a logMAR chart such as an ETDRS, or a Snellen scored by full line. At 6/7.5 or better every participant in the blur study read the plate, but one in the contrast study failed it at +0.08 logMAR, so in cataract ask for a plate check too.",
+          "Ask anyone between 6/9 and 6/12 to read a plate at 20 metres themselves, in daylight. They pass the chart, and some cannot.",
+          "Measure contrast sensitivity where it changes the conversation: early cataract, or the patient whose acuity is fine and whose nights are not. It is information, not a legal test.",
+          "College guidance says an anti-reflection coating improves transmission, and that a sunglass tint passing under 75% of the light is not for road use in twilight or at night.",
+          "The DVLA, or the DVA in Northern Ireland, decides medical fitness and the patient must tell it. Advise them not to drive, put it in writing, record it, and if they will not stop, tell them you will notify the agency, then do so and tell them you have."
+        ],
+        "type": "ul"
+      },
+      {
+        "text": "That last step is the one optometrists are least comfortable with. In [the GOC's 2026 registrant survey](https://optical.org/asset/CBD32D15%2D651E%2D4446%2DB973611110032D55/), 91% of optometrists had told a patient in the past year that they were no longer fit to drive, but only 32% would be comfortable telling the DVLA themselves if the patient would not, and 96% of all registrants who answered had not done so that year. Of all those uncomfortable, 72% named breaching confidentiality, which [the College's guidance](https://www.college-optometrists.org/clinical-guidance/guidance/knowledge,-skills-and-performance/examining-patients-who-drive) says the public interest can override when a driver rejects advice not to drive.",
+        "type": "p"
+      },
+      {
+        "text": "The caveats",
+        "type": "h2"
+      },
+      {
+        "items": [
+          "Simulation glasses on 62 adults of mean age 25 are not cataract in older drivers.",
+          "The night-driving result is 15 healthy volunteers in one simulator. Several authors declare industry ties, and the German Social Accident Insurance funded it.",
+          "The Alabama drivers came from eye clinics, so 18.8% is not a population figure, and vision was tested six months before.",
+          "The night-driving authors are explicit that their own data do not speak directly to the real-world value of routinely testing night vision.",
+          "The GOC figures are self-reported by the 3,451 registrants who answered, an 11% response rate."
+        ],
+        "type": "ul"
+      },
+      {
+        "text": "The number plate eye test is not a bad test. It is a daylight test, and it was never meant to answer the question that arrives in the last week of October.",
+        "type": "p"
+      }
+    ]
+  },
+  {
+    "slug": "independent-prescribing-optometrist-scotland-england",
+    "title": "Independent prescribing optometrists: Scotland pays, England varies",
+    "date": "2026-10-19",
+    "readingMinutes": 4,
+    "excerpt": "Scotland pays approved prescribing optometrists to treat ten eye conditions. Under 1% of Greater Manchester's urgent cases in 2024 were prescribing cases.",
+    "cover": {
+      "about": "A red eye seen from the front, its vessels flushed round the cornea; a dashed border down the middle; a prescription pad whose ℞ keeps pulsing, with a short route from the eye across the line to it. Scotland's NHS now pays approved prescribing optometrists to treat ten such conditions in practice; in England that depends on the local service.",
+      "name": "rx-across-the-border",
+      "shapes": [
+        {
+          "d": "M 34 122 Q 104 58 174 122 Q 104 182 34 122 Z",
+          "delay": 0,
+          "fill": "ink",
+          "fo": 1,
+          "fx": [
+            "pop"
+          ],
+          "t": "path"
+        },
+        {
+          "cap": "round",
+          "d": "M 34 122 Q 104 58 174 122",
+          "delay": 0.05,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.85,
+          "stroke": "pale",
+          "sw": 2,
+          "t": "path"
+        },
+        {
+          "cap": "round",
+          "d": "M 34 122 Q 104 182 174 122",
+          "delay": 0.15,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.85,
+          "stroke": "pale",
+          "sw": 2,
+          "t": "path"
+        },
+        {
+          "cap": "round",
+          "delay": 0.3,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.45,
+          "stroke": "pale",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 59.2,
+          "x2": 53.8,
+          "y1": 103.1,
+          "y2": 94.1
+        },
+        {
+          "cap": "round",
+          "delay": 0.3,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.45,
+          "stroke": "pale",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 70.4,
+          "x2": 66.4,
+          "y1": 97.4,
+          "y2": 88.4
+        },
+        {
+          "cap": "round",
+          "delay": 0.3,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.45,
+          "stroke": "pale",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 81.6,
+          "x2": 78.9,
+          "y1": 93.3,
+          "y2": 84.3
+        },
+        {
+          "cap": "round",
+          "delay": 0.3,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.45,
+          "stroke": "pale",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 92.8,
+          "x2": 91.5,
+          "y1": 90.8,
+          "y2": 81.8
+        },
+        {
+          "cap": "round",
+          "delay": 0.3,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.45,
+          "stroke": "pale",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 104,
+          "x2": 104,
+          "y1": 90,
+          "y2": 81
+        },
+        {
+          "cap": "round",
+          "delay": 0.4,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.45,
+          "stroke": "pale",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 115.2,
+          "x2": 116.5,
+          "y1": 90.8,
+          "y2": 81.8
+        },
+        {
+          "cap": "round",
+          "delay": 0.4,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.45,
+          "stroke": "pale",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 126.4,
+          "x2": 129.1,
+          "y1": 93.3,
+          "y2": 84.3
+        },
+        {
+          "cap": "round",
+          "delay": 0.4,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.45,
+          "stroke": "pale",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 137.6,
+          "x2": 141.6,
+          "y1": 97.4,
+          "y2": 88.4
+        },
+        {
+          "cap": "round",
+          "delay": 0.4,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.45,
+          "stroke": "pale",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 148.8,
+          "x2": 154.2,
+          "y1": 103.1,
+          "y2": 94.1
+        },
+        {
+          "cap": "round",
+          "d": "M 44 121 C 46.7 120.2, 55.3 116.3, 60 116 C 64.7 115.7, 68.8 119.5, 72 119 C 75.2 118.5, 77.8 114, 79 113",
+          "delay": 0.6,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.75,
+          "stroke": "red",
+          "sw": 1.3,
+          "t": "path"
+        },
+        {
+          "cap": "round",
+          "d": "M 46 126 C 48.5 126.5, 56.3 129, 61 129 C 65.7 129, 70.8 125.7, 74 126 C 77.2 126.3, 79 130.2, 80 131",
+          "delay": 0.6,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.75,
+          "stroke": "red",
+          "sw": 1.3,
+          "t": "path"
+        },
+        {
+          "cap": "round",
+          "d": "M 52 113 C 53.8 112.3, 59 110, 63 109 C 67 108, 73.8 107.3, 76 107",
+          "delay": 0.6,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.75,
+          "stroke": "red",
+          "sw": 1.3,
+          "t": "path"
+        },
+        {
+          "cap": "round",
+          "d": "M 54 132 C 56 132.8, 62.2 136.3, 66 137 C 69.8 137.7, 75.2 136.2, 77 136",
+          "delay": 0.7,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.75,
+          "stroke": "red",
+          "sw": 1.3,
+          "t": "path"
+        },
+        {
+          "cap": "round",
+          "d": "M 164 121 C 161.3 120.3, 152.5 117.2, 148 117 C 143.5 116.8, 140 120.5, 137 120 C 134 119.5, 131.2 115, 130 114",
+          "delay": 0.7,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.75,
+          "stroke": "red",
+          "sw": 1.3,
+          "t": "path"
+        },
+        {
+          "cap": "round",
+          "d": "M 162 127 C 159.5 127.5, 151.5 130, 147 130 C 142.5 130, 138 126.7, 135 127 C 132 127.3, 130 131.2, 129 132",
+          "delay": 0.8,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.75,
+          "stroke": "red",
+          "sw": 1.3,
+          "t": "path"
+        },
+        {
+          "cap": "round",
+          "d": "M 156 112 C 154.2 111.3, 148.8 109, 145 108 C 141.2 107, 135 106.3, 133 106",
+          "delay": 0.8,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.75,
+          "stroke": "red",
+          "sw": 1.3,
+          "t": "path"
+        },
+        {
+          "cap": "round",
+          "d": "M 154 133 C 152.2 133.8, 146.7 137.3, 143 138 C 139.3 138.7, 133.8 137.2, 132 137",
+          "delay": 0.8,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.75,
+          "stroke": "red",
+          "sw": 1.3,
+          "t": "path"
+        },
+        {
+          "cap": "round",
+          "delay": 0.8,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.9,
+          "stroke": "red",
+          "sw": 1.6,
+          "t": "line",
+          "x1": 78.9,
+          "x2": 73.7,
+          "y1": 136.5,
+          "y2": 139.5
+        },
+        {
+          "cap": "round",
+          "delay": 0.8,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.9,
+          "stroke": "red",
+          "sw": 1.6,
+          "t": "line",
+          "x1": 76.4,
+          "x2": 70.7,
+          "y1": 131,
+          "y2": 132.8
+        },
+        {
+          "cap": "round",
+          "delay": 0.8,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.9,
+          "stroke": "red",
+          "sw": 1.6,
+          "t": "line",
+          "x1": 75.2,
+          "x2": 69.2,
+          "y1": 125,
+          "y2": 125.7
+        },
+        {
+          "cap": "round",
+          "delay": 0.8,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.9,
+          "stroke": "red",
+          "sw": 1.6,
+          "t": "line",
+          "x1": 75.2,
+          "x2": 69.2,
+          "y1": 119,
+          "y2": 118.3
+        },
+        {
+          "cap": "round",
+          "delay": 0.8,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.9,
+          "stroke": "red",
+          "sw": 1.6,
+          "t": "line",
+          "x1": 76.4,
+          "x2": 70.7,
+          "y1": 113,
+          "y2": 111.2
+        },
+        {
+          "cap": "round",
+          "delay": 0.8,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.9,
+          "stroke": "red",
+          "sw": 1.6,
+          "t": "line",
+          "x1": 78.9,
+          "x2": 73.7,
+          "y1": 107.5,
+          "y2": 104.5
+        },
+        {
+          "cap": "round",
+          "delay": 0.8,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.9,
+          "stroke": "red",
+          "sw": 1.6,
+          "t": "line",
+          "x1": 129.1,
+          "x2": 134.3,
+          "y1": 107.5,
+          "y2": 104.5
+        },
+        {
+          "cap": "round",
+          "delay": 0.8,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.9,
+          "stroke": "red",
+          "sw": 1.6,
+          "t": "line",
+          "x1": 131.6,
+          "x2": 137.3,
+          "y1": 113,
+          "y2": 111.2
+        },
+        {
+          "cap": "round",
+          "delay": 0.8,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.9,
+          "stroke": "red",
+          "sw": 1.6,
+          "t": "line",
+          "x1": 132.8,
+          "x2": 138.8,
+          "y1": 119,
+          "y2": 118.3
+        },
+        {
+          "cap": "round",
+          "delay": 0.8,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.9,
+          "stroke": "red",
+          "sw": 1.6,
+          "t": "line",
+          "x1": 132.8,
+          "x2": 138.8,
+          "y1": 125,
+          "y2": 125.7
+        },
+        {
+          "cap": "round",
+          "delay": 0.8,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.9,
+          "stroke": "red",
+          "sw": 1.6,
+          "t": "line",
+          "x1": 131.6,
+          "x2": 137.3,
+          "y1": 131,
+          "y2": 132.8
+        },
+        {
+          "cap": "round",
+          "delay": 0.8,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.9,
+          "stroke": "red",
+          "sw": 1.6,
+          "t": "line",
+          "x1": 129.1,
+          "x2": 134.3,
+          "y1": 136.5,
+          "y2": 139.5
+        },
+        {
+          "cx": 104,
+          "cy": 122,
+          "delay": 0.35,
+          "fill": "ink",
+          "fo": 1,
+          "fx": [
+            "pop"
+          ],
+          "r": 26,
+          "stroke": "teal",
+          "sw": 2,
+          "t": "circle"
+        },
+        {
+          "delay": 0.42,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.4,
+          "stroke": "teal",
+          "sw": 1,
+          "t": "line",
+          "x1": 116,
+          "x2": 127.9,
+          "y1": 122,
+          "y2": 124.5
+        },
+        {
+          "delay": 0.42,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.4,
+          "stroke": "teal",
+          "sw": 1,
+          "t": "line",
+          "x1": 115.1,
+          "x2": 125.1,
+          "y1": 126.6,
+          "y2": 133.5
+        },
+        {
+          "delay": 0.42,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.4,
+          "stroke": "teal",
+          "sw": 1,
+          "t": "line",
+          "x1": 112.5,
+          "x2": 119.1,
+          "y1": 130.5,
+          "y2": 140.7
+        },
+        {
+          "delay": 0.42,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.4,
+          "stroke": "teal",
+          "sw": 1,
+          "t": "line",
+          "x1": 108.6,
+          "x2": 110.8,
+          "y1": 133.1,
+          "y2": 145
+        },
+        {
+          "delay": 0.42,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.4,
+          "stroke": "teal",
+          "sw": 1,
+          "t": "line",
+          "x1": 104,
+          "x2": 101.5,
+          "y1": 134,
+          "y2": 145.9
+        },
+        {
+          "delay": 0.42,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.4,
+          "stroke": "teal",
+          "sw": 1,
+          "t": "line",
+          "x1": 99.4,
+          "x2": 92.5,
+          "y1": 133.1,
+          "y2": 143.1
+        },
+        {
+          "delay": 0.42,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.4,
+          "stroke": "teal",
+          "sw": 1,
+          "t": "line",
+          "x1": 95.5,
+          "x2": 85.3,
+          "y1": 130.5,
+          "y2": 137.1
+        },
+        {
+          "delay": 0.42,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.4,
+          "stroke": "teal",
+          "sw": 1,
+          "t": "line",
+          "x1": 92.9,
+          "x2": 81,
+          "y1": 126.6,
+          "y2": 128.8
+        },
+        {
+          "delay": 0.42,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.4,
+          "stroke": "teal",
+          "sw": 1,
+          "t": "line",
+          "x1": 92,
+          "x2": 80.1,
+          "y1": 122,
+          "y2": 119.5
+        },
+        {
+          "delay": 0.42,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.4,
+          "stroke": "teal",
+          "sw": 1,
+          "t": "line",
+          "x1": 92.9,
+          "x2": 82.9,
+          "y1": 117.4,
+          "y2": 110.5
+        },
+        {
+          "delay": 0.42,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.4,
+          "stroke": "teal",
+          "sw": 1,
+          "t": "line",
+          "x1": 95.5,
+          "x2": 88.9,
+          "y1": 113.5,
+          "y2": 103.3
+        },
+        {
+          "delay": 0.42,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.4,
+          "stroke": "teal",
+          "sw": 1,
+          "t": "line",
+          "x1": 99.4,
+          "x2": 97.2,
+          "y1": 110.9,
+          "y2": 99
+        },
+        {
+          "delay": 0.42,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.4,
+          "stroke": "teal",
+          "sw": 1,
+          "t": "line",
+          "x1": 104,
+          "x2": 106.5,
+          "y1": 110,
+          "y2": 98.1
+        },
+        {
+          "delay": 0.42,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.4,
+          "stroke": "teal",
+          "sw": 1,
+          "t": "line",
+          "x1": 108.6,
+          "x2": 115.5,
+          "y1": 110.9,
+          "y2": 100.9
+        },
+        {
+          "delay": 0.42,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.4,
+          "stroke": "teal",
+          "sw": 1,
+          "t": "line",
+          "x1": 112.5,
+          "x2": 122.7,
+          "y1": 113.5,
+          "y2": 106.9
+        },
+        {
+          "delay": 0.42,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.4,
+          "stroke": "teal",
+          "sw": 1,
+          "t": "line",
+          "x1": 115.1,
+          "x2": 127,
+          "y1": 117.4,
+          "y2": 115.2
+        },
+        {
+          "cx": 104,
+          "cy": 122,
+          "delay": 0.48,
+          "fill": "ink",
+          "fo": 1,
+          "fx": [
+            "pop"
+          ],
+          "r": 10,
+          "so": 0.6,
+          "stroke": "teal",
+          "sw": 1,
+          "t": "circle"
+        },
+        {
+          "cx": 111,
+          "cy": 114,
+          "delay": 0.6,
+          "fill": "glow",
+          "fo": 0.9,
+          "fx": [
+            "pop"
+          ],
+          "r": 3.2,
+          "t": "circle"
+        },
+        {
+          "cap": "round",
+          "d": "M 206 6 C 204.8 12.7, 198.3 32.3, 199 46 C 199.7 59.7, 209.7 74.3, 210 88 C 210.3 101.7, 200.8 114.3, 201 128 C 201.2 141.7, 210.7 156.3, 211 170 C 211.3 183.7, 203.7 199, 203 210 C 202.3 221, 206.3 231.7, 207 236",
+          "dash": "6 6",
+          "delay": 1,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.45,
+          "stroke": "pale",
+          "sw": 1.6,
+          "t": "path"
+        },
+        {
+          "cap": "round",
+          "d": "M 180 140 C 196 156, 222 156, 240 142",
+          "dash": "3 4",
+          "delay": 1.15,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.7,
+          "stroke": "teal",
+          "sw": 1.6,
+          "t": "path"
+        },
+        {
+          "cap": "round",
+          "d": "M 233 137 L 241 141 L 235 148",
+          "delay": 1.2,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.8,
+          "stroke": "teal",
+          "sw": 1.6,
+          "t": "path"
+        },
+        {
+          "delay": 0.95,
+          "fill": "ink",
+          "fo": 1,
+          "fx": [
+            "pop"
+          ],
+          "h": 152,
+          "rx": 6,
+          "t": "rect",
+          "w": 116,
+          "x": 250,
+          "y": 44
+        },
+        {
+          "delay": 0.95,
+          "fx": [
+            "draw"
+          ],
+          "h": 152,
+          "rx": 6,
+          "so": 0.75,
+          "stroke": "pale",
+          "sw": 1.6,
+          "t": "rect",
+          "w": 116,
+          "x": 250,
+          "y": 44
+        },
+        {
+          "delay": 1.05,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.35,
+          "stroke": "pale",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 250,
+          "x2": 366,
+          "y1": 62,
+          "y2": 62
+        },
+        {
+          "cx": 266,
+          "cy": 53,
+          "delay": 1.05,
+          "fill": "pale",
+          "fo": 0.5,
+          "fx": [
+            "pop"
+          ],
+          "r": 2.2,
+          "t": "circle"
+        },
+        {
+          "cx": 286,
+          "cy": 53,
+          "delay": 1.05,
+          "fill": "pale",
+          "fo": 0.5,
+          "fx": [
+            "pop"
+          ],
+          "r": 2.2,
+          "t": "circle"
+        },
+        {
+          "cx": 306,
+          "cy": 53,
+          "delay": 1.05,
+          "fill": "pale",
+          "fo": 0.5,
+          "fx": [
+            "pop"
+          ],
+          "r": 2.2,
+          "t": "circle"
+        },
+        {
+          "cx": 326,
+          "cy": 53,
+          "delay": 1.05,
+          "fill": "pale",
+          "fo": 0.5,
+          "fx": [
+            "pop"
+          ],
+          "r": 2.2,
+          "t": "circle"
+        },
+        {
+          "cx": 346,
+          "cy": 53,
+          "delay": 1.05,
+          "fill": "pale",
+          "fo": 0.5,
+          "fx": [
+            "pop"
+          ],
+          "r": 2.2,
+          "t": "circle"
+        },
+        {
+          "cap": "round",
+          "d": "M 268 118 L 268 78 L 284 78 C 296 78, 296 98, 284 98 L 268 98",
+          "delay": 1.25,
+          "fx": [
+            "draw",
+            "pulse"
+          ],
+          "stroke": "red",
+          "sw": 2.6,
+          "t": "path"
+        },
+        {
+          "cap": "round",
+          "d": "M 278 98 L 300 124",
+          "delay": 1.4,
+          "fx": [
+            "draw",
+            "pulse"
+          ],
+          "stroke": "red",
+          "sw": 2.6,
+          "t": "path"
+        },
+        {
+          "cap": "round",
+          "d": "M 288 124 L 302 106",
+          "delay": 1.48,
+          "fx": [
+            "draw",
+            "pulse"
+          ],
+          "stroke": "red",
+          "sw": 2.6,
+          "t": "path"
+        },
+        {
+          "cap": "round",
+          "d": "M 266 140 C 268.7 139.5, 276.7 136.7, 282 137 C 287.3 137.3, 292.7 141.8, 298 142 C 303.3 142.2, 308.7 138, 314 138 C 319.3 138, 324.3 141.8, 330 142 C 335.7 142.2, 345 139.5, 348 139",
+          "delay": 1.6,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.65,
+          "stroke": "teal",
+          "sw": 1.4,
+          "t": "path"
+        },
+        {
+          "cap": "round",
+          "d": "M 266 156 C 268.7 155.5, 276.7 152.7, 282 153 C 287.3 153.3, 292.7 157.8, 298 158 C 303.3 158.2, 308.7 154, 314 154 C 319.3 154, 326 157.8, 330 158 C 334 158.2, 336.7 155.5, 338 155",
+          "delay": 1.7,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.65,
+          "stroke": "teal",
+          "sw": 1.4,
+          "t": "path"
+        },
+        {
+          "cap": "round",
+          "d": "M 266 172 C 268.7 171.5, 276.7 168.7, 282 169 C 287.3 169.3, 292.7 173.8, 298 174 C 303.3 174.2, 308.7 170, 314 170 C 319.3 170, 327.7 173.8, 330 174 C 332.3 174.2, 328.3 171.5, 328 171",
+          "delay": 1.8,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.65,
+          "stroke": "teal",
+          "sw": 1.4,
+          "t": "path"
+        }
+      ]
+    },
+    "series": "insight",
+    "topics": [
+      "independent prescribing",
+      "urgent eye care",
+      "scotland",
+      "policy",
+      "workforce"
+    ],
+    "sources": [
+      {
+        "date": "2026-07-21",
+        "pmcid": "PMC13545149",
+        "publisher": "Ophthalmic and Physiological Optics",
+        "read": "full",
+        "readVia": "europepmc",
+        "title": "Evaluation of the Community Urgent Eyecare Service in Greater Manchester, Including the Impact of Independent Prescribing",
+        "url": "https://doi.org/10.1007/s44402-026-00137-w"
+      },
+      {
+        "date": "2026-09-15",
+        "publisher": "Public Health Scotland",
+        "read": "full",
+        "readVia": "page",
+        "title": "General Ophthalmic Services (GOS) activity statistics: year ending March 2026 (report and data tables)",
+        "url": "https://www.publichealthscotland.scot/publications/ophthalmic-workload-statistics/general-ophthalmic-services-gos-activity-statistics-statistics-as-at-year-ending-march-2026/"
+      },
+      {
+        "date": "2026-01-13",
+        "publisher": "Scottish Government",
+        "read": "full",
+        "readVia": "publisher",
+        "title": "PCA(O)2026(01): GOS Specialist Supplementary service, full implementation (with the GOS Statement)",
+        "url": "https://www.publications.scot.nhs.uk/files/pca2026-o-01.pdf"
+      },
+      {
+        "date": "2025-12-15",
+        "publisher": "Scottish Government",
+        "read": "full",
+        "readVia": "page",
+        "title": "NHS (General Ophthalmic Services) (Scotland) Amendment Regulations 2025: business and regulatory impact assessment",
+        "url": "https://www.gov.scot/publications/nhs-gos-scotland-amendment-regulations-2025-bria/"
+      },
+      {
+        "date": "2025-05-23",
+        "publisher": "College of Optometrists",
+        "read": "full",
+        "readVia": "page",
+        "title": "Lack of funding threatens commissioning of urgent care eye services in England",
+        "url": "https://www.college-optometrists.org/news/2025/may/lack-of-funding-threatens-urgent-care-in-england"
+      },
+      {
+        "date": "2026-09-02",
+        "publisher": "General Optical Council",
+        "read": "full",
+        "readVia": "publisher",
+        "title": "Registrant workforce and perceptions survey 2026 (research report, data tables and nation infographics)",
+        "url": "https://optical.org/resource/registrant-workforce-and-perceptions-survey-2026.html"
+      }
+    ],
+    "figure": {
+      "blocks": [
+        {
+          "items": [
+            {
+              "label": "First-appointment claims, Aug 2025 to Mar 2026",
+              "value": "10,267"
+            },
+            {
+              "label": "Follow-up claims in the same period",
+              "value": "10,880"
+            },
+            {
+              "label": "IP optometrists on health board lists, 31 March 2026",
+              "value": "674"
+            }
+          ],
+          "kind": "stats",
+          "label": "Scotland, 2025/26"
+        },
+        {
+          "items": [
+            {
+              "label": "Cases seen",
+              "value": "54,994"
+            },
+            {
+              "label": "Kept in primary care",
+              "value": "83.4%"
+            },
+            {
+              "label": "Managed as prescribing (IP) cases",
+              "value": "0.9%"
+            }
+          ],
+          "kind": "stats",
+          "label": "Greater Manchester urgent eyecare, 2024"
+        },
+        {
+          "kind": "share",
+          "label": "Sampled referrals a prescriber might have managed",
+          "text": "48 of 120 urgent referrals, rated afterwards from hospital records",
+          "value": 40
+        }
+      ],
+      "caption": "Scotland: specialist claims paid in 2025/26 (service from 1 August 2025), and IP optometrists on health board lists at 31 March 2026. Greater Manchester: urgent eyecare cases in 2024, and 120 referrals to one hospital rated afterwards.",
+      "source": "Public Health Scotland, GOS activity statistics 2025/26; Quah et al., Ophthalmic Physiol Opt 2026",
+      "title": "Prescribing optometrists on the NHS: Scotland's new service and Greater Manchester"
+    },
+    "image": {
+      "src": "/images/insights/independent-prescribing-optometrist-scotland-england.jpg",
+      "alt": "Close-up of an eye with conjunctivitis: the white of the eye is red with dilated blood vessels around a grey-green iris and a dark pupil.",
+      "license": "Public domain"
+    },
+    "seo": {
+      "keyword": "independent prescribing optometrist",
+      "metaDescription": "What an independent prescribing optometrist is paid to treat on the NHS in Scotland, what England commissions, and what Greater Manchester's data show.",
+      "metaTitle": "Independent prescribing optometrist: Scotland vs England"
+    },
+    "keyPoints": [
+      "In Scotland, an approved independent prescribing optometrist or ophthalmic medical practitioner is paid £97.69 for a first appointment for an anterior eye condition: 10,267 claims by March 2026.",
+      "In May 2025 the College of Optometrists said community minor and urgent eye care, with or without prescribing, was available in 73% of England.",
+      "In Greater Manchester, under 1 in 100 cases in 2024 were prescribing cases. Looking back at 120 urgent referrals, hospital optometrists judged that a prescriber might have managed 40% in practice.",
+      "In the GOC's 2026 survey, 25% of 276 working registrants in Scotland felt under commercial pressure, against 32% of 2,252 in England, but 66% felt unable to cope with workload, against 58%."
+    ],
+    "faq": [
+      {
+        "a": "Optometrists with the additional independent prescribing qualification can prescribe licensed medicine for conditions affecting the eye and the tissues around it, within their competence. In Scotland they are given NHS prescription pads, and 674 were on health board lists at 31 March 2026. In England, NHS prescribing by independent prescribing (IP) optometrists depends on local commissioning: in Greater Manchester's urgent eyecare service in 2024, IP optometrists used their prescribing qualification in 460 cases, 0.8% of the total.",
+        "q": "Can optometrists prescribe medication in the UK?"
+      },
+      {
+        "a": "The General Ophthalmic Services (GOS) Specialist Supplementary service is a tier of the NHS eye examination in Scotland for ten anterior eye conditions, such as anterior uveitis and herpes simplex keratitis. It began on 1 August 2025 and was fully in place from 19 January 2026. An IP optometrist or ophthalmic medical practitioner approved by their health board gives the second stage of treatment, and is paid £97.69 for the first appointment and £47.80 for each follow-up. The service needs an approved prescriber nearby: when the Scottish Government assessed it, Orkney had none. Public Health Scotland counted about 21,000 claims in 2025/26, 10,267 of them for first appointments.",
+        "q": "What is the GOS specialist supplementary service in Scotland?"
+      },
+      {
+        "a": "No. Community minor and urgent eye care services, run as the Community Urgent Eyecare Service (CUES) or the Minor Eye Conditions Service (MECS), are commissioned locally, with or without prescribing. In May 2025 the College of Optometrists said they were available in 73% of England, while every patient in Scotland, Wales and Northern Ireland had access. Where the service runs, people with red, itchy or painful eyes, minor eye injuries, flashes and floaters or sudden vision problems can be seen by a local optometrist without a GP referral.",
+        "q": "Is the minor eye conditions service available everywhere in England?"
+      }
+    ],
+    "body": [
+      {
+        "text": "Since 19 January, an independent prescribing optometrist in Scotland who is approved by their health board can be paid by the NHS to treat ten anterior eye conditions, including anterior uveitis and herpes simplex keratitis. In England, community minor and urgent eye care is commissioned area by area. An evaluation published in July in [Ophthalmic and Physiological Optics](https://doi.org/10.1007/s44402-026-00137-w) found that fewer than 1 in 100 urgent eyecare cases in Greater Manchester in 2024 were managed as prescribing cases.",
+        "type": "p"
+      },
+      {
+        "text": "In the same evaluation, eye emergency optometrists at Manchester Royal Eye Hospital went back through 120 urgent referrals, knowing the hospital's diagnosis. They judged that a prescribing optometrist might have managed 40% of them in practice. What a red eye can be given on the NHS depends on which side of the border it is on.",
+        "type": "p"
+      },
+      {
+        "text": "What an independent prescribing optometrist can do in Scotland",
+        "type": "h2"
+      },
+      {
+        "text": "Any optometrist in Scotland can examine and treat a red or sore eye under the NHS. In [Public Health Scotland's figures](https://www.publichealthscotland.scot/publications/ophthalmic-workload-statistics/general-ophthalmic-services-gos-activity-statistics-statistics-as-at-year-ending-march-2026/), anterior eye conditions were 30.0% of supplementary examinations in 2025/26. The General Ophthalmic Services (GOS) Specialist Supplementary service, which started on 1 August 2025, adds a second stage of treatment. Only a specialist independent prescribing (IP) optometrist or specialist ophthalmic medical practitioner, approved by their health board, can claim for it. Examples are a topical steroid and cycloplegic for anterior uveitis, or a sterile needle to remove a corneal foreign body and its rust ring. [The first appointment pays £97.69](https://www.publications.scot.nhs.uk/files/pca2026-o-01.pdf), and each follow-up pays £47.80.",
+        "type": "p"
+      },
+      {
+        "text": "In 2025/26, Public Health Scotland counted 10,267 first-appointment claims and 10,880 follow-up claims. Access depends on an approved prescriber nearby: when [the Scottish Government's impact assessment](https://www.gov.scot/publications/nhs-gos-scotland-amendment-regulations-2025-bria/) was written, no IP optometrist or ophthalmic medical practitioner provided GOS in Orkney, so the service could not run there. The assessment expects up to 20,000 unscheduled hospital appointments a year to move into the community once the service is fully rolled out. From summer 2029, optometrists graduating in Scotland, and nowhere else in the UK, will be able to qualify as independent prescribers.",
+        "type": "p"
+      },
+      {
+        "text": "What England commissions, and where",
+        "type": "h2"
+      },
+      {
+        "text": "England's community minor and urgent eye care runs as the Community Urgent Eyecare Service (CUES) or the Minor Eye Conditions Service (MECS), depending on the area. [The College of Optometrists said in May 2025](https://www.college-optometrists.org/news/2025/may/lack-of-funding-threatens-urgent-care-in-england) that these services, with or without prescribing, were available in 73% of England. In Scotland, Wales and Northern Ireland, it said, every patient had access.",
+        "type": "p"
+      },
+      {
+        "text": "Greater Manchester commissions the service in all ten of its localities. In 2024 it saw 54,994 cases, and 83.4% stayed in primary care. Only 496 cases, 0.9%, were prescribing cases, in which the practitioner used their prescribing qualification. An IP optometrist managed 460 of them, and an ophthalmologist the other 36. Prescribing was offered at 23 practices, 10.4% of those in the service. Of the prescribing cases an IP optometrist managed, 87.5% ended in discharge, against 78.1% of other cases. The prescribing cases had been triaged as suitable for a prescriber, so the two groups are not alike.",
+        "type": "p"
+      },
+      {
+        "text": "What registrants told the GOC",
+        "type": "h2"
+      },
+      {
+        "text": "The General Optical Council's [2026 registrant survey](https://optical.org/resource/registrant-workforce-and-perceptions-survey-2026.html) counts dispensing opticians and students as well as optometrists, and had 310 replies from Scotland. Its figures for working registrants rest on 276 in Scotland and 2,252 in England. Those in Scotland were less likely to have felt under pressure to meet commercial targets at the expense of patient care (25% against 32%), or to be considering leaving the profession over the next 12 to 24 months (8% against 16%). They were more likely to have felt unable to cope with their workload in the last 12 months (66% against 58%).",
+        "type": "p"
+      },
+      {
+        "text": "Why it matters in practice",
+        "type": "h2"
+      },
+      {
+        "text": "In England, the first step before a red eye goes to eye casualty is knowing whether the local CUES or MECS has a prescribing pathway, and which practice nearby runs it. The College says registered optometrists are already qualified for minor and urgent eye care. It wants the service commissioned everywhere, extra entry requirements dropped or minimised, and optometrists able to give treatments without involving the GP. [Denmark's OCT pathway](/news/denmark-oct-teleophthalmology-referrals) raised the same question for scans.",
+        "type": "p"
+      },
+      {
+        "text": "In Scotland, a practice without a prescriber still manages the first stage, and refers the patient for the second to a practice listed on NHS Inform. Whether the service is moving patients out of hospital is not yet visible. Scottish optometrists referred over 119,500 patients to hospital in 2025/26. Public Health Scotland calls this a stable trend, in line with the rise in eye examinations.",
+        "type": "p"
+      },
+      {
+        "text": "The caveats",
+        "type": "h2"
+      },
+      {
+        "items": [
+          "Greater Manchester is one region in one year, from routine records, and its discharge rates are not adjusted for case mix.",
+          "The 40% rests on 120 referrals to one hospital, rated afterwards with the hospital's diagnosis known. Missed diagnoses among discharged patients, and cost, were not measured.",
+          "Public Health Scotland counts claims paid since 1 August 2025, not patients treated, and no outcomes are published yet.",
+          "The GOC survey is self-reported, with an 11% response rate. Scotland's 8% is 23 of 276 working registrants, and nothing in the survey ties a gap to scope of practice."
+        ],
+        "type": "ul"
+      }
+    ]
+  },
+  {
     "slug": "ai-eye-care-liability",
     "title": "AI in eye care: 27 of 29 results in a review top 90%. Who is liable?",
     "date": "2026-10-12",
