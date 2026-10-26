@@ -1,5 +1,1645 @@
 [
   {
+    "slug": "glaucoma-drops-ocular-surface",
+    "title": "Glaucoma eye drops, or not: what five and six years of trials found",
+    "date": "2026-10-26",
+    "readingMinutes": 4,
+    "excerpt": "Two UK trials started patients on something other than glaucoma eye drops. Both found less field loss, and patients who could not feel the difference.",
+    "cover": {
+      "about": "The front of the eye in cross-section: drops fall from a dropper onto the tear film over the cornea, and a laser beam comes in from the side to the drainage angle, which pulses: drops, or something other than drops.",
+      "name": "drop-or-laser",
+      "shapes": [
+        {
+          "d": "M 96 182 A 104 76 0 0 1 304 182",
+          "fx": [
+            "draw"
+          ],
+          "so": 0.85,
+          "stroke": "pale",
+          "sw": 2,
+          "t": "path"
+        },
+        {
+          "d": "M 89 181 A 111 82 0 0 1 311 181",
+          "delay": 0.25,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.45,
+          "stroke": "glow",
+          "sw": 1.2,
+          "t": "path"
+        },
+        {
+          "d": "M 96 182 C 92 200, 90 218, 92 238",
+          "delay": 0.2,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.5,
+          "stroke": "pale",
+          "sw": 2,
+          "t": "path"
+        },
+        {
+          "d": "M 304 182 C 308 200, 310 218, 308 238",
+          "delay": 0.2,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.5,
+          "stroke": "pale",
+          "sw": 2,
+          "t": "path"
+        },
+        {
+          "cap": "round",
+          "delay": 0.45,
+          "fx": [
+            "draw"
+          ],
+          "stroke": "teal",
+          "sw": 2.6,
+          "t": "line",
+          "x1": 99,
+          "x2": 178,
+          "y1": 187,
+          "y2": 195
+        },
+        {
+          "cap": "round",
+          "delay": 0.45,
+          "fx": [
+            "draw"
+          ],
+          "stroke": "teal",
+          "sw": 2.6,
+          "t": "line",
+          "x1": 301,
+          "x2": 222,
+          "y1": 187,
+          "y2": 195
+        },
+        {
+          "cx": 200,
+          "cy": 214,
+          "delay": 0.55,
+          "fx": [
+            "draw"
+          ],
+          "rx": 48,
+          "ry": 19,
+          "so": 0.45,
+          "stroke": "teal",
+          "sw": 1.5,
+          "t": "ellipse"
+        },
+        {
+          "delay": 0.7,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.45,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "line",
+          "x1": 103,
+          "x2": 107,
+          "y1": 176,
+          "y2": 183
+        },
+        {
+          "delay": 0.7,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.45,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "line",
+          "x1": 106,
+          "x2": 110,
+          "y1": 174,
+          "y2": 181
+        },
+        {
+          "delay": 0.7,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.45,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "line",
+          "x1": 109,
+          "x2": 113,
+          "y1": 172,
+          "y2": 179
+        },
+        {
+          "delay": 0.7,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.45,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "line",
+          "x1": 297,
+          "x2": 293,
+          "y1": 176,
+          "y2": 183
+        },
+        {
+          "delay": 0.7,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.45,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "line",
+          "x1": 294,
+          "x2": 290,
+          "y1": 174,
+          "y2": 181
+        },
+        {
+          "delay": 0.7,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.45,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "line",
+          "x1": 291,
+          "x2": 287,
+          "y1": 172,
+          "y2": 179
+        },
+        {
+          "d": "M 184 -6 L 216 -6 L 206 22 L 194 22 Z",
+          "delay": 0.1,
+          "fill": "pale",
+          "fo": 0.1,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.7,
+          "stroke": "pale",
+          "sw": 1.5,
+          "t": "path"
+        },
+        {
+          "d": "M 200 32 C 204 38, 206 42, 206 45 C 206 49, 203 52, 200 52 C 197 52, 194 49, 194 45 C 194 42, 196 38, 200 32 Z",
+          "delay": 0.8,
+          "fill": "glow",
+          "fo": 0.9,
+          "fx": [
+            "pop"
+          ],
+          "t": "path"
+        },
+        {
+          "d": "M 200 62 C 204 68, 206 72, 206 75 C 206 79, 203 82, 200 82 C 197 82, 194 79, 194 75 C 194 72, 196 68, 200 62 Z",
+          "delay": 1,
+          "fill": "glow",
+          "fo": 0.6,
+          "fx": [
+            "pop"
+          ],
+          "t": "path"
+        },
+        {
+          "d": "M 190 95.4 A 11 11 0 0 1 210 95.4",
+          "delay": 1.2,
+          "fx": [
+            "pop",
+            "pulse"
+          ],
+          "so": 0.7,
+          "stroke": "glow",
+          "sw": 1.3,
+          "t": "path"
+        },
+        {
+          "d": "M 183.6 88.5 A 20 20 0 0 1 216.4 88.5",
+          "delay": 1.3,
+          "fx": [
+            "pop",
+            "pulse"
+          ],
+          "so": 0.4,
+          "stroke": "glow",
+          "sw": 1.2,
+          "t": "path"
+        },
+        {
+          "cx": 384,
+          "cy": 54,
+          "delay": 0.9,
+          "fill": "red",
+          "fx": [
+            "pop"
+          ],
+          "r": 4,
+          "t": "circle"
+        },
+        {
+          "cap": "round",
+          "delay": 1,
+          "fx": [
+            "draw"
+          ],
+          "stroke": "red",
+          "sw": 2,
+          "t": "line",
+          "x1": 381,
+          "x2": 306,
+          "y1": 59,
+          "y2": 181
+        },
+        {
+          "cx": 303,
+          "cy": 185,
+          "delay": 1.45,
+          "fill": "red",
+          "fx": [
+            "pop",
+            "pulse"
+          ],
+          "r": 4.5,
+          "t": "circle"
+        },
+        {
+          "cx": 303,
+          "cy": 185,
+          "delay": 1.5,
+          "fx": [
+            "pop",
+            "pulse"
+          ],
+          "r": 11,
+          "so": 0.45,
+          "stroke": "red",
+          "sw": 1.2,
+          "t": "circle"
+        }
+      ]
+    },
+    "series": "insight",
+    "topics": [
+      "glaucoma",
+      "ocular surface",
+      "selective laser trabeculoplasty",
+      "trabeculectomy",
+      "referral"
+    ],
+    "sources": [
+      {
+        "date": "2024-04-22",
+        "pmcid": "PMC11190021",
+        "publisher": "Ophthalmology",
+        "read": "full",
+        "readVia": "europepmc",
+        "title": "Evaluating primary treatment for people with advanced glaucoma: five-year results of the Treatment of Advanced Glaucoma Study (TAGS)",
+        "url": "https://doi.org/10.1016/j.ophtha.2024.01.007"
+      },
+      {
+        "date": "2023-02-01",
+        "publisher": "Ophthalmology",
+        "read": "abstract",
+        "readVia": "europepmc",
+        "title": "Laser in Glaucoma and Ocular Hypertension (LiGHT) Trial: six-year results of primary selective laser trabeculoplasty versus eye drops for the treatment of glaucoma and ocular hypertension",
+        "url": "https://doi.org/10.1016/j.ophtha.2022.09.009"
+      },
+      {
+        "date": "2026-01-01",
+        "pmcid": "PMC13498506",
+        "publisher": "International Ophthalmology",
+        "read": "full",
+        "readVia": "europepmc",
+        "title": "Effect of first-line topical medications for the treatment of glaucoma on the ocular surface",
+        "url": "https://doi.org/10.1007/s10792-025-03612-4"
+      },
+      {
+        "date": "2024-08-26",
+        "pmcid": "PMC11347270",
+        "publisher": "British Journal of Ophthalmology",
+        "read": "full",
+        "readVia": "europepmc",
+        "title": "Is primary trabeculectomy cost-effective for patients with advanced primary open-angle glaucoma? Five-year results of the Treatment of Advanced Glaucoma Study",
+        "url": "https://doi.org/10.1136/bjo-2023-324351"
+      }
+    ],
+    "figure": {
+      "blocks": [
+        {
+          "after": {
+            "label": "Surgery first",
+            "value": -14.3
+          },
+          "before": {
+            "label": "Drops first",
+            "value": -16.74
+          },
+          "decimals": 2,
+          "kind": "before-after",
+          "label": "Visual field mean deviation at five years (TAGS)",
+          "unit": " dB"
+        },
+        {
+          "decimals": 1,
+          "items": [
+            {
+              "label": "Drops first",
+              "value": 26.8
+            },
+            {
+              "emphasis": true,
+              "label": "Laser first",
+              "value": 19.6
+            }
+          ],
+          "kind": "bars",
+          "label": "Eyes progressing at six years (LiGHT)",
+          "unit": "%"
+        },
+        {
+          "items": [
+            {
+              "label": "corneal epithelial thickness, before and after",
+              "value": "45.6 → 43.9 µm"
+            },
+            {
+              "label": "tear break-up time",
+              "value": "8.3 → 6.9 s"
+            },
+            {
+              "label": "OSDI score",
+              "value": "7.3 → 13.4"
+            }
+          ],
+          "kind": "stats",
+          "label": "One year of first-line drops, 88 treatment-naive eyes"
+        }
+      ],
+      "caption": "TAGS: 453 adults with newly diagnosed advanced open-angle glaucoma, randomised to primary trabeculectomy or to drops, at five years. LiGHT: treatment-naive eyes, laser or drops, at six years. Surface figures: 88 naive eyes, one year.",
+      "source": "Ophthalmology 2024 (TAGS); Ophthalmology 2023 (LiGHT); International Ophthalmology 2026",
+      "title": "Two trials, two ends of the disease, the same shape"
+    },
+    "seo": {
+      "keyword": "glaucoma eye drops",
+      "metaDescription": "Two UK trials tested starting glaucoma eye drops against laser and surgery. Both found less field loss without drops, and patients who felt no difference.",
+      "metaTitle": "Glaucoma eye drops, laser or surgery first?"
+    },
+    "keyPoints": [
+      "In TAGS, 453 adults with newly diagnosed advanced glaucoma were randomised to primary trabeculectomy or to drops. At five years their quality of life was the same: VFQ-25 83.3 against 81.3.",
+      "Their clinical outcomes were not. Visual field mean deviation was –14.30 dB with surgery against –16.74 dB with drops, and IOP 12.07 against 14.76 mmHg. Safety events: 52.2% and 57.9%.",
+      "In LiGHT at six years, 69.8% of eyes started on laser were at or below target pressure with no drops or surgery, and fewer progressed than on drops: 19.6% against 26.8%.",
+      "One year of first-line drops in 88 treatment-naive eyes thinned the corneal epithelium from 45.6 to 43.9 µm, cut break-up time from 8.3 to 6.9 seconds and nearly doubled OSDI, 7.3 to 13.4."
+    ],
+    "faq": [
+      {
+        "a": "They change it measurably within a year. In a 2026 prospective study of 88 treatment-naive eyes, one year of first-line therapy thinned the total epithelial thickness from 45.6 to 43.9 µm, shortened tear break-up time from 8.3 to 6.9 seconds, thinned the lipid layer from 3.8 to 3.0 nm and raised the OSDI score from 7.3 to 13.4. Total corneal thickness did not change significantly. The study followed one cohort on the Colombian Caribbean coast for twelve months, so it describes the first year of treatment rather than the long run.",
+        "q": "Do glaucoma drops damage the ocular surface?"
+      },
+      {
+        "a": "On the measures clinicians treat by, the LiGHT trial found it was. At six years, 69.8% of eyes started on selective laser trabeculoplasty were still at or below their target pressure with no drops and no surgery, and 19.6% had progressed against 26.8% of eyes started on drops (p = 0.006). On the measures patients report (EQ-5D-5L, the Glaucoma Utility Index and GQL-15) there was no significant difference at all.",
+        "q": "Is laser better than drops for newly diagnosed glaucoma?"
+      },
+      {
+        "a": "TAGS is the trial that tested it. In 453 adults with newly diagnosed advanced open-angle glaucoma, primary trabeculectomy gave lower pressure (12.07 vs 14.76 mmHg) and less field loss at five years (mean deviation –14.30 vs –16.74 dB) than starting on drops, with no excess of safety events (52.2% vs 57.9%, relative risk 0.92). Vision-related quality of life was the same in both arms. The decision belongs to the glaucoma service, but the referral is where the case for it is made.",
+        "q": "Should advanced glaucoma go straight to surgery?"
+      }
+    ],
+    "body": [
+      {
+        "text": "Almost every newly diagnosed patient starts on glaucoma eye drops. Two long UK trials tested what happens when they do not. In the Treatment of Advanced Glaucoma Study, at five years, the patients randomised to surgery and the patients randomised to drops rated their own vision almost identically: 83.3 out of 100 on the 25-item Visual Function Questionnaire against 81.3, a difference of 1.01 with a confidence interval running from –1.99 to 4.00. On the trial’s primary outcome, there was nothing in it.",
+        "type": "p"
+      },
+      {
+        "text": "Their visual fields were not identical. Mean deviation was –14.30 dB in the surgery arm and –16.74 dB in the medication arm, a difference of 1.87 dB that did not straddle zero (95% CI 0.87 to 2.87). Pressures were 12.07 mmHg against 14.76. Safety events, the worry with a primary trabeculectomy, occurred in 52.2% of the surgery arm and 57.9% of the medication arm, a relative risk of 0.92, which is to say no signal of extra harm.",
+        "type": "p"
+      },
+      {
+        "text": "[TAGS](https://doi.org/10.1016/j.ophtha.2024.01.007) recruited 453 adults with newly diagnosed advanced open-angle glaucoma from 27 UK secondary care departments. It answers the question an optometrist actually faces when a field comes back badly damaged at first presentation: does it matter what this patient is started on?",
+        "type": "p"
+      },
+      {
+        "text": "The same shape at the other end of severity",
+        "type": "h2"
+      },
+      {
+        "text": "[LiGHT](https://doi.org/10.1016/j.ophtha.2022.09.009) asked the same question for newly diagnosed ocular hypertension and early glaucoma, with selective laser trabeculoplasty as the alternative to drops. At six years, 633 of the 692 patients who finished the first three years entered the extension and 524 completed. Quality of life came out level again: no significant difference on the EQ-5D-5L, the Glaucoma Utility Index or the GQL-15.",
+        "type": "p"
+      },
+      {
+        "text": "The clinical numbers did not come out level. Just under seven in ten eyes started on laser, 69.8%, were still at or below target pressure at six years with no drops and no surgery. And more eyes progressed in the drops arm than the laser arm: 26.8% against 19.6%, p = 0.006.",
+        "type": "p"
+      },
+      {
+        "text": "What a year of drops does to a surface that has never seen them",
+        "type": "h2"
+      },
+      {
+        "text": "The ocular surface case against chronic drops is usually argued from patients who have been on them for years, which makes it hard to separate the drug from the disease from the decade. A [2026 prospective study](https://doi.org/10.1007/s10792-025-03612-4) took 88 eyes of 44 treatment-naive patients and measured them before and after a year of first-line therapy.",
+        "type": "p"
+      },
+      {
+        "text": "Total corneal thickness barely moved, from 537.6 to 533.8 µm, and that change was not significant. The epithelium did: total epithelial thickness fell from 45.6 to 43.9 µm, and that one was. Tear break-up time dropped from 8.3 to 6.9 seconds, the lipid layer from 3.8 to 3.0 nm, and OSDI nearly doubled, 7.3 to 13.4.",
+        "type": "p"
+      },
+      {
+        "text": "None of that is catastrophic in a year. All of it is the first year of what may be thirty.",
+        "type": "p"
+      },
+      {
+        "text": "Where glaucoma eye drops actually sit",
+        "type": "h2"
+      },
+      {
+        "text": "The ocular surface argument is real, and measurable inside twelve months in eyes that had nothing wrong with them. It is not, on its own, the argument for laser or surgery first. That argument is progression: 19.6% against 26.8% in LiGHT, 1.87 dB in TAGS. The surface is why a patient stops taking the drops, which is a different problem and just as important.",
+        "type": "p"
+      },
+      {
+        "text": "Patients on drops and patients who avoided them rate their vision the same. The person in front of you has no way of feeling 1.87 dB. That makes the case for offering laser first an entirely clinical one, and it puts the job of making it on whoever is holding the fields, which, increasingly, is the high street. The Danish pathway in [what putting OCT into 79 optician stores did to referrals](/news/denmark-oct-teleophthalmology-referrals) is the same argument from the other end.",
+        "type": "p"
+      },
+      {
+        "text": "The limitations worth carrying into clinic",
+        "type": "h2"
+      },
+      {
+        "text": "TAGS randomised people whose glaucoma was already advanced when it was found, so its result does not transfer to every new diagnosis. LiGHT randomised the opposite end: treatment-naive ocular hypertension and early glaucoma. Neither asked what happens to someone already established on drops, which is most of the patients an optometrist sees. The ocular surface figures are one cohort of 44 patients followed for a year; they show what the first year does, not the tenth.",
+        "type": "p"
+      },
+      {
+        "text": "Why it matters in practice",
+        "type": "h2"
+      },
+      {
+        "items": [
+          "A newly diagnosed patient who asks whether they have to be on drops for life now has a real answer: in LiGHT, seven in ten eyes started on laser were still controlled at six years without them.",
+          "A patient already on drops who reports grittiness, fluctuating vision or a short break-up time is describing something the trials measured at one year in eyes with no prior disease. It is worth recording, and worth saying in the referral.",
+          "A field that is already advanced at first presentation is the TAGS population. The referral letter that says so is the one that gets the conversation about primary surgery started.",
+          "Neither trial says drops are wrong. Both say the choice is worth making deliberately rather than by default."
+        ],
+        "type": "ul"
+      }
+    ]
+  },
+  {
+    "slug": "microperimetry-visual-acuity-trials",
+    "title": "Acuity and microperimetry: why Europe refused a drug the US approved",
+    "date": "2026-10-26",
+    "readingMinutes": 4,
+    "excerpt": "The US approved pegcetacoplan for geographic atrophy on scans. Europe refused it: acuity, reading and microperimetry showed no benefit in two years.",
+    "cover": {
+      "about": "A letter chart read to its last row, with a dashed line to the one point it tests, the fovea. Beside it the macula with a patch of atrophy next to the fovea under a microperimetry grid: the points over the atrophy come up red and keep pulsing, the loss the chart never sees.",
+      "name": "chart-and-sensitivity-map",
+      "shapes": [
+        {
+          "fx": [
+            "draw"
+          ],
+          "h": 160,
+          "rx": 4,
+          "so": 0.45,
+          "stroke": "pale",
+          "sw": 1.4,
+          "t": "rect",
+          "w": 88,
+          "x": 34,
+          "y": 30
+        },
+        {
+          "cap": "square",
+          "d": "M 38.4 48 V 59 M 38.4 48 H 49.4 M 38.4 53.5 H 47.2 M 38.4 59 H 49.4",
+          "delay": 0.15,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.75,
+          "stroke": "teal",
+          "sw": 2.2,
+          "t": "path"
+        },
+        {
+          "cap": "square",
+          "d": "M 66.5 48 V 59 M 55.5 48 H 66.5 M 57.7 53.5 H 66.5 M 55.5 59 H 66.5",
+          "delay": 0.17,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.75,
+          "stroke": "teal",
+          "sw": 2.2,
+          "t": "path"
+        },
+        {
+          "cap": "square",
+          "d": "M 72.5 48 H 83.5 M 72.5 48 V 59 M 78 48 V 56.8 M 83.5 48 V 59",
+          "delay": 0.19,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.75,
+          "stroke": "teal",
+          "sw": 2.2,
+          "t": "path"
+        },
+        {
+          "cap": "square",
+          "d": "M 89.6 59 H 100.6 M 89.6 48 V 59 M 95.1 50.2 V 59 M 100.6 48 V 59",
+          "delay": 0.21,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.75,
+          "stroke": "teal",
+          "sw": 2.2,
+          "t": "path"
+        },
+        {
+          "cap": "square",
+          "d": "M 106.6 48 V 59 M 106.6 48 H 117.6 M 106.6 53.5 H 115.4 M 106.6 59 H 117.6",
+          "delay": 0.23,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.75,
+          "stroke": "teal",
+          "sw": 2.2,
+          "t": "path"
+        },
+        {
+          "cap": "square",
+          "d": "M 54.1 76 V 85.2 M 44.9 76 H 54.1 M 46.7 80.6 H 54.1 M 44.9 85.2 H 54.1",
+          "delay": 0.25,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.75,
+          "stroke": "teal",
+          "sw": 1.84,
+          "t": "path"
+        },
+        {
+          "cap": "square",
+          "d": "M 59.1 76 H 68.3 M 59.1 76 V 85.2 M 63.7 76 V 83.4 M 68.3 76 V 85.2",
+          "delay": 0.27,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.75,
+          "stroke": "teal",
+          "sw": 1.84,
+          "t": "path"
+        },
+        {
+          "cap": "square",
+          "d": "M 73.4 85.2 H 82.6 M 73.4 76 V 85.2 M 78 77.8 V 85.2 M 82.6 76 V 85.2",
+          "delay": 0.29,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.75,
+          "stroke": "teal",
+          "sw": 1.84,
+          "t": "path"
+        },
+        {
+          "cap": "square",
+          "d": "M 87.7 76 V 85.2 M 87.7 76 H 96.9 M 87.7 80.6 H 95 M 87.7 85.2 H 96.9",
+          "delay": 0.31,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.75,
+          "stroke": "teal",
+          "sw": 1.84,
+          "t": "path"
+        },
+        {
+          "cap": "square",
+          "d": "M 111.1 76 V 85.2 M 101.9 76 H 111.1 M 103.8 80.6 H 111.1 M 101.9 85.2 H 111.1",
+          "delay": 0.33,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.75,
+          "stroke": "teal",
+          "sw": 1.84,
+          "t": "path"
+        },
+        {
+          "cap": "square",
+          "d": "M 50.6 101 H 58.2 M 50.6 101 V 108.6 M 54.4 101 V 107.1 M 58.2 101 V 108.6",
+          "delay": 0.35,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.75,
+          "stroke": "teal",
+          "sw": 1.52,
+          "t": "path"
+        },
+        {
+          "cap": "square",
+          "d": "M 62.4 108.6 H 70 M 62.4 101 V 108.6 M 66.2 102.5 V 108.6 M 70 101 V 108.6",
+          "delay": 0.37,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.75,
+          "stroke": "teal",
+          "sw": 1.52,
+          "t": "path"
+        },
+        {
+          "cap": "square",
+          "d": "M 74.2 101 V 108.6 M 74.2 101 H 81.8 M 74.2 104.8 H 80.3 M 74.2 108.6 H 81.8",
+          "delay": 0.39,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.75,
+          "stroke": "teal",
+          "sw": 1.52,
+          "t": "path"
+        },
+        {
+          "cap": "square",
+          "d": "M 93.6 101 V 108.6 M 86 101 H 93.6 M 87.5 104.8 H 93.6 M 86 108.6 H 93.6",
+          "delay": 0.41,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.75,
+          "stroke": "teal",
+          "sw": 1.52,
+          "t": "path"
+        },
+        {
+          "cap": "square",
+          "d": "M 97.8 101 H 105.4 M 97.8 101 V 108.6 M 101.6 101 V 107.1 M 105.4 101 V 108.6",
+          "delay": 0.43,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.75,
+          "stroke": "teal",
+          "sw": 1.52,
+          "t": "path"
+        },
+        {
+          "cap": "square",
+          "d": "M 55.7 129.2 H 61.9 M 55.7 123 V 129.2 M 58.8 124.2 V 129.2 M 61.9 123 V 129.2",
+          "delay": 0.45,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.75,
+          "stroke": "teal",
+          "sw": 1.24,
+          "t": "path"
+        },
+        {
+          "cap": "square",
+          "d": "M 65.3 123 V 129.2 M 65.3 123 H 71.5 M 65.3 126.1 H 70.3 M 65.3 129.2 H 71.5",
+          "delay": 0.47,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.75,
+          "stroke": "teal",
+          "sw": 1.24,
+          "t": "path"
+        },
+        {
+          "cap": "square",
+          "d": "M 81.1 123 V 129.2 M 74.9 123 H 81.1 M 76.1 126.1 H 81.1 M 74.9 129.2 H 81.1",
+          "delay": 0.49,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.75,
+          "stroke": "teal",
+          "sw": 1.24,
+          "t": "path"
+        },
+        {
+          "cap": "square",
+          "d": "M 84.5 123 H 90.7 M 84.5 123 V 129.2 M 87.6 123 V 128 M 90.7 123 V 129.2",
+          "delay": 0.51,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.75,
+          "stroke": "teal",
+          "sw": 1.24,
+          "t": "path"
+        },
+        {
+          "cap": "square",
+          "d": "M 94.1 129.2 H 100.3 M 94.1 123 V 129.2 M 97.2 124.2 V 129.2 M 100.3 123 V 129.2",
+          "delay": 0.53,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.75,
+          "stroke": "teal",
+          "sw": 1.24,
+          "t": "path"
+        },
+        {
+          "cap": "square",
+          "d": "M 60 142 V 147 M 60 142 H 65 M 60 144.5 H 64 M 60 147 H 65",
+          "delay": 0.55,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.75,
+          "stroke": "teal",
+          "sw": 1,
+          "t": "path"
+        },
+        {
+          "cap": "square",
+          "d": "M 72.8 142 V 147 M 67.8 142 H 72.8 M 68.8 144.5 H 72.8 M 67.8 147 H 72.8",
+          "delay": 0.57,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.75,
+          "stroke": "teal",
+          "sw": 1,
+          "t": "path"
+        },
+        {
+          "cap": "square",
+          "d": "M 75.5 142 H 80.5 M 75.5 142 V 147 M 78 142 V 146 M 80.5 142 V 147",
+          "delay": 0.59,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.75,
+          "stroke": "teal",
+          "sw": 1,
+          "t": "path"
+        },
+        {
+          "cap": "square",
+          "d": "M 83.3 147 H 88.3 M 83.3 142 V 147 M 85.8 143 V 147 M 88.3 142 V 147",
+          "delay": 0.61,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.75,
+          "stroke": "teal",
+          "sw": 1,
+          "t": "path"
+        },
+        {
+          "cap": "square",
+          "d": "M 91 142 V 147 M 91 142 H 96 M 91 144.5 H 95 M 91 147 H 96",
+          "delay": 0.63,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.75,
+          "stroke": "teal",
+          "sw": 1,
+          "t": "path"
+        },
+        {
+          "cap": "square",
+          "d": "M 67.1 159 V 163.2 M 62.9 159 H 67.1 M 63.7 161.1 H 67.1 M 62.9 163.2 H 67.1",
+          "delay": 0.65,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.95,
+          "stroke": "glow",
+          "sw": 1,
+          "t": "path"
+        },
+        {
+          "cap": "square",
+          "d": "M 69.4 159 H 73.6 M 69.4 159 V 163.2 M 71.5 159 V 162.4 M 73.6 159 V 163.2",
+          "delay": 0.67,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.95,
+          "stroke": "glow",
+          "sw": 1,
+          "t": "path"
+        },
+        {
+          "cap": "square",
+          "d": "M 75.9 163.2 H 80.1 M 75.9 159 V 163.2 M 78 159.8 V 163.2 M 80.1 159 V 163.2",
+          "delay": 0.69,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.95,
+          "stroke": "glow",
+          "sw": 1,
+          "t": "path"
+        },
+        {
+          "cap": "square",
+          "d": "M 82.4 159 V 163.2 M 82.4 159 H 86.6 M 82.4 161.1 H 85.8 M 82.4 163.2 H 86.6",
+          "delay": 0.71,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.95,
+          "stroke": "glow",
+          "sw": 1,
+          "t": "path"
+        },
+        {
+          "cap": "square",
+          "d": "M 93.1 159 V 163.2 M 88.9 159 H 93.1 M 89.8 161.1 H 93.1 M 88.9 163.2 H 93.1",
+          "delay": 0.73,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.95,
+          "stroke": "glow",
+          "sw": 1,
+          "t": "path"
+        },
+        {
+          "cap": "round",
+          "delay": 0.85,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.8,
+          "stroke": "glow",
+          "sw": 1.4,
+          "t": "line",
+          "x1": 60,
+          "x2": 96,
+          "y1": 170,
+          "y2": 170
+        },
+        {
+          "cx": 266,
+          "cy": 122,
+          "delay": 0.1,
+          "fx": [
+            "draw"
+          ],
+          "r": 94,
+          "so": 0.28,
+          "stroke": "pale",
+          "sw": 1.2,
+          "t": "circle"
+        },
+        {
+          "cap": "round",
+          "d": "M 362 92 C 357.3 87.7, 345 73.7, 334 66 C 323 58.3, 309.3 50, 296 46 C 282.7 42, 267.7 41, 254 42 C 240.3 43, 225.7 46.7, 214 52 C 202.3 57.3, 189 70.3, 184 74",
+          "delay": 0.3,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.45,
+          "stroke": "teal",
+          "sw": 1.6,
+          "t": "path"
+        },
+        {
+          "cap": "round",
+          "d": "M 362 152 C 357.3 156.3, 345 170.3, 334 178 C 323 185.7, 309.3 194, 296 198 C 282.7 202, 267.7 203, 254 202 C 240.3 201, 225.7 197.3, 214 192 C 202.3 186.7, 189 173.7, 184 170",
+          "delay": 0.4,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.45,
+          "stroke": "teal",
+          "sw": 1.6,
+          "t": "path"
+        },
+        {
+          "d": "M 265.7 98.2 C 265.2 101, 266.1 111.5, 262.8 114.9 C 259.5 118.4, 251.1 118.9, 246.1 119 C 241.1 119.2, 237.3 116.5, 232.9 115.8 C 228.6 115, 224.6 116.1, 220 114.5 C 215.4 112.9, 207.5 110.4, 205.4 106.4 C 203.3 102.3, 205.3 94.5, 207.3 90 C 209.2 85.4, 213.6 81.6, 217.1 79.2 C 220.6 76.8, 224.8 77.1, 228.5 75.5 C 232.2 73.8, 235 70.2, 239.5 69.2 C 243.9 68.3, 251.3 67.2, 255.1 69.6 C 258.8 71.9, 260.2 78.7, 262 83.5 C 263.7 88.3, 265.6 92.9, 265.7 98.2 C 265.8 103.4, 263.3 112.1, 262.8 114.9",
+          "delay": 0.55,
+          "fill": "pale",
+          "fo": 0.16,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.55,
+          "stroke": "pale",
+          "sw": 1.2,
+          "t": "path"
+        },
+        {
+          "cx": 266,
+          "cy": 122,
+          "delay": 0.95,
+          "fx": [
+            "pop"
+          ],
+          "r": 7,
+          "so": 0.9,
+          "stroke": "glow",
+          "sw": 1.4,
+          "t": "circle"
+        },
+        {
+          "delay": 1,
+          "fx": [
+            "pop"
+          ],
+          "stroke": "glow",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 262,
+          "x2": 270,
+          "y1": 122,
+          "y2": 122
+        },
+        {
+          "delay": 1,
+          "fx": [
+            "pop"
+          ],
+          "stroke": "glow",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 266,
+          "x2": 266,
+          "y1": 118,
+          "y2": 126
+        },
+        {
+          "d": "M 100 170 C 108.3 172, 132.3 182.7, 150 182 C 167.7 181.3, 188 175, 206 166 C 224 157, 249.3 134.3, 258 128",
+          "dash": "3 4",
+          "delay": 1.1,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.5,
+          "stroke": "pale",
+          "sw": 1.1,
+          "t": "path"
+        },
+        {
+          "cx": 266,
+          "cy": 100,
+          "delay": 1.2,
+          "fill": "red",
+          "fo": 0.95,
+          "fx": [
+            "pop",
+            "pulse"
+          ],
+          "r": 3.6,
+          "t": "circle"
+        },
+        {
+          "cx": 277,
+          "cy": 102.9,
+          "delay": 1.21,
+          "fill": "teal",
+          "fo": 0.75,
+          "fx": [
+            "pop"
+          ],
+          "r": 2.6,
+          "t": "circle"
+        },
+        {
+          "cx": 285.1,
+          "cy": 111,
+          "delay": 1.23,
+          "fill": "teal",
+          "fo": 0.75,
+          "fx": [
+            "pop"
+          ],
+          "r": 2.6,
+          "t": "circle"
+        },
+        {
+          "cx": 288,
+          "cy": 122,
+          "delay": 1.24,
+          "fill": "teal",
+          "fo": 0.75,
+          "fx": [
+            "pop"
+          ],
+          "r": 2.6,
+          "t": "circle"
+        },
+        {
+          "cx": 285.1,
+          "cy": 133,
+          "delay": 1.26,
+          "fill": "teal",
+          "fo": 0.75,
+          "fx": [
+            "pop"
+          ],
+          "r": 2.6,
+          "t": "circle"
+        },
+        {
+          "cx": 277,
+          "cy": 141.1,
+          "delay": 1.27,
+          "fill": "teal",
+          "fo": 0.75,
+          "fx": [
+            "pop"
+          ],
+          "r": 2.6,
+          "t": "circle"
+        },
+        {
+          "cx": 266,
+          "cy": 144,
+          "delay": 1.29,
+          "fill": "teal",
+          "fo": 0.75,
+          "fx": [
+            "pop"
+          ],
+          "r": 2.6,
+          "t": "circle"
+        },
+        {
+          "cx": 255,
+          "cy": 141.1,
+          "delay": 1.31,
+          "fill": "teal",
+          "fo": 0.75,
+          "fx": [
+            "pop"
+          ],
+          "r": 2.6,
+          "t": "circle"
+        },
+        {
+          "cx": 246.9,
+          "cy": 133,
+          "delay": 1.32,
+          "fill": "teal",
+          "fo": 0.75,
+          "fx": [
+            "pop"
+          ],
+          "r": 2.6,
+          "t": "circle"
+        },
+        {
+          "cx": 244,
+          "cy": 122,
+          "delay": 1.34,
+          "fill": "teal",
+          "fo": 0.75,
+          "fx": [
+            "pop"
+          ],
+          "r": 2.6,
+          "t": "circle"
+        },
+        {
+          "cx": 246.9,
+          "cy": 111,
+          "delay": 1.35,
+          "fill": "red",
+          "fo": 0.95,
+          "fx": [
+            "pop",
+            "pulse"
+          ],
+          "r": 3.6,
+          "t": "circle"
+        },
+        {
+          "cx": 255,
+          "cy": 102.9,
+          "delay": 1.37,
+          "fill": "red",
+          "fo": 0.95,
+          "fx": [
+            "pop",
+            "pulse"
+          ],
+          "r": 3.6,
+          "t": "circle"
+        },
+        {
+          "cx": 266,
+          "cy": 76,
+          "delay": 1.38,
+          "fill": "teal",
+          "fo": 0.75,
+          "fx": [
+            "pop"
+          ],
+          "r": 2.6,
+          "t": "circle"
+        },
+        {
+          "cx": 289,
+          "cy": 82.2,
+          "delay": 1.4,
+          "fill": "teal",
+          "fo": 0.75,
+          "fx": [
+            "pop"
+          ],
+          "r": 2.6,
+          "t": "circle"
+        },
+        {
+          "cx": 305.8,
+          "cy": 99,
+          "delay": 1.41,
+          "fill": "teal",
+          "fo": 0.75,
+          "fx": [
+            "pop"
+          ],
+          "r": 2.6,
+          "t": "circle"
+        },
+        {
+          "cx": 312,
+          "cy": 122,
+          "delay": 1.42,
+          "fill": "teal",
+          "fo": 0.75,
+          "fx": [
+            "pop"
+          ],
+          "r": 2.6,
+          "t": "circle"
+        },
+        {
+          "cx": 305.8,
+          "cy": 145,
+          "delay": 1.44,
+          "fill": "teal",
+          "fo": 0.75,
+          "fx": [
+            "pop"
+          ],
+          "r": 2.6,
+          "t": "circle"
+        },
+        {
+          "cx": 289,
+          "cy": 161.8,
+          "delay": 1.46,
+          "fill": "teal",
+          "fo": 0.75,
+          "fx": [
+            "pop"
+          ],
+          "r": 2.6,
+          "t": "circle"
+        },
+        {
+          "cx": 266,
+          "cy": 168,
+          "delay": 1.47,
+          "fill": "teal",
+          "fo": 0.75,
+          "fx": [
+            "pop"
+          ],
+          "r": 2.6,
+          "t": "circle"
+        },
+        {
+          "cx": 243,
+          "cy": 161.8,
+          "delay": 1.49,
+          "fill": "teal",
+          "fo": 0.75,
+          "fx": [
+            "pop"
+          ],
+          "r": 2.6,
+          "t": "circle"
+        },
+        {
+          "cx": 226.2,
+          "cy": 145,
+          "delay": 1.5,
+          "fill": "teal",
+          "fo": 0.75,
+          "fx": [
+            "pop"
+          ],
+          "r": 2.6,
+          "t": "circle"
+        },
+        {
+          "cx": 220,
+          "cy": 122,
+          "delay": 1.52,
+          "fill": "teal",
+          "fo": 0.75,
+          "fx": [
+            "pop"
+          ],
+          "r": 2.6,
+          "t": "circle"
+        },
+        {
+          "cx": 226.2,
+          "cy": 99,
+          "delay": 1.53,
+          "fill": "red",
+          "fo": 0.95,
+          "fx": [
+            "pop",
+            "pulse"
+          ],
+          "r": 3.6,
+          "t": "circle"
+        },
+        {
+          "cx": 243,
+          "cy": 82.2,
+          "delay": 1.55,
+          "fill": "red",
+          "fo": 0.95,
+          "fx": [
+            "pop",
+            "pulse"
+          ],
+          "r": 3.6,
+          "t": "circle"
+        },
+        {
+          "cx": 266,
+          "cy": 52,
+          "delay": 1.56,
+          "fill": "teal",
+          "fo": 0.75,
+          "fx": [
+            "pop"
+          ],
+          "r": 2.6,
+          "t": "circle"
+        },
+        {
+          "cx": 301,
+          "cy": 61.4,
+          "delay": 1.58,
+          "fill": "teal",
+          "fo": 0.75,
+          "fx": [
+            "pop"
+          ],
+          "r": 2.6,
+          "t": "circle"
+        },
+        {
+          "cx": 326.6,
+          "cy": 87,
+          "delay": 1.59,
+          "fill": "teal",
+          "fo": 0.75,
+          "fx": [
+            "pop"
+          ],
+          "r": 2.6,
+          "t": "circle"
+        },
+        {
+          "cx": 336,
+          "cy": 122,
+          "delay": 1.61,
+          "fill": "teal",
+          "fo": 0.75,
+          "fx": [
+            "pop"
+          ],
+          "r": 2.6,
+          "t": "circle"
+        },
+        {
+          "cx": 326.6,
+          "cy": 157,
+          "delay": 1.62,
+          "fill": "teal",
+          "fo": 0.75,
+          "fx": [
+            "pop"
+          ],
+          "r": 2.6,
+          "t": "circle"
+        },
+        {
+          "cx": 301,
+          "cy": 182.6,
+          "delay": 1.64,
+          "fill": "teal",
+          "fo": 0.75,
+          "fx": [
+            "pop"
+          ],
+          "r": 2.6,
+          "t": "circle"
+        },
+        {
+          "cx": 266,
+          "cy": 192,
+          "delay": 1.65,
+          "fill": "teal",
+          "fo": 0.75,
+          "fx": [
+            "pop"
+          ],
+          "r": 2.6,
+          "t": "circle"
+        },
+        {
+          "cx": 231,
+          "cy": 182.6,
+          "delay": 1.67,
+          "fill": "teal",
+          "fo": 0.75,
+          "fx": [
+            "pop"
+          ],
+          "r": 2.6,
+          "t": "circle"
+        },
+        {
+          "cx": 205.4,
+          "cy": 157,
+          "delay": 1.68,
+          "fill": "teal",
+          "fo": 0.75,
+          "fx": [
+            "pop"
+          ],
+          "r": 2.6,
+          "t": "circle"
+        },
+        {
+          "cx": 196,
+          "cy": 122,
+          "delay": 1.69,
+          "fill": "teal",
+          "fo": 0.75,
+          "fx": [
+            "pop"
+          ],
+          "r": 2.6,
+          "t": "circle"
+        },
+        {
+          "cx": 205.4,
+          "cy": 87,
+          "delay": 1.71,
+          "fill": "teal",
+          "fo": 0.75,
+          "fx": [
+            "pop"
+          ],
+          "r": 2.6,
+          "t": "circle"
+        },
+        {
+          "cx": 231,
+          "cy": 61.4,
+          "delay": 1.73,
+          "fill": "teal",
+          "fo": 0.75,
+          "fx": [
+            "pop"
+          ],
+          "r": 2.6,
+          "t": "circle"
+        }
+      ]
+    },
+    "series": "insight",
+    "topics": [
+      "microperimetry",
+      "visual acuity",
+      "geographic atrophy",
+      "clinical trials",
+      "regulation"
+    ],
+    "sources": [
+      {
+        "date": "2025-08-14",
+        "publisher": "European Medicines Agency",
+        "title": "Syfovre: EPAR, refusal public assessment report (EMA/328209/2025)",
+        "url": "https://www.ema.europa.eu/en/documents/assessment-report/syfovre-epar-refusal-public-assessment-report_en.pdf"
+      },
+      {
+        "date": "2026-09-26",
+        "publisher": "American Journal of Ophthalmology",
+        "title": "Structure-function associations in eyes with early atrophic age-related macular degeneration",
+        "url": "https://doi.org/10.1016/j.ajo.2026.09.029"
+      },
+      {
+        "date": "2026-02-01",
+        "publisher": "Translational Vision Science & Technology",
+        "title": "Visual acuity provides a more meaningful measure of vision-related functioning than mesopic microperimetry in age-related macular degeneration patients: a cross-sectional study",
+        "url": "https://doi.org/10.1167/tvst.15.2.5"
+      },
+      {
+        "date": "2023-02-17",
+        "publisher": "US Food and Drug Administration",
+        "title": "SYFOVRE (pegcetacoplan injection), prescribing information",
+        "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/217171s000lbl.pdf"
+      },
+      {
+        "publisher": "US Food and Drug Administration",
+        "title": "ENCELTO (revakinagene taroretcel-lwey), prescribing information",
+        "url": "https://www.fda.gov/media/185726/download"
+      },
+      {
+        "date": "2026-05-04",
+        "publisher": "ClinicalTrials.gov",
+        "title": "ARCHER II: vonaprument (ANX007) in geographic atrophy, NCT06510816",
+        "url": "https://clinicaltrials.gov/study/NCT06510816"
+      },
+      {
+        "date": "2025-01-22",
+        "publisher": "Macular Society",
+        "title": "First treatment for late-stage dry AMD rejected by UK drug regulator",
+        "url": "https://www.macularsociety.org/about/media/news/2025/january/first-treatment-for-late-stage-dry-amd-rejected-by-uk-drug-regulator/"
+      },
+      {
+        "date": "2023-11-08",
+        "publisher": "Graefe's Archive for Clinical and Experimental Ophthalmology",
+        "title": "Additional measures of macular function beyond visual acuity",
+        "url": "https://doi.org/10.1007/s00417-023-06272-1"
+      }
+    ],
+    "figure": {
+      "blocks": [
+        {
+          "items": [
+            {
+              "change": -21.9,
+              "label": "OAKS, monthly"
+            },
+            {
+              "change": -18.1,
+              "label": "OAKS, every other month"
+            },
+            {
+              "change": -18.1,
+              "label": "DERBY, monthly"
+            },
+            {
+              "change": -17.4,
+              "label": "DERBY, every other month"
+            }
+          ],
+          "kind": "change",
+          "label": "Difference in lesion growth from sham, %"
+        },
+        {
+          "items": [
+            {
+              "label": "less lesion growth than with sham",
+              "value": "0.70 to 0.87 mm²"
+            },
+            {
+              "label": "function endpoints with a meaningful difference or trend",
+              "value": "0 of 4"
+            }
+          ],
+          "kind": "stats",
+          "label": "Over 24 months"
+        }
+      ],
+      "caption": "Pegcetacoplan monthly or every other month against sham, OAKS and DERBY (1,258 randomised), baseline to month 24, sham lesions growing 3.98 and 4.00 mm². Function endpoints: acuity, reading speed, reading index, microperimetry (OAKS only).",
+      "source": "FDA SYFOVRE prescribing information (2023); EMA Syfovre refusal public assessment report (2025)",
+      "title": "Lesion growth slowed on the scans, function did not separate from sham"
+    },
+    "seo": {
+      "keyword": "microperimetry",
+      "metaDescription": "Microperimetry, acuity or scans? Why Europe refused a GA drug the US approved on lesion growth, and what 87 eyes in a 2026 study add for practice.",
+      "metaTitle": "Microperimetry vs visual acuity: what regulators accept"
+    },
+    "keyPoints": [
+      "The US approved pegcetacoplan for geographic atrophy in 2023 on lesion growth: 0.70 to 0.87 mm² less than the 4 mm² with sham over 24 months (17% to 22%), in trials of 1,258 patients.",
+      "Europe refused it in 2024: no prespecified measure of function, acuity and microperimetry included, showed a meaningful difference or trend. The MHRA's UK rejection was reported in 2025.",
+      "In early atrophic AMD (87 eyes), lesion size tracked microperimetry and acuity the distance from the fovea. In 102 mostly late AMD patients, better-eye acuity tracked daily function more closely.",
+      "Acuity is not being retired: ARCHER II, a phase 3 trial in geographic atrophy, is judged on a loss of 15 letters or more."
+    ],
+    "faq": [
+      {
+        "a": "Microperimetry presents spots of light of varying brightness onto the retina at points centred on the fovea, measures the faintest each point can see, and tracks the retina so the same points are tested at every visit. It tests the macula around the fovea, which acuity does not. Experts advising the European Medicines Agency called it the best available test of retinal function in geographic atrophy, though it is not clear how much change in it patients notice. In a 2026 Utah study it tracked the size of early atrophy more closely than acuity did.",
+        "q": "What is microperimetry?"
+      },
+      {
+        "a": "For how patients manage day to day, acuity still leads: in a Dutch study of 102 AMD patients, most with late AMD, acuity in the better-seeing eye explained more of their daily visual functioning than mesopic microperimetry did. It is weakest early, while atrophy spares the fovea, which is why geographic atrophy trials measured lesion growth on scans. The US approved pegcetacoplan on that. Europe accepted lesion growth as the main measure but would not approve without at least a positive trend in visual function, and ARCHER II, a phase 3 trial, is judged on letters lost.",
+        "q": "Is visual acuity still the gold standard?"
+      },
+      {
+        "a": "Syfovre (pegcetacoplan) slowed the growth of geographic atrophy on autofluorescence over 24 months in two trials that randomised 1,258 patients, and the US approved it in 2023. The European Medicines Agency refused it in 2024: none of the prespecified measures of function, including acuity, reading speed and microperimetry, showed a meaningful difference or a positive trend, set against the risks of regular injections, including wet AMD, inflammation and endophthalmitis. The Macular Society reported in January 2025 that the MHRA had rejected it for the UK, concerned about whether it meaningfully improved patients' ability to see and manage daily tasks.",
+        "q": "Why was Syfovre refused in Europe and the UK?"
+      },
+      {
+        "a": "Low luminance acuity is the ETDRS chart read through a 2.0 log unit neutral density filter, which lowers the light 100 times. The Vision Academy recommends it alongside standard acuity, especially in dry AMD, as a simple, inexpensive and relatively rapid test, though testing is not yet standardised. In a 2026 Utah study of early atrophy it followed distance from the fovea, as standard acuity did.",
+        "q": "What is low luminance visual acuity?"
+      }
+    ],
+    "body": [
+      {
+        "text": "The US approved pegcetacoplan, the first drug for geographic atrophy, in February 2023 on scans showing slower lesion growth. [The European Medicines Agency's assessment report](https://www.ema.europa.eu/en/documents/assessment-report/syfovre-epar-refusal-public-assessment-report_en.pdf) explains why Europe refused it: over 24 months no prespecified measure of function, acuity and microperimetry included, showed a meaningful difference or even a positive trend to weigh against the risks of regular injections. The MHRA's UK rejection was reported in January 2025.",
+        "type": "p"
+      },
+      {
+        "text": "Chart and scan disagree earlier in the disease too. [A study published in September in the American Journal of Ophthalmology](https://doi.org/10.1016/j.ajo.2026.09.029) suggests why: in early atrophic AMD, with lesions far smaller than the trials', acuity tracked distance from the fovea and microperimetry tracked lesion size.",
+        "type": "p"
+      },
+      {
+        "text": "What the trials measured",
+        "type": "h2"
+      },
+      {
+        "text": "OAKS and DERBY randomised 1,258 patients with geographic atrophy of 2.5 to 17.5 mm² to pegcetacoplan monthly or every other month, or sham, for 24 months, measured on fundus autofluorescence. [The FDA's label](https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/217171s000lbl.pdf) gives modelled growth over 24 months of 3.98 mm² with sham in OAKS and 4.00 mm² in DERBY, and 0.70 to 0.87 mm² less with pegcetacoplan, 17.4% to 21.9% slower.",
+        "type": "p"
+      },
+      {
+        "text": "Every key secondary endpoint measured function: acuity, reading speed, a reading-independence index and, in OAKS only, microperimetry. None showed a meaningful difference or a positive trend. A late, post hoc OCT analysis found photoreceptor loss slowing even more. The committee's answer:",
+        "type": "p"
+      },
+      {
+        "text": "the observed reduction of the GA lesion growth rate (regardless of the specific measurement) remains an anatomical endpoint that can in itself not demonstrate clinically relevant patient benefit.",
+        "type": "quote"
+      },
+      {
+        "text": "What the US and Europe each accepted",
+        "type": "h2"
+      },
+      {
+        "text": "Europe had agreed lesion area could be the primary measure if the trials showed at least a positive trend in visual function. Its experts, in June 2024, called lesion size an acceptable primary outcome and microperimetry the best available test of retinal function in geographic atrophy, with acuity measured but not as the primary endpoint. The committee accepted that acuity can miss loss while the fovea is spared, but acuity fell 6.94 letters over two years with sham, so a real effect should at least have shown as a trend.",
+        "type": "p"
+      },
+      {
+        "text": "It refused by majority, weighing the missing benefit against the risks of regular injections, including wet AMD, inflammation and endophthalmitis. Eleven members dissented: with the fovea spared so long, a benefit may not have been possible to show within the trials, and post hoc microperimetry showed the preserved retina still responded to light. The majority judged them inconsistent between doses, at around one scotomatous point.",
+        "type": "p"
+      },
+      {
+        "text": "The FDA has also approved a treatment on an OCT primary endpoint. [Encelto's label](https://www.fda.gov/media/185726/download), for macular telangiectasia type 2, gives the rate of ellipsoid zone loss on SD-OCT over 24 months: 0.075 against 0.166 mm² with sham in one trial, 0.111 against 0.160 in the other. Its secondary microperimetry endpoint differed in the first (p = 0.02), not the second (p = 0.83).",
+        "type": "p"
+      },
+      {
+        "text": "Microperimetry and acuity in early atrophy",
+        "type": "h2"
+      },
+      {
+        "text": "The Utah study took 87 eyes with early atrophic AMD, lesions no larger than 1.27 mm². In the 38 with atrophy on autofluorescence, each doubling of lesion size went with 3.55 dB lower mesopic sensitivity on microperimetry aimed at the lesion. Acuity, low luminance acuity and reading followed distance from the fovea, about 4 to 5 letters per mm for acuity, with no consistent link to lesion size. We could read only its abstract, and nothing here goes beyond it.",
+        "type": "p"
+      },
+      {
+        "text": "In [a Dutch study of 102 AMD patients](https://doi.org/10.1167/tvst.15.2.5), most with late AMD in at least one eye, acuity in the better-seeing eye explained 38% of the variation in daily visual functioning, and adding mesopic microperimetry on a fixed 37-point grid raised that only to 46%. The authors suggest acuity gives stronger evidence of clinical efficacy.",
+        "type": "p"
+      },
+      {
+        "text": "Why it matters in practice",
+        "type": "h2"
+      },
+      {
+        "items": [
+          "A 6/6 beside atrophy on the OCT is consistent with a spared fovea, not proof of one, and says nothing about the atrophy's size. Check the fovea on the OCT and record how far the atrophy sits from it.",
+          "[The Vision Academy's consensus](https://doi.org/10.1007/s00417-023-06272-1) recommends low luminance acuity alongside standard acuity: the ETDRS chart through a 2.0 log unit neutral density filter, simple, inexpensive and relatively rapid, though not yet standardised. In the Utah eyes it followed the fovea too.",
+          "A patient asking about the US injections for geographic atrophy can be told the first was refused in Europe and the UK: no benefit to sight was shown to set against the risks of injections. [Our interactive simulation of dry AMD](/vision) shows its stages.",
+          "[ARCHER II](https://clinicaltrials.gov/study/NCT06510816), a phase 3 trial of vonaprument in 659 patients, is judged on the proportion losing 15 letters or more by month 15, with primary completion estimated for October 2026."
+        ],
+        "type": "ul"
+      },
+      {
+        "text": "The caveats",
+        "type": "h2"
+      },
+      {
+        "items": [
+          "Both regulators accepted that the drug slowed lesion growth. Europe's final assessment covered every other month dosing only, monthly dosing having been dropped over adverse events.",
+          "DERBY narrowly missed its prespecified 12-month primary endpoint. The difference was larger at 24 months, but that was not the prespecified test.",
+          "The Utah and Dutch studies are cross-sectional, with different patients and microperimetry methods.",
+          "The Vision Academy is funded by Bayer, and Bayer part-funded the Dutch study."
+        ],
+        "type": "ul"
+      }
+    ]
+  },
+  {
     "slug": "number-plate-test-night-driving",
     "title": "The number plate eye test is not a night-driving test",
     "date": "2026-10-19",
