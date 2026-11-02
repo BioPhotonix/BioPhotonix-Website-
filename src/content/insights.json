@@ -1,5 +1,1706 @@
 [
   {
+    "slug": "firework-eye-injury-home-remedies",
+    "title": "Firework eye injuries: the question that is not on the referral form",
+    "date": "2026-11-02",
+    "readingMinutes": 3,
+    "excerpt": "A firework eye injury is four times more likely in October and November. The Diwali data adds the number the UK never had: six hours to presentation.",
+    "cover": {
+      "about": "A firework bursts and its sparks fall towards an eye set in a clock face; the red arc runs from twelve to six, the six hours between injury and care in the Diwali data, when whatever was put in the eye went in.",
+      "name": "firework-six-hours",
+      "shapes": [
+        {
+          "cap": "round",
+          "delay": 0.1,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.85,
+          "stroke": "teal",
+          "sw": 1.8,
+          "t": "line",
+          "x1": 112,
+          "x2": 112,
+          "y1": 74,
+          "y2": 30
+        },
+        {
+          "cx": 112,
+          "cy": 24,
+          "delay": 0.7,
+          "fill": "teal",
+          "fx": [
+            "pop"
+          ],
+          "r": 2.2,
+          "t": "circle"
+        },
+        {
+          "cap": "round",
+          "delay": 0.14,
+          "fx": [
+            "draw"
+          ],
+          "so": 1,
+          "stroke": "glow",
+          "sw": 1.8,
+          "t": "line",
+          "x1": 115.8,
+          "x2": 127.3,
+          "y1": 74.8,
+          "y2": 47
+        },
+        {
+          "cx": 129.6,
+          "cy": 41.5,
+          "delay": 0.73,
+          "fill": "glow",
+          "fx": [
+            "pop"
+          ],
+          "r": 2.2,
+          "t": "circle"
+        },
+        {
+          "cap": "round",
+          "delay": 0.18,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.85,
+          "stroke": "teal",
+          "sw": 1.8,
+          "t": "line",
+          "x1": 119.1,
+          "x2": 150.2,
+          "y1": 76.9,
+          "y2": 45.8
+        },
+        {
+          "cx": 154.4,
+          "cy": 41.6,
+          "delay": 0.76,
+          "fill": "teal",
+          "fx": [
+            "pop"
+          ],
+          "r": 2.2,
+          "t": "circle"
+        },
+        {
+          "cap": "round",
+          "delay": 0.22,
+          "fx": [
+            "draw"
+          ],
+          "so": 1,
+          "stroke": "red",
+          "sw": 1.8,
+          "t": "line",
+          "x1": 121.2,
+          "x2": 149,
+          "y1": 80.2,
+          "y2": 68.7
+        },
+        {
+          "cx": 154.5,
+          "cy": 66.4,
+          "delay": 0.79,
+          "fill": "red",
+          "fx": [
+            "pop"
+          ],
+          "r": 2.2,
+          "t": "circle"
+        },
+        {
+          "cap": "round",
+          "delay": 0.1,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.85,
+          "stroke": "teal",
+          "sw": 1.8,
+          "t": "line",
+          "x1": 122,
+          "x2": 166,
+          "y1": 84,
+          "y2": 84
+        },
+        {
+          "cx": 172,
+          "cy": 84,
+          "delay": 0.82,
+          "fill": "teal",
+          "fx": [
+            "pop"
+          ],
+          "r": 2.2,
+          "t": "circle"
+        },
+        {
+          "cap": "round",
+          "delay": 0.14,
+          "fx": [
+            "draw"
+          ],
+          "so": 1,
+          "stroke": "glow",
+          "sw": 1.8,
+          "t": "line",
+          "x1": 121.2,
+          "x2": 149,
+          "y1": 87.8,
+          "y2": 99.3
+        },
+        {
+          "cx": 154.5,
+          "cy": 101.6,
+          "delay": 0.85,
+          "fill": "glow",
+          "fx": [
+            "pop"
+          ],
+          "r": 2.2,
+          "t": "circle"
+        },
+        {
+          "cap": "round",
+          "delay": 0.18,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.85,
+          "stroke": "teal",
+          "sw": 1.8,
+          "t": "line",
+          "x1": 119.1,
+          "x2": 150.2,
+          "y1": 91.1,
+          "y2": 122.2
+        },
+        {
+          "cx": 154.4,
+          "cy": 126.4,
+          "delay": 0.88,
+          "fill": "teal",
+          "fx": [
+            "pop"
+          ],
+          "r": 2.2,
+          "t": "circle"
+        },
+        {
+          "cap": "round",
+          "delay": 0.22,
+          "fx": [
+            "draw"
+          ],
+          "so": 1,
+          "stroke": "red",
+          "sw": 1.8,
+          "t": "line",
+          "x1": 115.8,
+          "x2": 127.3,
+          "y1": 93.2,
+          "y2": 121
+        },
+        {
+          "cx": 129.6,
+          "cy": 126.5,
+          "delay": 0.91,
+          "fill": "red",
+          "fx": [
+            "pop"
+          ],
+          "r": 2.2,
+          "t": "circle"
+        },
+        {
+          "cap": "round",
+          "delay": 0.1,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.85,
+          "stroke": "teal",
+          "sw": 1.8,
+          "t": "line",
+          "x1": 112,
+          "x2": 112,
+          "y1": 94,
+          "y2": 138
+        },
+        {
+          "cx": 112,
+          "cy": 144,
+          "delay": 0.7,
+          "fill": "teal",
+          "fx": [
+            "pop"
+          ],
+          "r": 2.2,
+          "t": "circle"
+        },
+        {
+          "cap": "round",
+          "delay": 0.14,
+          "fx": [
+            "draw"
+          ],
+          "so": 1,
+          "stroke": "glow",
+          "sw": 1.8,
+          "t": "line",
+          "x1": 108.2,
+          "x2": 96.7,
+          "y1": 93.2,
+          "y2": 121
+        },
+        {
+          "cx": 94.4,
+          "cy": 126.5,
+          "delay": 0.73,
+          "fill": "glow",
+          "fx": [
+            "pop"
+          ],
+          "r": 2.2,
+          "t": "circle"
+        },
+        {
+          "cap": "round",
+          "delay": 0.18,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.85,
+          "stroke": "teal",
+          "sw": 1.8,
+          "t": "line",
+          "x1": 104.9,
+          "x2": 73.8,
+          "y1": 91.1,
+          "y2": 122.2
+        },
+        {
+          "cx": 69.6,
+          "cy": 126.4,
+          "delay": 0.76,
+          "fill": "teal",
+          "fx": [
+            "pop"
+          ],
+          "r": 2.2,
+          "t": "circle"
+        },
+        {
+          "cap": "round",
+          "delay": 0.22,
+          "fx": [
+            "draw"
+          ],
+          "so": 1,
+          "stroke": "red",
+          "sw": 1.8,
+          "t": "line",
+          "x1": 102.8,
+          "x2": 75,
+          "y1": 87.8,
+          "y2": 99.3
+        },
+        {
+          "cx": 69.5,
+          "cy": 101.6,
+          "delay": 0.79,
+          "fill": "red",
+          "fx": [
+            "pop"
+          ],
+          "r": 2.2,
+          "t": "circle"
+        },
+        {
+          "cap": "round",
+          "delay": 0.1,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.85,
+          "stroke": "teal",
+          "sw": 1.8,
+          "t": "line",
+          "x1": 102,
+          "x2": 58,
+          "y1": 84,
+          "y2": 84
+        },
+        {
+          "cx": 52,
+          "cy": 84,
+          "delay": 0.82,
+          "fill": "teal",
+          "fx": [
+            "pop"
+          ],
+          "r": 2.2,
+          "t": "circle"
+        },
+        {
+          "cap": "round",
+          "delay": 0.14,
+          "fx": [
+            "draw"
+          ],
+          "so": 1,
+          "stroke": "glow",
+          "sw": 1.8,
+          "t": "line",
+          "x1": 102.8,
+          "x2": 75,
+          "y1": 80.2,
+          "y2": 68.7
+        },
+        {
+          "cx": 69.5,
+          "cy": 66.4,
+          "delay": 0.85,
+          "fill": "glow",
+          "fx": [
+            "pop"
+          ],
+          "r": 2.2,
+          "t": "circle"
+        },
+        {
+          "cap": "round",
+          "delay": 0.18,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.85,
+          "stroke": "teal",
+          "sw": 1.8,
+          "t": "line",
+          "x1": 104.9,
+          "x2": 73.8,
+          "y1": 76.9,
+          "y2": 45.8
+        },
+        {
+          "cx": 69.6,
+          "cy": 41.6,
+          "delay": 0.88,
+          "fill": "teal",
+          "fx": [
+            "pop"
+          ],
+          "r": 2.2,
+          "t": "circle"
+        },
+        {
+          "cap": "round",
+          "delay": 0.22,
+          "fx": [
+            "draw"
+          ],
+          "so": 1,
+          "stroke": "red",
+          "sw": 1.8,
+          "t": "line",
+          "x1": 108.2,
+          "x2": 96.7,
+          "y1": 74.8,
+          "y2": 47
+        },
+        {
+          "cx": 94.4,
+          "cy": 41.5,
+          "delay": 0.91,
+          "fill": "red",
+          "fx": [
+            "pop"
+          ],
+          "r": 2.2,
+          "t": "circle"
+        },
+        {
+          "cx": 112,
+          "cy": 84,
+          "delay": 0.05,
+          "fill": "pale",
+          "fx": [
+            "pop"
+          ],
+          "r": 3.5,
+          "t": "circle"
+        },
+        {
+          "cap": "round",
+          "delay": 0.45,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.55,
+          "stroke": "pale",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 197.5,
+          "x2": 201.3,
+          "y1": 35.2,
+          "y2": 23.8
+        },
+        {
+          "cap": "round",
+          "delay": 0.45,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.55,
+          "stroke": "pale",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 200,
+          "x2": 209.8,
+          "y1": 37.1,
+          "y2": 30
+        },
+        {
+          "cap": "round",
+          "delay": 0.45,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.55,
+          "stroke": "pale",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 201,
+          "x2": 213,
+          "y1": 40,
+          "y2": 40
+        },
+        {
+          "cap": "round",
+          "delay": 0.45,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.55,
+          "stroke": "pale",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 200,
+          "x2": 209.8,
+          "y1": 42.9,
+          "y2": 50
+        },
+        {
+          "cap": "round",
+          "delay": 0.45,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.55,
+          "stroke": "pale",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 197.5,
+          "x2": 201.3,
+          "y1": 44.8,
+          "y2": 56.2
+        },
+        {
+          "cap": "round",
+          "delay": 0.45,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.55,
+          "stroke": "pale",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 194.5,
+          "x2": 190.7,
+          "y1": 44.8,
+          "y2": 56.2
+        },
+        {
+          "cap": "round",
+          "delay": 0.45,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.55,
+          "stroke": "pale",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 192,
+          "x2": 182.2,
+          "y1": 42.9,
+          "y2": 50
+        },
+        {
+          "cap": "round",
+          "delay": 0.45,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.55,
+          "stroke": "pale",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 191,
+          "x2": 179,
+          "y1": 40,
+          "y2": 40
+        },
+        {
+          "cap": "round",
+          "delay": 0.45,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.55,
+          "stroke": "pale",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 192,
+          "x2": 182.2,
+          "y1": 37.1,
+          "y2": 30
+        },
+        {
+          "cap": "round",
+          "delay": 0.45,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.55,
+          "stroke": "pale",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 194.5,
+          "x2": 190.7,
+          "y1": 35.2,
+          "y2": 23.8
+        },
+        {
+          "cap": "round",
+          "d": "M 148 108 C 153.7 110.7, 170.7 119.3, 182 124 C 193.3 128.7, 205 132.3, 216 136 C 227 139.7, 242.7 144.3, 248 146",
+          "dash": "2 7",
+          "delay": 1,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.7,
+          "stroke": "red",
+          "sw": 1.6,
+          "t": "path"
+        },
+        {
+          "cx": 252,
+          "cy": 147,
+          "delay": 1.15,
+          "fill": "red",
+          "fx": [
+            "pop"
+          ],
+          "r": 2.6,
+          "t": "circle"
+        },
+        {
+          "cx": 308,
+          "cy": 160,
+          "delay": 0.3,
+          "fx": [
+            "draw"
+          ],
+          "r": 62,
+          "so": 0.2,
+          "stroke": "pale",
+          "sw": 1.2,
+          "t": "circle"
+        },
+        {
+          "delay": 0.5,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.6,
+          "stroke": "pale",
+          "sw": 1.8,
+          "t": "line",
+          "x1": 308,
+          "x2": 308,
+          "y1": 105,
+          "y2": 98
+        },
+        {
+          "delay": 0.53,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.35,
+          "stroke": "pale",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 335.5,
+          "x2": 339,
+          "y1": 112.4,
+          "y2": 106.3
+        },
+        {
+          "delay": 0.56,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.35,
+          "stroke": "pale",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 355.6,
+          "x2": 361.7,
+          "y1": 132.5,
+          "y2": 129
+        },
+        {
+          "delay": 0.59,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.6,
+          "stroke": "pale",
+          "sw": 1.8,
+          "t": "line",
+          "x1": 363,
+          "x2": 370,
+          "y1": 160,
+          "y2": 160
+        },
+        {
+          "delay": 0.62,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.35,
+          "stroke": "pale",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 355.6,
+          "x2": 361.7,
+          "y1": 187.5,
+          "y2": 191
+        },
+        {
+          "delay": 0.65,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.35,
+          "stroke": "pale",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 335.5,
+          "x2": 339,
+          "y1": 207.6,
+          "y2": 213.7
+        },
+        {
+          "delay": 0.68,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.6,
+          "stroke": "pale",
+          "sw": 1.8,
+          "t": "line",
+          "x1": 308,
+          "x2": 308,
+          "y1": 215,
+          "y2": 222
+        },
+        {
+          "delay": 0.71,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.35,
+          "stroke": "pale",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 280.5,
+          "x2": 277,
+          "y1": 207.6,
+          "y2": 213.7
+        },
+        {
+          "delay": 0.74,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.35,
+          "stroke": "pale",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 260.4,
+          "x2": 254.3,
+          "y1": 187.5,
+          "y2": 191
+        },
+        {
+          "delay": 0.77,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.6,
+          "stroke": "pale",
+          "sw": 1.8,
+          "t": "line",
+          "x1": 253,
+          "x2": 246,
+          "y1": 160,
+          "y2": 160
+        },
+        {
+          "delay": 0.8,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.35,
+          "stroke": "pale",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 260.4,
+          "x2": 254.3,
+          "y1": 132.5,
+          "y2": 129
+        },
+        {
+          "delay": 0.83,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.35,
+          "stroke": "pale",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 280.5,
+          "x2": 277,
+          "y1": 112.4,
+          "y2": 106.3
+        },
+        {
+          "cap": "round",
+          "d": "M 308 98 A 62 62 0 0 1 308 222",
+          "delay": 1.2,
+          "fx": [
+            "draw",
+            "pulse"
+          ],
+          "stroke": "red",
+          "sw": 2.6,
+          "t": "path"
+        },
+        {
+          "cx": 308,
+          "cy": 98,
+          "delay": 1.1,
+          "fill": "red",
+          "fx": [
+            "pop"
+          ],
+          "r": 3,
+          "t": "circle"
+        },
+        {
+          "d": "M 262 160 Q 308 124 354 160",
+          "delay": 0.6,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.8,
+          "stroke": "pale",
+          "sw": 1.8,
+          "t": "path"
+        },
+        {
+          "d": "M 262 160 Q 308 196 354 160",
+          "delay": 0.7,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.8,
+          "stroke": "pale",
+          "sw": 1.8,
+          "t": "path"
+        },
+        {
+          "cx": 308,
+          "cy": 160,
+          "delay": 0.85,
+          "fill": "teal",
+          "fo": 0.14,
+          "fx": [
+            "draw"
+          ],
+          "r": 15,
+          "stroke": "teal",
+          "sw": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 308,
+          "cy": 160,
+          "delay": 0.95,
+          "fill": "ink",
+          "fx": [
+            "pop"
+          ],
+          "r": 6,
+          "so": 0.6,
+          "stroke": "teal",
+          "sw": 1,
+          "t": "circle"
+        },
+        {
+          "cx": 299,
+          "cy": 154,
+          "delay": 1.35,
+          "fill": "red",
+          "fx": [
+            "pop",
+            "pulse"
+          ],
+          "r": 3,
+          "t": "circle"
+        }
+      ]
+    },
+    "series": "insight",
+    "topics": [
+      "trauma",
+      "emergency",
+      "referral"
+    ],
+    "sources": [
+      {
+        "date": "2026-08-24",
+        "publisher": "Indian Journal of Ophthalmology",
+        "read": "abstract",
+        "readVia": "publisher",
+        "title": "Firecracker-related ocular injuries during the Diwali festival: A multicentric prospective study from Central and Western India",
+        "url": "https://doi.org/10.4103/ijo.ijo_2784_25"
+      },
+      {
+        "date": "2017-08-24",
+        "publisher": "PLOS ONE",
+        "read": "full",
+        "readVia": "publisher",
+        "title": "Use of traditional eye medicine and self-medication in rural India: a population-based study",
+        "url": "https://doi.org/10.1371/journal.pone.0183461"
+      },
+      {
+        "date": "2007-03-09",
+        "publisher": "Eye",
+        "read": "abstract",
+        "readVia": "publisher",
+        "title": "A British Ophthalmological Surveillance Unit study on serious ocular injuries from fireworks in the UK",
+        "url": "https://www.nature.com/articles/6702778"
+      }
+    ],
+    "figure": {
+      "blocks": [
+        {
+          "items": [
+            {
+              "label": "fell in October and November",
+              "value": "81%"
+            },
+            {
+              "label": "needed ocular surgery",
+              "value": "53%"
+            },
+            {
+              "label": "lost the eye to enucleation or evisceration",
+              "value": "17%"
+            },
+            {
+              "label": "were 6/60 or worse at six months",
+              "value": "53%"
+            }
+          ],
+          "kind": "stats",
+          "label": "Serious UK firework eye injuries, 47 cases over two years"
+        },
+        {
+          "items": [
+            {
+              "label": "median hours from injury to presentation",
+              "value": "6"
+            },
+            {
+              "label": "were children",
+              "value": "62.7%"
+            },
+            {
+              "label": "were closed-globe injuries",
+              "value": "82.1%"
+            },
+            {
+              "label": "were bystanders, not handling the firework",
+              "value": "34.3%"
+            }
+          ],
+          "kind": "stats",
+          "label": "67 patients over two Diwali periods, India"
+        },
+        {
+          "decimals": 1,
+          "items": [
+            {
+              "emphasis": true,
+              "label": "Kajal",
+              "value": 61.4
+            },
+            {
+              "label": "Honey",
+              "value": 31.4
+            },
+            {
+              "label": "Ghee",
+              "value": 11.7
+            },
+            {
+              "label": "Rose water",
+              "value": 9.1
+            }
+          ],
+          "kind": "bars",
+          "label": "What 529 people put in their eyes, rural Haryana",
+          "unit": "%"
+        }
+      ],
+      "caption": "UK figures: the BOSU's 47 cases, two years from July 2004. The Diwali series: 67 patients at three Indian tertiary centres, 2023 to 2024, abstract only.",
+      "source": "BOSU (Eye, 2007); Indian Journal of Ophthalmology, 2026; PLOS ONE, 2017",
+      "title": "Two nights, three days apart, and the six hours in between"
+    },
+    "seo": {
+      "keyword": "firework eye injury",
+      "metaDescription": "What the Diwali evidence says about the six hours after a firework eye injury, and the one question worth asking before you refer.",
+      "metaTitle": "Firework eye injury: what to ask before you refer"
+    },
+    "keyPoints": [
+      "Eighty-one per cent of serious UK firework eye injuries reported to the BOSU fell in October and November. Bonfire Night and Diwali are three days apart in 2026.",
+      "In 67 patients over two Diwali periods at three Indian centres, the median time from injury to presentation was six hours and 82.1% were closed-globe.",
+      "A population survey of 2,160 adults in rural Haryana found 25.7% used a home remedy in the eye, and 14 of the 85 who had had an ocular injury, 16.4%, had used one for it.",
+      "The harm runs through contamination and delay, not through anything exotic. The question to ask is what has already gone in the eye, and it belongs on every referral, not on some of them."
+    ],
+    "faq": [
+      {
+        "a": "Do not let anything else go into the eye, and do not wait to see whether it settles. In the British Ophthalmological Surveillance Unit's two-year study of serious UK firework eye injuries, 53% of the 47 patients needed ocular surgery, 17% lost the eye to enucleation or evisceration, and 53% of those followed up were 6/60 or worse at six months. A shield rather than a pad, nothing instilled, and the same-day eye casualty.",
+        "q": "What should you do for a firework eye injury?"
+      },
+      {
+        "a": "The British Ophthalmological Surveillance Unit asked every ophthalmologist in the UK to report serious firework eye injuries every month for two years from July 2004 and collected 47 cases. Eighty-one per cent fell in October and November and 27% were in people under 18. That is the last national surveillance of its kind, so the figure is a floor for serious injury rather than a current count.",
+        "q": "How common are firework eye injuries in the UK?"
+      },
+      {
+        "a": "No, and the reason is not that the remedy is unusual. A population-based survey of 2,160 adults in rural Haryana found that of the 529 who used a home remedy in the eye, 61.4% used kajal, 31.4% honey, 11.7% ghee and 9.1% rose water. The authors attribute the harm to two ordinary mechanisms: contamination of a surface that is already broken, and the delay that comes from trying something before seeking care.",
+        "q": "Is it safe to put kajal, honey or rose water in an injured eye?"
+      },
+      {
+        "a": "Not all of them. In the Indian multicentre series of 67 patients, 65.7% were handling the firework themselves and 34.3% were bystanders. The bystander share matters in the chair: a third of the people who present were not doing anything, which is worth remembering before asking how it happened.",
+        "q": "Do most firework eye injuries happen to the person holding the firework?"
+      }
+    ],
+    "body": [
+      {
+        "text": "Eighty-one per cent of the serious firework eye injuries reported to the [British Ophthalmological Surveillance Unit](https://www.nature.com/articles/6702778) happened in October and November. In 2026 the two nights that fill those months are three days apart: Bonfire Night on Thursday 5 November, Diwali on Sunday the 8th.",
+        "type": "p"
+      },
+      {
+        "text": "The BOSU study ran for two years from July 2004. Every ophthalmologist in the UK was sent a card each month and asked to report any new serious firework eye injury, or to confirm there had been none. Forty-seven cases came back. Twenty-six per cent had a penetrating injury. Fifty-three per cent needed ocular surgery. Eight patients, 17%, lost the eye to enucleation or evisceration, and four more needed a cosmetic shell for phthisis. At six months, 53% of those followed up were 6/60 or worse. Twenty-seven per cent were under 18.",
+        "type": "p"
+      },
+      {
+        "text": "That is the national picture and it is twenty years old. A study published this August adds the one number the UK data never had.",
+        "type": "p"
+      },
+      {
+        "text": "Six hours",
+        "type": "h2"
+      },
+      {
+        "text": "A [multicentre prospective study](https://doi.org/10.4103/ijo.ijo_2784_25) followed 67 consecutive patients with firecracker eye injuries through the Diwali periods of 2023 and 2024, at three tertiary centres in Central and Western India. Children were 62.7% of them and males 89.6%. Two-thirds, 65.7%, were handling the firework themselves; the other 34.3% were watching. Blast was the mechanism in 80.6% and 82.1% of the injuries were closed-globe. More than 40% presented with acuity worse than 6/60 and 23.9% needed surgery.",
+        "type": "p"
+      },
+      {
+        "text": "The median time from injury to presentation was six hours.",
+        "type": "p"
+      },
+      {
+        "text": "Only the abstract is published. The paper is ahead of print and not deposited anywhere open, so nothing above goes further than what the abstract states.",
+        "type": "p"
+      },
+      {
+        "text": "What fills the six hours",
+        "type": "h2"
+      },
+      {
+        "text": "Nobody sits for six hours with an injured eye doing nothing.",
+        "type": "p"
+      },
+      {
+        "text": "A [population-based survey](https://doi.org/10.1371/journal.pone.0183461) interviewed 2,160 adults across 25 rural clusters in Haryana and asked, among other things, what they put in their eyes. Of the 2,055 asked about home remedies, 529 (25.7%) had used one. Kajal accounted for 61.4% of those, honey 31.4%, ghee 11.7% and rose water 9.1%.",
+        "type": "p"
+      },
+      {
+        "text": "The number that matters here is smaller and more specific. Eighty-five of the people interviewed had sustained an ocular injury. Fourteen of them, 16.4%, had used a traditional eye medicine for it. Thirty-five, 41.2%, had sought no treatment at all.",
+        "type": "p"
+      },
+      {
+        "text": "The authors' argument is not that kajal is exotic. It is that the harm runs through two ordinary mechanisms: contamination of a surface that is already broken, and the delay that comes from trying something first.",
+        "type": "p"
+      },
+      {
+        "text": "The limitations of the firework eye injury evidence",
+        "type": "h2"
+      },
+      {
+        "text": "That survey was done in rural North India and published in 2017, in a population with a mean age of 55.6 where two-thirds had primary schooling or less. It does not describe a UK high street. I could not find a survey of what patients here put in an injured eye before they arrive, and that is the honest gap in this piece.",
+        "type": "p"
+      },
+      {
+        "text": "What transfers is the shape of the behaviour rather than the contents of the cupboard. Reaching for something at home before reaching for a professional is not a regional habit, and the two mechanisms do not care what was reached for. The pathway argument is the same one [Denmark's high street OCT data](/news/denmark-oct-teleophthalmology-referrals) made from the other end: what the high street can see matters less than what happens next.",
+        "type": "p"
+      },
+      {
+        "text": "Why it matters in practice",
+        "type": "h2"
+      },
+      {
+        "items": [
+          "Ask what has already gone in the eye. Ask it of everyone, in the same words, before you ask anything else, and ask it without a face that makes the answer harder to give.",
+          "Time is the variable you can change. Six hours was the median in a series where more than 40% arrived worse than 6/60; the delay is the mechanism, not the remedy on its own.",
+          "A quiet eye is not a reassuring one. Closed-globe injuries were 82.1% of the Diwali series, and a closed globe is what walks into a practice rather than an eye casualty.",
+          "A third of them were bystanders. 34.3% of that series were watching, not handling, which is worth remembering before the history starts with what they were doing."
+        ],
+        "type": "ul"
+      }
+    ]
+  },
+  {
+    "slug": "halloween-contact-lenses-uk",
+    "title": "Halloween contact lenses: 6 of 47 cosmetic lens websites met UK law",
+    "date": "2026-11-02",
+    "readingMinutes": 4,
+    "excerpt": "Only 6 of 47 cosmetic lens websites met UK law in 2023. In Japan, buying lenses outside eye clinics went with more self-reported eye problems.",
+    "cover": {
+      "about": "An eye wearing a white costume lens, opaque over the iris and clear only over the pupil, beside the shop's bag it came in. The vessels of the white of the eye run red towards the lens and keep pulsing: the red eye that turns up the week after Halloween, from a lens bought without a fitting, which is where the evidence puts the risk.",
+      "name": "costume-lens-red-eye",
+      "shapes": [
+        {
+          "d": "M 58 124 Q 178 26 298 124 Q 178 214 58 124 Z",
+          "delay": 0.1,
+          "fill": "pale",
+          "fo": 0.06,
+          "fx": [
+            "pop"
+          ],
+          "t": "path"
+        },
+        {
+          "cap": "round",
+          "d": "M 58 124 Q 178 26 298 124",
+          "delay": 0,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.85,
+          "stroke": "pale",
+          "sw": 2.2,
+          "t": "path"
+        },
+        {
+          "cap": "round",
+          "d": "M 58 124 Q 178 214 298 124",
+          "delay": 0.12,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.7,
+          "stroke": "pale",
+          "sw": 1.6,
+          "t": "path"
+        },
+        {
+          "cap": "round",
+          "delay": 0.28,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.45,
+          "stroke": "pale",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 101.2,
+          "x2": 92.7,
+          "y1": 95.1,
+          "y2": 92.1
+        },
+        {
+          "cap": "round",
+          "delay": 0.31,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.45,
+          "stroke": "pale",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 120.4,
+          "x2": 110.2,
+          "y1": 86.3,
+          "y2": 80
+        },
+        {
+          "cap": "round",
+          "delay": 0.34,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.45,
+          "stroke": "pale",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 139.6,
+          "x2": 133.5,
+          "y1": 80,
+          "y2": 73.4
+        },
+        {
+          "cap": "round",
+          "delay": 0.37,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.45,
+          "stroke": "pale",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 158.8,
+          "x2": 154.2,
+          "y1": 76.3,
+          "y2": 65.2
+        },
+        {
+          "cap": "round",
+          "delay": 0.4,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.45,
+          "stroke": "pale",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 178,
+          "x2": 178,
+          "y1": 75,
+          "y2": 66
+        },
+        {
+          "cap": "round",
+          "delay": 0.43,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.45,
+          "stroke": "pale",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 197.2,
+          "x2": 201.8,
+          "y1": 76.3,
+          "y2": 65.2
+        },
+        {
+          "cap": "round",
+          "delay": 0.46,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.45,
+          "stroke": "pale",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 216.4,
+          "x2": 222.5,
+          "y1": 80,
+          "y2": 73.4
+        },
+        {
+          "cap": "round",
+          "delay": 0.49,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.45,
+          "stroke": "pale",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 235.6,
+          "x2": 245.8,
+          "y1": 86.3,
+          "y2": 80
+        },
+        {
+          "cap": "round",
+          "delay": 0.52,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.45,
+          "stroke": "pale",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 254.8,
+          "x2": 263.3,
+          "y1": 95.1,
+          "y2": 92.1
+        },
+        {
+          "cx": 178,
+          "cy": 122,
+          "delay": 0.55,
+          "fx": [
+            "draw"
+          ],
+          "r": 46,
+          "so": 0.75,
+          "stroke": "teal",
+          "sw": 1.4,
+          "t": "circle"
+        },
+        {
+          "cx": 178,
+          "cy": 122,
+          "delay": 0.7,
+          "fill": "pale",
+          "fo": 0.9,
+          "fx": [
+            "pop"
+          ],
+          "r": 39,
+          "t": "circle"
+        },
+        {
+          "cx": 178,
+          "cy": 122,
+          "delay": 0.85,
+          "fx": [
+            "draw"
+          ],
+          "r": 15,
+          "so": 0.85,
+          "stroke": "ink",
+          "sw": 2.6,
+          "t": "circle"
+        },
+        {
+          "cx": 178,
+          "cy": 122,
+          "delay": 0.95,
+          "fill": "ink",
+          "fx": [
+            "pop"
+          ],
+          "r": 11,
+          "t": "circle"
+        },
+        {
+          "cx": 173,
+          "cy": 117,
+          "delay": 1.05,
+          "fill": "glow",
+          "fo": 0.9,
+          "fx": [
+            "pop"
+          ],
+          "r": 2.4,
+          "t": "circle"
+        },
+        {
+          "cap": "round",
+          "d": "M 70 124 C 73.7 123.2, 85.3 119.2, 92 119 C 98.7 118.8, 103.7 123.3, 110 123 C 116.3 122.7, 126.7 118, 130 117",
+          "delay": 1.3,
+          "fx": [
+            "draw",
+            "pulse"
+          ],
+          "so": 0.8,
+          "stroke": "red",
+          "sw": 1.5,
+          "t": "path"
+        },
+        {
+          "cap": "round",
+          "d": "M 78 134 C 81.3 134.8, 91.7 139, 98 139 C 104.3 139, 110.2 134.2, 116 134 C 121.8 133.8, 130.2 137.3, 133 138",
+          "delay": 1.42,
+          "fx": [
+            "draw",
+            "pulse"
+          ],
+          "so": 0.8,
+          "stroke": "red",
+          "sw": 1.5,
+          "t": "path"
+        },
+        {
+          "cap": "round",
+          "d": "M 86 109 C 89 108.2, 98.3 104.2, 104 104 C 109.7 103.8, 114.7 108.5, 120 108 C 125.3 107.5, 133.3 102.2, 136 101",
+          "delay": 1.54,
+          "fx": [
+            "draw",
+            "pulse"
+          ],
+          "so": 0.8,
+          "stroke": "red",
+          "sw": 1.5,
+          "t": "path"
+        },
+        {
+          "cap": "round",
+          "d": "M 287 124 C 283.5 123.3, 272.5 120, 266 120 C 259.5 120, 254.7 124.3, 248 124 C 241.3 123.7, 229.7 119, 226 118",
+          "delay": 1.36,
+          "fx": [
+            "draw",
+            "pulse"
+          ],
+          "so": 0.8,
+          "stroke": "red",
+          "sw": 1.5,
+          "t": "path"
+        },
+        {
+          "cap": "round",
+          "d": "M 279 135 C 275.8 135.8, 266.2 140, 260 140 C 253.8 140, 248.2 135.2, 242 135 C 235.8 134.8, 226.2 138.3, 223 139",
+          "delay": 1.48,
+          "fx": [
+            "draw",
+            "pulse"
+          ],
+          "so": 0.8,
+          "stroke": "red",
+          "sw": 1.5,
+          "t": "path"
+        },
+        {
+          "cap": "round",
+          "d": "M 270 110 C 267 109, 257.7 104.2, 252 104 C 246.3 103.8, 241.3 109.3, 236 109 C 230.7 108.7, 222.7 103.2, 220 102",
+          "delay": 1.6,
+          "fx": [
+            "draw",
+            "pulse"
+          ],
+          "so": 0.8,
+          "stroke": "red",
+          "sw": 1.5,
+          "t": "path"
+        },
+        {
+          "cap": "round",
+          "d": "M 337 176 A 13 13 0 0 1 363 176",
+          "delay": 1,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.8,
+          "stroke": "teal",
+          "sw": 1.6,
+          "t": "path"
+        },
+        {
+          "d": "M 320 176 L 380 176 L 386 224 L 314 224 Z",
+          "delay": 1.05,
+          "fill": "ink",
+          "fx": [
+            "pop"
+          ],
+          "so": 0.8,
+          "stroke": "teal",
+          "sw": 1.6,
+          "t": "path"
+        },
+        {
+          "cx": 350,
+          "cy": 201,
+          "delay": 1.15,
+          "fill": "pale",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 11,
+          "t": "circle"
+        },
+        {
+          "cx": 350,
+          "cy": 201,
+          "delay": 1.2,
+          "fill": "ink",
+          "fx": [
+            "pop"
+          ],
+          "r": 4,
+          "t": "circle"
+        }
+      ]
+    },
+    "series": "insight",
+    "topics": [
+      "contact lenses",
+      "cornea",
+      "keratitis",
+      "regulation"
+    ],
+    "sources": [
+      {
+        "date": "2021-08-05",
+        "publisher": "Scientific Reports",
+        "read": "full",
+        "readVia": "europepmc",
+        "title": "A web-based survey of contact lens-related adverse events among the Japanese female population",
+        "url": "https://doi.org/10.1038/s41598-021-95318-7"
+      },
+      {
+        "publisher": "legislation.gov.uk",
+        "read": "full",
+        "readVia": "page",
+        "title": "Opticians Act 1989, section 27: sale and supply of optical appliances",
+        "url": "https://www.legislation.gov.uk/ukpga/1989/44/section/27"
+      },
+      {
+        "date": "2024-03-13",
+        "publisher": "Eye & Contact Lens",
+        "read": "abstract",
+        "readVia": "europepmc",
+        "title": "Cosmetic Contact Lenses in the United Kingdom: Assessment of Online Regulation and Quality of Consumer Health Information",
+        "url": "https://doi.org/10.1097/ICL.0000000000001080"
+      },
+      {
+        "date": "2021-03-13",
+        "publisher": "American Journal of Ophthalmology",
+        "read": "abstract",
+        "readVia": "europepmc",
+        "title": "Cosmetic Contact Lens-Related Corneal Infections in Asia",
+        "url": "https://doi.org/10.1016/j.ajo.2021.03.005"
+      },
+      {
+        "date": "2011-03-15",
+        "publisher": "Acta Ophthalmologica",
+        "read": "abstract",
+        "readVia": "europepmc",
+        "title": "Microbial keratitis as a foreseeable complication of cosmetic contact lenses: a prospective study",
+        "url": "https://doi.org/10.1111/j.1755-3768.2011.02120.x"
+      },
+      {
+        "date": "2026-09-16",
+        "publisher": "Eye & Contact Lens",
+        "read": "full",
+        "readVia": "publisher",
+        "title": "Severe Infectious Keratitis Among Inpatients at an Emergency Tertiary Hospital Ophthalmology Department in France",
+        "url": "https://doi.org/10.1097/ICL.0000000000001302"
+      },
+      {
+        "date": "2026-07-10",
+        "publisher": "Frontiers in Medicine",
+        "read": "full",
+        "readVia": "europepmc",
+        "title": "Contact lens-related versus non-contact lens-related Pseudomonas aeruginosa keratitis: The Midlands Infectious Keratitis Study",
+        "url": "https://doi.org/10.3389/fmed.2026.1835834"
+      }
+    ],
+    "figure": {
+      "blocks": [
+        {
+          "decimals": 1,
+          "items": [
+            {
+              "emphasis": true,
+              "label": "Cosmetic lenses: online",
+              "value": 50.9
+            },
+            {
+              "label": "Cosmetic lenses: shop",
+              "value": 20.3
+            },
+            {
+              "label": "Cosmetic lenses: eye clinic",
+              "value": 28.9
+            },
+            {
+              "label": "Clear lenses: online",
+              "value": 25.3
+            },
+            {
+              "label": "Clear lenses: shop",
+              "value": 21
+            },
+            {
+              "label": "Clear lenses: eye clinic",
+              "value": 53.7
+            }
+          ],
+          "kind": "bars",
+          "label": "Where 3,803 women in Japan bought their lenses",
+          "unit": "%"
+        },
+        {
+          "items": [
+            {
+              "label": "cosmetic rather than clear lenses (0.81 to 1.11)",
+              "value": "0.95"
+            },
+            {
+              "label": "bought online rather than at an eye clinic (1.05 to 1.45)",
+              "value": "1.23"
+            },
+            {
+              "label": "bought in a shop rather than at an eye clinic (1.06 to 1.54)",
+              "value": "1.28"
+            }
+          ],
+          "kind": "stats",
+          "label": "Adjusted odds ratio (95% CI) of a self-reported eye problem"
+        },
+        {
+          "items": [
+            {
+              "label": "met section 27 of the Opticians Act",
+              "value": "6 of 47"
+            },
+            {
+              "label": "brands on sale had no CE marking",
+              "value": "13 of 49"
+            }
+          ],
+          "kind": "stats",
+          "label": "Websites selling cosmetic lenses, checked February 2023"
+        }
+      ],
+      "caption": "Japan: web survey of 3,803 women aged 16 to 49 (1,833 cosmetic, 1,970 clear lens wearers), November 2018; a problem means seeking eye care for tearing, pain or blurred vision in the past year. Websites: February 2023.",
+      "source": "Ono et al., Scientific Reports, 2021; Ng et al., Eye & Contact Lens, 2024 (abstract)",
+      "title": "Cosmetic lens wearers bought online twice as often as clear lens wearers"
+    },
+    "seo": {
+      "keyword": "Halloween contact lenses",
+      "metaDescription": "Halloween contact lenses: what UK law says, how few cosmetic lens websites met it (6 of 47), and who presents with a lens infection.",
+      "metaTitle": "Halloween contact lenses: UK law and the risks"
+    },
+    "keyPoints": [
+      "In a 2023 check, only 6 of 47 websites selling cosmetic lenses met section 27 of the Opticians Act 1989, which says who may sell a zero powered contact lens.",
+      "In a survey of 3,803 women in Japan, buying lenses online or in a shop rather than from an eye clinic was associated with more self-reported eye problems needing care.",
+      "Cosmetic and clear lens wearers in Japan reported such problems about as often, but in an Asian hospital study Acanthamoeba caused 9% of cosmetic lens infections, against 1% of the others.",
+      "No UK count of costume lens infections after Halloween could be found."
+    ],
+    "faq": [
+      {
+        "a": "Yes, if they are sold as the law requires. Under section 27 of the Opticians Act 1989, a zero powered contact lens may only be sold by or under the supervision of a registered medical practitioner, a registered optometrist or a registered dispensing optician, and the seller must make arrangements for aftercare. Giving lenses away free still counts as selling them. When 47 websites selling cosmetic lenses were checked against section 27 in February 2023, only 6 met its requirements.",
+        "q": "Are Halloween contact lenses legal in the UK?"
+      },
+      {
+        "a": "No study here looks separately at costume lenses worn for one night. In a survey of 3,803 women in Japan, cosmetic lens wearers were about as likely as clear lens wearers to report needing eye care for a lens problem in the previous year (35.7% against 33.4%). The survey did not measure infections. Buying lenses online or in a shop rather than from an eye clinic was associated with more such reports. In an Asian hospital study, Acanthamoeba caused 9% of infections in cosmetic lens wearers, against 1% in other lens wearers.",
+        "q": "Are Halloween contact lenses safe?"
+      },
+      {
+        "a": "Yes. The authors of a 2026 UK study call contact lens wear the predominant risk factor for Pseudomonas keratitis in developed countries. They cite studies linking lens wear to microtrauma, intermittent hypoxia and contamination from water or lens cases, all of which help the bacteria into the cornea. In Birmingham and Nottingham, 35 of 66 culture-proven Pseudomonas keratitis cases were in lens wearers, and 94.3% of those ended with a corrected distance visual acuity of 6/24 or better. In 861 severe keratitis admissions in Toulouse, lens wear was the commonest risk factor, present in 32.2%, and was associated with Gram-negative bacilli such as Pseudomonas aeruginosa.",
+        "q": "Can contact lenses cause keratitis?"
+      }
+    ],
+    "body": [
+      {
+        "text": "In [a February 2023 check](https://doi.org/10.1097/ICL.0000000000001080), only 6 of 47 websites selling cosmetic contact lenses complied with [section 27 of the Opticians Act 1989](https://www.legislation.gov.uk/ukpga/1989/44/section/27). Section 27 allows a zero powered contact lens to be sold only by or under the supervision of a registered medical practitioner, a registered optometrist or a registered dispensing optician.",
+        "type": "p"
+      },
+      {
+        "text": "No study here looks at Halloween contact lenses as such. In [a web survey of 3,803 women in Japan](https://doi.org/10.1038/s41598-021-95318-7), buying lenses online or in a shop rather than from an eye clinic or hospital was associated with more self-reported eye problems needing care.",
+        "type": "p"
+      },
+      {
+        "text": "What the Japanese survey did",
+        "type": "h2"
+      },
+      {
+        "text": "In November 2018, a market research company surveyed 4,000 lens-wearing women aged 16 to 49, chosen at random from its Japanese panel. Of the 3,803 analysed, 1,833 wore cosmetic lenses (colour-enhancing, opaque or limbal circle) and 1,970 wore clear lenses. They reported where they bought lenses, how they wore them, and whether tearing, pain or blurred vision from a lens had sent them for eye care in the previous year. Japan's medical research agency funded it, and one author declared contact lens industry funding outside the work.",
+        "type": "p"
+      },
+      {
+        "text": "What it found",
+        "type": "h2"
+      },
+      {
+        "text": "Cosmetic and clear lens wearers reported a problem about as often (35.7% against 33.4%), and lens type was not associated with problems before or after adjustment (adjusted odds ratio 0.95, 95% CI 0.81 to 1.11). Compared with buying from an eye clinic or hospital, buying online was associated with more problems (adjusted odds ratio 1.23, 95% CI 1.05 to 1.45), and so was buying in a shop (1.28, 1.06 to 1.54). So were replacing lenses late (1.53) and sleeping in them (1.25). Half the cosmetic lens wearers bought online (50.9%, against 25.3% of clear lens wearers).",
+        "type": "p"
+      },
+      {
+        "text": "Who presents with a cosmetic lens infection",
+        "type": "h2"
+      },
+      {
+        "text": "Over 12 months at 11 centres in eight Asian countries, cosmetic lens wearers made up 204 of 694 patients with a contact lens corneal infection (29.4%). They were more often female (90% against 59%) and under 25 (68% against 44%), and newer to lenses. Presenting disease and visual outcomes were similar in both groups, but Acanthamoeba caused 9% of the cosmetic lens infections, against 1% of the others.",
+        "type": "p"
+      },
+      {
+        "text": "In a smaller French study in 12 university hospitals from 2007 to 2009, 32 of 256 patients with a contact lens infection (12.5%) had worn cosmetic lenses, rarely dispensed by eye care professionals. Final acuity was worse than 20/200 in 60% of the cosmetic lens cases, against 13% of the others. These two studies and the website check are open only as abstracts, and nothing here goes beyond them.",
+        "type": "p"
+      },
+      {
+        "text": "In Birmingham and Nottingham from 2016 to 2020, 35 of 66 culture-proven Pseudomonas keratitis cases were in contact lens wearers. Of those, 94.3% ended with a corrected distance visual acuity of 6/24 or better, which the authors say was likely due to milder disease at presentation and timely management.",
+        "type": "p"
+      },
+      {
+        "text": "I found no UK count of costume lens infections around Halloween. In a series of 861 severe keratitis admissions in Toulouse from 2016 to 2021, published in September 2026, contact lens cases peaked in summer: 103 of 277, against 63 in autumn.",
+        "type": "p"
+      },
+      {
+        "text": "What UK law says about Halloween contact lenses",
+        "type": "h2"
+      },
+      {
+        "text": "Giving a lens away still counts as selling it, and the seller must make arrangements for the wearer to receive aftercare, in so far as and for so long as is reasonable. Selling in breach of the supervision rule can bring a fine of up to level 5 on the standard scale. In the 2023 check, 13 of 49 brands on sale (26.5%) had no CE marking.",
+        "type": "p"
+      },
+      {
+        "text": "Why it matters in practice",
+        "type": "h2"
+      },
+      {
+        "items": [
+          "Ask a young patient with a red eye about coloured or costume lenses by name. In both hospital studies, cosmetic lens wearers were younger and newer to lenses, and I suspect a pair worn for one night is easy to leave out of a history.",
+          "Ask where the lenses came from and how they were worn, including whether they were slept in.",
+          "Treat a painful red eye in a costume lens wearer as contact lens keratitis until shown otherwise, with Acanthamoeba on the list. The Midlands authors think timely management helped their patients, and [this week's piece on firework eye injuries](/news) makes the same case for early care.",
+          "Tell parents to buy costume lenses only where the sale is made by or under the supervision of a registered medical practitioner, a registered optometrist or a registered dispensing optician. A lens that leaves an eye red and painful should come out, and the eye should be seen that day."
+        ],
+        "type": "ul"
+      },
+      {
+        "text": "The caveats",
+        "type": "h2"
+      },
+      {
+        "items": [
+          "The Japanese survey is cross-sectional and self-reported, in women recruited online, with no data on lens brands. A problem meant seeking eye care, not a confirmed infection.",
+          "Its categories (eye clinic or hospital, shop, internet) do not match the UK's line between supervised and unsupervised sale. Its authors warned that counterfeit cosmetic lenses could harm young women disproportionately.",
+          "The French and Asian studies report outcomes differently, so the contrast is only suggestive.",
+          "Neither 2026 study separates cosmetic lenses, and Toulouse counted only severe cases admitted to one hospital."
+        ],
+        "type": "ul"
+      }
+    ]
+  },
+  {
     "slug": "glaucoma-drops-ocular-surface",
     "title": "Glaucoma eye drops, or not: what five and six years of trials found",
     "date": "2026-10-26",
