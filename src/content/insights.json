@@ -1,5 +1,2925 @@
 [
   {
+    "slug": "diabetic-eye-screening-every-2-years",
+    "title": "Diabetic eye screening every 2 years: the evidence, and who waits",
+    "date": "2026-11-09",
+    "readingMinutes": 4,
+    "excerpt": "Diabetic eye screening every 2 years rests on a 354,549-person study. In a North East London replay, 39% of sight-threatening diagnoses slipped a screen.",
+    "cover": {
+      "about": "Retinal photographs along a time line, one a year: two clear screens with a tick each, then the invitation arcs over a year to a screen two years on. The skipped year is a dashed outline where a red microaneurysm appears and pulses, and an eye below the line looks up at it: the year between screens.",
+      "name": "screening-gap-year",
+      "shapes": [
+        {
+          "cap": "round",
+          "delay": 0,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.45,
+          "stroke": "pale",
+          "sw": 1.4,
+          "t": "line",
+          "x1": 26,
+          "x2": 374,
+          "y1": 186,
+          "y2": 186
+        },
+        {
+          "cap": "round",
+          "delay": 0.1,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.7,
+          "stroke": "pale",
+          "sw": 1.8,
+          "t": "line",
+          "x1": 64,
+          "x2": 64,
+          "y1": 179,
+          "y2": 193
+        },
+        {
+          "cap": "round",
+          "delay": 0.15,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.7,
+          "stroke": "pale",
+          "sw": 1.8,
+          "t": "line",
+          "x1": 148,
+          "x2": 148,
+          "y1": 179,
+          "y2": 193
+        },
+        {
+          "cap": "round",
+          "delay": 0.2,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.7,
+          "stroke": "pale",
+          "sw": 1.8,
+          "t": "line",
+          "x1": 232,
+          "x2": 232,
+          "y1": 179,
+          "y2": 193
+        },
+        {
+          "cap": "round",
+          "delay": 0.25,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.7,
+          "stroke": "pale",
+          "sw": 1.8,
+          "t": "line",
+          "x1": 316,
+          "x2": 316,
+          "y1": 179,
+          "y2": 193
+        },
+        {
+          "delay": 0.92,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.25,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "line",
+          "x1": 155,
+          "x2": 155,
+          "y1": 183,
+          "y2": 189
+        },
+        {
+          "delay": 0.94,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.25,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "line",
+          "x1": 162,
+          "x2": 162,
+          "y1": 183,
+          "y2": 189
+        },
+        {
+          "delay": 0.96,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.25,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "line",
+          "x1": 169,
+          "x2": 169,
+          "y1": 183,
+          "y2": 189
+        },
+        {
+          "delay": 0.98,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.25,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "line",
+          "x1": 176,
+          "x2": 176,
+          "y1": 183,
+          "y2": 189
+        },
+        {
+          "delay": 1,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.25,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "line",
+          "x1": 183,
+          "x2": 183,
+          "y1": 183,
+          "y2": 189
+        },
+        {
+          "delay": 1.02,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.25,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "line",
+          "x1": 190,
+          "x2": 190,
+          "y1": 183,
+          "y2": 189
+        },
+        {
+          "delay": 1.04,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.25,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "line",
+          "x1": 197,
+          "x2": 197,
+          "y1": 183,
+          "y2": 189
+        },
+        {
+          "delay": 1.06,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.25,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "line",
+          "x1": 204,
+          "x2": 204,
+          "y1": 183,
+          "y2": 189
+        },
+        {
+          "delay": 1.08,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.25,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "line",
+          "x1": 211,
+          "x2": 211,
+          "y1": 183,
+          "y2": 189
+        },
+        {
+          "delay": 1.1,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.25,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "line",
+          "x1": 218,
+          "x2": 218,
+          "y1": 183,
+          "y2": 189
+        },
+        {
+          "delay": 1.12,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.25,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "line",
+          "x1": 225,
+          "x2": 225,
+          "y1": 183,
+          "y2": 189
+        },
+        {
+          "delay": 1.16,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.25,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "line",
+          "x1": 239,
+          "x2": 239,
+          "y1": 183,
+          "y2": 189
+        },
+        {
+          "delay": 1.18,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.25,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "line",
+          "x1": 246,
+          "x2": 246,
+          "y1": 183,
+          "y2": 189
+        },
+        {
+          "delay": 1.2,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.25,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "line",
+          "x1": 253,
+          "x2": 253,
+          "y1": 183,
+          "y2": 189
+        },
+        {
+          "delay": 1.22,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.25,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "line",
+          "x1": 260,
+          "x2": 260,
+          "y1": 183,
+          "y2": 189
+        },
+        {
+          "delay": 1.24,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.25,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "line",
+          "x1": 267,
+          "x2": 267,
+          "y1": 183,
+          "y2": 189
+        },
+        {
+          "delay": 1.26,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.25,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "line",
+          "x1": 274,
+          "x2": 274,
+          "y1": 183,
+          "y2": 189
+        },
+        {
+          "delay": 1.28,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.25,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "line",
+          "x1": 281,
+          "x2": 281,
+          "y1": 183,
+          "y2": 189
+        },
+        {
+          "delay": 1.3,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.25,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "line",
+          "x1": 288,
+          "x2": 288,
+          "y1": 183,
+          "y2": 189
+        },
+        {
+          "delay": 1.32,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.25,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "line",
+          "x1": 295,
+          "x2": 295,
+          "y1": 183,
+          "y2": 189
+        },
+        {
+          "delay": 1.34,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.25,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "line",
+          "x1": 302,
+          "x2": 302,
+          "y1": 183,
+          "y2": 189
+        },
+        {
+          "delay": 1.36,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.25,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "line",
+          "x1": 309,
+          "x2": 309,
+          "y1": 183,
+          "y2": 189
+        },
+        {
+          "delay": 0.15,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.3,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "line",
+          "x1": 64,
+          "x2": 64,
+          "y1": 138,
+          "y2": 177
+        },
+        {
+          "delay": 0.2,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.3,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "line",
+          "x1": 148,
+          "x2": 148,
+          "y1": 138,
+          "y2": 177
+        },
+        {
+          "delay": 0.25,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.2,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "line",
+          "x1": 232,
+          "x2": 232,
+          "y1": 138,
+          "y2": 177
+        },
+        {
+          "delay": 0.3,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.3,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "line",
+          "x1": 316,
+          "x2": 316,
+          "y1": 138,
+          "y2": 177
+        },
+        {
+          "cx": 64,
+          "cy": 104,
+          "delay": 0.1,
+          "fx": [
+            "draw"
+          ],
+          "r": 31,
+          "so": 0.6,
+          "stroke": "pale",
+          "sw": 1.5,
+          "t": "circle"
+        },
+        {
+          "cx": 76,
+          "cy": 101,
+          "delay": 0.25,
+          "fill": "pale",
+          "fo": 0.35,
+          "fx": [
+            "pop"
+          ],
+          "r": 5,
+          "so": 0.8,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "circle"
+        },
+        {
+          "cx": 55,
+          "cy": 106,
+          "delay": 0.3,
+          "fill": "teal",
+          "fo": 0.45,
+          "fx": [
+            "pop"
+          ],
+          "r": 3,
+          "t": "circle"
+        },
+        {
+          "cap": "round",
+          "d": "M 72 98 C 70.7 96.2, 67.3 89.2, 64 87 C 60.7 84.8, 56.2 83.8, 52 85 C 47.8 86.2, 41.2 92.5, 39 94",
+          "delay": 0.3,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.85,
+          "stroke": "teal",
+          "sw": 1.5,
+          "t": "path"
+        },
+        {
+          "cap": "round",
+          "d": "M 72 105 C 70.7 107, 67.3 114.5, 64 117 C 60.7 119.5, 56.2 120.7, 52 120 C 47.8 119.3, 41.2 114.2, 39 113",
+          "delay": 0.35,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.85,
+          "stroke": "teal",
+          "sw": 1.5,
+          "t": "path"
+        },
+        {
+          "cap": "round",
+          "d": "M 79 97 C 80 95.2, 83.8 89, 85 86 C 86.2 83, 85.8 80.2, 86 79",
+          "delay": 0.4,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.6,
+          "stroke": "teal",
+          "sw": 1.1,
+          "t": "path"
+        },
+        {
+          "cap": "round",
+          "d": "M 79 106 C 80 107.8, 83.8 113.8, 85 117 C 86.2 120.2, 85.8 123.7, 86 125",
+          "delay": 0.45,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.6,
+          "stroke": "teal",
+          "sw": 1.1,
+          "t": "path"
+        },
+        {
+          "cx": 148,
+          "cy": 104,
+          "delay": 0.45,
+          "fx": [
+            "draw"
+          ],
+          "r": 31,
+          "so": 0.6,
+          "stroke": "pale",
+          "sw": 1.5,
+          "t": "circle"
+        },
+        {
+          "cx": 160,
+          "cy": 101,
+          "delay": 0.6,
+          "fill": "pale",
+          "fo": 0.35,
+          "fx": [
+            "pop"
+          ],
+          "r": 5,
+          "so": 0.8,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "circle"
+        },
+        {
+          "cx": 139,
+          "cy": 106,
+          "delay": 0.65,
+          "fill": "teal",
+          "fo": 0.45,
+          "fx": [
+            "pop"
+          ],
+          "r": 3,
+          "t": "circle"
+        },
+        {
+          "cap": "round",
+          "d": "M 156 98 C 154.7 96.2, 151.3 89.2, 148 87 C 144.7 84.8, 140.2 83.8, 136 85 C 131.8 86.2, 125.2 92.5, 123 94",
+          "delay": 0.65,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.85,
+          "stroke": "teal",
+          "sw": 1.5,
+          "t": "path"
+        },
+        {
+          "cap": "round",
+          "d": "M 156 105 C 154.7 107, 151.3 114.5, 148 117 C 144.7 119.5, 140.2 120.7, 136 120 C 131.8 119.3, 125.2 114.2, 123 113",
+          "delay": 0.7,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.85,
+          "stroke": "teal",
+          "sw": 1.5,
+          "t": "path"
+        },
+        {
+          "cap": "round",
+          "d": "M 163 97 C 164 95.2, 167.8 89, 169 86 C 170.2 83, 169.8 80.2, 170 79",
+          "delay": 0.75,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.6,
+          "stroke": "teal",
+          "sw": 1.1,
+          "t": "path"
+        },
+        {
+          "cap": "round",
+          "d": "M 163 106 C 164 107.8, 167.8 113.8, 169 117 C 170.2 120.2, 169.8 123.7, 170 125",
+          "delay": 0.8,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.6,
+          "stroke": "teal",
+          "sw": 1.1,
+          "t": "path"
+        },
+        {
+          "cap": "round",
+          "d": "M 57 152 L 62 157 L 72 146",
+          "delay": 0.6,
+          "fx": [
+            "draw"
+          ],
+          "stroke": "teal",
+          "sw": 2,
+          "t": "path"
+        },
+        {
+          "cap": "round",
+          "d": "M 141 152 L 146 157 L 156 146",
+          "delay": 0.95,
+          "fx": [
+            "draw"
+          ],
+          "stroke": "teal",
+          "sw": 2,
+          "t": "path"
+        },
+        {
+          "cap": "round",
+          "d": "M 148 69 Q 232 4 316 69",
+          "dash": "5 5",
+          "delay": 1.05,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.55,
+          "stroke": "pale",
+          "sw": 1.6,
+          "t": "path"
+        },
+        {
+          "cap": "round",
+          "d": "M 312.2 59.8 L 316 69 L 306.1 67.7",
+          "delay": 1.1,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.55,
+          "stroke": "pale",
+          "sw": 1.6,
+          "t": "path"
+        },
+        {
+          "cx": 316,
+          "cy": 104,
+          "delay": 1.15,
+          "fx": [
+            "draw"
+          ],
+          "r": 31,
+          "so": 0.6,
+          "stroke": "pale",
+          "sw": 1.5,
+          "t": "circle"
+        },
+        {
+          "cx": 328,
+          "cy": 101,
+          "delay": 1.3,
+          "fill": "pale",
+          "fo": 0.35,
+          "fx": [
+            "pop"
+          ],
+          "r": 5,
+          "so": 0.8,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "circle"
+        },
+        {
+          "cx": 307,
+          "cy": 106,
+          "delay": 1.35,
+          "fill": "teal",
+          "fo": 0.45,
+          "fx": [
+            "pop"
+          ],
+          "r": 3,
+          "t": "circle"
+        },
+        {
+          "cap": "round",
+          "d": "M 324 98 C 322.7 96.2, 319.3 89.2, 316 87 C 312.7 84.8, 308.2 83.8, 304 85 C 299.8 86.2, 293.2 92.5, 291 94",
+          "delay": 1.35,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.85,
+          "stroke": "teal",
+          "sw": 1.5,
+          "t": "path"
+        },
+        {
+          "cap": "round",
+          "d": "M 324 105 C 322.7 107, 319.3 114.5, 316 117 C 312.7 119.5, 308.2 120.7, 304 120 C 299.8 119.3, 293.2 114.2, 291 113",
+          "delay": 1.4,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.85,
+          "stroke": "teal",
+          "sw": 1.5,
+          "t": "path"
+        },
+        {
+          "cap": "round",
+          "d": "M 331 97 C 332 95.2, 335.8 89, 337 86 C 338.2 83, 337.8 80.2, 338 79",
+          "delay": 1.45,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.6,
+          "stroke": "teal",
+          "sw": 1.1,
+          "t": "path"
+        },
+        {
+          "cap": "round",
+          "d": "M 331 106 C 332 107.8, 335.8 113.8, 337 117 C 338.2 120.2, 337.8 123.7, 338 125",
+          "delay": 1.5,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.6,
+          "stroke": "teal",
+          "sw": 1.1,
+          "t": "path"
+        },
+        {
+          "cx": 232,
+          "cy": 104,
+          "dash": "3 4",
+          "delay": 1.2,
+          "fx": [
+            "pop"
+          ],
+          "r": 31,
+          "so": 0.5,
+          "stroke": "pale",
+          "sw": 1.4,
+          "t": "circle"
+        },
+        {
+          "cx": 244,
+          "cy": 101,
+          "delay": 1.25,
+          "fx": [
+            "pop"
+          ],
+          "r": 5,
+          "so": 0.3,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "circle"
+        },
+        {
+          "cx": 225,
+          "cy": 110,
+          "delay": 1.55,
+          "fx": [
+            "pop",
+            "pulse"
+          ],
+          "r": 12,
+          "so": 0.5,
+          "stroke": "red",
+          "sw": 1.4,
+          "t": "circle"
+        },
+        {
+          "cx": 225,
+          "cy": 110,
+          "delay": 1.5,
+          "fill": "red",
+          "fx": [
+            "pop",
+            "pulse"
+          ],
+          "r": 6,
+          "t": "circle"
+        },
+        {
+          "cap": "round",
+          "d": "M 212 217 Q 232 204 252 217",
+          "delay": 1.25,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.8,
+          "stroke": "pale",
+          "sw": 1.6,
+          "t": "path"
+        },
+        {
+          "cap": "round",
+          "d": "M 212 217 Q 232 230 252 217",
+          "delay": 1.3,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.8,
+          "stroke": "pale",
+          "sw": 1.6,
+          "t": "path"
+        },
+        {
+          "cx": 232,
+          "cy": 217,
+          "delay": 1.35,
+          "fill": "teal",
+          "fo": 0.2,
+          "fx": [
+            "pop"
+          ],
+          "r": 5.5,
+          "stroke": "teal",
+          "sw": 1.5,
+          "t": "circle"
+        },
+        {
+          "cx": 232,
+          "cy": 217,
+          "delay": 1.4,
+          "fill": "ink",
+          "fx": [
+            "pop"
+          ],
+          "r": 2.2,
+          "t": "circle"
+        },
+        {
+          "cap": "round",
+          "dash": "2 4",
+          "delay": 1.45,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.7,
+          "stroke": "teal",
+          "sw": 1.4,
+          "t": "line",
+          "x1": 232,
+          "x2": 232,
+          "y1": 205,
+          "y2": 195
+        },
+        {
+          "cap": "round",
+          "dash": "2 4",
+          "delay": 1.5,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.7,
+          "stroke": "teal",
+          "sw": 1.4,
+          "t": "line",
+          "x1": 232,
+          "x2": 232,
+          "y1": 177,
+          "y2": 138
+        }
+      ]
+    },
+    "series": "insight",
+    "topics": [
+      "diabetic eye screening",
+      "diabetic retinopathy",
+      "screening intervals",
+      "health inequalities",
+      "optometry"
+    ],
+    "sources": [
+      {
+        "date": "2025-03-12",
+        "pmcid": "PMC12069130",
+        "publisher": "Diabetologia",
+        "read": "full",
+        "readVia": "europepmc",
+        "title": "A simple score-based strategy to improve equity of the UK biennial diabetic eye screening protocol among people deemed as low risk",
+        "url": "https://doi.org/10.1007/s00125-025-06379-6"
+      },
+      {
+        "date": "2014-12-18",
+        "publisher": "Diabetes Care",
+        "read": "full",
+        "readVia": "publisher",
+        "title": "Progression of diabetes retinal status within community screening programs and potential implications for screening intervals",
+        "url": "https://doi.org/10.2337/dc14-1778"
+      },
+      {
+        "date": "2020-11-04",
+        "pmcid": "PMC7716929",
+        "publisher": "Diabetologia",
+        "read": "full",
+        "readVia": "europepmc",
+        "title": "Safety and cost-effectiveness of individualised screening for diabetic retinopathy: the ISDR open-label, equivalence RCT",
+        "url": "https://doi.org/10.1007/s00125-020-05313-2"
+      },
+      {
+        "date": "2024-09-27",
+        "publisher": "NHS England (GOV.UK)",
+        "read": "full",
+        "readVia": "page",
+        "title": "Diabetic eye screening intervals extended for people at lowest risk",
+        "url": "https://www.gov.uk/government/publications/diabetic-eye-screening-longer-intervals-for-people-at-lowest-risk/diabetic-eye-screening-intervals-extended-for-people-at-lowest-risk"
+      },
+      {
+        "date": "2026-02-09",
+        "publisher": "Eye Open",
+        "read": "full",
+        "readVia": "publisher",
+        "title": "Updates in the English Diabetic Eye Screening Programme",
+        "url": "https://doi.org/10.1038/s44440-026-00014-y"
+      },
+      {
+        "publisher": "College of Optometrists",
+        "read": "full",
+        "readVia": "page",
+        "title": "Examining patients with diabetes mellitus (Guidance for Professional Practice)",
+        "url": "https://www.college-optometrists.org/clinical-guidance/guidance/knowledge,-skills-and-performance/examining-patients-with-diabetes-mellitus"
+      },
+      {
+        "date": "2026-09-04",
+        "pmcid": "PMC13600017",
+        "publisher": "Vision",
+        "read": "full",
+        "readVia": "europepmc",
+        "title": "Diabetic eye screening attendance among minority ethnic and other inequality-affected populations in the United Kingdom: a systematic review",
+        "url": "https://doi.org/10.3390/vision10040066"
+      }
+    ],
+    "figure": {
+      "blocks": [
+        {
+          "items": [
+            {
+              "label": "people with diabetes in the analysis",
+              "value": "354,549"
+            },
+            {
+              "label": "of people with 2 clear screens: referable in 2 years",
+              "value": "0.3% to 1.3%"
+            },
+            {
+              "label": "of people with 2 clear screens: proliferative in 2 years",
+              "value": "under 0.3%"
+            }
+          ],
+          "kind": "stats",
+          "label": "Four Nations study: 7 UK programmes, graded 2005 to 2012"
+        },
+        {
+          "decimals": 0,
+          "items": [
+            {
+              "emphasis": true,
+              "label": "2-yearly, North East London",
+              "value": 39
+            },
+            {
+              "label": "Points score, North East London",
+              "value": 25
+            },
+            {
+              "label": "2-yearly, South East London (test)",
+              "value": 34
+            },
+            {
+              "label": "Points score, South East London (test)",
+              "value": 22
+            }
+          ],
+          "kind": "bars",
+          "label": "% of sight-threatening diagnoses that come a screen later",
+          "unit": "%"
+        }
+      ],
+      "caption": "Four Nations: % of people with no retinopathy at 2 screens. London: % of sight-threatening diagnoses among 105,083 (North East) and 79,296 (South East, where the score was tested) people with 2 clear screens, 2012 to 2023.",
+      "source": "Leese et al., Diabetes Care 2015; Pitt et al., Diabetologia 2025",
+      "title": "2 clear screens, then 2 years: the risk, and what a 2-year cycle delays"
+    },
+    "image": {
+      "src": "/images/insights/diabetic-eye-screening-every-2-years.jpg",
+      "alt": "A colour fundus photograph of proliferative diabetic retinopathy: a tangle of fine new vessels spreading over and around the optic disc, with two pale patches in the retina above and below it.",
+      "license": "Public domain"
+    },
+    "seo": {
+      "keyword": "diabetic eye screening every 2 years",
+      "metaDescription": "Diabetic eye screening every 2 years: the study behind it, a North East London replay putting 39% of diagnoses a screen later, and what optometrists do.",
+      "metaTitle": "Diabetic eye screening every 2 years: what the data shows"
+    },
+    "keyPoints": [
+      "Since October 2023, England has been moving people whose last 2 routine screens found no retinopathy to screening every 2 years, in stages. Scotland, Wales and Northern Ireland changed first.",
+      "The evidence was retrospective: of 354,549 people in 7 UK programmes, 0.3% to 1.3% of those with 2 clear screens progressed to referable retinopathy within 2 years.",
+      "Replaying North East London's records on a 2-year cycle put 39% of sight-threatening diagnoses a screen later, with more building up in groups already at higher risk.",
+      "The College asks optometrists to check when the last screen was, keep usual sight-test recall with judgement for higher-risk groups, and report what they find."
+    ],
+    "faq": [
+      {
+        "a": "Across the UK, people with diabetes aged 12 and over are offered screening, and all four nations now screen people at low risk every 2 years under their own programme rules. In England, low risk means no retinopathy in either eye at the last 2 routine screens. There, background retinopathy without maculopathy means yearly screening, maculopathy means OCT surveillance, and more advanced changes mean closer monitoring or a hospital referral. Pregnant women are screened more often.",
+        "q": "How often should you have diabetic eye screening?"
+      },
+      {
+        "a": "For the group it covers, the average risk is low. In the Four Nations study of 354,549 people, 0.3% to 1.3% of those with 2 clear screens progressed to referable retinopathy within 2 years. Liverpool's ISDR trial tested a risk calculator using clinical data, not England's rule, in a mostly white population: attendance was equivalent, and detection non-inferior within its 1.5-point margin (1.4% against 1.7%). A simulation on North East London's records found 39% of sight-threatening diagnoses after 2 clear screens would have come a screen later.",
+        "q": "Is diabetic eye screening every 2 years safe?"
+      },
+      {
+        "a": "The College of Optometrists says that for a patient in an NHS diabetic eye screening programme, sight-test recall should be the same as for someone without diabetes, whether screening is every 6, 12 or 24 months. It asks optometrists to use their judgement for younger people and people of Black and Asian ethnicities, who are affected by sight-threatening retinopathy more. An examination or photographs at a practice are not an alternative to the NHS screening programme, and the College asks optometrists to say so.",
+        "q": "How often should people with diabetes have an eye test?"
+      },
+      {
+        "a": "The UK National Screening Committee recommended it in 2016 for people at low risk of sight loss, after a large study found that few people with 2 clear screens progressed to referable retinopathy within 2 years. NHS England says the change frees appointments for people at higher risk and spares low-risk people a yearly visit. Scotland, Wales and Northern Ireland made the change before England, which followed from October 2023.",
+        "q": "Why did diabetic eye screening change to every 2 years?"
+      }
+    ],
+    "body": [
+      {
+        "text": "In North East London's records, a 2-year gap between diabetic eye screens would have pushed 39% of sight-threatening diagnoses in people with 2 clear screens back a screen, a simulation [published in Diabetologia](https://doi.org/10.1007/s00125-025-06379-6) found. Since October 2023, England has been moving people whose last 2 routine screens found no retinopathy onto diabetic eye screening every 2 years instead of every year.",
+        "type": "p"
+      },
+      {
+        "text": "It follows a 2016 recommendation from the UK National Screening Committee, and Scotland, Wales and Northern Ireland made the change before England. NHS England tells people on the longer interval to see their optometrist straight away if their sight changes.",
+        "type": "p"
+      },
+      {
+        "text": "Who is on diabetic eye screening every 2 years",
+        "type": "h2"
+      },
+      {
+        "text": "In England it takes no retinopathy and no maculopathy in either eye (R0M0) at the last 2 routine screens. One microaneurysm makes a screen R1, and R1 alone means yearly screening again, while maculopathy (M1) means OCT surveillance. Pregnant women are screened more often. A review in Eye Open adds that people with type 1 diabetes starting a hybrid closed loop system are exempt, those starting an insulin pump stay yearly for a year, and the change has been staggered since a 2024 software upgrade.",
+        "type": "p"
+      },
+      {
+        "text": "What the evidence behind the change showed",
+        "type": "h2"
+      },
+      {
+        "text": "The UK National Screening Committee relied on the Four Nations study, [published in Diabetes Care](https://doi.org/10.2337/dc14-1778). It pooled 2005 to 2012 grading results for 354,549 people in 7 programmes: the national ones of Scotland, Wales and Northern Ireland, and 4 in England. Of people with no retinopathy at 2 screens at least 12 months apart, 0.3% to 1.3% progressed to referable retinopathy within 2 years, and fewer than 0.3% to proliferative disease. With background retinopathy in both eyes at both screens, the figures were 13% to 29% and up to 4%.",
+        "type": "p"
+      },
+      {
+        "text": "It was retrospective, and its authors wrote that it could not directly show the effect of changing the interval. The nearest test is Liverpool's ISDR trial, which randomised 4,534 people to yearly screening or to 6, 12 or 24 months set by a risk calculator using clinical data. Attendance at first follow-up was equivalent (83.6% against 84.7%), sight-threatening retinopathy was found in 1.4% against 1.7% over 2 years, and the individualised arm needed 43.2% fewer appointments.",
+        "type": "p"
+      },
+      {
+        "text": "What London's records added",
+        "type": "h2"
+      },
+      {
+        "text": "Pitt and colleagues took North East London's records from 2012 to 2023, when everyone was still invited yearly, and found 105,083 people with 2 clear screens. Over a mean of 5 years, 3,694 developed sight-threatening retinopathy, meaning a screening grade of R2, R3 or M1. The paper does not say how many were proliferative. Replaying the records on a 2-year cycle cut appointments by 54%, but 1,444 of those diagnoses, 39%, would have come a screen later.",
+        "type": "p"
+      },
+      {
+        "text": "The risk was uneven before the interval changed. Against the lowest-risk group, white people aged 41 or over with diabetes for under 10 years, almost every group was significantly more likely to have a sight-threatening diagnosis at an appointment: South Asian people 1.61 to 3.12 times, Black people 2.27 to 4.10, highest at 40 or under. The ratios were much the same with yearly screening, but a 2-year gap lets more build up: for Black people, the chance at each appointment rose from 0.8% to 2.4%, against 1% for the lowest-risk group. A points score using age, diabetes duration and ethnicity cut delayed diagnoses to 25% while saving 43% of appointments, and from 34% to 22% when tested on South East London's records.",
+        "type": "p"
+      },
+      {
+        "text": "Why it matters in practice",
+        "type": "h2"
+      },
+      {
+        "text": "[The College of Optometrists' guidance](https://www.college-optometrists.org/clinical-guidance/guidance/knowledge,-skills-and-performance/examining-patients-with-diabetes-mellitus) covers the year between screens:",
+        "type": "p"
+      },
+      {
+        "items": [
+          "Ask whether the patient is in a screening programme and when they last attended, and say if you think it is overdue.",
+          "Keep sight-test recall as for someone without diabetes, whatever their screening interval, but use your judgement for younger people and people of Black and Asian ethnicities.",
+          "Dilating solely to look for retinopathy is not needed where a screening programme is in place.",
+          "Report relevant findings to whoever is responsible for the patient's care."
+        ],
+        "type": "ul"
+      },
+      {
+        "text": "Beyond the guidance, record the result of the last screen as well as its date. Background retinopathy in someone on the 2-year cycle is a relevant finding to report, though a report does not by itself change their screening interval. Younger patients may matter twice: in London, people aged 40 or under were particularly at risk beyond 3 years, and a September review of 14 UK studies from 2006 to 2021 found younger age, in bands such as 12 to 39, and deprivation the most consistent markers of missed or late screening.",
+        "type": "p"
+      },
+      {
+        "text": "The caveats",
+        "type": "h2"
+      },
+      {
+        "items": [
+          "The Four Nations study used 2005 to 2012 data, and its authors said the spread between programmes may partly reflect grading.",
+          "London's 39% is a simulation on yearly-screening records, so it cannot show how people respond to fewer invitations.",
+          "ISDR tested a clinical-data calculator, not England's rule, in one programme whose participants were 94.6% white, over 2 years.",
+          "The points score needs recorded ethnicity, which some programmes hold incompletely.",
+          "London's funders were Wellcome, the Health Foundation, the NHS Transformation Directorate and the NIHR. Its authors also research automated grading, covered on [our news page](/news)."
+        ],
+        "type": "ul"
+      }
+    ]
+  },
+  {
+    "slug": "diabetic-retinopathy-driving-dvla",
+    "title": "Diabetic retinopathy and driving: the field, not just the laser",
+    "date": "2026-11-09",
+    "readingMinutes": 4,
+    "excerpt": "Car drivers must report retinopathy lasered in both eyes. In a re-analysis, untreated eyes with severe retinopathy lost about as much field by year 3.",
+    "cover": {
+      "about": "The binocular field as a driver sees it: Esterman test points across a windscreen, the mirror above and the wheel below. Missed points gather at the edges, where laser and retinopathy take the field, and a red cluster of four inside the central 20 degrees pulses: the defect the DVLA counts as significant.",
+      "name": "field-through-windscreen",
+      "shapes": [
+        {
+          "d": "M 14 214 L 58 18 L 342 18 L 386 214",
+          "fx": [
+            "draw"
+          ],
+          "so": 0.45,
+          "stroke": "pale",
+          "sw": 2,
+          "t": "path"
+        },
+        {
+          "d": "M -10 228 Q 200 188 410 228",
+          "delay": 0.15,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.35,
+          "stroke": "pale",
+          "sw": 1.6,
+          "t": "path"
+        },
+        {
+          "cap": "round",
+          "d": "M 141.8 213.8 A 104 104 0 0 1 258.2 213.8",
+          "delay": 0.25,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.55,
+          "stroke": "pale",
+          "sw": 3,
+          "t": "path"
+        },
+        {
+          "delay": 0.3,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.5,
+          "stroke": "pale",
+          "sw": 1.4,
+          "t": "line",
+          "x1": 200,
+          "x2": 200,
+          "y1": 18,
+          "y2": 25
+        },
+        {
+          "delay": 0.35,
+          "fill": "ink",
+          "fx": [
+            "pop"
+          ],
+          "h": 13,
+          "rx": 5,
+          "so": 0.6,
+          "stroke": "pale",
+          "sw": 1.4,
+          "t": "rect",
+          "w": 52,
+          "x": 174,
+          "y": 25
+        },
+        {
+          "delay": 0.4,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.3,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "line",
+          "x1": 44,
+          "x2": 356,
+          "y1": 112,
+          "y2": 112
+        },
+        {
+          "delay": 0.45,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.22,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "line",
+          "x1": 200,
+          "x2": 200,
+          "y1": 48,
+          "y2": 178
+        },
+        {
+          "delay": 1.44,
+          "fill": "ink",
+          "fx": [
+            "pop"
+          ],
+          "h": 5,
+          "so": 0.75,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "rect",
+          "w": 5,
+          "x": 125.5,
+          "y": 43.5
+        },
+        {
+          "cx": 150,
+          "cy": 46,
+          "delay": 1.2,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "delay": 1.37,
+          "fill": "ink",
+          "fx": [
+            "pop"
+          ],
+          "h": 5,
+          "so": 0.75,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "rect",
+          "w": 5,
+          "x": 169.5,
+          "y": 43.5
+        },
+        {
+          "cx": 194,
+          "cy": 46,
+          "delay": 1.16,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "delay": 1.36,
+          "fill": "ink",
+          "fx": [
+            "pop"
+          ],
+          "h": 5,
+          "so": 0.75,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "rect",
+          "w": 5,
+          "x": 213.5,
+          "y": 43.5
+        },
+        {
+          "cx": 238,
+          "cy": 46,
+          "delay": 1.18,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "delay": 1.42,
+          "fill": "ink",
+          "fx": [
+            "pop"
+          ],
+          "h": 5,
+          "so": 0.75,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "rect",
+          "w": 5,
+          "x": 257.5,
+          "y": 43.5
+        },
+        {
+          "cx": 95,
+          "cy": 60,
+          "delay": 1.24,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "delay": 1.37,
+          "fill": "ink",
+          "fx": [
+            "pop"
+          ],
+          "h": 5,
+          "so": 0.75,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "rect",
+          "w": 5,
+          "x": 114.5,
+          "y": 57.5
+        },
+        {
+          "cx": 139,
+          "cy": 60,
+          "delay": 1.11,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 161,
+          "cy": 60,
+          "delay": 1.06,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 183,
+          "cy": 60,
+          "delay": 1.04,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 205,
+          "cy": 60,
+          "delay": 1.03,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 227,
+          "cy": 60,
+          "delay": 1.05,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 249,
+          "cy": 60,
+          "delay": 1.08,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 271,
+          "cy": 60,
+          "delay": 1.13,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "delay": 1.4,
+          "fill": "ink",
+          "fx": [
+            "pop"
+          ],
+          "h": 5,
+          "so": 0.75,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "rect",
+          "w": 5,
+          "x": 290.5,
+          "y": 57.5
+        },
+        {
+          "cx": 84,
+          "cy": 74,
+          "delay": 1.19,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "delay": 1.31,
+          "fill": "ink",
+          "fx": [
+            "pop"
+          ],
+          "h": 5,
+          "so": 0.75,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "rect",
+          "w": 5,
+          "x": 103.5,
+          "y": 71.5
+        },
+        {
+          "cx": 128,
+          "cy": 74,
+          "delay": 1.04,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 150,
+          "cy": 74,
+          "delay": 0.97,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 238,
+          "cy": 74,
+          "delay": 0.94,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 260,
+          "cy": 74,
+          "delay": 1,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 282,
+          "cy": 74,
+          "delay": 1.07,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 304,
+          "cy": 74,
+          "delay": 1.15,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "delay": 1.43,
+          "fill": "ink",
+          "fx": [
+            "pop"
+          ],
+          "h": 5,
+          "so": 0.75,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "rect",
+          "w": 5,
+          "x": 323.5,
+          "y": 71.5
+        },
+        {
+          "cx": 73,
+          "cy": 88,
+          "delay": 1.18,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 95,
+          "cy": 88,
+          "delay": 1.09,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 117,
+          "cy": 88,
+          "delay": 1,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 139,
+          "cy": 88,
+          "delay": 0.91,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 249,
+          "cy": 88,
+          "delay": 0.87,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 271,
+          "cy": 88,
+          "delay": 0.95,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 293,
+          "cy": 88,
+          "delay": 1.04,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "delay": 1.33,
+          "fill": "ink",
+          "fx": [
+            "pop"
+          ],
+          "h": 5,
+          "so": 0.75,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "rect",
+          "w": 5,
+          "x": 312.5,
+          "y": 85.5
+        },
+        {
+          "cx": 337,
+          "cy": 88,
+          "delay": 1.23,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "delay": 1.4,
+          "fill": "ink",
+          "fx": [
+            "pop"
+          ],
+          "h": 5,
+          "so": 0.75,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "rect",
+          "w": 5,
+          "x": 59.5,
+          "y": 99.5
+        },
+        {
+          "cx": 84,
+          "cy": 102,
+          "delay": 1.1,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 106,
+          "cy": 102,
+          "delay": 1,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 128,
+          "cy": 102,
+          "delay": 0.9,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 150,
+          "cy": 102,
+          "delay": 0.8,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 260,
+          "cy": 102,
+          "delay": 0.84,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 282,
+          "cy": 102,
+          "delay": 0.94,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 304,
+          "cy": 102,
+          "delay": 1.04,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 326,
+          "cy": 102,
+          "delay": 1.15,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "delay": 1.45,
+          "fill": "ink",
+          "fx": [
+            "pop"
+          ],
+          "h": 5,
+          "so": 0.75,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "rect",
+          "w": 5,
+          "x": 345.5,
+          "y": 99.5
+        },
+        {
+          "cx": 51,
+          "cy": 116,
+          "delay": 1.25,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "delay": 1.34,
+          "fill": "ink",
+          "fx": [
+            "pop"
+          ],
+          "h": 5,
+          "so": 0.75,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "rect",
+          "w": 5,
+          "x": 70.5,
+          "y": 113.5
+        },
+        {
+          "cx": 95,
+          "cy": 116,
+          "delay": 1.04,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 117,
+          "cy": 116,
+          "delay": 0.94,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 139,
+          "cy": 116,
+          "delay": 0.84,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 249,
+          "cy": 116,
+          "delay": 0.78,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 271,
+          "cy": 116,
+          "delay": 0.88,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 293,
+          "cy": 116,
+          "delay": 0.99,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 315,
+          "cy": 116,
+          "delay": 1.09,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 337,
+          "cy": 116,
+          "delay": 1.19,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "delay": 1.41,
+          "fill": "ink",
+          "fx": [
+            "pop"
+          ],
+          "h": 5,
+          "so": 0.75,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "rect",
+          "w": 5,
+          "x": 59.5,
+          "y": 127.5
+        },
+        {
+          "cx": 84,
+          "cy": 130,
+          "delay": 1.12,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 106,
+          "cy": 130,
+          "delay": 1.02,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 128,
+          "cy": 130,
+          "delay": 0.92,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 150,
+          "cy": 130,
+          "delay": 0.84,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 260,
+          "cy": 130,
+          "delay": 0.88,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 282,
+          "cy": 130,
+          "delay": 0.97,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 304,
+          "cy": 130,
+          "delay": 1.06,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 326,
+          "cy": 130,
+          "delay": 1.16,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "delay": 1.41,
+          "fill": "ink",
+          "fx": [
+            "pop"
+          ],
+          "h": 5,
+          "so": 0.75,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "rect",
+          "w": 5,
+          "x": 70.5,
+          "y": 141.5
+        },
+        {
+          "cx": 95,
+          "cy": 144,
+          "delay": 1.12,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 117,
+          "cy": 144,
+          "delay": 1.04,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 139,
+          "cy": 144,
+          "delay": 0.96,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 161,
+          "cy": 144,
+          "delay": 0.9,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 249,
+          "cy": 144,
+          "delay": 0.92,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 271,
+          "cy": 144,
+          "delay": 0.99,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 293,
+          "cy": 144,
+          "delay": 1.07,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 315,
+          "cy": 144,
+          "delay": 1.16,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 84,
+          "cy": 158,
+          "delay": 1.24,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 106,
+          "cy": 158,
+          "delay": 1.16,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 128,
+          "cy": 158,
+          "delay": 1.09,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 150,
+          "cy": 158,
+          "delay": 1.03,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 172,
+          "cy": 158,
+          "delay": 0.99,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 216,
+          "cy": 158,
+          "delay": 0.98,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 238,
+          "cy": 158,
+          "delay": 1.01,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 260,
+          "cy": 158,
+          "delay": 1.06,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 282,
+          "cy": 158,
+          "delay": 1.12,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 304,
+          "cy": 158,
+          "delay": 1.19,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 117,
+          "cy": 172,
+          "delay": 1.22,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 139,
+          "cy": 172,
+          "delay": 1.17,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 161,
+          "cy": 172,
+          "delay": 1.13,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 183,
+          "cy": 172,
+          "delay": 1.11,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 205,
+          "cy": 172,
+          "delay": 1.1,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 227,
+          "cy": 172,
+          "delay": 1.12,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 249,
+          "cy": 172,
+          "delay": 1.15,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 271,
+          "cy": 172,
+          "delay": 1.19,
+          "fill": "teal",
+          "fo": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 191,
+          "cy": 79,
+          "delay": 0.72,
+          "fill": "teal",
+          "fo": 0.9,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 209,
+          "cy": 79,
+          "delay": 0.72,
+          "fill": "teal",
+          "fo": 0.9,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 209,
+          "cy": 91,
+          "delay": 0.64,
+          "fill": "teal",
+          "fo": 0.9,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 221,
+          "cy": 91,
+          "delay": 0.65,
+          "fill": "teal",
+          "fo": 0.9,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 167,
+          "cy": 103,
+          "delay": 0.62,
+          "fill": "teal",
+          "fo": 0.9,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 209,
+          "cy": 103,
+          "delay": 0.57,
+          "fill": "teal",
+          "fo": 0.9,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 221,
+          "cy": 103,
+          "delay": 0.59,
+          "fill": "teal",
+          "fo": 0.9,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 233,
+          "cy": 103,
+          "delay": 0.62,
+          "fill": "teal",
+          "fo": 0.9,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 167,
+          "cy": 121,
+          "delay": 0.62,
+          "fill": "teal",
+          "fo": 0.9,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 179,
+          "cy": 121,
+          "delay": 0.59,
+          "fill": "teal",
+          "fo": 0.9,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 191,
+          "cy": 121,
+          "delay": 0.57,
+          "fill": "teal",
+          "fo": 0.9,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 209,
+          "cy": 121,
+          "delay": 0.57,
+          "fill": "teal",
+          "fo": 0.9,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 221,
+          "cy": 121,
+          "delay": 0.59,
+          "fill": "teal",
+          "fo": 0.9,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 233,
+          "cy": 121,
+          "delay": 0.62,
+          "fill": "teal",
+          "fo": 0.9,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 179,
+          "cy": 133,
+          "delay": 0.65,
+          "fill": "teal",
+          "fo": 0.9,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 191,
+          "cy": 133,
+          "delay": 0.64,
+          "fill": "teal",
+          "fo": 0.9,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 209,
+          "cy": 133,
+          "delay": 0.64,
+          "fill": "teal",
+          "fo": 0.9,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 221,
+          "cy": 133,
+          "delay": 0.65,
+          "fill": "teal",
+          "fo": 0.9,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 191,
+          "cy": 145,
+          "delay": 0.72,
+          "fill": "teal",
+          "fo": 0.9,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 209,
+          "cy": 145,
+          "delay": 0.72,
+          "fill": "teal",
+          "fo": 0.9,
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cx": 200,
+          "cy": 112,
+          "dash": "3 4",
+          "delay": 1.45,
+          "fx": [
+            "pop"
+          ],
+          "r": 42,
+          "so": 0.55,
+          "stroke": "teal",
+          "sw": 1.2,
+          "t": "circle"
+        },
+        {
+          "cx": 200,
+          "cy": 112,
+          "delay": 0.5,
+          "fx": [
+            "pop"
+          ],
+          "r": 2.6,
+          "so": 0.8,
+          "stroke": "pale",
+          "sw": 1.2,
+          "t": "circle"
+        },
+        {
+          "cx": 185,
+          "cy": 97,
+          "delay": 1.65,
+          "fill": "red",
+          "fo": 0.16,
+          "fx": [
+            "pop",
+            "pulse"
+          ],
+          "r": 19,
+          "t": "circle"
+        },
+        {
+          "delay": 1.75,
+          "fill": "red",
+          "fx": [
+            "pop",
+            "pulse"
+          ],
+          "h": 8,
+          "rx": 1,
+          "t": "rect",
+          "w": 8,
+          "x": 175,
+          "y": 87
+        },
+        {
+          "delay": 1.75,
+          "fill": "red",
+          "fx": [
+            "pop",
+            "pulse"
+          ],
+          "h": 8,
+          "rx": 1,
+          "t": "rect",
+          "w": 8,
+          "x": 187,
+          "y": 87
+        },
+        {
+          "delay": 1.75,
+          "fill": "red",
+          "fx": [
+            "pop",
+            "pulse"
+          ],
+          "h": 8,
+          "rx": 1,
+          "t": "rect",
+          "w": 8,
+          "x": 175,
+          "y": 99
+        },
+        {
+          "delay": 1.75,
+          "fill": "red",
+          "fx": [
+            "pop",
+            "pulse"
+          ],
+          "h": 8,
+          "rx": 1,
+          "t": "rect",
+          "w": 8,
+          "x": 187,
+          "y": 99
+        }
+      ]
+    },
+    "series": "insight",
+    "topics": [
+      "diabetic retinopathy",
+      "driving",
+      "dvla",
+      "visual fields",
+      "laser"
+    ],
+    "sources": [
+      {
+        "date": "2025-09-26",
+        "publisher": "DVLA (GOV.UK)",
+        "read": "full",
+        "readVia": "page",
+        "title": "Visual disorders: assessing fitness to drive",
+        "url": "https://www.gov.uk/guidance/visual-disorders-assessing-fitness-to-drive"
+      },
+      {
+        "publisher": "DVLA (GOV.UK)",
+        "read": "full",
+        "readVia": "page",
+        "title": "Eye conditions and driving (the whole guide, car and bus or lorry licences)",
+        "url": "https://www.gov.uk/eye-conditions-and-driving/print"
+      },
+      {
+        "date": "2025-05-08",
+        "publisher": "Ophthalmology Retina (author manuscript in PMC)",
+        "read": "full",
+        "readVia": "page",
+        "title": "Visual field changes in diabetic retinopathy: natural history and after pan-retinal photocoagulation in the Diabetic Retinopathy Study and the ETDRS",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13474406/"
+      },
+      {
+        "date": "2020-03-01",
+        "publisher": "JAMA Ophthalmology (author manuscript in PMC)",
+        "read": "full",
+        "readVia": "page",
+        "title": "Visual field changes over 5 years in patients treated with panretinal photocoagulation or ranibizumab for proliferative diabetic retinopathy",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7042909/"
+      },
+      {
+        "date": "2022-01-13",
+        "publisher": "Eye (author manuscript in PMC)",
+        "read": "full",
+        "readVia": "page",
+        "title": "The effects of visual-field loss from panretinal photocoagulation of proliferative diabetic retinopathy on performance in a driving simulator",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9829869/"
+      },
+      {
+        "publisher": "College of Optometrists",
+        "read": "full",
+        "readVia": "page",
+        "title": "Patient records: Guidance for Professional Practice",
+        "url": "https://www.college-optometrists.org/clinical-guidance/guidance/knowledge,-skills-and-performance/patient-records"
+      },
+      {
+        "publisher": "College of Optometrists",
+        "read": "full",
+        "readVia": "page",
+        "title": "Examining patients who drive: Guidance for Professional Practice",
+        "url": "https://www.college-optometrists.org/clinical-guidance/guidance/knowledge,-skills-and-performance/examining-patients-who-drive"
+      }
+    ],
+    "figure": {
+      "blocks": [
+        {
+          "items": [
+            {
+              "label": "lasered eyes at 4 months",
+              "value": "−54.6"
+            },
+            {
+              "label": "untreated eyes at 4 months",
+              "value": "−21.5"
+            },
+            {
+              "label": "lasered eyes at 5 years",
+              "value": "−124.9"
+            },
+            {
+              "label": "untreated eyes at 5 years",
+              "value": "−156.7"
+            }
+          ],
+          "kind": "stats",
+          "label": "Field score lost, laser against no laser"
+        },
+        {
+          "kind": "flow",
+          "label": "A car driver after laser to both eyes",
+          "steps": [
+            {
+              "label": "Laser to both eyes",
+              "note": "or to the only eye with sight"
+            },
+            {
+              "label": "The driver tells the DVLA",
+              "note": "online or on form V1"
+            },
+            {
+              "label": "May ask for a binocular Esterman",
+              "note": "no more than 20% false positives"
+            },
+            {
+              "label": "120° wide, 50° each side",
+              "note": "no significant defect within 20° of fixation"
+            },
+            {
+              "label": "The DVLA decides the licence"
+            }
+          ]
+        }
+      ],
+      "caption": "Diabetic Retinopathy Study, 1972 to 1979: 830 people with severe retinopathy, one eye given argon laser, the other untreated until any later laser. Field score summed over 12 meridians: 900 at most, 729 on average at the start.",
+      "source": "Lee et al., Ophthalmology Retina 2025; DVLA, Visual disorders: assessing fitness to drive, 2025",
+      "title": "Field lost with and without laser, and the DVLA's route after it"
+    },
+    "image": {
+      "src": "/images/insights/diabetic-retinopathy-driving-dvla.jpg",
+      "alt": "A colour fundus photograph after scatter laser for diabetic retinopathy: rows of pale round laser burns around the optic disc, with the darker macula and small dark red spots towards the centre.",
+      "license": "Public domain"
+    },
+    "seo": {
+      "keyword": "diabetic retinopathy and driving",
+      "metaDescription": "Diabetic retinopathy and driving: the DVLA's 120° field rule, why eyes lose field without laser, and what optometrists should record.",
+      "metaTitle": "Diabetic retinopathy and driving: DVLA rules after laser"
+    },
+    "keyPoints": [
+      "Car and motorcycle drivers must report retinopathy lasered in both eyes, or the only eye with sight, and the DVLA's guidance for clinicians adds bilateral retinopathy with a field defect.",
+      "On a binocular Esterman, a car licence needs 120° wide, 50° each side and no significant defect within 20° of fixation. Bus and lorry: 160°, 70° each side and a clear central 30°.",
+      "In a re-analysis of the 1970s Diabetic Retinopathy Study, untreated eyes with severe retinopathy had lost about as much field as lasered ones by year 3.",
+      "Record whether the patient drives, which eye has had laser or injections, any abnormal field printout, and the advice given, including their legal duty to tell the DVLA."
+    ],
+    "faq": [
+      {
+        "a": "You can if you meet the visual standards for driving, but some drivers with it must tell the DVLA. Car and motorcycle drivers in Great Britain must report diabetic retinopathy treated with laser in both eyes, or in the only eye with sight, and bus and lorry drivers in either eye. The DVLA's guidance for clinicians also makes bilateral retinopathy with a field defect notifiable. The DVLA may then refer them for an eyesight test, and it decides on the licence. Anyone told by an optician, GP or eye specialist that they should not drive must also tell the DVLA.",
+        "q": "Can you drive if you have diabetic retinopathy?"
+      },
+      {
+        "a": "The binocular Esterman test is done with both eyes open, and it is the method the DVLA normally requires when it needs a field assessment for driving. To be reliable for licensing the false-positive score must be no more than 20%. For a car or motorcycle licence the field must be at least 120° on the horizontal, extending at least 50° to each side, with no significant defect within 20° of fixation above or below the horizontal. A bus or lorry licence needs at least 160° and 70° to each side, with no defect within the central 30°.",
+        "q": "What is an Esterman visual field test?"
+      },
+      {
+        "a": "The patient is legally responsible for telling the DVLA (the DVA in Northern Ireland). The College of Optometrists' guidance is that an optometrist who thinks a patient is unfit to drive should tell them so, put the advice in writing and record it. If the patient keeps driving and cannot be persuaded to stop, the optometrist should contact the DVLA and tell the patient, and the College notes that the public interest can justify breaking confidentiality to do so.",
+        "q": "Do opticians report to the DVLA?"
+      },
+      {
+        "a": "It can. Scatter laser burns can cause peripheral field loss, and in the Diabetic Retinopathy Study lasered eyes lost field faster in the first months than untreated ones. But untreated severe retinopathy lost field too, and by year 3 the two were no longer significantly different. What the DVLA judges is whether the binocular field and the acuity still meet its standards.",
+        "q": "Does laser treatment for diabetic retinopathy affect your vision for driving?"
+      }
+    ],
+    "body": [
+      {
+        "text": "On diabetic retinopathy and driving, the DVLA's public list is short: a car or motorcycle driver must report diabetic retinopathy \"with laser treatment\" in both eyes, or in the only eye with sight. A 2025 re-analysis of two landmark trials, funded by the US National Eye Institute and published in Ophthalmology Retina, found that untreated eyes with severe retinopathy had lost about as much field by year 3 as lasered eyes.",
+        "type": "p"
+      },
+      {
+        "text": "That matters at the sight test. The list names laser, not injections, and severe retinopathy narrowed the field without either.",
+        "type": "p"
+      },
+      {
+        "text": "Diabetic retinopathy and driving: what the DVLA asks",
+        "type": "h2"
+      },
+      {
+        "text": "The [DVLA's guide for drivers](https://www.gov.uk/eye-conditions-and-driving/print) has a bus or lorry driver report it in either eye, on form V1V. The DVLA may refer a driver to its contracted optician for a free eyesight test. A test from another optician must include an Esterman visual test and may still not be accepted.",
+        "type": "p"
+      },
+      {
+        "text": "[Its guidance for clinicians](https://www.gov.uk/guidance/visual-disorders-assessing-fitness-to-drive), updated in September 2025, lists bilateral retinopathy among the disorders that produce a field defect: for car and motorcycle drivers, the DVLA must be notified and the field standard met, laser or not. That standard is at least 120° on the horizontal, 50° to each side, and no significant defect within 20° of fixation above or below the horizontal meridian, on a binocular Esterman with no more than 20% false positives. Four or more adjoining missed points within the central 20° are generally regarded as significant. A bus or lorry licence needs at least 160°, 70° to each side and 30° above and below, with no defect within the central 30°. Acuity, the number plate and 6/12, is a separate subject in [this series](/news).",
+        "type": "p"
+      },
+      {
+        "text": "What the field studies found",
+        "type": "h2"
+      },
+      {
+        "text": "The [re-analysis](https://pmc.ncbi.nlm.nih.gov/articles/PMC13474406/) took 830 participants of the Diabetic Retinopathy Study (1972 to 1979), each with severe non-proliferative or proliferative retinopathy and one eye randomised to laser, the other to none. Goldmann fields were scored as the field's extent summed over 12 meridians: 900 at most, 729 on average at the start. Lasered eyes lost 54.6 of that score by 4 months, untreated eyes 21.5. The untreated eyes kept losing, and by year 3 the difference was no longer significant. At 5 years they were down 156.7, the lasered eyes 124.9.",
+        "type": "p"
+      },
+      {
+        "text": "In [Protocol S](https://pmc.ncbi.nlm.nih.gov/articles/PMC7042909/), a US trial in proliferative retinopathy, an exploratory analysis of the 167 eyes with usable fields at the start found that eyes on ranibizumab lost little field for 2 years, then lost it through year 5. At 5 years the total point score had fallen by 330 dB with ranibizumab and 527 dB with laser, and by about 200 in ranibizumab eyes when tests after any later laser were left out.",
+        "type": "p"
+      },
+      {
+        "text": "In Sweden, 15 of 27 people who lost their licences over field loss after laser passed a driving simulator test, though as a group they drove less safely than controls, and none of the 13 relicensed had an injury accident in 3 to 6 years, which the authors call uncertain with so few licences ([Eye, 2022](https://pmc.ncbi.nlm.nih.gov/articles/PMC9829869/)).",
+        "type": "p"
+      },
+      {
+        "text": "Why it matters in practice",
+        "type": "h2"
+      },
+      {
+        "text": "The DVLA decides who is fit to drive. The optometrist controls the record and the advice, and [the College's guidance on records](https://www.college-optometrists.org/clinical-guidance/guidance/knowledge,-skills-and-performance/patient-records) asks for whether the patient drives, any field test with screener, programme and correction, a printout of any abnormal result, and the oral and written advice. For a patient with diabetes:",
+        "type": "p"
+      },
+      {
+        "items": [
+          "Ask whether they drive, on a car or a bus or lorry licence, since the rules differ, and which eye has had laser or injections. Write it down.",
+          "Laser to both eyes, or to the only eye with sight, must be reported by a car driver, online or on form V1, and laser to either eye by a bus or lorry driver, on form V1V. Under the clinicians' guidance, so is bilateral retinopathy with a field defect. Tell them, and record that you did.",
+          "Where retinopathy is severe or treated in both eyes, it would make sense to run a binocular Esterman, the DVLA's own test, if your screener has one. Keep any abnormal printout.",
+          "If they do not meet the standard, tell them they have a legal duty to inform the DVLA (the DVA in Northern Ireland), advise them not to drive, put it in writing and record it, as [the College's guidance on patients who drive](https://www.college-optometrists.org/clinical-guidance/guidance/knowledge,-skills-and-performance/examining-patients-who-drive) sets out. If they keep driving and cannot be persuaded to stop, it says to contact the DVLA and tell the patient."
+        ],
+        "type": "ul"
+      },
+      {
+        "text": "The caveats",
+        "type": "h2"
+      },
+      {
+        "items": [
+          "The Diabetic Retinopathy Study ran in the 1970s, with heavier burns, Goldmann fields and poorer control of glucose, blood pressure and cholesterol than now, its authors say.",
+          "The catch-up was in severe retinopathy: in the milder ETDRS eyes, lasered eyes had still lost more at 7 years, 203.9 against 79.2.",
+          "320 of the 830 untreated eyes were lasered on progressing and left the analysis, which the authors think understates untreated loss, and cataract or glaucoma may explain some decline.",
+          "Protocol S had 5-year fields for 79 of the 234 eyes in its field study.",
+          "None of the three measured a pass or fail against the UK standard."
+        ],
+        "type": "ul"
+      }
+    ]
+  },
+  {
     "slug": "firework-eye-injury-home-remedies",
     "title": "Firework eye injuries: the question that is not on the referral form",
     "date": "2026-11-02",
