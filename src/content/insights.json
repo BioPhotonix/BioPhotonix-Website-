@@ -1,5 +1,1510 @@
 [
   {
+    "slug": "children-crossing-road-eye-test",
+    "title": "Children crossing the road may not see a 30 mph car coming",
+    "date": "2026-11-16",
+    "readingMinutes": 4,
+    "excerpt": "In a UK lab study, children aged 6 to 11 could on average only reliably tell a car 5 seconds away was coming below about 25 mph once its image shifted.",
+    "cover": {
+      "about": "A street from above: a child at the kerb behind the LOOK RIGHT arrow, and a car coming in the near lane. Five seconds out it fills only a thin wedge of the child's view, which pulses; a dashed outline three seconds out shows the wedge opening. That slow early growth is what children of 6 to 11 may not see.",
+      "name": "kerb-five-seconds",
+      "shapes": [
+        {
+          "fx": [
+            "draw"
+          ],
+          "so": 0.35,
+          "stroke": "pale",
+          "sw": 1.4,
+          "t": "line",
+          "x1": -10,
+          "x2": 410,
+          "y1": 58,
+          "y2": 58
+        },
+        {
+          "dash": "12 10",
+          "delay": 0.1,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.3,
+          "stroke": "pale",
+          "sw": 1.4,
+          "t": "line",
+          "x1": -10,
+          "x2": 410,
+          "y1": 111,
+          "y2": 111
+        },
+        {
+          "delay": 0.05,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.6,
+          "stroke": "pale",
+          "sw": 1.8,
+          "t": "line",
+          "x1": -10,
+          "x2": 410,
+          "y1": 164,
+          "y2": 164
+        },
+        {
+          "delay": 0.15,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.25,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "line",
+          "x1": -10,
+          "x2": 410,
+          "y1": 171,
+          "y2": 171
+        },
+        {
+          "delay": 0.2,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.25,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "line",
+          "x1": 20,
+          "x2": 20,
+          "y1": 164,
+          "y2": 171
+        },
+        {
+          "delay": 0.22,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.25,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "line",
+          "x1": 68,
+          "x2": 68,
+          "y1": 164,
+          "y2": 171
+        },
+        {
+          "delay": 0.24,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.25,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "line",
+          "x1": 116,
+          "x2": 116,
+          "y1": 164,
+          "y2": 171
+        },
+        {
+          "delay": 0.26,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.25,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "line",
+          "x1": 164,
+          "x2": 164,
+          "y1": 164,
+          "y2": 171
+        },
+        {
+          "delay": 0.28,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.25,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "line",
+          "x1": 212,
+          "x2": 212,
+          "y1": 164,
+          "y2": 171
+        },
+        {
+          "delay": 0.3,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.25,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "line",
+          "x1": 260,
+          "x2": 260,
+          "y1": 164,
+          "y2": 171
+        },
+        {
+          "delay": 0.32,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.25,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "line",
+          "x1": 308,
+          "x2": 308,
+          "y1": 164,
+          "y2": 171
+        },
+        {
+          "delay": 0.34,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.25,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "line",
+          "x1": 356,
+          "x2": 356,
+          "y1": 164,
+          "y2": 171
+        },
+        {
+          "cx": 96,
+          "cy": 28,
+          "delay": 0.2,
+          "fill": "teal",
+          "fo": 0.06,
+          "fx": [
+            "pop"
+          ],
+          "r": 17,
+          "so": 0.35,
+          "stroke": "teal",
+          "sw": 1.2,
+          "t": "circle"
+        },
+        {
+          "cx": 99,
+          "cy": 26,
+          "delay": 0.25,
+          "fx": [
+            "pop"
+          ],
+          "r": 9,
+          "so": 0.25,
+          "stroke": "teal",
+          "sw": 1,
+          "t": "circle"
+        },
+        {
+          "cx": 214,
+          "cy": 24,
+          "delay": 0.28,
+          "fill": "teal",
+          "fo": 0.06,
+          "fx": [
+            "pop"
+          ],
+          "r": 17,
+          "so": 0.35,
+          "stroke": "teal",
+          "sw": 1.2,
+          "t": "circle"
+        },
+        {
+          "cx": 217,
+          "cy": 22,
+          "delay": 0.33,
+          "fx": [
+            "pop"
+          ],
+          "r": 9,
+          "so": 0.25,
+          "stroke": "teal",
+          "sw": 1,
+          "t": "circle"
+        },
+        {
+          "cx": 332,
+          "cy": 29,
+          "delay": 0.36,
+          "fill": "teal",
+          "fo": 0.06,
+          "fx": [
+            "pop"
+          ],
+          "r": 17,
+          "so": 0.35,
+          "stroke": "teal",
+          "sw": 1.2,
+          "t": "circle"
+        },
+        {
+          "cx": 335,
+          "cy": 27,
+          "delay": 0.41,
+          "fx": [
+            "pop"
+          ],
+          "r": 9,
+          "so": 0.25,
+          "stroke": "teal",
+          "sw": 1,
+          "t": "circle"
+        },
+        {
+          "cap": "round",
+          "delay": 0.35,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.7,
+          "stroke": "pale",
+          "sw": 2.2,
+          "t": "line",
+          "x1": 26,
+          "x2": 66,
+          "y1": 155,
+          "y2": 155
+        },
+        {
+          "cap": "round",
+          "d": "M 58 149 L 67 155 L 58 161",
+          "delay": 0.45,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.7,
+          "stroke": "pale",
+          "sw": 2.2,
+          "t": "path"
+        },
+        {
+          "cx": 68,
+          "cy": 195,
+          "delay": 0.25,
+          "fill": "ink",
+          "fx": [
+            "pop"
+          ],
+          "rx": 15,
+          "ry": 8,
+          "so": 0.8,
+          "stroke": "pale",
+          "sw": 1.6,
+          "t": "ellipse"
+        },
+        {
+          "cx": 72,
+          "cy": 186,
+          "delay": 0.3,
+          "fill": "ink",
+          "fx": [
+            "pop"
+          ],
+          "r": 8,
+          "stroke": "pale",
+          "sw": 1.6,
+          "t": "circle"
+        },
+        {
+          "cx": 77,
+          "cy": 183,
+          "delay": 0.5,
+          "fill": "glow",
+          "fx": [
+            "pop"
+          ],
+          "r": 1.8,
+          "t": "circle"
+        },
+        {
+          "cap": "round",
+          "delay": 1.3,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.5,
+          "stroke": "teal",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 79,
+          "x2": 212,
+          "y1": 182,
+          "y2": 126
+        },
+        {
+          "cap": "round",
+          "delay": 1.35,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.5,
+          "stroke": "teal",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 79,
+          "x2": 212,
+          "y1": 182,
+          "y2": 148
+        },
+        {
+          "dash": "4 4",
+          "delay": 1,
+          "fx": [
+            "pop"
+          ],
+          "h": 24,
+          "rx": 7,
+          "so": 0.45,
+          "stroke": "pale",
+          "sw": 1.2,
+          "t": "rect",
+          "w": 52,
+          "x": 212,
+          "y": 125
+        },
+        {
+          "d": "M 225 128 L 230 131 L 230 143 L 225 146",
+          "dash": "3 3",
+          "delay": 1.08,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.36000000000000004,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "path"
+        },
+        {
+          "dash": "3 3",
+          "delay": 1.12,
+          "fx": [
+            "pop"
+          ],
+          "h": 14,
+          "rx": 2,
+          "so": 0.36000000000000004,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "rect",
+          "w": 20,
+          "x": 233,
+          "y": 130
+        },
+        {
+          "d": "M 79 182 L 322 126 L 322 148 Z",
+          "delay": 1.1,
+          "fill": "red",
+          "fo": 0.16,
+          "fx": [
+            "pop",
+            "pulse"
+          ],
+          "t": "path"
+        },
+        {
+          "cap": "round",
+          "delay": 0.9,
+          "fx": [
+            "draw",
+            "pulse"
+          ],
+          "so": 0.9,
+          "stroke": "red",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 79,
+          "x2": 322,
+          "y1": 182,
+          "y2": 126
+        },
+        {
+          "cap": "round",
+          "delay": 0.95,
+          "fx": [
+            "draw",
+            "pulse"
+          ],
+          "so": 0.9,
+          "stroke": "red",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 79,
+          "x2": 322,
+          "y1": 182,
+          "y2": 148
+        },
+        {
+          "delay": 0.6,
+          "fill": "ink",
+          "fx": [
+            "draw"
+          ],
+          "h": 24,
+          "rx": 7,
+          "so": 0.9,
+          "stroke": "pale",
+          "sw": 1.6,
+          "t": "rect",
+          "w": 52,
+          "x": 322,
+          "y": 125
+        },
+        {
+          "d": "M 335 128 L 340 131 L 340 143 L 335 146",
+          "delay": 0.68,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.75,
+          "stroke": "glow",
+          "sw": 1.2,
+          "t": "path"
+        },
+        {
+          "delay": 0.72,
+          "fx": [
+            "draw"
+          ],
+          "h": 14,
+          "rx": 2,
+          "so": 0.75,
+          "stroke": "glow",
+          "sw": 1.2,
+          "t": "rect",
+          "w": 20,
+          "x": 343,
+          "y": 130
+        },
+        {
+          "cap": "round",
+          "delay": 0.75,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.45,
+          "stroke": "pale",
+          "sw": 1.4,
+          "t": "line",
+          "x1": 380,
+          "x2": 410,
+          "y1": 130,
+          "y2": 130
+        },
+        {
+          "cap": "round",
+          "delay": 0.81,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.45,
+          "stroke": "pale",
+          "sw": 1.4,
+          "t": "line",
+          "x1": 380,
+          "x2": 424,
+          "y1": 137,
+          "y2": 137
+        },
+        {
+          "cap": "round",
+          "delay": 0.87,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.45,
+          "stroke": "pale",
+          "sw": 1.4,
+          "t": "line",
+          "x1": 380,
+          "x2": 410,
+          "y1": 144,
+          "y2": 144
+        }
+      ]
+    },
+    "series": "insight",
+    "topics": [
+      "children",
+      "road safety",
+      "child pedestrians",
+      "eye tests",
+      "looming"
+    ],
+    "sources": [
+      {
+        "date": "2011-03-09",
+        "publisher": "Psychological Science",
+        "read": "full",
+        "readVia": "publisher",
+        "title": "Reduced sensitivity to visual looming inflates the risk posed by speeding vehicles when children try to cross the road",
+        "url": "https://doi.org/10.1177/0956797611400917"
+      },
+      {
+        "date": "2017-04-20",
+        "pmcid": "PMC8715675",
+        "publisher": "Journal of Experimental Psychology: Human Perception and Performance",
+        "read": "abstract",
+        "readVia": "europepmc",
+        "title": "Changes in perception-action tuning over long time scales: How children and adults perceive and act on dynamic affordances when crossing roads",
+        "url": "https://doi.org/10.1037/xhp0000378"
+      },
+      {
+        "date": "2026-08-12",
+        "pmcid": "PMC13544160",
+        "publisher": "Child & Youth Care Forum",
+        "read": "full",
+        "readVia": "europepmc",
+        "title": "An Evaluation of Parent and Child Perceptions About Pediatric Pedestrian Safety Skills",
+        "url": "https://doi.org/10.1007/s10566-026-09971-y"
+      },
+      {
+        "date": "2026-09-24",
+        "publisher": "Department for Transport",
+        "read": "full",
+        "readVia": "page",
+        "title": "Reported road casualties Great Britain: child casualty factsheet, 2025",
+        "url": "https://www.gov.uk/government/statistics/reported-road-casualties-great-britain-child-casualty-factsheet/reported-road-casualties-great-britain-child-casualty-factsheet-2025"
+      },
+      {
+        "publisher": "GOV.UK",
+        "read": "full",
+        "readVia": "page",
+        "title": "The Highway Code: rules for pedestrians (1 to 35)",
+        "url": "https://www.gov.uk/guidance/the-highway-code/rules-for-pedestrians-1-to-35"
+      },
+      {
+        "publisher": "NHS",
+        "read": "full",
+        "readVia": "page",
+        "title": "Eye tests for children",
+        "url": "https://www.nhs.uk/tests-and-treatments/eye-tests-in-children/"
+      },
+      {
+        "date": "2026-07-10",
+        "publisher": "Brake",
+        "read": "full",
+        "readVia": "page",
+        "title": "Safe People on the Move: Brake announces Road Safety Week 2026",
+        "url": "https://www.brake.org.uk/how-we-help/raising-awareness/our-current-projects/news-and-blogs/safe-people-on-the-move-brake-announces-road-safety-week-2026"
+      }
+    ],
+    "figure": {
+      "blocks": [
+        {
+          "decimals": 3,
+          "items": [
+            {
+              "label": "6 to 7 year olds",
+              "value": 0.357
+            },
+            {
+              "label": "8 to 9 year olds",
+              "value": 0.335
+            },
+            {
+              "emphasis": true,
+              "label": "10 to 11 year olds",
+              "value": 0.357
+            },
+            {
+              "label": "Adults",
+              "value": 0.218
+            }
+          ],
+          "kind": "bars",
+          "label": "Smallest growth detected, car looked at directly",
+          "unit": "°/s"
+        },
+        {
+          "items": [
+            {
+              "label": "fastest approach children aged 6 to 11 reliably detected",
+              "value": "about 25 mph"
+            },
+            {
+              "label": "the same for adults",
+              "value": "close to 40 mph"
+            },
+            {
+              "label": "average speed of free-flowing traffic outside their schools",
+              "value": "33.92 mph"
+            }
+          ],
+          "kind": "stats",
+          "label": "As car speeds, 5 seconds away"
+        }
+      ],
+      "caption": "Mean thresholds for a simulated car seen for 0.2 seconds with one eye, shifting 1 degree sideways. Lower is better. Speeds assume a car 1.725 m wide, 5 seconds away. 111 children and 27 adults recruited.",
+      "source": "Wann, Poulter and Purcell, Psychological Science, 2011",
+      "title": "Detecting an approaching car: children aged 6 to 11 against adults"
+    },
+    "image": {
+      "src": "/images/insights/children-crossing-road-eye-test.jpg",
+      "alt": "A tree-lined road in Liphook, Hampshire, seen from the pavement: a 20 mph village centre sign, bollards at the kerb, and cars coming in the distance",
+      "license": "Public domain"
+    },
+    "seo": {
+      "keyword": "children crossing the road",
+      "metaDescription": "Children crossing the road may not see a car coming above about 25 mph, a UK study found. What a child's eye test can and cannot tell parents.",
+      "metaTitle": "Children crossing the road: what an eye test can't tell you"
+    },
+    "keyPoints": [
+      "In a UK lab study, children aged 6 to 11 looking at a car 5 seconds away could on average only reliably tell it was coming below about 25 mph once its image shifted. Adults: close to 40.",
+      "Where looming was isolated and the car looked at directly, 10 and 11 year olds did no better than 6 and 7 year olds, and all three groups fell short of adults.",
+      "A sight test measures clear vision and eye health, not the detection of an approaching car, so a good result does not show a child can judge traffic.",
+      "Pedestrians made up 55% of children under 16 killed or seriously injured on Britain's roads between 2021 and 2025, Department for Transport figures show."
+    ],
+    "faq": [
+      {
+        "a": "There is no set age. The Highway Code says the age at which a child can use the Green Cross Code alone is different for each child, that many children cannot judge how fast vehicles are going or how far away they are, and that parents and carers decide. In a Royal Holloway study, children aged 6 to 11 had not reached adult sensitivity to an approaching car. In a US simulator study, 6, 8 and 10 year olds had more collisions than 14 year olds and adults, though 12 year olds already left adult-like time to spare by choosing bigger gaps.",
+        "q": "What age can children cross the road alone?"
+      },
+      {
+        "a": "Not as well as adults: the Highway Code says many children cannot judge how fast vehicles are going or how far away they are. A Royal Holloway study shows one reason. A faster car has to be further away to leave the same time to cross, so it looks smaller and grows more slowly, and children are less able to tell that it is approaching at all. With a car 5 seconds away, children aged 6 to 11 reliably detected its approach, on average, only below about 25 mph, against close to 40 mph for adults.",
+        "q": "Can children judge the speed of cars?"
+      },
+      {
+        "a": "It checks how well a child sees on a letter or picture chart, how their eyes move, whether they need glasses and the health of their eyes. NHS sight tests are free for children under 16, and for young people under 19 in full-time education. It does not test whether a child can detect an approaching car, which in one study was still short of adult levels at 10 and 11.",
+        "q": "What does a child's eye test involve?"
+      }
+    ],
+    "body": [
+      {
+        "text": "Children crossing the road may not be able to tell that a car doing 30 mph, 5 seconds away, is coming towards them. In a study at Royal Holloway, University of London, published in [Psychological Science](https://doi.org/10.1177/0956797611400917), children aged 6 to 11 could on average only reliably tell such a car was approaching below about 25 mph, once its image also shifted as it would with a moving head, against close to 40 mph for adults.",
+        "type": "p"
+      },
+      {
+        "text": "[Road Safety Week](https://www.brake.org.uk/how-we-help/raising-awareness/our-current-projects/news-and-blogs/safe-people-on-the-move-brake-announces-road-safety-week-2026) runs from 15 to 21 November. Pedestrians made up 55% of the children under 16 killed or seriously injured on Britain's roads between 2021 and 2025, according to [the Department for Transport](https://www.gov.uk/government/statistics/reported-road-casualties-great-britain-child-casualty-factsheet/reported-road-casualties-great-britain-child-casualty-factsheet-2025). A sight test does not measure detection of an approaching car, so a good result does not show a child can judge traffic.",
+        "type": "p"
+      },
+      {
+        "text": "What the study did",
+        "type": "h2"
+      },
+      {
+        "text": "The team recruited 111 schoolchildren aged 6 to 7, 8 to 9 and 10 to 11, and 27 adults, all with normal or corrected-to-normal vision. Each looked with one eye at a car on a road scene for 0.2 seconds and said whether it had grown. The car was simulated as 5 seconds away, the children's estimated time to walk across a two-lane road.",
+        "type": "p"
+      },
+      {
+        "text": "The car was looked at directly or shown 4.25 degrees to one side, and either simply grew or also shifted 1 degree sideways, as it would with a moving head, so that only looming, the rate at which the image grows, gave the approach away. The thresholds were converted into the fastest car, 1.725 metres wide, that would still look as if it was approaching.",
+        "type": "p"
+      },
+      {
+        "text": "What was found",
+        "type": "h2"
+      },
+      {
+        "text": "Looking straight at a car that simply grew, children detected its approach above 50 mph. With the sideways shift added and the car still looked at directly, adults could reliably detect a car approaching at close to 40 mph, but children in all three groups only below about 25 mph. With the car just off their line of sight, 6 to 9 year olds could not reliably detect approach above 30 mph. Free-flowing traffic the authors timed outside the children's schools averaged 33.92 mph.",
+        "type": "p"
+      },
+      {
+        "text": "In the condition that isolated looming, with the car looked at directly, the three groups of children did not differ significantly: mean thresholds were 0.357 degrees a second at 6 to 7 and at 10 to 11, and 0.335 at 8 to 9, against 0.218 for adults, who did better than all three. No child older than 11 was tested, and the authors conclude the ability is not fully developed until adulthood.",
+        "type": "p"
+      },
+      {
+        "text": "In [a simulator study of crossing](https://doi.org/10.1037/xhp0000378) from the University of Iowa, children of 6, 8 and 10 left less time to spare and had more collisions than 14 year olds and adults. The timing of stepping in behind a passing car reached adult levels by 14, and 12 year olds already left adult-like time to spare by choosing bigger gaps.",
+        "type": "p"
+      },
+      {
+        "text": "Children crossing the road: what an eye test cannot tell parents",
+        "type": "h2"
+      },
+      {
+        "text": "A child's sight test checks acuity on a letter or picture chart, eye movements, the need for glasses and eye health, as [the NHS](https://www.nhs.uk/tests-and-treatments/eye-tests-in-children/) describes it, and it can find [a squint](/news/orthoptist-vs-optometrist-squint). None of it measures detection of something coming towards the child. Every child in this study had normal or corrected vision, and the limit was still there.",
+        "type": "p"
+      },
+      {
+        "text": "[The Highway Code](https://www.gov.uk/guidance/the-highway-code/rules-for-pedestrians-1-to-35) says many children cannot judge how fast vehicles are going or how far away they are, and that parents and carers decide when a child can cross alone. In [a 2026 study](https://doi.org/10.1007/s10566-026-09971-y) of 497 children aged 7 and 8 in Alabama, parents' estimates of their child's safe crossing were only weakly linked to how the child crossed in virtual traffic, and the children's own estimates not significantly. The authors advise talking with both.",
+        "type": "p"
+      },
+      {
+        "text": "Why it matters in practice",
+        "type": "h2"
+      },
+      {
+        "items": [
+          "Give the result with its limit: a sight test confirms clear vision and healthy eyes, not readiness to cross alone.",
+          "If a child needs glasses for distance, the kerb is one of the places to wear them.",
+          "Our reading, not something the study tested: stop at the kerb, stand still and look straight at each car. Detection was worst with the car off the line of sight or the image moving.",
+          "The authors argue that above 20 mph near homes and schools a child is more likely to cross in front of a car. Where there is a crossing nearby, the Highway Code says to use it."
+        ],
+        "type": "ul"
+      },
+      {
+        "text": "The caveats",
+        "type": "h2"
+      },
+      {
+        "items": [
+          "A laboratory study from 2011: 0.2-second views of a simulated car with one eye, not children at a real kerb, measuring detection, not crossing or injury.",
+          "The speeds are calculated and specific to this task: adults' mean threshold was 0.063 degrees a second when the car simply grew, 0.218 when it shifted. The firm finding is the gap between children and adults.",
+          "Unreliable or unfinished participants were excluded, so the shifted-image results rest on fewer than the 111 children and 27 adults recruited, from three schools.",
+          "The simulator study was read as an abstract only, and the Alabama study used virtual traffic."
+        ],
+        "type": "ul"
+      }
+    ]
+  },
+  {
+    "slug": "diabetic-eye-screening-incidental-findings",
+    "title": "Diabetic screening in Trinidad: 167 glaucoma suspects, 83 never came",
+    "date": "2026-11-16",
+    "readingMinutes": 4,
+    "excerpt": "In diabetic eye screening, incidental findings are common: Trinidad flagged 167 of 1,754 adults as glaucoma suspects. England leaves them to local rules.",
+    "cover": {
+      "about": "A diabetic screening camera, side on, its lens lit towards an eye, and on its monitor the photograph it has just taken: the retinopathy grade ticked, a naevus above the macula, and a wide optic cup pulsing red. What the camera records that the screen was not built to look for.",
+      "name": "screening-camera-finding",
+      "shapes": [
+        {
+          "cap": "round",
+          "delay": 0,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.3,
+          "stroke": "pale",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 28,
+          "x2": 384,
+          "y1": 206,
+          "y2": 206
+        },
+        {
+          "delay": 0.08,
+          "fill": "ink",
+          "fx": [
+            "draw"
+          ],
+          "h": 16,
+          "rx": 3,
+          "so": 0.45,
+          "stroke": "pale",
+          "sw": 1.4,
+          "t": "rect",
+          "w": 184,
+          "x": 50,
+          "y": 190
+        },
+        {
+          "delay": 0.15,
+          "fill": "ink",
+          "fx": [
+            "draw"
+          ],
+          "h": 56,
+          "rx": 8,
+          "so": 0.7,
+          "stroke": "pale",
+          "sw": 1.6,
+          "t": "rect",
+          "w": 148,
+          "x": 68,
+          "y": 134
+        },
+        {
+          "cap": "round",
+          "delay": 0.3,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.3,
+          "stroke": "pale",
+          "sw": 2,
+          "t": "line",
+          "x1": 84,
+          "x2": 120,
+          "y1": 152,
+          "y2": 152
+        },
+        {
+          "cap": "round",
+          "delay": 0.34,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.3,
+          "stroke": "pale",
+          "sw": 2,
+          "t": "line",
+          "x1": 84,
+          "x2": 108,
+          "y1": 164,
+          "y2": 164
+        },
+        {
+          "cx": 192,
+          "cy": 172,
+          "delay": 0.38,
+          "fx": [
+            "pop"
+          ],
+          "r": 6,
+          "so": 0.55,
+          "stroke": "teal",
+          "sw": 1.3,
+          "t": "circle"
+        },
+        {
+          "delay": 0.3,
+          "fill": "ink",
+          "fx": [
+            "draw"
+          ],
+          "h": 30,
+          "rx": 4,
+          "so": 0.7,
+          "stroke": "pale",
+          "sw": 1.6,
+          "t": "rect",
+          "w": 48,
+          "x": 216,
+          "y": 146
+        },
+        {
+          "delay": 0.4,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.25,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "line",
+          "x1": 228,
+          "x2": 228,
+          "y1": 146,
+          "y2": 176
+        },
+        {
+          "cx": 266,
+          "cy": 161,
+          "delay": 0.45,
+          "fill": "teal",
+          "fo": 0.18,
+          "fx": [
+            "pop"
+          ],
+          "rx": 4,
+          "ry": 13,
+          "so": 0.95,
+          "stroke": "teal",
+          "sw": 1.8,
+          "t": "ellipse"
+        },
+        {
+          "delay": 0.55,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.4,
+          "stroke": "glow",
+          "sw": 1,
+          "t": "line",
+          "x1": 270,
+          "x2": 318,
+          "y1": 150,
+          "y2": 158
+        },
+        {
+          "delay": 0.55,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.4,
+          "stroke": "glow",
+          "sw": 1,
+          "t": "line",
+          "x1": 270,
+          "x2": 318,
+          "y1": 172,
+          "y2": 164
+        },
+        {
+          "dash": "2 4",
+          "delay": 0.6,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.22,
+          "stroke": "glow",
+          "sw": 1,
+          "t": "line",
+          "x1": 270,
+          "x2": 318,
+          "y1": 161,
+          "y2": 161
+        },
+        {
+          "cx": 342,
+          "cy": 161,
+          "delay": 0.6,
+          "fill": "ink",
+          "fx": [
+            "draw"
+          ],
+          "r": 22,
+          "so": 0.6,
+          "stroke": "pale",
+          "sw": 1.5,
+          "t": "circle"
+        },
+        {
+          "cap": "round",
+          "d": "M 319.5 169 A 14 14 0 0 1 319.5 153",
+          "delay": 0.7,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.8,
+          "stroke": "pale",
+          "sw": 1.5,
+          "t": "path"
+        },
+        {
+          "cx": 326,
+          "cy": 161,
+          "delay": 0.75,
+          "fx": [
+            "pop"
+          ],
+          "rx": 2.6,
+          "ry": 6.5,
+          "so": 0.6,
+          "stroke": "pale",
+          "sw": 1.1,
+          "t": "ellipse"
+        },
+        {
+          "cap": "round",
+          "d": "M 352.9 145.4 A 19 19 0 0 1 352.9 176.6",
+          "delay": 0.8,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.85,
+          "stroke": "teal",
+          "sw": 2,
+          "t": "path"
+        },
+        {
+          "cap": "round",
+          "d": "M 362 154 L 384 150",
+          "delay": 0.85,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.5,
+          "stroke": "pale",
+          "sw": 1.3,
+          "t": "path"
+        },
+        {
+          "cap": "round",
+          "d": "M 362 168 L 384 172",
+          "delay": 0.85,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.5,
+          "stroke": "pale",
+          "sw": 1.3,
+          "t": "path"
+        },
+        {
+          "cap": "round",
+          "d": "M 318 196 C 320 197.3, 324 202.7, 330 204 C 336 205.3, 348 205.3, 354 204 C 360 202.7, 364 197.3, 366 196",
+          "delay": 0.5,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.35,
+          "stroke": "pale",
+          "sw": 1.4,
+          "t": "path"
+        },
+        {
+          "cap": "round",
+          "delay": 0.2,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.55,
+          "stroke": "pale",
+          "sw": 2.2,
+          "t": "line",
+          "x1": 142,
+          "x2": 142,
+          "y1": 124,
+          "y2": 134
+        },
+        {
+          "delay": 0.2,
+          "fill": "ink",
+          "fx": [
+            "draw"
+          ],
+          "h": 106,
+          "rx": 6,
+          "so": 0.75,
+          "stroke": "pale",
+          "sw": 1.6,
+          "t": "rect",
+          "w": 172,
+          "x": 56,
+          "y": 18
+        },
+        {
+          "cx": 142,
+          "cy": 66,
+          "delay": 0.35,
+          "fill": "teal",
+          "fo": 0.07,
+          "fx": [
+            "draw"
+          ],
+          "r": 40,
+          "so": 0.5,
+          "stroke": "teal",
+          "sw": 1.3,
+          "t": "circle"
+        },
+        {
+          "cap": "round",
+          "d": "M 158 58 C 156.5 55.8, 153.2 48.3, 149 45 C 144.8 41.7, 138.3 38.7, 133 38 C 127.7 37.3, 121.5 39, 117 41 C 112.5 43, 107.8 48.5, 106 50",
+          "delay": 0.5,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.8,
+          "stroke": "teal",
+          "sw": 1.5,
+          "t": "path"
+        },
+        {
+          "cap": "round",
+          "d": "M 158 72 C 156.5 74.2, 153.2 81.7, 149 85 C 144.8 88.3, 138.3 91.3, 133 92 C 127.7 92.7, 121.5 91, 117 89 C 112.5 87, 107.8 81.5, 106 80",
+          "delay": 0.55,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.8,
+          "stroke": "teal",
+          "sw": 1.5,
+          "t": "path"
+        },
+        {
+          "cap": "round",
+          "d": "M 170 58 C 171 56.5, 174.7 52, 176 49 C 177.3 46, 177.7 41.5, 178 40",
+          "delay": 0.6,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.8,
+          "stroke": "teal",
+          "sw": 1.1,
+          "t": "path"
+        },
+        {
+          "cap": "round",
+          "d": "M 170 72 C 171 73.5, 174.7 78, 176 81 C 177.3 84, 177.7 88.5, 178 90",
+          "delay": 0.65,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.8,
+          "stroke": "teal",
+          "sw": 1.1,
+          "t": "path"
+        },
+        {
+          "cap": "round",
+          "d": "M 133 38 C 131.8 36.8, 127.2 32.2, 126 31",
+          "delay": 0.7,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.8,
+          "stroke": "teal",
+          "sw": 0.9,
+          "t": "path"
+        },
+        {
+          "cap": "round",
+          "d": "M 133 92 C 131.8 93.3, 127.2 98.7, 126 100",
+          "delay": 0.75,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.8,
+          "stroke": "teal",
+          "sw": 0.9,
+          "t": "path"
+        },
+        {
+          "cap": "round",
+          "d": "M 172 65 C 173.5 64.8, 179.5 64.2, 181 64",
+          "delay": 0.8,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.8,
+          "stroke": "teal",
+          "sw": 0.9,
+          "t": "path"
+        },
+        {
+          "cx": 128,
+          "cy": 68,
+          "delay": 0.7,
+          "fill": "teal",
+          "fo": 0.14,
+          "fx": [
+            "pop"
+          ],
+          "r": 8,
+          "t": "circle"
+        },
+        {
+          "cx": 128,
+          "cy": 68,
+          "delay": 0.75,
+          "fill": "teal",
+          "fo": 0.75,
+          "fx": [
+            "pop"
+          ],
+          "r": 2.6,
+          "t": "circle"
+        },
+        {
+          "cx": 125,
+          "cy": 51,
+          "delay": 1,
+          "fill": "ink",
+          "fo": 0.9,
+          "fx": [
+            "pop"
+          ],
+          "rx": 7,
+          "ry": 4.6,
+          "so": 0.45,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "ellipse"
+        },
+        {
+          "cap": "round",
+          "delay": 1.1,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.55,
+          "stroke": "teal",
+          "sw": 2.2,
+          "t": "line",
+          "x1": 70,
+          "x2": 98,
+          "y1": 115,
+          "y2": 115
+        },
+        {
+          "cap": "round",
+          "d": "M 104 114 L 108 118 L 116 109",
+          "delay": 1.2,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.95,
+          "stroke": "teal",
+          "sw": 1.8,
+          "t": "path"
+        },
+        {
+          "cap": "round",
+          "delay": 1.15,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.3,
+          "stroke": "pale",
+          "sw": 2,
+          "t": "line",
+          "x1": 190,
+          "x2": 214,
+          "y1": 115,
+          "y2": 115
+        },
+        {
+          "cx": 164,
+          "cy": 65,
+          "delay": 0.6,
+          "fill": "pale",
+          "fo": 0.14,
+          "fx": [
+            "pop"
+          ],
+          "r": 9.5,
+          "so": 0.9,
+          "stroke": "pale",
+          "sw": 1.3,
+          "t": "circle"
+        },
+        {
+          "cx": 164.6,
+          "cy": 64.6,
+          "delay": 1.45,
+          "fill": "red",
+          "fo": 0.9,
+          "fx": [
+            "pop",
+            "pulse"
+          ],
+          "r": 6.6,
+          "t": "circle"
+        }
+      ]
+    },
+    "series": "insight",
+    "topics": [
+      "diabetic eye screening",
+      "incidental findings",
+      "glaucoma",
+      "fundus photography",
+      "referrals"
+    ],
+    "sources": [
+      {
+        "date": "2026-06-03",
+        "publisher": "Clinical Ophthalmology",
+        "title": "Opportunistic Glaucoma Detection in a Diabetic Eye Screening Program: Yield and Feasibility in a Caribbean Population",
+        "url": "https://doi.org/10.2147/OPTH.S600638"
+      },
+      {
+        "date": "2026-08-17",
+        "publisher": "Ophthalmic Surgery, Lasers and Imaging Retina",
+        "title": "Prevalence of Potentially Sight-Threatening Pathology Detected by Non-Mydriatic Fundus Photography in a National Diabetic Screening Platform",
+        "url": "https://doi.org/10.3928/23258160-20260717-02"
+      },
+      {
+        "date": "2026-07-03",
+        "publisher": "Eye",
+        "title": "Long-term follow-up and outcomes of a Diabetic Eye Screening Programme in patients aged 80 with no diabetic eye disease at baseline: should we be routinely screening this cohort?",
+        "url": "https://doi.org/10.1038/s41433-026-04699-4"
+      },
+      {
+        "date": "2024-06-20",
+        "publisher": "British Journal of Ophthalmology",
+        "title": "Evaluating the outcome of screening for glaucoma using colour fundus photography-based referral criteria in a teleophthalmology screening programme for diabetic retinopathy",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11228193/"
+      },
+      {
+        "date": "2021-12-14",
+        "publisher": "BMJ Open",
+        "title": "Evaluation of the prevalence of non-diabetic eye disease detected at first screen from a single region diabetic retinopathy screening program: a cross-sectional cohort study in Auckland, New Zealand",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8672006/"
+      },
+      {
+        "date": "2024-09-27",
+        "publisher": "NHS England (GOV.UK)",
+        "title": "Diabetic eye screening: managing referrals to hospital eye services",
+        "url": "https://www.gov.uk/government/publications/diabetic-eye-screening-programme-failsafe-procedures/diabetic-eye-screening-managing-referrals-to-hospital-eye-services"
+      },
+      {
+        "date": "2025-08-29",
+        "publisher": "NHS England (GOV.UK)",
+        "title": "Your guide to diabetic eye screening",
+        "url": "https://www.gov.uk/government/publications/diabetic-eye-screening-description-in-brief/your-guide-to-diabetic-eye-screening"
+      }
+    ],
+    "figure": {
+      "blocks": [
+        {
+          "kind": "flow",
+          "label": "Glaucoma suspects on screening photographs, Trinidad",
+          "steps": [
+            {
+              "label": "1,754 adults screened",
+              "note": "type 2 diabetes, 31 community sites, 2023"
+            },
+            {
+              "label": "167 met glaucoma suspect criteria",
+              "note": "9.5% of those screened"
+            },
+            {
+              "label": "45 completed, 83 never came",
+              "note": "39 came but did not finish"
+            },
+            {
+              "label": "28 had glaucoma",
+              "note": "10 of them newly diagnosed"
+            }
+          ]
+        },
+        {
+          "decimals": 0,
+          "items": [
+            {
+              "label": "Unassessable images",
+              "value": 142
+            },
+            {
+              "emphasis": true,
+              "label": "AMD",
+              "value": 97
+            },
+            {
+              "label": "Diabetic retinopathy or maculopathy",
+              "value": 89
+            },
+            {
+              "label": "Cataract",
+              "value": 69
+            },
+            {
+              "label": "Retinal vein occlusion",
+              "value": 49
+            },
+            {
+              "label": "Glaucoma",
+              "value": 19
+            }
+          ],
+          "kind": "bars",
+          "label": "Reasons for 532 referrals, South East London"
+        }
+      ],
+      "caption": "Trinidad and Tobago: 1,754 adults with type 2 diabetes screened in 2023. South East London: reasons for 532 referrals among 3,599 people aged 80 with no retinopathy, followed from 2009 to 2025.",
+      "source": "Affoo et al., Clinical Ophthalmology 2026; Paris et al., Eye 2026",
+      "title": "What diabetic screening photographs flag, and what becomes of it"
+    },
+    "seo": {
+      "keyword": "diabetic eye screening incidental findings",
+      "metaDescription": "Diabetic eye screening incidental findings, from glaucoma to AMD: in Trinidad 28 of 45 suspects assessed had glaucoma. What it means for UK optometrists.",
+      "metaTitle": "Diabetic eye screening incidental findings: what next"
+    },
+    "keyPoints": [
+      "In Trinidad and Tobago, 167 of 1,754 adults screened for diabetic retinopathy in 2023 met glaucoma suspect criteria. 28 of the 45 fully assessed had glaucoma, 10 newly diagnosed.",
+      "83 of the 167 never came, and the authors suggest paying for fields and OCT as one possible reason. In Singapore, 369 of 2,625 suspects seen at the national eye centre (14.1%) had glaucoma.",
+      "In South East London, of 532 people screened at 80 with no retinopathy and later referred, 301 were referred for non-diabetic causes, AMD (97) ahead of diabetic eye disease (89).",
+      "In England, managing incidental findings is outside the programme's scope, and failsafing their referrals is not its role. The NHS guide says screening does not look for other eye conditions."
+    ],
+    "faq": [
+      {
+        "a": "The photographs show the optic disc, the macula and the blood vessels, so other conditions appear on them. A US platform reported suspected glaucoma on 6% of 1,190,754 screening exams, AMD on 3% and epiretinal membrane on 1%, with papilloedema, melanoma and retinal detachment among a further 10%, though only the abstract could be read. In Auckland, 45% of people had at least one non-diabetic finding at their first screen.",
+        "q": "What does diabetic eye screening show besides diabetic retinopathy?"
+      },
+      {
+        "a": "It can flag a suspicious optic disc, but a photograph is not a diagnosis. In Trinidad and Tobago, 28 of the 45 flagged people who completed an assessment had glaucoma. In Singapore's national programme, 369 of 2,625 suspects referred in 2017 and 2018 and seen at the Singapore National Eye Centre (14.1%) were confirmed. A visual field, OCT and a clinical examination decide it.",
+        "q": "Can diabetic eye screening detect glaucoma?"
+      },
+      {
+        "a": "No. NHS England's guide for people invited to screening says it is not part of normal eye examinations with an optician and does not look for other eye conditions, and that people should keep visiting their optician for regular eye examinations as well.",
+        "q": "Is diabetic eye screening the same as an eye test?"
+      },
+      {
+        "a": "In England, managing incidental findings is outside the screening programme's scope. Local services may refer directly under their own procedure, with the person's GP informed, but the screening service does not failsafe those referrals, and the person stays on the screening register. In South East London, most referrals of people screened at 80 with no retinopathy were for non-diabetic causes.",
+        "q": "What happens if diabetic eye screening finds something else?"
+      }
+    ],
+    "body": [
+      {
+        "text": "In diabetic eye screening, incidental findings come with the photograph. In Trinidad and Tobago, 167 of 1,754 adults with diabetes screened in 2023 had photographs that met the programme's glaucoma suspect criteria, and 28 of the 45 who completed a hospital assessment had glaucoma, 10 of them newly diagnosed ([Clinical Ophthalmology, June 2026](https://doi.org/10.2147/OPTH.S600638)).",
+        "type": "p"
+      },
+      {
+        "text": "Of the rest, 83 never came to the clinic and 39 came without finishing. In England, [NHS guidance](https://www.gov.uk/government/publications/diabetic-eye-screening-programme-failsafe-procedures/diabetic-eye-screening-managing-referrals-to-hospital-eye-services) puts managing incidental findings outside the screening programme's scope, and the NHS screening guide says it does not look for other eye conditions.",
+        "type": "p"
+      },
+      {
+        "text": "Diabetic eye screening incidental findings: what the camera sees",
+        "type": "h2"
+      },
+      {
+        "text": "A US national telemedicine platform counted 1,190,754 gradable exams from non-mydriatic cameras in primary care over nine years (Ophthalmic Surgery, Lasers and Imaging Retina, August 2026). Pathology showed on 32%, diabetic retinopathy and macular oedema among it. Suspected glaucoma was reported on 6%, AMD on 3%, epiretinal membrane on 1%, and 10% had other pathology, including papilloedema, melanoma, posterior uveitis and retinal detachment. Only the abstract could be read, and these are readings of photographs, not diagnoses.",
+        "type": "p"
+      },
+      {
+        "text": "In Auckland, 45% of 22,771 people had a non-diabetic finding at their first screen, most often drusen, hypertensive retinopathy or cataract.",
+        "type": "p"
+      },
+      {
+        "text": "Local services in England do refer some of them. In South East London, 3,599 people aged 80 with no retinopathy at the start were followed for a mean of 8.51 years, and 532 were referred to hospital ([Eye, July 2026](https://doi.org/10.1038/s41433-026-04699-4)). 301 (56.6%) were referred for non-diabetic causes, among them AMD (97), cataract (69), vein occlusion (49) and glaucoma (19), against 89 for diabetic eye disease. 26 did not attend their appointment.",
+        "type": "p"
+      },
+      {
+        "text": "What the Trinidad study did",
+        "type": "h2"
+      },
+      {
+        "text": "This is a retrospective analysis of the Trinidad Eye Hospital's free screening of adults with type 2 diabetes at 31 community sites in 2023, graded by technicians. A cup-to-disc ratio of 0.6 or more, an asymmetry of 0.2, a disc haemorrhage or a suspected nerve fibre layer defect meant referral for tonometry, a 30-2 field, OCT and a dilated examination.",
+        "type": "p"
+      },
+      {
+        "text": "What was found",
+        "type": "h2"
+      },
+      {
+        "text": "167 people (9.5%) met the criteria. 45 completed the assessment, 39 attended without completing it and 83 never came. The authors suggest cost as one reason: patients paid for the field and the OCT.",
+        "type": "p"
+      },
+      {
+        "text": "28 of the 45 had glaucoma, a positive predictive value of 62.2%: 24 primary open-angle and 4 primary angle-closure. 10 were new diagnoses and 18 were already being treated. 19 of the 28 had no family history, and only 11 of the 167 had any diabetic retinopathy, so most, the authors note, were referred for glaucoma alone.",
+        "type": "p"
+      },
+      {
+        "text": "How often a flagged disc is glaucoma",
+        "type": "h2"
+      },
+      {
+        "text": "Singapore's national programme grades conditions beyond retinopathy, from AMD to vein occlusion, and refers glaucoma suspects. Of 2,625 suspects referred in 2017 and 2018 and seen at the Singapore National Eye Centre, 369 (14.1%) had glaucoma, against 82 of 2,398 people referred for other reasons.",
+        "type": "p"
+      },
+      {
+        "text": "The two rates are not like for like. Singapore's cup-to-disc cut-off was 0.65, measured by software, and Trinidad's 0.6. Trinidad could confirm glaucoma on structural damage alone, 18 of its 28 cases were already being treated, and its authors note that glaucoma is highly prevalent in the Caribbean. They also cite a study in Brent, London, where screening's glaucoma referrals had a positive predictive value of 78.8% (not read here). Auckland's authors argued against referring glaucoma suspects from routine screening.",
+        "type": "p"
+      },
+      {
+        "text": "Why it matters in practice",
+        "type": "h2"
+      },
+      {
+        "items": [
+          "A screening result is not an eye examination: the NHS guide says screening does not look for other eye conditions, so the disc and macula still need examining at the sight test.",
+          "Ask what screening said. Failsafing a referral for an incidental finding is not the screening service's role, as it is for sight-threatening retinopathy, so a patient who mentions their optic nerve or a mark at the back of the eye is worth checking was seen.",
+          "Treat a flagged disc as a reason to assess, not a diagnosis: in Singapore, 14.1% of suspects seen in hospital had glaucoma.",
+          "Normal pressure is not reassurance: in Singapore, the highest clinic pressure was 21 mmHg or less in 57.2% of the 451 people found to have glaucoma.",
+          "The South East London authors propose ending routine recall at 80 for people with no retinopathy, or making it opt-in, and call for optometrist-led eye examinations aimed at non-diabetic disease. A finding needs someone at the other end of it, as in [a Danish optician chain's consultant-reviewed OCT service](/news/denmark-oct-teleophthalmology-referrals)."
+        ],
+        "type": "ul"
+      },
+      {
+        "text": "The caveats",
+        "type": "h2"
+      },
+      {
+        "items": [
+          "Trinidad is one programme's year, with voluntary attendance, and only 45 of 167 were fully assessed, so the 62.2% may not hold for the rest. Nobody who was not flagged was examined.",
+          "The US figures come from the abstract alone, and one of the three authors is at Intelligent Retinal Imaging Systems.",
+          "Singapore counted only suspects who kept their hospital appointment.",
+          "South East London reports outcomes for its diabetic referrals but only the reasons for the non-diabetic ones.",
+          "Apart from the Brent study the Trinidad authors cite, none of these follows a non-diabetic referral from an English programme through to a diagnosis."
+        ],
+        "type": "ul"
+      }
+    ]
+  },
+  {
     "slug": "diabetic-eye-screening-every-2-years",
     "title": "Diabetic eye screening every 2 years: the evidence, and who waits",
     "date": "2026-11-09",
