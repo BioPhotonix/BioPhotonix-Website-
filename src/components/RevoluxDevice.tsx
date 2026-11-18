@@ -17,7 +17,19 @@ import Image from "next/image";
  * The light builds over five seconds and then holds, rather than pulsing,
  * because that is what a treatment session does. Under reduced motion it is
  * simply present at full strength.
+ *
+ * `label` prints the device's name on the black control box, so a reader can
+ * tell at a glance what the device is called. It is measured the same way:
+ * the box's front face runs from y 316 to 428 of the 660 pixels, and the box
+ * is centred on the device's own axis, x 152.3, the midpoint of the two
+ * apertures. Its darkest pixels stop at x 241 only because the right-hand
+ * bevel catches the light, so centring on the dark area alone would put the
+ * name 6px left of the box. Sized in container units, so it keeps the same
+ * proportion to the box at every width.
  */
+
+/** Centre of the control box's front face, as a share of the render. */
+const CONTROL_BOX = { x: 49.94, y: 56.36 } as const;
 
 /** Aperture centres, as a share of the render's width and height. */
 const APERTURES = [
@@ -31,11 +43,13 @@ type Props = {
   sizes: string;
   priority?: boolean;
   className?: string;
+  /** Name to print on the control box, if any. */
+  label?: string;
 };
 
-export default function RevoluxDevice({ alt, sizes, priority = false, className = "" }: Props) {
+export default function RevoluxDevice({ alt, sizes, priority = false, className = "", label }: Props) {
   return (
-    <div className={`vt-device relative aspect-[305/660] ${className}`}>
+    <div className={`vt-device relative aspect-[305/660] ${label ? "[container-type:inline-size]" : ""} ${className}`}>
       <Image
         src="/images/revolux-front.png"
         alt={alt}
@@ -45,6 +59,17 @@ export default function RevoluxDevice({ alt, sizes, priority = false, className 
         sizes={sizes}
         className="absolute inset-0 h-full w-full object-contain drop-shadow-[0_30px_60px_rgba(27,195,205,0.22)]"
       />
+
+      {/* Decorative: the image's alt text already names the device. */}
+      {label && (
+        <span
+          aria-hidden="true"
+          className="device-label pointer-events-none absolute -translate-x-1/2 -translate-y-1/2"
+          style={{ left: `${CONTROL_BOX.x}%`, top: `${CONTROL_BOX.y}%` }}
+        >
+          {label}
+        </span>
+      )}
 
       {APERTURES.map((a) => (
         <span key={a.x} aria-hidden="true" className="pointer-events-none absolute inset-0">

@@ -1,17 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
 import Button from "@/components/Button";
-import BurdenChart from "@/components/BurdenChart";
 import ContactForm from "@/components/ContactForm";
 import Hero from "@/components/Hero";
 import PathwayDiagram from "@/components/PathwayDiagram";
+import PortraitCrowd from "@/components/PortraitCrowd";
 import PostArt from "@/components/PostArt";
 import CardMark from "@/components/CardMark";
 import Reveal from "@/components/Reveal";
 import Roadmap from "@/components/Roadmap";
 import SectionHeading from "@/components/SectionHeading";
 import StandardsTicker from "@/components/StandardsTicker";
-import StatCounter from "@/components/StatCounter";
+import FactsGallery from "@/components/FactsGallery";
 import TechCard from "@/components/TechCard";
 import { posts } from "@/content/posts";
 import { burden, clinics, contact, founder, revolux, roadmap, shift, site } from "@/content/site";
@@ -27,30 +27,13 @@ export default function HomePage() {
 
       {/* The burden of dry AMD */}
       <section className="shell py-20 md:py-28">
-        <SectionHeading eyebrow={burden.eyebrow} title={burden.title} intro={burden.intro} />
-        <dl className="mt-14 grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
-          {burden.stats.map((s, i) => (
-            <Reveal key={s.label} delay={i * 0.06} className="bg-ink-900 p-7">
-              <dt className="sr-only">{s.label}</dt>
-              <dd>
-                <span className="block text-4xl font-medium text-fog md:text-5xl">
-                  <StatCounter value={s.value} prefix={s.prefix} suffix={s.suffix} />
-                </span>
-                <span className="mt-3 block text-sm leading-relaxed text-fog">{s.label}</span>
-              </dd>
-            </Reveal>
-          ))}
-        </dl>
-        <div className="mt-6">
-          <BurdenChart />
-        </div>
-        <Reveal className="mt-6 rounded-2xl border border-line bg-ink-900 p-7">
-          <div className="flex flex-col gap-3 md:flex-row md:items-center md:gap-8">
-            <span className="text-4xl font-medium text-ember-text md:text-5xl">{burden.cost.value}</span>
-            <p className="text-base leading-relaxed text-fog">{burden.cost.label}</p>
-          </div>
-          <p className="mt-4 text-xs text-fog">Source: {burden.cost.source}</p>
+        <SectionHeading title={burden.title} intro={burden.intro} />
+        <Reveal className="mt-14">
+          <FactsGallery />
         </Reveal>
+        <div className="mt-6">
+          <PortraitCrowd />
+        </div>
       </section>
 
       {/* From observation to intervention */}

@@ -407,6 +407,83 @@
    only styling here is the frame. pan-y keeps vertical scrolling alive on a
    phone: the simulator takes taps, not drags, on touch. */
 /*
+ * The growth figure on the landing page. The crowd greys out, then a dark,
+ * soft-edged patch spreads from the centre with the message inside it. The
+ * patch is three offset gradients rather than one circle, so its edge is
+ * uneven, as a real scotoma's is.
+ */
+.crowd-canvas {
+  transition: filter 2.5s var(--ease-out-expo);
+}
+.crowd-canvas[data-grey="true"] {
+  filter: grayscale(1) brightness(0.82);
+}
+.crowd-scotoma {
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(4, 8, 10, 0.97) 0%, rgba(4, 8, 10, 0.95) 42%, rgba(4, 8, 10, 0.72) 57%, rgba(4, 8, 10, 0) 71%),
+    radial-gradient(circle at 36% 40%, rgba(4, 8, 10, 0.62) 0%, rgba(4, 8, 10, 0) 56%),
+    radial-gradient(circle at 64% 62%, rgba(4, 8, 10, 0.58) 0%, rgba(4, 8, 10, 0) 54%);
+  filter: blur(3px);
+  opacity: 0;
+  transform: scale(0.15);
+  transition: opacity 1.4s var(--ease-out-expo), transform 2.6s var(--ease-out-expo);
+}
+.crowd-scotoma[data-on="true"] {
+  opacity: 1;
+  transform: scale(1);
+}
+.crowd-message {
+  opacity: 0;
+  transition: opacity 1.2s var(--ease-out-expo) 1.4s;
+}
+.crowd-message[data-on="true"] {
+  opacity: 1;
+}
+
+/*
+ * The facts gallery. Every fact a side slot can show is stacked in the same
+ * grid cell, so the slot is as tall as its longest fact; only the one "in" is
+ * visible. Moving forward, the next fact slides in from the right and the
+ * last one out to the left; --dir flips both for the back button.
+ */
+.fact-slide {
+  grid-area: 1 / 1;
+  transition: opacity 0.6s var(--ease-out-expo), transform 0.6s var(--ease-out-expo), visibility 0.6s;
+}
+.fact-slide[data-phase="in"] {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
+}
+.fact-slide[data-phase="out"] {
+  opacity: 0;
+  transform: translateX(calc(var(--dir) * -28px));
+  visibility: hidden;
+}
+.fact-slide[data-phase="wait"] {
+  opacity: 0;
+  transform: translateX(calc(var(--dir) * 28px));
+  visibility: hidden;
+  transition: none;
+}
+
+/*
+ * The device's name on its control box. Arial, as the company asked, in the
+ * site's teal; 8.8% of the device's width puts the word across a little over
+ * half the box face at any size.
+ */
+.device-label {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 8.8cqw;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  color: var(--color-teal-400);
+}
+
+/*
  * The simulator is sized to the screen as well as the column. Its scene
  * buttons, picture, slider and stage names have to fit on one screen under the
  * fixed header, because moving the slider and watching the picture change is

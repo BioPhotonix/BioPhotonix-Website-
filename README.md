@@ -116,7 +116,23 @@ All in `src/components`:
   head of each affected figure has a dark centre for the central vision dry
   AMD takes. It plays once on scroll, then the year can be dragged.
 - **BurdenChart** places that frame beside a hundred-square grid of dry
-  against wet AMD. Used on the home and investors pages.
+  against wet AMD. Used on the investors page.
+- **PortraitCrowd** is the landing page's version of the same story, told
+  with people: one older person's face, then hundreds as the view widens
+  slowly over fourteen seconds, then the crowd turns grey and a central
+  scotoma spreads over it with the message in its middle. Drawn on a canvas so
+  every face is sharp at every step of the zoom. The 24 faces round the first
+  one are all different people, and no face sits beside itself anywhere. It
+  plays once when half on screen, offers a replay, and shows the finished
+  picture under reduced motion.
+- **FactsGallery** shows the seven AMD facts three at a time: the UK cost
+  fixed in the centre, the other six rotating through the slots either side
+  in pairs every five seconds. It holds while the pointer or focus is on it,
+  has a pause button, never starts on its own under reduced motion, and gives
+  screen readers all seven as one list.
+- **RevoluxDevice** takes an optional `label`, the device's name printed on
+  its control box in teal Arial. Only the landing page's hero sets it; the
+  position is measured from the render, as the eyepiece glows are.
 - **PathwayDiagram** lights up the care pathway as it is, then the pathway
   with Revolux.
 - **RevoluxExplainer** is a tablist with five drawings of the binocular head:
@@ -364,6 +380,16 @@ invisible pixels are not a uniform colour. `build-images.mjs` crops to the
 `source-images/` and add a line to the `views` list in that script. To add a photograph, drop the
 original in `source-images/`, add a line to `scripts/build-images.mjs` and
 run it.
+
+The portraits in the landing page's growth figure are stock photographs from
+Pexels, built by `npm run build:portraits` into one sheet of 256px faces and a
+1200px copy of the opening face, about 280 KB in all, loaded only as the
+figure nears the screen. The ids and the sheet's layout are in
+`src/content/portraits.json`, the one place to change them; the script fetches
+each by id, so nothing needs keeping outside the repo. They are illustrations,
+not people known to have AMD, and the figure's source line says so: a stock
+licence does not cover presenting an identifiable person as having a medical
+condition.
 
 The logo is the brand mark plus a wordmark set in type (`Logo.tsx`), because
 the supplied logo has a black wordmark that vanishes on the dark palette. The

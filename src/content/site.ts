@@ -44,27 +44,27 @@ export const nav = [
 export const headerCta = { label: "Get in touch", href: "/contact" };
 
 export const hero = {
-  status: "Class IIa medical device in development",
   title: "Vision loss should not be accepted as inevitable.",
-  subtitle:
-    "We develop photonic systems that safely stimulate retinal cells and support repair processes, helping to preserve central vision and independence for people living with dry macular degeneration.",
-  primary: { label: "Explore Revolux", href: "/technology" },
+  /** Two paragraphs, as the company wrote them. */
+  subtitle: [
+    "At BioPhotonix, we are developing photonic systems to non-invasively stimulate retina cells and repair processes in the eye.",
+    "Our technology can treat dry macular degeneration and improve visual function.",
+  ],
+  /* Audience buttons, paired: clinicians to the clinics page, investors to theirs. */
+  primary: { label: "For clinicians", href: "/clinics" },
   secondary: { label: "For investors", href: "/investors" },
   deviceAlt:
     "Render of the Revolux binocular photobiomodulation device: two eyepieces with light-emitting rings on a handheld body",
-  /** The three lines that sit under the device. Short, so they read as a spec. */
-  specs: [
-    { label: "Indication", value: "Early and intermediate dry AMD" },
-    { label: "Session", value: "Binocular; duration not yet fixed" },
-    { label: "Setting", value: "Community optometry, domiciliary optometry and hospital clinics" },
-  ],
 };
 
 export const burden = {
+  /** Used as the subheading on /vision; the landing page shows none. */
   eyebrow: "The unmet need",
-  title: "A silent epidemic, treated by waiting.",
-  intro:
-    "90% of people with age-related macular degeneration have the dry form. For most of them the standard of care is still monitoring, lifestyle advice and supplements, while their central vision declines.",
+  title: "Millions have dry AMD. Most are told to wait.",
+  intro: [
+    "90% of people with age-related macular degeneration have the dry form.",
+    "For most of them the standard of care is still monitoring, lifestyle advice and supplements, while their central vision declines.",
+  ],
   stats: [
     { value: 200, suffix: "M", label: "people worldwide living with age-related macular degeneration" },
     { value: 90, suffix: "%", label: "of AMD is the dry form, with limited approved treatment options" },
@@ -82,10 +82,25 @@ export const burden = {
     note: "Each figure is two million people. The dark centre of every head is the central vision that dry AMD takes.",
     source: "Wong et al., The Lancet Global Health, 2014. Years between the two published figures are a straight line between them.",
   },
+  /**
+   * The landing page's growth figure: one face, then hundreds, then grey with
+   * a central scotoma. The numbers are the same Wong et al. pair the
+   * investors page draws; the photographs are stock, and the source line says
+   * so, because they are illustrations, not people known to have AMD.
+   */
+  crowd: {
+    title: "People living with AMD worldwide",
+    caption: "196 million people in 2020, and 288 million expected by 2040.",
+    message: "Dry AMD can lead to blindness.",
+    label:
+      "One older person's portrait, then hundreds of faces as the view widens: the growing number of people living with AMD. The faces turn grey and a dark patch spreads over the centre of the picture. Dry AMD can lead to blindness.",
+    source: "Wong et al., The Lancet Global Health, 2014. Stock portraits, shown for illustration.",
+  },
+  /** The centre of the facts gallery on the landing page, so it is the short form. */
   cost: {
     value: "£2.6bn",
-    label:
-      "a year is what AMD-related sight loss costs the UK, of which £1.2 billion falls directly on healthcare and the rest on informal care, lost productivity and lost quality of life",
+    label: "a year is what AMD-related sight loss costs the UK",
+    note: "£1.2 billion of it falls directly on healthcare.",
     source:
       "Fight for Sight, Time to Focus (2020), as cited in the Royal College of Ophthalmologists' AMD Commissioning Guidance, June 2021.",
   },
