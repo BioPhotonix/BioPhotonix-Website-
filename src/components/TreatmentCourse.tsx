@@ -6,8 +6,13 @@ import { useRevealed } from "./useRevealed";
 
 /**
  * The nine-session course, drawn. Sessions fill one at a time, week by week,
- * with the treatment time counting up beside them, so a clinician can see the
- * rhythm and the total commitment at a glance rather than reading it.
+ * with the count rising beside them, so a clinician can see the rhythm and the
+ * commitment at a glance rather than reading it.
+ *
+ * It counts sessions and not minutes. The duration of a session is not yet
+ * fixed (register entry DEV-04: it will be selected by the parameter-
+ * optimisation study), so a minutes total would state as settled a number the
+ * company has not settled. The footnote says so in the approved wording.
  *
  * Under reduced motion the finished course is shown with no fill sequence.
  */
@@ -31,23 +36,15 @@ export default function TreatmentCourse() {
     return () => window.clearInterval(id);
   }, [state, total]);
 
-  const minutes = done * course.minutesPerSession;
-
   return (
     <div ref={ref} className="tech-card rounded-2xl p-6 md:p-8">
-      <div className="flex flex-wrap items-end justify-between gap-6">
-        <p className="leading-none">
-          <span className="block text-4xl font-semibold text-fog md:text-5xl">{minutes}</span>
-          <span className="mt-2 block text-sm text-fog">minutes of treatment</span>
-        </p>
-        <p className="text-right leading-none">
-          <span className="block text-3xl font-medium text-fog md:text-4xl">
-            {done}
-            <span className="text-fog">/{total}</span>
-          </span>
-          <span className="mt-2 block text-sm text-fog">sessions delivered</span>
-        </p>
-      </div>
+      <p className="leading-none">
+        <span className="block text-4xl font-semibold text-fog md:text-5xl">
+          {done}
+          <span className="text-fog">/{total}</span>
+        </span>
+        <span className="mt-2 block text-sm text-fog">sessions delivered</span>
+      </p>
 
       <ol className="mt-8 flex flex-col gap-3">
         {Array.from({ length: course.weeks }, (_, w) => (
@@ -68,7 +65,7 @@ export default function TreatmentCourse() {
                         : "border-line bg-ink-950 text-fog"
                     }`}
                   >
-                    {course.minutesPerSession} min
+                    {index + 1}
                   </span>
                 );
               })}
@@ -77,8 +74,7 @@ export default function TreatmentCourse() {
         ))}
       </ol>
       <p className="sr-only">
-        {course.weeks} weeks of {course.perWeek} sessions, {course.minutesPerSession} minutes each:{" "}
-        {total} sessions and {total * course.minutesPerSession} minutes in total.
+        {course.weeks} weeks of {course.perWeek} sessions: {total} sessions in total.
       </p>
       <p className="mt-6 text-sm leading-relaxed text-fog">{course.footnote}</p>
     </div>

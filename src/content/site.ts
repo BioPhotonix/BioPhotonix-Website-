@@ -55,7 +55,7 @@ export const hero = {
   /** The three lines that sit under the device. Short, so they read as a spec. */
   specs: [
     { label: "Indication", value: "Early and intermediate dry AMD" },
-    { label: "Session", value: "12 minutes, binocular" },
+    { label: "Session", value: "Binocular; duration not yet fixed" },
     { label: "Setting", value: "Community optometry, domiciliary optometry and hospital clinics" },
   ],
 };
@@ -205,7 +205,7 @@ export const revolux = {
   tagline: "Engineered by BioPhotonix.",
   body: [
     "Revolux is a binocular photobiomodulation system that actively stimulates compromised retinal cells and supports their repair, helping to preserve central vision in early and intermediate dry macular degeneration.",
-    "Each session takes twelve minutes. It fits a standard consulting room, needs no dedicated infrastructure, and turns an unmet patient need into a structured, evidence-led clinical pathway.",
+    "Revolux fits a standard consulting room, needs no dedicated infrastructure, and turns an unmet patient need into a structured, evidence-led clinical pathway. Per-wavelength irradiance and duration are not yet fixed and will be selected by the parameter-optimisation study.",
   ],
   pillars: [
     {
@@ -222,7 +222,7 @@ export const revolux = {
     },
   ],
   facts: [
-    { label: "Session length", value: "12 min" },
+    { label: "Session length", value: "Not yet fixed" },
     { label: "Course", value: "9 sessions over 3 weeks" },
     { label: "Form factor", value: "Handheld binocular" },
     { label: "Supervision", value: "Clinician-initiated" },
@@ -259,7 +259,7 @@ export const anatomy = {
       width: 305,
       height: 660,
       alt: "The Revolux prototype seen from the patient's side, showing both apertures with their rings of emitters around them",
-      caption: "What the patient looks into. A ring of emitters around each aperture, held at a fixed separation, for a twelve-minute session.",
+      caption: "What the patient looks into. A ring of emitters around each aperture, held at a fixed separation.",
       /** The callouts are measured against this render, so they belong to it. */
       callouts: true,
     },
@@ -347,11 +347,15 @@ export const course = {
   eyebrow: "The course",
   title: "Nine sessions over three weeks.",
   intro:
-    "Three sessions a week, twelve minutes each. The schedule is designed to maximise cellular response while fitting into manageable clinic blocks.",
+    "Three sessions a week. The schedule is designed to maximise cellular response while fitting into manageable clinic blocks.",
   weeks: 3,
   perWeek: 3,
-  minutesPerSession: 12,
-  footnote: "One hundred and eight minutes of treatment in total, across three weeks of ordinary appointments.",
+  /**
+   * No minutes per session: the register (DEV-04) holds the duration as not
+   * yet fixed, so the diagram counts sessions, and the footnote under it says
+   * why in the register's approved wording.
+   */
+  footnote: "Per-wavelength irradiance and duration are not yet fixed and will be selected by the parameter-optimisation study.",
 };
 
 export const explainer = {
@@ -483,7 +487,7 @@ export const clinics = {
     steps: [
       { title: "Identify", mark: "identify" as const, body: "Adults aged 50 and over with early or intermediate dry AMD, found during routine examination or imaging." },
       { title: "Screen", mark: "screen" as const, body: "Eligibility is confirmed and contraindications are managed by the supervising clinician before any treatment." },
-      { title: "Treat", mark: "treat" as const, body: "Nine twelve-minute binocular sessions over three weeks, three sessions a week, in a standard consulting room." },
+      { title: "Treat", mark: "treat" as const, body: "Nine binocular sessions over three weeks, three sessions a week, in a standard consulting room." },
       { title: "Report", mark: "record" as const, body: "Every session is logged. Clinician-ready reports and patient-friendly summaries are generated automatically." },
       { title: "Continue", mark: "continue" as const, body: "Ongoing care replaces passive monitoring, with repeatable cycles delivered within a managed pathway." },
     ],
@@ -527,7 +531,7 @@ export const faq = {
     },
     {
       q: "Is the treatment invasive?",
-      a: "No. Photobiomodulation is a non-invasive, non-thermal light therapy. Patients sit comfortably holding the binocular device for approximately twelve minutes. There are no injections, no eye drops and no contact with the cornea.",
+      a: "No. Photobiomodulation is a non-invasive, non-thermal light therapy. Patients sit comfortably holding the binocular device. Per-wavelength irradiance and duration are not yet fixed and will be selected by the parameter-optimisation study. There are no injections, no eye drops and no contact with the cornea.",
     },
     {
       q: "Can patients use this at home on their own?",
