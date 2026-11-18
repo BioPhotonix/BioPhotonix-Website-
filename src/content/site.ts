@@ -48,7 +48,7 @@ export const hero = {
   /** Two paragraphs, as the company wrote them. */
   subtitle: [
     "At BioPhotonix, we are developing photonic systems to non-invasively stimulate retina cells and repair processes in the eye.",
-    "Our technology can treat dry macular degeneration and improve visual function.",
+    "Our technology treats declining visual function in patients with dry macular degeneration.",
   ],
   /* Audience buttons, paired: clinicians to the clinics page, investors to theirs. */
   primary: { label: "For clinicians", href: "/clinics" },
@@ -60,7 +60,7 @@ export const hero = {
 export const burden = {
   /** Used as the subheading on /vision; the landing page shows none. */
   eyebrow: "The unmet need",
-  title: "Millions have dry AMD. Most are told to wait.",
+  title: "Millions have dry AMD. Their visual decline is inevitable.",
   intro: [
     "90% of people with age-related macular degeneration have the dry form.",
     "For most of them the standard of care is still monitoring, lifestyle advice and supplements, while their central vision declines.",

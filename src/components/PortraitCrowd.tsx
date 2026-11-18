@@ -7,8 +7,8 @@ import { burden } from "@/content/site";
 /**
  * How many people AMD reaches, drawn as people.
  *
- * It opens on one older person's face. The view then widens, slowly, and
- * every step out shows more faces, until the frame holds hundreds. Then the
+ * It opens on one older person's face. The view then widens, and every step
+ * out shows more faces, until the frame holds hundreds. Then the
  * crowd turns grey, and a dark patch spreads over the middle of the picture
  * with the message inside it: the central scotoma of advanced dry AMD, laid
  * over the people the disease is growing among.
@@ -16,20 +16,23 @@ import { burden } from "@/content/site";
  * Drawn on a canvas rather than as a grid of images, so that each face is
  * drawn at the size it is shown: the opening close-up from a 1200px
  * photograph, the crowd from a sheet of 256px tiles, both sharp at every step
- * of a zoom that runs from one face filling the frame to faces under 50px.
+ * of a zoom that runs from one face filling the frame to faces under 40px.
  * The width shrinks geometrically, so the zoom reads as steady rather than
  * fast-then-slow.
  *
  * Neighbouring faces fade in over the first fifth of the zoom, so it really
- * does start with one person. The same face never sits beside itself, and the
- * opening face does not reappear near the centre.
+ * does start with one person. There are 56 different people, the same face
+ * never appears twice within two places of itself, and the opening face does
+ * not reappear near the centre.
  *
  * It plays once, when half of it is on screen, and offers a replay. Under
  * reduced motion it shows the finished picture. The photographs only load as
  * the figure nears the screen.
  */
 
-const T = { hold: 1500, zoom: 14000, rest: 900, grey: 2500, scotoma: 2600 } as const;
+/* About twelve seconds end to end. The grey and scotoma stages match the
+   transitions on .crowd-canvas and .crowd-scotoma in globals.css. */
+const T = { hold: 1000, zoom: 7000, rest: 500, grey: 1600, scotoma: 2000 } as const;
 type Stage = "idle" | "zoom" | "grey" | "scotoma" | "done";
 
 const { cols, tile, ids } = PORTRAITS;
@@ -38,11 +41,11 @@ const COUNT = ids.length;
 /**
  * Which face sits at each grid position, decided once and fixed.
  *
- * The 24 places round the opening face all get different people: that ring
- * is what the eye is on as the view first widens, and the same face either
- * side of the first one reads as a copy at once. Further out, each face only
- * has to differ from its eight neighbours, and the opening face is kept out
- * of the inner rings so it does not reappear beside itself.
+ * The 48 places round the opening face all get different people: those
+ * rings are what the eye is on as the view first widens, and the same face
+ * either side of the first one reads as a copy at once. Further out, each
+ * face differs from every face within two places of it, so no one repeats
+ * near themselves, and the opening face is kept out of the inner rings.
  */
 const SPAN = 61;
 const HALF = (SPAN - 1) / 2;
@@ -52,28 +55,28 @@ const GRID = (() => {
   const g: number[][] = Array.from({ length: SPAN }, () => Array(SPAN).fill(-1));
   const ring = (r: number, c: number) => Math.max(Math.abs(r - HALF), Math.abs(c - HALF));
 
-  // The inner five-by-five, centre excepted: distinct faces, never the opening one.
+  // The inner seven-by-seven, centre excepted: distinct faces, never the opening one.
   const pool = Array.from({ length: COUNT - 1 }, (_, i) => i + 1);
   for (let i = pool.length - 1; i > 0; i--) {
     const k = Math.floor(next() * (i + 1));
     [pool[i], pool[k]] = [pool[k], pool[i]];
   }
-  for (let r = HALF - 2; r <= HALF + 2; r++)
-    for (let c = HALF - 2; c <= HALF + 2; c++) g[r][c] = r === HALF && c === HALF ? 0 : pool.pop()!;
+  for (let r = HALF - 3; r <= HALF + 3; r++)
+    for (let c = HALF - 3; c <= HALF + 3; c++) g[r][c] = r === HALF && c === HALF ? 0 : pool.pop()!;
 
-  // Everywhere else: differ from every neighbour already placed.
+  // Everywhere else: differ from every face already placed within two places.
   for (let r = 0; r < SPAN; r++) {
     for (let c = 0; c < SPAN; c++) {
       if (g[r][c] >= 0) continue;
       const avoid = new Set<number>();
-      for (let dr = -1; dr <= 1; dr++) for (let dc = -1; dc <= 1; dc++) {
+      for (let dr = -2; dr <= 2; dr++) for (let dc = -2; dc <= 2; dc++) {
         const v = g[r + dr]?.[c + dc];
         if (v !== undefined && v >= 0) avoid.add(v);
       }
       let pick = 0;
-      for (let tries = 0; tries < 60; tries++) {
+      for (let tries = 0; tries < 200; tries++) {
         pick = Math.floor(next() * COUNT);
-        if (!avoid.has(pick) && !(pick === 0 && ring(r, c) <= 4)) break;
+        if (!avoid.has(pick) && !(pick === 0 && ring(r, c) <= 6)) break;
       }
       g[r][c] = pick;
     }
@@ -121,7 +124,9 @@ export default function PortraitCrowd() {
 
     const short = Math.min(W, H);
     const start = short * 0.9;
-    const end = Math.max(26, Math.min(52, short / 13));
+    /* About twice as many faces at the end as a cell of short / 13 gave:
+       the cell is 1 / sqrt(2) the width, so twice as many fit. */
+    const end = Math.max(18, Math.min(37, short / 18.4));
     const cell = start * (end / start) ** easeInOut(p);
     const gap = cell * 0.06;
     const others = smooth(0.02, 0.22, p);
@@ -254,13 +259,16 @@ export default function PortraitCrowd() {
   const greyed = stage === "grey" || stage === "scotoma" || stage === "done";
   const patch = stage === "scotoma" || stage === "done";
   /* The patch's opaque core is about 60% of its width; the message is kept
-     inside that, so no letter sits over a face. */
-  const diameter = Math.min(size.w, size.h) * 0.84;
+     inside that, so no letter sits over a face. Wider than the frame is
+     tall: only the soft edge is cut off, and the dark centre covers most of
+     the picture's height. */
+  const diameter = Math.min(size.w, size.h) * 1.2;
 
   return (
     <figure className="rounded-2xl border border-line bg-ink-900 p-6 md:p-8">
       <figcaption>
-        <p className="eyebrow">{burden.crowd.title}</p>
+        <h3 className="font-display text-2xl font-semibold text-fog md:text-3xl">{burden.crowd.title}</h3>
+        <p className="mt-2 text-base text-fog-dim md:text-lg">{burden.crowd.caption}</p>
       </figcaption>
 
       <div className="relative mt-6">
@@ -274,7 +282,7 @@ export default function PortraitCrowd() {
           <div aria-hidden="true" className="absolute inset-0 flex items-center justify-center">
             <div className="crowd-scotoma" data-on={patch} style={{ width: diameter, height: diameter }} />
             <span
-              className="crowd-message absolute text-balance text-center font-display text-xl leading-snug text-fog sm:text-2xl md:text-3xl"
+              className="crowd-message absolute text-balance text-center font-display text-2xl leading-snug text-fog sm:text-3xl md:text-4xl"
               data-on={patch}
               style={{ maxWidth: diameter * 0.56 }}
             >
@@ -294,8 +302,7 @@ export default function PortraitCrowd() {
         )}
       </div>
 
-      <p className="mt-5 text-base text-fog">{burden.crowd.caption}</p>
-      <p className="mt-2 text-xs text-fog">Source: {burden.crowd.source}</p>
+      <p className="mt-5 text-xs text-fog">Source: {burden.crowd.source}</p>
     </figure>
   );
 }

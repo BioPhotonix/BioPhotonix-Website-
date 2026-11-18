@@ -1,46 +1,74 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import { useReducedMotion } from "motion/react";
 import CountUp from "./CountUp";
 import StatCounter from "./StatCounter";
 import { burden } from "@/content/site";
 
 /**
- * The seven facts about AMD, three on screen at a time.
+ * The seven facts about AMD as a gallery that slides one fact at a time:
+ * three on screen on a laptop, two on a tablet, one on a phone.
  *
- * The UK cost sits fixed in the centre and the other six rotate through the
- * slots either side of it in pairs, like a gallery. Seven boxes never tile:
- * a grid of them always leaves a ragged last row, and the cost used to sit
- * apart in a box of its own for that reason. Three at a time is always
- * balanced, whatever the number of facts.
+ * Every fact takes its turn, the UK cost included, and all are set the same
+ * way. Seven boxes never tile, and a gallery does not need them to: whatever
+ * the count, the row is always full. The cost starts second, so on a laptop
+ * it opens in the centre.
  *
- * Each side slot stacks all of its facts in one grid cell and shows one, so
- * the slot is always as tall as its longest fact and the row never jumps as
- * they change.
+ * The track carries copies of the first three facts at its end, so it can
+ * keep moving the same way for ever: once it has slid onto the copies it jumps
+ * back to the originals, which look identical, without animating. Going back
+ * from the first fact does the reverse. Every card stretches to the tallest
+ * one, so the row never changes height. The cost's source sits under the
+ * gallery rather than in its card: in the card it made that card twice the
+ * height of the rest, and every other card stretched to match.
  *
  * Moving content needs a way to stop it (WCAG 2.2.2), so there is a pause
- * button, rotation holds while the pointer or focus is on the gallery, and it
- * only runs while the gallery is on screen. Under reduced motion it never
- * starts on its own and the buttons swap facts without sliding. Screen
- * readers get all seven facts as one list instead of whichever two happen to
- * be showing.
+ * button, it holds while the pointer or focus is on it, and it only runs
+ * while on screen. Under reduced motion it never starts on its own and the
+ * buttons step without sliding. Screen readers get all seven as one list
+ * instead of whichever happen to be showing.
  */
 
-const EVERY = 5000;
-const STATS = burden.stats;
-const PAIRS = Math.ceil(STATS.length / 2);
-const said = (s: (typeof STATS)[number]) => `${s.prefix ?? ""}${s.value}${s.suffix ?? ""}`;
+const EVERY = 4500;
+
+type Fact = { key: string; value: ReactNode; said: string; label: string; note?: string; source?: string };
+
+const STAT_FACTS: Fact[] = burden.stats.map((s) => ({
+  key: s.label,
+  value: <StatCounter value={s.value} prefix={s.prefix} suffix={s.suffix} />,
+  said: `${s.prefix ?? ""}${s.value}${s.suffix ?? ""}`,
+  label: s.label,
+}));
+
+const COST: Fact = {
+  key: "cost",
+  value: <CountUp value={burden.cost.value} />,
+  said: burden.cost.value,
+  label: burden.cost.label,
+  note: burden.cost.note,
+  source: burden.cost.source,
+};
+
+const FACTS: Fact[] = [STAT_FACTS[0], COST, ...STAT_FACTS.slice(1)];
+const N = FACTS.length;
+/** As many copies as the most cards ever on screen at once. */
+const COPIES = 3;
+const TRACK = [...FACTS, ...FACTS.slice(0, COPIES)];
+
+const wrap = (n: number) => ((n % N) + N) % N;
 
 export default function FactsGallery() {
   const reduce = useReducedMotion();
   const ref = useRef<HTMLDivElement>(null);
-  const [pair, setPair] = useState(0);
-  const [prev, setPrev] = useState<number | null>(null);
-  const [dir, setDir] = useState(1);
+  const [pos, setPos] = useState(0);
+  const [slide, setSlide] = useState(true);
+  /** Counts moves, so the timer restarts after each one but not after a silent jump. */
+  const [moves, setMoves] = useState(0);
   const [paused, setPaused] = useState(false);
   const [held, setHeld] = useState(false);
   const [onScreen, setOnScreen] = useState(false);
+  const touchX = useRef<number | null>(null);
 
   useEffect(() => {
     if (reduce) setPaused(true);
@@ -54,53 +82,66 @@ export default function FactsGallery() {
     return () => io.disconnect();
   }, []);
 
-  const go = (to: number, d: number) => {
-    setPrev(pair);
-    setDir(d);
-    setPair(((to % PAIRS) + PAIRS) % PAIRS);
+  /** Slide to a position on the track, first jumping silently off the copies if need be. */
+  const moveTo = (target: (from: number) => number) => {
+    setMoves((m) => m + 1);
+    if (reduce) {
+      setSlide(false);
+      setPos((p) => wrap(target(wrap(p))));
+      return;
+    }
+    const from = pos >= N ? pos - N : pos;
+    const to = target(from);
+    // Going back from the first fact: start from its copy at the end instead.
+    const start = to < 0 ? from + N : from;
+    const end = to < 0 ? to + N : to;
+    if (start === pos && slide) {
+      setPos(end);
+      return;
+    }
+    setSlide(false);
+    setPos(start);
+    // Two frames, so the jump is painted before the slide starts from it.
+    requestAnimationFrame(() =>
+      requestAnimationFrame(() => {
+        setSlide(true);
+        setPos(end);
+      }),
+    );
   };
 
-  /* A timeout that restarts on every change of pair, rather than an interval:
-     after someone steps the gallery by hand they get a full five seconds
-     before it moves on, and no state is set from inside another update. */
+  const step = (d: 1 | -1) => moveTo((from) => from + d);
+
+  /* A timeout that restarts after every move, rather than an interval: after
+     someone steps the gallery by hand they get the full pause before it moves
+     on. */
   useEffect(() => {
     if (paused || held || !onScreen) return;
-    const id = window.setTimeout(() => go(pair + 1, 1), EVERY);
+    const id = window.setTimeout(() => step(1), EVERY);
     return () => window.clearTimeout(id);
-    // eslint-disable-next-line react-hooks/exhaustive-deps -- go reads pair, which is listed
-  }, [paused, held, onScreen, pair]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- step reads pos and slide, which only change with moves
+  }, [paused, held, onScreen, moves]);
 
-  /** One side of the centre: every fact that can appear there, stacked. */
-  const slot = (side: 0 | 1) => (
-    <div className="grid overflow-hidden bg-ink-900">
-      {Array.from({ length: PAIRS }, (_, k) => {
-        const s = STATS[k * 2 + side];
-        if (!s) return null;
-        const phase = k === pair ? "in" : k === prev ? "out" : "wait";
-        return (
-          <div key={s.label} className="fact-slide p-7" data-phase={phase} style={{ ["--dir" as string]: dir }}>
-            <span className="block text-4xl font-medium text-fog md:text-5xl">
-              <StatCounter value={s.value} prefix={s.prefix} suffix={s.suffix} />
-            </span>
-            <span className="mt-3 block text-sm leading-relaxed text-fog">{s.label}</span>
-          </div>
-        );
-      })}
-    </div>
-  );
+  const onSlid = () => {
+    if (pos < N) return;
+    setSlide(false);
+    setPos(pos - N);
+  };
+
+  const current = wrap(pos);
 
   return (
     <div ref={ref}>
       {/* What a screen reader gets: all seven, in order, nothing moving. */}
       <dl className="sr-only">
-        <dt>{burden.cost.label}</dt>
-        <dd>
-          {burden.cost.value}. {burden.cost.note} Source: {burden.cost.source}
-        </dd>
-        {STATS.map((s) => (
-          <div key={s.label}>
-            <dt>{s.label}</dt>
-            <dd>{said(s)}</dd>
+        {FACTS.map((f) => (
+          <div key={f.key}>
+            <dt>{f.label}</dt>
+            <dd>
+              {f.said}
+              {f.note ? `. ${f.note}` : ""}
+              {f.source ? ` Source: ${f.source}` : ""}
+            </dd>
           </div>
         ))}
       </dl>
@@ -109,50 +150,64 @@ export default function FactsGallery() {
         aria-hidden="true"
         onMouseEnter={() => setHeld(true)}
         onMouseLeave={() => setHeld(false)}
-        className="grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2 lg:grid-cols-[1fr_1.3fr_1fr]"
+        onPointerDown={(e) => {
+          if (e.pointerType !== "mouse") touchX.current = e.clientX;
+        }}
+        onPointerUp={(e) => {
+          if (touchX.current === null) return;
+          const dx = e.clientX - touchX.current;
+          touchX.current = null;
+          if (Math.abs(dx) > 40) step(dx < 0 ? 1 : -1);
+        }}
+        className="facts-viewport overflow-hidden rounded-2xl border border-line bg-ink-900"
       >
-        {slot(0)}
-        {/* The cost: fixed, and first on a phone, where the slots stack below it. */}
-        <div className="order-first flex flex-col justify-center bg-ink-800 p-7 sm:col-span-2 lg:order-none lg:col-span-1 md:p-9">
-          <span className="block text-5xl font-medium text-ember-text md:text-6xl">
-            <CountUp value={burden.cost.value} />
-          </span>
-          <span className="mt-3 block text-base leading-relaxed text-fog">{burden.cost.label}</span>
-          <span className="mt-2 block text-sm leading-relaxed text-fog">{burden.cost.note}</span>
-          <span className="mt-4 block text-xs leading-relaxed text-fog">Source: {burden.cost.source}</span>
+        <div
+          className="facts-track flex"
+          data-slide={slide}
+          style={{ ["--i" as string]: pos }}
+          onTransitionEnd={(e) => {
+            if (e.target === e.currentTarget) onSlid();
+          }}
+        >
+          {TRACK.map((f, k) => (
+            <div key={`${f.key}-${k}`} className="facts-card flex flex-col border-l border-line p-7 md:p-8">
+              <span className="block text-4xl font-medium text-fog md:text-5xl">{f.value}</span>
+              <span className="mt-3 block text-sm leading-relaxed text-fog">{f.label}</span>
+              {f.note && <span className="mt-2 block text-sm leading-relaxed text-fog">{f.note}</span>}
+            </div>
+          ))}
         </div>
-        {slot(1)}
       </div>
 
       <div
-        className="mt-4 flex items-center justify-center gap-2"
+        className="mt-4 flex flex-wrap items-center justify-center gap-x-1 gap-y-2"
         onFocus={() => setHeld(true)}
         onBlur={() => setHeld(false)}
       >
         <button
           type="button"
-          onClick={() => go(pair - 1, -1)}
-          aria-label="Previous facts"
+          onClick={() => step(-1)}
+          aria-label="Previous fact"
           className="flex h-9 w-9 items-center justify-center rounded-full border border-line text-fog transition hover:border-line-strong"
         >
           <span aria-hidden="true">&larr;</span>
         </button>
-        {Array.from({ length: PAIRS }, (_, k) => (
+        {FACTS.map((f, k) => (
           <button
-            key={k}
+            key={f.key}
             type="button"
-            onClick={() => go(k, k >= pair ? 1 : -1)}
-            aria-label={`Show facts ${k * 2 + 1} and ${k * 2 + 2} of ${STATS.length}`}
-            aria-current={k === pair}
-            className="flex h-9 w-6 items-center justify-center"
+            onClick={() => moveTo(() => k)}
+            aria-label={`Show fact ${k + 1} of ${N}`}
+            aria-current={k === current}
+            className="flex h-9 w-5 items-center justify-center"
           >
-            <span className={`block h-1.5 rounded-full transition-all ${k === pair ? "w-5 bg-teal-400" : "w-1.5 bg-line-strong"}`} />
+            <span className={`block h-1.5 rounded-full transition-all ${k === current ? "w-4 bg-teal-400" : "w-1.5 bg-line-strong"}`} />
           </button>
         ))}
         <button
           type="button"
-          onClick={() => go(pair + 1, 1)}
-          aria-label="Next facts"
+          onClick={() => step(1)}
+          aria-label="Next fact"
           className="flex h-9 w-9 items-center justify-center rounded-full border border-line text-fog transition hover:border-line-strong"
         >
           <span aria-hidden="true">&rarr;</span>
@@ -166,6 +221,11 @@ export default function FactsGallery() {
           {paused ? "Play" : "Pause"}
         </button>
       </div>
+
+      {/* Screen readers already have this with the fact, in the list above. */}
+      <p aria-hidden="true" className="mx-auto mt-3 max-w-2xl text-center text-xs leading-relaxed text-fog-dim">
+        Source for the {COST.said} figure: {burden.cost.source}
+      </p>
     </div>
   );
 }

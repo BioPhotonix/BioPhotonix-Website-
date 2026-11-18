@@ -118,21 +118,29 @@ All in `src/components`:
 - **BurdenChart** places that frame beside a hundred-square grid of dry
   against wet AMD. Used on the investors page.
 - **PortraitCrowd** is the landing page's version of the same story, told
-  with people: one older person's face, then hundreds as the view widens
-  slowly over fourteen seconds, then the crowd turns grey and a central
-  scotoma spreads over it with the message in its middle. Drawn on a canvas so
-  every face is sharp at every step of the zoom. The 24 faces round the first
-  one are all different people, and no face sits beside itself anywhere. It
-  plays once when half on screen, offers a replay, and shows the finished
+  with people: one older person's face, then several hundred as the view
+  widens over seven seconds, then the crowd turns grey and a central scotoma
+  spreads over most of the picture with the message in its middle, about
+  twelve seconds in all. Drawn on a canvas so every face is sharp at every
+  step of the zoom. There are 56 different people; the 48 faces round the
+  first are all different, and no face repeats within two places of itself.
+  It plays once when half on screen, offers a replay, and shows the finished
   picture under reduced motion.
-- **FactsGallery** shows the seven AMD facts three at a time: the UK cost
-  fixed in the centre, the other six rotating through the slots either side
-  in pairs every five seconds. It holds while the pointer or focus is on it,
-  has a pause button, never starts on its own under reduced motion, and gives
-  screen readers all seven as one list.
+- **FactsGallery** slides the seven AMD facts along one at a time every 4.5
+  seconds: three on screen on a laptop, two on a tablet, one on a phone, so
+  the row is always full whatever the count. Every fact takes its turn and
+  all are set alike; the UK cost starts in the centre on a laptop, and its
+  source sits under the gallery. It holds while the pointer or focus is on
+  it, has a pause button, takes a sideways swipe, never starts on its own
+  under reduced motion, and gives screen readers all seven as one list.
 - **RevoluxDevice** takes an optional `label`, the device's name printed on
-  its control box in teal Arial. Only the landing page's hero sets it; the
-  position is measured from the render, as the eyepiece glows are.
+  its control box in teal Arial Bold. Only the landing page's hero sets it;
+  the position is measured from the render, as the eyepiece glows are. The
+  name is drawn as Arial outlines in an SVG over the render, not set as text:
+  text snaps to whole pixels and slipped against the floating device. To
+  change the word, regenerate the outlines with
+  `scripts/wordmark-outline.py` (it needs Arial Bold, which is not in the
+  repo).
 - **PathwayDiagram** lights up the care pathway as it is, then the pathway
   with Revolux.
 - **RevoluxExplainer** is a tablist with five drawings of the binocular head:
@@ -382,9 +390,9 @@ original in `source-images/`, add a line to `scripts/build-images.mjs` and
 run it.
 
 The portraits in the landing page's growth figure are stock photographs from
-Pexels, built by `npm run build:portraits` into one sheet of 256px faces and a
-1200px copy of the opening face, about 280 KB in all, loaded only as the
-figure nears the screen. The ids and the sheet's layout are in
+Pexels, built by `npm run build:portraits` into one sheet of 56 faces at
+256px and a 1200px copy of the opening face, about 460 KB in all, loaded only
+as the figure nears the screen. The ids and the sheet's layout are in
 `src/content/portraits.json`, the one place to change them; the script fetches
 each by id, so nothing needs keeping outside the repo. They are illustrations,
 not people known to have AMD, and the figure's source line says so: a stock
