@@ -8,46 +8,57 @@ import { burden } from "@/content/site";
  * How many people AMD reaches, drawn as people.
  *
  * It opens on one older person's face. The view then widens, and every step
- * out shows more faces, until the frame holds hundreds. Then the
+ * out shows more faces, until the frame holds well over a thousand. Then the
  * crowd turns grey, and a dark patch spreads over the middle of the picture
  * with the message inside it: the central scotoma of advanced dry AMD, laid
  * over the people the disease is growing among.
  *
  * Drawn on a canvas rather than as a grid of images, so that each face is
  * drawn at the size it is shown: the opening close-up from a 1200px
- * photograph, the crowd from a sheet of 256px tiles, both sharp at every step
- * of a zoom that runs from one face filling the frame to faces under 40px.
+ * photograph, the crowd from sheets of tiles, all sharp at every step of a
+ * zoom that runs from one face filling the frame to faces about 20px across.
  * The width shrinks geometrically, so the zoom reads as steady rather than
  * fast-then-slow.
  *
  * Neighbouring faces fade in over the first fifth of the zoom, so it really
- * does start with one person. There are 56 different people, the same face
+ * does start with one person. There are 112 different people, the same face
  * never appears twice within two places of itself, and the opening face does
  * not reappear near the centre.
  *
- * It plays once, when half of it is on screen, and offers a replay. Under
+ * It plays once, when half of it is on screen. Replay runs it backwards
+ * first: the message goes, then the patch, then the colour comes back and the
+ * view closes in on the first face again, and it plays from there. Under
  * reduced motion it shows the finished picture. The photographs only load as
  * the figure nears the screen.
  */
 
-/* About twelve seconds end to end. The grey and scotoma stages match the
+/* About eight seconds end to end. The grey and scotoma stages match the
    transitions on .crowd-canvas and .crowd-scotoma in globals.css. */
-const T = { hold: 1000, zoom: 7000, rest: 500, grey: 1600, scotoma: 2000 } as const;
-type Stage = "idle" | "zoom" | "grey" | "scotoma" | "done";
+const T = { hold: 600, zoom: 4500, rest: 300, grey: 1100, scotoma: 1500 } as const;
+/* Replay, backwards: message out, patch out, colour back, zoom back in. */
+const R = { message: 450, patch: 800, colour: 1000, zoom: 1800 } as const;
+type Stage = "idle" | "zoom" | "grey" | "scotoma" | "done" | "unmessage" | "unpatch" | "uncolour" | "unzoom";
 
-const { cols, tile, ids } = PORTRAITS;
-const COUNT = ids.length;
+/** Every face in the crowd, as where to find it: which sheet, and where on it. */
+const FACES = PORTRAITS.sheets.flatMap((sheet, n) =>
+  sheet.ids.map((_, i) => ({ sheet: n, sx: (i % sheet.cols) * sheet.tile, sy: Math.floor(i / sheet.cols) * sheet.tile, tile: sheet.tile })),
+);
+const COUNT = FACES.length;
+/** Faces on the first sheet, which has the larger tiles: the ones that ring the opening face. */
+const NEAR = PORTRAITS.sheets[0].ids.length;
 
 /**
  * Which face sits at each grid position, decided once and fixed.
  *
- * The 48 places round the opening face all get different people: those
- * rings are what the eye is on as the view first widens, and the same face
- * either side of the first one reads as a copy at once. Further out, each
- * face differs from every face within two places of it, so no one repeats
- * near themselves, and the opening face is kept out of the inner rings.
+ * The 48 places round the opening face all get different people, from the
+ * first sheet, whose tiles are large enough for the size they are drawn at
+ * then: those rings are what the eye is on as the view first widens, and the
+ * same face either side of the first one reads as a copy at once. Further
+ * out, each face differs from every face within two places of it, so no one
+ * repeats near themselves, and the opening face is kept out of the inner
+ * rings.
  */
-const SPAN = 61;
+const SPAN = 81;
 const HALF = (SPAN - 1) / 2;
 const GRID = (() => {
   let seed = 20261118;
@@ -56,7 +67,7 @@ const GRID = (() => {
   const ring = (r: number, c: number) => Math.max(Math.abs(r - HALF), Math.abs(c - HALF));
 
   // The inner seven-by-seven, centre excepted: distinct faces, never the opening one.
-  const pool = Array.from({ length: COUNT - 1 }, (_, i) => i + 1);
+  const pool = Array.from({ length: NEAR - 1 }, (_, i) => i + 1);
   for (let i = pool.length - 1; i > 0; i--) {
     const k = Math.floor(next() * (i + 1));
     [pool[i], pool[k]] = [pool[k], pool[i]];
@@ -95,7 +106,7 @@ const easeInOut = (x: number) => (x < 0.5 ? 4 * x * x * x : 1 - (-2 * x + 2) ** 
 export default function PortraitCrowd() {
   const frameRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const imgs = useRef<{ sheet: HTMLImageElement; centre: HTMLImageElement } | null>(null);
+  const imgs = useRef<{ sheets: HTMLImageElement[]; centre: HTMLImageElement } | null>(null);
   const progress = useRef(0);
   const timers = useRef<number[]>([]);
   const raf = useRef(0);
@@ -124,9 +135,10 @@ export default function PortraitCrowd() {
 
     const short = Math.min(W, H);
     const start = short * 0.9;
-    /* About twice as many faces at the end as a cell of short / 13 gave:
-       the cell is 1 / sqrt(2) the width, so twice as many fit. */
-    const end = Math.max(18, Math.min(37, short / 18.4));
+    /* Four times as many faces at the end as the first version's cell of
+       short / 13: half the width, so four fit where one did. The floor keeps
+       a face a face on a phone. */
+    const end = Math.max(13, Math.min(26, short / 26));
     const cell = start * (end / start) ** easeInOut(p);
     const gap = cell * 0.06;
     const others = smooth(0.02, 0.22, p);
@@ -145,9 +157,9 @@ export default function PortraitCrowd() {
           continue;
         }
         if (others <= 0) continue;
-        const k = faceAt(i, j);
+        const f = FACES[faceAt(i, j)];
         ctx.globalAlpha = others;
-        ctx.drawImage(img.sheet, (k % cols) * tile, Math.floor(k / cols) * tile, tile, tile, x, y, s, s);
+        ctx.drawImage(img.sheets[f.sheet], f.sx, f.sy, f.tile, f.tile, x, y, s, s);
       }
     }
     ctx.globalAlpha = 1;
@@ -168,9 +180,9 @@ export default function PortraitCrowd() {
             im.onerror = reject;
             im.src = src;
           });
-        Promise.all([load("/images/portraits/sheet.webp"), load("/images/portraits/centre.webp")])
-          .then(([sheet, centre]) => {
-            imgs.current = { sheet, centre };
+        Promise.all([load("/images/portraits/centre.webp"), ...PORTRAITS.sheets.map((sh) => load(`/images/portraits/${sh.file}`))])
+          .then(([centre, ...sheets]) => {
+            imgs.current = { sheets, centre };
             setLoaded(true);
           })
           .catch(() => {});
@@ -215,9 +227,14 @@ export default function PortraitCrowd() {
     // eslint-disable-next-line react-hooks/exhaustive-deps -- draw only reads refs
   }, [loaded]);
 
-  const play = () => {
+  const stop = () => {
     timers.current.forEach(clearTimeout);
+    timers.current = [];
     cancelAnimationFrame(raf.current);
+  };
+
+  const play = () => {
+    stop();
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       progress.current = 1;
       draw(1);
@@ -243,6 +260,30 @@ export default function PortraitCrowd() {
     ];
   };
 
+  /** Replay: undo the ending in the order it arrived, close in on the first face, then play. */
+  const replay = () => {
+    stop();
+    setStage("unmessage");
+    const unzoom = R.message + R.patch + R.colour;
+    timers.current = [
+      window.setTimeout(() => setStage("unpatch"), R.message),
+      window.setTimeout(() => setStage("uncolour"), R.message + R.patch),
+      window.setTimeout(() => {
+        setStage("unzoom");
+        const from = progress.current;
+        const t0 = performance.now();
+        const tick = (now: number) => {
+          const t = Math.min(1, (now - t0) / R.zoom);
+          progress.current = from * (1 - t);
+          draw(progress.current);
+          if (t < 1) raf.current = requestAnimationFrame(tick);
+          else play();
+        };
+        raf.current = requestAnimationFrame(tick);
+      }, unzoom),
+    ];
+  };
+
   useEffect(() => {
     if (loaded && visible && stage === "idle") play();
     // eslint-disable-next-line react-hooks/exhaustive-deps -- play only reads refs
@@ -256,8 +297,9 @@ export default function PortraitCrowd() {
     [],
   );
 
-  const greyed = stage === "grey" || stage === "scotoma" || stage === "done";
-  const patch = stage === "scotoma" || stage === "done";
+  const greyed = ["grey", "scotoma", "done", "unmessage", "unpatch"].includes(stage);
+  const patch = ["scotoma", "done", "unmessage"].includes(stage);
+  const message = stage === "scotoma" || stage === "done";
   /* The patch's opaque core is about 60% of its width; the message is kept
      inside that, so no letter sits over a face. Wider than the frame is
      tall: only the soft edge is cut off, and the dark centre covers most of
@@ -283,7 +325,7 @@ export default function PortraitCrowd() {
             <div className="crowd-scotoma" data-on={patch} style={{ width: diameter, height: diameter }} />
             <span
               className="crowd-message absolute text-balance text-center font-display text-2xl leading-snug text-fog sm:text-3xl md:text-4xl"
-              data-on={patch}
+              data-on={message}
               style={{ maxWidth: diameter * 0.56 }}
             >
               {burden.crowd.message}
@@ -294,7 +336,7 @@ export default function PortraitCrowd() {
         {stage === "done" && !reduced && (
           <button
             type="button"
-            onClick={play}
+            onClick={replay}
             className="absolute bottom-3 right-3 rounded-full border border-line-strong bg-ink-950/80 px-3.5 py-1.5 text-xs text-fog backdrop-blur transition hover:border-teal-400"
           >
             Replay

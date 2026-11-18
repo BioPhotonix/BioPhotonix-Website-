@@ -1,27 +1,27 @@
 /**
  * The portraits for the landing page's "People living with AMD worldwide"
- * figure: one sheet of small faces for the crowd, and one large face for the
+ * figure: sheets of small faces for the crowd, and one large face for the
  * opening close-up.
  *
  *   node scripts/build-portraits.mjs
  *
  * Every photograph is from Pexels, fetched by id from its CDN, under the
  * Pexels licence (free to use and modify, no attribution required). The ids
- * were chosen by eye from a contact sheet: older people, one per photograph,
- * face visible, in colour, nobody shown in distress. Each is cropped square
- * on its most salient region, which on a portrait is the face.
+ * were chosen by eye from contact sheets: older people, one per photograph,
+ * face visible, in colour, nobody shown in distress, and no one twice. Each is
+ * cropped square on its most salient region, which on a portrait is the face.
  *
- * Writes public/images/portraits/sheet.webp (COLS x ROWS tiles of TILE px, in
- * the order of ids) and public/images/portraits/centre.webp. Both read the
- * list and the layout from src/content/portraits.json, the one place to change
- * them.
+ * Writes one webp per sheet in src/content/portraits.json (its tiles in the
+ * order of its ids, `cols` to a row) and public/images/portraits/centre.webp.
+ * The first sheet has larger tiles because its faces are the ones drawn
+ * round the opening face, at the largest sizes; the second only ever appears
+ * further out, small. The JSON is the one place to change any of it.
  */
 import fs from "node:fs";
 import sharp from "sharp";
 import PORTRAITS from "../src/content/portraits.json" with { type: "json" };
 
 const OUT = "public/images/portraits";
-const { ids, centre, cols, rows, tile } = PORTRAITS;
 
 async function fetchPhoto(id, width) {
   const res = await fetch(`https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=${width}`);
@@ -34,16 +34,19 @@ const square = (buf, size) =>
 
 fs.mkdirSync(OUT, { recursive: true });
 
-const tiles = [];
-for (const [i, id] of ids.entries()) {
-  tiles.push({ input: await square(await fetchPhoto(id, 900), tile), left: (i % cols) * tile, top: Math.floor(i / cols) * tile });
-  process.stdout.write(".");
+for (const { file, tile, cols, ids } of PORTRAITS.sheets) {
+  const rows = Math.ceil(ids.length / cols);
+  const tiles = [];
+  for (const [i, id] of ids.entries()) {
+    tiles.push({ input: await square(await fetchPhoto(id, 900), tile), left: (i % cols) * tile, top: Math.floor(i / cols) * tile });
+    process.stdout.write(".");
+  }
+  await sharp({ create: { width: cols * tile, height: rows * tile, channels: 3, background: "#080f12" } })
+    .composite(tiles)
+    .webp({ quality: 72 })
+    .toFile(`${OUT}/${file}`);
+  console.log(`\n${file}: ${ids.length} faces, ${(fs.statSync(`${OUT}/${file}`).size / 1024).toFixed(0)} KB`);
 }
-await sharp({ create: { width: cols * tile, height: rows * tile, channels: 3, background: "#080f12" } })
-  .composite(tiles)
-  .webp({ quality: 72 })
-  .toFile(`${OUT}/sheet.webp`);
 
-await sharp(await square(await fetchPhoto(centre, 1800), 1200)).webp({ quality: 78 }).toFile(`${OUT}/centre.webp`);
-
-for (const f of ["sheet.webp", "centre.webp"]) console.log(`\n${f}: ${(fs.statSync(`${OUT}/${f}`).size / 1024).toFixed(0)} KB`);
+await sharp(await square(await fetchPhoto(PORTRAITS.centre, 1800), 1200)).webp({ quality: 78 }).toFile(`${OUT}/centre.webp`);
+console.log(`centre.webp: ${(fs.statSync(`${OUT}/centre.webp`).size / 1024).toFixed(0)} KB`);

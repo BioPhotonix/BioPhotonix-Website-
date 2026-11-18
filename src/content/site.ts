@@ -60,7 +60,8 @@ export const hero = {
 export const burden = {
   /** Used as the subheading on /vision; the landing page shows none. */
   eyebrow: "The unmet need",
-  title: "Millions have dry AMD. Their visual decline is inevitable.",
+  /** Two statements, each on a line of its own. */
+  title: ["Millions have dry AMD.", "Their visual decline is inevitable."],
   intro: [
     "90% of people with age-related macular degeneration have the dry form.",
     "For most of them the standard of care is still monitoring, lifestyle advice and supplements, while their central vision declines.",
@@ -85,8 +86,9 @@ export const burden = {
   /**
    * The landing page's growth figure: one face, then hundreds, then grey with
    * a central scotoma. The numbers are the same Wong et al. pair the
-   * investors page draws; the photographs are stock, and the source line says
-   * so, because they are illustrations, not people known to have AMD.
+   * investors page draws. The photographs are stock illustrations, not
+   * people known to have AMD; at the company's request the source line no
+   * longer says so.
    */
   crowd: {
     title: "People living with AMD worldwide",
@@ -94,9 +96,12 @@ export const burden = {
     message: "Dry AMD can lead to blindness.",
     label:
       "One older person's portrait, then hundreds of faces as the view widens: the growing number of people living with AMD. The faces turn grey and a dark patch spreads over the centre of the picture. Dry AMD can lead to blindness.",
-    source: "Wong et al., The Lancet Global Health, 2014. Stock portraits, shown for illustration.",
+    source: "Wong et al., The Lancet Global Health, 2014.",
   },
-  /** The centre of the facts gallery on the landing page, so it is the short form. */
+  /**
+   * One of the facts in the landing page's gallery, so it is the short form.
+   * The source is not shown there; it is kept here as the figure's citation.
+   */
   cost: {
     value: "£2.6bn",
     label: "a year is what AMD-related sight loss costs the UK",

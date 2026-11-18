@@ -19,9 +19,7 @@ import { burden } from "@/content/site";
  * keep moving the same way for ever: once it has slid onto the copies it jumps
  * back to the originals, which look identical, without animating. Going back
  * from the first fact does the reverse. Every card stretches to the tallest
- * one, so the row never changes height. The cost's source sits under the
- * gallery rather than in its card: in the card it made that card twice the
- * height of the rest, and every other card stretched to match.
+ * one, so the row never changes height.
  *
  * Moving content needs a way to stop it (WCAG 2.2.2), so there is a pause
  * button, it holds while the pointer or focus is on it, and it only runs
@@ -32,7 +30,7 @@ import { burden } from "@/content/site";
 
 const EVERY = 4500;
 
-type Fact = { key: string; value: ReactNode; said: string; label: string; note?: string; source?: string };
+type Fact = { key: string; value: ReactNode; said: string; label: string; note?: string };
 
 const STAT_FACTS: Fact[] = burden.stats.map((s) => ({
   key: s.label,
@@ -47,7 +45,6 @@ const COST: Fact = {
   said: burden.cost.value,
   label: burden.cost.label,
   note: burden.cost.note,
-  source: burden.cost.source,
 };
 
 const FACTS: Fact[] = [STAT_FACTS[0], COST, ...STAT_FACTS.slice(1)];
@@ -140,7 +137,6 @@ export default function FactsGallery() {
             <dd>
               {f.said}
               {f.note ? `. ${f.note}` : ""}
-              {f.source ? ` Source: ${f.source}` : ""}
             </dd>
           </div>
         ))}
@@ -222,10 +218,6 @@ export default function FactsGallery() {
         </button>
       </div>
 
-      {/* Screen readers already have this with the fact, in the list above. */}
-      <p aria-hidden="true" className="mx-auto mt-3 max-w-2xl text-center text-xs leading-relaxed text-fog-dim">
-        Source for the {COST.said} figure: {burden.cost.source}
-      </p>
     </div>
   );
 }

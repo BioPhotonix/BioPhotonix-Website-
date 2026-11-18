@@ -118,29 +118,32 @@ All in `src/components`:
 - **BurdenChart** places that frame beside a hundred-square grid of dry
   against wet AMD. Used on the investors page.
 - **PortraitCrowd** is the landing page's version of the same story, told
-  with people: one older person's face, then several hundred as the view
-  widens over seven seconds, then the crowd turns grey and a central scotoma
-  spreads over most of the picture with the message in its middle, about
-  twelve seconds in all. Drawn on a canvas so every face is sharp at every
-  step of the zoom. There are 56 different people; the 48 faces round the
-  first are all different, and no face repeats within two places of itself.
-  It plays once when half on screen, offers a replay, and shows the finished
-  picture under reduced motion.
+  with people: one older person's face, then well over a thousand as the
+  view widens over four and a half seconds, then the crowd turns grey and a
+  central scotoma spreads over most of the picture with the message in its
+  middle, about eight seconds in all. Drawn on a canvas so every face is
+  sharp at every step of the zoom. There are 112 different people; the 48
+  faces round the first are all different, and no face repeats within two
+  places of itself. It plays once when half on screen. Replay runs the
+  ending backwards first (message, then scotoma, then colour, then the zoom
+  back to the first face) and plays again from there. Under reduced motion
+  it shows the finished picture.
 - **FactsGallery** slides the seven AMD facts along one at a time every 4.5
   seconds: three on screen on a laptop, two on a tablet, one on a phone, so
   the row is always full whatever the count. Every fact takes its turn and
-  all are set alike; the UK cost starts in the centre on a laptop, and its
-  source sits under the gallery. It holds while the pointer or focus is on
+  all are set alike; the UK cost starts in the centre on a laptop. Its
+  source is kept in `site.ts` but not shown. It holds while the pointer or focus is on
   it, has a pause button, takes a sideways swipe, never starts on its own
   under reduced motion, and gives screen readers all seven as one list.
 - **RevoluxDevice** takes an optional `label`, the device's name printed on
-  its control box in teal Arial Bold. Only the landing page's hero sets it;
-  the position is measured from the render, as the eyepiece glows are. The
-  name is drawn as Arial outlines in an SVG over the render, not set as text:
-  text snaps to whole pixels and slipped against the floating device. To
-  change the word, regenerate the outlines with
-  `scripts/wordmark-outline.py` (it needs Arial Bold, which is not in the
-  repo).
+  its control box. Only the landing page's hero sets it. It is placed and set
+  as a maker would print it: in the clear band under the box's round button
+  (the position is measured from the render, as the eyepiece glows are), in
+  Montserrat SemiBold spaced capitals, in teal ink lit a shade lighter at the
+  top, with edges softened to match the render. The name is drawn as
+  outlines in an SVG over the render, not set as text: text snaps to whole
+  pixels and slipped against the floating device. To change the word or the
+  font, regenerate the outlines with `scripts/wordmark-outline.py`.
 - **PathwayDiagram** lights up the care pathway as it is, then the pathway
   with Revolux.
 - **RevoluxExplainer** is a tablist with five drawings of the binocular head:
@@ -390,14 +393,15 @@ original in `source-images/`, add a line to `scripts/build-images.mjs` and
 run it.
 
 The portraits in the landing page's growth figure are stock photographs from
-Pexels, built by `npm run build:portraits` into one sheet of 56 faces at
-256px and a 1200px copy of the opening face, about 460 KB in all, loaded only
+Pexels, built by `npm run build:portraits` into two sheets of 56 faces (256px
+tiles for the faces drawn largest, round the opening one, and 160px for the
+rest) and a 1200px copy of the opening face, about 680 KB in all, loaded only
 as the figure nears the screen. The ids and the sheet's layout are in
 `src/content/portraits.json`, the one place to change them; the script fetches
 each by id, so nothing needs keeping outside the repo. They are illustrations,
-not people known to have AMD, and the figure's source line says so: a stock
-licence does not cover presenting an identifiable person as having a medical
-condition.
+not people known to have AMD. The source line used to say so and, at the
+company's request, no longer does; bear in mind that a stock licence does not
+cover presenting an identifiable person as having a medical condition.
 
 The logo is the brand mark plus a wordmark set in type (`Logo.tsx`), because
 the supplied logo has a black wordmark that vanishes on the dark palette. The

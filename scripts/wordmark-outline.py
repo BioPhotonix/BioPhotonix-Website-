@@ -1,19 +1,21 @@
 """
-Arial outlines for the name printed on the Revolux render.
+Outlines of a word in a font, for the name printed on the Revolux render.
 
 The name is drawn as a path rather than set as text, so it looks the same on
 every machine, stays sharp at any size and moves with the device as one
 shape. Text is laid out on the pixel grid, the render is not, so as the
 device floated the letters slipped up to two pixels against it each cycle.
 
-Arial is Microsoft's and is not in the repository. To regenerate, point this
-at Arial Bold (arialbd.ttf, from any Windows or macOS machine):
+The name is Montserrat SemiBold, which is under the SIL Open Font Licence.
+To regenerate it (to change the word, say):
 
+    npm pack @fontsource/montserrat && tar -xzf fontsource-montserrat-*.tgz
     pip install fonttools
-    python scripts/wordmark-outline.py path/to/arialbd.ttf Revolux 0.04
+    python scripts/wordmark-outline.py package/files/montserrat-latin-600-normal.woff REVOLUX 0.2
 
 and paste the printed d and ink into src/components/RevoluxDevice.tsx.
-The arguments are the font, the word and the tracking in ems.
+The arguments are the font (TTF, OTF or WOFF), the word and the tracking in
+ems.
 """
 
 import json
