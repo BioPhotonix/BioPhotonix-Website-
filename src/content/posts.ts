@@ -226,3 +226,10 @@ export const posts: Post[] = [...insights, ...articles].sort((a, b) => (a.date <
 }
 
 export const getPost = (slug: string) => posts.find((p) => p.slug === slug);
+
+/**
+ * The newest three, which the home page shows under "Latest insights". The
+ * sitemap dates the home page by them, so both read this one list: show more
+ * or fewer here and the home page's lastmod follows.
+ */
+export const latestPosts: Post[] = posts.slice(0, 3);

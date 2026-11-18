@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { posts } from "@/content/posts";
+import { latestPosts, posts } from "@/content/posts";
 import { site } from "@/content/site";
 
 /**
@@ -11,7 +11,8 @@ import { site } from "@/content/site";
  *
  * So these are real dates, and they are the one thing here that has to be kept
  * by hand: change a page's content, change its date. The articles need no such
- * care, because a post already carries its own.
+ * care, because a post already carries its own; nor do the two pages that list
+ * articles, which take the later of their own date and their articles' (below).
  */
 const PAGES = [
   { path: "", priority: 1, updated: "2026-09-18" },
@@ -25,14 +26,22 @@ const PAGES = [
   { path: "/privacy-policy", priority: 0.2, updated: "2026-09-16" },
 ];
 
+/** The later of two YYYY-MM-DD dates; they sort as strings. */
+const later = (a: string, b: string) => (b > a ? b : a);
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  // The listing changes whenever an article is added, so its date is the newest article's.
-  const newest = posts.reduce((m, p) => (p.updated ?? p.date) > m ? (p.updated ?? p.date) : m, "");
+  const follows: Record<string, string> = {
+    // The home page's "Latest insights" shows the newest articles, so it
+    // changes the week each one is published, without anyone touching PAGES.
+    "": latestPosts.reduce((m, p) => later(m, p.date), ""),
+    // The listing changes whenever an article is added or revised.
+    "/news": posts.reduce((m, p) => later(m, p.updated ?? p.date), ""),
+  };
   return [
     ...PAGES.map((p) => ({
       url: `${site.url}${p.path}`,
-      lastModified: new Date(p.path === "/news" && newest > p.updated ? newest : p.updated),
-      changeFrequency: (p.path === "/news" ? "weekly" : "monthly") as "weekly" | "monthly",
+      lastModified: new Date(later(p.updated, follows[p.path] ?? "")),
+      changeFrequency: (p.path in follows ? "weekly" : "monthly") as "weekly" | "monthly",
       priority: p.priority,
     })),
     ...posts.map((p) => ({

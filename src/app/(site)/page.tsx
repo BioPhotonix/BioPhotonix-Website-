@@ -13,14 +13,13 @@ import SectionHeading from "@/components/SectionHeading";
 import StandardsTicker from "@/components/StandardsTicker";
 import StatCounter from "@/components/StatCounter";
 import TechCard from "@/components/TechCard";
-import { posts } from "@/content/posts";
+import { latestPosts } from "@/content/posts";
 import { burden, clinics, contact, founder, revolux, roadmap, shift, site } from "@/content/site";
 
 const formatDate = (iso: string) =>
   new Date(iso).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
 
 export default function HomePage() {
-  const latest = posts.slice(0, 3);
   return (
     <>
       <Hero />
@@ -207,7 +206,7 @@ export default function HomePage() {
             </Reveal>
           </div>
           <div className="mt-12 grid gap-5 md:grid-cols-3">
-            {latest.map((p, i) => (
+            {latestPosts.map((p, i) => (
               <Reveal key={p.slug} delay={i * 0.08} as="article">
                 <Link href={`/news/${p.slug}`} className="group block h-full">
                   <TechCard className="h-full overflow-hidden">
