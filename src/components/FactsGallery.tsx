@@ -1,34 +1,37 @@
 "use client";
 
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from "react";
 import { useReducedMotion } from "motion/react";
 import CountUp from "./CountUp";
 import StatCounter from "./StatCounter";
 import { burden } from "@/content/site";
 
 /**
- * The seven facts about AMD as a gallery that slides one fact at a time:
- * three on screen on a laptop, two on a tablet, one on a phone.
+ * The seven facts about AMD as a gallery: three on screen on a laptop, two on
+ * a tablet, one on a phone, and every few seconds a red laser line sweeps
+ * across and beams the next ones in.
  *
  * Every fact takes its turn, the UK cost included, and all are set the same
- * way. Seven boxes never tile, and a gallery does not need them to: whatever
- * the count, the row is always full. The cost starts second, so on a laptop
- * it opens in the centre.
+ * way. Seven boxes never tile, and a gallery does not need them to: each step
+ * moves on by as many facts as are showing, wrapping round, so the row is
+ * always full and everything showing is new. The cost starts second, so on a
+ * laptop it opens in the centre.
  *
- * The track carries copies of the first three facts at its end, so it can
- * keep moving the same way for ever: once it has slid onto the copies it jumps
- * back to the originals, which look identical, without animating. Going back
- * from the first fact does the reverse. Every card stretches to the tallest
- * one, so the row never changes height.
+ * The beam is one line crossing the whole row at an even speed. Behind it the
+ * next facts are revealed, slot by slot, with a brief red glow as if just
+ * lit; ahead of it the old ones remain. Each slot stacks every fact in one
+ * grid cell and shows one, so the row is always as tall as its longest fact
+ * and never changes height.
  *
  * Moving content needs a way to stop it (WCAG 2.2.2), so there is a pause
- * button, it holds while the pointer or focus is on it, and it only runs
- * while on screen. Under reduced motion it never starts on its own and the
- * buttons step without sliding. Screen readers get all seven as one list
- * instead of whichever happen to be showing.
+ * button, it only runs while on screen, and it holds while a mouse pointer is
+ * over it or keyboard focus is in its controls. Only those: a phone reports a
+ * tap as the pointer arriving and never reports it leaving, so holding on any
+ * pointer froze the gallery for good after one touch. On a phone it takes a
+ * sideways swipe. Under reduced motion it never starts on its own and the
+ * buttons change the facts without a beam. Screen readers get all seven as
+ * one list instead of whichever happen to be showing.
  */
-
-const EVERY = 4500;
 
 type Fact = { key: string; value: ReactNode; said: string; label: string; note?: string };
 
@@ -49,23 +52,52 @@ const COST: Fact = {
 
 const FACTS: Fact[] = [STAT_FACTS[0], COST, ...STAT_FACTS.slice(1)];
 const N = FACTS.length;
-/** As many copies as the most cards ever on screen at once. */
-const COPIES = 3;
-const TRACK = [...FACTS, ...FACTS.slice(0, COPIES)];
+const SLOTS = 3;
 
 const wrap = (n: number) => ((n % N) + N) % N;
 
+/** How long the facts stay before the next beam: shorter where fewer show at once. */
+const dwell = (per: number) => 1800 + 1000 * per;
+/** How long the beam takes to cross the row. */
+const sweep = (per: number) => 450 + 200 * per;
+
+/** How many slots are on screen: one on a phone, two from 40rem, three from 64rem. */
+function usePerView() {
+  const [per, setPer] = useState(1);
+  useEffect(() => {
+    const sm = window.matchMedia("(min-width: 40rem)");
+    const lg = window.matchMedia("(min-width: 64rem)");
+    const update = () => setPer(lg.matches ? 3 : sm.matches ? 2 : 1);
+    update();
+    sm.addEventListener("change", update);
+    lg.addEventListener("change", update);
+    return () => {
+      sm.removeEventListener("change", update);
+      lg.removeEventListener("change", update);
+    };
+  }, []);
+  return per;
+}
+
+type Beam = { id: number; to: number; dir: 1 | -1 };
+
 export default function FactsGallery() {
   const reduce = useReducedMotion();
+  const per = usePerView();
   const ref = useRef<HTMLDivElement>(null);
-  const [pos, setPos] = useState(0);
-  const [slide, setSlide] = useState(true);
-  /** Counts moves, so the timer restarts after each one but not after a silent jump. */
-  const [moves, setMoves] = useState(0);
+  const [start, setStart] = useState(0);
+  const [beam, setBeam] = useState<Beam | null>(null);
+  /** The last beam's direction, and whether one has landed yet: the facts it
+      lit keep their animation until it has finished, rather than losing it
+      the moment the beam leaves. */
+  const [lastDir, setLastDir] = useState<1 | -1>(1);
+  const [lit, setLit] = useState(false);
   const [paused, setPaused] = useState(false);
-  const [held, setHeld] = useState(false);
+  const [hovered, setHovered] = useState(false);
+  const [focused, setFocused] = useState(false);
   const [onScreen, setOnScreen] = useState(false);
   const touchX = useRef<number | null>(null);
+  const beams = useRef(0);
 
   useEffect(() => {
     if (reduce) setPaused(true);
@@ -79,53 +111,39 @@ export default function FactsGallery() {
     return () => io.disconnect();
   }, []);
 
-  /** Slide to a position on the track, first jumping silently off the copies if need be. */
-  const moveTo = (target: (from: number) => number) => {
-    setMoves((m) => m + 1);
+  /** Show the facts from `to` onwards: at once under reduced motion, otherwise by beam. */
+  const show = (to: number, dir: 1 | -1) => {
+    const target = wrap(to);
+    if (beam || target === start) return;
     if (reduce) {
-      setSlide(false);
-      setPos((p) => wrap(target(wrap(p))));
+      setStart(target);
       return;
     }
-    const from = pos >= N ? pos - N : pos;
-    const to = target(from);
-    // Going back from the first fact: start from its copy at the end instead.
-    const start = to < 0 ? from + N : from;
-    const end = to < 0 ? to + N : to;
-    if (start === pos && slide) {
-      setPos(end);
-      return;
-    }
-    setSlide(false);
-    setPos(start);
-    // Two frames, so the jump is painted before the slide starts from it.
-    requestAnimationFrame(() =>
-      requestAnimationFrame(() => {
-        setSlide(true);
-        setPos(end);
-      }),
-    );
+    beams.current += 1;
+    setLastDir(dir);
+    setBeam({ id: beams.current, to: target, dir });
   };
 
-  const step = (d: 1 | -1) => moveTo((from) => from + d);
+  const step = (d: 1 | -1) => show(start + d * per, d);
 
-  /* A timeout that restarts after every move, rather than an interval: after
-     someone steps the gallery by hand they get the full pause before it moves
-     on. */
+  const landed = () => {
+    if (!beam) return;
+    setStart(beam.to);
+    setBeam(null);
+    setLit(true);
+  };
+
+  /* A timeout that restarts after every change, rather than an interval:
+     after someone steps the gallery by hand they get the full pause before it
+     moves on. */
   useEffect(() => {
-    if (paused || held || !onScreen) return;
-    const id = window.setTimeout(() => step(1), EVERY);
+    if (paused || hovered || focused || !onScreen || beam) return;
+    const id = window.setTimeout(() => step(1), dwell(per));
     return () => window.clearTimeout(id);
-    // eslint-disable-next-line react-hooks/exhaustive-deps -- step reads pos and slide, which only change with moves
-  }, [paused, held, onScreen, moves]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- step reads start, per and beam, all listed
+  }, [paused, hovered, focused, onScreen, beam, start, per]);
 
-  const onSlid = () => {
-    if (pos < N) return;
-    setSlide(false);
-    setPos(pos - N);
-  };
-
-  const current = wrap(pos);
+  const duration = sweep(per);
 
   return (
     <div ref={ref}>
@@ -144,8 +162,8 @@ export default function FactsGallery() {
 
       <div
         aria-hidden="true"
-        onMouseEnter={() => setHeld(true)}
-        onMouseLeave={() => setHeld(false)}
+        onPointerEnter={(e) => e.pointerType === "mouse" && setHovered(true)}
+        onPointerLeave={(e) => e.pointerType === "mouse" && setHovered(false)}
         onPointerDown={(e) => {
           if (e.pointerType !== "mouse") touchX.current = e.clientX;
         }}
@@ -155,55 +173,90 @@ export default function FactsGallery() {
           touchX.current = null;
           if (Math.abs(dx) > 40) step(dx < 0 ? 1 : -1);
         }}
-        className="facts-viewport overflow-hidden rounded-2xl border border-line bg-ink-900"
+        onPointerCancel={() => {
+          touchX.current = null;
+        }}
+        className="facts-viewport relative grid overflow-hidden rounded-2xl border border-line bg-ink-900 sm:grid-cols-2 lg:grid-cols-3"
       >
-        <div
-          className="facts-track flex"
-          data-slide={slide}
-          style={{ ["--i" as string]: pos }}
-          onTransitionEnd={(e) => {
-            if (e.target === e.currentTarget) onSlid();
-          }}
-        >
-          {TRACK.map((f, k) => (
-            <div key={`${f.key}-${k}`} className="facts-card flex flex-col border-l border-line p-7 md:p-8">
-              <span className="block text-4xl font-medium text-fog md:text-5xl">{f.value}</span>
-              <span className="mt-3 block text-sm leading-relaxed text-fog">{f.label}</span>
-              {f.note && <span className="mt-2 block text-sm leading-relaxed text-fog">{f.note}</span>}
+        {Array.from({ length: SLOTS }, (_, k) => {
+          const current = wrap(start + k);
+          const incoming = beam ? wrap(beam.to + k) : null;
+          /* Each visible slot is revealed in its own share of the sweep. */
+          const order = (beam?.dir ?? lastDir) < 0 ? per - 1 - k : k;
+          const timing = {
+            "--slot-d": `${duration / per}ms`,
+            "--slot-delay": `${(order * duration) / per}ms`,
+          } as CSSProperties;
+          return (
+            <div
+              key={k}
+              className={`fact-slot grid ${k === 1 ? "hidden border-l border-line sm:grid" : ""} ${k === 2 ? "hidden border-l border-line lg:grid" : ""}`}
+              data-dir={(beam?.dir ?? lastDir) === -1 ? "rtl" : "ltr"}
+              style={timing}
+            >
+              {FACTS.map((f, i) => {
+                const role = i === incoming ? "in" : i === current ? (beam ? "out" : "on") : "off";
+                return (
+                  <div key={f.key} className="fact flex flex-col p-7 md:p-8" data-role={role} data-lit={lit}>
+                    <span className="block text-4xl font-medium text-fog md:text-5xl">{f.value}</span>
+                    <span className="mt-3 block text-sm leading-relaxed text-fog">{f.label}</span>
+                    {f.note && <span className="mt-2 block text-sm leading-relaxed text-fog">{f.note}</span>}
+                  </div>
+                );
+              })}
             </div>
-          ))}
-        </div>
+          );
+        })}
+
+        {beam && (
+          <span
+            key={beam.id}
+            className="laser-run"
+            data-dir={beam.dir === -1 ? "rtl" : "ltr"}
+            style={{ "--sweep": `${duration}ms` } as CSSProperties}
+            onAnimationEnd={(e) => {
+              if (e.target === e.currentTarget && e.animationName.startsWith("laser-run")) landed();
+            }}
+          >
+            <span className="laser-beam" />
+          </span>
+        )}
       </div>
 
       <div
         className="mt-4 flex flex-wrap items-center justify-center gap-x-1 gap-y-2"
-        onFocus={() => setHeld(true)}
-        onBlur={() => setHeld(false)}
+        onFocus={(e) => {
+          if (e.target.matches(":focus-visible")) setFocused(true);
+        }}
+        onBlur={() => setFocused(false)}
       >
         <button
           type="button"
           onClick={() => step(-1)}
-          aria-label="Previous fact"
+          aria-label="Previous facts"
           className="flex h-9 w-9 items-center justify-center rounded-full border border-line text-fog transition hover:border-line-strong"
         >
           <span aria-hidden="true">&larr;</span>
         </button>
-        {FACTS.map((f, k) => (
-          <button
-            key={f.key}
-            type="button"
-            onClick={() => moveTo(() => k)}
-            aria-label={`Show fact ${k + 1} of ${N}`}
-            aria-current={k === current}
-            className="flex h-9 w-5 items-center justify-center"
-          >
-            <span className={`block h-1.5 rounded-full transition-all ${k === current ? "w-4 bg-teal-400" : "w-1.5 bg-line-strong"}`} />
-          </button>
-        ))}
+        {FACTS.map((f, k) => {
+          const showing = wrap(k - start) < per;
+          return (
+            <button
+              key={f.key}
+              type="button"
+              onClick={() => show(k, wrap(k - start) <= N / 2 ? 1 : -1)}
+              aria-label={`Show fact ${k + 1} of ${N}`}
+              aria-current={k === start}
+              className="flex h-9 w-5 items-center justify-center"
+            >
+              <span className={`block h-1.5 rounded-full transition-all ${showing ? "w-4 bg-teal-400" : "w-1.5 bg-line-strong"}`} />
+            </button>
+          );
+        })}
         <button
           type="button"
           onClick={() => step(1)}
-          aria-label="Next fact"
+          aria-label="Next facts"
           className="flex h-9 w-9 items-center justify-center rounded-full border border-line text-fog transition hover:border-line-strong"
         >
           <span aria-hidden="true">&rarr;</span>
@@ -217,7 +270,6 @@ export default function FactsGallery() {
           {paused ? "Play" : "Pause"}
         </button>
       </div>
-
     </div>
   );
 }

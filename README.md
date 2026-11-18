@@ -128,13 +128,17 @@ All in `src/components`:
   ending backwards first (message, then scotoma, then colour, then the zoom
   back to the first face) and plays again from there. Under reduced motion
   it shows the finished picture.
-- **FactsGallery** slides the seven AMD facts along one at a time every 4.5
-  seconds: three on screen on a laptop, two on a tablet, one on a phone, so
-  the row is always full whatever the count. Every fact takes its turn and
-  all are set alike; the UK cost starts in the centre on a laptop. Its
-  source is kept in `site.ts` but not shown. It holds while the pointer or focus is on
-  it, has a pause button, takes a sideways swipe, never starts on its own
-  under reduced motion, and gives screen readers all seven as one list.
+- **FactsGallery** shows the seven AMD facts three at a time on a laptop,
+  two on a tablet and one on a phone. Every few seconds (three on a phone,
+  five on a laptop) a red laser line sweeps across the row and beams in the
+  next ones, each lit red for a moment as it appears; it moves on by as many
+  as are showing, wrapping round, so the row is always full. All seven take
+  their turn and are set alike; the UK cost starts in the centre on a laptop,
+  and its source is kept in `site.ts` but not shown. It has a pause button,
+  takes a sideways swipe, holds while a mouse is over it or keyboard focus is
+  in its controls (not on a tap: a phone never reports the finger leaving, so
+  holding on touch froze it), never starts on its own under reduced motion,
+  and gives screen readers all seven as one list.
 - **RevoluxDevice** takes an optional `label`, the device's name printed on
   its control box. Only the landing page's hero sets it. It is placed and set
   as a maker would print it: in the clear band under the box's round button
