@@ -206,17 +206,22 @@ export default function FactsGallery() {
           );
         })}
 
-        {!reduce && (
-          <span
-            key={`${shown}-${per}`}
-            className="facts-progress"
-            data-running={running}
-            data-paused={paused}
-            data-changing={change !== null}
-            style={{ "--dwell": `${dwell(per)}ms` } as CSSProperties}
-            onAnimationEnd={() => step(1)}
-          />
-        )}
+        {/* Always rendered, and hidden by the stylesheet under reduced motion:
+            the server cannot know the setting, so rendering it only when
+            motion is allowed made the first client render differ from the
+            server's (React #418). With no animation it never ends, so it
+            never moves the gallery on. */}
+        <span
+          key={`${shown}-${per}`}
+          className="facts-progress"
+          data-running={running}
+          data-paused={paused}
+          data-changing={change !== null}
+          style={{ "--dwell": `${dwell(per)}ms` } as CSSProperties}
+          onAnimationEnd={() => {
+            if (!reduce) step(1);
+          }}
+        />
       </div>
 
       <div
