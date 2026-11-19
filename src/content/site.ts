@@ -530,7 +530,7 @@ export const clinics = {
     {
       title: "No upfront cost",
       mark: "no-upfront" as const,
-      body: "Revolux is accessed through a rental and licensing model; devices remain BioPhotonix assets. With no upfront cost, the service is profitable from the start.",
+      body: "Revolux is accessed through a rental and licensing model. With no upfront cost, the service is profitable from the start.",
     },
   ],
   workflow: {
@@ -795,7 +795,7 @@ export const investors = {
     eyebrow: "Business model",
     title: "Recurring revenue that scales with patient volume.",
     body: [
-      "Revolux is accessed through a rental and licensing model; devices remain BioPhotonix assets. Each patient follows a set course of sessions, and repeatable cycles mean revenue for the clinic, and for BioPhotonix, scales linearly with the number of patients treated.",
+      "Revolux is accessed through a rental and licensing model. Each patient follows a set course of sessions, and repeatable cycles mean revenue for the clinic, and for BioPhotonix, scales linearly with the number of patients treated.",
     ],
     points: [
       "No upfront cost to the clinic",
