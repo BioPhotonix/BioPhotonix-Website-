@@ -7,8 +7,7 @@ import { VisionRenderer, type SceneSource } from "./vision-engine";
 /**
  * What a patient sees at each stage of dry AMD.
  *
- * The apparatus only: the host page supplies its own heading, the way
- * BurdenChart is used. Stage copy lives in `vision` in the content file, the
+ * The apparatus only: the host page supplies its own heading. Stage copy lives in `vision` in the content file, the
  * stage parameters and every pixel in vision-engine.ts.
  *
  * The lost area follows the pointer. That is the one thing a static picture

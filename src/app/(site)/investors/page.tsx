@@ -1,17 +1,14 @@
 import JsonLd from "@/components/JsonLd";
 import { breadcrumbSchema } from "@/content/schema";
 import type { Metadata } from "next";
-import Image from "next/image";
-import BurdenChart from "@/components/BurdenChart";
+import Link from "next/link";
+import Button from "@/components/Button";
 import MarketFunnel from "@/components/MarketFunnel";
-import ContactForm from "@/components/ContactForm";
-import CountUp from "@/components/CountUp";
 import Reveal from "@/components/Reveal";
 import Roadmap from "@/components/Roadmap";
 import SectionHeading from "@/components/SectionHeading";
-import StandardsTicker from "@/components/StandardsTicker";
 import TechCard from "@/components/TechCard";
-import { advisors, founder, investors, partners, roadmap } from "@/content/site";
+import { investors, roadmap } from "@/content/site";
 
 export const metadata: Metadata = {
   title: "Investors",
@@ -30,19 +27,6 @@ export default function InvestorsPage() {
           <p className="eyebrow">{investors.hero.eyebrow}</p>
           <h1 className="h-display mt-5 max-w-4xl text-fog">{investors.hero.title}</h1>
           <p className="lede mt-7 max-w-2xl text-fog">{investors.hero.lede}</p>
-          <dl className="mt-14 grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
-            {investors.highlights.map((h) => (
-              <div key={h.label} className="bg-ink-950/80 p-6">
-                <dt className="figure text-xs uppercase tracking-[0.13em] text-fog">{h.label}</dt>
-                <dd>
-                  <span className="mt-2 block text-3xl font-medium text-fog">
-                    <CountUp value={h.value} />
-                  </span>
-                  <span className="mt-2 block text-sm text-fog">{h.body}</span>
-                </dd>
-              </div>
-            ))}
-          </dl>
         </div>
       </section>
 
@@ -60,7 +44,6 @@ export default function InvestorsPage() {
             </Reveal>
           </div>
           <div className="flex flex-col gap-6 lg:col-span-7">
-            <BurdenChart />
             <figure className="rounded-2xl border border-line bg-ink-900 p-6 md:p-8">
               <MarketFunnel />
             </figure>
@@ -81,22 +64,28 @@ export default function InvestorsPage() {
                     {p}
                   </p>
                 ))}
-                <ul className="mt-7 flex flex-col gap-3">
-                  {block.points.map((pt) => (
-                    <li key={pt} className="flex items-start gap-3 text-sm text-fog">
-                      <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-teal-400" />
-                      {pt}
-                    </li>
-                  ))}
-                </ul>
+                {"points" in block && (
+                  <ul className="mt-7 flex flex-col gap-3">
+                    {block.points.map((pt) => (
+                      <li key={pt} className="flex items-start gap-3 text-sm text-fog">
+                        <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-teal-400" />
+                        {pt}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                {"link" in block && (
+                  <Link href={block.link.href} className="link-underline mt-7 inline-block text-sm text-fog">
+                    {block.link.label} &rarr;
+                  </Link>
+                )}
               </TechCard>
             </Reveal>
           ))}
         </div>
       </section>
-      <StandardsTicker />
 
-      {/* Roadmap */}
+      {/* Roadmap: lives here, and only here. */}
       <section className="shell py-20 md:py-28">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-5">
@@ -108,35 +97,14 @@ export default function InvestorsPage() {
         </div>
       </section>
 
-      {/* Team */}
+      {/* Team: the founder, advisers and partners are introduced on About. */}
       <section className="border-y border-line bg-ink-900 py-20 md:py-28">
-        <div className="shell">
-          <SectionHeading eyebrow="Team and partners" title="A clinician founder, with the specialists a medical device needs." />
-          <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {[
-              { name: founder.name, role: `${founder.role}, ${founder.qualifications.join(", ")}`, image: founder.image, alt: founder.alt },
-              ...advisors.people.map((p) => ({ name: p.name, role: `${p.area}. ${p.role}, ${p.org}.`, image: p.image, alt: p.alt })),
-            ].map((p, i) => (
-              <Reveal key={p.name} delay={i * 0.08}>
-                <TechCard className="h-full overflow-hidden">
-                  <div className="relative aspect-square border-b border-line">
-                    <Image src={p.image} alt={p.alt} fill sizes="(max-width: 768px) 100vw, 25vw" className="object-cover object-top" />
-                  </div>
-                  <div className="p-5">
-                    <h3 className="font-display text-lg font-semibold text-fog">{p.name}</h3>
-                    <p className="mt-1 text-sm leading-relaxed text-fog">{p.role}</p>
-                  </div>
-                </TechCard>
-              </Reveal>
-            ))}
-          </div>
-          <Reveal className="mt-10 flex flex-wrap gap-x-8 gap-y-3 border-t border-line pt-8">
-            <span className="figure text-xs uppercase tracking-[0.13em] text-fog">{partners.title}</span>
-            {partners.names.map((p) => (
-              <span key={p.name} className="text-sm text-fog">
-                {p.name}
-              </span>
-            ))}
+        <div className="shell flex flex-wrap items-end justify-between gap-8">
+          <SectionHeading eyebrow={investors.team.eyebrow} title={investors.team.title} intro={investors.team.intro} />
+          <Reveal>
+            <Button href="/about" variant="outline">
+              {investors.team.cta}
+            </Button>
           </Reveal>
         </div>
       </section>
@@ -149,8 +117,9 @@ export default function InvestorsPage() {
             <h2 className="h-section mt-4 text-fog">{investors.dataRoom.title}</h2>
             <p className="lede mt-6 max-w-md text-fog">{investors.dataRoom.body}</p>
           </Reveal>
-          <Reveal delay={0.1}>
-            <ContactForm kind="investor" />
+          <Reveal delay={0.1} className="flex items-center md:justify-end">
+            {/* The one form on the site is on Contact; this opens it as an investor enquiry. */}
+            <Button href="/contact?as=investor">{investors.dataRoom.label}</Button>
           </Reveal>
         </div>
         <Reveal className="mt-16 border-t border-line pt-8">

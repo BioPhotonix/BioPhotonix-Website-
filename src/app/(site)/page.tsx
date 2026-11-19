@@ -1,31 +1,33 @@
 import Image from "next/image";
 import Link from "next/link";
 import Button from "@/components/Button";
-import ContactForm from "@/components/ContactForm";
 import Hero from "@/components/Hero";
 import PathwayDiagram from "@/components/PathwayDiagram";
 import PortraitCrowd from "@/components/PortraitCrowd";
-import PostArt from "@/components/PostArt";
-import CardMark from "@/components/CardMark";
 import Reveal from "@/components/Reveal";
-import Roadmap from "@/components/Roadmap";
 import SectionHeading from "@/components/SectionHeading";
-import StandardsTicker from "@/components/StandardsTicker";
 import FactsGallery from "@/components/FactsGallery";
 import TechCard from "@/components/TechCard";
 import { posts } from "@/content/posts";
-import { burden, clinics, contact, founder, revolux, roadmap, shift, site } from "@/content/site";
+import { burden, home, revolux, shift } from "@/content/site";
 
 const formatDate = (iso: string) =>
   new Date(iso).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
 
+/*
+ * The front door. It says in full only what lives here, the problem and the
+ * shift from monitoring to treatment, and points to the page that holds
+ * everything else rather than repeating it: the device to Technology, the
+ * practice offer to Clinics, the programme and roadmap to Investors, the
+ * founder and team to About, the articles to News, the form to Contact.
+ */
 export default function HomePage() {
   const latest = posts.slice(0, 3);
   return (
     <>
       <Hero />
 
-      {/* The burden of dry AMD */}
+      {/* The burden of dry AMD: lives here, and only here. */}
       <section className="shell py-20 md:py-28">
         <SectionHeading title={burden.title} intro={burden.intro} />
         <Reveal className="mt-14">
@@ -36,7 +38,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* From observation to intervention */}
+      {/* From observation to intervention: lives here, and only here. */}
       <section className="relative border-y border-line bg-ink-900 py-20 md:py-28">
         <div aria-hidden="true" className="grid-bg absolute inset-0" />
         <div className="shell relative">
@@ -58,7 +60,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Revolux */}
+      {/* Revolux, in brief: the device itself is described on Technology. */}
       <section className="shell py-20 md:py-28">
         <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
           <Reveal className="relative lg:col-span-5">
@@ -79,167 +81,82 @@ export default function HomePage() {
           <div className="lg:col-span-7">
             <SectionHeading eyebrow={revolux.eyebrow} title={`${revolux.name}. ${revolux.tagline}`} />
             <Reveal className="mt-6 flex flex-col gap-4 text-fog">
-              {revolux.body.map((p) => (
+              {home.revolux.body.map((p) => (
                 <p key={p} className="leading-relaxed">
                   {p}
                 </p>
               ))}
             </Reveal>
-            <div className="mt-10 grid gap-4 sm:grid-cols-3">
-              {revolux.pillars.map((p, i) => (
-                <Reveal key={p.title} delay={i * 0.08}>
-                  <TechCard className="h-full p-6">
-                    <h3 className="font-display text-lg font-semibold text-fog">{p.title}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-fog">{p.body}</p>
-                  </TechCard>
-                </Reveal>
-              ))}
-            </div>
             <Reveal className="mt-8">
-              <Button href={revolux.cta.href}>{revolux.cta.label}</Button>
+              <Button href={home.revolux.cta.href}>{home.revolux.cta.label}</Button>
             </Reveal>
           </div>
         </div>
       </section>
 
-      <StandardsTicker />
-
-      {/* For clinics */}
-      <section className="shell py-20 md:py-28">
-        <SectionHeading eyebrow={clinics.eyebrow} title={clinics.title} intro={clinics.intro} />
-        <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {clinics.props.map((p, i) => (
-            <Reveal key={p.title} delay={(i % 3) * 0.08}>
-              <TechCard className="h-full p-7">
-                <div className="flex items-start justify-between gap-4">
-                  <span className="text-xs font-semibold tracking-[0.13em] text-teal-400">{String(i + 1).padStart(2, "0")}</span>
-                  <CardMark kind={p.mark} className="h-10 w-10 shrink-0" />
-                </div>
-                <h3 className="mt-4 font-display text-lg font-semibold text-fog">{p.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-fog">{p.body}</p>
-              </TechCard>
-            </Reveal>
-          ))}
-        </div>
-        <Reveal className="mt-10 flex flex-wrap gap-3">
-          <Button href="/clinics">Revolux for your practice</Button>
-          <Button href="/clinics#economics" variant="outline">
-            Practice economics
-          </Button>
-        </Reveal>
-      </section>
-
-      {/* Roadmap */}
+      {/* Three doors, each saying what is behind it rather than repeating it. */}
       <section className="border-y border-line bg-ink-900 py-20 md:py-28">
-        <div className="shell grid gap-12 lg:grid-cols-12 lg:gap-16">
-          <div className="lg:col-span-5">
-            <SectionHeading eyebrow={roadmap.eyebrow} title={roadmap.title} intro={roadmap.intro} />
-            <Reveal className="mt-8">
-              <Button href="/investors" variant="outline">
-                Read the investor overview
-              </Button>
-            </Reveal>
-          </div>
-          <div className="lg:col-span-7">
-            <Roadmap />
-          </div>
-        </div>
-      </section>
-
-      {/* Founder */}
-      <section className="shell py-20 md:py-28">
-        <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
-          <Reveal className="lg:col-span-5">
-            <div className="relative aspect-[6/7] overflow-hidden rounded-2xl border border-line">
-              <Image src={founder.image} alt={founder.alt} fill sizes="(max-width: 1024px) 100vw, 40vw" className="object-cover object-top" />
-            </div>
-          </Reveal>
-          <div className="lg:col-span-7">
-            <SectionHeading eyebrow={founder.eyebrow} title="Founded by a clinician who ran out of things to offer." />
-            <Reveal className="mt-6 flex flex-col gap-4 text-fog">
-              {founder.bio.map((p) => (
-                <p key={p} className="leading-relaxed">
-                  {p}
-                </p>
-              ))}
-            </Reveal>
-            <Reveal className="mt-8">
-              <p className="font-display text-xl font-semibold text-fog">{founder.name}</p>
-              <p className="text-sm text-fog">
-                {founder.role} &middot; {founder.qualifications.join(", ")}
-              </p>
-              <div className="mt-6">
-                <Button href="/about" variant="outline">
-                  About the company
-                </Button>
-              </div>
-            </Reveal>
-          </div>
-        </div>
-      </section>
-
-      {/* News */}
-      <section className="border-t border-line bg-ink-900 py-20 md:py-28">
         <div className="shell">
-          <div className="flex flex-wrap items-end justify-between gap-6">
-            <SectionHeading eyebrow="Latest insights" title="From the team." />
-            <Reveal>
-              <Link href="/news" className="link-underline text-base text-fog hover:text-fog">
-                All articles
-              </Link>
-            </Reveal>
-          </div>
-          <div className="mt-12 grid gap-5 md:grid-cols-3">
-            {latest.map((p, i) => (
-              <Reveal key={p.slug} delay={i * 0.08} as="article">
-                <Link href={`/news/${p.slug}`} className="group block h-full">
-                  <TechCard className="h-full overflow-hidden">
-                    <div className="aspect-[5/3] overflow-hidden border-b border-line">
-                      <PostArt kind={p.art} cover={p.cover} className="transition-transform duration-700 group-hover:scale-[1.03]" />
-                    </div>
-                    <div className="p-6">
-                      <p className="figure text-xs uppercase tracking-[0.13em] text-fog">
-                        {formatDate(p.date)} &middot; {p.readingMinutes} min
-                      </p>
-                      <h3 className="mt-3 font-display text-lg font-semibold leading-snug text-fog">{p.title}</h3>
-                      <p className="mt-3 text-sm leading-relaxed text-fog">{p.excerpt}</p>
-                    </div>
-                  </TechCard>
-                </Link>
+          <SectionHeading title={home.doors.title} />
+          <div className="mt-12 grid gap-4 md:grid-cols-3">
+            {home.doors.items.map((d, i) => (
+              <Reveal key={d.title} delay={i * 0.08}>
+                <TechCard className="flex h-full flex-col p-7">
+                  <p className="eyebrow">{d.eyebrow}</p>
+                  <h3 className="mt-4 font-display text-xl font-semibold text-fog">{d.title}</h3>
+                  <p className="mt-3 flex-1 text-sm leading-relaxed text-fog">{d.body}</p>
+                  <div className="mt-6">
+                    <Button href={d.cta.href} variant="outline">
+                      {d.cta.label}
+                    </Button>
+                  </div>
+                </TechCard>
               </Reveal>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Contact */}
-      <section id="contact" className="scroll-mt-24 border-t border-line py-20 md:py-28">
-        <div className="shell grid gap-12 md:grid-cols-2 md:gap-16">
+      {/* Latest insights: titles only; the articles and their summaries are on News. */}
+      <section className="shell py-20 md:py-28">
+        <div className="flex flex-wrap items-end justify-between gap-6">
+          <SectionHeading eyebrow={home.insights.eyebrow} title={home.insights.title} />
           <Reveal>
-            <p className="eyebrow">{contact.eyebrow}</p>
-            <h2 className="h-section mt-4 text-fog">{contact.title}</h2>
-            <p className="lede mt-6 max-w-md text-fog">{contact.body}</p>
-            <div className="mt-10 flex flex-col gap-3 text-lg">
-              <a href={site.phoneHref} className="link-underline w-fit text-fog">
-                {site.phone}
-              </a>
-              <a href={`mailto:${site.email}`} className="link-underline w-fit break-all text-fog">
-                {site.email}
-              </a>
-              <address className="text-base not-italic leading-relaxed text-fog">
-                {site.address.line1}, {site.address.line2}
-                <br />
-                {site.address.city} {site.address.postcode}, {site.address.country}
-              </address>
-            </div>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <h3 className="font-display text-2xl font-semibold text-fog">{contact.formTitle}</h3>
-            <div className="mt-6">
-              <ContactForm />
-            </div>
+            <Link href="/news" className="link-underline text-base text-fog hover:text-fog">
+              All articles
+            </Link>
           </Reveal>
         </div>
+        <Reveal as="div" className="mt-10">
+          <ul className="divide-y divide-line border-y border-line">
+            {latest.map((p) => (
+              <li key={p.slug}>
+                <Link
+                  href={`/news/${p.slug}`}
+                  className="group flex flex-col gap-1.5 py-5 sm:flex-row sm:items-baseline sm:gap-8"
+                >
+                  <span className="figure shrink-0 text-xs uppercase tracking-[0.13em] text-fog sm:w-44">
+                    {formatDate(p.date)}
+                  </span>
+                  <span className="font-display text-lg font-semibold leading-snug text-fog transition-colors group-hover:text-teal-300">
+                    {p.title}
+                  </span>
+                  <span aria-hidden="true" className="ml-auto hidden text-fog transition-transform group-hover:translate-x-1 sm:block">
+                    &rarr;
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </Reveal>
+      </section>
+
+      {/* Contact: the details and the form are on the Contact page. */}
+      <section className="border-t border-line bg-ink-900 py-16 md:py-20">
+        <Reveal className="shell flex flex-wrap items-center justify-between gap-6">
+          <h2 className="h-section text-fog">{home.contact.title}</h2>
+          <Button href={home.contact.cta.href}>{home.contact.cta.label}</Button>
+        </Reveal>
       </section>
     </>
   );

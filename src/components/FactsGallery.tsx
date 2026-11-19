@@ -7,15 +7,15 @@ import StatCounter from "./StatCounter";
 import { burden } from "@/content/site";
 
 /**
- * The seven facts about AMD as a gallery: three on screen on a laptop, two on
- * a tablet, one on a phone, and every few seconds a red laser line sweeps
+ * The facts about AMD as a gallery: up to three on screen on a laptop, two
+ * on a tablet, one on a phone, and every few seconds a red laser line sweeps
  * across and beams the next ones in.
  *
  * Every fact takes its turn, the UK cost included, and all are set the same
- * way. Seven boxes never tile, and a gallery does not need them to: each step
- * moves on by as many facts as are showing, wrapping round, so the row is
- * always full and everything showing is new. The cost starts second, so on a
- * laptop it opens in the centre.
+ * way. Each step moves on by as many facts as are showing, wrapping round, so
+ * the row is always full. No more than half the facts show at once, so each
+ * step brings in facts that were not just on screen: with four, two at a time
+ * on anything wider than a phone, alternating.
  *
  * The beam is one line crossing the whole row at an even speed. Behind it the
  * next facts are revealed, slot by slot, with a brief red glow as if just
@@ -52,7 +52,8 @@ const COST: Fact = {
 
 const FACTS: Fact[] = [STAT_FACTS[0], COST, ...STAT_FACTS.slice(1)];
 const N = FACTS.length;
-const SLOTS = 3;
+/** At most three on screen, and never more than half of them. */
+const SLOTS = Math.max(1, Math.min(3, Math.floor(N / 2)));
 
 const wrap = (n: number) => ((n % N) + N) % N;
 
@@ -67,7 +68,7 @@ function usePerView() {
   useEffect(() => {
     const sm = window.matchMedia("(min-width: 40rem)");
     const lg = window.matchMedia("(min-width: 64rem)");
-    const update = () => setPer(lg.matches ? 3 : sm.matches ? 2 : 1);
+    const update = () => setPer(Math.min(SLOTS, lg.matches ? 3 : sm.matches ? 2 : 1));
     update();
     sm.addEventListener("change", update);
     lg.addEventListener("change", update);
@@ -176,7 +177,7 @@ export default function FactsGallery() {
         onPointerCancel={() => {
           touchX.current = null;
         }}
-        className="facts-viewport relative grid overflow-hidden rounded-2xl border border-line bg-ink-900 sm:grid-cols-2 lg:grid-cols-3"
+        className={`facts-viewport relative grid overflow-hidden rounded-2xl border border-line bg-ink-900 ${SLOTS >= 2 ? "sm:grid-cols-2" : ""} ${SLOTS >= 3 ? "lg:grid-cols-3" : ""}`}
       >
         {Array.from({ length: SLOTS }, (_, k) => {
           const current = wrap(start + k);

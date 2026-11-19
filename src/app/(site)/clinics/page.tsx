@@ -1,9 +1,8 @@
 import JsonLd from "@/components/JsonLd";
-import { breadcrumbSchema } from "@/content/schema";
+import { breadcrumbSchema, faqSchema } from "@/content/schema";
 import type { Metadata } from "next";
 import Accordion from "@/components/Accordion";
 import Button from "@/components/Button";
-import ContactForm from "@/components/ContactForm";
 import RevenueCalculator from "@/components/RevenueCalculator";
 import TreatmentCourse from "@/components/TreatmentCourse";
 import CardMark from "@/components/CardMark";
@@ -24,6 +23,8 @@ export default function ClinicsPage() {
   return (
     <>
       <JsonLd data={breadcrumbSchema([{ name: "For clinics", path: "/clinics" }])} />
+      {/* The FAQ lives here only, so its structured data does too. */}
+      <JsonLd data={faqSchema()} />
       <section className="relative overflow-hidden pt-32 md:pt-40">
         <div aria-hidden="true" className="grid-bg absolute inset-0" />
         <div className="shell relative">
@@ -31,7 +32,7 @@ export default function ClinicsPage() {
           <h1 className="h-display mt-5 max-w-4xl text-fog">{clinics.title}</h1>
           <p className="lede mt-7 max-w-2xl text-fog">{clinics.intro}</p>
           <div className="mt-10 flex flex-wrap gap-3">
-            <Button href="#register">{clinics.cta.label}</Button>
+            <Button href="/contact?as=clinic">{clinics.cta.label}</Button>
             <Button href="#economics" variant="outline">
               Practice economics
             </Button>
@@ -93,8 +94,8 @@ export default function ClinicsPage() {
         </Reveal>
       </section>
 
-      {/* FAQ */}
-      <section className="border-y border-line bg-ink-900 py-20 md:py-28">
+      {/* FAQ: lives here, and only here. */}
+      <section id="faq" className="scroll-mt-24 border-y border-line bg-ink-900 py-20 md:py-28">
         <div className="shell grid gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-4">
             <SectionHeading eyebrow={faq.eyebrow} title={faq.title} intro={faq.intro} />
@@ -113,8 +114,9 @@ export default function ClinicsPage() {
             <h2 className="h-section mt-4 text-fog">{clinics.cta.title}</h2>
             <p className="lede mt-6 max-w-md text-fog">{clinics.cta.body}</p>
           </Reveal>
-          <Reveal delay={0.1}>
-            <ContactForm kind="clinic" />
+          <Reveal delay={0.1} className="flex items-center md:justify-end">
+            {/* The one form on the site is on Contact; this opens it as a practice enquiry. */}
+            <Button href="/contact?as=clinic">{clinics.cta.label}</Button>
           </Reveal>
         </div>
       </section>

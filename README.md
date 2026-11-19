@@ -91,17 +91,25 @@ engines (Bing and those that read it) about the new page; the key is the
 
 ### Pages
 
-| URL | Purpose |
+**One home for each piece of information.** Following advice the company
+received, nothing is said on two pages: each fact, section and form lives on
+one page, and the others point to it in a line rather than repeating it. The
+landing page is the front door. It says in full only what lives there, the
+problem and the shift from monitoring to treatment, and its other sections are
+pointers with their own wording (`home` in `site.ts`). Before adding copy to a
+page, check whether another page already says it; if it does, link to it.
+
+| URL | Purpose, and what lives only here |
 |---|---|
-| `/` | The story in one page: the unmet need, the shift from watching to treating, Revolux, clinics, roadmap, founder, news, contact |
-| `/technology` | Revolux in depth: the five-step delivery explainer, the retina diagram, safety and standards, FAQ. Carries the MedicalDevice and FAQPage structured data |
+| `/` | The front door: the problem (facts gallery, growth figure), the shift from watching to treating (pathway diagram), then pointers to Revolux, clinics, investors, the team, the latest articles and contact |
+| `/technology` | Revolux in depth: the five-step delivery explainer, the retina diagram, safety, and the standards strip. Carries the MedicalDevice structured data. Points to the FAQ on `/clinics` |
 | `/vision` | The vision simulator: what a patient sees at each stage of dry AMD. First item in the main nav |
-| `/clinics` | For practices: value propositions, the five-step clinical pathway, the revenue calculator, FAQ, registration form |
-| `/about` | The belief, the origin, values, founder, advisors and partners |
-| `/investors` | The thesis, market charts, business model, regulatory strategy, roadmap, team, data-room request |
+| `/clinics` | For practices: value propositions, the treatment course, the five-step clinical pathway, the revenue calculator and the FAQ (with its FAQPage structured data). Registration opens the contact form as a practice enquiry |
+| `/about` | The belief, the origin, values, and the team: founder, advisors and partners |
+| `/investors` | The thesis, the market funnel, business model, regulatory strategy, the roadmap. Points to the team on `/about`; the data-room request opens the contact form as an investor enquiry |
 | `/news`, `/news/[slug]` | The four articles from the Wix blog and the weekly insights |
 | `/feed.xml` | RSS of every article |
-| `/contact` | Contact details and the form. `?as=clinic` or `?as=investor` preselects the role |
+| `/contact` | Contact details and the site's only form. `?as=clinic` or `?as=investor` preselects the role |
 | `/privacy-policy` | The privacy notice |
 
 ## The interactive pieces
@@ -111,14 +119,8 @@ All in `src/components`:
 - **PhotonField** draws photons drifting towards a focal point behind the hero,
   on a canvas. It pauses off screen and shows a single still frame under
   `prefers-reduced-motion`.
-- **PrevalenceFrame** is a frame of 144 figures, each two million people,
-  that fills from the 2020 figure to the 2040 one as the years advance. The
-  head of each affected figure has a dark centre for the central vision dry
-  AMD takes. It plays once on scroll, then the year can be dragged.
-- **BurdenChart** places that frame beside a hundred-square grid of dry
-  against wet AMD. Used on the investors page.
-- **PortraitCrowd** is the landing page's version of the same story, told
-  with people: one older person's face, then well over a thousand as the
+- **PortraitCrowd** is how many people AMD reaches, told with people, on the
+  landing page only: one older person's face, then well over a thousand as the
   view widens over four and a half seconds, then the crowd turns grey and a
   central scotoma spreads over most of the picture with the message in its
   middle, about eight seconds in all. Drawn on a canvas so every face is
@@ -128,17 +130,18 @@ All in `src/components`:
   ending backwards first (message, then scotoma, then colour, then the zoom
   back to the first face) and plays again from there. Under reduced motion
   it shows the finished picture.
-- **FactsGallery** shows the seven AMD facts three at a time on a laptop,
-  two on a tablet and one on a phone. Every few seconds (three on a phone,
-  five on a laptop) a red laser line sweeps across the row and beams in the
-  next ones, each lit red for a moment as it appears; it moves on by as many
-  as are showing, wrapping round, so the row is always full. All seven take
-  their turn and are set alike; the UK cost starts in the centre on a laptop,
-  and its source is kept in `site.ts` but not shown. It has a pause button,
-  takes a sideways swipe, holds while a mouse is over it or keyboard focus is
-  in its controls (not on a tap: a phone never reports the finger leaving, so
-  holding on touch froze it), never starts on its own under reduced motion,
-  and gives screen readers all seven as one list.
+- **FactsGallery** shows the AMD facts that nothing else on the site says
+  (four: the worldwide count, its growth and the share that is dry were taken
+  out because the growth figure and the intro say them). It shows up to three
+  at a time and never more than half of them, so with four it is two at a
+  time on a tablet or laptop and one on a phone. Every few seconds a red
+  laser line sweeps across the row and beams in the next ones, each lit red
+  for a moment as it appears; it moves on by as many as are showing, wrapping
+  round, so the row is always full. It has a pause button, takes a sideways
+  swipe, holds while a mouse is over it or keyboard focus is in its controls
+  (not on a tap: a phone never reports the finger leaving, so holding on
+  touch froze it), never starts on its own under reduced motion, and gives
+  screen readers every fact as one list.
 - **RevoluxDevice** takes an optional `label`, the device's name printed on
   its control box. Only the landing page's hero sets it. It is placed and set
   as a maker would print it: in the clear band under the box's round button
@@ -342,7 +345,8 @@ something is already registered — then submit
 Each page carries a unique title, a description under the ~155 characters
 Google shows, and a canonical URL. The structured data is an Organization and
 a WebSite joined by `@id`, a BreadcrumbList on every page below the home page,
-MedicalDevice and FAQPage on `/technology`, and BlogPosting on each article.
+MedicalDevice on `/technology`, FAQPage on `/clinics` (where the FAQ is), and
+BlogPosting on each article.
 
 **Social cards.** `src/app/_og/card.tsx` draws the 1200x630 image every page
 shares, and the line of copy on each one is in `ogCards` in
