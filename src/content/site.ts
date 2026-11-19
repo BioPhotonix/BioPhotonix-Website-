@@ -530,7 +530,7 @@ export const clinics = {
     {
       title: "No upfront cost",
       mark: "no-upfront" as const,
-      body: "A low-friction subscription model eliminates high upfront costs, so the service is profitable from the start.",
+      body: "Revolux is accessed through a rental and licensing model; devices remain BioPhotonix assets. With no upfront cost, the service is profitable from the start.",
     },
   ],
   workflow: {
@@ -548,7 +548,7 @@ export const clinics = {
     eyebrow: "Practice economics",
     title: "A low break-even point.",
     intro:
-      "Revolux is offered on subscription with no upfront cost. Just one patient every three months covers the device subscription, which makes it a low-risk addition to a practice.",
+      "With no upfront cost, just one patient every three months covers the fixed monthly fee for the device, which makes it a low-risk addition to a practice.",
     /**
      * Fitted to the figures published in the FAQ: one, two and three patients a
      * month generate 700, 1,600 and 2,500 pounds of monthly profit. That is a
@@ -605,7 +605,7 @@ export const faq = {
     },
     {
       q: "How much can my clinic earn with Revolux?",
-      a: "Revolux offers a scalable revenue stream with a low break-even point. On BioPhotonix's published figures, one patient a month generates around £700 in monthly profit, two patients around £1,600 and three around £2,500. One patient every three months covers the device subscription.",
+      a: "Revolux offers a scalable revenue stream with a low break-even point. On BioPhotonix's published figures, one patient a month generates around £700 in monthly profit, two patients around £1,600 and three around £2,500. One patient every three months covers the fixed monthly fee for the device.",
     },
     {
       q: "What regulatory pathway is Revolux following?",
@@ -662,7 +662,7 @@ export const roadmap = {
       tag: "Launch",
       title: "Community deployment",
       status: "upcoming" as StageStatus,
-      body: "Subscription rollout to community optometry, with clinician training, integrated reporting and post-market surveillance.",
+      body: "Rollout to community optometry on rental and licence, with clinician training, integrated reporting and post-market surveillance.",
     },
   ],
 };
@@ -788,18 +788,18 @@ export const investors = {
     title: "The market does not need another hospital console.",
     body: [
       "Dry AMD is diagnosed and monitored in community optometry. Interventional technology has been designed for hospitals and specialist centres. That mismatch has left effective approaches locked in high-cost, low-access environments while the majority of patients are told to wait.",
-      "Revolux is built for where the patients are. A Class IIa binocular photobiomodulation platform, portable enough for a standard consulting room, rigorous enough for a regulated clinical pathway, and sold as a subscription so a practice can start with no upfront cost.",
+      "Revolux is built for where the patients are. A Class IIa binocular photobiomodulation platform, portable enough for a standard consulting room, rigorous enough for a regulated clinical pathway, and with no upfront cost to the practice.",
     ],
   },
   model: {
     eyebrow: "Business model",
     title: "Recurring revenue that scales with patient volume.",
     body: [
-      "Clinics subscribe to Revolux rather than buying capital equipment. Each patient follows a set course of sessions, and repeatable cycles mean revenue for the clinic, and for BioPhotonix, scales linearly with the number of patients treated.",
+      "Revolux is accessed through a rental and licensing model; devices remain BioPhotonix assets. Each patient follows a set course of sessions, and repeatable cycles mean revenue for the clinic, and for BioPhotonix, scales linearly with the number of patients treated.",
     ],
     points: [
-      "Subscription model with no upfront cost to the clinic",
-      "One patient every three months covers a practice's subscription",
+      "No upfront cost to the clinic",
+      "One patient every three months covers the fixed monthly fee for a practice's device",
       "Integrated software for reporting, compliance and post-market data",
       "Designed for community optometry, the setting where dry AMD is actually managed",
     ],
