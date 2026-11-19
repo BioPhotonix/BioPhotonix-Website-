@@ -1,17 +1,29 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, type RefObject } from "react";
+
+/** Where the photons converge: a point inside an element, as shares of its box. */
+type Focus = { ref: RefObject<HTMLElement | null>; x: number; y: number };
 
 /**
  * A field of photons drifting towards a focal point, drawn on a canvas behind
  * the hero. It is decoration: aria-hidden, paused when off screen, and a
  * single static frame under prefers-reduced-motion.
  *
+ * The focal point is measured from the element it belongs to (the device's
+ * eyepieces, in the hero), not fixed as a share of the canvas. It used to be
+ * fixed at 72% across and 48% down, which is where the device sits on a
+ * laptop; on a phone the device is below the text, so the photons gathered on
+ * an empty spot in the middle of the copy. It is re-measured as the layout
+ * settles and every few frames, so it follows the device wherever the layout
+ * puts it. Photons start anywhere in the field, clear of the focal point, and
+ * converge on it from all round.
+ *
  * The convergence point follows the pointer part of the way, and particles
  * already in flight steer towards it, so the field bends rather than
  * snapping. Mouse and trackpad only.
  */
-export default function PhotonField({ className = "" }: { className?: string }) {
+export default function PhotonField({ className = "", focus }: { className?: string; focus?: Focus }) {
   const ref = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -31,20 +43,41 @@ export default function PhotonField({ className = "" }: { className?: string }) 
     const particles: P[] = [];
     const COUNT = 110;
 
-    // Where the beams converge. `rest` is the device; `aim` is what the field
-    // is actually converging on this frame, and it eases towards the pointer
-    // when there is one. The pull is partial on purpose: the light should keep
-    // looking like it belongs to the device, not like it is chasing a cursor.
+    // Where the beams converge. `home` is the device, measured; `aim` is what
+    // the field is actually converging on this frame, and it eases towards the
+    // pointer when there is one. The pull is partial on purpose: the light
+    // should keep looking like it belongs to the device, not like it is
+    // chasing a cursor.
     const PULL = 0.45;
-    const rest = () => ({ x: width * 0.72, y: height * 0.48 });
-    let aim = rest();
-    let target = rest();
+    const measure = () => {
+      const el = focus?.ref.current;
+      if (el) {
+        const c = canvas.getBoundingClientRect();
+        const r = el.getBoundingClientRect();
+        if (r.width > 0) return { x: r.left - c.left + r.width * focus!.x, y: r.top - c.top + r.height * focus!.y };
+      }
+      return { x: width * 0.72, y: height * 0.48 };
+    };
+    let home = { x: 0, y: 0 };
+    let pointer: { x: number; y: number } | null = null;
+    let aim = home;
+    const target = () => (pointer ? { x: home.x + (pointer.x - home.x) * PULL, y: home.y + (pointer.y - home.y) * PULL } : home);
     const focal = () => aim;
+
+    /** A starting point anywhere in the field, but not on top of the focal point. */
+    const origin = (f: { x: number; y: number }) => {
+      const clear = Math.min(width, height) * 0.3;
+      for (let i = 0; i < 12; i += 1) {
+        const x = Math.random() * width;
+        const y = Math.random() * height;
+        if (Math.hypot(x - f.x, y - f.y) > clear) return { x, y };
+      }
+      return { x: f.x < width / 2 ? width : 0, y: Math.random() * height };
+    };
 
     const spawn = (p?: P): P => {
       const f = focal();
-      const x = Math.random() * width * 0.55;
-      const y = Math.random() * height;
+      const { x, y } = origin(f);
       const dx = f.x - x;
       const dy = f.y - y;
       const d = Math.hypot(dx, dy) || 1;
@@ -68,8 +101,8 @@ export default function PhotonField({ className = "" }: { className?: string }) 
       canvas.width = Math.floor(width * dpr);
       canvas.height = Math.floor(height * dpr);
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      aim = rest();
-      target = rest();
+      home = measure();
+      aim = home;
       particles.length = 0;
       for (let i = 0; i < COUNT; i += 1) {
         const p = spawn();
@@ -107,9 +140,14 @@ export default function PhotonField({ className = "" }: { className?: string }) 
       }
     };
 
+    let frame = 0;
     const step = () => {
       if (!running) return;
-      aim = { x: aim.x + (target.x - aim.x) * 0.055, y: aim.y + (target.y - aim.y) * 0.055 };
+      // Follow the device as the layout settles and as it floats.
+      frame += 1;
+      if (frame % 12 === 0) home = measure();
+      const t = target();
+      aim = { x: aim.x + (t.x - aim.x) * 0.055, y: aim.y + (t.y - aim.y) * 0.055 };
       const f = focal();
       for (const p of particles) {
         p.x += p.vx;
@@ -126,7 +164,7 @@ export default function PhotonField({ className = "" }: { className?: string }) 
         // Slight drift, so the beams do not look ruled.
         p.vx += (Math.random() - 0.5) * 0.02;
         p.vy += (Math.random() - 0.5) * 0.02;
-        if (Math.hypot(f.x - p.x, f.y - p.y) < 18 || p.x > width || p.y < 0 || p.y > height) spawn(p);
+        if (Math.hypot(f.x - p.x, f.y - p.y) < 18 || p.x < 0 || p.x > width || p.y < 0 || p.y > height) spawn(p);
       }
       draw();
       raf = requestAnimationFrame(step);
@@ -135,6 +173,15 @@ export default function PhotonField({ className = "" }: { className?: string }) 
     resize();
     draw();
     if (!reduce) raf = requestAnimationFrame(step);
+    // The device scales in as the page loads; once it has, measure again and,
+    // for the still frame under reduced motion, redraw around where it is.
+    const settle = window.setTimeout(() => {
+      home = measure();
+      if (reduce) {
+        resize();
+        draw();
+      }
+    }, 1500);
 
     const ro = new ResizeObserver(() => {
       resize();
@@ -150,15 +197,10 @@ export default function PhotonField({ className = "" }: { className?: string }) 
       const rect = canvas.getBoundingClientRect();
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
-      const r = rest();
-      if (x < 0 || y < 0 || x > width || y > height) {
-        target = r;
-        return;
-      }
-      target = { x: r.x + (x - r.x) * PULL, y: r.y + (y - r.y) * PULL };
+      pointer = x < 0 || y < 0 || x > width || y > height ? null : { x, y };
     };
     const onPointerLeave = () => {
-      target = rest();
+      pointer = null;
     };
     if (!reduce && fine) {
       window.addEventListener("pointermove", onPointerMove, { passive: true });
@@ -180,12 +222,14 @@ export default function PhotonField({ className = "" }: { className?: string }) 
 
     return () => {
       running = false;
+      window.clearTimeout(settle);
       cancelAnimationFrame(raf);
       ro.disconnect();
       io.disconnect();
       window.removeEventListener("pointermove", onPointerMove);
       document.removeEventListener("pointerleave", onPointerLeave);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- the focus is a ref and two constants, read when measured
   }, []);
 
   return <canvas ref={ref} aria-hidden="true" className={`pointer-events-none ${className}`} />;

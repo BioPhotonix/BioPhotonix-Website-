@@ -70,6 +70,12 @@ const APERTURES = [
   { x: 70.47, y: 22.41 },
 ] as const;
 
+/** Midway between the two eyepieces, as fractions of the device's box: where the hero's photons converge. */
+export const EYEPIECES = {
+  x: (APERTURES[0].x + APERTURES[1].x) / 200,
+  y: (APERTURES[0].y + APERTURES[1].y) / 200,
+} as const;
+
 type Props = {
   alt: string;
   /** Sizes hint for the image, since this is used at two different widths. */
