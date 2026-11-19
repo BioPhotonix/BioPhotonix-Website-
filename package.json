@@ -10,6 +10,7 @@
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
     "build:images": "node scripts/build-images.mjs",
+    "build:portraits": "node scripts/build-portraits.mjs",
     "test:site": "node scripts/test/browser/site.mjs",
     "insight:add": "node scripts/add-insight.mjs",
     "insight:ping": "node scripts/indexnow.mjs"

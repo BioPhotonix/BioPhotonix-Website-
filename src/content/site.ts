@@ -44,48 +44,103 @@ export const nav = [
 export const headerCta = { label: "Get in touch", href: "/contact" };
 
 export const hero = {
-  status: "Class IIa medical device in development",
   title: "Vision loss should not be accepted as inevitable.",
-  subtitle:
-    "We develop photonic systems that safely stimulate retinal cells and support repair processes, helping to preserve central vision and independence for people living with dry macular degeneration.",
-  primary: { label: "Explore Revolux", href: "/technology" },
+  /** Two paragraphs, as the company wrote them. */
+  subtitle: [
+    "At BioPhotonix, we are developing photonic systems to non-invasively stimulate retina cells and repair processes in the eye.",
+    "Our technology treats declining visual function in patients with dry macular degeneration.",
+  ],
+  /* Audience buttons, paired: clinicians to the clinics page, investors to theirs. */
+  primary: { label: "For clinicians", href: "/clinics" },
   secondary: { label: "For investors", href: "/investors" },
   deviceAlt:
     "Render of the Revolux binocular photobiomodulation device: two eyepieces with light-emitting rings on a handheld body",
-  /** The three lines that sit under the device. Short, so they read as a spec. */
-  specs: [
-    { label: "Indication", value: "Early and intermediate dry AMD" },
-    { label: "Session", value: "12 minutes, binocular" },
-    { label: "Setting", value: "Community optometry, domiciliary optometry and hospital clinics" },
-  ],
+};
+
+/**
+ * The landing page's pointers to the other pages. The landing page is the
+ * front door: it says in full only what lives there (the problem, and the
+ * shift from monitoring to treatment), and for everything else it says what
+ * is on the page in a line and links to it, rather than repeating it. Each
+ * piece of information has one home, so it is said once and changed once.
+ */
+export const home = {
+  revolux: {
+    body: [
+      "Revolux is the device BioPhotonix is developing to take photobiomodulation for dry AMD out of the hospital and into the community clinic.",
+      "The technology page sets out how it is built, how it delivers light to both eyes, and the safety standards it is designed to meet.",
+    ],
+    cta: { label: "How Revolux works", href: "/technology" },
+  },
+  doors: {
+    title: "Where would you like to start?",
+    items: [
+      {
+        eyebrow: "For clinicians",
+        title: "Revolux in your practice",
+        body: "What offering Revolux could look like in your clinic: the treatment course, the workflow and the economics.",
+        cta: { label: "For clinicians", href: "/clinics" },
+      },
+      {
+        eyebrow: "For investors",
+        title: "The investment case",
+        body: "Where the programme stands, what comes next, and the case for investing in it.",
+        cta: { label: "For investors", href: "/investors" },
+      },
+      {
+        eyebrow: "About us",
+        title: "The people behind it",
+        body: "The clinician who founded BioPhotonix, the advisers working with us, and the partners behind the device.",
+        cta: { label: "About the company", href: "/about" },
+      },
+    ],
+  },
+  insights: { eyebrow: "Latest insights", title: "From the team." },
+  contact: { title: "Questions about Revolux?", cta: { label: "Get in touch", href: "/contact" } },
 };
 
 export const burden = {
+  /** Used as the subheading on /vision; the landing page shows none. */
   eyebrow: "The unmet need",
-  title: "A silent epidemic, treated by waiting.",
-  intro:
-    "90% of people with age-related macular degeneration have the dry form. For most of them the standard of care is still monitoring, lifestyle advice and supplements, while their central vision declines.",
+  /** Two statements, each on a line of its own. */
+  title: ["Millions have dry AMD.", "Their visual decline is inevitable."],
+  intro: [
+    "90% of people with age-related macular degeneration have the dry form.",
+    "For most of them the standard of care is still monitoring, lifestyle advice and supplements, while their central vision declines.",
+  ],
+  /**
+   * The facts gallery, with the UK cost below. Each says something nothing
+   * else on the site says: the worldwide count and its growth to 2040 are the
+   * growth figure's subheading, and the share that is dry is the intro's first
+   * line, so the facts that restated them were taken out.
+   */
   stats: [
-    { value: 200, suffix: "M", label: "people worldwide living with age-related macular degeneration" },
-    { value: 90, suffix: "%", label: "of AMD is the dry form, with limited approved treatment options" },
     { value: 500, prefix: ">", suffix: "k", label: "people progress to severe vision loss from AMD each year" },
-    { value: 47, prefix: "+", suffix: "%", label: "increase in AMD prevalence expected between 2020 and 2040" },
     { value: 2, prefix: "×", label: "higher risk of cognitive decline and dementia with vision impairment" },
     { value: 3, prefix: "Top ", label: "vision loss ranks among the three most feared health outcomes" },
   ],
-  prevalence: {
+  /**
+   * The landing page's growth figure: one face, then hundreds, then grey with
+   * a central scotoma. The numbers are Wong et al.'s, and are shown only
+   * here. The photographs are stock illustrations, not people known to have
+   * AMD; at the company's request the source line no longer says so.
+   */
+  crowd: {
     title: "People living with AMD worldwide",
-    /** Million people per figure in the frame. */
-    perFigure: 2,
-    start: { year: 2020, millions: 196 },
-    end: { year: 2040, millions: 288 },
-    note: "Each figure is two million people. The dark centre of every head is the central vision that dry AMD takes.",
-    source: "Wong et al., The Lancet Global Health, 2014. Years between the two published figures are a straight line between them.",
+    caption: "196 million people in 2020, and 288 million expected by 2040.",
+    message: "Dry AMD can lead to blindness.",
+    label:
+      "One older person's portrait, then hundreds of faces as the view widens: the growing number of people living with AMD. The faces turn grey and a dark patch spreads over the centre of the picture. Dry AMD can lead to blindness.",
+    source: "Wong et al., The Lancet Global Health, 2014.",
   },
+  /**
+   * One of the facts in the landing page's gallery, so it is the short form.
+   * The source is not shown there; it is kept here as the figure's citation.
+   */
   cost: {
     value: "£2.6bn",
-    label:
-      "a year is what AMD-related sight loss costs the UK, of which £1.2 billion falls directly on healthcare and the rest on informal care, lost productivity and lost quality of life",
+    label: "a year is what AMD-related sight loss costs the UK",
+    note: "£1.2 billion of it falls directly on healthcare.",
     source:
       "Fight for Sight, Time to Focus (2020), as cited in the Royal College of Ophthalmologists' AMD Commissioning Guidance, June 2021.",
   },
@@ -203,10 +258,9 @@ export const revolux = {
   eyebrow: "Revolux",
   name: "Revolux",
   tagline: "Engineered by BioPhotonix.",
-  body: [
+  /** The device's description in its structured data (schema.ts); not shown on a page. */
+  description:
     "Revolux is a binocular photobiomodulation system that actively stimulates compromised retinal cells and supports their repair, helping to preserve central vision in early and intermediate dry macular degeneration.",
-    "Each session takes twelve minutes. It fits a standard consulting room, needs no dedicated infrastructure, and turns an unmet patient need into a structured, evidence-led clinical pathway.",
-  ],
   pillars: [
     {
       title: "Treat early",
@@ -221,13 +275,11 @@ export const revolux = {
       body: "Unlike desktop systems, Revolux guarantees exact source-to-eye geometry for every patient, every time.",
     },
   ],
+  /** The device's own facts. The course and session length are on Clinics. */
   facts: [
-    { label: "Session length", value: "12 min" },
-    { label: "Course", value: "9 sessions over 3 weeks" },
     { label: "Form factor", value: "Handheld binocular" },
     { label: "Supervision", value: "Clinician-initiated" },
   ],
-  cta: { label: "Explore the technology", href: "/technology" },
 };
 
 export const anatomy = {
@@ -259,7 +311,7 @@ export const anatomy = {
       width: 305,
       height: 660,
       alt: "The Revolux prototype seen from the patient's side, showing both apertures with their rings of emitters around them",
-      caption: "What the patient looks into. A ring of emitters around each aperture, held at a fixed separation, for a twelve-minute session.",
+      caption: "What the patient looks into. A ring of emitters around each aperture, held at a fixed separation.",
       /** The callouts are measured against this render, so they belong to it. */
       callouts: true,
     },
@@ -347,11 +399,15 @@ export const course = {
   eyebrow: "The course",
   title: "Nine sessions over three weeks.",
   intro:
-    "Three sessions a week, twelve minutes each. The schedule is designed to maximise cellular response while fitting into manageable clinic blocks.",
+    "Three sessions a week. The schedule is designed to maximise cellular response while fitting into manageable clinic blocks.",
   weeks: 3,
   perWeek: 3,
-  minutesPerSession: 12,
-  footnote: "One hundred and eight minutes of treatment in total, across three weeks of ordinary appointments.",
+  /**
+   * No minutes per session: the register (DEV-04) holds the duration as not
+   * yet fixed, so the diagram counts sessions, and the footnote under it says
+   * why in the register's approved wording.
+   */
+  footnote: "Per-wavelength irradiance and duration are not yet fixed and will be selected by the parameter-optimisation study.",
 };
 
 export const explainer = {
@@ -483,7 +539,7 @@ export const clinics = {
     steps: [
       { title: "Identify", mark: "identify" as const, body: "Adults aged 50 and over with early or intermediate dry AMD, found during routine examination or imaging." },
       { title: "Screen", mark: "screen" as const, body: "Eligibility is confirmed and contraindications are managed by the supervising clinician before any treatment." },
-      { title: "Treat", mark: "treat" as const, body: "Nine twelve-minute binocular sessions over three weeks, three sessions a week, in a standard consulting room." },
+      { title: "Treat", mark: "treat" as const, body: "Nine binocular sessions over three weeks, three sessions a week, in a standard consulting room." },
       { title: "Report", mark: "record" as const, body: "Every session is logged. Clinician-ready reports and patient-friendly summaries are generated automatically." },
       { title: "Continue", mark: "continue" as const, body: "Ongoing care replaces passive monitoring, with repeatable cycles delivered within a managed pathway." },
     ],
@@ -516,6 +572,16 @@ export const clinics = {
   },
 };
 
+/** The technology page's own words: its heading, and its pointer to the FAQ on Clinics. */
+export const technology = {
+  title: "How Revolux works.",
+  faq: {
+    title: "Questions clinicians ask.",
+    body: "Who Revolux is for, the treatment schedule and the regulatory pathway are answered in the FAQ on the clinics page.",
+    cta: "Read the FAQ",
+  },
+};
+
 export const faq = {
   eyebrow: "You ask, we answer",
   title: "Frequently asked questions",
@@ -527,7 +593,7 @@ export const faq = {
     },
     {
       q: "Is the treatment invasive?",
-      a: "No. Photobiomodulation is a non-invasive, non-thermal light therapy. Patients sit comfortably holding the binocular device for approximately twelve minutes. There are no injections, no eye drops and no contact with the cornea.",
+      a: "No. Photobiomodulation is a non-invasive, non-thermal light therapy. Patients sit comfortably holding the binocular device. Per-wavelength irradiance and duration are not yet fixed and will be selected by the parameter-optimisation study. There are no injections, no eye drops and no contact with the cornea.",
     },
     {
       q: "Can patients use this at home on their own?",
@@ -618,7 +684,6 @@ export const about = {
     body: [
       "As diagnostic technology in community optometry has advanced, we are identifying retinal disease earlier than ever before. Yet for millions of patients this early diagnosis is followed by a “watch and wait” approach. Patients are monitored as their vision inevitably declines, simply because effective hospital-grade interventions are not scalable to the community setting.",
       "We were established to close this gap. By translating the science of photobiomodulation into a regulated, portable medical platform, we are empowering optometrists to intervene early, preserving vision and independence for the ageing population.",
-      "With AMD-related sight loss costing the UK alone £2.6 billion a year, and tens of millions losing their independence worldwide, BioPhotonix is not just building a device. We are building the infrastructure for the future of global eye health.",
     ],
   },
   values: {
@@ -716,7 +781,7 @@ export const investors = {
   hero: {
     eyebrow: "For investors",
     title: "Building the infrastructure for the future of global eye health.",
-    lede: "A regulated medical device, a structural gap in a market of 200 million people, and a recurring-revenue model that scales with every patient treated.",
+    lede: "A regulated medical device, a structural gap in a large and growing market, and a recurring-revenue model that scales with every patient treated.",
   },
   thesis: {
     eyebrow: "The thesis",
@@ -726,17 +791,11 @@ export const investors = {
       "Revolux is built for where the patients are. A Class IIa binocular photobiomodulation platform, portable enough for a standard consulting room, rigorous enough for a regulated clinical pathway, and sold as a subscription so a practice can start with no upfront cost.",
     ],
   },
-  highlights: [
-    { value: "200M", label: "People with AMD worldwide", body: "Projected to reach 288 million by 2040." },
-    { value: "85–90%", label: "Dry AMD share", body: "The form with the fewest approved treatments." },
-    { value: "£2.6bn", label: "Annual UK cost of AMD sight loss", body: "£1.2 billion of it falls directly on healthcare." },
-    { value: "Class IIa", label: "Regulatory classification", body: "CE-first under the EU MDR, then UKCA." },
-  ],
   model: {
     eyebrow: "Business model",
     title: "Recurring revenue that scales with patient volume.",
     body: [
-      "Clinics subscribe to Revolux rather than buying capital equipment. Each treatment course is nine sessions over three weeks, and repeatable cycles mean revenue for the clinic, and for BioPhotonix, scales linearly with the number of patients treated.",
+      "Clinics subscribe to Revolux rather than buying capital equipment. Each patient follows a set course of sessions, and repeatable cycles mean revenue for the clinic, and for BioPhotonix, scales linearly with the number of patients treated.",
     ],
     points: [
       "Subscription model with no upfront cost to the clinic",
@@ -751,12 +810,15 @@ export const investors = {
     body: [
       "We are implementing a quality management system aligned with ISO 13485 and pursuing CE marking under the EU Medical Device Regulation, alongside UKCA for the UK. The pathway requires third-party testing against international standards for optical safety, electrical safety and biocompatibility.",
     ],
-    points: [
-      "ISO 13485 quality management system",
-      "ISO 15004-2 and ANSI Z80.36 optical safety",
-      "IEC 60601-1 medical electrical safety",
-      "ISO 10993 biocompatibility",
-    ],
+    /** The standards themselves are listed on Technology. */
+    link: { label: "The standards Revolux is designed to meet", href: "/technology" },
+  },
+  /** A pointer: the team itself is introduced on About. */
+  team: {
+    eyebrow: "Team and partners",
+    title: "A clinician founder, with the specialists a medical device needs.",
+    intro: "The founder, the advisers working with us and our development partners are introduced on the About page.",
+    cta: "Meet the team",
   },
   dataRoom: {
     eyebrow: "Next step",

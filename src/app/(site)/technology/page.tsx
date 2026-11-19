@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Accordion from "@/components/Accordion";
 import Button from "@/components/Button";
 import CardMark from "@/components/CardMark";
 import JsonLd from "@/components/JsonLd";
@@ -12,8 +11,8 @@ import RevoluxExplainer from "@/components/RevoluxExplainer";
 import SectionHeading from "@/components/SectionHeading";
 import StandardsTicker from "@/components/StandardsTicker";
 import TechCard from "@/components/TechCard";
-import { breadcrumbSchema, faqSchema, medicalDeviceSchema } from "@/content/schema";
-import { anatomy, explainer, faq, retina, revolux, safety, shift } from "@/content/site";
+import { breadcrumbSchema, medicalDeviceSchema } from "@/content/schema";
+import { anatomy, explainer, retina, revolux, safety, technology } from "@/content/site";
 
 export const metadata: Metadata = {
   /* Query-led, unlike the h1 below it. See "Search rankings" in the README. */
@@ -27,21 +26,20 @@ export default function TechnologyPage() {
   return (
     <>
       <JsonLd data={breadcrumbSchema([{ name: "Technology", path: "/technology" }])} />
-      {/* The device and the FAQ are both described here rather than site-wide:
-          one page carries each entity, so nothing is declared twice. */}
+      {/* The device is described here rather than site-wide: one page carries
+          each entity, so nothing is declared twice. The FAQ's is on Clinics. */}
       <JsonLd data={medicalDeviceSchema()} />
-      <JsonLd data={faqSchema()} />
 
       <section className="relative overflow-hidden pt-32 md:pt-40">
         <div aria-hidden="true" className="grid-bg absolute inset-0" />
         <div className="shell relative grid items-center gap-12 lg:grid-cols-12">
           <div className="lg:col-span-7">
             <p className="eyebrow">{revolux.eyebrow}</p>
-            <h1 className="h-display mt-5 text-fog">{shift.title}</h1>
+            <h1 className="h-display mt-5 text-fog">{technology.title}</h1>
             <p className="lede mt-7 max-w-xl text-fog">
               Preserving vision and independence through advanced photobiomodulation, engineered as a Class IIa medical device for the community clinic.
             </p>
-            <dl className="mt-12 grid max-w-2xl grid-cols-2 gap-px overflow-hidden rounded-xl border border-line bg-line sm:grid-cols-4">
+            <dl className="mt-12 grid max-w-md grid-cols-2 gap-px overflow-hidden rounded-xl border border-line bg-line">
               {revolux.facts.map((f) => (
                 <div key={f.label} className="bg-ink-950/80 px-4 py-3.5">
                   <dt className="figure text-xs uppercase tracking-[0.13em] text-fog">{f.label}</dt>
@@ -131,17 +129,14 @@ export default function TechnologyPage() {
       </section>
       <StandardsTicker />
 
-      {/* FAQ */}
-      <section className="shell py-20 md:py-28">
-        <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
-          <div className="lg:col-span-4">
-            <SectionHeading eyebrow={faq.eyebrow} title={faq.title} intro={faq.intro} />
-            <Reveal className="mt-8">
-              <Button href="/contact">Ask us something else</Button>
-            </Reveal>
-          </div>
-          <Reveal className="lg:col-span-8">
-            <Accordion items={faq.items} />
+      {/* The FAQ lives on Clinics; this points to it. */}
+      <section className="shell py-20 md:py-24">
+        <div className="flex flex-wrap items-end justify-between gap-8">
+          <SectionHeading title={technology.faq.title} intro={technology.faq.body} />
+          <Reveal>
+            <Button href="/clinics#faq" variant="outline">
+              {technology.faq.cta}
+            </Button>
           </Reveal>
         </div>
       </section>

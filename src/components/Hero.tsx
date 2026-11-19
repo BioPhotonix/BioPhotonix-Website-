@@ -4,7 +4,7 @@ import { motion, useReducedMotion } from "motion/react";
 import Button from "./Button";
 import PhotonField from "./PhotonField";
 import RevoluxDevice from "./RevoluxDevice";
-import { hero } from "@/content/site";
+import { hero, revolux } from "@/content/site";
 
 export default function Hero() {
   const reduce = useReducedMotion();
@@ -31,31 +31,22 @@ export default function Hero() {
       <div className="shell relative">
         <div className="grid items-center gap-14 lg:grid-cols-12 lg:gap-8">
           <div className="lg:col-span-7">
-            <motion.p {...rise(0)} className="eyebrow flex items-center gap-3">
-              <span className="pulse-ring relative inline-block h-2 w-2 rounded-full bg-teal-400 text-teal-400" />
-              {hero.status}
-            </motion.p>
-            <motion.h1 {...rise(0.08)} className="h-display mt-6 max-w-3xl text-fog">
+            <motion.h1 {...rise(0)} className="h-display max-w-3xl text-fog">
               {hero.title}
             </motion.h1>
-            <motion.p {...rise(0.16)} className="lede mt-7 max-w-xl text-fog">
-              {hero.subtitle}
-            </motion.p>
-            <motion.div {...rise(0.24)} className="mt-10 flex flex-wrap items-center gap-3">
+            <motion.div {...rise(0.08)} className="mt-7 flex max-w-xl flex-col gap-4">
+              {hero.subtitle.map((p) => (
+                <p key={p} className="lede text-fog">
+                  {p}
+                </p>
+              ))}
+            </motion.div>
+            <motion.div {...rise(0.16)} className="mt-10 flex flex-wrap items-center gap-3">
               <Button href={hero.primary.href}>{hero.primary.label}</Button>
               <Button href={hero.secondary.href} variant="outline">
                 {hero.secondary.label}
               </Button>
             </motion.div>
-
-            <motion.dl {...rise(0.34)} className="mt-14 grid max-w-xl grid-cols-1 gap-px overflow-hidden rounded-xl border border-line bg-line sm:grid-cols-3">
-              {hero.specs.map((s) => (
-                <div key={s.label} className="bg-ink-950/80 px-4 py-3.5 backdrop-blur">
-                  <dt className="figure text-xs uppercase tracking-[0.13em] text-fog">{s.label}</dt>
-                  <dd className="mt-1 text-sm font-medium text-fog">{s.value}</dd>
-                </div>
-              ))}
-            </motion.dl>
           </div>
 
           <motion.div
@@ -85,6 +76,7 @@ export default function Hero() {
                 alt={hero.deviceAlt}
                 sizes="(max-width: 1024px) 60vw, 30vw"
                 priority
+                label={revolux.name}
               />
             </motion.div>
           </motion.div>

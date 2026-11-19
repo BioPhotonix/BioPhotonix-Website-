@@ -23,7 +23,7 @@ export function medicalDeviceSchema() {
     name: revolux.name,
     alternateName: "Revolux binocular photobiomodulation system",
     url: `${site.url}/technology`,
-    description: `${STATUS} ${revolux.body[0]}`,
+    description: `${STATUS} ${revolux.description}`,
     disambiguatingDescription: STATUS,
     legalStatus: STATUS,
     purpose: "https://schema.org/Therapeutic",

@@ -15,11 +15,11 @@ import { site } from "@/content/site";
  * articles, which take the later of their own date and their articles' (below).
  */
 const PAGES = [
-  { path: "", priority: 1, updated: "2026-09-18" },
-  { path: "/technology", priority: 0.9, updated: "2026-09-18" },
+  { path: "", priority: 1, updated: "2026-11-18" },
+  { path: "/technology", priority: 0.9, updated: "2026-11-18" },
   { path: "/vision", priority: 0.8, updated: "2026-09-18" },
-  { path: "/clinics", priority: 0.9, updated: "2026-09-18" },
-  { path: "/investors", priority: 0.8, updated: "2026-09-18" },
+  { path: "/clinics", priority: 0.9, updated: "2026-11-18" },
+  { path: "/investors", priority: 0.8, updated: "2026-11-18" },
   { path: "/about", priority: 0.7, updated: "2026-09-18" },
   { path: "/news", priority: 0.6, updated: "2026-09-18" },
   { path: "/contact", priority: 0.6, updated: "2026-09-17" },
