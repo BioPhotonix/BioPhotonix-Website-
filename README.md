@@ -134,10 +134,13 @@ All in `src/components`:
   (four: the worldwide count, its growth and the share that is dry were taken
   out because the growth figure and the intro say them). It shows up to three
   at a time and never more than half of them, so with four it is two at a
-  time on a tablet or laptop and one on a phone. Every few seconds a red
-  laser line sweeps across the row and beams in the next ones, each lit red
-  for a moment as it appears; it moves on by as many as are showing, wrapping
-  round, so the row is always full. It has a pause button, takes a sideways
+  time on a tablet or laptop and one on a phone. Every few seconds the set
+  changes with a focus pull, in the site's own manner: the facts on screen
+  soften and fade, and the next come into focus as they rise into place, a
+  box at a time. A thin teal line along the bottom fills over the time a set
+  is shown and stands still whenever the gallery does. Each change moves on by
+  as many facts as are showing, wrapping round, so the row is always full. (A
+  red laser sweep was tried first and did not suit the site.) It has a pause button, takes a sideways
   swipe, holds while a mouse is over it or keyboard focus is in its controls
   (not on a tap: a phone never reports the finger leaving, so holding on
   touch froze it), never starts on its own under reduced motion, and gives

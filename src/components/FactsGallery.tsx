@@ -8,29 +8,32 @@ import { burden } from "@/content/site";
 
 /**
  * The facts about AMD as a gallery: up to three on screen on a laptop, two
- * on a tablet, one on a phone, and every few seconds a red laser line sweeps
- * across and beams the next ones in.
+ * on a tablet, one on a phone, changing every few seconds.
  *
  * Every fact takes its turn, the UK cost included, and all are set the same
- * way. Each step moves on by as many facts as are showing, wrapping round, so
- * the row is always full. No more than half the facts show at once, so each
- * step brings in facts that were not just on screen: with four, two at a time
- * on anything wider than a phone, alternating.
+ * way. Each change moves on by as many facts as are showing, wrapping round,
+ * so the row is always full. No more than half the facts show at once, so
+ * each change brings in facts that were not just on screen: with four, two at
+ * a time on anything wider than a phone, alternating.
  *
- * The beam is one line crossing the whole row at an even speed. Behind it the
- * next facts are revealed, slot by slot, with a brief red glow as if just
- * lit; ahead of it the old ones remain. Each slot stacks every fact in one
- * grid cell and shows one, so the row is always as tall as its longest fact
- * and never changes height.
+ * The change is a focus pull, in the site's own manner: the facts on screen
+ * soften and fade, and the next ones come into focus as they rise into
+ * place, a box at a time, with the same easing as everything that rises into
+ * view on the page. A thin teal line along the bottom fills over the time a
+ * set is shown, so the change is never a surprise, and it stands still
+ * whenever the gallery does. (It replaced a red laser sweep, which did not
+ * belong to the rest of the site.) Each slot stacks every fact in one grid
+ * cell and shows one, so the row is always as tall as its longest fact and
+ * never changes height.
  *
  * Moving content needs a way to stop it (WCAG 2.2.2), so there is a pause
  * button, it only runs while on screen, and it holds while a mouse pointer is
  * over it or keyboard focus is in its controls. Only those: a phone reports a
  * tap as the pointer arriving and never reports it leaving, so holding on any
  * pointer froze the gallery for good after one touch. On a phone it takes a
- * sideways swipe. Under reduced motion it never starts on its own and the
- * buttons change the facts without a beam. Screen readers get all seven as
- * one list instead of whichever happen to be showing.
+ * sideways swipe. Under reduced motion it never moves on by itself, there is
+ * no line, and the buttons change the facts at once. Screen readers get every
+ * fact as one list instead of whichever happen to be showing.
  */
 
 type Fact = { key: string; value: ReactNode; said: string; label: string; note?: string };
@@ -57,10 +60,16 @@ const SLOTS = Math.max(1, Math.min(3, Math.floor(N / 2)));
 
 const wrap = (n: number) => ((n % N) + N) % N;
 
-/** How long the facts stay before the next beam: shorter where fewer show at once. */
+/** How long a set stays before the next: shorter where fewer show at once. */
 const dwell = (per: number) => 1800 + 1000 * per;
-/** How long the beam takes to cross the row. */
-const sweep = (per: number) => 450 + 200 * per;
+/* The focus pull, in ms: the old set softens over OUT; each new fact comes
+   into focus over IN, starting LEAD after the change begins, one STAGGER
+   after the box before it. Matched by .fact[data-role] in globals.css. */
+const OUT = 420;
+const LEAD = 180;
+const IN = 760;
+const STAGGER = 110;
+const settle = (per: number) => LEAD + STAGGER * (per - 1) + IN;
 
 /** How many slots are on screen: one on a phone, two from 40rem, three from 64rem. */
 function usePerView() {
@@ -80,25 +89,21 @@ function usePerView() {
   return per;
 }
 
-type Beam = { id: number; to: number; dir: 1 | -1 };
+type Change = { to: number; dir: 1 | -1 };
 
 export default function FactsGallery() {
   const reduce = useReducedMotion();
   const per = usePerView();
   const ref = useRef<HTMLDivElement>(null);
   const [start, setStart] = useState(0);
-  const [beam, setBeam] = useState<Beam | null>(null);
-  /** The last beam's direction, and whether one has landed yet: the facts it
-      lit keep their animation until it has finished, rather than losing it
-      the moment the beam leaves. */
-  const [lastDir, setLastDir] = useState<1 | -1>(1);
-  const [lit, setLit] = useState(false);
+  const [change, setChange] = useState<Change | null>(null);
   const [paused, setPaused] = useState(false);
   const [hovered, setHovered] = useState(false);
   const [focused, setFocused] = useState(false);
   const [onScreen, setOnScreen] = useState(false);
+  /** Counts finished changes, so the timing line starts afresh after each. */
+  const [shown, setShown] = useState(0);
   const touchX = useRef<number | null>(null);
-  const beams = useRef(0);
 
   useEffect(() => {
     if (reduce) setPaused(true);
@@ -112,43 +117,39 @@ export default function FactsGallery() {
     return () => io.disconnect();
   }, []);
 
-  /** Show the facts from `to` onwards: at once under reduced motion, otherwise by beam. */
+  /** Show the facts from `to` onwards: at once under reduced motion, otherwise by focus pull. */
   const show = (to: number, dir: 1 | -1) => {
     const target = wrap(to);
-    if (beam || target === start) return;
+    if (change || target === start) return;
     if (reduce) {
       setStart(target);
+      setShown((n) => n + 1);
       return;
     }
-    beams.current += 1;
-    setLastDir(dir);
-    setBeam({ id: beams.current, to: target, dir });
+    setChange({ to: target, dir });
   };
 
   const step = (d: 1 | -1) => show(start + d * per, d);
 
-  const landed = () => {
-    if (!beam) return;
-    setStart(beam.to);
-    setBeam(null);
-    setLit(true);
-  };
-
-  /* A timeout that restarts after every change, rather than an interval:
-     after someone steps the gallery by hand they get the full pause before it
-     moves on. */
+  /* Once the new set is in focus, it becomes the set on screen. */
   useEffect(() => {
-    if (paused || hovered || focused || !onScreen || beam) return;
-    const id = window.setTimeout(() => step(1), dwell(per));
+    if (!change) return;
+    const id = window.setTimeout(() => {
+      setStart(change.to);
+      setChange(null);
+      setShown((n) => n + 1);
+    }, settle(per));
     return () => window.clearTimeout(id);
-    // eslint-disable-next-line react-hooks/exhaustive-deps -- step reads start, per and beam, all listed
-  }, [paused, hovered, focused, onScreen, beam, start, per]);
+  }, [change, per]);
 
-  const duration = sweep(per);
+  /* The timing line runs only while the gallery would move on by itself. Its
+     own end moves the gallery on, so the line and the change cannot drift
+     apart; when it stops, it stops where it is and resumes from there. */
+  const running = !paused && !hovered && !focused && onScreen && !change;
 
   return (
     <div ref={ref}>
-      {/* What a screen reader gets: all seven, in order, nothing moving. */}
+      {/* What a screen reader gets: every fact, in order, nothing moving. */}
       <dl className="sr-only">
         {FACTS.map((f) => (
           <div key={f.key}>
@@ -181,24 +182,20 @@ export default function FactsGallery() {
       >
         {Array.from({ length: SLOTS }, (_, k) => {
           const current = wrap(start + k);
-          const incoming = beam ? wrap(beam.to + k) : null;
-          /* Each visible slot is revealed in its own share of the sweep. */
-          const order = (beam?.dir ?? lastDir) < 0 ? per - 1 - k : k;
-          const timing = {
-            "--slot-d": `${duration / per}ms`,
-            "--slot-delay": `${(order * duration) / per}ms`,
-          } as CSSProperties;
+          const incoming = change ? wrap(change.to + k) : null;
+          /* A box at a time, in the direction of travel. */
+          const order = change && change.dir < 0 ? per - 1 - k : k;
+          const timing = { "--slot-delay": `${order * STAGGER}ms` } as CSSProperties;
           return (
             <div
               key={k}
               className={`fact-slot grid ${k === 1 ? "hidden border-l border-line sm:grid" : ""} ${k === 2 ? "hidden border-l border-line lg:grid" : ""}`}
-              data-dir={(beam?.dir ?? lastDir) === -1 ? "rtl" : "ltr"}
               style={timing}
             >
               {FACTS.map((f, i) => {
-                const role = i === incoming ? "in" : i === current ? (beam ? "out" : "on") : "off";
+                const role = i === incoming ? "in" : i === current ? (change ? "out" : "on") : "off";
                 return (
-                  <div key={f.key} className="fact flex flex-col p-7 md:p-8" data-role={role} data-lit={lit}>
+                  <div key={f.key} className="fact flex flex-col p-7 md:p-8" data-role={role}>
                     <span className="block text-4xl font-medium text-fog md:text-5xl">{f.value}</span>
                     <span className="mt-3 block text-sm leading-relaxed text-fog">{f.label}</span>
                     {f.note && <span className="mt-2 block text-sm leading-relaxed text-fog">{f.note}</span>}
@@ -209,18 +206,16 @@ export default function FactsGallery() {
           );
         })}
 
-        {beam && (
+        {!reduce && (
           <span
-            key={beam.id}
-            className="laser-run"
-            data-dir={beam.dir === -1 ? "rtl" : "ltr"}
-            style={{ "--sweep": `${duration}ms` } as CSSProperties}
-            onAnimationEnd={(e) => {
-              if (e.target === e.currentTarget && e.animationName.startsWith("laser-run")) landed();
-            }}
-          >
-            <span className="laser-beam" />
-          </span>
+            key={`${shown}-${per}`}
+            className="facts-progress"
+            data-running={running}
+            data-paused={paused}
+            data-changing={change !== null}
+            style={{ "--dwell": `${dwell(per)}ms` } as CSSProperties}
+            onAnimationEnd={() => step(1)}
+          />
         )}
       </div>
 
