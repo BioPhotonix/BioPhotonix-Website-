@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   /* Absolute: the site template would otherwise make this "About BioPhotonix | BioPhotonix". */
   title: { absolute: "About BioPhotonix | Glasgow Medical Technology for Dry AMD" },
   description:
-    "A Glasgow medical technology company founded by an optometrist and orthoptist, bringing clinician-led dry AMD treatment into community eye care.",
+    "A Glasgow medical technology company founded by an optometrist and orthoptist, developing clinician-led dry AMD treatment for use anywhere.",
   alternates: { canonical: "/about" },
 };
 

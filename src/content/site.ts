@@ -12,7 +12,7 @@ export const site = {
   legalName: "BioPhotonix Limited",
   tagline: "Photobiomodulation medical technology for dry age-related macular degeneration.",
   description:
-    "BioPhotonix builds Revolux: a clinician-supervised photobiomodulation device for early and intermediate dry AMD, made for community optometry.",
+    "BioPhotonix builds Revolux: a clinician-supervised photobiomodulation device for early and intermediate dry AMD, made to be used anywhere.",
   /**
    * The live domain. Canonical tags, Open Graph URLs and the sitemap are all
    * built from this, so it has to be the domain that actually serves the site.
@@ -67,7 +67,7 @@ export const hero = {
 export const home = {
   revolux: {
     body: [
-      "Revolux is the device BioPhotonix is developing to take photobiomodulation for dry AMD out of the hospital and into the community clinic.",
+      "Revolux is the photobiomodulation device BioPhotonix is developing for dry AMD.",
       "The technology page sets out how it is built, how it delivers light to both eyes, and the safety standards it is designed to meet.",
     ],
     cta: { label: "How Revolux works", href: "/technology" },
@@ -241,8 +241,8 @@ export const shift = {
   eyebrow: "From observation to intervention",
   title: "Stop monitoring. Start treating.",
   body: [
-    "As diagnostic technology in community optometry has advanced, retinal disease is identified earlier than ever. Yet for millions of patients an early diagnosis is followed by “watch and wait”, because hospital-grade interventions do not scale to the community setting.",
-    "BioPhotonix exists to close that gap. By translating photobiomodulation into a regulated, portable medical platform, we give optometrists the means to intervene early, in the same room where the diagnosis was made.",
+    "As diagnostic technology in community optometry has advanced, retinal disease is identified earlier than ever. Yet for millions of patients an early diagnosis is followed by “watch and wait”.",
+    "BioPhotonix exists to close that gap. We are developing Revolux as a regulated, portable medical device that any clinician can use to intervene early, wherever they see their patients: in practice or on a domiciliary visit.",
   ],
   today: {
     title: "The pathway today",
@@ -250,7 +250,7 @@ export const shift = {
   },
   future: {
     title: "The pathway with Revolux",
-    steps: ["Diagnosis in community optometry", "Eligibility screening", "Treatment in clinic", "Monitored response", "Independence preserved"],
+    steps: ["Diagnosis in community optometry", "Eligibility screening", "Clinician-led treatment", "Monitored response", "Independence preserved"],
   },
 };
 
@@ -480,7 +480,7 @@ export const safety = {
 
 export const clinics = {
   eyebrow: "For optometrists and ophthalmologists",
-  title: "Hospital-grade care, inside your consulting room.",
+  title: "Active dry AMD care, wherever you see your patients.",
   intro:
     "Revolux integrates active dry AMD intervention into the workflows you already run, turning an unmet patient need into a scalable, high-value clinical service.",
   /** Three of the original six: revenue and cost are the economics section's to say. */
@@ -503,11 +503,11 @@ export const clinics = {
   ],
   workflow: {
     title: "The clinical pathway",
-    intro: "Five steps, all inside the practice. The device, the software and the protocol are designed around a standard appointment.",
+    intro: "Five steps, in practice or on a domiciliary visit. The device, the software and the protocol are designed around a standard appointment.",
     steps: [
       { title: "Identify", mark: "identify" as const, body: "Adults aged 50 and over with early or intermediate dry AMD, found during routine examination or imaging." },
       { title: "Screen", mark: "screen" as const, body: "Eligibility is confirmed and contraindications are managed by the supervising clinician before any treatment." },
-      { title: "Treat", mark: "treat" as const, body: "Binocular sessions in a standard consulting room, each initiated and supervised by a qualified clinician." },
+      { title: "Treat", mark: "treat" as const, body: "Binocular sessions wherever you see the patient, each initiated and supervised by a qualified clinician." },
       { title: "Report", mark: "record" as const, body: "Every session is logged. Clinician-ready reports and patient-friendly summaries are generated automatically." },
       { title: "Continue", mark: "continue" as const, body: "Ongoing care replaces passive monitoring, with repeatable cycles delivered within a managed pathway." },
     ],
@@ -544,7 +544,7 @@ export const clinics = {
 /** The technology page's own words. */
 export const technology = {
   title: "How Revolux works.",
-  lede: "Preserving vision and independence through advanced photobiomodulation, engineered as a Class IIa medical device for the community clinic.",
+  lede: "Preserving vision and independence through advanced photobiomodulation, engineered as a portable Class IIa medical device that a clinician can use anywhere.",
 };
 
 /**
@@ -589,7 +589,7 @@ export const roadmap = {
       tag: "TRL 1–3",
       title: "Research and problem definition",
       status: "complete" as StageStatus,
-      body: "Confirmed that the science of photobiomodulation is sound, and that existing delivery methods fail community use: handheld devices lack consistency, hospital consoles lack accessibility.",
+      body: "Confirmed that the science of photobiomodulation is sound, and that existing delivery methods fail community use: handheld devices lack consistency, desktop consoles lack accessibility.",
     },
     {
       tag: "Architecture",
@@ -678,7 +678,7 @@ export const founder = {
   qualifications: ["BSc Optometry", "BSc Orthoptics"],
   bio: [
     "Adail is an optometrist and orthoptist with extensive clinical experience managing macular disease across both hospital ophthalmology pathways and community optometry settings.",
-    "His direct experience on the front lines of eye care revealed the limitations of existing treatments. Adail founded BioPhotonix to engineer a solution that fits the reality of clinical practice: a device that is clinically rigorous, regulator-ready, and accessible enough to be deployed in every community clinic.",
+    "His direct experience on the front lines of eye care revealed the limitations of existing treatments. Adail founded BioPhotonix to engineer a solution that fits the reality of clinical practice: a device that is clinically rigorous, regulator-ready, and portable enough to be used wherever patients are seen.",
   ],
   image: "/images/adail-portrait.jpg",
   alt: "Portrait of Adail Islam, founder of BioPhotonix",
@@ -741,10 +741,10 @@ export const investors = {
   },
   thesis: {
     eyebrow: "The thesis",
-    title: "The market does not need another hospital console.",
+    title: "A device that goes wherever the patients are.",
     body: [
-      "Dry AMD is diagnosed and monitored in community optometry. Interventional technology has been designed for hospitals and specialist centres. That mismatch has left effective approaches locked in high-cost, low-access environments while the majority of patients are told to wait.",
-      "Revolux is built for where the patients are: portable enough for a standard consulting room, and rigorous enough for a regulated clinical pathway.",
+      "Dry AMD is diagnosed and monitored in community optometry, where clinicians have had little to offer beyond monitoring.",
+      "Revolux is being developed so that any clinician can use it wherever they see patients, in practice or on a domiciliary visit, while staying rigorous enough for a regulated clinical pathway.",
     ],
   },
   model: {
@@ -787,7 +787,7 @@ export const investors = {
 export const contact = {
   eyebrow: "Get in touch",
   title: "Talk to BioPhotonix.",
-  body: "Whether you run a practice, treat retinal disease in hospital, or are looking at the company as an investor, we would like to hear from you.",
+  body: "Whether you run a practice, see patients on domiciliary visits or in a hospital clinic, or are looking at the company as an investor, we would like to hear from you.",
   formTitle: "Send us a message",
   roles: [
     { value: "optometrist", label: "Optometrist" },
@@ -837,7 +837,7 @@ export const ogCards: Record<string, { eyebrow: string; title: string }> = {
   home: { eyebrow: "Photobiomodulation for dry AMD", title: "Vision loss should not be accepted as inevitable." },
   technology: { eyebrow: "Revolux", title: "Light that restores cellular energy." },
   vision: { eyebrow: "What patients see", title: "The years before anyone notices." },
-  clinics: { eyebrow: "For optometrists and ophthalmologists", title: "Hospital-grade care, inside your consulting room." },
+  clinics: { eyebrow: "For optometrists and ophthalmologists", title: "Active dry AMD care, wherever you see your patients." },
   investors: { eyebrow: "For investors", title: "Building the infrastructure for the future of global eye health." },
   about: { eyebrow: "About BioPhotonix", title: "Founded by a clinician who ran out of things to offer." },
   news: { eyebrow: "News and insights", title: "From the front line of retinal care." },

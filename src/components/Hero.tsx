@@ -1,17 +1,13 @@
 "use client";
 
-import { useRef } from "react";
 import { motion, useReducedMotion } from "motion/react";
 import Button from "./Button";
-import PhotonField from "./PhotonField";
-import RevoluxDevice, { EYEPIECES } from "./RevoluxDevice";
+import DevicePhotons from "./DevicePhotons";
+import RevoluxDevice from "./RevoluxDevice";
 import { hero, revolux } from "@/content/site";
 
 export default function Hero() {
   const reduce = useReducedMotion();
-  /* The photons converge on the device's eyepieces wherever the layout puts
-     them: beside the copy on a laptop, below it on a phone. */
-  const device = useRef<HTMLDivElement>(null);
 
   // Always animate *to* the visible state. Only the duration changes under
   // reduced motion, so nothing can be left stranded at opacity 0.
@@ -24,7 +20,9 @@ export default function Hero() {
   return (
     <section className="relative overflow-hidden pt-32 md:pt-40">
       <div aria-hidden="true" className="grid-bg absolute inset-0" />
-      <PhotonField className="absolute inset-0 h-full w-full" focus={{ ref: device, ...EYEPIECES }} />
+      {/* Photons converge on the device's eyepieces wherever the layout puts
+          them: beside the copy on a laptop, below it on a phone. */}
+      <DevicePhotons className="absolute inset-0 h-full w-full" />
       {/* Teal bloom around the device and a faint ember at the focal point. */}
       <div
         aria-hidden="true"
@@ -72,7 +70,6 @@ export default function Hero() {
               ))}
             </div>
             <motion.div
-              ref={device}
               animate={reduce ? undefined : { y: [0, -10, 0] }}
               transition={reduce ? undefined : { duration: 7, repeat: Infinity, ease: "easeInOut" }}
               className="relative mx-auto w-[62%] max-w-[22rem] lg:w-[68%]"

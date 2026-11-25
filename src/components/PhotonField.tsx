@@ -2,8 +2,12 @@
 
 import { useEffect, useRef, type RefObject } from "react";
 
-/** Where the photons converge: a point inside an element, as shares of its box. */
-type Focus = { ref: RefObject<HTMLElement | null>; x: number; y: number };
+/**
+ * Where the photons converge: a point inside an element, as shares of its
+ * box. The element is given by ref, or by a selector looked up inside the
+ * canvas's own parent, so a server-rendered page can name it without a ref.
+ */
+type Focus = { ref?: RefObject<HTMLElement | null>; selector?: string; x: number; y: number };
 
 /**
  * A field of photons drifting towards a focal point, drawn on a canvas behind
@@ -50,7 +54,8 @@ export default function PhotonField({ className = "", focus }: { className?: str
     // chasing a cursor.
     const PULL = 0.45;
     const measure = () => {
-      const el = focus?.ref.current;
+      const el =
+        focus?.ref?.current ?? (focus?.selector ? canvas.parentElement?.querySelector<HTMLElement>(focus.selector) : null);
       if (el) {
         const c = canvas.getBoundingClientRect();
         const r = el.getBoundingClientRect();

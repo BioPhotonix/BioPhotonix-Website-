@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import CardMark from "@/components/CardMark";
+import DevicePhotons from "@/components/DevicePhotons";
 import JsonLd from "@/components/JsonLd";
 import RetinaExplainer from "@/components/RetinaExplainer";
 import RevoluxAnatomy from "@/components/RevoluxAnatomy";
@@ -29,6 +30,7 @@ export default function TechnologyPage() {
 
       <section className="relative overflow-hidden pb-20 pt-32 md:pb-28 md:pt-40">
         <div aria-hidden="true" className="grid-bg absolute inset-0" />
+        <DevicePhotons className="absolute inset-0 h-full w-full" />
         <div className="shell relative grid items-center gap-12 lg:grid-cols-12">
           <div className="lg:col-span-7">
             <p className="eyebrow">{revolux.eyebrow}</p>
@@ -46,6 +48,7 @@ export default function TechnologyPage() {
               sizes="(max-width: 1024px) 55vw, 28vw"
               priority
               className="relative mx-auto w-[58%] max-w-[20rem] lg:w-[64%]"
+              label={revolux.name}
             />
           </Reveal>
         </div>

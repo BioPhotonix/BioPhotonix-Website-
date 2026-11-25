@@ -113,6 +113,15 @@ says it, and prefer a link or a sentence to a second full telling.
 | The belief, the founder, advisers and partners | `/about` |
 | The contact form | `/contact` (the footer carries the phone, email and address on every page, as is standard) |
 
+**Positioning: used anywhere, not "out of the hospital".** Dry AMD is not
+managed in hospital, so the site must not say Revolux takes its care out of
+one. What is true, and one of the main selling points: Revolux is being
+developed so that any clinician can use it wherever they see patients, in
+practice or on a domiciliary visit. Avoid "hospital-grade", "hospital
+console", "into the community clinic" and "inside your consulting room" in
+new copy. (The four older company articles in `posts.ts` still use that
+framing; they are dated articles and were left as written.)
+
 Kept out since the first pass: the scrolling strip of standards, the facts
 strip and three highlight cards under the technology hero, three of the six
 clinics cards, the two FAQ questions the sections directly above the FAQ
@@ -140,9 +149,12 @@ change.
 
 All in `src/components`:
 
-- **PhotonField** draws photons drifting towards a focal point behind the hero,
+- **PhotonField** draws photons drifting towards a focal point behind a hero,
   on a canvas. It pauses off screen and shows a single still frame under
-  `prefers-reduced-motion`.
+  `prefers-reduced-motion`. **DevicePhotons** is the form both heroes use, on
+  the landing and technology pages: it aims the field between the eyepieces
+  of the Revolux device in the same section, measured from the device on
+  screen, so the dots gather on it at every screen size.
 - **PortraitCrowd** is how many people AMD reaches, told with people, on the
   landing page only: one older person's face, then well over a thousand as the
   view widens over four and a half seconds, then the crowd turns grey and a
@@ -170,7 +182,8 @@ All in `src/components`:
   touch froze it), never starts on its own under reduced motion, and gives
   screen readers every fact as one list.
 - **RevoluxDevice** takes an optional `label`, the device's name printed on
-  its control box. Only the landing page's hero sets it. It is placed and set
+  its control box. The landing and technology heroes both set it, so the two
+  show the same device. It is placed and set
   as a maker would print it: in the clear band under the box's round button
   (the position is measured from the render, as the eyepiece glows are), in
   Montserrat SemiBold spaced capitals, in teal ink lit a shade lighter at the
