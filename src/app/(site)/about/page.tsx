@@ -30,13 +30,14 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Belief, beside the founder in clinic. How the company came about is
-          the landing page's story, and is told there. */}
+      {/* The belief and, in three sentences, how the company came about,
+          beside the founder in clinic. The landing page tells the fuller story. */}
       <section className="border-y border-line bg-ink-900 py-20 md:py-28">
         <div className="shell grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
           <Reveal className="lg:col-span-6">
             <p className="text-base text-fog">{about.belief.lead}</p>
             <p className="mt-6 font-display text-3xl font-semibold leading-tight text-fog md:text-5xl">{about.belief.statement}</p>
+            <p className="mt-8 leading-relaxed text-fog">{about.belief.body}</p>
           </Reveal>
           <Reveal delay={0.1} className="lg:col-span-6">
             <div className="relative aspect-square overflow-hidden rounded-2xl border border-line">
@@ -49,7 +50,7 @@ export default function AboutPage() {
       {/* Values */}
       <section className="shell py-20 md:py-28">
         <SectionHeading eyebrow={about.values.eyebrow} title={about.values.title} />
-        <div className="mt-14 grid gap-4 md:grid-cols-3">
+        <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {about.values.items.map((v, i) => (
             <Reveal key={v.title} delay={i * 0.08}>
               <TechCard className="h-full p-7">
@@ -121,7 +122,7 @@ export default function AboutPage() {
 
         <Reveal className="mt-14 border-t border-line pt-10">
           <h3 className="eyebrow">{partners.title}</h3>
-          <ul className="mt-6 grid gap-x-8 gap-y-4 sm:grid-cols-2">
+          <ul className="mt-6 grid gap-x-8 gap-y-4 sm:grid-cols-2 lg:grid-cols-5">
             {partners.names.map((p) => (
               <li key={p.name}>
                 <p className="font-display text-lg font-semibold text-fog">{p.name}</p>

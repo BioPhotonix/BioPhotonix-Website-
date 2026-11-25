@@ -1,13 +1,15 @@
 import JsonLd from "@/components/JsonLd";
-import { breadcrumbSchema } from "@/content/schema";
+import { breadcrumbSchema, faqSchema } from "@/content/schema";
 import type { Metadata } from "next";
+import Accordion from "@/components/Accordion";
 import Button from "@/components/Button";
 import RevenueCalculator from "@/components/RevenueCalculator";
 import TreatmentCourse from "@/components/TreatmentCourse";
 import CardMark from "@/components/CardMark";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
-import { clinics, course } from "@/content/site";
+import TechCard from "@/components/TechCard";
+import { clinics, course, faq } from "@/content/site";
 
 export const metadata: Metadata = {
   /* Query-led, unlike the h1 below it. See "Search rankings" in the README. */
@@ -21,7 +23,9 @@ export default function ClinicsPage() {
   return (
     <>
       <JsonLd data={breadcrumbSchema([{ name: "For clinics", path: "/clinics" }])} />
-      <section className="relative overflow-hidden pb-20 pt-32 md:pb-28 md:pt-40">
+      {/* The FAQ lives here only, so its structured data does too. */}
+      <JsonLd data={faqSchema()} />
+      <section className="relative overflow-hidden pt-32 md:pt-40">
         <div aria-hidden="true" className="grid-bg absolute inset-0" />
         <div className="shell relative">
           <p className="eyebrow">{clinics.eyebrow}</p>
@@ -33,6 +37,23 @@ export default function ClinicsPage() {
               Practice economics
             </Button>
           </div>
+        </div>
+      </section>
+
+      <section className="shell py-20 md:py-28">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {clinics.props.map((p, i) => (
+            <Reveal key={p.title} delay={(i % 3) * 0.08}>
+              <TechCard className="h-full p-7">
+                <div className="flex items-start justify-between gap-4">
+                  <span className="text-xs font-semibold tracking-[0.13em] text-teal-400">{String(i + 1).padStart(2, "0")}</span>
+                  <CardMark kind={p.mark} className="h-10 w-10 shrink-0" />
+                </div>
+                <h2 className="mt-4 font-display text-lg font-semibold text-fog">{p.title}</h2>
+                <p className="mt-2 text-sm leading-relaxed text-fog">{p.body}</p>
+              </TechCard>
+            </Reveal>
+          ))}
         </div>
       </section>
 
@@ -65,12 +86,22 @@ export default function ClinicsPage() {
         </div>
       </section>
 
-      {/* Economics: what a practice pays, and earns, said here and only here. */}
-      <section id="economics" className="scroll-mt-24 border-y border-line bg-ink-900 py-20 md:py-28">
-        <div className="shell">
-          <SectionHeading eyebrow={clinics.calculator.eyebrow} title={clinics.calculator.title} intro={clinics.calculator.intro} />
-          <Reveal className="mt-12">
-            <RevenueCalculator />
+      {/* Economics */}
+      <section id="economics" className="shell scroll-mt-24 py-20 md:py-28">
+        <SectionHeading eyebrow={clinics.calculator.eyebrow} title={clinics.calculator.title} intro={clinics.calculator.intro} />
+        <Reveal className="mt-12">
+          <RevenueCalculator />
+        </Reveal>
+      </section>
+
+      {/* FAQ: lives here, and only here. */}
+      <section id="faq" className="scroll-mt-24 border-y border-line bg-ink-900 py-20 md:py-28">
+        <div className="shell grid gap-12 lg:grid-cols-12 lg:gap-16">
+          <div className="lg:col-span-4">
+            <SectionHeading eyebrow={faq.eyebrow} title={faq.title} intro={faq.intro} />
+          </div>
+          <Reveal className="lg:col-span-8">
+            <Accordion items={faq.items} />
           </Reveal>
         </div>
       </section>

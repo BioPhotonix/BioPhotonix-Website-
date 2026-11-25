@@ -66,8 +66,10 @@ export const hero = {
  */
 export const home = {
   revolux: {
-    /* What is on the technology page, not a second telling of the story above it. */
-    body: ["How it is built, how it delivers light to both eyes, and the standards it is designed to meet."],
+    body: [
+      "Revolux is the device BioPhotonix is developing to take photobiomodulation for dry AMD out of the hospital and into the community clinic.",
+      "The technology page sets out how it is built, how it delivers light to both eyes, and the safety standards it is designed to meet.",
+    ],
     cta: { label: "How Revolux works", href: "/technology" },
   },
   doors: {
@@ -227,6 +229,7 @@ export const vision = {
   indicated: {
     stages: ["early", "intermediate"],
     label: "Where Revolux is designed to act",
+    body: "These are the two stages where the patient notices least, and the two stages where they have historically been told to watch and wait.",
   },
   caveat: {
     title: "What this simulation cannot show",
@@ -238,7 +241,7 @@ export const shift = {
   eyebrow: "From observation to intervention",
   title: "Stop monitoring. Start treating.",
   body: [
-    "Retinal disease is now identified earlier than ever in community optometry, but hospital-grade interventions do not scale to that setting.",
+    "As diagnostic technology in community optometry has advanced, retinal disease is identified earlier than ever. Yet for millions of patients an early diagnosis is followed by “watch and wait”, because hospital-grade interventions do not scale to the community setting.",
     "BioPhotonix exists to close that gap. By translating photobiomodulation into a regulated, portable medical platform, we give optometrists the means to intervene early, in the same room where the diagnosis was made.",
   ],
   today: {
@@ -267,8 +270,9 @@ export const revolux = {
 
 export const anatomy = {
   eyebrow: "Inside Revolux",
-  title: "Revolux, part by part.",
-  intro: "Each part is described only as far as the published development record allows.",
+  title: "Built part by part around a repeatable dose.",
+  intro:
+    "Every element of the platform exists to put a known quantity of light on the retina, the same way, in every clinic. Each part is described here only as far as the published development record allows.",
   /**
    * The development prototype from five angles. The callouts are measured
    * against one render — the straight-on emitter face, which is what the
@@ -293,7 +297,7 @@ export const anatomy = {
       width: 305,
       height: 660,
       alt: "The Revolux prototype seen from the patient's side, showing both apertures with their rings of emitters around them",
-      caption: "What the patient looks into.",
+      caption: "What the patient looks into: a ring of emitters around each aperture.",
       /** The callouts are measured against this render, so they belong to it. */
       callouts: true,
     },
@@ -304,7 +308,7 @@ export const anatomy = {
       width: 240,
       height: 657,
       alt: "The Revolux prototype in profile, showing the depth of the eyepiece housing above the control unit and handle",
-      caption: "The depth of the housing, in profile.",
+      caption: "In profile the depth of the housing is visible: the distance the light travels is fixed by the body itself.",
     },
     {
       id: "three-quarter",
@@ -339,7 +343,7 @@ export const anatomy = {
       side: "left" as const,
       anchor: [482, 22] as const,
       labelY: 74,
-      body: "Two eyepieces on a hinged bridge.",
+      body: "Two eyepieces on a hinged bridge, holding the same distance and alignment for every patient.",
     },
     {
       id: "emitters",
@@ -355,7 +359,7 @@ export const anatomy = {
       side: "right" as const,
       anchor: [550, 156] as const,
       labelY: 150,
-      body: "The path the light takes from each source to the retina.",
+      body: "The path from each source to the retina, refined with optical engineering partners so the light arriving at the macula is precise.",
     },
     {
       id: "control",
@@ -363,7 +367,7 @@ export const anatomy = {
       side: "right" as const,
       anchor: [477, 392] as const,
       labelY: 396,
-      body: "Power and control for every session.",
+      body: "Power and control. Dosage and irradiance are regulated and monitored for the whole of every session.",
     },
     {
       id: "interlocks",
@@ -371,10 +375,10 @@ export const anatomy = {
       side: "left" as const,
       anchor: [477, 458] as const,
       labelY: 486,
-      body: "The hardware behind gated delivery.",
+      body: "Positional and physiological gating: light is delivered only while every criterion is met.",
     },
   ],
-  note: "Renders of the current development prototype.",
+  note: "Renders of the current development prototype. The hardware configuration is approaching design freeze.",
 };
 
 export const course = {
@@ -396,7 +400,7 @@ export const explainer = {
   eyebrow: "Intelligent delivery",
   title: "Biological optimisation, with digital intelligence.",
   intro:
-    "Standard devices simply emit light. Revolux controls how, when and whether light is delivered.",
+    "Standard devices simply emit light. Revolux controls how, when and whether light is delivered, and records every session it does.",
   steps: [
     {
       id: "geometry",
@@ -414,7 +418,7 @@ export const explainer = {
       id: "wavelengths",
       short: "Wavelengths",
       title: "Targeted wavelengths",
-      body: "Revolux combines the wavelengths with the strongest clinical effect.",
+      body: "Revolux combines the wavelengths with the strongest clinical effect, aimed at the key driver of dry AMD: mitochondrial dysfunction in the retinal cells that matter for central vision.",
     },
     {
       id: "gating",
@@ -426,7 +430,7 @@ export const explainer = {
       id: "reporting",
       short: "Reporting",
       title: "Logged and reported",
-      body: "Every session is digitally logged, ready for reporting.",
+      body: "Every session is clinician-initiated and digitally logged. Integrated software turns the treatment data into clinician-ready reports and patient-friendly summaries.",
     },
   ],
 };
@@ -434,8 +438,10 @@ export const explainer = {
 export const retina = {
   eyebrow: "The mechanism",
   title: "Light that restores cellular energy.",
-  /* The term, defined. What the light does in the retina is the diagram's three steps. */
-  body: ["Photobiomodulation uses selected wavelengths of light to stimulate biological processes in tissue. It is non-invasive and non-thermal."],
+  body: [
+    "Photobiomodulation uses selected wavelengths of red and near-infrared light to stimulate biological processes in tissue. In the retina, the target is the mitochondria: the structures that produce the energy retinal cells need to function and to clear waste.",
+    "In dry AMD those mitochondria become dysfunctional. Revolux is designed to boost and restore their function, supporting the cells rather than replacing them, in a treatment that is non-invasive and non-thermal.",
+  ],
   steps: [
     { title: "Light enters the eye", body: "Controlled doses of red and near-infrared light pass through the pupil to the macula." },
     { title: "Mitochondria absorb it", body: "The light is absorbed inside retinal cells, where mitochondrial function is compromised in dry AMD." },
@@ -444,15 +450,32 @@ export const retina = {
 };
 
 /**
- * How Revolux is regulated: the one place the site says it. The interlocks and
- * the session log, which used to sit beside it, are tabs of the delivery
- * explainer above; the scrolling strip of standards repeated this paragraph
- * and listed standards the register says do not govern the device.
+ * Safety and regulation. The first card is the site's statement of how
+ * Revolux is regulated, in the wording that says "is being developed as"
+ * rather than claiming validation it does not yet have. The scrolling strip
+ * of standards that used to follow is gone: it repeated this card and listed
+ * standards the register says do not govern the device.
  */
-export const regulation = {
-  eyebrow: "Regulation",
+export const safety = {
+  eyebrow: "Safety you can audit",
   title: "Built as a medical device, not a wellness gadget.",
-  body: "Revolux is being developed as a Class IIa medical device under an ISO 13485 quality management system, following a CE-first strategy under the EU Medical Device Regulation alongside UKCA marking for the UK.",
+  items: [
+    {
+      title: "Medical device validation",
+      mark: "validated" as const,
+      body: "Revolux is being developed as a Class IIa medical device under an ISO 13485 quality management system, following a CE-first strategy under the EU Medical Device Regulation alongside UKCA marking for the UK.",
+    },
+    {
+      title: "Active safety interlocks",
+      mark: "interlocks" as const,
+      body: "Multiple layers of interlocks and adaptive gating ensure light is only delivered when positional and physiological criteria are met. Dosage and irradiance are controlled and monitored for every treatment.",
+    },
+    {
+      title: "Auditable care",
+      mark: "auditable" as const,
+      body: "Unlike unsupervised consumer devices, Revolux is designed for accountability. Every session is clinician-initiated and digitally logged, keeping patients inside a managed, traceable care pathway.",
+    },
+  ],
 };
 
 export const clinics = {
@@ -460,22 +483,40 @@ export const clinics = {
   title: "Hospital-grade care, inside your consulting room.",
   intro:
     "Revolux integrates active dry AMD intervention into the workflows you already run, turning an unmet patient need into a scalable, high-value clinical service.",
+  /** Three of the original six: revenue and cost are the economics section's to say. */
+  props: [
+    {
+      title: "Beyond generic light therapy",
+      mark: "tuned" as const,
+      body: "Bespoke treatment protocols optimise retinal stimulation beyond generic or fixed photobiomodulation.",
+    },
+    {
+      title: "Integrated workflows",
+      mark: "slots-in" as const,
+      body: "Therapy slots into existing clinical workflows without dedicated space or fixed infrastructure.",
+    },
+    {
+      title: "Intelligent insights",
+      mark: "report" as const,
+      body: "Integrated software simplifies clinical reporting and supports decisions, reducing administrative burden.",
+    },
+  ],
   workflow: {
     title: "The clinical pathway",
     intro: "Five steps, all inside the practice. The device, the software and the protocol are designed around a standard appointment.",
     steps: [
       { title: "Identify", mark: "identify" as const, body: "Adults aged 50 and over with early or intermediate dry AMD, found during routine examination or imaging." },
-      { title: "Screen", mark: "screen" as const, body: "Eligibility is confirmed and contraindications are managed before any treatment." },
-      { title: "Treat", mark: "treat" as const, body: "A qualified clinician initiates and supervises every session. Revolux is not for unsupervised use at home." },
-      { title: "Report", mark: "record" as const, body: "Clinician-ready reports and patient-friendly summaries are generated automatically." },
-      { title: "Continue", mark: "continue" as const, body: "Courses can be repeated within a managed pathway." },
+      { title: "Screen", mark: "screen" as const, body: "Eligibility is confirmed and contraindications are managed by the supervising clinician before any treatment." },
+      { title: "Treat", mark: "treat" as const, body: "Binocular sessions in a standard consulting room, each initiated and supervised by a qualified clinician." },
+      { title: "Report", mark: "record" as const, body: "Every session is logged. Clinician-ready reports and patient-friendly summaries are generated automatically." },
+      { title: "Continue", mark: "continue" as const, body: "Ongoing care replaces passive monitoring, with repeatable cycles delivered within a managed pathway." },
     ],
   },
   calculator: {
     eyebrow: "Practice economics",
     title: "A low break-even point.",
     intro:
-      "Revolux is accessed through a rental and licensing model, with no upfront cost. One patient every three months covers the fixed monthly fee for the device.",
+      "Revolux is accessed through a rental and licensing model, with no upfront cost. Just one patient every three months covers the fixed monthly fee for the device, which makes it a low-risk addition to a practice.",
     /**
      * Fitted to the company's worked examples, shown under the chart: one, two
      * and three patients a month generate 700, 1,600 and 2,500 pounds of
@@ -503,7 +544,37 @@ export const clinics = {
 /** The technology page's own words. */
 export const technology = {
   title: "How Revolux works.",
-  lede: "What the light does in the retina, how the device delivers it, and how it is regulated.",
+  lede: "Preserving vision and independence through advanced photobiomodulation, engineered as a Class IIa medical device for the community clinic.",
+};
+
+/**
+ * The clinics FAQ: the four questions the page does not already answer in a
+ * section of its own. The schedule is the course section and earnings are
+ * the calculator, both directly above it, so those two questions are not
+ * asked again here.
+ */
+export const faq = {
+  eyebrow: "You ask, we answer",
+  title: "Frequently asked questions",
+  intro: "Answers to the questions optometrists and ophthalmologists ask most about Revolux and what it means for their patients.",
+  items: [
+    {
+      q: "Who is the Revolux system intended for?",
+      a: "Revolux is indicated for adult patients aged 50 and over diagnosed with early or intermediate dry AMD. It allows clinicians to offer active intervention during the years where patients were previously told to simply watch and wait.",
+    },
+    {
+      q: "Is the treatment invasive?",
+      a: "No. Photobiomodulation is a non-invasive, non-thermal light therapy. Patients sit comfortably holding the binocular device. Per-wavelength irradiance and duration are not yet fixed and will be selected by the parameter-optimisation study. There are no injections, no eye drops and no contact with the cornea.",
+    },
+    {
+      q: "Can patients use this at home on their own?",
+      a: "No. Revolux is a prescription medical device designed for clinician-supervised use only. It can be used in a controlled home visit by a professional, but it is not an unsupervised consumer product.",
+    },
+    {
+      q: "What regulatory pathway is Revolux following?",
+      a: "Revolux is being developed as a Class IIa medical device under an ISO 13485 quality management system, following a CE-first strategy under the EU Medical Device Regulation alongside UKCA marking for the UK.",
+    },
+  ],
 };
 
 export type StageStatus = "complete" | "current" | "upcoming";
@@ -524,19 +595,19 @@ export const roadmap = {
       tag: "Architecture",
       title: "Binocular platform selected",
       status: "complete" as StageStatus,
-      body: "",
+      body: "A headset-based architecture chosen to guarantee precise source-to-eye geometry and repeatable dosimetry, so every patient receives the intended dose whichever clinic they visit.",
     },
     {
       tag: "TRL 4",
       title: "Lab validation",
       status: "complete" as StageStatus,
-      body: "Functional prototypes validated the ergonomic assumptions. Thermal limits, output stability and software logic tested.",
+      body: "Functional prototypes fabricated with Med Design validated the ergonomic assumptions. Thermal limits, output stability and software logic tested.",
     },
     {
       tag: "TRL 5",
       title: "Design freeze",
       status: "current" as StageStatus,
-      body: "Locking the hardware configuration: optical arrays, power subsystems and safety interlocks.",
+      body: "Locking the hardware configuration: optical arrays, power subsystems and safety interlocks, with optical engineering input from Fraunhofer and WideBlue.",
     },
     {
       tag: "Next",
@@ -548,13 +619,13 @@ export const roadmap = {
       tag: "Regulatory",
       title: "CE and UKCA marking",
       status: "upcoming" as StageStatus,
-      body: "Conformity assessment, with third-party testing against the optical, electrical and biocompatibility standards.",
+      body: "Class IIa conformity under the EU MDR, then UKCA for the UK market, with third-party testing against the optical, electrical and biocompatibility standards.",
     },
     {
       tag: "Launch",
       title: "Community deployment",
       status: "upcoming" as StageStatus,
-      body: "Rollout to practices, with clinician training and post-market surveillance.",
+      body: "Rollout to community optometry on rental and licence, with clinician training, integrated reporting and post-market surveillance.",
     },
   ],
 };
@@ -563,11 +634,14 @@ export const about = {
   hero: {
     eyebrow: "About BioPhotonix",
     title: "Bridging the gap in retinal care.",
-    lede: "A Glasgow medical-technology company, founded by a clinician and built with specialists in medical physics, regulation and engineering.",
+    lede: "BioPhotonix is ending the era of passive observation. We are engineering the shift from monitoring disease to active, accessible intervention for the world's second leading cause of blindness.",
   },
   belief: {
     lead: "BioPhotonix was founded on a single, uncompromising belief:",
     statement: "Early intervention is the only way to preserve independence.",
+    /* How the company came about, in three sentences. The landing page tells
+       the fuller story; the published About page told it a second time at length. */
+    body: "As diagnostic technology in community optometry has advanced, we are identifying retinal disease earlier than ever before. Yet for millions of patients this early diagnosis is followed by a “watch and wait” approach. We were established to close this gap.",
   },
   values: {
     eyebrow: "How we work",
@@ -576,7 +650,7 @@ export const about = {
       {
         title: "Clinician-led",
         mark: "clinician-led" as const,
-        body: "Powerful therapy requires expert supervision.",
+        body: "Powerful therapy requires expert supervision. Our technology is designed to be initiated and monitored by eye-care professionals.",
       },
       {
         title: "Evidence-first",
@@ -587,6 +661,11 @@ export const about = {
         title: "Patient-centric",
         mark: "patient" as const,
         body: "We measure success not just by clinical biomarkers, but by the preservation of patient independence.",
+      },
+      {
+        title: "Regulatory-first",
+        mark: "regulatory" as const,
+        body: "A Class IIa device, an ISO 13485 quality system and a CE-first strategy. Safety is engineered in from the start, not added at the end.",
       },
     ],
   },
@@ -599,7 +678,7 @@ export const founder = {
   qualifications: ["BSc Optometry", "BSc Orthoptics"],
   bio: [
     "Adail is an optometrist and orthoptist with extensive clinical experience managing macular disease across both hospital ophthalmology pathways and community optometry settings.",
-    "Adail founded BioPhotonix to engineer a solution that fits the reality of clinical practice.",
+    "His direct experience on the front lines of eye care revealed the limitations of existing treatments. Adail founded BioPhotonix to engineer a solution that fits the reality of clinical practice: a device that is clinically rigorous, regulator-ready, and accessible enough to be deployed in every community clinic.",
   ],
   image: "/images/adail-portrait.jpg",
   alt: "Portrait of Adail Islam, founder of BioPhotonix",
@@ -627,7 +706,7 @@ export const advisors = {
       role: "Managing Director",
       org: "Compliance Solutions Life Sciences",
       area: "Regulatory and compliance",
-      body: "Strategic guidance on our quality management system and regulatory pathways.",
+      body: "Strategic guidance on our ISO 13485 quality management system and our UKCA and CE regulatory pathways.",
       image: "/images/edwin-lindsay.jpg",
       alt: "Portrait of Edwin Lindsay",
     },
@@ -646,10 +725,11 @@ export const advisors = {
 export const partners = {
   title: "Development partners",
   names: [
-    /* WideBlue, Compliance Solutions and the University of Dundee are
-       introduced with their people, in the cards above this list. */
     { name: "Med Design", role: "Functional prototypes and ergonomics" },
     { name: "Fraunhofer", role: "Optical engineering" },
+    { name: "WideBlue", role: "Product development" },
+    { name: "Compliance Solutions", role: "Quality and regulatory" },
+    { name: "University of Dundee", role: "Medical physics advisory" },
   ],
 };
 
@@ -657,26 +737,41 @@ export const investors = {
   hero: {
     eyebrow: "For investors",
     title: "Building the infrastructure for the future of global eye health.",
-    lede: "The market Revolux serves, how it earns, and the road to the clinic.",
+    lede: "A regulated medical device, a structural gap in a large and growing market, and a recurring-revenue model that scales with every patient treated.",
   },
   thesis: {
     eyebrow: "The thesis",
     title: "The market does not need another hospital console.",
-    /* The story behind it is the landing page's; the device, Technology's. */
-    body: ["Revolux is built for where the patients are."],
+    body: [
+      "Dry AMD is diagnosed and monitored in community optometry. Interventional technology has been designed for hospitals and specialist centres. That mismatch has left effective approaches locked in high-cost, low-access environments while the majority of patients are told to wait.",
+      "Revolux is built for where the patients are: portable enough for a standard consulting room, and rigorous enough for a regulated clinical pathway.",
+    ],
   },
   model: {
     eyebrow: "Business model",
     title: "Recurring revenue that scales with patient volume.",
-    body: ["Each course a patient completes earns revenue for the clinic and for BioPhotonix."],
-    /** What a practice pays, and when it breaks even, is on Clinics. */
-    link: { label: "What a practice pays", href: "/clinics#economics" },
+    body: [
+      "Revolux is accessed through a rental and licensing model. Each patient follows a set course of sessions, and repeatable cycles mean revenue for the clinic, and for BioPhotonix, scales linearly with the number of patients treated.",
+    ],
+    points: [
+      "No upfront cost to the clinic",
+      "One patient every three months covers the fixed monthly fee for a practice's device",
+    ],
+  },
+  regulatory: {
+    eyebrow: "Regulatory strategy",
+    title: "CE-first, safety by design.",
+    body: [
+      "We are implementing a quality management system aligned with ISO 13485 and pursuing CE marking under the EU Medical Device Regulation, alongside UKCA for the UK.",
+    ],
+    /** The fuller statement, and the device's safety design, are on Technology. */
+    link: { label: "Safety and regulation, on the technology page", href: "/technology#safety" },
   },
   /** A pointer: the team itself is introduced on About. */
   team: {
     eyebrow: "Team and partners",
-    title: "Who is building it.",
-    intro: "The founder, advisers and development partners are introduced on the About page.",
+    title: "A clinician founder, with the specialists a medical device needs.",
+    intro: "The founder, the advisers working with us and our development partners are introduced on the About page.",
     cta: "Meet the team",
   },
   dataRoom: {
@@ -723,6 +818,11 @@ export const news = {
   keyPointsLabel: "In brief",
   /** Over the questions at the end of an insight: the ones people type into a search box, answered. */
   faqHeading: "Questions this raises",
+};
+
+export const footer = {
+  blurb:
+    "We develop photonic systems that safely stimulate retinal cells and support repair processes, helping to preserve central vision and independence for people living with macular degeneration.",
 };
 
 /**

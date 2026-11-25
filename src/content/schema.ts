@@ -1,4 +1,4 @@
-import { revolux, site } from "./site";
+import { faq, revolux, site } from "./site";
 
 /**
  * Structured data for search engines and for the assistants that increasingly
@@ -48,6 +48,18 @@ export function medicalDeviceSchema() {
       { "@type": "PropertyValue", name: "Mechanism", value: "Photobiomodulation" },
       ...revolux.facts.map((f) => ({ "@type": "PropertyValue", name: f.label, value: f.value })),
     ],
+  };
+}
+
+export function faqSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faq.items.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: { "@type": "Answer", text: item.a },
+    })),
   };
 }
 

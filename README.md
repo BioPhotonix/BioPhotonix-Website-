@@ -91,40 +91,46 @@ engines (Bing and those that read it) about the new page; the key is the
 
 ### Pages
 
-**Everything is said once, in the most obvious place.** This is the rule the
-site is written to, on advice the company received, and the site is an
-introduction to the company, not a reference: it should read easily. Each
-fact has one home and no other page restates it, in the same words or in
-others. Where a page needs a fact that lives elsewhere it either links or
-leaves it out. So, before adding a sentence anywhere, check whether the site
-already says it; and prefer cutting to rewording. The audit behind this
-(every sentence of every page compared with every other, reworded repeats
-included) found 48 repeated pairs outside News and the privacy policy before
-the change and none after; re-run one before a large copy change.
+**Say it in the most obvious place, and avoid repeating it.** On advice the
+company received, each topic has one home, the page a visitor would look on
+first, and other pages point to it instead of copying it. The site is an
+introduction to the company, not a reference: it should read easily. A first
+pass took this literally and cut every restatement; the company found that
+version bare, so the site now sits between the two. The rule of thumb: a
+whole section, card set or list is never repeated on a second page, and a
+page does not answer in one section what the section above it just said; but
+a page may say in a sentence what its reader needs to follow it, even if
+another page says more. Before adding copy, check whether the site already
+says it, and prefer a link or a sentence to a second full telling.
 
-| Topic | Its one home |
+| Topic | Its home |
 |---|---|
 | Why dry AMD care needs to change | `/` (the problem, and "Stop monitoring. Start treating.") |
 | What the light does, how the device delivers it, what it is made of | `/technology` |
-| How Revolux is regulated (class, quality system, CE and UKCA) | `/technology`, its last section |
-| Who it is for, the course, supervision, what a practice pays and earns | `/clinics` |
+| How Revolux is kept safe and regulated | `/technology#safety` |
+| Who it is for, the course, supervision, what a practice pays and earns, the FAQ | `/clinics` |
 | The market, how the company earns, the roadmap | `/investors` |
 | The belief, the founder, advisers and partners | `/about` |
-| Phone, email, address, the form | `/contact` |
+| The contact form | `/contact` (the footer carries the phone, email and address on every page, as is standard) |
 
-That is why there is no FAQ (each answer is in its place), no scrolling strip
-of standards, no value-proposition cards on `/clinics`, and no company
-description or contact details in the footer, which carries the links and
-the legal lines only.
+Kept out since the first pass: the scrolling strip of standards, the facts
+strip and three highlight cards under the technology hero, three of the six
+clinics cards, the two FAQ questions the sections directly above the FAQ
+already answer (the schedule and earnings), and About's two-paragraph origin
+section, which is now three sentences beside the belief. An audit script
+(every sentence of every page compared with every other, reworded repeats
+included) found 48 repeated pairs outside News and the privacy policy on the
+published site and none in the bare version; re-run one before a large copy
+change.
 
 | URL | What is on it |
 |---|---|
 | `/` | The front door: the problem (facts gallery, growth figure), the shift from watching to treating (pathway diagram), then pointers to Revolux, clinics, investors, the team, the latest articles and contact |
-| `/technology` | Four sections: the mechanism (retina diagram), delivery (the five-tab explainer), the device part by part, and regulation. Carries the MedicalDevice structured data |
+| `/technology` | Four sections in reading order: the mechanism (retina diagram), delivery (the five-tab explainer), the device part by part, and safety and regulation (three cards). Carries the MedicalDevice structured data |
 | `/vision` | The vision simulator: what a patient sees at each stage of dry AMD. First item in the main nav |
-| `/clinics` | The five-step clinical pathway, the treatment course, practice economics (the revenue calculator), and registration, which opens the contact form as a practice enquiry |
-| `/about` | The belief, values, the founder, advisors and partners |
-| `/investors` | The thesis and market funnel, the business model in a line, the roadmap. Points to the team on `/about` and to what a practice pays on `/clinics`; the data-room request opens the contact form as an investor enquiry |
+| `/clinics` | Three value cards, the five-step clinical pathway, the treatment course, practice economics (the revenue calculator), a four-question FAQ with its FAQPage structured data, and registration, which opens the contact form as a practice enquiry |
+| `/about` | The belief and origin, four values, the founder, advisors and partners |
+| `/investors` | The thesis and market funnel, business model and regulatory strategy, the roadmap. Points to the team on `/about` and to safety and regulation on `/technology`; the data-room request opens the contact form as an investor enquiry |
 | `/news`, `/news/[slug]` | The four articles from the Wix blog and the weekly insights |
 | `/feed.xml` | RSS of every article |
 | `/contact` | Contact details and the site's only form. `?as=clinic` or `?as=investor` preselects the role |
@@ -365,9 +371,8 @@ something is already registered — then submit
 Each page carries a unique title, a description under the ~155 characters
 Google shows, and a canonical URL. The structured data is an Organization and
 a WebSite joined by `@id`, a BreadcrumbList on every page below the home page,
-MedicalDevice on `/technology`, and BlogPosting on each article, with a
-FAQPage beside it where the article has questions. (The clinics FAQ and its
-FAQPage were removed together.)
+MedicalDevice on `/technology`, FAQPage on `/clinics` (where the FAQ is), and
+BlogPosting on each article.
 
 **Social cards.** `src/app/_og/card.tsx` draws the 1200x630 image every page
 shares, and the line of copy on each one is in `ogCards` in

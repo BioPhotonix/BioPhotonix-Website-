@@ -1,11 +1,13 @@
 import JsonLd from "@/components/JsonLd";
 import { breadcrumbSchema } from "@/content/schema";
 import type { Metadata } from "next";
+import Link from "next/link";
 import Button from "@/components/Button";
 import MarketFunnel from "@/components/MarketFunnel";
 import Reveal from "@/components/Reveal";
 import Roadmap from "@/components/Roadmap";
 import SectionHeading from "@/components/SectionHeading";
+import TechCard from "@/components/TechCard";
 import { investors, roadmap } from "@/content/site";
 
 export const metadata: Metadata = {
@@ -49,24 +51,37 @@ export default function InvestorsPage() {
         </div>
       </section>
 
-      {/* Business model. How Revolux is regulated is on Technology. */}
+      {/* Model and regulatory */}
       <section className="border-y border-line bg-ink-900 py-20 md:py-28">
-        <div className="shell flex flex-wrap items-end justify-between gap-8">
-          <div>
-            <SectionHeading eyebrow={investors.model.eyebrow} title={investors.model.title} />
-            <Reveal className="mt-6 flex max-w-2xl flex-col gap-4 text-fog">
-              {investors.model.body.map((p) => (
-                <p key={p} className="lede">
-                  {p}
-                </p>
-              ))}
+        <div className="shell grid gap-5 lg:grid-cols-2">
+          {[investors.model, investors.regulatory].map((block, i) => (
+            <Reveal key={block.title} delay={i * 0.1}>
+              <TechCard className="h-full p-8 md:p-10">
+                <p className="eyebrow">{block.eyebrow}</p>
+                <h2 className="mt-4 font-display text-2xl font-semibold text-fog md:text-3xl">{block.title}</h2>
+                {block.body.map((p) => (
+                  <p key={p} className="mt-5 leading-relaxed text-fog">
+                    {p}
+                  </p>
+                ))}
+                {"points" in block && (
+                  <ul className="mt-7 flex flex-col gap-3">
+                    {block.points.map((pt) => (
+                      <li key={pt} className="flex items-start gap-3 text-sm text-fog">
+                        <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-teal-400" />
+                        {pt}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                {"link" in block && (
+                  <Link href={block.link.href} className="link-underline mt-7 inline-block text-sm text-fog">
+                    {block.link.label} &rarr;
+                  </Link>
+                )}
+              </TechCard>
             </Reveal>
-          </div>
-          <Reveal>
-            <Button href={investors.model.link.href} variant="outline">
-              {investors.model.link.label}
-            </Button>
-          </Reveal>
+          ))}
         </div>
       </section>
 

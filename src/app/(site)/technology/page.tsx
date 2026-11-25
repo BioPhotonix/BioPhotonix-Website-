@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import CardMark from "@/components/CardMark";
 import JsonLd from "@/components/JsonLd";
 import RetinaExplainer from "@/components/RetinaExplainer";
 import RevoluxAnatomy from "@/components/RevoluxAnatomy";
@@ -6,8 +7,9 @@ import RevoluxDevice from "@/components/RevoluxDevice";
 import Reveal from "@/components/Reveal";
 import RevoluxExplainer from "@/components/RevoluxExplainer";
 import SectionHeading from "@/components/SectionHeading";
+import TechCard from "@/components/TechCard";
 import { breadcrumbSchema, medicalDeviceSchema } from "@/content/schema";
-import { anatomy, explainer, regulation, retina, revolux, technology } from "@/content/site";
+import { anatomy, explainer, retina, revolux, safety, technology } from "@/content/site";
 
 export const metadata: Metadata = {
   /* Query-led, unlike the h1 below it. See "Search rankings" in the README. */
@@ -49,8 +51,8 @@ export default function TechnologyPage() {
         </div>
       </section>
 
-      {/* Each section says one thing, once: what the light does, how the
-          device delivers it, what the device is made of, how it is regulated. */}
+      {/* In reading order: what the light does, how the device delivers it,
+          what the device is made of, how it is kept safe and regulated. */}
 
       {/* Mechanism: what the light does */}
       <section className="border-y border-line bg-ink-900 py-20 md:py-28">
@@ -89,9 +91,20 @@ export default function TechnologyPage() {
         </div>
       </section>
 
-      {/* Regulation: said here, and only here. */}
-      <section className="shell py-20 md:py-28">
-        <SectionHeading eyebrow={regulation.eyebrow} title={regulation.title} intro={regulation.body} />
+      {/* Safety and regulation. Investors links here. */}
+      <section id="safety" className="shell scroll-mt-24 py-20 md:py-28">
+        <SectionHeading eyebrow={safety.eyebrow} title={safety.title} />
+        <div className="mt-14 grid gap-4 md:grid-cols-3">
+          {safety.items.map((item, i) => (
+            <Reveal key={item.title} delay={i * 0.08}>
+              <TechCard className="h-full p-7">
+                <CardMark kind={item.mark} className="h-10 w-10" />
+                <h3 className="mt-5 font-display text-lg font-semibold text-fog">{item.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-fog">{item.body}</p>
+              </TechCard>
+            </Reveal>
+          ))}
+        </div>
       </section>
     </>
   );

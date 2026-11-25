@@ -14,9 +14,9 @@ import { site } from "@/content/site";
  * care, because a post already carries its own.
  */
 const PAGES = [
-  { path: "", priority: 1, updated: "2026-11-25" },
+  { path: "", priority: 1, updated: "2026-11-18" },
   { path: "/technology", priority: 0.9, updated: "2026-11-25" },
-  { path: "/vision", priority: 0.8, updated: "2026-11-25" },
+  { path: "/vision", priority: 0.8, updated: "2026-09-18" },
   { path: "/clinics", priority: 0.9, updated: "2026-11-25" },
   { path: "/investors", priority: 0.8, updated: "2026-11-25" },
   { path: "/about", priority: 0.7, updated: "2026-11-25" },

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Logo from "./Logo";
-import { nav, site } from "@/content/site";
+import { footer, nav, site } from "@/content/site";
 
 const columns = [
   {
@@ -26,8 +26,17 @@ export default function Footer() {
     <footer className="border-t border-line bg-ink-950 text-fog">
       <div className="shell py-16 md:py-20">
         <div className="grid gap-12 md:grid-cols-12">
-          <div className="md:col-span-8">
+          <div className="md:col-span-6">
             <Logo className="h-8" />
+            <p className="mt-6 max-w-md text-base leading-relaxed text-fog">{footer.blurb}</p>
+            <div className="mt-6 flex flex-col gap-1.5 text-base">
+              <a href={site.phoneHref} className="link-underline w-fit text-fog hover:text-fog">
+                {site.phone}
+              </a>
+              <a href={`mailto:${site.email}`} className="link-underline w-fit break-all text-fog hover:text-fog">
+                {site.email}
+              </a>
+            </div>
           </div>
 
           {columns.map((col) => (
@@ -44,6 +53,19 @@ export default function Footer() {
               </ul>
             </div>
           ))}
+
+          <div className="md:col-span-2">
+            <h2 className="eyebrow">Glasgow</h2>
+            <address className="mt-4 text-base not-italic leading-relaxed text-fog">
+              {site.address.line1}
+              <br />
+              {site.address.line2}
+              <br />
+              {site.address.city} {site.address.postcode}
+              <br />
+              {site.address.country}
+            </address>
+          </div>
         </div>
 
         <div className="mt-14 flex flex-col gap-4 border-t border-line pt-8 text-sm text-fog sm:flex-row sm:items-center sm:justify-between">

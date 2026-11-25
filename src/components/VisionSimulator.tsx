@@ -170,6 +170,7 @@ export default function VisionSimulator({ titleAs: Title = "h3" }: Props) {
           {indicated && (
             <p className="mt-4 flex flex-wrap items-baseline gap-x-2 gap-y-1 border-l-2 border-teal-400 pl-4 text-sm">
               <span className="eyebrow">{vision.indicated.label}</span>
+              <span className="text-fog">{vision.indicated.body}</span>
             </p>
           )}
         </div>
