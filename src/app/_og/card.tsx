@@ -18,21 +18,36 @@ import { ImageResponse } from "next/og";
  * generator needs TrueType, next/font emits woff2, and a build that reaches
  * out to Google Fonts to draw an image is a build that breaks when that call
  * fails. Both are SIL OFL 1.1, which permits redistribution.
+ *
+ * The fonts and the mark are read when a card is drawn, not when this module
+ * loads. A page's metadata imports its opengraph-image module for the size,
+ * type and alt text, so a read at load time ran wherever the page renders.
+ * /contact renders per request on Vercel (it reads ?as=), its function does
+ * not carry these files, and the read failed: every visit to /contact, and
+ * every "Get in touch" link, ended in "Application error". Locally the files
+ * are always there, so nothing caught it. The cards themselves are drawn at
+ * build time, where the files are.
  */
 
 export const OG_SIZE = { width: 1200, height: 630 };
 export const OG_TYPE = "image/png";
 
 const read = (p: string) => fs.readFileSync(path.join(process.cwd(), p));
-const sans = read("src/app/_og/SourceSans3-SemiBold.ttf");
-const serif = read("src/app/_og/SourceSerif4-SemiBold.ttf");
-const mark = `data:image/png;base64,${read("public/images/mark.png").toString("base64")}`;
+let assets: { sans: Buffer; serif: Buffer; mark: string } | undefined;
+/** The faces and the mark, read on first use and kept. */
+const load = () =>
+  (assets ??= {
+    sans: read("src/app/_og/SourceSans3-SemiBold.ttf"),
+    serif: read("src/app/_og/SourceSerif4-SemiBold.ttf"),
+    mark: `data:image/png;base64,${read("public/images/mark.png").toString("base64")}`,
+  });
 
 const INK = "#04080a";
 const FOG = "#e8f1f3";
 const TEAL = "#1bc3cd";
 
 export function ogCard(eyebrow: string, title: string) {
+  const { sans, serif, mark } = load();
   return new ImageResponse(
     (
       <div
@@ -116,6 +131,7 @@ export function ogCard(eyebrow: string, title: string) {
  * need no credit are used.
  */
 export function ogPhoto(imageDataUri: string) {
+  const { sans, mark } = load();
   return new ImageResponse(
     (
       <div style={{ width: "100%", height: "100%", display: "flex", position: "relative", background: INK }}>
