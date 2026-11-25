@@ -1,5 +1,1634 @@
 [
   {
+    "slug": "dry-eyes-in-winter-what-works",
+    "title": "Dry eyes in winter: omega-3 no better than olive oil in a US trial",
+    "date": "2026-11-23",
+    "readingMinutes": 4,
+    "excerpt": "In a 535-patient US trial, omega-3 did no better than olive oil for dry eye. A warm towel only keeps the lids warm enough if reheated every 2 minutes.",
+    "cover": {
+      "about": "A radiator gives off dry air on the left; in the middle a closed eye with its meibomian glands drawn into the lid, and a folded warm towel above it sending heat down to them; on the right a thermometer whose red column stops at the 40°C mark. The heat reaching the lid and the column pulse: heat kept up at the lid, not the heating, is what the evidence favours.",
+      "name": "compress-kept-at-forty",
+      "shapes": [
+        {
+          "delay": 0,
+          "fx": [
+            "draw"
+          ],
+          "h": 82,
+          "rx": 6,
+          "so": 0.55,
+          "stroke": "pale",
+          "sw": 1.6,
+          "t": "rect",
+          "w": 80,
+          "x": 20,
+          "y": 124
+        },
+        {
+          "delay": 0.1,
+          "fx": [
+            "draw"
+          ],
+          "h": 66,
+          "rx": 5,
+          "so": 0.85,
+          "stroke": "teal",
+          "sw": 1.4,
+          "t": "rect",
+          "w": 10,
+          "x": 30,
+          "y": 132
+        },
+        {
+          "delay": 0.2,
+          "fx": [
+            "draw"
+          ],
+          "h": 66,
+          "rx": 5,
+          "so": 0.85,
+          "stroke": "teal",
+          "sw": 1.4,
+          "t": "rect",
+          "w": 10,
+          "x": 45,
+          "y": 132
+        },
+        {
+          "delay": 0.2,
+          "fx": [
+            "draw"
+          ],
+          "h": 66,
+          "rx": 5,
+          "so": 0.85,
+          "stroke": "teal",
+          "sw": 1.4,
+          "t": "rect",
+          "w": 10,
+          "x": 60,
+          "y": 132
+        },
+        {
+          "delay": 0.3,
+          "fx": [
+            "draw"
+          ],
+          "h": 66,
+          "rx": 5,
+          "so": 0.85,
+          "stroke": "teal",
+          "sw": 1.4,
+          "t": "rect",
+          "w": 10,
+          "x": 75,
+          "y": 132
+        },
+        {
+          "cap": "round",
+          "delay": 0.3,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.5,
+          "stroke": "pale",
+          "sw": 1.6,
+          "t": "line",
+          "x1": 30,
+          "x2": 30,
+          "y1": 206,
+          "y2": 214
+        },
+        {
+          "cap": "round",
+          "delay": 0.3,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.5,
+          "stroke": "pale",
+          "sw": 1.6,
+          "t": "line",
+          "x1": 90,
+          "x2": 90,
+          "y1": 206,
+          "y2": 214
+        },
+        {
+          "cx": 108,
+          "cy": 132,
+          "delay": 0.35,
+          "fx": [
+            "pop"
+          ],
+          "r": 4,
+          "so": 0.5,
+          "stroke": "pale",
+          "sw": 1.2,
+          "t": "circle"
+        },
+        {
+          "cap": "round",
+          "d": "M 33 116 C 34.7 113.8, 43 107.3, 43 103 C 43 98.7, 33 94.3, 33 90 C 33 85.7, 43 81.3, 43 77 C 43 72.7, 33 68.3, 33 64 C 33 59.7, 43 55.3, 43 51 C 43 46.7, 34.7 40.2, 33 38",
+          "delay": 0.4,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.45,
+          "stroke": "glow",
+          "sw": 1.2,
+          "t": "path"
+        },
+        {
+          "cap": "round",
+          "d": "M 55 116 C 56.7 113.8, 65 107.3, 65 103 C 65 98.7, 55 94.3, 55 90 C 55 85.7, 65 81.3, 65 77 C 65 72.7, 55 68.3, 55 64 C 55 59.7, 65 55.3, 65 51 C 65 46.7, 56.7 40.2, 55 38",
+          "delay": 0.5,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.45,
+          "stroke": "glow",
+          "sw": 1.2,
+          "t": "path"
+        },
+        {
+          "cap": "round",
+          "d": "M 77 116 C 78.7 113.8, 87 107.3, 87 103 C 87 98.7, 77 94.3, 77 90 C 77 85.7, 87 81.3, 87 77 C 87 72.7, 77 68.3, 77 64 C 77 59.7, 87 55.3, 87 51 C 87 46.7, 78.7 40.2, 77 38",
+          "delay": 0.6,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.45,
+          "stroke": "glow",
+          "sw": 1.2,
+          "t": "path"
+        },
+        {
+          "cap": "round",
+          "d": "M 150 160 Q 215 190 280 160",
+          "delay": 0.5,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.9,
+          "stroke": "pale",
+          "sw": 2,
+          "t": "path"
+        },
+        {
+          "cap": "round",
+          "d": "M 154 148 Q 215 122 276 148",
+          "delay": 0.6,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.45,
+          "stroke": "pale",
+          "sw": 1.4,
+          "t": "path"
+        },
+        {
+          "cap": "round",
+          "delay": 0.8,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.55,
+          "stroke": "pale",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 160.8,
+          "x2": 157.9,
+          "y1": 166.1,
+          "y2": 174.6
+        },
+        {
+          "cap": "round",
+          "delay": 0.8,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.55,
+          "stroke": "pale",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 171.7,
+          "x2": 169.3,
+          "y1": 169.8,
+          "y2": 178.3
+        },
+        {
+          "cap": "round",
+          "delay": 0.8,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.55,
+          "stroke": "pale",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 182.5,
+          "x2": 180.8,
+          "y1": 172.8,
+          "y2": 181.3
+        },
+        {
+          "cap": "round",
+          "delay": 0.8,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.55,
+          "stroke": "pale",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 193.3,
+          "x2": 192.2,
+          "y1": 174.8,
+          "y2": 183.3
+        },
+        {
+          "cap": "round",
+          "delay": 0.9,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.55,
+          "stroke": "pale",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 204.2,
+          "x2": 203.6,
+          "y1": 176.1,
+          "y2": 184.6
+        },
+        {
+          "cap": "round",
+          "delay": 0.9,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.55,
+          "stroke": "pale",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 215,
+          "x2": 215,
+          "y1": 176.5,
+          "y2": 185
+        },
+        {
+          "cap": "round",
+          "delay": 0.9,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.55,
+          "stroke": "pale",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 225.8,
+          "x2": 226.4,
+          "y1": 176.1,
+          "y2": 184.6
+        },
+        {
+          "cap": "round",
+          "delay": 0.9,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.55,
+          "stroke": "pale",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 236.7,
+          "x2": 237.8,
+          "y1": 174.8,
+          "y2": 183.3
+        },
+        {
+          "cap": "round",
+          "delay": 0.9,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.55,
+          "stroke": "pale",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 247.5,
+          "x2": 249.3,
+          "y1": 172.8,
+          "y2": 181.3
+        },
+        {
+          "cap": "round",
+          "delay": 1,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.55,
+          "stroke": "pale",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 258.3,
+          "x2": 260.7,
+          "y1": 169.8,
+          "y2": 178.3
+        },
+        {
+          "cap": "round",
+          "delay": 1,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.55,
+          "stroke": "pale",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 269.2,
+          "x2": 272.1,
+          "y1": 166.1,
+          "y2": 174.6
+        },
+        {
+          "cap": "round",
+          "delay": 0.9,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.9,
+          "stroke": "teal",
+          "sw": 2,
+          "t": "line",
+          "x1": 168.6,
+          "x2": 168.6,
+          "y1": 163.4,
+          "y2": 147.5
+        },
+        {
+          "cap": "round",
+          "delay": 1,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.9,
+          "stroke": "teal",
+          "sw": 2,
+          "t": "line",
+          "x1": 177.2,
+          "x2": 177.2,
+          "y1": 165.9,
+          "y2": 145.9
+        },
+        {
+          "cap": "round",
+          "delay": 1,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.9,
+          "stroke": "teal",
+          "sw": 2,
+          "t": "line",
+          "x1": 185.8,
+          "x2": 185.8,
+          "y1": 168,
+          "y2": 148
+        },
+        {
+          "cap": "round",
+          "delay": 1,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.9,
+          "stroke": "teal",
+          "sw": 2,
+          "t": "line",
+          "x1": 194.4,
+          "x2": 194.4,
+          "y1": 169.5,
+          "y2": 149.5
+        },
+        {
+          "cap": "round",
+          "delay": 1.1,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.9,
+          "stroke": "teal",
+          "sw": 2,
+          "t": "line",
+          "x1": 203,
+          "x2": 203,
+          "y1": 170.5,
+          "y2": 150.5
+        },
+        {
+          "cap": "round",
+          "delay": 1.1,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.9,
+          "stroke": "teal",
+          "sw": 2,
+          "t": "line",
+          "x1": 211.6,
+          "x2": 211.6,
+          "y1": 171,
+          "y2": 151
+        },
+        {
+          "cap": "round",
+          "delay": 1.1,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.9,
+          "stroke": "teal",
+          "sw": 2,
+          "t": "line",
+          "x1": 220.2,
+          "x2": 220.2,
+          "y1": 170.9,
+          "y2": 150.9
+        },
+        {
+          "cap": "round",
+          "delay": 1.1,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.9,
+          "stroke": "teal",
+          "sw": 2,
+          "t": "line",
+          "x1": 228.8,
+          "x2": 228.8,
+          "y1": 170.3,
+          "y2": 150.3
+        },
+        {
+          "cap": "round",
+          "delay": 1.2,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.9,
+          "stroke": "teal",
+          "sw": 2,
+          "t": "line",
+          "x1": 237.4,
+          "x2": 237.4,
+          "y1": 169.2,
+          "y2": 149.2
+        },
+        {
+          "cap": "round",
+          "delay": 1.2,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.9,
+          "stroke": "teal",
+          "sw": 2,
+          "t": "line",
+          "x1": 246,
+          "x2": 246,
+          "y1": 167.6,
+          "y2": 147.6
+        },
+        {
+          "cap": "round",
+          "delay": 1.2,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.9,
+          "stroke": "teal",
+          "sw": 2,
+          "t": "line",
+          "x1": 254.6,
+          "x2": 254.6,
+          "y1": 165.4,
+          "y2": 145.5
+        },
+        {
+          "cap": "round",
+          "delay": 1.3,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.9,
+          "stroke": "teal",
+          "sw": 2,
+          "t": "line",
+          "x1": 263.2,
+          "x2": 263.2,
+          "y1": 162.8,
+          "y2": 148.1
+        },
+        {
+          "delay": 0.35,
+          "fill": "ink",
+          "fx": [
+            "draw"
+          ],
+          "h": 32,
+          "rx": 8,
+          "so": 0.8,
+          "stroke": "pale",
+          "sw": 1.6,
+          "t": "rect",
+          "w": 94,
+          "x": 168,
+          "y": 62
+        },
+        {
+          "cap": "round",
+          "delay": 0.55,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.7,
+          "stroke": "teal",
+          "sw": 1.4,
+          "t": "line",
+          "x1": 177,
+          "x2": 253,
+          "y1": 73,
+          "y2": 73
+        },
+        {
+          "cap": "round",
+          "delay": 0.6,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.7,
+          "stroke": "teal",
+          "sw": 1.4,
+          "t": "line",
+          "x1": 177,
+          "x2": 253,
+          "y1": 83,
+          "y2": 83
+        },
+        {
+          "cap": "round",
+          "d": "M 195 100 C 195.7 101, 199.7 103.8, 199 106 C 198.3 108.2, 191.2 110.7, 191 113 C 190.8 115.3, 197.3 117.8, 198 120 C 198.7 122.2, 195.5 125, 195 126",
+          "delay": 1.2,
+          "fx": [
+            "draw",
+            "pulse"
+          ],
+          "so": 0.9,
+          "stroke": "red",
+          "sw": 1.8,
+          "t": "path"
+        },
+        {
+          "cap": "round",
+          "d": "M 215 100 C 215.7 101, 219.7 103.8, 219 106 C 218.3 108.2, 211.2 110.7, 211 113 C 210.8 115.3, 217.3 117.8, 218 120 C 218.7 122.2, 215.5 125, 215 126",
+          "delay": 1.3,
+          "fx": [
+            "draw",
+            "pulse"
+          ],
+          "so": 0.9,
+          "stroke": "red",
+          "sw": 1.8,
+          "t": "path"
+        },
+        {
+          "cap": "round",
+          "d": "M 235 100 C 235.7 101, 239.7 103.8, 239 106 C 238.3 108.2, 231.2 110.7, 231 113 C 230.8 115.3, 237.3 117.8, 238 120 C 238.7 122.2, 235.5 125, 235 126",
+          "delay": 1.4,
+          "fx": [
+            "draw",
+            "pulse"
+          ],
+          "so": 0.9,
+          "stroke": "red",
+          "sw": 1.8,
+          "t": "path"
+        },
+        {
+          "delay": 0.45,
+          "fill": "ink",
+          "fx": [
+            "draw"
+          ],
+          "h": 120,
+          "rx": 7,
+          "so": 0.75,
+          "stroke": "pale",
+          "sw": 1.6,
+          "t": "rect",
+          "w": 14,
+          "x": 324,
+          "y": 52
+        },
+        {
+          "cap": "round",
+          "delay": 0.7,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.5,
+          "stroke": "pale",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 342,
+          "x2": 348,
+          "y1": 70,
+          "y2": 70
+        },
+        {
+          "cap": "round",
+          "delay": 0.7,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.5,
+          "stroke": "pale",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 342,
+          "x2": 348,
+          "y1": 86,
+          "y2": 86
+        },
+        {
+          "cap": "round",
+          "delay": 0.8,
+          "fx": [
+            "draw"
+          ],
+          "so": 1,
+          "stroke": "red",
+          "sw": 2,
+          "t": "line",
+          "x1": 342,
+          "x2": 356,
+          "y1": 102,
+          "y2": 102
+        },
+        {
+          "cap": "round",
+          "delay": 0.8,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.5,
+          "stroke": "pale",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 342,
+          "x2": 348,
+          "y1": 118,
+          "y2": 118
+        },
+        {
+          "cap": "round",
+          "delay": 0.9,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.5,
+          "stroke": "pale",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 342,
+          "x2": 348,
+          "y1": 134,
+          "y2": 134
+        },
+        {
+          "cap": "round",
+          "delay": 0.9,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.5,
+          "stroke": "pale",
+          "sw": 1.2,
+          "t": "line",
+          "x1": 342,
+          "x2": 348,
+          "y1": 150,
+          "y2": 150
+        },
+        {
+          "delay": 1.4,
+          "fill": "red",
+          "fx": [
+            "pop",
+            "pulse"
+          ],
+          "h": 72,
+          "rx": 3,
+          "t": "rect",
+          "w": 6,
+          "x": 328,
+          "y": 102
+        },
+        {
+          "cx": 331,
+          "cy": 182,
+          "delay": 1.3,
+          "fill": "red",
+          "fx": [
+            "pop"
+          ],
+          "r": 12,
+          "so": 0.6,
+          "stroke": "pale",
+          "sw": 1.2,
+          "t": "circle"
+        }
+      ]
+    },
+    "series": "insight",
+    "topics": [
+      "dry eye",
+      "meibomian gland dysfunction",
+      "omega-3",
+      "warm compress"
+    ],
+    "sources": [
+      {
+        "date": "2018-04-13",
+        "pmcid": "PMC5952353",
+        "publisher": "New England Journal of Medicine",
+        "read": "full",
+        "readVia": "europepmc",
+        "title": "n-3 fatty acid supplementation for the treatment of dry eye disease (the DREAM trial)",
+        "url": "https://doi.org/10.1056/NEJMoa1709691"
+      },
+      {
+        "date": "2022-10-28",
+        "publisher": "Contact Lens and Anterior Eye",
+        "read": "full",
+        "readVia": "publisher",
+        "title": "Hot towels: the bedrock of meibomian gland dysfunction treatment, a review",
+        "url": "https://doi.org/10.1016/j.clae.2022.101775"
+      },
+      {
+        "date": "2026-06-16",
+        "publisher": "BMC Ophthalmology",
+        "read": "full",
+        "readVia": "publisher",
+        "title": "The effects of different forms of omega-3 polyunsaturated fatty acids on dry eye disease resulting from various etiologies: a meta-analysis and systematic review",
+        "url": "https://doi.org/10.1186/s12886-026-04992-6"
+      },
+      {
+        "date": "2020-04-29",
+        "pmcid": "PMC7401914",
+        "publisher": "Translational Vision Science & Technology",
+        "read": "full",
+        "readVia": "europepmc",
+        "title": "Climatic and environmental correlates of dry eye disease severity: a report from the Dry Eye Assessment and Management (DREAM) study",
+        "url": "https://doi.org/10.1167/tvst.9.5.25"
+      },
+      {
+        "date": "2015-04-06",
+        "pmcid": "PMC4757523",
+        "publisher": "Ophthalmology",
+        "read": "full",
+        "readVia": "europepmc",
+        "title": "Seasonal variation in dry eye",
+        "url": "https://doi.org/10.1016/j.ophtha.2015.02.013"
+      },
+      {
+        "date": "2013-04-01",
+        "publisher": "Cornea",
+        "read": "abstract",
+        "readVia": "europepmc",
+        "title": "The effect of low humidity on the human tear film",
+        "url": "https://doi.org/10.1097/ICO.0b013e31826671ab"
+      },
+      {
+        "date": "2025-06-02",
+        "publisher": "American Journal of Ophthalmology",
+        "read": "full",
+        "readVia": "publisher",
+        "title": "TFOS DEWS III: Management and Therapy",
+        "url": "https://doi.org/10.1016/j.ajo.2025.05.039"
+      }
+    ],
+    "figure": {
+      "blocks": [
+        {
+          "items": [
+            {
+              "label": "Omega-3, 3000 mg a day",
+              "value": 61
+            },
+            {
+              "label": "Olive oil capsules",
+              "value": 54
+            }
+          ],
+          "kind": "bars",
+          "label": "Improved by 10 or more OSDI points in a year (DREAM)",
+          "unit": "%"
+        },
+        {
+          "after": {
+            "label": "12 minutes later",
+            "value": 29.2
+          },
+          "before": {
+            "label": "At the start",
+            "value": 39.2
+          },
+          "decimals": 1,
+          "kind": "before-after",
+          "label": "A facecloth over closed eyes, not reheated",
+          "unit": "°C"
+        },
+        {
+          "items": [
+            {
+              "label": "towel temperature for patients, never above 48°C",
+              "value": "40 to 45°C"
+            },
+            {
+              "label": "reheat or replace the towel this often",
+              "value": "2 min"
+            },
+            {
+              "label": "under the towel, then massage straight away",
+              "value": "6 to 10 min"
+            }
+          ],
+          "kind": "stats",
+          "label": "What the hot towel review recommends"
+        }
+      ],
+      "caption": "DREAM: 535 US adults with moderate to severe dry eye, enrolled 2014 to 2016, share improving by 10 or more OSDI points over 12 months (329 and 170 analysed). Towel: one facecloth over closed eyes, not reheated.",
+      "source": "DREAM Study Research Group, NEJM 2018; Schjerven Magno et al., Contact Lens and Anterior Eye 2022 (hot towel review)",
+      "title": "A year of omega-3 against olive oil, and a towel left to cool"
+    },
+    "seo": {
+      "keyword": "dry eyes in winter",
+      "metaDescription": "Dry eyes in winter: omega-3 did no better than olive oil in a 535-patient trial. What the evidence says on warm compresses, humidity and practice.",
+      "metaTitle": "Dry eyes in winter: what the trials say works"
+    },
+    "keyPoints": [
+      "In the DREAM trial, 535 US patients took 3000 mg of omega-3 a day, or olive oil capsules, for 12 months. Symptom scores fell by 13.9 and 12.5 points, a difference that was not significant.",
+      "A 2022 review of 22 papers on hot towels tells patients 40°C to 45°C, never above 48°C, reheated every 2 minutes. In a bench test, a 43°C facecloth was below 40°C after 2 minutes.",
+      "US veterans' dry eye diagnoses were higher in winter (18.7%) and spring (18.5%) than summer (15.3%). In DREAM's patients, drier weather went only weakly with worse signs, not symptoms."
+    ],
+    "faq": [
+      {
+        "a": "It may add to them, but the evidence is indirect. In US veterans' eye clinics, dry eye diagnoses were more common in winter (18.7%) and spring (18.5%) than in summer (15.3%). The authors linked spring to pollen and suggested, without testing it, that low indoor humidity from heating may explain part of winter. In a chamber study (abstract only), an hour at 5% relative humidity, against 40%, made tears evaporate faster and the tear film break up sooner. In DREAM's patients, drier weather went only weakly with worse signs, not with symptoms, and when humidity changed between visits their signs did not.",
+        "q": "Does central heating cause dry eyes?"
+      },
+      {
+        "a": "Not in the DREAM trial, which tested it against olive oil. 535 people with moderate to severe dry eye took 3000 mg of omega-3 a day, or olive oil capsules, for 12 months. Symptom scores fell by 13.9 and 12.5 points, a 1.9-point difference that was not significant, and signs did not differ. A 2026 meta-analysis of 27 trials found the effect inconsistent and advised against using it indiscriminately. The 2025 TFOS DEWS III report reads the evidence more favourably but says the best source and dose still need study.",
+        "q": "Is omega 3 good for dry eyes?"
+      },
+      {
+        "a": "A 2022 review of 22 papers on hot towels recommends 6 to 10 minutes, starting at around 45°C, keeping the towel at 40°C to 45°C and never above 48°C, reheating or replacing it every 2 minutes, and massaging the lids straight afterwards. That advice rests on studies of lid temperature rather than outcomes. TFOS DEWS III recommends heating at 40°C to 41.5°C and, on limited evidence, a heated device for 10 minutes once a day or 5 minutes twice a day, and lists how long to apply it as unresolved.",
+        "q": "How long should you use a warm compress for dry eyes?"
+      }
+    ],
+    "body": [
+      {
+        "text": "Many clinicians answer dry eyes in winter with two suggestions: a warm compress and an omega-3 supplement. In the [DREAM trial](https://doi.org/10.1056/NEJMoa1709691), published in the New England Journal of Medicine, 535 people with moderate to severe dry eye at 27 US centres took omega-3 or olive oil capsules for 12 months, and the omega-3 did no better.",
+        "type": "p"
+      },
+      {
+        "text": "The compress has a plausible mechanism and TFOS DEWS III's backing, though none of the review's studies was sham-controlled, and the mechanism depends on heat. A [2022 review of 22 papers on hot towels](https://doi.org/10.1016/j.clae.2022.101775) found that a towel left to cool drops below the therapeutic range within minutes. For a UK optometrist, that is the difference between telling a patient to use heat and showing them how.",
+        "type": "p"
+      },
+      {
+        "text": "What the omega-3 trial compared",
+        "type": "h2"
+      },
+      {
+        "text": "DREAM enrolled adults from 2014 to 2016 with at least six months of symptoms, an Ocular Surface Disease Index (OSDI) score of 25 to 80 and two or more signs. Their mean age was 58 and 81% were women. They were randomised two to one to fish oil capsules, 3000 mg of omega-3 a day (2000 mg EPA, 1000 mg DHA), or refined olive oil, about a teaspoon. Blood tests showed 85.2% of those tested on omega-3 still taking it at 12 months.",
+        "type": "p"
+      },
+      {
+        "text": "What DREAM found",
+        "type": "h2"
+      },
+      {
+        "text": "The OSDI score fell by 13.9 points on omega-3 and 12.5 on olive oil. The difference, 1.9 points with missing data imputed (95% CI −5.0 to 1.1), was not significant, short of the 6 points the trial was powered to detect. 202 of 329 analysed on omega-3 (61%) and 91 of 170 on olive oil (54%) improved by at least 10 points, the minimal clinically meaningful change, also not significant. Signs did not differ, and most of the fall came in the first 3 months.",
+        "type": "p"
+      },
+      {
+        "text": "A [2026 meta-analysis](https://doi.org/10.1186/s12886-026-04992-6) of 27 trials and 3,894 participants found the effect of omega-3 inconsistent. Pooled, the trials favoured it, but in dry eye from meibomian gland dysfunction only tear break-up time improved significantly, and the positive subgroups rest mostly on one group's trials. TFOS DEWS III reads the evidence more kindly, but says the best source and dose still need study.",
+        "type": "p"
+      },
+      {
+        "text": "Warm compresses: the method is the treatment",
+        "type": "h2"
+      },
+      {
+        "text": "The review puts the towel's therapeutic range at 40°C to 47°C, and tells patients 40°C to 45°C, never above 48°C. In a bench test, a facecloth microwaved to about 43°C was below 40°C after 2 minutes, and another, laid over closed eyes, fell from 39.2°C to 29.2°C over 12 minutes. In single-visit tests, mostly in healthy volunteers, towels at around 45°C reheated every 2 minutes held the inner eyelid at 40°C and warmed the lids as well as several commercial devices.",
+        "type": "p"
+      },
+      {
+        "text": "In the 8 studies that followed patients, for up to 6 months, symptoms improved from baseline, which, as in DREAM, does not show what caused it, and break-up time improved in only one of seven. TFOS DEWS III warns the 2-minute routine is time-intensive, which may test compliance.",
+        "type": "p"
+      },
+      {
+        "text": "Does central heating cause dry eyes?",
+        "type": "h2"
+      },
+      {
+        "text": "Across 3.41 million US veterans' eye clinic visits from 2006 to 2011, dry eye was diagnosed in 18.7% of patients in winter, 18.5% in spring and 15.3% in summer. The authors linked spring to pollen and suggested, without testing it, that low indoor humidity from heating may be one reason for winter.",
+        "type": "p"
+      },
+      {
+        "text": "In a chamber study at Glasgow Caledonian University (abstract only), an hour at 5% relative humidity, against 40% at 21°C, made tears evaporate faster and the tear film break up sooner, like a dry eye patient's. In DREAM's patients, drier days went weakly with more staining and shorter break-up times, symptoms did not follow the weather, and signs did not change when humidity did, which the authors say refutes a causal link. TFOS DEWS III says desktop humidifiers improve tear film stability and comfort.",
+        "type": "p"
+      },
+      {
+        "text": "Dry eyes in winter: what to do in practice",
+        "type": "h2"
+      },
+      {
+        "items": [
+          "When a patient says they use a warm compress, ask how they do it. It should feel warm but not painful on the inside of the wrist and be swapped every 2 minutes (the review suggests two towels and a bowl of hot water). Keep it on for 6 to 10 minutes, then massage straight away, because the lids cool within minutes.",
+          "Check it suits the patient: the review flags keratoconus for the compress, and glaucoma and axial myopia for the massage, as possible contraindications.",
+          "Be straight about omega-3: in DREAM, olive oil did nearly as well.",
+          "Cost is part of the advice: see [what UK patients told the GOC about value for money](/news/patient-satisfaction-with-opticians-uk)."
+        ],
+        "type": "ul"
+      },
+      {
+        "text": "The caveats",
+        "type": "h2"
+      },
+      {
+        "items": [
+          "DREAM was a publicly funded US trial with donated capsules, in moderate to severe disease, on top of patients' usual treatments. Olive oil may not be inert, though the 2026 meta-analysis found placebo type made no significant difference across trials.",
+          "The hot towel studies were small (the largest had 32 patients with meibomian gland dysfunction) and none was double-blinded. Some were sponsored by makers of the products compared.",
+          "The seasonal figures are US veterans' diagnosis codes, not UK practice.",
+          "DREAM's weather came from stations up to 32 miles away, and indoor humidity, which central heating changes, was not measured."
+        ],
+        "type": "ul"
+      }
+    ]
+  },
+  {
+    "slug": "glaucoma-referral-refinement",
+    "title": "Glaucoma referral refinement: Manchester sent 46.3% on to hospital",
+    "date": "2026-11-23",
+    "readingMinutes": 4,
+    "excerpt": "Accredited optometrists in Manchester sent 46.3% of 1,404 glaucoma suspects to hospital. Of 131 sent home and rechecked, 117 needed no follow-up.",
+    "cover": {
+      "about": "The view down a slit lamp during Goldmann tonometry: two fluorescein semicircles drawn in until their inner edges meet, the endpoint pulsing red, with the tonometer's measuring drum beside it. The repeat reading every glaucoma filtering scheme rests on.",
+      "name": "goldmann-endpoint",
+      "shapes": [
+        {
+          "cx": 196,
+          "cy": 120,
+          "fx": [
+            "draw"
+          ],
+          "r": 104,
+          "so": 0.35,
+          "stroke": "pale",
+          "sw": 1.5,
+          "t": "circle"
+        },
+        {
+          "cx": 196,
+          "cy": 120,
+          "delay": 0.15,
+          "fill": "teal",
+          "fo": 0.07,
+          "fx": [
+            "draw"
+          ],
+          "r": 97,
+          "so": 0.5,
+          "stroke": "teal",
+          "sw": 1.2,
+          "t": "circle"
+        },
+        {
+          "dash": "2 6",
+          "delay": 0.35,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.25,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "line",
+          "x1": 101,
+          "x2": 291,
+          "y1": 120,
+          "y2": 120
+        },
+        {
+          "cap": "butt",
+          "d": "M 112 120 A 44 44 0 0 1 200 120",
+          "delay": 0.65,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.9,
+          "stroke": "glow",
+          "sw": 8,
+          "t": "path"
+        },
+        {
+          "d": "M 106 120 A 50 50 0 0 1 206 120",
+          "delay": 0.75,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.45,
+          "stroke": "teal",
+          "sw": 1,
+          "t": "path"
+        },
+        {
+          "d": "M 118 120 A 38 38 0 0 1 194 120",
+          "delay": 0.75,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.45,
+          "stroke": "teal",
+          "sw": 1,
+          "t": "path"
+        },
+        {
+          "cap": "butt",
+          "d": "M 280 120 A 44 44 0 0 1 192 120",
+          "delay": 0.95,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.9,
+          "stroke": "glow",
+          "sw": 8,
+          "t": "path"
+        },
+        {
+          "d": "M 286 120 A 50 50 0 0 1 186 120",
+          "delay": 1.05,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.45,
+          "stroke": "teal",
+          "sw": 1,
+          "t": "path"
+        },
+        {
+          "d": "M 274 120 A 38 38 0 0 1 198 120",
+          "delay": 1.05,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.45,
+          "stroke": "teal",
+          "sw": 1,
+          "t": "path"
+        },
+        {
+          "cx": 196,
+          "cy": 120,
+          "delay": 1.45,
+          "fill": "red",
+          "fx": [
+            "pop",
+            "pulse"
+          ],
+          "r": 4,
+          "t": "circle"
+        },
+        {
+          "cx": 196,
+          "cy": 120,
+          "delay": 1.55,
+          "fx": [
+            "pop",
+            "pulse"
+          ],
+          "r": 12,
+          "so": 0.5,
+          "stroke": "red",
+          "sw": 1.3,
+          "t": "circle"
+        },
+        {
+          "cx": 342,
+          "cy": 178,
+          "delay": 0.45,
+          "fill": "ink",
+          "fx": [
+            "draw"
+          ],
+          "r": 30,
+          "so": 0.55,
+          "stroke": "pale",
+          "sw": 1.5,
+          "t": "circle"
+        },
+        {
+          "delay": 0.55,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.65,
+          "stroke": "pale",
+          "sw": 1.6,
+          "t": "line",
+          "x1": 342,
+          "x2": 342,
+          "y1": 157,
+          "y2": 149
+        },
+        {
+          "delay": 0.57,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.35,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "line",
+          "x1": 351.6,
+          "x2": 353.1,
+          "y1": 154.9,
+          "y2": 151.2
+        },
+        {
+          "delay": 0.59,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.35,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "line",
+          "x1": 359.7,
+          "x2": 362.5,
+          "y1": 160.3,
+          "y2": 157.5
+        },
+        {
+          "delay": 0.61,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.35,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "line",
+          "x1": 365.1,
+          "x2": 368.8,
+          "y1": 168.4,
+          "y2": 166.9
+        },
+        {
+          "delay": 0.63,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.65,
+          "stroke": "pale",
+          "sw": 1.6,
+          "t": "line",
+          "x1": 363,
+          "x2": 371,
+          "y1": 178,
+          "y2": 178
+        },
+        {
+          "delay": 0.65,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.35,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "line",
+          "x1": 365.1,
+          "x2": 368.8,
+          "y1": 187.6,
+          "y2": 189.1
+        },
+        {
+          "delay": 0.67,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.35,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "line",
+          "x1": 359.7,
+          "x2": 362.5,
+          "y1": 195.7,
+          "y2": 198.5
+        },
+        {
+          "delay": 0.69,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.35,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "line",
+          "x1": 351.6,
+          "x2": 353.1,
+          "y1": 201.1,
+          "y2": 204.8
+        },
+        {
+          "delay": 0.71,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.65,
+          "stroke": "pale",
+          "sw": 1.6,
+          "t": "line",
+          "x1": 342,
+          "x2": 342,
+          "y1": 199,
+          "y2": 207
+        },
+        {
+          "delay": 0.73,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.35,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "line",
+          "x1": 332.4,
+          "x2": 330.9,
+          "y1": 201.1,
+          "y2": 204.8
+        },
+        {
+          "delay": 0.75,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.35,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "line",
+          "x1": 324.3,
+          "x2": 321.5,
+          "y1": 195.7,
+          "y2": 198.5
+        },
+        {
+          "delay": 0.77,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.35,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "line",
+          "x1": 318.9,
+          "x2": 315.2,
+          "y1": 187.6,
+          "y2": 189.1
+        },
+        {
+          "delay": 0.79,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.65,
+          "stroke": "pale",
+          "sw": 1.6,
+          "t": "line",
+          "x1": 321,
+          "x2": 313,
+          "y1": 178,
+          "y2": 178
+        },
+        {
+          "delay": 0.81,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.35,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "line",
+          "x1": 318.9,
+          "x2": 315.2,
+          "y1": 168.4,
+          "y2": 166.9
+        },
+        {
+          "delay": 0.83,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.35,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "line",
+          "x1": 324.3,
+          "x2": 321.5,
+          "y1": 160.3,
+          "y2": 157.5
+        },
+        {
+          "delay": 0.85,
+          "fx": [
+            "pop"
+          ],
+          "so": 0.35,
+          "stroke": "pale",
+          "sw": 1,
+          "t": "line",
+          "x1": 332.4,
+          "x2": 330.9,
+          "y1": 154.9,
+          "y2": 151.2
+        },
+        {
+          "cx": 342,
+          "cy": 178,
+          "delay": 0.9,
+          "fx": [
+            "pop"
+          ],
+          "r": 7,
+          "so": 0.7,
+          "stroke": "teal",
+          "sw": 1.4,
+          "t": "circle"
+        },
+        {
+          "cap": "round",
+          "delay": 1.2,
+          "fx": [
+            "draw"
+          ],
+          "stroke": "teal",
+          "sw": 2,
+          "t": "line",
+          "x1": 342,
+          "x2": 334.5,
+          "y1": 178,
+          "y2": 159.5
+        },
+        {
+          "d": "M 300 120 L 322 120 L 322 155.6",
+          "delay": 0.4,
+          "fx": [
+            "draw"
+          ],
+          "so": 0.3,
+          "stroke": "pale",
+          "sw": 1.2,
+          "t": "path"
+        }
+      ]
+    },
+    "series": "insight",
+    "topics": [
+      "glaucoma",
+      "referral refinement",
+      "repeat measures",
+      "enhanced case finding",
+      "community optometry"
+    ],
+    "sources": [
+      {
+        "date": "2018-10-11",
+        "publisher": "British Journal of Ophthalmology",
+        "read": "full",
+        "readVia": "europepmc",
+        "title": "Clinical effectiveness of the Manchester Glaucoma Enhanced Referral Scheme",
+        "url": "https://doi.org/10.1136/bjophthalmol-2018-312385"
+      },
+      {
+        "date": "2013-07-21",
+        "publisher": "BMJ Open",
+        "read": "full",
+        "readVia": "europepmc",
+        "title": "The effectiveness of schemes that refine referrals between primary and secondary care: the UK experience with glaucoma referrals (HIEC Glaucoma Pathways Project)",
+        "url": "https://doi.org/10.1136/bmjopen-2013-002715"
+      },
+      {
+        "date": "2022-01-26",
+        "publisher": "National Institute for Health and Care Excellence",
+        "read": "full",
+        "readVia": "page",
+        "title": "Glaucoma: diagnosis and management (NG81), recommendations",
+        "url": "https://www.nice.org.uk/guidance/ng81/chapter/Recommendations"
+      },
+      {
+        "date": "2026-04-01",
+        "publisher": "LOCSU",
+        "read": "full",
+        "readVia": "page",
+        "title": "Case study: commissioning interest in glaucoma referral filtering service grows",
+        "url": "https://locsu.co.uk/case-study-commissioning-interest-in-glaucoma-referral-filtering-service-grows/"
+      },
+      {
+        "date": "2026-05-20",
+        "publisher": "Optometry Today (AOP)",
+        "read": "full",
+        "readVia": "page",
+        "title": "Primary eye care welcomes new GIRFT glaucoma guidance",
+        "url": "https://www.aop.org.uk/ot/news/2026/05/20/primary-eye-care-welcomes-new-girft-glaucoma-guidance"
+      },
+      {
+        "date": "2025-12-10",
+        "publisher": "Eye",
+        "read": "abstract",
+        "readVia": "publisher",
+        "title": "National UK optometry clinical practice survey: implications for developing glaucoma services in primary care",
+        "url": "https://doi.org/10.1038/s41433-025-04137-x"
+      },
+      {
+        "date": "2022-08-20",
+        "publisher": "Ophthalmic and Physiological Optics",
+        "read": "full",
+        "readVia": "europepmc",
+        "title": "An analysis of glaucoma repeat measures assessment results: are core competencies enough?",
+        "url": "https://doi.org/10.1111/opo.13032"
+      }
+    ],
+    "figure": {
+      "blocks": [
+        {
+          "decimals": 1,
+          "items": [
+            {
+              "emphasis": true,
+              "label": "Discharged back to community care",
+              "value": 53.6
+            },
+            {
+              "label": "Referred on to the eye hospital",
+              "value": 46.3
+            }
+          ],
+          "kind": "bars",
+          "label": "What the scheme did with 1,404 suspects",
+          "unit": "%"
+        },
+        {
+          "items": [
+            {
+              "label": "needed no hospital follow-up",
+              "value": "89.3%"
+            },
+            {
+              "label": "needed follow-up",
+              "value": "10.7%"
+            },
+            {
+              "label": "were offered treatment",
+              "value": "3.8%"
+            },
+            {
+              "label": "met the referral criteria but was not referred",
+              "value": "0.8%"
+            }
+          ],
+          "kind": "stats",
+          "label": "131 discharged volunteers, rechecked in hospital"
+        }
+      ],
+      "caption": "Manchester's Glaucoma Enhanced Referral Scheme, October 2014 to August 2016: 1,404 people assessed by accredited optometrists. The recheck was of 131 volunteers among the 753 discharged, by glaucoma specialist optometrists.",
+      "source": "Gunn et al., Br J Ophthalmol 2019",
+      "title": "What happened to 1,404 glaucoma suspects in Manchester's scheme"
+    },
+    "image": {
+      "src": "/images/insights/glaucoma-referral-refinement.jpg",
+      "alt": "Goldmann applanation tonometry seen through the slit lamp: two green fluorescein semicircles in cobalt blue light, their inner edges just touching",
+      "license": "Public domain"
+    },
+    "seo": {
+      "keyword": "glaucoma referral refinement",
+      "metaDescription": "Glaucoma referral refinement in Manchester sent 46.3% of 1,404 suspects to hospital. What the evidence shows, and what a practice needs to take part.",
+      "metaTitle": "Glaucoma referral refinement: the evidence and how to join"
+    },
+    "keyPoints": [
+      "In Manchester's scheme, accredited optometrists sent 46.3% of 1,404 glaucoma suspects on to hospital in 2014 to 2016, and 15.5% of the 283 traced there were discharged at the first visit.",
+      "Of 131 discharged people re-examined by glaucoma specialist optometrists, 117 (89.3%) needed no follow-up and 14 (10.7%) did, 5 of them offered treatment. One had met the referral criteria.",
+      "Enhanced case finding was live in about 42% of England's CCG areas three years after March 2022, when 8 of the 106 CCGs had commissioned it.",
+      "In WOPEC and LOCSU assessments for repeat measures schemes, 21.9% of 2,215 optometrists in England failed the Goldmann tonometry station at the first attempt."
+    ],
+    "faq": [
+      {
+        "a": "It puts a second, more detailed assessment between the sight test that raises a suspicion of glaucoma and a hospital referral. NICE defines referral refinement as a two-tier assessment by practitioners qualified to diagnose ocular hypertension and suspected glaucoma, and to carry out gonioscopy. Manchester's scheme, which did not include gonioscopy and so sits nearer enhanced case finding, assessed 1,404 suspects between 2014 and 2016 and referred 46.3% of them on to hospital.",
+        "q": "What is a glaucoma referral refinement scheme?"
+      },
+      {
+        "a": "The largest prospective check comes from Manchester. Glaucoma specialist optometrists re-examined 131 volunteers from among the people its scheme had discharged, using every test NICE recommends: 117 (89.3%) needed no hospital follow-up, 14 (10.7%) did, 5 (3.8%) were offered treatment for ocular hypertension or narrow angles, and one person (0.8%) had met the referral criteria without being referred. No glaucoma needing treatment was missed in that sample. Other schemes have reported missed-case rates of 3% to 20%, depending on how a missed case is defined.",
+        "q": "Is glaucoma referral refinement safe?"
+      },
+      {
+        "a": "It accredited optometrists in England for repeat measures schemes, one kind of glaucoma referral filtering, rather than for referral refinement, and none of its five practical stations was gonioscopy. The stations were slit-lamp indirect ophthalmoscopy on model eyes, van Herick, Goldmann tonometry on a patient, setting up and calibrating the Goldmann tonometer, and a case scenario on discs and fields. Of 2,215 optometrists assessed from 2017 to 2020, 21.9% failed the Goldmann station and 23.3% the case scenario at the first attempt. Candidates had to pass every station, and resits were allowed.",
+        "q": "What is in the WOPEC and LOCSU glaucoma repeat measures OSCE?"
+      },
+      {
+        "a": "NICE's guideline NG81 says not to base a referral decision on non-contact tonometry alone, and to consider repeating the pressure and visual fields on another occasion first, unless the referral is urgent. It recommends referral for optic nerve head damage, a visual field defect consistent with glaucoma, or an IOP of 24 mmHg or more on Goldmann-type applanation tonometry. It also asks those planning eye care to consider commissioning referral filtering services.",
+        "q": "What do the NICE guidelines say about glaucoma referral?"
+      }
+    ],
+    "body": [
+      {
+        "text": "Between 2014 and 2016, accredited community optometrists in Manchester's glaucoma referral refinement scheme re-examined 1,404 people whose sight test had raised a suspicion of glaucoma, and sent 651 of them (46.3%) on to the eye hospital, [an evaluation in the British Journal of Ophthalmology](https://doi.org/10.1136/bjophthalmol-2018-312385) reported. When glaucoma specialist optometrists re-examined 131 of the people the scheme had sent home, 117 (89.3%) needed no hospital follow-up.",
+        "type": "p"
+      },
+      {
+        "text": "NICE has asked commissioners to consider this kind of filtering since 2017, and NHS England's GIRFT guidance in May backed repeat measures and enhanced case finding across England. Yet in March 2022 only 8 of England's 106 CCGs had commissioned enhanced case finding, and three years later [LOCSU counted](https://locsu.co.uk/case-study-commissioning-interest-in-glaucoma-referral-filtering-service-grows/) a live service in about 42% of CCG areas. Whether a borderline pressure goes to hospital or down the road still depends on where the patient lives.",
+        "type": "p"
+      },
+      {
+        "text": "What a glaucoma referral refinement scheme does",
+        "type": "h2"
+      },
+      {
+        "text": "NICE's [glaucoma guideline, NG81](https://www.nice.org.uk/guidance/ng81/chapter/Recommendations), names three kinds of referral filtering, among others. Repeat measures check the pressure again, and sometimes the fields. Enhanced case finding uses slit-lamp-mounted Goldmann-type tonometry and dilated slit-lamp indirect biomicroscopy. Referral refinement is a second-tier assessment by practitioners qualified to diagnose ocular hypertension and suspected glaucoma, and to carry out gonioscopy.",
+        "type": "p"
+      },
+      {
+        "text": "In Manchester, glaucoma suspects from sight tests, unless the referral was an emergency, went to an accredited optometrist for history and risk factors, van Herick, Goldmann tonometry, pachymetry, visual fields and a dilated disc examination. There was no gonioscopy, so by NICE's definitions the scheme sits nearer enhanced case finding, whatever its first name.",
+        "type": "p"
+      },
+      {
+        "text": "What the Manchester evaluation found",
+        "type": "h2"
+      },
+      {
+        "text": "753 of the 1,404 (53.6%) were discharged back to community care. Hospital notes were kept for 307 of the 651 referred, and of the 283 who attended, 44 (15.5%) were discharged at their first visit. Without filtering, the authors put the false-positive rate for suspect glaucoma referrals at about 40%.",
+        "type": "p"
+      },
+      {
+        "text": "The authors then checked what the scheme had missed. 131 of the people discharged had a full hospital assessment about six and a half weeks later on average, by glaucoma specialist optometrists using every test NICE recommends. 117 needed no follow-up. 14 (10.7%) did, and 5 (3.8%) were offered treatment, 3 for ocular hypertension and 2 for narrow angles. One person (0.8%) had met the scheme's referral criteria without being referred. No glaucoma needing treatment was missed in the sample.",
+        "type": "p"
+      },
+      {
+        "text": "[A four-site comparison in BMJ Open](https://doi.org/10.1136/bmjopen-2013-002715), from 2009 to 2011, points the same way. At the first assessment after referral, 14.1% of referrals from optometrists with a special interest in glaucoma were discharged, against 36.1% of those from other optometrists. A raised pressure alone was the commonest reason for referral, and 83.5% of those from other optometrists were discharged at that first assessment.",
+        "type": "p"
+      },
+      {
+        "text": "What a practice needs to take part",
+        "type": "h2"
+      },
+      {
+        "text": "First, a commissioned scheme. Then the equipment: NICE asks for Goldmann-type applanation tonometry before referral, and refinement proper needs gonioscopy. In the College of Optometrists' 2023 survey of 1,009 optometrists, reported in Eye, 94% had contact tonometry, 99% a visual field analyser, 57% a pachymeter, 42% OCT and 40% a gonioscope. Of those in primary care, a third provided repeat measures and a quarter enhanced case finding or higher-level filtering.",
+        "type": "p"
+      },
+      {
+        "text": "Then the skills. Commissioners made the WOPEC and LOCSU assessment a condition of joining the repeat measures schemes it served in England. Of 2,215 optometrists who sat it from 2017 to 2020, 21.9% failed the Goldmann tonometry station at the first attempt and 23.3% the case scenario, against 8.5% for van Herick, [an analysis in Ophthalmic and Physiological Optics](https://doi.org/10.1111/opo.13032) found.",
+        "type": "p"
+      },
+      {
+        "text": "Why it matters in practice",
+        "type": "h2"
+      },
+      {
+        "items": [
+          "Do not refer on a non-contact tonometry reading alone. NICE says so, and asks you to consider repeating the pressure and fields on another occasion to confirm an IOP of 24 mmHg or more, or a field defect, unless it is urgent.",
+          "Ask your Local Optical Committee what your area commissions. LOCSU says it is working with LOCs through 2026 to bring referral filtering up to enhanced case finding, with OCT where clinically valuable.",
+          "Practise Goldmann before the assessment: about one in five failed that station first time.",
+          "What the hospital needs from a referral is in our piece on Greater Manchester's optometrist referrals, on [our news page](/news)."
+        ],
+        "type": "ul"
+      },
+      {
+        "text": "The caveats",
+        "type": "h2"
+      },
+      {
+        "items": [
+          "Manchester is one scheme in one city, from 2014 to 2016, with criteria set before NICE's 2017 update: at NICE's 24 mmHg threshold, nine of the 131 rechecked would have been referred.",
+          "Hospital outcomes were traced for 307 of the 651 referred. The missed-case check covered 131 of the 753 discharged, all volunteers, with glaucoma specialist optometrists rather than consultants as the reference standard.",
+          "The four-site comparison is retrospective, from 2009 to 2011, and its groups came from different schemes: consultants saw the specialist-interest referrals first, specialist-interest optometrists most of the others. Its false-negative rate is unknown.",
+          "The assessment data come from optometrists in England who chose to be assessed, mostly recently qualified, and the survey is read from its abstract.",
+          "LOCSU's count is of enhanced case-finding services by CCG area, not of every kind of scheme."
+        ],
+        "type": "ul"
+      }
+    ]
+  },
+  {
     "slug": "children-crossing-road-eye-test",
     "title": "Children crossing the road may not see a 30 mph car coming",
     "date": "2026-11-16",
