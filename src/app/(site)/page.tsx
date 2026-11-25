@@ -38,13 +38,13 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* From observation to intervention: lives here, and only here. */}
+      {/* The shift from monitoring to treatment: lives here, and only here. */}
       <section className="relative border-y border-line bg-ink-900 py-20 md:py-28">
         <div aria-hidden="true" className="grid-bg absolute inset-0" />
         <div className="shell relative">
           <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-5">
-              <SectionHeading eyebrow={shift.eyebrow} title={shift.title} />
+              <SectionHeading title={shift.title} />
               <Reveal className="mt-6 flex flex-col gap-4 text-fog">
                 {shift.body.map((p) => (
                   <p key={p} className="leading-relaxed">
@@ -63,7 +63,7 @@ export default function HomePage() {
       {/* Revolux, in brief: the device itself is described on Technology. */}
       <section className="shell py-20 md:py-28">
         <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
-          <Reveal className="relative lg:col-span-5">
+          <Reveal className="relative lg:col-span-4">
             <div
               aria-hidden="true"
               className="absolute inset-0 rounded-full"
@@ -78,8 +78,10 @@ export default function HomePage() {
               className="relative mx-auto h-auto w-1/2 max-w-[14rem] drop-shadow-[0_30px_60px_rgba(27,195,205,0.2)] lg:w-3/5"
             />
           </Reveal>
-          <div className="lg:col-span-7">
-            <SectionHeading eyebrow={revolux.eyebrow} title={`${revolux.name}. ${revolux.tagline}`} />
+          {/* Eight columns, not seven: "Engineered by BioPhotonix." needs 723px
+              to stay on one line at this size, and seven give it 673. */}
+          <div className="lg:col-span-8">
+            <SectionHeading title={[`${revolux.name}.`, revolux.tagline]} />
             <Reveal className="mt-6 flex flex-col gap-4 text-fog">
               {home.revolux.body.map((p) => (
                 <p key={p} className="leading-relaxed">

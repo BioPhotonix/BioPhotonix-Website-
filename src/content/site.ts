@@ -68,7 +68,7 @@ export const home = {
   revolux: {
     body: [
       "Revolux is the photobiomodulation device BioPhotonix is developing for dry AMD.",
-      "The technology page sets out how it is built, how it delivers light to both eyes, and the safety standards it is designed to meet.",
+      "Discover how Revolux targets dry AMD at its root cause.",
     ],
     cta: { label: "How Revolux works", href: "/technology" },
   },
@@ -238,19 +238,19 @@ export const vision = {
 };
 
 export const shift = {
-  eyebrow: "From observation to intervention",
   title: "Stop monitoring. Start treating.",
   body: [
     "As diagnostic technology in community optometry has advanced, retinal disease is identified earlier than ever. Yet for millions of patients an early diagnosis is followed by “watch and wait”.",
-    "BioPhotonix exists to close that gap. We are developing Revolux as a regulated, portable medical device that any clinician can use to intervene early, wherever they see their patients: in practice or on a domiciliary visit.",
+    "BioPhotonix exists to close that gap.",
+    "We are developing Revolux as a regulated, portable medical device that any clinician can use to intervene early, wherever they see their patients: in practice or on a domiciliary visit.",
   ],
   today: {
     title: "The pathway today",
-    steps: ["Diagnosis in community optometry", "Watch and wait", "Progressive decline", "Late referral"],
+    steps: ["Diagnosis", "Watch and wait", "Visual decline", "Central blindness"],
   },
   future: {
     title: "The pathway with Revolux",
-    steps: ["Diagnosis in community optometry", "Eligibility screening", "Clinician-led treatment", "Monitored response", "Independence preserved"],
+    steps: ["Diagnosis", "Eligibility screening", "Revolux treatment", "Monitored response", "Independence preserved"],
   },
 };
 
