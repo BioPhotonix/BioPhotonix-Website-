@@ -1,7 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
-import Button from "@/components/Button";
-import CardMark from "@/components/CardMark";
 import JsonLd from "@/components/JsonLd";
 import RetinaExplainer from "@/components/RetinaExplainer";
 import RevoluxAnatomy from "@/components/RevoluxAnatomy";
@@ -9,10 +6,8 @@ import RevoluxDevice from "@/components/RevoluxDevice";
 import Reveal from "@/components/Reveal";
 import RevoluxExplainer from "@/components/RevoluxExplainer";
 import SectionHeading from "@/components/SectionHeading";
-import StandardsTicker from "@/components/StandardsTicker";
-import TechCard from "@/components/TechCard";
 import { breadcrumbSchema, medicalDeviceSchema } from "@/content/schema";
-import { anatomy, explainer, retina, revolux, safety, technology } from "@/content/site";
+import { anatomy, explainer, regulation, retina, revolux, technology } from "@/content/site";
 
 export const metadata: Metadata = {
   /* Query-led, unlike the h1 below it. See "Search rankings" in the README. */
@@ -27,26 +22,16 @@ export default function TechnologyPage() {
     <>
       <JsonLd data={breadcrumbSchema([{ name: "Technology", path: "/technology" }])} />
       {/* The device is described here rather than site-wide: one page carries
-          each entity, so nothing is declared twice. The FAQ's is on Clinics. */}
+          each entity, so nothing is declared twice. */}
       <JsonLd data={medicalDeviceSchema()} />
 
-      <section className="relative overflow-hidden pt-32 md:pt-40">
+      <section className="relative overflow-hidden pb-20 pt-32 md:pb-28 md:pt-40">
         <div aria-hidden="true" className="grid-bg absolute inset-0" />
         <div className="shell relative grid items-center gap-12 lg:grid-cols-12">
           <div className="lg:col-span-7">
             <p className="eyebrow">{revolux.eyebrow}</p>
             <h1 className="h-display mt-5 text-fog">{technology.title}</h1>
-            <p className="lede mt-7 max-w-xl text-fog">
-              Preserving vision and independence through advanced photobiomodulation, engineered as a Class IIa medical device for the community clinic.
-            </p>
-            <dl className="mt-12 grid max-w-md grid-cols-2 gap-px overflow-hidden rounded-xl border border-line bg-line">
-              {revolux.facts.map((f) => (
-                <div key={f.label} className="bg-ink-950/80 px-4 py-3.5">
-                  <dt className="figure text-xs uppercase tracking-[0.13em] text-fog">{f.label}</dt>
-                  <dd className="mt-1 text-sm font-medium text-fog">{f.value}</dd>
-                </div>
-              ))}
-            </dl>
+            <p className="lede mt-7 max-w-xl text-fog">{technology.lede}</p>
           </div>
           <Reveal className="relative lg:col-span-5">
             <div
@@ -62,37 +47,12 @@ export default function TechnologyPage() {
             />
           </Reveal>
         </div>
-        <div className="shell mt-20">
-          <Reveal className="grid gap-4 border-t border-line pt-10 md:grid-cols-3">
-            {revolux.pillars.map((p) => (
-              <div key={p.title}>
-                <h2 className="font-display text-lg font-semibold text-fog">{p.title}</h2>
-                <p className="mt-2 text-sm leading-relaxed text-fog">{p.body}</p>
-              </div>
-            ))}
-          </Reveal>
-        </div>
       </section>
 
-      {/* Anatomy */}
-      <section className="border-y border-line bg-ink-900 py-20 md:py-28">
-        <div className="shell">
-          <SectionHeading eyebrow={anatomy.eyebrow} title={anatomy.title} intro={anatomy.intro} />
-          <div className="mt-14">
-            <RevoluxAnatomy />
-          </div>
-        </div>
-      </section>
+      {/* Each section says one thing, once: what the light does, how the
+          device delivers it, what the device is made of, how it is regulated. */}
 
-      {/* Intelligent delivery */}
-      <section className="shell py-20 md:py-28">
-        <SectionHeading eyebrow={explainer.eyebrow} title={explainer.title} intro={explainer.intro} />
-        <div className="mt-14">
-          <RevoluxExplainer />
-        </div>
-      </section>
-
-      {/* Mechanism */}
+      {/* Mechanism: what the light does */}
       <section className="border-y border-line bg-ink-900 py-20 md:py-28">
         <div className="shell grid gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-5">
@@ -111,34 +71,27 @@ export default function TechnologyPage() {
         </div>
       </section>
 
-
-      {/* Safety */}
+      {/* Intelligent delivery: how the device delivers it */}
       <section className="shell py-20 md:py-28">
-        <SectionHeading eyebrow={safety.eyebrow} title={safety.title} intro={safety.intro} />
-        <div className="mt-14 grid gap-4 md:grid-cols-3">
-          {safety.items.map((s, i) => (
-            <Reveal key={s.title} delay={i * 0.08}>
-              <TechCard className="h-full p-7">
-                <CardMark kind={s.mark} className="h-10 w-10" />
-                <h3 className="mt-5 font-display text-lg font-semibold text-fog">{s.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-fog">{s.body}</p>
-              </TechCard>
-            </Reveal>
-          ))}
+        <SectionHeading eyebrow={explainer.eyebrow} title={explainer.title} intro={explainer.intro} />
+        <div className="mt-14">
+          <RevoluxExplainer />
         </div>
       </section>
-      <StandardsTicker />
 
-      {/* The FAQ lives on Clinics; this points to it. */}
-      <section className="shell py-20 md:py-24">
-        <div className="flex flex-wrap items-end justify-between gap-8">
-          <SectionHeading title={technology.faq.title} intro={technology.faq.body} />
-          <Reveal>
-            <Button href="/clinics#faq" variant="outline">
-              {technology.faq.cta}
-            </Button>
-          </Reveal>
+      {/* Anatomy: what it is made of */}
+      <section className="border-y border-line bg-ink-900 py-20 md:py-28">
+        <div className="shell">
+          <SectionHeading eyebrow={anatomy.eyebrow} title={anatomy.title} intro={anatomy.intro} />
+          <div className="mt-14">
+            <RevoluxAnatomy />
+          </div>
         </div>
+      </section>
+
+      {/* Regulation: said here, and only here. */}
+      <section className="shell py-20 md:py-28">
+        <SectionHeading eyebrow={regulation.eyebrow} title={regulation.title} intro={regulation.body} />
       </section>
     </>
   );

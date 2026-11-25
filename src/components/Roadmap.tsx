@@ -46,7 +46,7 @@ export default function Roadmap() {
                 </span>
               </div>
               <h3 className={`mt-2 font-display text-2xl font-semibold ${s.status === "upcoming" ? "text-fog" : "text-fog"}`}>{s.title}</h3>
-              <p className="mt-3 max-w-xl text-base leading-relaxed text-fog">{s.body}</p>
+              {s.body && <p className="mt-3 max-w-xl text-base leading-relaxed text-fog">{s.body}</p>}
             </Reveal>
           </li>
         );

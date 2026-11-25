@@ -21,7 +21,7 @@ export default function AboutPage() {
   return (
     <>
       <JsonLd data={breadcrumbSchema([{ name: "About", path: "/about" }])} />
-      <section className="relative overflow-hidden pt-32 md:pt-40">
+      <section className="relative overflow-hidden pb-20 pt-32 md:pb-28 md:pt-40">
         <div aria-hidden="true" className="grid-bg absolute inset-0" />
         <div className="shell relative">
           <p className="eyebrow">{about.hero.eyebrow}</p>
@@ -30,28 +30,14 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Belief */}
-      <section className="shell py-20 md:py-28">
-        <Reveal className="mx-auto max-w-3xl text-center">
-          <p className="text-base text-fog">{about.belief.lead}</p>
-          <p className="mt-6 font-display text-3xl font-semibold leading-tight text-fog md:text-5xl">{about.belief.statement}</p>
-          <p className="lede mt-8 text-fog">{about.belief.body}</p>
-        </Reveal>
-      </section>
-
-      {/* Origin */}
+      {/* Belief, beside the founder in clinic. How the company came about is
+          the landing page's story, and is told there. */}
       <section className="border-y border-line bg-ink-900 py-20 md:py-28">
         <div className="shell grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
-          <div className="lg:col-span-6">
-            <SectionHeading eyebrow={about.origin.eyebrow} title={about.origin.title} />
-            <Reveal className="mt-6 flex flex-col gap-4 text-fog">
-              {about.origin.body.map((p) => (
-                <p key={p} className="leading-relaxed">
-                  {p}
-                </p>
-              ))}
-            </Reveal>
-          </div>
+          <Reveal className="lg:col-span-6">
+            <p className="text-base text-fog">{about.belief.lead}</p>
+            <p className="mt-6 font-display text-3xl font-semibold leading-tight text-fog md:text-5xl">{about.belief.statement}</p>
+          </Reveal>
           <Reveal delay={0.1} className="lg:col-span-6">
             <div className="relative aspect-square overflow-hidden rounded-2xl border border-line">
               <Image src={founder.clinicImage} alt={founder.clinicAlt} fill sizes="(max-width: 1024px) 100vw, 45vw" className="object-cover" />
@@ -62,8 +48,8 @@ export default function AboutPage() {
 
       {/* Values */}
       <section className="shell py-20 md:py-28">
-        <SectionHeading eyebrow={about.values.eyebrow} title={about.values.title} intro={about.values.intro} />
-        <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <SectionHeading eyebrow={about.values.eyebrow} title={about.values.title} />
+        <div className="mt-14 grid gap-4 md:grid-cols-3">
           {about.values.items.map((v, i) => (
             <Reveal key={v.title} delay={i * 0.08}>
               <TechCard className="h-full p-7">
@@ -135,7 +121,7 @@ export default function AboutPage() {
 
         <Reveal className="mt-14 border-t border-line pt-10">
           <h3 className="eyebrow">{partners.title}</h3>
-          <ul className="mt-6 grid gap-x-8 gap-y-4 sm:grid-cols-2 lg:grid-cols-5">
+          <ul className="mt-6 grid gap-x-8 gap-y-4 sm:grid-cols-2">
             {partners.names.map((p) => (
               <li key={p.name}>
                 <p className="font-display text-lg font-semibold text-fog">{p.name}</p>

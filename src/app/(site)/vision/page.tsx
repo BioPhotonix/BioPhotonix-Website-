@@ -46,11 +46,6 @@ export default function VisionPage() {
                 still there to protect. By the time atrophy reaches the fovea, the photoreceptors it
                 took are gone and no therapy returns them.
               </p>
-              <p>
-                That gap between when the disease is detectable and when the patient notices it is
-                exactly where community optometry already sees these people, and exactly where
-                &ldquo;watch and wait&rdquo; has been the only thing on offer.
-              </p>
             </Reveal>
             <Reveal className="mt-8 flex flex-wrap gap-3">
               <Button href="/technology">How Revolux intervenes</Button>

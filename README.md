@@ -28,7 +28,7 @@ Node 20 or newer.
 
 | Path | What it holds |
 |---|---|
-| `src/content/site.ts` | Every piece of copy, plus contact details, statistics, FAQ, roadmap and team |
+| `src/content/site.ts` | Every piece of copy, plus contact details, statistics, roadmap and team |
 | `src/content/posts.ts` | News articles, as typed blocks rather than raw HTML, merged with the weekly insights |
 | `src/content/insights.json` | The weekly insights, appended by `scripts/add-insight.mjs`; checked by `src/content/insights.ts` |
 | `src/content/privacy.ts` | The privacy notice |
@@ -91,22 +91,37 @@ engines (Bing and those that read it) about the new page; the key is the
 
 ### Pages
 
-**One home for each piece of information.** Following advice the company
-received, nothing is said on two pages: each fact, section and form lives on
-one page, and the others point to it in a line rather than repeating it. The
-landing page is the front door. It says in full only what lives there, the
-problem and the shift from monitoring to treatment, and its other sections are
-pointers with their own wording (`home` in `site.ts`). Before adding copy to a
-page, check whether another page already says it; if it does, link to it.
+**Everything is said once, in the most obvious place.** This is the rule the
+site is written to, on advice the company received, and the site is an
+introduction to the company, not a reference: it should read easily. Each
+fact has one home and no other page restates it, in the same words or in
+others. Where a page needs a fact that lives elsewhere it either links or
+leaves it out. So, before adding a sentence anywhere, check whether the site
+already says it; and prefer cutting to rewording.
 
-| URL | Purpose, and what lives only here |
+| Topic | Its one home |
+|---|---|
+| Why dry AMD care needs to change | `/` (the problem, and "Stop monitoring. Start treating.") |
+| What the light does, how the device delivers it, what it is made of | `/technology` |
+| How Revolux is regulated (class, quality system, CE and UKCA) | `/technology`, its last section |
+| Who it is for, the course, supervision, what a practice pays and earns | `/clinics` |
+| The market, how the company earns, the roadmap | `/investors` |
+| The belief, the founder, advisers and partners | `/about` |
+| Phone, email, address, the form | `/contact` |
+
+That is why there is no FAQ (each answer is in its place), no scrolling strip
+of standards, no value-proposition cards on `/clinics`, and no company
+description or contact details in the footer, which carries the links and
+the legal lines only.
+
+| URL | What is on it |
 |---|---|
 | `/` | The front door: the problem (facts gallery, growth figure), the shift from watching to treating (pathway diagram), then pointers to Revolux, clinics, investors, the team, the latest articles and contact |
-| `/technology` | Revolux in depth: the five-step delivery explainer, the retina diagram, safety, and the standards strip. Carries the MedicalDevice structured data. Points to the FAQ on `/clinics` |
+| `/technology` | Four sections: the mechanism (retina diagram), delivery (the five-tab explainer), the device part by part, and regulation. Carries the MedicalDevice structured data |
 | `/vision` | The vision simulator: what a patient sees at each stage of dry AMD. First item in the main nav |
-| `/clinics` | For practices: value propositions, the treatment course, the five-step clinical pathway, the revenue calculator and the FAQ (with its FAQPage structured data). Registration opens the contact form as a practice enquiry |
-| `/about` | The belief, the origin, values, and the team: founder, advisors and partners |
-| `/investors` | The thesis, the market funnel, business model, regulatory strategy, the roadmap. Points to the team on `/about`; the data-room request opens the contact form as an investor enquiry |
+| `/clinics` | The five-step clinical pathway, the treatment course, practice economics (the revenue calculator), and registration, which opens the contact form as a practice enquiry |
+| `/about` | The belief, values, the founder, advisors and partners |
+| `/investors` | The thesis and market funnel, the business model in a line, the roadmap. Points to the team on `/about` and to what a practice pays on `/clinics`; the data-room request opens the contact form as an investor enquiry |
 | `/news`, `/news/[slug]` | The four articles from the Wix blog and the weekly insights |
 | `/feed.xml` | RSS of every article |
 | `/contact` | Contact details and the site's only form. `?as=clinic` or `?as=investor` preselects the role |
@@ -167,8 +182,7 @@ All in `src/components`:
 - **Roadmap** is the development stages with a rail that fills on scroll.
   Statuses are set in `roadmap.stages` in `site.ts`.
 - **RevenueCalculator** is the slider on the clinics page. Its numbers are
-  fitted to the figures the FAQ publishes (see below).
-- **StandardsTicker** scrolls the standards Revolux is built against.
+  fitted to the company's worked examples, shown under its chart (see below).
 - **RevoluxAnatomy** shows the prototype from five angles with numbered
   markers over the front view, keyed to the list beside it; hovering either
   emphasises both. The markers arrive one at a time and then stay. The overlay
@@ -348,8 +362,9 @@ something is already registered — then submit
 Each page carries a unique title, a description under the ~155 characters
 Google shows, and a canonical URL. The structured data is an Organization and
 a WebSite joined by `@id`, a BreadcrumbList on every page below the home page,
-MedicalDevice on `/technology`, FAQPage on `/clinics` (where the FAQ is), and
-BlogPosting on each article.
+MedicalDevice on `/technology`, and BlogPosting on each article, with a
+FAQPage beside it where the article has questions. (The clinics FAQ and its
+FAQPage were removed together.)
 
 **Social cards.** `src/app/_og/card.tsx` draws the 1200x630 image every page
 shares, and the line of copy on each one is in `ogCards` in
@@ -442,7 +457,7 @@ gate.
   inputs are *derived* from the forecast and attributed to it in the footnote.
   That is a much lighter exposure, but it is still worth confirming the
   attribution wording with GlobalData or Scottish Enterprise before a raise.
-- **The revenue calculator.** It is fitted to the FAQ's published examples
+- **The revenue calculator.** It is fitted to the company's worked examples
   (one, two and three patients a month generating £700, £1,600 and £2,500 of
   monthly profit), which imply £900 per patient over £200 a month fixed. If
   the pricing changes, change `clinics.calculator` in `site.ts`. The note
