@@ -1,7 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
-import { founder, site } from "@/content/site";
+import { founder, recognition, site } from "@/content/site";
 import { ORG_ID, websiteSchema } from "@/content/schema";
 
 /** The public website. The route group keeps the header and footer in one place. */
@@ -31,6 +31,7 @@ function StructuredData() {
       sameAs: [founder.linkedin],
     },
     description: site.description,
+    award: recognition.awards.map((a) => `Scottish EDGE ${a.name} winner, Round ${a.round} (${a.year})`),
   };
   /* Two blocks, joined by @id: the company, and the site it publishes. */
   return (

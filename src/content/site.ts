@@ -58,6 +58,35 @@ export const hero = {
 };
 
 /**
+ * Recognition, shown once: a line under the hero's buttons on the landing
+ * page, where every visitor sees it, linking to Scottish EDGE so the claim can
+ * be checked. The badges are Scottish EDGE's own winner's marks, as supplied
+ * to the company; do not redraw or recolour them. The award amounts are left
+ * out on purpose: the company does not state what it has raised.
+ */
+export const recognition = {
+  title: "Two-time Scottish EDGE winner",
+  detail: "Young EDGE and Wild Card EDGE, 2026",
+  href: "https://www.scottishedge.com/",
+  awards: [
+    {
+      name: "Young EDGE",
+      round: 27,
+      year: 2026,
+      image: "/images/awards/young-edge-round-27.webp",
+      alt: "Scottish EDGE Young EDGE winner's badge, Round 27, 2026",
+    },
+    {
+      name: "Wild Card EDGE",
+      round: 28,
+      year: 2026,
+      image: "/images/awards/wild-card-edge-round-28.webp",
+      alt: "Scottish EDGE Wild Card EDGE winner's badge, Round 28, 2026",
+    },
+  ],
+};
+
+/**
  * The landing page's pointers to the other pages. The landing page is the
  * front door: it says in full only what lives there (the problem, and the
  * shift from monitoring to treatment), and for everything else it says what

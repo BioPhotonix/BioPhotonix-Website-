@@ -111,6 +111,7 @@ says it, and prefer a link or a sentence to a second full telling.
 | Who it is for, the course, supervision, what a practice pays and earns, the FAQ | `/clinics` |
 | The market, how the company earns, the roadmap | `/investors` |
 | The belief, the founder, advisers and partners | `/about` |
+| Awards (two-time Scottish EDGE winner) | `/`, one line under the hero's buttons, linking to Scottish EDGE; amounts are not stated |
 | The contact form | `/contact` (the footer carries the phone, email and address on every page, as is standard) |
 
 **Positioning: used anywhere, not "out of the hospital".** Dry AMD is not

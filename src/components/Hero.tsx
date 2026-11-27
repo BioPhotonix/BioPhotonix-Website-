@@ -1,10 +1,11 @@
 "use client";
 
+import Image from "next/image";
 import { motion, useReducedMotion } from "motion/react";
 import Button from "./Button";
 import DevicePhotons from "./DevicePhotons";
 import RevoluxDevice from "./RevoluxDevice";
-import { hero, revolux } from "@/content/site";
+import { hero, recognition, revolux } from "@/content/site";
 
 export default function Hero() {
   const reduce = useReducedMotion();
@@ -48,6 +49,42 @@ export default function Hero() {
               <Button href={hero.secondary.href} variant="outline">
                 {hero.secondary.label}
               </Button>
+            </motion.div>
+
+            {/* Recognition: one quiet line, here and nowhere else on the site.
+                It sits under the buttons, not at the foot of the section,
+                because the device makes the hero taller than a laptop screen
+                and the foot is below the fold. The whole line links to
+                Scottish EDGE, so the claim can be checked. On a phone the
+                words go under the badges: beside them they broke over four
+                lines. */}
+            <motion.div {...rise(0.24)} className="mt-8 max-w-xl border-t border-line pt-5 sm:mt-10 sm:pt-6">
+              <a
+                href={recognition.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:gap-4"
+              >
+                <span className="flex shrink-0 gap-2">
+                  {recognition.awards.map((a) => (
+                    <Image
+                      key={a.name}
+                      src={a.image}
+                      alt={a.alt}
+                      width={72}
+                      height={72}
+                      sizes="(max-width: 640px) 64px, 72px"
+                      className="h-16 w-16 sm:h-[4.5rem] sm:w-[4.5rem]"
+                    />
+                  ))}
+                </span>
+                <span>
+                  <span className="block font-display text-lg font-semibold leading-snug text-fog transition-colors group-hover:text-teal-300">
+                    {recognition.title}
+                  </span>
+                  <span className="mt-0.5 block text-sm leading-relaxed text-fog-dim">{recognition.detail}</span>
+                </span>
+              </a>
             </motion.div>
           </div>
 
