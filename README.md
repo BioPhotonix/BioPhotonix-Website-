@@ -414,7 +414,13 @@ before strengthening it.
 date per page. Change a page's content, change its date. It used to send
 today's date for every page on every crawl, which is worse than sending none:
 a lastmod that is always "now" teaches Google to ignore the field. Articles
-look after themselves, because a post carries its own date.
+look after themselves, because a post carries its own date, and so do the two
+pages that list them. The home page's "Latest insights" shows the newest three
+articles (`latestPosts` in `src/content/posts.ts`), so its date is the later
+of its hand-kept one and the newest of those three, worked out at build time;
+a weekly insight moves it with no edit to the sitemap. `/news` does the same
+with every article. Change anything else on either page and its hand-kept date
+still needs changing.
 
 ## Typography
 

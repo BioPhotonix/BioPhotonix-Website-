@@ -8,7 +8,7 @@ import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
 import FactsGallery from "@/components/FactsGallery";
 import TechCard from "@/components/TechCard";
-import { posts } from "@/content/posts";
+import { latestPosts } from "@/content/posts";
 import { burden, home, revolux, shift } from "@/content/site";
 
 const formatDate = (iso: string) =>
@@ -22,7 +22,6 @@ const formatDate = (iso: string) =>
  * founder and team to About, the articles to News, the form to Contact.
  */
 export default function HomePage() {
-  const latest = posts.slice(0, 3);
   return (
     <>
       <Hero />
@@ -131,7 +130,7 @@ export default function HomePage() {
         </div>
         <Reveal as="div" className="mt-10">
           <ul className="divide-y divide-line border-y border-line">
-            {latest.map((p) => (
+            {latestPosts.map((p) => (
               <li key={p.slug}>
                 <Link
                   href={`/news/${p.slug}`}
